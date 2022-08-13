@@ -9,7 +9,7 @@ const Header = ({tik, outerContainerDomRef}) => {
     <header
       className={cx(
         css`
-          z-index: 1;
+          z-index: 2;
           background: white;
         `,
         `sticky w-full top-0`
