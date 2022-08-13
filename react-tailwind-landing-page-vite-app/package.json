@@ -27,7 +27,8 @@
     "three": "^0.143.0",
     "use-debounce": "^8.0.3",
     "yup": "^0.32.11",
-    "yup-password": "^0.2.2"
+    "yup-password": "^0.2.2",
+    "zustand": "^4.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

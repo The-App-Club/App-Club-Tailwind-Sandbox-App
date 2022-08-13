@@ -9,10 +9,19 @@ import artist2 from '../../assets/artist2.png';
 import artist3 from '../../assets/artist3.png';
 import {useMemo, useState} from 'react';
 import {Description} from '../../components/Description';
+import {useNavOpenState} from '../../hooks/useNavOpenState';
+import {useEffect} from 'react';
 
 const ArtistsPage = ({pageName, notifier}) => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [tik, setTik] = useState(true);
+  const {opened, setNavOpened} = useNavOpenState((state) => {
+    return {
+      opened: state.opened,
+      setNavOpened: state.setNavOpened,
+    };
+  });
+
   const data = useMemo(() => {
     return [
       {
@@ -81,7 +90,12 @@ const ArtistsPage = ({pageName, notifier}) => {
                 width: 100%;
                 height: 100%;
               `}
-              options={{rewind: true, perPage: 1, arrows: false}}
+              options={{
+                rewind: true,
+                perPage: 1,
+                arrows: !opened,
+                pagination: !opened,
+              }}
             >
               {data.map((item, index) => {
                 return (

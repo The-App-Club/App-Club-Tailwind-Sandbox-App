@@ -23,6 +23,7 @@ import {MdOutlineFeaturedPlayList} from 'react-icons/md';
 import {AiOutlineMail} from 'react-icons/ai';
 import {HiOutlineLocationMarker} from 'react-icons/hi';
 import {AiOutlinePayCircle} from 'react-icons/ai';
+import {useNavOpenState} from '../hooks/useNavOpenState';
 
 const NavItem = ({children, to}) => {
   const navigate = useNavigate();
@@ -49,6 +50,17 @@ const NavItem = ({children, to}) => {
 
 const Nav = ({tik, isRight = false, outerContainerDomRef}) => {
   const [open, setOpen] = useState(false);
+
+  const {opened, setNavOpened} = useNavOpenState((state) => {
+    return {
+      opened: state.opened,
+      setNavOpened: state.setNavOpened,
+    };
+  });
+
+  useEffect(() => {
+    setNavOpened({opened: open});
+  }, [open]);
 
   useEffect(() => {
     setOpen((open) => {
