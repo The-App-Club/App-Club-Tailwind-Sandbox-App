@@ -32,8 +32,8 @@ const QuestionPage = ({pageName, notifier}) => {
                 Is it available to everyone?
               </h3>
               <p data-aos="fade-left">
-                Anyone can use this service. This service is also available to
-                artists who are not affiliated with a record company or office.
+                The standard chunk of Lorem Ipsum used since the 1500s is
+                reproduced below for those interested.
               </p>
             </div>
           </div>
@@ -52,9 +52,8 @@ const QuestionPage = ({pageName, notifier}) => {
                 a commission fee?
               </h3>
               <p data-aos="fade-left">
-                A 30% commission is charged on subscription sales.if users are
-                billed through Apple pay, an additional 30% commission is
-                charged on subscription sales.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur.
               </p>
             </div>
           </div>

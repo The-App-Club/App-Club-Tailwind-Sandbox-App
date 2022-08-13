@@ -10,25 +10,25 @@ const ServicePage = ({pageName, notifier}) => {
     return [
       {
         title: `No Ads`,
-        description: `High-quality music from your favorite artists without advertisements.`,
+        description: `Various versions have evolved over the years, sometimes by accident, sometimes on purpose.`,
         startProgress: 0,
         endProgress: 0.25,
       },
       {
         title: `Premium Member`,
-        description: `Limited music, music videos, and blog posts are available for viewing.`,
+        description: `Contrary to popular belief, Lorem Ipsum is not simply random text.`,
         startProgress: 0.25,
         endProgress: 0.5,
       },
       {
         title: `Playlist`,
-        description: `Create playlists with your favorite songs.`,
+        description: `Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.`,
         startProgress: 0.5,
         endProgress: 0.75,
       },
       {
         title: `Easy to use`,
-        description: `Designed for ease of use, dark mode support, other language support.`,
+        description: `Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.`,
         startProgress: 0.75,
         endProgress: 1,
       },

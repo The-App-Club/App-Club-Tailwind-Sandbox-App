@@ -32,8 +32,8 @@ const FeaturesPage = ({pageName, notifier}) => {
           <div data-aos="fade-right" className="max-w-md">
             <h3 className="text-xl">Simple content management</h3>
             <p>
-              Simple operation.Songs, music videos, artists, and Blog post
-              management.
+              Nor again is there anyone who loves or pursues or desires to
+              obtain pain of itself.
             </p>
           </div>
           <div data-aos="fade-up">
@@ -43,8 +43,8 @@ const FeaturesPage = ({pageName, notifier}) => {
           <div data-aos="fade-left" className="max-w-md">
             <h3 className="text-xl">Multi-platform Support</h3>
             <p>
-              Compatible with iphone, Android, PC Compatible with iphone,
-              Android, PC Android, PC, released after 2022/4.
+              Obligations of business it will frequently occur that pleasures
+              have to be repudiated and annoyances accepted.
             </p>
           </div>
           <div data-aos="fade-up">
@@ -53,10 +53,7 @@ const FeaturesPage = ({pageName, notifier}) => {
 
           <div data-aos="fade-left" className="max-w-md">
             <h3 className="text-xl">Monetization</h3>
-            <p>
-              You can monetize by providing limited distribution content and
-              having users sign up for premium membership.
-            </p>
+            <p>Et harum quidem rerum facilis est et expedita distinctio.</p>
           </div>
           <div data-aos="fade-up">
             <GrMoney size={128} />
