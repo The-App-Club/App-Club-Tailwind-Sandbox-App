@@ -1,0 +1,5 @@
+- Reference
+  - [tailwind css setup](https://dev.to/rjzauner/react-tailwindcss-vite-js-a-match-made-in-heaven-14o5)
+  - [setting-up-dev-environment-react-vite-tailwind](https://blog.logrocket.com/setting-up-dev-environment-react-vite-tailwind/)
+  - [tailwindcss](https://tailwindcss.com/)
+  - [demo](https://demos.creative-tim.com/soft-ui-dashboard-tailwind/pages/dashboard.html)
