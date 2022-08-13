@@ -81,7 +81,7 @@ const ArtistsPage = ({pageName, notifier}) => {
                 width: 100%;
                 height: 100%;
               `}
-              options={{rewind: true, perPage: 1}}
+              options={{rewind: true, perPage: 1, arrows: false}}
             >
               {data.map((item, index) => {
                 return (
