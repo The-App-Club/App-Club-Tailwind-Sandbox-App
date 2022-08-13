@@ -1,6 +1,5 @@
 import {css} from '@emotion/css';
 import {motion} from 'framer-motion';
-import {memo} from 'react';
 
 const motionConfig = {
   initial: {
@@ -20,7 +19,7 @@ const motionConfig = {
   },
 };
 
-const Layout = ({children, pageName, notifier}) => {
+const Layout = ({children}) => {
   return (
     <motion.div
       variants={motionConfig}
@@ -34,8 +33,6 @@ const Layout = ({children, pageName, notifier}) => {
       className={css`
         position: relative;
         width: 100%;
-        min-height: 100vh;
-        overflow: hidden;
       `}
       onAnimationStart={(e) => {
         // const html = document.documentElement;
@@ -48,7 +45,6 @@ const Layout = ({children, pageName, notifier}) => {
         // const body = html.querySelector('body');
         // html.classList.remove('loading');
         // body.classList.remove('loading');
-        notifier({message: `done`, pageName});
       }}
     >
       {children}
@@ -56,4 +52,4 @@ const Layout = ({children, pageName, notifier}) => {
   );
 };
 
-export default memo(Layout);
+export {Layout};
