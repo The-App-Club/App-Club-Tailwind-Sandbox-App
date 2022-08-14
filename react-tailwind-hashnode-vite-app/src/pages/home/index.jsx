@@ -7,15 +7,27 @@ import {FeedType} from '../../components/FeedType';
 import {BlogStats} from '../../components/BlogStats';
 import {Trending} from '../../components/Trending';
 import {Bookmarks} from '../../components/Bookmarks';
+import {useBlogFetchType} from '../../hooks/useBlogFetchType';
+import {useTrendingFetchType} from '../../hooks/useTrendingFetchType';
 
 const HomePage = ({pageName, notifier}) => {
-  const {lastestFetchType, storeFetchType} = useFeedFetchType((state) => {
+  const {lastestFetchType} = useFeedFetchType((state) => {
     return {
       lastestFetchType: state.lastestFetchType,
-      storeFetchType: state.storeFetchType,
     };
   });
-
+  const {lastestFetchType: blogLastestFetchType} = useBlogFetchType((state) => {
+    return {
+      lastestFetchType: state.lastestFetchType,
+    };
+  });
+  const {lastestFetchType: trendingLastestFetchType} = useTrendingFetchType(
+    (state) => {
+      return {
+        lastestFetchType: state.lastestFetchType,
+      };
+    }
+  );
   return (
     <Layout pageName={pageName} notifier={notifier}>
       <section className={cx(css``, `max-w-7xl mx-auto w-full relative`)}>
@@ -31,18 +43,21 @@ const HomePage = ({pageName, notifier}) => {
             `}
           />
           <div className="w-full">
-            <FeedType />
+            <FeedType fetchType={lastestFetchType} />
             <MainFeeder fetchType={lastestFetchType} />
           </div>
           <div
-            className={css`
-              @media (max-width: 768px) {
-                display: none;
-              }
-            `}
+            className={cx(
+              css`
+                @media (max-width: 768px) {
+                  display: none;
+                }
+              `,
+              `flex items-center flex-col gap-4`
+            )}
           >
-            <BlogStats />
-            <Trending />
+            <BlogStats fetchType={blogLastestFetchType} />
+            <Trending fetchType={trendingLastestFetchType} />
             <Bookmarks />
           </div>
         </div>

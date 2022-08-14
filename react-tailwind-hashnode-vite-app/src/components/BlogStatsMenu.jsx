@@ -5,10 +5,16 @@ import {MdOutlineRemoveRedEye} from 'react-icons/md';
 import {GrArticle} from 'react-icons/gr';
 import {TbHeartHandshake} from 'react-icons/tb';
 import {BlogStatsMiniSummary} from './BlogStatsMiniSummary';
+import {useBlogFetchType} from '../hooks/useBlogFetchType';
 
-const BlogStatsMenu = () => {
+const BlogStatsMenu = ({fetchType}) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [currentMenuName, setCurrentMenuName] = useState('');
+  const [currentMenuName, setCurrentMenuName] = useState(fetchType);
+  const {storeFetchType} = useBlogFetchType((state) => {
+    return {
+      storeFetchType: state.storeFetchType,
+    };
+  });
 
   const menuInfoList = useMemo(() => {
     return [
@@ -42,18 +48,17 @@ const BlogStatsMenu = () => {
     ];
   }, []);
 
+  useEffect(() => {
+    storeFetchType({currentFetchType: currentMenuName});
+  }, [currentMenuName]);
+
   const handleClick = (e, {menuInfo}) => {
     console.log(`menuInfo`, menuInfo);
   };
 
   return (
     <div className={`flex items-start flex-col gap-1 w-full overflow-hidden`}>
-      <ul
-        className={cx(
-          `relative list-none flex items-center gap-3 border-b-2`,
-          css``
-        )}
-      >
+      <ul className={cx(`relative list-none flex items-center gap-3`, css``)}>
         {menuInfoList.map((menuInfo, index) => {
           return (
             <motion.li

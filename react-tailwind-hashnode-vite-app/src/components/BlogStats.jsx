@@ -2,7 +2,7 @@ import {css, cx} from '@emotion/css';
 import {BlogStatsMenu} from './BlogStatsMenu';
 import {BsArrowUpRight} from 'react-icons/bs';
 
-const BlogStats = () => {
+const BlogStats = ({fetchType}) => {
   return (
     <div
       className={cx(
@@ -11,7 +11,7 @@ const BlogStats = () => {
           width: 100%;
           min-height: 16rem;
         `,
-        `border-2  p-2 rounded-lg mb-2`
+        `border-2  p-2 rounded-lg`
       )}
     >
       <div className="flex justify-between items-center">
@@ -24,7 +24,7 @@ const BlogStats = () => {
           <BsArrowUpRight size={16} />
         </button>
       </div>
-      <BlogStatsMenu />
+      <BlogStatsMenu fetchType={fetchType} />
     </div>
   );
 };

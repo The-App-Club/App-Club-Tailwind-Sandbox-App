@@ -8,8 +8,8 @@ import {useMemo} from 'react';
 import {useNavOpenState} from '../hooks/useNavOpenState';
 import {motion} from 'framer-motion';
 
-const FeedType = () => {
-  const [fetchType, setFetchType] = useState('personalized');
+const FeedType = ({fetchType: lastestFetchType}) => {
+  const [fetchType, setFetchType] = useState(lastestFetchType);
   const {opened, setNavOpened} = useNavOpenState((state) => {
     return {
       opened: state.opened,
@@ -17,9 +17,8 @@ const FeedType = () => {
     };
   });
 
-  const {lastestFetchType, storeFetchType} = useFeedFetchType((state) => {
+  const {storeFetchType} = useFeedFetchType((state) => {
     return {
-      lastestFetchType: state.lastestFetchType,
       storeFetchType: state.storeFetchType,
     };
   });

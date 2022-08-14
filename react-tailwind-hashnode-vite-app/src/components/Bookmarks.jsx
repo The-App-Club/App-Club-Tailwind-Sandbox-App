@@ -22,7 +22,7 @@ const Bookmarks = () => {
           width: 100%;
           min-height: 8rem;
         `,
-        `border-2  p-2 rounded-lg mb-2`
+        `border-2  p-2 rounded-lg`
       )}
     >
       <div className="flex justify-between items-center">
