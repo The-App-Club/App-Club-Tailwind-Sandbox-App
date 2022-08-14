@@ -57,21 +57,21 @@ const FeedType = ({fetchType: lastestFetchType}) => {
   return (
     <motion.ul
       initial={{
-        zIndex: `${opened ? -1 : 2}`,
+        position: `${opened ? 'static' : 'sticky'}`,
       }}
       animate={{
-        zIndex: `${opened ? -1 : 2}`,
+        position: `${opened ? 'static' : 'sticky'}`,
         transition: {
           duration: 0.1,
           ease: `linear`,
-          delay: `${opened ? 0 : 0.7}`,
+          delay: `${opened ? 0 : 0.4}`,
         },
       }}
       className={cx(
         css`
-          position: sticky;
+          position: ${opened ? 'static' : 'sticky'};
           top: 3rem;
-          /* z-index: ${opened ? -1 : 2}; */
+          z-index: 2;
         `,
         'flex justify-start items-center gap-2 bg-white'
       )}
