@@ -70,7 +70,7 @@ const Nav = ({tik, isRight = false, outerContainerDomRef}) => {
         display: flex;
         justify-content: center;
         align-items: center;
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
           display: block;
           justify-content: initial;
           align-items: initial;
@@ -89,7 +89,7 @@ const Nav = ({tik, isRight = false, outerContainerDomRef}) => {
           :hover {
             background: #f1f1f1;
           }
-          @media (max-width: 768px) {
+          @media (max-width: 900px) {
             display: block;
           }
         }
@@ -152,7 +152,7 @@ const Nav = ({tik, isRight = false, outerContainerDomRef}) => {
           align-items: center;
           justify-content: center;
           height: 100%;
-          @media (max-width: 768px) {
+          @media (max-width: 900px) {
             display: none;
           }
         `}

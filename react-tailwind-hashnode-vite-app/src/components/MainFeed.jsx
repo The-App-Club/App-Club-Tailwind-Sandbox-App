@@ -10,7 +10,7 @@ import profile3 from '../assets/profile3.png';
 
 const MainFeed = ({feedType}) => {
   return (
-    <div className="max-w-2xl border-2 p-4 rounded-lg hover:cursor-pointer hover:bg-slate-50">
+    <div className="max-w-7xl w-full  border-2 p-4 rounded-lg hover:cursor-pointer hover:bg-slate-50">
       <div className="flex items-center gap-1 relative">
         <img
           src={profile1}
@@ -39,7 +39,7 @@ const MainFeed = ({feedType}) => {
       <div
         className={cx(
           css`
-            @media (max-width: 768px) {
+            @media (max-width: 1200px) {
               flex-direction: column;
               align-items: flex-start;
               padding-bottom: 1rem;
