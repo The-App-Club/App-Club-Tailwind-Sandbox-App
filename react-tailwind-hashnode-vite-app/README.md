@@ -3,3 +3,4 @@
   - [setting-up-dev-environment-react-vite-tailwind](https://blog.logrocket.com/setting-up-dev-environment-react-vite-tailwind/)
   - [tailwindcss](https://tailwindcss.com/)
   - [demo](https://demos.creative-tim.com/soft-ui-dashboard-tailwind/pages/dashboard.html)
+  - [dashboard design reference](https://dribbble.com/shots/18609074-Olcef-Admin-Dashboard)

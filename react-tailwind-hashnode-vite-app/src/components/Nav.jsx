@@ -172,6 +172,12 @@ const Nav = ({tik, isRight = false, outerContainerDomRef}) => {
           <NavItem to={'/price'}>
             <Link to={'/price'}>Price</Link>
           </NavItem>
+          <NavItem to={'/dashboard'}>
+            <Link to={'/dashboard'}>Dashboard</Link>
+          </NavItem>
+          <NavItem to={'/adsense'}>
+            <Link to={'/adsense'}>Ads</Link>
+          </NavItem>
         </ul>
       </nav>
       <Menu
@@ -193,6 +199,7 @@ const Nav = ({tik, isRight = false, outerContainerDomRef}) => {
         <Link to={'/about'}>About</Link>
         <Link to={'/contact'}>Contact</Link>
         <Link to={'/price'}>Price</Link>
+        <Link to={'/dashboard'}>Dashboard</Link>
       </Menu>
     </div>
   );

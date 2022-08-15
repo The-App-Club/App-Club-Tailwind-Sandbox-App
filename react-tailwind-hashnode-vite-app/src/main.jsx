@@ -17,6 +17,9 @@ import {HomePage} from './pages/home';
 import {AboutPage} from './pages/about';
 import {ContactPage} from './pages/contact';
 import {PricePage} from './pages/price';
+import {DashboardPage} from './pages/dashboard';
+import {AdsPage} from './pages/adsense';
+import {EventPage} from './pages/event';
 
 import logo from './assets/logo.png';
 
@@ -99,6 +102,33 @@ const App = () => {
               path="/price"
               element={
                 <PricePage
+                  pageName={location.pathname}
+                  notifier={navCloseNotifierWhenRouting}
+                />
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <DashboardPage
+                  pageName={location.pathname}
+                  notifier={navCloseNotifierWhenRouting}
+                />
+              }
+            />
+            <Route
+              path="/adsense"
+              element={
+                <AdsPage
+                  pageName={location.pathname}
+                  notifier={navCloseNotifierWhenRouting}
+                />
+              }
+            />
+            <Route
+              path="/events"
+              element={
+                <EventPage
                   pageName={location.pathname}
                   notifier={navCloseNotifierWhenRouting}
                 />

@@ -2,24 +2,24 @@ import {css, cx} from '@emotion/css';
 import {MainFeeder} from '../../components/MainFeeder.';
 import {FeedType} from '../../components/FeedType';
 
-import {HomePageLayout} from '../../layouts/home';
+import {AdsPageLayout} from '../../layouts/adsense';
 
 import {useFeedFetchType} from '../../hooks/useFeedFetchType';
 
-const HomePage = ({pageName, notifier}) => {
+const AdsPage = ({pageName, notifier}) => {
   const {lastestFetchType} = useFeedFetchType((state) => {
     return {
       lastestFetchType: state.lastestFetchType,
     };
   });
   return (
-    <HomePageLayout pageName={pageName} notifier={notifier}>
+    <AdsPageLayout pageName={pageName} notifier={notifier}>
       <div className="w-full">
         <FeedType fetchType={lastestFetchType} />
         <MainFeeder fetchType={lastestFetchType} />
       </div>
-    </HomePageLayout>
+    </AdsPageLayout>
   );
 };
 
-export {HomePage};
+export {AdsPage};
