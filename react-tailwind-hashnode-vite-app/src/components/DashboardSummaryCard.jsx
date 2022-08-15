@@ -1,11 +1,12 @@
 import {css, cx} from '@emotion/css';
 import {useMemo} from 'react';
-import {motion} from 'framer-motion';
+import {motion, useAnimationControls} from 'framer-motion';
 import ProgressBar from '@ramonak/react-progress-bar';
 import {GiSpaceship} from 'react-icons/gi';
 
 import {CgArrowTopRight} from 'react-icons/cg';
 import {CgArrowBottomLeft} from 'react-icons/cg';
+import {useEffect} from 'react';
 
 const DashboardSummaryCard = ({
   summaryTitle = `Total Ships`,
@@ -14,6 +15,29 @@ const DashboardSummaryCard = ({
   count,
   delta,
 }) => {
+  const percentIndicatorControls = useAnimationControls();
+  const percentControls = useAnimationControls();
+  const countControls = useAnimationControls();
+  const deltaControls = useAnimationControls();
+
+  useEffect(() => {
+    percentIndicatorControls.start({
+      width: `${percent}%`,
+    });
+    percentControls.start({
+      y: 0,
+      opacity: 1,
+    });
+    countControls.start({
+      y: 0,
+      opacity: 1,
+    });
+    deltaControls.start({
+      x: 0,
+      opacity: 1,
+    });
+  }, [percent, count, delta]);
+
   return (
     <div
       className={cx(
@@ -30,10 +54,36 @@ const DashboardSummaryCard = ({
         `w-full border-2 p-2 rounded-lg flex flex-col gap-4 relative`
       )}
     >
+      <h2 className="text-xl flex items-center justify-center">
+        {summaryTitle}
+      </h2>
       <div className="flex items-center justify-center gap-2">
         {icon()}
-        <span
-          className={`flex items-center font-bold text-lg ${
+        <motion.span
+          initial={{
+            y: 60,
+            opacity: 0,
+          }}
+          transition={{
+            duration: 0.6,
+            ease: `easeInOut`,
+          }}
+          animate={countControls}
+          className="flex items-center justify-center font-semibold text-2xl"
+        >
+          {`${count}`}
+        </motion.span>
+        <motion.span
+          initial={{
+            x: 60,
+            opacity: 0,
+          }}
+          transition={{
+            duration: 0.6,
+            ease: `easeInOut`,
+          }}
+          animate={deltaControls}
+          className={`flex items-center font-bold text-sm ${
             delta > 0 ? 'text-green-600' : 'text-red-600'
           }`}
         >
@@ -43,48 +93,51 @@ const DashboardSummaryCard = ({
           ) : (
             <CgArrowBottomLeft size={24} />
           )}
-        </span>
+        </motion.span>
       </div>
-      <div className="flex items-center justify-between pb-3 gap-1">
-        <h2 className="text-xl">{summaryTitle}</h2>
-        <motion.div className="flex items-center justify-center font-bold gap-3 text-md">
-          {`${percent}%`}
-          <motion.span className="flex items-center justify-center font-semibold text-2xl">
-            {`${count}`}
-          </motion.span>
-        </motion.div>
-      </div>
+      <motion.div
+        initial={{
+          y: 20,
+          opacity: 0,
+        }}
+        transition={{
+          duration: 0.8,
+          ease: `easeInOut`,
+          delay: 0.3,
+        }}
+        animate={percentControls}
+        className="flex justify-center items-center font-bold text-md -mb-3"
+      >
+        {`${percent}%`}
+      </motion.div>
       <div className="relative h-full">
         <span className="absolute -top-7 left-0">0%</span>
-        <ProgressBar
-          completed={percent}
-          className={cx(css`
-            .container {
+        <motion.div
+          className={cx(
+            css`
+              width: 100%;
+              height: 100%;
               background-color: #e9ecef;
-              border-radius: 50px;
-            }
-
-            .bar-completed {
-              background-color: #0d6efd;
-              width: ${percent}%;
-              border-top-left-radius: 50px 50px;
-              border-bottom-left-radius: 50px 50px;
-            }
-
-            .label {
-              opacity: 0;
-              visibility: hidden;
-              font-size: 1.25rem;
-              color: white;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-          `)}
-          barContainerClassName="container"
-          completedClassName="bar-completed"
-          labelClassName="label"
-        />
+            `,
+            `rounded-lg`
+          )}
+        >
+          <motion.div
+            animate={percentIndicatorControls}
+            transition={{
+              duration: 1.2,
+              ease: `easeOut`,
+            }}
+            className={cx(
+              css`
+                width: 0%;
+                height: 1.25rem;
+                background-color: #0d6efd;
+              `,
+              `rounded-lg`
+            )}
+          ></motion.div>
+        </motion.div>
         <span className="absolute -top-7 right-0">100%</span>
       </div>
     </div>

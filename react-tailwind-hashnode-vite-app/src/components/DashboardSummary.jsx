@@ -66,7 +66,7 @@ const DashboardSummary = () => {
         icon: () => {
           return <GiSpaceship size={48} />;
         },
-        percent: 60,
+        percent: 100,
         count: totalShips,
         delta: 30,
       },
