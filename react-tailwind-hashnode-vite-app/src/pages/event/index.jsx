@@ -8,6 +8,7 @@ import {useDebouncedCallback} from 'use-debounce';
 import {useMemo} from 'react';
 import {motion} from 'framer-motion';
 import {useActiveIndexStore} from '../../hooks/useActiveIndexStore';
+import swal from 'sweetalert';
 
 const data = [
   {
@@ -94,11 +95,11 @@ const EventPage = ({pageName, notifier}) => {
   useEffect(() => {
     searchInputRef.current.focus();
   }, []);
-  useEffect(() => {
-    if (escapePress) {
-      searchInputRef.current.blur();
-    }
-  }, [escapePress]);
+  // useEffect(() => {
+  //   if (escapePress) {
+  //     searchInputRef.current.blur();
+  //   }
+  // }, [escapePress]);
 
   useEffect(() => {
     if (arrowUpPress) {
@@ -130,6 +131,8 @@ const EventPage = ({pageName, notifier}) => {
     const searchTerm = itemsDomRef[doIndex].current.textContent;
     if (searchTerm) {
       console.log(`[do search]`, searchTerm);
+      swal('You search term is..', searchTerm);
+      searchInputRef.current.focus();
       return;
     }
   };
@@ -207,30 +210,35 @@ const EventPage = ({pageName, notifier}) => {
               </button>
             </div>
           </form>
-          <span>{activeIndex}</span>
-          <ul className="w-full bg-white border-2 rounded-lg mt-2">
-            {filteredData.map((item, index) => {
-              return (
-                <motion.li
-                  key={index}
-                  ref={itemsDomRef[index]}
-                  onClick={(e) => {
-                    storeActiveIndex({
-                      pressType: `select`,
-                      selectedIndex: index,
-                      maxSize: data.length,
-                    });
-                    handleSearch(e, index);
-                  }}
-                  className={cx(
-                    css``,
-                    `p-2 hover:cursor-pointer`,
-                    `${activeIndex === index ? 'bg-gray-100' : ''}`
-                  )}
-                >{`${item.title}`}</motion.li>
-              );
-            })}
-          </ul>
+          {/* <span>{activeIndex}</span> */}
+          <p className="py-2">press key arrow down or arrow up.</p>
+          {filteredData.length === 0 ? (
+            <p>No match.</p>
+          ) : (
+            <ul className="w-full bg-white border-2 rounded-lg">
+              {filteredData.map((item, index) => {
+                return (
+                  <motion.li
+                    key={index}
+                    ref={itemsDomRef[index]}
+                    onClick={(e) => {
+                      storeActiveIndex({
+                        pressType: `select`,
+                        selectedIndex: index,
+                        maxSize: data.length,
+                      });
+                      handleSearch(e, index);
+                    }}
+                    className={cx(
+                      css``,
+                      `p-2 hover:cursor-pointer`,
+                      `${activeIndex === index ? 'bg-gray-100' : ''}`
+                    )}
+                  >{`${item.title}`}</motion.li>
+                );
+              })}
+            </ul>
+          )}
         </div>
       </section>
     </Layout>
