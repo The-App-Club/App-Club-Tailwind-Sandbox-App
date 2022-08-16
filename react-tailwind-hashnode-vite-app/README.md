@@ -4,3 +4,5 @@
   - [tailwindcss](https://tailwindcss.com/)
   - [demo](https://demos.creative-tim.com/soft-ui-dashboard-tailwind/pages/dashboard.html)
   - [dashboard design reference](https://dribbble.com/shots/18609074-Olcef-Admin-Dashboard)
+  - [flowbite search-input](https://flowbite.com/docs/forms/search-input/)
+  - [keyboard-navigable-list](https://codesandbox.io/s/keyboard-navigable-list-in-react-4d4jt?file=/src/App.js)
