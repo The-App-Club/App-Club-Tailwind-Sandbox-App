@@ -70,9 +70,13 @@ const reducer = (state, action) => {
 
 const EventPage = ({pageName, notifier}) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const escapePress = useKeyPress({expectedPressKey: 'Escape'});
-  const arrowDownPress = useKeyPress({expectedPressKey: 'ArrowDown'});
-  const arrowUpPress = useKeyPress({expectedPressKey: 'ArrowUp'});
+  const {keyPressed: escapePress} = useKeyPress({expectedPressKey: 'Escape'});
+  const {keyPressed: arrowDownPress, tik: arrowDownTik} = useKeyPress({
+    expectedPressKey: 'ArrowDown',
+  });
+  const {keyPressed: arrowUpPress, tik: arrowUpTik} = useKeyPress({
+    expectedPressKey: 'ArrowUp',
+  });
   const [filteredData, setFilteredData] = useState(data);
 
   const {activeIndex, resetActiveIndex, storeActiveIndex} = useActiveIndexStore(
@@ -105,13 +109,13 @@ const EventPage = ({pageName, notifier}) => {
     if (arrowUpPress) {
       storeActiveIndex({pressType: `arrowUp`, maxSize: filteredData.length});
     }
-  }, [arrowUpPress, filteredData]);
+  }, [arrowUpPress, filteredData, arrowUpTik]);
 
   useEffect(() => {
     if (arrowDownPress) {
       storeActiveIndex({pressType: `arrowDown`, maxSize: filteredData.length});
     }
-  }, [arrowDownPress, filteredData]);
+  }, [arrowDownPress, filteredData, arrowDownTik]);
 
   // useEffect(() => {
   //   const domList = itemsDomRef.map((itemDomRef) => {

@@ -3,13 +3,14 @@ import {useEffect, useState} from 'react';
 const useKeyPress = ({expectedPressKey}) => {
   // https://usehooks.com/useKeyPress/
   const [keyPressed, setKeyPressed] = useState(false);
+  const [tik, setTik] = useState(new Date());
 
   const downHandler = ({key}) => {
     if (key === expectedPressKey) {
       setKeyPressed(true);
+      setTik(new Date());
     }
   };
-
   const upHandler = ({key}) => {
     if (key === expectedPressKey) {
       setKeyPressed(false);
@@ -23,7 +24,7 @@ const useKeyPress = ({expectedPressKey}) => {
       window.removeEventListener('keyup', upHandler);
     };
   }, []);
-  return keyPressed;
+  return {keyPressed, tik};
 };
 
 export {useKeyPress};
