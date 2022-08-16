@@ -9,3 +9,4 @@
   - [awesome-tailwindcss](https://github.com/aniftyco/awesome-tailwindcss)
   - [tailwindcss-no-scrollbar](https://github.com/redwebcreation/tailwindcss-no-scrollbar)
   - [tailwind-scrollbar-hide](https://github.com/reslear/tailwind-scrollbar-hide)
+  - [control-focus-with-tabindex](https://web.dev/control-focus-with-tabindex/)

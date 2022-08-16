@@ -130,6 +130,7 @@ const HomePage = ({pageName, notifier}) => {
 
   const scrollContainerDomRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const {keyPressed: tabPress} = useKeyPress({expectedPressKey: 'Tab'});
   const {keyPressed: enterPress} = useKeyPress({expectedPressKey: 'Enter'});
   const {keyPressed: escapePress} = useKeyPress({expectedPressKey: 'Escape'});
   const {keyPressed: arrowDownPress, tik: arrowDownTik} = useKeyPress({
@@ -164,10 +165,26 @@ const HomePage = ({pageName, notifier}) => {
   useEffect(() => {
     if (escapePress) {
       searchInputRef.current.blur();
+      document.activeElement.blur();
     }
   }, [escapePress]);
 
+  const isTabActive = () => {
+    // better handling with className
+    const dom = document.activeElement;
+    if (dom.nodeName === `BODY`) {
+      return false;
+    }
+    if (dom.nodeName === `INPUT`) {
+      return false;
+    }
+    return true;
+  };
+
   useEffect(() => {
+    if (isTabActive()) {
+      return;
+    }
     if (arrowUpPress) {
       storeActiveIndex({pressType: `arrowUp`, maxSize: filteredData.length});
       if (activeIndex === 0) {
@@ -185,6 +202,9 @@ const HomePage = ({pageName, notifier}) => {
   }, [arrowUpPress, filteredData, arrowUpTik]);
 
   useEffect(() => {
+    if (isTabActive()) {
+      return;
+    }
     if (arrowDownPress) {
       storeActiveIndex({pressType: `arrowDown`, maxSize: filteredData.length});
       if (data.length === activeIndex + 1) {
@@ -199,9 +219,10 @@ const HomePage = ({pageName, notifier}) => {
   }, [arrowDownPress, filteredData, arrowDownTik]);
 
   useEffect(() => {
-    // document.activeElement !== searchInputRef.current
     if (enterPress) {
-      const {title} = filteredData[activeIndex];
+      const dom = document.activeElement;
+      const doIndex = dom.dataset.itemIndex || activeIndex;
+      const {title} = filteredData[doIndex];
       navigate('/result', {
         state: {title},
       });
@@ -306,15 +327,16 @@ const HomePage = ({pageName, notifier}) => {
                   width: 100%;
                   max-height: 20rem;
                 `,
-                'w-full border-2 rounded-lg bg-white overflow-hidden overflow-y-auto scrollbar-none'
+                'w-full border-2 rounded-lg bg-white overflow-hidden overflow-y-auto scrollbar-none p-2 flex flex-col gap-2'
               )}
             >
               {filteredData.map((item, index) => {
                 return (
                   <motion.li
                     key={index}
+                    data-item-index={index}
                     ref={itemsDomRef[index]}
-                    tabIndex={index + 2}
+                    tabIndex={0}
                     onClick={(e) => {
                       storeActiveIndex({
                         pressType: `select`,
@@ -328,7 +350,7 @@ const HomePage = ({pageName, notifier}) => {
                         height: 48px;
                         width: 100%;
                       `,
-                      `relative flex items-center gap-2 p-2 hover:cursor-pointer hover:bg-gray-100`,
+                      `relative flex items-center gap-2 p-2 hover:cursor-pointer hover:bg-gray-100 focus:outline-2 focus:outline-blue-300`,
                       `${activeIndex === index ? 'bg-gray-100' : ''}`
                     )}
                   >
