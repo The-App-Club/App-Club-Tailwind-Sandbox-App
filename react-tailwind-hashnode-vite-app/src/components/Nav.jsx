@@ -175,6 +175,9 @@ const Nav = ({tik, isRight = false, outerContainerDomRef}) => {
           <NavItem to={'/dashboard'}>
             <Link to={'/dashboard'}>Dashboard</Link>
           </NavItem>
+          <NavItem to={'/events'}>
+            <Link to={'/events'}>Events</Link>
+          </NavItem>
           <NavItem to={'/adsense'}>
             <Link to={'/adsense'}>Ads</Link>
           </NavItem>

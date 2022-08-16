@@ -9,69 +9,123 @@ import {useMemo} from 'react';
 import {motion} from 'framer-motion';
 import {useActiveIndexStore} from '../../hooks/useActiveIndexStore';
 import swal from 'sweetalert';
-import {Scrollbars} from 'rc-scrollbars';
+
+import {BiTrendingUp} from 'react-icons/bi';
+import {AiOutlineEnter} from 'react-icons/ai';
 
 const data = [
   {
     title: `sample 11`,
+    markIcon: () => {
+      return <BiTrendingUp size={24} />;
+    },
+    actionIcon: () => {
+      return <AiOutlineEnter size={16} />;
+    },
   },
   {
     title: `sample 12`,
+    markIcon: () => {
+      return <BiTrendingUp size={24} />;
+    },
+    actionIcon: () => {
+      return <AiOutlineEnter size={16} />;
+    },
   },
   {
     title: `sample 13`,
+    markIcon: () => {
+      return <BiTrendingUp size={24} />;
+    },
+    actionIcon: () => {
+      return <AiOutlineEnter size={16} />;
+    },
   },
   {
     title: `sample 21`,
+    markIcon: () => {
+      return <BiTrendingUp size={24} />;
+    },
+    actionIcon: () => {
+      return <AiOutlineEnter size={16} />;
+    },
   },
   {
     title: `sample 22`,
+    markIcon: () => {
+      return <BiTrendingUp size={24} />;
+    },
+    actionIcon: () => {
+      return <AiOutlineEnter size={16} />;
+    },
   },
   {
     title: `sample 31`,
+    markIcon: () => {
+      return <BiTrendingUp size={24} />;
+    },
+    actionIcon: () => {
+      return <AiOutlineEnter size={16} />;
+    },
   },
   {
     title: `sample 32`,
+    markIcon: () => {
+      return <BiTrendingUp size={24} />;
+    },
+    actionIcon: () => {
+      return <AiOutlineEnter size={16} />;
+    },
   },
   {
     title: `sample 33`,
+    markIcon: () => {
+      return <BiTrendingUp size={24} />;
+    },
+    actionIcon: () => {
+      return <AiOutlineEnter size={16} />;
+    },
   },
   {
     title: `sample 34`,
+    markIcon: () => {
+      return <BiTrendingUp size={24} />;
+    },
+    actionIcon: () => {
+      return <AiOutlineEnter size={16} />;
+    },
   },
   {
     title: `sample 41`,
+    markIcon: () => {
+      return <BiTrendingUp size={24} />;
+    },
+    actionIcon: () => {
+      return <AiOutlineEnter size={16} />;
+    },
   },
   {
     title: `sample 51`,
+    markIcon: () => {
+      return <BiTrendingUp size={24} />;
+    },
+    actionIcon: () => {
+      return <AiOutlineEnter size={16} />;
+    },
   },
   {
     title: `sample 52`,
+    markIcon: () => {
+      return <BiTrendingUp size={24} />;
+    },
+    actionIcon: () => {
+      return <AiOutlineEnter size={16} />;
+    },
   },
 ];
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'arrowUp':
-      return {
-        selectedIndex:
-          state.selectedIndex !== 0 ? state.selectedIndex - 1 : data.length - 1,
-      };
-    case 'arrowDown':
-      return {
-        selectedIndex:
-          state.selectedIndex !== data.length - 1 ? state.selectedIndex + 1 : 0,
-      };
-    case 'select':
-      return {selectedIndex: action.payload};
-    default:
-      throw new Error();
-  }
-};
-
 const EventPage = ({pageName, notifier}) => {
   const scrollContainerDomRef = useRef(null);
-  // const [hoverIndex, setHoverIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const {keyPressed: escapePress} = useKeyPress({expectedPressKey: 'Escape'});
   const {keyPressed: arrowDownPress, tik: arrowDownTik} = useKeyPress({
@@ -139,26 +193,6 @@ const EventPage = ({pageName, notifier}) => {
       );
     }
   }, [arrowDownPress, filteredData, arrowDownTik]);
-
-  // useEffect(() => {
-  //   if (hoverIndex) {
-  //     resetActiveIndex();
-  //     storeActiveIndex({pressType: `select`, selectedIndex: hoverIndex});
-  //   }
-  // }, [hoverIndex]);
-
-  // useEffect(() => {
-  //   const domList = itemsDomRef.map((itemDomRef) => {
-  //     return itemDomRef.current;
-  //   });
-  //   domList.forEach((dom) => {
-  //     dom.classList.remove('bg-gray-100');
-  //   });
-  //   const dom = itemsDomRef[activeIndex].current;
-  //   if (dom) {
-  //     dom.classList.add('bg-gray-100');
-  //   }
-  // }, [activeIndex]);
 
   const handleSearch = (e, index) => {
     const doIndex = index || activeIndex;
@@ -259,10 +293,10 @@ const EventPage = ({pageName, notifier}) => {
                   max-width: 100%;
                   width: 100%;
                   max-height: 20rem;
-                  overflow: hidden;
-                  overflow-y: auto;
+                  /* overflow: hidden;
+                  overflow-y: auto; */
                 `,
-                'w-full border-2 rounded-lg bg-white'
+                'w-full border-2 rounded-lg bg-white overflow-hidden overflow-y-auto scrollbar-none'
               )}
             >
               {filteredData.map((item, index) => {
@@ -270,28 +304,6 @@ const EventPage = ({pageName, notifier}) => {
                   <motion.li
                     key={index}
                     ref={itemsDomRef[index]}
-                    // onHoverStart={(e) => {
-                    //   const domList = itemsDomRef.map((itemDomRef) => {
-                    //     return itemDomRef.current;
-                    //   });
-                    //   domList.forEach((dom) => {
-                    //     dom.classList.remove('bg-gray-100');
-                    //   });
-                    //   const dom = itemsDomRef[index].current;
-                    //   if (dom) {
-                    //     dom.classList.add('bg-gray-100');
-                    //   }
-                    //   setHoverIndex(index);
-                    // }}
-                    // onHoverEnd={(e) => {
-                    //   const domList = itemsDomRef.map((itemDomRef) => {
-                    //     return itemDomRef.current;
-                    //   });
-                    //   domList.forEach((dom) => {
-                    //     dom.classList.remove('bg-gray-100');
-                    //   });
-                    //   setHoverIndex(null);
-                    // }}
                     onClick={(e) => {
                       storeActiveIndex({
                         pressType: `select`,
@@ -303,12 +315,21 @@ const EventPage = ({pageName, notifier}) => {
                     className={cx(
                       css`
                         height: 48px;
-                        /* width: 100%; */
+                        width: 100%;
                       `,
-                      `flex items-center p-2 hover:cursor-pointer hover:bg-gray-100`,
+                      `relative flex items-center gap-2 p-2 hover:cursor-pointer hover:bg-gray-100`,
                       `${activeIndex === index ? 'bg-gray-100' : ''}`
                     )}
-                  >{`${item.title}`}</motion.li>
+                  >
+                    {item.markIcon()}
+                    <span className={'text-lg'}>{`${item.title}`}</span>
+                    <span className="absolute right-2 flex items-center gap-2">
+                      {item.actionIcon()}
+                      <span className="text-xs text-gray-600 font-medium">
+                        enter
+                      </span>
+                    </span>
+                  </motion.li>
                 );
               })}
             </ul>
