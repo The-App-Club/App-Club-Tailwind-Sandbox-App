@@ -102,11 +102,12 @@ const EventPage = ({pageName, notifier}) => {
   useEffect(() => {
     searchInputRef.current.focus();
   }, []);
-  // useEffect(() => {
-  //   if (escapePress) {
-  //     searchInputRef.current.blur();
-  //   }
-  // }, [escapePress]);
+
+  useEffect(() => {
+    if (escapePress) {
+      searchInputRef.current.blur();
+    }
+  }, [escapePress]);
 
   useEffect(() => {
     if (arrowUpPress) {
@@ -166,7 +167,10 @@ const EventPage = ({pageName, notifier}) => {
       console.log(`[do search]`, searchTerm);
       swal('You search term is..', searchTerm);
       searchInputRef.current.focus();
-      return;
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        searchInputRef.current.blur();
+        return;
+      }
     }
   };
 
