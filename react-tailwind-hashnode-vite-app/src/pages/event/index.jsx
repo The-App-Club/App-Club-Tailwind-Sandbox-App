@@ -71,7 +71,7 @@ const reducer = (state, action) => {
 
 const EventPage = ({pageName, notifier}) => {
   const scrollContainerDomRef = useRef(null);
-  const [hoverIndex, setHoverIndex] = useState(null);
+  // const [hoverIndex, setHoverIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const {keyPressed: escapePress} = useKeyPress({expectedPressKey: 'Escape'});
   const {keyPressed: arrowDownPress, tik: arrowDownTik} = useKeyPress({
@@ -139,13 +139,12 @@ const EventPage = ({pageName, notifier}) => {
     }
   }, [arrowDownPress, filteredData, arrowDownTik]);
 
-  useEffect(() => {
-    if (hoverIndex) {
-      console.log('do');
-      resetActiveIndex();
-      storeActiveIndex({pressType: `select`, selectedIndex: hoverIndex});
-    }
-  }, [hoverIndex]);
+  // useEffect(() => {
+  //   if (hoverIndex) {
+  //     resetActiveIndex();
+  //     storeActiveIndex({pressType: `select`, selectedIndex: hoverIndex});
+  //   }
+  // }, [hoverIndex]);
 
   // useEffect(() => {
   //   const domList = itemsDomRef.map((itemDomRef) => {
