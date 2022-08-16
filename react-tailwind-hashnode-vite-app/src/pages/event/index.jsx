@@ -1,7 +1,7 @@
 import {Spacer} from '../../components/Spacer';
 import {css, cx} from '@emotion/css';
 import {default as Layout} from '../../layouts/default';
-import {createRef, useEffect, useState} from 'react';
+import {createRef, useCallback, useEffect, useState} from 'react';
 import {useRef} from 'react';
 import {useKeyPress} from '../../hooks/useKeyPress';
 import {useDebouncedCallback} from 'use-debounce';
@@ -12,6 +12,7 @@ import swal from 'sweetalert';
 
 import {BiTrendingUp} from 'react-icons/bi';
 import {AiOutlineEnter} from 'react-icons/ai';
+import {useNavigate} from 'react-router-dom';
 
 const data = [
   {
@@ -125,8 +126,11 @@ const data = [
 ];
 
 const EventPage = ({pageName, notifier}) => {
+  const navigate = useNavigate();
+
   const scrollContainerDomRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const {keyPressed: enterPress} = useKeyPress({expectedPressKey: 'Enter'});
   const {keyPressed: escapePress} = useKeyPress({expectedPressKey: 'Escape'});
   const {keyPressed: arrowDownPress, tik: arrowDownTik} = useKeyPress({
     expectedPressKey: 'ArrowDown',
@@ -194,17 +198,26 @@ const EventPage = ({pageName, notifier}) => {
     }
   }, [arrowDownPress, filteredData, arrowDownTik]);
 
+  useEffect(() => {
+    // document.activeElement !== searchInputRef.current
+    if (enterPress) {
+      const {title} = filteredData[activeIndex];
+      navigate('/result', {
+        state: {title},
+      });
+    }
+  }, [enterPress, filteredData, activeIndex]);
+
   const handleSearch = (e, index) => {
     const doIndex = index || activeIndex;
-    const searchTerm = itemsDomRef[doIndex].current.textContent;
-    if (searchTerm) {
-      console.log(`[do search]`, searchTerm);
-      swal('You search term is..', searchTerm);
-      searchInputRef.current.focus();
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        searchInputRef.current.blur();
-        return;
-      }
+    const {title} = filteredData[doIndex];
+    navigate('/result', {
+      state: {title},
+    });
+    searchInputRef.current.focus();
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      searchInputRef.current.blur();
+      return;
     }
   };
 
@@ -275,13 +288,12 @@ const EventPage = ({pageName, notifier}) => {
               <button
                 type="submit"
                 className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
-                onClick={handleSearch}
+                onClick={(e) => {}}
               >
-                Search
+                Esc
               </button>
             </div>
           </form>
-          {/* <span>{activeIndex}</span> */}
           <p className="py-2">press key arrow down or arrow up.</p>
           {filteredData.length === 0 ? (
             <p>No match.</p>
@@ -293,8 +305,6 @@ const EventPage = ({pageName, notifier}) => {
                   max-width: 100%;
                   width: 100%;
                   max-height: 20rem;
-                  /* overflow: hidden;
-                  overflow-y: auto; */
                 `,
                 'w-full border-2 rounded-lg bg-white overflow-hidden overflow-y-auto scrollbar-none'
               )}
@@ -304,6 +314,7 @@ const EventPage = ({pageName, notifier}) => {
                   <motion.li
                     key={index}
                     ref={itemsDomRef[index]}
+                    tabIndex={index + 2}
                     onClick={(e) => {
                       storeActiveIndex({
                         pressType: `select`,

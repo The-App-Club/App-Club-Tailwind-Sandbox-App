@@ -28,6 +28,7 @@ import './styles/index.css';
 import './styles/index.scss';
 import {Footer} from './components/Footer';
 import {Header} from './components/Header';
+import {ResultPage} from './pages/result';
 
 const App = () => {
   const navigate = useNavigate();
@@ -129,6 +130,15 @@ const App = () => {
               path="/events"
               element={
                 <EventPage
+                  pageName={location.pathname}
+                  notifier={navCloseNotifierWhenRouting}
+                />
+              }
+            />
+            <Route
+              path="/result"
+              element={
+                <ResultPage
                   pageName={location.pathname}
                   notifier={navCloseNotifierWhenRouting}
                 />
