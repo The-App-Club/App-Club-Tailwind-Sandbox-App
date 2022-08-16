@@ -73,27 +73,44 @@ const DashboardSummaryCard = ({
         >
           {`${count}`}
         </motion.span>
-        <motion.span
-          initial={{
-            x: 60,
-            opacity: 0,
-          }}
-          transition={{
-            duration: 0.6,
-            ease: `easeInOut`,
-          }}
-          animate={deltaControls}
-          className={`flex items-center font-bold text-sm ${
-            delta > 0 ? 'text-green-600' : 'text-red-600'
-          }`}
-        >
-          {`${delta}%`}
-          {delta > 0 ? (
+
+        {delta > 0 ? (
+          <motion.span
+            initial={{
+              x: -60,
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: `easeInOut`,
+            }}
+            animate={deltaControls}
+            className={`flex items-center font-bold text-sm ${
+              delta > 0 ? 'text-green-600' : 'text-red-600'
+            }`}
+          >
+            {`${delta}%`}
             <CgArrowTopRight size={24} />
-          ) : (
+          </motion.span>
+        ) : (
+          <motion.span
+            initial={{
+              x: 60,
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: `easeInOut`,
+            }}
+            animate={deltaControls}
+            className={`flex items-center font-bold text-sm ${
+              delta > 0 ? 'text-green-600' : 'text-red-600'
+            }`}
+          >
+            {`${delta}%`}
             <CgArrowBottomLeft size={24} />
-          )}
-        </motion.span>
+          </motion.span>
+        )}
       </div>
       <motion.div
         initial={{
