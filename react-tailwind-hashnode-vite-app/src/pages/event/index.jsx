@@ -9,6 +9,7 @@ import {useMemo} from 'react';
 import {motion} from 'framer-motion';
 import {useActiveIndexStore} from '../../hooks/useActiveIndexStore';
 import swal from 'sweetalert';
+import {Scrollbars} from 'rc-scrollbars';
 
 const data = [
   {
@@ -69,6 +70,8 @@ const reducer = (state, action) => {
 };
 
 const EventPage = ({pageName, notifier}) => {
+  const scrollContainerDomRef = useRef(null);
+  const [hoverIndex, setHoverIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const {keyPressed: escapePress} = useKeyPress({expectedPressKey: 'Escape'});
   const {keyPressed: arrowDownPress, tik: arrowDownTik} = useKeyPress({
@@ -108,14 +111,41 @@ const EventPage = ({pageName, notifier}) => {
   useEffect(() => {
     if (arrowUpPress) {
       storeActiveIndex({pressType: `arrowUp`, maxSize: filteredData.length});
+      if (activeIndex === 0) {
+        scrollContainerDomRef.current.scrollTo(
+          0,
+          scrollContainerDomRef.current.offsetHeight
+        );
+        return;
+      }
+      scrollContainerDomRef.current.scrollTo(
+        0,
+        Math.max(0, activeIndex - 3) * 48 // 3 is offset
+      );
     }
   }, [arrowUpPress, filteredData, arrowUpTik]);
 
   useEffect(() => {
     if (arrowDownPress) {
       storeActiveIndex({pressType: `arrowDown`, maxSize: filteredData.length});
+      if (data.length === activeIndex + 1) {
+        scrollContainerDomRef.current.scrollTo(0, 0);
+        return;
+      }
+      scrollContainerDomRef.current.scrollTo(
+        0,
+        Math.max(0, activeIndex - 2) * 48 // 2 is offset
+      );
     }
   }, [arrowDownPress, filteredData, arrowDownTik]);
+
+  useEffect(() => {
+    if (hoverIndex) {
+      console.log('do');
+      resetActiveIndex();
+      storeActiveIndex({pressType: `select`, selectedIndex: hoverIndex});
+    }
+  }, [hoverIndex]);
 
   // useEffect(() => {
   //   const domList = itemsDomRef.map((itemDomRef) => {
@@ -219,12 +249,46 @@ const EventPage = ({pageName, notifier}) => {
           {filteredData.length === 0 ? (
             <p>No match.</p>
           ) : (
-            <ul className="w-full bg-white border-2 rounded-lg">
+            <ul
+              ref={scrollContainerDomRef}
+              className={cx(
+                css`
+                  max-width: 100%;
+                  width: 100%;
+                  max-height: 20rem;
+                  overflow: hidden;
+                  overflow-y: auto;
+                `,
+                'w-full border-2 rounded-lg bg-white'
+              )}
+            >
               {filteredData.map((item, index) => {
                 return (
                   <motion.li
                     key={index}
                     ref={itemsDomRef[index]}
+                    // onHoverStart={(e) => {
+                    //   const domList = itemsDomRef.map((itemDomRef) => {
+                    //     return itemDomRef.current;
+                    //   });
+                    //   domList.forEach((dom) => {
+                    //     dom.classList.remove('bg-gray-100');
+                    //   });
+                    //   const dom = itemsDomRef[index].current;
+                    //   if (dom) {
+                    //     dom.classList.add('bg-gray-100');
+                    //   }
+                    //   setHoverIndex(index);
+                    // }}
+                    // onHoverEnd={(e) => {
+                    //   const domList = itemsDomRef.map((itemDomRef) => {
+                    //     return itemDomRef.current;
+                    //   });
+                    //   domList.forEach((dom) => {
+                    //     dom.classList.remove('bg-gray-100');
+                    //   });
+                    //   setHoverIndex(null);
+                    // }}
                     onClick={(e) => {
                       storeActiveIndex({
                         pressType: `select`,
@@ -234,8 +298,11 @@ const EventPage = ({pageName, notifier}) => {
                       handleSearch(e, index);
                     }}
                     className={cx(
-                      css``,
-                      `p-2 hover:cursor-pointer`,
+                      css`
+                        height: 48px;
+                        /* width: 100%; */
+                      `,
+                      `flex items-center p-2 hover:cursor-pointer hover:bg-gray-100`,
                       `${activeIndex === index ? 'bg-gray-100' : ''}`
                     )}
                   >{`${item.title}`}</motion.li>
