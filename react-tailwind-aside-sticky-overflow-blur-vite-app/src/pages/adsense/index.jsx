@@ -4,8 +4,10 @@ import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import {useNavOpenState} from '../../hooks/useNavOpenState';
 import {motion} from 'framer-motion';
+import {useNavigate} from 'react-router-dom';
 
 const AdsPage = ({pageName, notifier}) => {
+  const navigate = useNavigate();
   const data = [
     {
       title: `React`,
@@ -64,21 +66,17 @@ const AdsPage = ({pageName, notifier}) => {
             className={cx(
               css`
                 .splide__arrow--prev {
-                  left: -1.35rem;
+                  left: -0rem;
                   @media (max-width: 1200px) {
-                    left: -0.75rem;
                   }
                   @media (max-width: 768px) {
-                    left: -0rem;
                   }
                 }
                 .splide__arrow--next {
-                  right: -1.35rem;
+                  right: -0rem;
                   @media (max-width: 1200px) {
-                    right: -0.75rem;
                   }
                   @media (max-width: 768px) {
-                    right: -0rem;
                   }
                 }
               `
@@ -96,6 +94,13 @@ const AdsPage = ({pageName, notifier}) => {
                 <SplideSlide
                   key={index}
                   className="flex items-center justify-center hover:bg-slate-100 hover:cursor-pointer"
+                  onClick={(e) => {
+                    navigate('/tag', {
+                      state: {
+                        tag: item.title,
+                      },
+                    });
+                  }}
                 >
                   <div
                     className={cx(

@@ -1,9 +1,8 @@
 import {createRoot} from 'react-dom/client';
-import {css, cx} from '@emotion/css';
-import {useEffect, useCallback, useMemo, useRef, useState} from 'react';
+import {css} from '@emotion/css';
+import {useCallback, useRef, useState} from 'react';
 import {
   BrowserRouter,
-  Link,
   Route,
   Routes,
   useLocation,
@@ -11,12 +10,11 @@ import {
 } from 'react-router-dom';
 
 import {ScrollToTop} from './components/ScrollToTop';
-import {Nav} from './components/Nav';
 
 import {HomePage} from './pages/home';
-import {AdsPage} from './pages/adsense';
+import {TagPage} from './pages/tag';
 
-import logo from './assets/logo.png';
+import {AdsPage} from './pages/adsense';
 
 import '@fontsource/inter';
 import './styles/index.css';
@@ -25,8 +23,6 @@ import {Footer} from './components/Footer';
 import {Header} from './components/Header';
 
 const App = () => {
-  const navigate = useNavigate();
-
   const outerContainerDomRef = useRef(null);
   const [tik, setTik] = useState(null);
 
@@ -79,6 +75,15 @@ const App = () => {
               path="/adsense"
               element={
                 <AdsPage
+                  pageName={location.pathname}
+                  notifier={navCloseNotifierWhenRouting}
+                />
+              }
+            />
+            <Route
+              path="/tag"
+              element={
+                <TagPage
                   pageName={location.pathname}
                   notifier={navCloseNotifierWhenRouting}
                 />
