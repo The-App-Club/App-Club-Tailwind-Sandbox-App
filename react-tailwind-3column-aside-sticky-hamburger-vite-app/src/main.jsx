@@ -9,6 +9,9 @@ import {Footer} from './components/Footer';
 import {HomePage} from './pages/home';
 import {AdsPage} from './pages/adsense';
 import {TagPage} from './pages/tag';
+import {TopicPage} from './pages/topics';
+import {MomentPage} from './pages/moments';
+import {NotificationPage} from './pages/notification';
 
 import '@fontsource/inter';
 import './styles/index.css';
@@ -68,6 +71,27 @@ const App = () => {
               path="/tag"
               element={
                 <TagPage pageName={location.pathname} notifier={setOpen} />
+              }
+            />
+            <Route
+              path="/topic"
+              element={
+                <TopicPage pageName={location.pathname} notifier={setOpen} />
+              }
+            />
+            <Route
+              path="/moment"
+              element={
+                <MomentPage pageName={location.pathname} notifier={setOpen} />
+              }
+            />
+            <Route
+              path="/notification"
+              element={
+                <NotificationPage
+                  pageName={location.pathname}
+                  notifier={setOpen}
+                />
               }
             />
           </Routes>

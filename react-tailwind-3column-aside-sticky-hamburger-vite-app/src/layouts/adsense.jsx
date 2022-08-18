@@ -1,6 +1,7 @@
 import {css, cx} from '@emotion/css';
 import {default as Layout} from './default';
-import {AdsSidebar} from '../components/AdsSidebar';
+import {SidebarAds} from '../components/SidebarAds';
+import {SidebarMenu} from '../components/SidebarMenu';
 
 const AdsPageLayout = ({pageName, notifier, children}) => {
   return (
@@ -20,7 +21,7 @@ const AdsPageLayout = ({pageName, notifier, children}) => {
             `p-2 flex w-full items-start gap-4`
           )}
         >
-          <AdsSidebar
+          <SidebarMenu
             className={css`
               position: sticky;
               top: 3rem;
@@ -30,7 +31,7 @@ const AdsPageLayout = ({pageName, notifier, children}) => {
             `}
           />
           {children}
-          <AdsSidebar
+          <SidebarAds
             className={css`
               position: sticky;
               top: 3rem;

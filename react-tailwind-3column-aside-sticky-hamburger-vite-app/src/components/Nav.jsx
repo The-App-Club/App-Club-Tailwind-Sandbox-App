@@ -6,9 +6,16 @@ import {css, cx} from '@emotion/css';
 import {Link, useNavigate} from 'react-router-dom';
 import {Hamburger} from './Hamburger';
 
+import {FiTwitter} from 'react-icons/fi';
+import {MdOutlineNotifications} from 'react-icons/md';
+import {BiDotsHorizontalRounded} from 'react-icons/bi';
+import {MdOutlineChat} from 'react-icons/md';
+import {GrBeacon} from 'react-icons/gr';
+import {RiAdvertisementLine} from 'react-icons/ri';
+
 import logo from '../assets/logo.png';
 
-const MenuItem = ({path, menuTitle}) => {
+const MenuItem = ({path, menuTitle, icon}) => {
   const navigate = useNavigate();
 
   return (
@@ -22,7 +29,7 @@ const MenuItem = ({path, menuTitle}) => {
           align-items: center;
           padding-left: 1rem;
         `,
-        'hover:bg-gray-100 hover:cursor-pointer'
+        'hover:border-l-2 hover:border-blue-900 hover:bg-gray-100 hover:cursor-pointer gap-2'
       )}
       onClick={(e) => {
         navigate(path, {
@@ -30,7 +37,8 @@ const MenuItem = ({path, menuTitle}) => {
         });
       }}
     >
-      <Link to={'/'}>{menuTitle}</Link>
+      {icon()}
+      <Link to={path}>{menuTitle}</Link>
     </li>
   );
 };
@@ -121,8 +129,41 @@ const Nav = ({open, setOpen, isTrigger, setIsTrigger, handleClick}) => {
             flex-direction: column;
           `}
         >
-          <MenuItem path={'/'} menuTitle={'Home'} />
-          <MenuItem path={'/adsense'} menuTitle={'Ads'} />
+          <MenuItem
+            path={'/'}
+            menuTitle={'Home'}
+            icon={() => {
+              return <FiTwitter size={24} />;
+            }}
+          />
+          <MenuItem
+            path={'/adsense'}
+            menuTitle={'Ads'}
+            icon={() => {
+              return <RiAdvertisementLine size={24} />;
+            }}
+          />
+          <MenuItem
+            path={'/topic'}
+            menuTitle={'Topics'}
+            icon={() => {
+              return <MdOutlineChat size={24} />;
+            }}
+          />
+          <MenuItem
+            path={'/moment'}
+            menuTitle={'Moments'}
+            icon={() => {
+              return <GrBeacon size={24} />;
+            }}
+          />
+          <MenuItem
+            path={'/notification'}
+            menuTitle={'Notification'}
+            icon={() => {
+              return <MdOutlineNotifications size={24} />;
+            }}
+          />
         </ul>
       </div>
     </nav>

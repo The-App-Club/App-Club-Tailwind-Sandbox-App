@@ -75,7 +75,7 @@ const AdsPage = ({pageName, notifier}) => {
               return (
                 <SplideSlide
                   key={index}
-                  className="flex items-center justify-center hover:bg-gray-100 hover:cursor-pointer"
+                  className="hover:border-b-2 hover:border-blue-900 flex items-center justify-center hover:bg-gray-100 hover:cursor-pointer"
                   onClick={(e) => {
                     navigate('/tag', {
                       state: {
@@ -92,7 +92,21 @@ const AdsPage = ({pageName, notifier}) => {
                       'flex items-center justify-center'
                     )}
                   >
-                    <span className="text-xl">{item.title}</span>
+                    <span
+                      className="text-xl"
+                      className={cx(
+                        css`
+                          font-size: 1.25rem;
+                          line-height: 1.75rem;
+                          @media (max-width: 768px) {
+                            font-size: 0.875rem;
+                            line-height: 1.25rem;
+                          }
+                        `
+                      )}
+                    >
+                      {item.title}
+                    </span>
                   </div>
                 </SplideSlide>
               );

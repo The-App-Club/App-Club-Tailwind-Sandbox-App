@@ -1,7 +1,7 @@
 import {css, cx} from '@emotion/css';
 import {Scrollbars} from 'rc-scrollbars';
 
-const AdsSidebar = ({className}) => {
+const SidebarAds = ({className}) => {
   return (
     <aside
       className={cx(
@@ -78,4 +78,4 @@ const AdsSidebar = ({className}) => {
   );
 };
 
-export {AdsSidebar};
+export {SidebarAds};
