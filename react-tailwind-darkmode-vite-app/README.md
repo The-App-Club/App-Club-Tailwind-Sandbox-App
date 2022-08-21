@@ -10,3 +10,4 @@
   - [tailwindcss-no-scrollbar](https://github.com/redwebcreation/tailwindcss-no-scrollbar)
   - [tailwind-scrollbar-hide](https://github.com/reslear/tailwind-scrollbar-hide)
   - [use-transform](https://www.framer.com/docs/use-transform/)
+  - [advanced-tailwindcss](https://zenn.dev/ixkaito/articles/advanced-tailwindcss)

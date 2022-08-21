@@ -5,7 +5,7 @@ import {FiTwitter} from 'react-icons/fi';
 import {MdOutlineNotifications} from 'react-icons/md';
 import {BiDotsHorizontalRounded} from 'react-icons/bi';
 import {MdOutlineChat} from 'react-icons/md';
-import {GrBeacon} from 'react-icons/gr';
+import {BiTimeFive} from 'react-icons/bi';
 
 import {
   Menu,
@@ -68,11 +68,28 @@ const SidebarMenu = ({className}) => {
         name: `Moments`,
         pathname: `/moment`,
         icon: () => {
-          return <GrBeacon size={24} />;
+          return <BiTimeFive size={24} />;
         },
       },
     ];
   }, []);
+  // https://szhsin.github.io/react-menu#classname-prop
+  const menuItemClassName = ({hover}) => {
+    return hover
+      ? cx(
+          css`
+            padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+          `,
+          `flex items-center gap-2 p-2 hover:cursor-pointer`,
+          `my-menuitem-hover`
+        )
+      : cx(
+          css`
+            padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+          `,
+          `flex items-center gap-2 p-2 hover:cursor-pointer`
+        );
+  };
 
   return (
     <aside
@@ -144,7 +161,14 @@ const SidebarMenu = ({className}) => {
               css`
                 display: ${menuData.length > 0 ? 'block' : 'none'};
               `,
-              `dark:bg-slate-700 dark:text-white`
+              `bebop-custom-menu`,
+              css`
+                .my-menuitem-hover {
+                  background-color: ${darkMode.value
+                    ? 'rgb(30 41 59 / var(--tw-bg-opacity))'
+                    : 'rgb(243 244 246 / var(--tw-bg-opacity))'};
+                }
+              `
             )}
           >
             {menuData.map((menuItem, index) => {
@@ -159,14 +183,7 @@ const SidebarMenu = ({className}) => {
                     `
                   )}
                 >
-                  <MenuItem
-                    className={cx(
-                      css`
-                        padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-                      `,
-                      `flex items-center gap-2 p-2 hover:cursor-pointer`
-                    )}
-                  >
+                  <MenuItem className={menuItemClassName}>
                     {menuItem.icon()}
                     <span
                       className={css`

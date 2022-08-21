@@ -18,3 +18,12 @@ body {
   overflow: hidden;
   overflow-y: auto;
 }
+
+.bebop-custom-menu {
+  ul {
+    @apply dark:bg-slate-700 dark:text-white;
+    li {
+      @apply dark:text-white;
+    }
+  }
+}
