@@ -9,8 +9,20 @@ import profile2 from '../assets/profile2.png';
 import profile3 from '../assets/profile3.png';
 
 const MainFeed = ({feedType}) => {
+  const handleContentClick = (e) => {
+    console.log('Content Clicked');
+  };
+
+  const handleUserClick = (e) => {
+    e.stopPropagation();
+    console.log('User Clicked');
+  };
+
   return (
-    <div className="max-w-7xl w-full  border-2 p-4 rounded-lg hover:cursor-pointer hover:bg-slate-50">
+    <div
+      className="max-w-7xl w-full  border-2 p-4 rounded-lg hover:cursor-pointer hover:bg-slate-50"
+      onClick={handleContentClick}
+    >
       <div className="flex items-center gap-1 relative">
         <img
           src={profile1}
@@ -18,7 +30,12 @@ const MainFeed = ({feedType}) => {
           className={`w-16 rounded-full hover:cursor-pointer`}
         />
         <div className="flex items-start flex-col gap-1">
-          <span className="font-bold hover:cursor-pointer">nap5</span>
+          <span
+            className="font-bold hover:cursor-pointer"
+            onClick={handleUserClick}
+          >
+            nap5
+          </span>
           <div className="flex items-start gap-1">
             <span className="hover:cursor-pointer">example.com</span>
             <span>21 hours ago</span>
@@ -76,8 +93,16 @@ const MainFeed = ({feedType}) => {
 };
 
 const Tag = ({tagName}) => {
+  const handleTagClick = (e) => {
+    e.stopPropagation();
+    console.log('Tag Clicked');
+  };
+
   return (
-    <span className="border-2 p-2 rounded-lg hover:cursor-pointer">
+    <span
+      className="border-2 p-2 rounded-lg hover:cursor-pointer"
+      onClick={handleTagClick}
+    >
       {tagName}
     </span>
   );

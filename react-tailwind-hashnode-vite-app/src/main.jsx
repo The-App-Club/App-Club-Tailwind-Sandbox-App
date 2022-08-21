@@ -20,6 +20,7 @@ import {PricePage} from './pages/price';
 import {DashboardPage} from './pages/dashboard';
 import {AdsPage} from './pages/adsense';
 import {EventPage} from './pages/event';
+import {TagPage} from './pages/tag';
 
 import logo from './assets/logo.png';
 
@@ -139,6 +140,15 @@ const App = () => {
               path="/result"
               element={
                 <ResultPage
+                  pageName={location.pathname}
+                  notifier={navCloseNotifierWhenRouting}
+                />
+              }
+            />
+            <Route
+              path="/tag"
+              element={
+                <TagPage
                   pageName={location.pathname}
                   notifier={navCloseNotifierWhenRouting}
                 />
