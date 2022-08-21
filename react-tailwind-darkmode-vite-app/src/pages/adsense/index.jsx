@@ -85,13 +85,6 @@ const AdsPage = ({pageName, notifier}) => {
                 <SplideSlide
                   key={index}
                   className={cx(css``, ` flex items-center justify-center`)}
-                  onClick={(e) => {
-                    navigate('/tag', {
-                      state: {
-                        tag: item.title,
-                      },
-                    });
-                  }}
                 >
                   <div
                     className={cx(
@@ -102,6 +95,13 @@ const AdsPage = ({pageName, notifier}) => {
                       `hover:cursor-pointer`,
                       `hover:bg-gray-100 dark:hover:bg-slate-800`
                     )}
+                    onClick={(e) => {
+                      navigate('/tag', {
+                        state: {
+                          tag: item.title,
+                        },
+                      });
+                    }}
                   >
                     <span
                       className="text-xl"

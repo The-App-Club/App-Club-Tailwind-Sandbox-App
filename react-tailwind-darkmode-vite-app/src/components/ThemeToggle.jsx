@@ -40,7 +40,7 @@ const ThemeToggle = ({className}) => {
           --light: #eeeeee;
           --dark: #a5c9ca;
           position: relative;
-          width: 70px;
+          width: 55px;
         `}
       >
         <label
@@ -66,7 +66,7 @@ const ThemeToggle = ({className}) => {
                 background-color: var(--dark);
               }
               &:checked ~ .slider::before {
-                transform: translateX(32px);
+                transform: translateX(20px);
                 content: url('data:image/svg+xml;base64,PHN2ZyBzdHJva2U9ImN1cnJlbnRDb2xvciIgZmlsbD0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgY29sb3I9IiMxQzM4NzkiIGhlaWdodD0iMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBzdHlsZT0iY29sb3I6IHJnYigyOCwgNTYsIDEyMSk7Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDBWMHoiPjwvcGF0aD48cGF0aCBkPSJNMTIuMDEgMTJjMC0zLjU3IDIuMi02LjYyIDUuMzEtNy44Ny44OS0uMzYuNzUtMS42OS0uMTktMS45LTEuMS0uMjQtMi4yNy0uMy0zLjQ4LS4xNC00LjUxLjYtOC4xMiA0LjMxLTguNTkgOC44M0M0LjQ0IDE2LjkzIDkuMTMgMjIgMTUuMDEgMjJjLjczIDAgMS40My0uMDggMi4xMi0uMjMuOTUtLjIxIDEuMS0xLjUzLjItMS45QTguNDYgOC40NiAwIDAxMTIuMDEgMTJ6Ij48L3BhdGg+PC9zdmc+');
               }
             `}
