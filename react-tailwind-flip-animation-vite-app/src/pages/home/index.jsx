@@ -10,9 +10,15 @@ const HomePage = ({pageName, notifier}) => {
         className={cx(`max-w-7xl mx-auto w-full h-full relative`, css``)}
       >
         <h2 className="text-3xl flex items-center justify-center">HomePage</h2>
-        {[...Array(300)].map((_, index) => {
-          return <p key={index}>{`something... ${index}`}</p>;
-          // return <Spacer key={index} height="30rem" />;
+        {[...Array(30)].map((_, index) => {
+          return (
+            <p
+              key={index}
+              className={css`
+                min-height: 4rem;
+              `}
+            >{`something... ${index}`}</p>
+          );
         })}
       </section>
     </Layout>

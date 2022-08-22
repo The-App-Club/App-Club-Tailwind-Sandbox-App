@@ -43,10 +43,28 @@ const Layout = ({children, pageName, notifier}) => {
         notifier();
       }}
     >
+      <div
+        className={cx(
+          css`
+            min-height: calc(100vh - 1.5rem);
+            display: none;
+            @media (max-width: 768px) {
+              display: block;
+            }
+          `,
+          `w-full h-full border-x-2 border-t-2`
+        )}
+      >
+        {children}
+      </div>
       <Scrollbars
         className={cx(
           css`
             min-height: calc(100vh - 1.5rem);
+            display: block;
+            @media (max-width: 768px) {
+              display: none;
+            }
           `,
           `w-full h-full border-x-2 border-t-2`
         )}

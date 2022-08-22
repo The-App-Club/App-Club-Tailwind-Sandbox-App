@@ -76,10 +76,14 @@ const App = () => {
             )}
           >
             <Breadcrumbs
-              className={css`
-                padding-left: 0.5rem;
-                width: 100%;
-              `}
+              className={cx(
+                css`
+                  position: sticky;
+                  top: 3rem;
+                  z-index: 1;
+                `,
+                `w-full pl-2 bg-white`
+              )}
               notifier={doAutoCloseSideBar}
             />
             <article className="w-full h-full">
