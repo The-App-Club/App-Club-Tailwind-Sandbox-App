@@ -82,7 +82,7 @@ const App = () => {
               `}
               notifier={doAutoCloseSideBar}
             />
-            <article>
+            <article className="w-full h-full">
               <Routes location={location}>
                 <Route
                   path={'/'}
@@ -106,7 +106,7 @@ const App = () => {
             </article>
           </main>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );

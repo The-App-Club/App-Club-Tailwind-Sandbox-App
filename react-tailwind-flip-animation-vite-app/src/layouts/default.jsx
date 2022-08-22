@@ -46,10 +46,9 @@ const Layout = ({children, pageName, notifier}) => {
       <Scrollbars
         className={cx(
           css`
-            width: 100%;
-            min-height: calc(100vh - 6rem);
+            min-height: calc(100vh - 1.5rem);
           `,
-          `border-2`
+          `w-full h-full border-x-2 border-t-2`
         )}
       >
         {children}
