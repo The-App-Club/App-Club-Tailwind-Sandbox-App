@@ -5,7 +5,6 @@ const Hamburger = ({open, handleClick, className}) => {
     <div
       className={cx(
         css`
-          z-index: 1;
           width: 32px;
           height: 32px;
         `,

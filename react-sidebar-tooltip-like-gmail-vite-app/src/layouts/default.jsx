@@ -1,8 +1,6 @@
 import {css} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {memo} from 'react';
-import {Footer} from '../components/Footer';
-
 const motionConfig = {
   initial: {
     x: 0,
@@ -36,22 +34,12 @@ const Layout = ({children, pageName, notifier}) => {
         position: relative;
         width: 100%;
       `}
-      onAnimationStart={(e) => {
-        // const html = document.documentElement;
-        // const body = html.querySelector('body');
-        // html.classList.add('loading');
-        // body.classList.add('loading');
-      }}
+      onAnimationStart={(e) => {}}
       onAnimationComplete={(e) => {
-        // const html = document.documentElement;
-        // const body = html.querySelector('body');
-        // html.classList.remove('loading');
-        // body.classList.remove('loading');
         notifier();
       }}
     >
       {children}
-      <Footer />
     </motion.div>
   );
 };

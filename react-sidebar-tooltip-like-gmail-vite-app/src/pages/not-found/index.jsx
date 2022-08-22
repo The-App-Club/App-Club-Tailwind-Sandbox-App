@@ -1,5 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {Link} from 'react-router-dom';
+import {Spacer} from '../../components/Spacer';
 import {default as Layout} from '../../layouts/default';
 
 const NotFoundPage = ({pageName, notifier}) => {
@@ -17,6 +18,7 @@ const NotFoundPage = ({pageName, notifier}) => {
         <Link to={'/'} className={`hover:underline`}>
           Back to home
         </Link>
+        <Spacer height="300vh" />
       </section>
     </Layout>
   );
