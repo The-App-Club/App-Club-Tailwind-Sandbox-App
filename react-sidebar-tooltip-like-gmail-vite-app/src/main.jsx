@@ -114,7 +114,7 @@ const App = () => {
             </Scrollbars>
           </main>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

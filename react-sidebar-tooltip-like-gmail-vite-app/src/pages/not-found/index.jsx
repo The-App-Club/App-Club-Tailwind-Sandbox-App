@@ -18,7 +18,6 @@ const NotFoundPage = ({pageName, notifier}) => {
         <Link to={'/'} className={`hover:underline`}>
           Back to home
         </Link>
-        <Spacer height="300vh" />
       </section>
     </Layout>
   );
