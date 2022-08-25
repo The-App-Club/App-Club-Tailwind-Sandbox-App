@@ -118,7 +118,7 @@ const DashboardTable = ({gutter = `1rem`}) => {
               flex-direction: column;
             }
           `,
-          `relative w-full p-4`
+          `relative w-full px-4 pt-4`
         )}
       >
         <div className={`flex items-center justify-start gap-2`}>
@@ -128,7 +128,7 @@ const DashboardTable = ({gutter = `1rem`}) => {
             className={cx(
               css``,
               `border-2 border-gray-300 rounded-lg`,
-              `px-6 py-2  bg-gray-50 hover:bg-gray-100 text-black`,
+              `px-6 py-2 bg-gray-50 hover:bg-gray-100 text-black`,
               `flex items-center gap-1`
             )}
             onClick={(e) => {
@@ -141,9 +141,36 @@ const DashboardTable = ({gutter = `1rem`}) => {
             <BsArrowUpRight size={16} />
           </button>
         </div>
-        <div className="flex items-center gap-2 w-full max-w-xs">
-          <SelectListBox notifier={handleNcolumns} />
-          <div className="hover:cursor-pointer" onClick={handleClick}>
+        <div
+          className={cx(
+            css`
+              max-width: 20rem;
+              @media (max-width: 1100px) {
+                max-width: initial;
+              }
+            `,
+            `flex items-center gap-2 w-full justify-end`
+          )}
+        >
+          <SelectListBox
+            notifier={handleNcolumns}
+            className={css`
+              @media (max-width: 1100px) {
+                display: none;
+              }
+            `}
+          />
+          <div
+            className={cx(
+              css`
+                @media (max-width: 1100px) {
+                  display: none;
+                }
+              `,
+              'hover:cursor-pointer'
+            )}
+            onClick={handleClick}
+          >
             {displayType === `grid` ? (
               <BsGrid size={32} />
             ) : (
