@@ -8,14 +8,6 @@ import {BsArrowUpRight} from 'react-icons/bs';
 import {useNavigate} from 'react-router-dom';
 import {Flipper, Flipped} from 'react-flip-toolkit';
 
-import {Scrollbars} from 'rc-scrollbars';
-
-import {FixedSizeList as List} from 'react-window';
-
-const Row = ({index, style}) => {
-  return <div style={style}>Row {index}</div>;
-};
-
 const data = [
   {
     Event: 'Water Fall',
@@ -73,7 +65,7 @@ const DashboardTable = ({gutter = `1rem`}) => {
   const navigate = useNavigate();
   const [displayType, setDisplayType] = useState(`list`);
   const [forceGrid, setForceGrid] = useState(false);
-  const [columnCount, setColumnCount] = useState(5);
+  const [columnCount, setColumnCount] = useState(4);
 
   const handleClick = (e) => {
     setDisplayType((prevDisplayType) => {
@@ -109,9 +101,42 @@ const DashboardTable = ({gutter = `1rem`}) => {
   };
 
   return (
-    <div className={cx(css``, `w-full border-2 p-2 rounded-lg`)}>
-      <div className="flex items-center justify-between gap-2 relative w-full p-2">
-        <h2 className="text-xl font-bold">Events</h2>
+    <div className={cx(css``, `w-full border-2 rounded-lg`)}>
+      <div
+        className={cx(
+          css`
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            @media (max-width: 768px) {
+              justify-content: center;
+              flex-direction: column;
+            }
+          `,
+          `relative w-full p-2`
+        )}
+      >
+        <div className={`flex items-center gap-2`}>
+          <h2 className="text-xl font-bold">Events</h2>
+          <button
+            type="button"
+            className={cx(
+              css``,
+              `border-2 border-gray-300 rounded-lg`,
+              `px-6 py-2  bg-gray-50 hover:bg-gray-100 text-black`,
+              `flex items-center gap-1`
+            )}
+            onClick={(e) => {
+              navigate('/events', {
+                state: {},
+              });
+            }}
+          >
+            <span className="text-md">Events</span>
+            <BsArrowUpRight size={16} />
+          </button>
+        </div>
         <div className="flex items-center gap-2">
           <button
             type={'button'}
@@ -137,35 +162,7 @@ const DashboardTable = ({gutter = `1rem`}) => {
           >
             4 Columns
           </button>
-          <button
-            type={'button'}
-            className={cx(
-              css``,
-              `bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6 py-2`
-            )}
-            onClick={(e) => {
-              handleNcolumns(e, {columnCount: 5});
-            }}
-          >
-            5 Columns
-          </button>
-          <button
-            type="button"
-            className={cx(
-              css``,
-              `border-2 border-gray-300 rounded-lg`,
-              `px-6 py-2  bg-gray-50 hover:bg-gray-100 text-black`,
-              `flex items-center gap-1`
-            )}
-            onClick={(e) => {
-              navigate('/events', {
-                state: {},
-              });
-            }}
-          >
-            <span className="text-md">Events</span>
-            <BsArrowUpRight size={16} />
-          </button>
+
           <div className="hover:cursor-pointer" onClick={handleClick}>
             {displayType === `grid` ? (
               <BsGrid size={32} />
@@ -193,13 +190,13 @@ const DashboardTable = ({gutter = `1rem`}) => {
               gap: ${gutter};
               padding: ${gutter};
               @media (max-width: 1100px) {
-                grid-template-columns: repeat(4, 1fr);
-              }
-              @media (max-width: 850px) {
                 grid-template-columns: repeat(3, 1fr);
               }
-              @media (max-width: 650px) {
+              @media (max-width: 850px) {
                 grid-template-columns: repeat(2, 1fr);
+              }
+              @media (max-width: 768px) {
+                grid-template-columns: repeat(1, 1fr);
               }
             `
           )}
