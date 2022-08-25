@@ -7,6 +7,7 @@ import {BsGrid, BsListUl} from 'react-icons/bs';
 import {BsArrowUpRight} from 'react-icons/bs';
 import {useNavigate} from 'react-router-dom';
 import {Flipper, Flipped} from 'react-flip-toolkit';
+import {SelectListBox} from './SelectListBox';
 
 const data = [
   {
@@ -79,8 +80,12 @@ const DashboardTable = ({gutter = `1rem`}) => {
     });
   };
 
-  const handleNcolumns = (e, {columnCount}) => {
-    setColumnCount(columnCount);
+  const handleNcolumns = ({selected, isFirst}) => {
+    if (isFirst) {
+      return;
+    }
+    const {value} = selected;
+    setColumnCount(value);
     setForceGrid(true);
     setDisplayType((prevDisplayType) => {
       if (prevDisplayType === `list`) {
@@ -101,23 +106,22 @@ const DashboardTable = ({gutter = `1rem`}) => {
   };
 
   return (
-    <div className={cx(css``, `w-full border-2 rounded-lg`)}>
+    <div className={cx(css``, `w-full border-2 rounded-lg overflow-hidden`)}>
       <div
         className={cx(
           css`
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: space-between;
             @media (max-width: 768px) {
               justify-content: center;
               flex-direction: column;
             }
           `,
-          `relative w-full p-2`
+          `relative w-full p-4`
         )}
       >
-        <div className={`flex items-center gap-2`}>
+        <div className={`flex items-center justify-start gap-2`}>
           <h2 className="text-xl font-bold">Events</h2>
           <button
             type="button"
@@ -137,32 +141,8 @@ const DashboardTable = ({gutter = `1rem`}) => {
             <BsArrowUpRight size={16} />
           </button>
         </div>
-        <div className="flex items-center gap-2">
-          <button
-            type={'button'}
-            className={cx(
-              css``,
-              `bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6 py-2`
-            )}
-            onClick={(e) => {
-              handleNcolumns(e, {columnCount: 3});
-            }}
-          >
-            3 Columns
-          </button>
-          <button
-            type={'button'}
-            className={cx(
-              css``,
-              `bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6 py-2`
-            )}
-            onClick={(e) => {
-              handleNcolumns(e, {columnCount: 4});
-            }}
-          >
-            4 Columns
-          </button>
-
+        <div className="flex items-center gap-2 w-full max-w-xs">
+          <SelectListBox notifier={handleNcolumns} />
           <div className="hover:cursor-pointer" onClick={handleClick}>
             {displayType === `grid` ? (
               <BsGrid size={32} />
@@ -180,6 +160,8 @@ const DashboardTable = ({gutter = `1rem`}) => {
             display: block;
           }
         `}
+        onStart={(e) => {}}
+        onComplete={(e) => {}}
       >
         <motion.div
           className={cx(
@@ -281,7 +263,7 @@ const DashboardTable = ({gutter = `1rem`}) => {
           <tr className="w-full">
             {headers.map((header, index) => {
               return (
-                <th key={index} className={'p-2'}>
+                <th key={index} className={'p-4'}>
                   {header}
                 </th>
               );
@@ -298,7 +280,7 @@ const DashboardTable = ({gutter = `1rem`}) => {
                     return (
                       <td
                         key={j}
-                        className={'p-2 hover:cursor-pointer'}
+                        className={'p-4 hover:cursor-pointer'}
                         onClick={(e) => {
                           handleAction(e, item);
                         }}
@@ -308,7 +290,7 @@ const DashboardTable = ({gutter = `1rem`}) => {
                     );
                   }
                   return (
-                    <td key={j} className={'p-2'}>
+                    <td key={j} className={'p-4'}>
                       {item[header]}
                     </td>
                   );

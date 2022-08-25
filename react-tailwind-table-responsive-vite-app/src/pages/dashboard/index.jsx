@@ -1,5 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {DashboardTable} from '../../components/DashboardTable';
+import {SelectListBox} from '../../components/SelectListBox';
 import {default as Layout} from '../../layouts/default';
 
 const DashboardPage = ({pageName, notifier}) => {
@@ -16,6 +17,11 @@ const DashboardPage = ({pageName, notifier}) => {
         <h2 className="text-3xl flex items-center justify-center">
           DashboardPage
         </h2>
+        {/* <SelectListBox
+          notifier={(e) => {
+            console.log(e);
+          }}
+        /> */}
         <DashboardTable />
       </section>
     </Layout>

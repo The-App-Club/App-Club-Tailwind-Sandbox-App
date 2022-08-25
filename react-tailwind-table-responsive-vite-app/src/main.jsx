@@ -120,7 +120,7 @@ const App = () => {
               css`
                 position: sticky;
                 top: 3rem;
-                z-index: 3;
+                z-index: 1;
               `,
               `w-full pl-2 bg-white`
             )}
