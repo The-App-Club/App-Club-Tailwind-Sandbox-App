@@ -66,7 +66,7 @@ const DashboardTable = ({gutter = `1rem`}) => {
   const navigate = useNavigate();
   const [displayType, setDisplayType] = useState(`list`);
   const [forceGrid, setForceGrid] = useState(false);
-  const [columnCount, setColumnCount] = useState(4);
+  const [columnCount, setColumnCount] = useState(2);
 
   const handleClick = (e) => {
     setDisplayType((prevDisplayType) => {
@@ -193,6 +193,9 @@ const DashboardTable = ({gutter = `1rem`}) => {
         <motion.div
           className={cx(
             css`
+              max-height: 36rem;
+              overflow: hidden;
+              overflow-y: auto;
               width: 100%;
               display: grid;
               grid-template-columns: repeat(${columnCount}, 1fr);
@@ -206,6 +209,9 @@ const DashboardTable = ({gutter = `1rem`}) => {
               }
               @media (max-width: 768px) {
                 grid-template-columns: repeat(1, 1fr);
+                max-height: initial;
+                overflow: initial;
+                overflow-y: initial;
               }
             `
           )}
@@ -261,7 +267,6 @@ const DashboardTable = ({gutter = `1rem`}) => {
           css`
             position: relative;
             width: 100%;
-            height: 20rem;
             overflow: hidden;
             overflow-y: auto;
             border-collapse: collapse;
@@ -277,16 +282,7 @@ const DashboardTable = ({gutter = `1rem`}) => {
           ``
         )}
       >
-        <thead
-          className={cx(
-            css`
-              position: sticky;
-              top: 0;
-              z-index: 1;
-            `,
-            'border-b-2 w-full'
-          )}
-        >
+        <thead className={cx(css``, 'border-b-2 w-full')}>
           <tr className="w-full">
             {headers.map((header, index) => {
               return (

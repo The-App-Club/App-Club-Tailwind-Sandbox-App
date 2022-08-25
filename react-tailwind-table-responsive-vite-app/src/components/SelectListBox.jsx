@@ -25,7 +25,7 @@ const SelectListBox = ({notifier, className}) => {
       <div
         className={cx(
           css`
-            z-index: 12;
+            z-index: 1;
           `,
           `relative w-full`,
           className

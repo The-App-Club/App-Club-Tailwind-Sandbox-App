@@ -22,7 +22,7 @@ const Header = ({opened, handleClick}) => {
       className={cx(
         css`
           min-height: 3rem;
-          z-index: 2;
+          z-index: 3;
         `,
         'fixed top-0 w-full flex items-center gap-3 bg-white'
       )}
