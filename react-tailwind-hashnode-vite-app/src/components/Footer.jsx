@@ -18,7 +18,7 @@ const Footer = () => {
         `border-t-2 py-2`
       )}
     >
-      <Link to={'/'} className={`flex items-center gap-2`}>
+      <Link to={'/'} className={`flex items-center gap-1`}>
         <img src={logo} alt={'logo'} className={`w-10`} />
         <h2 className="text-xl">Make YourSelf</h2>
       </Link>

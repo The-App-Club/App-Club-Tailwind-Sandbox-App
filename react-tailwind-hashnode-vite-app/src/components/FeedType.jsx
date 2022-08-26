@@ -5,17 +5,10 @@ import {BiTime} from 'react-icons/bi';
 import {useState} from 'react';
 import {useFeedFetchType} from '../hooks/useFeedFetchType';
 import {useMemo} from 'react';
-import {useNavOpenState} from '../hooks/useNavOpenState';
 import {motion} from 'framer-motion';
 
 const FeedType = ({fetchType: lastestFetchType}) => {
   const [fetchType, setFetchType] = useState(lastestFetchType);
-  const {opened, setNavOpened} = useNavOpenState((state) => {
-    return {
-      opened: state.opened,
-      setNavOpened: state.setNavOpened,
-    };
-  });
 
   const {storeFetchType} = useFeedFetchType((state) => {
     return {
@@ -56,20 +49,9 @@ const FeedType = ({fetchType: lastestFetchType}) => {
 
   return (
     <motion.ul
-      initial={{
-        position: `${opened ? 'static' : 'sticky'}`,
-      }}
-      animate={{
-        position: `${opened ? 'static' : 'sticky'}`,
-        transition: {
-          duration: 0.1,
-          ease: `linear`,
-          delay: `${opened ? 0 : 0.4}`,
-        },
-      }}
       className={cx(
         css`
-          position: ${opened ? 'static' : 'sticky'};
+          position: sticky;
           top: 3rem;
           z-index: 2;
         `,
@@ -85,8 +67,8 @@ const FeedType = ({fetchType: lastestFetchType}) => {
               'flex items-center gap-1 hover:cursor-pointer hover:bg-slate-50 p-2',
               `${
                 fetchType === item.fetchType
-                  ? ' border-blue-800 border-b-2'
-                  : ''
+                  ? 'border-b-2 border-blue-900'
+                  : 'border-b-2 border-transparent'
               }`
             )}
             onClick={(e) => {

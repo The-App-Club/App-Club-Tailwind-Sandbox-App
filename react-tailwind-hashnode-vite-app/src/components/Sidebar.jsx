@@ -12,6 +12,7 @@ import {FaBlog} from 'react-icons/fa';
 import {MdOutlinePermMedia} from 'react-icons/md';
 
 import {Spacer} from './Spacer';
+import {TrendingTags} from './TrendingTags';
 
 import {SocialIcon} from 'react-social-icons';
 
@@ -96,6 +97,27 @@ const Sidebar = ({className = css``}) => {
     console.log(e);
   };
 
+  // https://szhsin.github.io/react-menu#classname-prop
+  const menuItemClassName = ({hover}) => {
+    return hover
+      ? cx(
+          css`
+            padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+          `,
+          `border-l-2 border-transparent`,
+          `hover:border-blue-900 hover:bg-gray-100 hover:cursor-pointer`,
+          `flex items-center gap-2`,
+          `my-menuitem-hover`
+        )
+      : cx(
+          css`
+            padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+          `,
+          `border-l-2 border-transparent`,
+          `flex items-center gap-2`
+        );
+  };
+
   return (
     <aside
       className={cx(
@@ -114,7 +136,13 @@ const Sidebar = ({className = css``}) => {
             return (
               <li
                 key={index}
-                className="flex items-center gap-1 p-1 hover:bg-slate-50 hover:cursor-pointer hover:border-r-2 border-blue-800"
+                className={cx(
+                  css``,
+                  `flex items-center gap-1 p-1 `,
+                  `border-l-2 border-transparent`,
+                  `hover:border-l-2 hover:border-blue-900`,
+                  `hover:bg-gray-100 hover:cursor-pointer`
+                )}
               >
                 {item.icon()}
                 <span className="text-lg">{item.title}</span>
@@ -124,7 +152,13 @@ const Sidebar = ({className = css``}) => {
 
           <li
             ref={menuDomRef}
-            className="flex items-center gap-1 p-1 hover:bg-slate-50 hover:cursor-pointer"
+            className={cx(
+              css``,
+              `flex items-center gap-1 p-1 `,
+              `border-l-2 border-transparent`,
+              `hover:border-l-2 hover:border-blue-900`,
+              `hover:bg-gray-100 hover:cursor-pointer`
+            )}
             onClick={(e) => {
               handleClick(e);
               if (!isOpen) {
@@ -160,13 +194,7 @@ const Sidebar = ({className = css``}) => {
                       color: initial;
                     `}
                   >
-                    <MenuItem
-                      className={cx(
-                        css`
-                          padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-                        `
-                      )}
-                    >
+                    <MenuItem className={menuItemClassName}>
                       {menuItem.icon()}
                       <span
                         className={css`
@@ -185,7 +213,8 @@ const Sidebar = ({className = css``}) => {
       </div>
       <Spacer />
       <div className="w-full">
-        <h4 className="text-md flex items-center gap-1 pb-4 p-1">
+        <TrendingTags />
+        {/* <h4 className="text-md flex items-center gap-1 pb-4 p-1">
           <span>Trending Tags</span>
           <FiTrendingUp size={24} />
         </h4>
@@ -214,7 +243,7 @@ const Sidebar = ({className = css``}) => {
             <span className="text-md font-bold">See all</span>
             <BsArrowRight size={24} />
           </li>
-        </ul>
+        </ul> */}
         <div className="flex items-center gap-1 pt-4">
           <SocialIcon
             className={css`
@@ -255,7 +284,7 @@ const Sidebar = ({className = css``}) => {
         </div>
       </div>
       <footer className="border-t-2 pt-4 pb-2 mt-6">
-        <span className="flex justify-center items-center">{`@copyright ${new Date().getFullYear()} Malibu Nights Lion`}</span>
+        <span className="flex justify-center items-center">{`@copyright ${new Date().getFullYear()} Make YourSelf`}</span>
       </footer>
     </aside>
   );

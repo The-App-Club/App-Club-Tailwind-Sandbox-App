@@ -1,4 +1,4 @@
-import {css} from '@emotion/css';
+import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {memo} from 'react';
 
@@ -20,7 +20,7 @@ const motionConfig = {
   },
 };
 
-const Layout = ({children, pageName, notifier}) => {
+const Layout = ({children, pageName, notifier, className}) => {
   return (
     <motion.div
       variants={motionConfig}
@@ -31,10 +31,13 @@ const Layout = ({children, pageName, notifier}) => {
         duration: 0.4,
         ease: 'easeInOut',
       }}
-      className={css`
-        position: relative;
-        width: 100%;
-      `}
+      className={cx(
+        css`
+          position: relative;
+          width: 100%;
+        `,
+        className
+      )}
       onAnimationStart={(e) => {}}
       onAnimationComplete={(e) => {
         notifier();

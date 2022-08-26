@@ -1,10 +1,12 @@
 import {css, cx} from '@emotion/css';
-import {useLocation} from 'react-router-dom';
 import {default as Layout} from '../../layouts/default';
+import {useLocation} from 'react-router-dom';
+import {motion} from 'framer-motion';
 
-const TagPage = ({pageName, notifier}) => {
+const ProfilePage = ({pageName, notifier}) => {
   const location = useLocation();
   const {state} = location;
+
   return (
     <Layout pageName={pageName} notifier={notifier}>
       <section className={cx(css``, `max-w-2xl mx-auto w-full relative pt-12`)}>
@@ -14,12 +16,14 @@ const TagPage = ({pageName, notifier}) => {
             `pt-8 flex justify-center items-center flex-col`
           )}
         >
-          <h2 className="text-3xl">TagPage</h2>
-          <p>{`selected tag is ${state.tagName}`}</p>
+          <h2 className="text-3xl">ProfilePage</h2>
+          <motion.div>{state.usename}</motion.div>
+          <motion.img src={state.thumbnail} alt={state.usename} />
+          <motion.div>{state.siteURL}</motion.div>
         </div>
       </section>
     </Layout>
   );
 };
 
-export {TagPage};
+export {ProfilePage};

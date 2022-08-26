@@ -5,7 +5,7 @@ import {default as Layout} from '../../layouts/default';
 const AboutPage = ({pageName, notifier}) => {
   return (
     <Layout pageName={pageName} notifier={notifier}>
-      <section className={cx(css``, `max-w-2xl mx-auto w-full relative`)}>
+      <section className={cx(css``, `max-w-2xl mx-auto w-full relative pt-12`)}>
         <div
           className={cx(
             css``,

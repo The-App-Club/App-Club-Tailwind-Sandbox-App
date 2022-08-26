@@ -79,8 +79,8 @@ const BlogStatsMenu = ({fetchType}) => {
                 `hover:cursor-pointer p-1 hover:bg-gray-100 text-sm`,
                 `${
                   currentMenuName === menuInfo.menuName
-                    ? 'border-b-2 border-blue-800'
-                    : ''
+                    ? `border-b-2 border-blue-900`
+                    : `border-b-2 border-transparent`
                 }`,
                 `flex items-center`
               )}

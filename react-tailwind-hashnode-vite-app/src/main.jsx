@@ -24,13 +24,16 @@ import {AdsPage} from './pages/adsense';
 import {EventPage} from './pages/event';
 import {TagPage} from './pages/tag';
 import {ResultPage} from './pages/result';
+import {NotFoundPage} from './pages/not-found';
+import {BookmarkPage} from './pages/bookmarks';
+import {ProfilePage} from './pages/profile';
+import {ArticlePage} from './pages/article';
 
 import logo from './assets/logo.png';
 
 import '@fontsource/inter';
 import './styles/index.css';
 import './styles/index.scss';
-import {NotFoundPage} from './pages/not-found';
 
 const App = () => {
   const location = useLocation();
@@ -161,6 +164,39 @@ const App = () => {
                 component: () => {
                   return (
                     <TagPage pageName={location.pathname} notifier={setOpen} />
+                  );
+                },
+              },
+              {
+                route: '/bookmark',
+                component: () => {
+                  return (
+                    <BookmarkPage
+                      pageName={location.pathname}
+                      notifier={setOpen}
+                    />
+                  );
+                },
+              },
+              {
+                route: '/profile',
+                component: () => {
+                  return (
+                    <ProfilePage
+                      pageName={location.pathname}
+                      notifier={setOpen}
+                    />
+                  );
+                },
+              },
+              {
+                route: '/article',
+                component: () => {
+                  return (
+                    <ArticlePage
+                      pageName={location.pathname}
+                      notifier={setOpen}
+                    />
                   );
                 },
               },

@@ -7,15 +7,42 @@ import {AiTwotoneStar} from 'react-icons/ai';
 import profile1 from '../assets/profile1.png';
 import profile2 from '../assets/profile2.png';
 import profile3 from '../assets/profile3.png';
+import {useNavigate} from 'react-router-dom';
 
 const MainFeed = ({feedType}) => {
+  const navigate = useNavigate();
+
   const handleContentClick = (e) => {
     console.log('Content Clicked');
+    navigate('/article', {
+      state: {
+        thumbnail: profile1,
+        usename: `nap5`,
+        siteURL: `example.com`,
+        title: `Something Title`,
+        description: `Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s.`,
+        tags: [`Javascript`, `React`, `CSS`],
+        heroImageURL: `https://assets.st-note.com/production/uploads/images/82602779/rectangle_large_type_2_638407e9f0978651c37abda8a44a2325.png?width=800`,
+        publishedAt: `21 hours ago`,
+        readTime: `13 min read`,
+        thumbUpCount: 18,
+        commentCount: 12,
+      },
+    });
   };
 
   const handleUserClick = (e) => {
     e.stopPropagation();
     console.log('User Clicked');
+    navigate('/profile', {
+      state: {
+        thumbnail: profile1,
+        usename: `nap5`,
+        siteURL: `example.com`,
+      },
+    });
   };
 
   return (
@@ -28,6 +55,7 @@ const MainFeed = ({feedType}) => {
           src={profile1}
           alt={'profile1'}
           className={`w-16 rounded-full hover:cursor-pointer`}
+          onClick={handleUserClick}
         />
         <div className="flex items-start flex-col gap-1">
           <span
@@ -37,7 +65,9 @@ const MainFeed = ({feedType}) => {
             nap5
           </span>
           <div className="flex items-start gap-1">
-            <span className="hover:cursor-pointer">example.com</span>
+            <span className="hover:cursor-pointer" onClick={handleUserClick}>
+              example.com
+            </span>
             <span>21 hours ago</span>
           </div>
         </div>
@@ -83,9 +113,9 @@ const MainFeed = ({feedType}) => {
           <Tag tagName={'CSS'} />
           <Tag tagName={'React'} />
         </div>
-        <div className="absolute bottom-1 right-1 hover:cursor-pointer flex  gap-1">
+        <div className="absolute bottom-1 right-1 hover:cursor-pointer flex gap-1">
           <FiThumbsUp size={24} />
-          <span className="rounded bg-slate-100 font-bold p-1">+18</span>
+          <span className="rounded bg-slate-100 font-bold p-1">{`+${18}`}</span>
         </div>
       </div>
     </div>
@@ -93,9 +123,14 @@ const MainFeed = ({feedType}) => {
 };
 
 const Tag = ({tagName}) => {
+  const navigate = useNavigate();
+
   const handleTagClick = (e) => {
     e.stopPropagation();
     console.log('Tag Clicked');
+    navigate('/tag', {
+      state: {tagName},
+    });
   };
 
   return (
