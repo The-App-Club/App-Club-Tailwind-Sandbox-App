@@ -1,9 +1,6 @@
 import {css, cx} from '@emotion/css';
 
 const DashboardTableList = ({forceGrid, headers, data}) => {
-  const handleAction = (e, item) => {
-    console.log(item);
-  };
   return (
     <table
       className={cx(
@@ -44,14 +41,8 @@ const DashboardTableList = ({forceGrid, headers, data}) => {
               {headers.map((header, j) => {
                 if (header === `Action`) {
                   return (
-                    <td
-                      key={j}
-                      className={'p-4 hover:cursor-pointer'}
-                      onClick={(e) => {
-                        handleAction(e, item);
-                      }}
-                    >
-                      {item[header]()}
+                    <td key={j} className={'p-4 hover:cursor-pointer'}>
+                      {item[header]({item})}
                     </td>
                   );
                 }

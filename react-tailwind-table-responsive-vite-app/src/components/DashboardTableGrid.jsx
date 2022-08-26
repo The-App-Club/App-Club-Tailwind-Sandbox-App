@@ -9,10 +9,6 @@ const DashboardTableGrid = ({
   forceGrid,
   gutter = `1rem`,
 }) => {
-  const handleAction = (e, item) => {
-    console.log(item);
-  };
-
   return (
     <Flipper
       flipKey={columnCount}
@@ -68,13 +64,8 @@ const DashboardTableGrid = ({
                             className={'p-2 flex justify-between'}
                           >
                             <h2 className="font-bold">{header}</h2>
-                            <div
-                              onClick={(e) => {
-                                handleAction(e, item);
-                              }}
-                              className={`hover:cursor-pointer`}
-                            >
-                              {item[header]()}
+                            <div className={`hover:cursor-pointer`}>
+                              {item[header]({item})}
                             </div>
                           </div>
                         );

@@ -1,9 +1,11 @@
 import {css, cx} from '@emotion/css';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import {Spacer} from '../../components/Spacer';
 import {default as Layout} from '../../layouts/default';
 
 const NotFoundPage = ({pageName, notifier}) => {
+  const location = useLocation();
+  console.log(location);
   return (
     <Layout pageName={pageName} notifier={notifier}>
       <section

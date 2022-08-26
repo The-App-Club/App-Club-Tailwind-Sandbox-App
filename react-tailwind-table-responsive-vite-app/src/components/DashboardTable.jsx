@@ -6,6 +6,8 @@ import {DashboardTableList} from './DashboardTableList';
 import {DashboardTableGrid} from './DashboardTableGrid';
 import {DashboardTableController} from './DashboardTableController';
 
+import {DashboardTableShortHandMenu} from './DashboardTableShortHandMenu';
+
 const DashboardTable = ({gutter = `1rem`}) => {
   const navigate = useNavigate();
   const [displayType, setDisplayType] = useState(`list`);
@@ -20,8 +22,8 @@ const DashboardTable = ({gutter = `1rem`}) => {
         Location: 'East Annex',
         Qty: 2203,
         Price: 1203,
-        Action: () => {
-          return <FiMoreHorizontal size={32} />;
+        Action: ({item}) => {
+          return <DashboardTableShortHandMenu item={item} />;
         },
       },
       {
@@ -30,8 +32,8 @@ const DashboardTable = ({gutter = `1rem`}) => {
         Location: 'East Annex',
         Qty: 1803,
         Price: 103,
-        Action: () => {
-          return <FiMoreHorizontal size={32} />;
+        Action: ({item}) => {
+          return <DashboardTableShortHandMenu item={item} />;
         },
       },
       {
@@ -40,8 +42,8 @@ const DashboardTable = ({gutter = `1rem`}) => {
         Location: '205 Gorgas',
         Qty: 1603,
         Price: 3332,
-        Action: () => {
-          return <FiMoreHorizontal size={32} />;
+        Action: ({item}) => {
+          return <DashboardTableShortHandMenu item={item} />;
         },
       },
       {
@@ -50,8 +52,8 @@ const DashboardTable = ({gutter = `1rem`}) => {
         Location: 'Github',
         Qty: 103,
         Price: 13332,
-        Action: () => {
-          return <FiMoreHorizontal size={32} />;
+        Action: ({item}) => {
+          return <DashboardTableShortHandMenu item={item} />;
         },
       },
       {
@@ -60,8 +62,8 @@ const DashboardTable = ({gutter = `1rem`}) => {
         Location: 'Clamp',
         Qty: 13,
         Price: 432,
-        Action: () => {
-          return <FiMoreHorizontal size={32} />;
+        Action: ({item}) => {
+          return <DashboardTableShortHandMenu item={item} />;
         },
       },
     ];
