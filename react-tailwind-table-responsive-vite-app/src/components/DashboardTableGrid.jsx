@@ -24,9 +24,6 @@ const DashboardTableGrid = ({
       <motion.div
         className={cx(
           css`
-            max-height: 36rem;
-            overflow: hidden;
-            overflow-y: auto;
             width: 100%;
             display: grid;
             grid-template-columns: repeat(${columnCount}, 1fr);
@@ -40,9 +37,6 @@ const DashboardTableGrid = ({
             }
             @media (max-width: 768px) {
               grid-template-columns: repeat(1, 1fr);
-              max-height: initial;
-              overflow: initial;
-              overflow-y: initial;
             }
           `
         )}

@@ -68,8 +68,7 @@ const DashboardTableShortHandMenu = ({item}) => {
       ref={menuDomRef}
       className={css`
         display: flex;
-        justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         :hover {
           cursor: pointer;
         }
