@@ -33,19 +33,11 @@ const Layout = ({children, pageName, notifier}) => {
       }}
       className={css`
         position: relative;
+        width: 100%;
       `}
-      onAnimationStart={(e) => {
-        // const html = document.documentElement;
-        // const body = html.querySelector('body');
-        // html.classList.add('loading');
-        // body.classList.add('loading');
-      }}
+      onAnimationStart={(e) => {}}
       onAnimationComplete={(e) => {
-        // const html = document.documentElement;
-        // const body = html.querySelector('body');
-        // html.classList.remove('loading');
-        // body.classList.remove('loading');
-        notifier({message: `done`, pageName});
+        notifier();
       }}
     >
       {children}

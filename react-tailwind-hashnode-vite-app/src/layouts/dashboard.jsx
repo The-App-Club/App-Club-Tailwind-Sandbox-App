@@ -9,7 +9,7 @@ import {BarGraph} from '../components/BarGraph';
 const DashboardPageLayout = ({pageName, notifier, children}) => {
   return (
     <Layout pageName={pageName} notifier={notifier}>
-      <section className={cx(css``, `max-w-7xl mx-auto w-full p-2`)}>
+      <section className={cx(css``, `max-w-7xl mx-auto w-full p-2 pt-12`)}>
         <h2 className="text-3xl flex items-center justify-center">
           DashboardPage
         </h2>

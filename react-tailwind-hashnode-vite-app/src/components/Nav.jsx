@@ -1,210 +1,175 @@
-import {Link, useNavigate} from 'react-router-dom';
+import {useEffect, useRef} from 'react';
+import {useClickOutside} from '../hooks/useClickOutside';
+import styled from '@emotion/styled';
+import gsap, {Power3} from 'gsap';
 import {css, cx} from '@emotion/css';
-import {
-  slide as Menu,
-  bubble,
-  elastic,
-  reveal,
-  scaleRotate,
-  stack,
-  fallDown,
-  push,
-  pushRotate,
-  scaleDown,
-} from 'react-burger-menu';
-import {useEffect, useState} from 'react';
-import {useNavOpenState} from '../hooks/useNavOpenState';
+import {Link, useNavigate} from 'react-router-dom';
+import {Hamburger} from './Hamburger';
 
-const NavItem = ({children, to}) => {
+import {FiTwitter} from 'react-icons/fi';
+import {MdOutlineNotifications} from 'react-icons/md';
+import {BiDotsHorizontalRounded} from 'react-icons/bi';
+import {MdOutlineChat} from 'react-icons/md';
+import {BiTimeFive} from 'react-icons/bi';
+import {RiAdvertisementLine} from 'react-icons/ri';
+
+import logo from '../assets/logo.png';
+import useDarkMode from 'use-dark-mode';
+
+const MenuItem = ({path, menuTitle, icon}) => {
   const navigate = useNavigate();
-
+  const darkMode = useDarkMode();
   return (
     <li
       className={cx(
         css`
+          width: 100%;
           min-height: 3rem;
-          min-width: 6rem;
         `,
-        'flex justify-center items-center hover:bg-gray-100 hover:cursor-pointer'
+        `flex items-center gap-2 pl-2 hover:cursor-pointer`,
+        `border-l-2 border-transparent ${
+          darkMode.value ? '' : 'hover:border-blue-900'
+        }`,
+        `hover:bg-gray-100 dark:hover:bg-slate-800`
       )}
       onClick={(e) => {
-        navigate(to, {
+        navigate(path, {
           state: {},
         });
       }}
     >
-      {children}
+      {icon()}
+      <Link to={path}>{menuTitle}</Link>
     </li>
   );
 };
 
-const Nav = ({tik, isRight = false, outerContainerDomRef}) => {
-  const [open, setOpen] = useState(false);
+const Nav = ({open, setOpen, isTrigger, setIsTrigger, handleClick}) => {
+  const navContainerDomRef = useRef();
 
-  const {opened, setNavOpened} = useNavOpenState((state) => {
-    return {
-      opened: state.opened,
-      setNavOpened: state.setNavOpened,
-    };
+  useClickOutside(navContainerDomRef, (e) => {
+    // console.log(e);
+    if (!isTrigger) {
+      setOpen(false);
+    }
   });
 
   useEffect(() => {
-    setNavOpened({opened: open});
+    if (!open) {
+      document.body.classList.remove('loading');
+      gsap.to(navContainerDomRef.current, {
+        x: `100%`,
+        duration: 0.6,
+        ease: Power3.easeInOut,
+        onComplete: function () {
+          setIsTrigger(false);
+        },
+      });
+    } else {
+      document.body.classList.add('loading');
+      gsap.to(navContainerDomRef.current, {
+        x: `0%`,
+        duration: 0.6,
+        ease: Power3.easeInOut,
+        onComplete: function () {
+          setIsTrigger(false);
+        },
+      });
+    }
   }, [open]);
 
-  useEffect(() => {
-    setOpen((open) => {
-      if (open) {
-        return false;
-      }
-      return open;
-    });
-  }, [tik]);
-
   return (
-    <div
-      className={css`
-        position: relative;
-        width: 100%;
-        min-height: 3rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @media (max-width: 900px) {
-          display: block;
-          justify-content: initial;
-          align-items: initial;
-        }
-        //
-        // Burger menu custom styles
-        //
-        .bm-burger-button {
-          position: absolute;
-          width: 36px;
-          height: 30px;
-          top: 8px;
-          left: ${isRight ? 'initial' : '8px'};
-          right: ${isRight ? '8px' : 'initial'};
-          display: none;
-          :hover {
-            background: #f1f1f1;
+    <nav
+      ref={navContainerDomRef}
+      className={cx(
+        css`
+          z-index: 4;
+          transform: translate(100%, 0%);
+          max-width: 22rem;
+          @media (max-width: 768px) {
+            max-width: 16rem;
           }
-          @media (max-width: 900px) {
-            display: block;
-          }
-        }
-        // Outline for burger button focus state
-        .bm-burger-button button:focus {
-          /* outline: 2px solid #c94e50; */
-          /* outline-offset: 8px; */
-        }
-        // Background color for burger bars focus state
-        .bm-burger-button {
-          button:focus + span {
-            span.bm-burger-bars {
-              /* background-color: #c94e50; */
-            }
-          }
-        }
-        .right .bm-burger-button {
-          left: initial;
-          right: 36px;
-        }
-        .bm-burger-bars {
-          background: #000;
-        }
-        .bm-morph-shape {
-          fill: #f1f1f1;
-        }
-        .bm-menu {
-          background: #f6f6f6;
-          a {
-            color: #000;
-            &:hover {
-              background: #f1f1f1;
-              font-weight: bold;
-            }
-          }
-        }
-        .bm-item-list a {
-          padding: 0.5rem;
-          span {
-            margin-left: 10px;
-            font-weight: 700;
-          }
-        }
-        .bm-item {
-          :focus {
-            outline: none;
-          }
-          :hover {
-            border-left: 3px solid #000;
-          }
-        }
-      `}
+        `,
+        `fixed top-0 right-0 min-h-screen`,
+        `overflow-hidden overflow-y-auto scrollbar-none bg-gray-50`,
+        `w-full h-full`,
+        `flex justify-start items-start flex-col`,
+        `dark:bg-slate-700 dark:text-white`,
+        `border-l-2`
+      )}
     >
-      <nav
-        className={css`
-          /* position: absolute;
-          top: 0;
-          right: 8px; */
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 100%;
-          @media (max-width: 900px) {
-            display: none;
-          }
-        `}
-      >
-        <ul
+      <div className="relative w-full">
+        <div
           className={cx(
-            css``,
-            `list-none flex justify-center items-center gap-5`
+            css`
+              position: absolute;
+              top: 0.5rem;
+              left: 0;
+              width: 100%;
+            `,
+            `flex items-center gap-2 border-b-2`
           )}
         >
-          <NavItem to={'/about'}>
-            <Link to={'/about'}>About</Link>
-          </NavItem>
-          <NavItem to={'/contact'}>
-            <Link to={'/contact'}>Contact</Link>
-          </NavItem>
-          <NavItem to={'/price'}>
-            <Link to={'/price'}>Price</Link>
-          </NavItem>
-          <NavItem to={'/dashboard'}>
-            <Link to={'/dashboard'}>Dashboard</Link>
-          </NavItem>
-          <NavItem to={'/events'}>
-            <Link to={'/events'}>Events</Link>
-          </NavItem>
-          <NavItem to={'/adsense'}>
-            <Link to={'/adsense'}>Ads</Link>
-          </NavItem>
+          <img src={logo} alt={'logo'} className={`w-10`} />
+          <h3 className="text-2xl">Menu</h3>
+        </div>
+        <Hamburger
+          open={open}
+          handleClick={handleClick}
+          className={css`
+            top: 0.5rem;
+            right: 0.5rem;
+          `}
+        />
+        <ul
+          className={css`
+            padding-top: 3rem;
+            width: 100%;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          `}
+        >
+          <MenuItem
+            path={'/'}
+            menuTitle={'Home'}
+            icon={() => {
+              return <FiTwitter size={24} />;
+            }}
+          />
+          <MenuItem
+            path={'/adsense'}
+            menuTitle={'Ads'}
+            icon={() => {
+              return <RiAdvertisementLine size={24} />;
+            }}
+          />
+          <MenuItem
+            path={'/topic'}
+            menuTitle={'Topics'}
+            icon={() => {
+              return <MdOutlineChat size={24} />;
+            }}
+          />
+          <MenuItem
+            path={'/moment'}
+            menuTitle={'Moments'}
+            icon={() => {
+              return <BiTimeFive size={24} />;
+            }}
+          />
+          <MenuItem
+            path={'/notification'}
+            menuTitle={'Notification'}
+            icon={() => {
+              return <MdOutlineNotifications size={24} />;
+            }}
+          />
         </ul>
-      </nav>
-      <Menu
-        isOpen={open}
-        onStateChange={(e) => {
-          const outerContainerDom = outerContainerDomRef.current;
-          if (e.isOpen) {
-            outerContainerDom.classList.add('nav-active');
-          } else {
-            outerContainerDom.classList.remove('nav-active');
-          }
-          setOpen(e.isOpen);
-        }}
-        pageWrapId={'page-wrap'}
-        outerContainerId={'outer-container'}
-        right={isRight}
-      >
-        <Link to={'/'}>Home</Link>
-        <Link to={'/about'}>About</Link>
-        <Link to={'/contact'}>Contact</Link>
-        <Link to={'/price'}>Price</Link>
-        <Link to={'/dashboard'}>Dashboard</Link>
-      </Menu>
-    </div>
+      </div>
+    </nav>
   );
 };
 

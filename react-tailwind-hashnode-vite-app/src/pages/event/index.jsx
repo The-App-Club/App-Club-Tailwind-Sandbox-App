@@ -239,7 +239,9 @@ const EventPage = ({pageName, notifier}) => {
 
   return (
     <Layout pageName={pageName} notifier={notifier}>
-      <section className={cx(css``, `max-w-2xl mx-auto w-full relative p-2`)}>
+      <section
+        className={cx(css``, `max-w-2xl mx-auto w-full relative p-2 pt-12`)}
+      >
         <div
           className={cx(
             css``,

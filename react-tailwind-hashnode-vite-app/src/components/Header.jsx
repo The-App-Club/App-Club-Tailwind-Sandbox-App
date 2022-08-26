@@ -1,43 +1,41 @@
 import {css, cx} from '@emotion/css';
-import {useNavigate} from 'react-router-dom';
-import {Nav} from './Nav';
-import logo from '../assets/logo.png';
+import {Hamburger} from './Hamburger';
 
-const Header = ({tik, outerContainerDomRef}) => {
-  const navigate = useNavigate();
+import logo from '../assets/logo.png';
+import {Link} from 'react-router-dom';
+import {ThemeToggle} from './ThemeToggle';
+import useDarkMode from 'use-dark-mode';
+import {useEffect} from 'react';
+
+const Header = ({open, handleClick}) => {
   return (
     <header
       className={cx(
         css`
-          z-index: 1;
-          background: white;
+          position: fixed;
+          z-index: 3;
+          top: 0;
+          width: 100%;
+          min-height: 3rem;
         `,
-        `sticky w-full top-0`
+        'flex items-center relative bg-white',
+        `dark:bg-slate-700 dark:text-white`
       )}
     >
-      <div className={`relative w-full`}>
-        <div
-          className={cx(
-            css`
-              z-index: 1;
-            `,
-            `absolute top-0 left-0 flex justify-center items-center hover:cursor-pointer`
-          )}
-          onClick={(e) => {
-            navigate('/', {
-              state: {},
-            });
-          }}
-        >
-          <img src={logo} alt={`logo`} className={'h-12'} />
-          <h5>Malibu Nights Lion</h5>
-        </div>
-        <Nav
-          tik={tik}
-          isRight={true}
-          outerContainerDomRef={outerContainerDomRef}
-        />
-      </div>
+      <Link to={'/'} className={`flex items-center gap-2 `}>
+        <img src={logo} alt={'logo'} className={`w-10`} />
+        <h2 className="text-xl">Make YourSelf</h2>
+      </Link>
+      {/* <ThemeToggle /> */}
+      <Hamburger
+        open={open}
+        handleClick={handleClick}
+        className={css`
+          position: absolute;
+          right: 1rem;
+          z-index: 1;
+        `}
+      />
     </header>
   );
 };
