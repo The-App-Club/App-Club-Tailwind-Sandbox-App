@@ -34,6 +34,12 @@ import logo from './assets/logo.png';
 import '@fontsource/inter';
 import './styles/index.css';
 import './styles/index.scss';
+import {Article} from './components/Article';
+import {Toc} from './components/Toc';
+
+const makeSlugURL = () => {
+  return name().toLowerCase();
+};
 
 const App = () => {
   const location = useLocation();
@@ -49,15 +55,13 @@ const App = () => {
 
   return (
     <div
-      className={cx(
-        css`
-          width: 100%;
-          display: grid;
-          grid-template-rows: 1fr auto;
-          grid-template-columns: 100%;
-          min-height: 100vh;
-        `
-      )}
+      className={css`
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        grid-template-columns: 100%;
+        min-height: 100vh;
+      `}
     >
       <ScrollToTop />
       <Nav
