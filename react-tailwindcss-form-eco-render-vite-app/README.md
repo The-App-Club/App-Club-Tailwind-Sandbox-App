@@ -1,0 +1,2 @@
+- Reference
+  - [re render prevend](https://zenn.dev/takepepe/articles/rhf-usewatach)
