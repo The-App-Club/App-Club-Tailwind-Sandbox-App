@@ -1,17 +1,15 @@
-import { createRoot } from "react-dom/client";
 import { css } from "@emotion/css";
-import { useCallback, useRef, useState } from "react";
+import { createRoot } from "react-dom/client";
 import {
   BrowserRouter,
   Route,
   Routes,
   useLocation,
-  useNavigate,
 } from "react-router-dom";
 
-import { HomePage } from "./pages/home";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { HomePage } from "./pages/home";
 
 import "@fontsource/inter";
 import "./styles/index.css";

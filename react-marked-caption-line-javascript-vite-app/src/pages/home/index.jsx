@@ -1,9 +1,10 @@
 import { css, cx } from "@emotion/css";
-import { Layout } from "../../layouts/default";
+
 import logo from "../../assets/logo.png";
 import { MarkedDescription1 } from "../../components/MarkedDescription1";
 import { MarkedDescription2 } from "../../components/MarkedDescription2";
 import { MarkedDescription3 } from "../../components/MarkedDescription3";
+import { Layout } from "../../layouts/default";
 
 const HomePage = () => {
   return (
