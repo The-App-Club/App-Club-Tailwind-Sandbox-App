@@ -1,19 +1,15 @@
-import { css } from "@emotion/css";
-import { createRoot } from "react-dom/client";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { css } from '@emotion/css';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { HomePage } from "./pages/home";
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
+import { HomePage } from './pages/home';
 
-import "@fontsource/inter";
-import "./styles/index.css";
-import "./styles/index.scss";
+import '@fontsource/inter';
+import './styles/index.css';
+import './styles/index.scss';
 
 const App = () => {
   const location = useLocation();
@@ -40,12 +36,14 @@ const App = () => {
   );
 };
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 
 const root = createRoot(container);
 
 root.render(
   <BrowserRouter>
-    <App />
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   </BrowserRouter>
 );

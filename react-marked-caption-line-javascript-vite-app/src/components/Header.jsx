@@ -1,7 +1,7 @@
-import { css, cx } from "@emotion/css";
-import { useNavigate } from "react-router-dom";
+import { css, cx } from '@emotion/css';
+import { useNavigate } from 'react-router-dom';
 
-import logo from "../assets/logo.png";
+import logo from '../assets/logo.png';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -24,12 +24,12 @@ const Header = () => {
             `absolute top-0 left-0 flex justify-center items-center hover:cursor-pointer`
           )}
           onClick={(e) => {
-            navigate("/", {
+            navigate('/', {
               state: {},
             });
           }}
         >
-          <img src={logo} alt={`logo`} className={"h-12"} />
+          <img src={logo} alt={`logo`} className={'h-12'} />
           <h5>Tokimeki Lion</h5>
         </div>
       </div>

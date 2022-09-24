@@ -18,7 +18,10 @@
     "react-dom": "^18.2.0",
     "react-flip-toolkit": "^7.0.16",
     "react-icons": "^4.4.0",
-    "react-router-dom": "^6.4.0"
+    "react-router-dom": "^6.4.0",
+    "recoil": "^0.7.5",
+    "recoil-persist": "^4.2.0",
+    "three": "^0.144.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

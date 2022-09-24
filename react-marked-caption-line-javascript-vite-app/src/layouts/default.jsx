@@ -1,5 +1,5 @@
-import { css } from "@emotion/css";
-import { motion } from "framer-motion";
+import { css } from '@emotion/css';
+import { motion } from 'framer-motion';
 
 const motionConfig = {
   initial: {
@@ -23,12 +23,12 @@ const Layout = ({ children }) => {
   return (
     <motion.div
       variants={motionConfig}
-      initial={"initial"}
-      animate={"animate"}
-      exit={"hide"}
+      initial={'initial'}
+      animate={'animate'}
+      exit={'hide'}
       transition={{
         duration: 0.4,
-        ease: "easeInOut",
+        ease: 'easeInOut',
       }}
       className={css`
         position: relative;

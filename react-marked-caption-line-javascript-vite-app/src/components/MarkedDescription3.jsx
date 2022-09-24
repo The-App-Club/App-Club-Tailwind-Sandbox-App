@@ -1,8 +1,49 @@
-import { css, cx } from "@emotion/css";
+import { css, cx } from '@emotion/css';
+import { motion, useAnimationControls } from 'framer-motion';
+import { useEffect } from 'react';
+import { useRecoilValue } from 'recoil';
+
+import { scrollTriggerState } from '../stores/scrollTriggerStore';
+import { useScrollTrigger } from './ScrollTriggerProvider';
 
 const MarkedDescription3 = () => {
+  const controls = useAnimationControls();
+  const { progress: shortHandProgress, action } =
+    useRecoilValue(scrollTriggerState);
+  const { progress: motionProgress } = useScrollTrigger();
+
+  useEffect(() => {
+    if (shortHandProgress < 0.7) {
+      controls.start({
+        opacity: 0,
+        y: 60,
+      });
+    }
+    if (shortHandProgress > 0.8) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+      });
+    }
+    if (shortHandProgress > 0.9) {
+      controls.start({
+        opacity: 0,
+        y: 60,
+      });
+    }
+  }, [controls, shortHandProgress]);
+
   return (
-    <aside
+    <motion.aside
+      initial={{
+        opacity: 0,
+        y: 60,
+      }}
+      animate={controls}
+      transition={{
+        duration: 0.4,
+        ease: 'easeOut',
+      }}
       className={cx(
         css`
           width: 12rem;
@@ -11,8 +52,13 @@ const MarkedDescription3 = () => {
           top: calc(16rem + 62px);
           left: 0;
           padding: 1rem;
+          @media (max-width: 768px) {
+            position: absolute;
+            top: calc(100% - 4rem);
+            left: 0;
+          }
           ::before {
-            content: " ";
+            content: ' ';
             width: 160px;
             height: 3px;
             position: absolute;
@@ -20,17 +66,25 @@ const MarkedDescription3 = () => {
             right: -130px;
             transform-origin: top left;
             rotate: -64deg;
+            @media (max-width: 768px) {
+              width: 120px;
+              position: absolute;
+              top: -1px;
+              left: calc(100% - 3rem);
+              rotate: -48deg;
+            }
           }
         `,
         `border-gray-300 border-2`,
-        `before:content-[' '] before:bg-gray-300`
+        `before:content-[' '] before:bg-gray-300`,
+        `bg-white`
       )}
     >
-      <p className={cx("capitalize-first", "first-letter:text-3xl")}>
+      <p className={cx('capitalize-first', 'first-letter:text-3xl')}>
         page when looking at its layout. The point of using Lorem Ipsum is that
         it has a more-or-less normal distribution of letters.
       </p>
-    </aside>
+    </motion.aside>
   );
 };
 

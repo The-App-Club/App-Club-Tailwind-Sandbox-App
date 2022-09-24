@@ -1,15 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx}"],
+  content: ['./src/**/*.{js,jsx}'],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ['Inter', 'sans-serif'],
       },
     },
   },
   plugins: [
-    require("tailwindcss-no-scrollbar"),
-    require("tailwind-capitalize-first-letter"),
+    require('tailwindcss-no-scrollbar'),
+    require('tailwind-capitalize-first-letter'),
   ],
 };
