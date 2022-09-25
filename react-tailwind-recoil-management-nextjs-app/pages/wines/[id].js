@@ -71,7 +71,15 @@ const Wine = () => {
           )}
         >
           <div className="w-full flex items-start gap-2">
-            <img src={item.image} alt={item.wine} width={130} />
+            <picture className={css``}>
+              <source srcSet={item.image} type={`image/png`} />
+              <img
+                src={item.image}
+                alt={item.wine}
+                width={130}
+                height={'auto'}
+              />
+            </picture>
             <div className="w-full">
               <div className="flex items-center w-full justify-end gap-2">
                 <span className="text-4xl text-rose-400 dark:text-amber-400">
