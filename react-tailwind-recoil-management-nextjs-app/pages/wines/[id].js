@@ -8,9 +8,21 @@ import Spacer from '../../components/Spacer';
 import {useMemo} from 'react';
 import data from '../../data/wines.json';
 
-const Wine = ({wine: data}) => {
+const Wine = () => {
   const router = useRouter();
   const {id} = router.query;
+  const item = useMemo(() => {
+    return data.find((item) => {
+      return item.id === Number(id);
+    });
+  }, [id]);
+
+  if (!item) {
+    return;
+  }
+
+  console.log(item);
+
   return (
     <Layout className={`mt-12 px-2`}>
       <section
@@ -33,7 +45,7 @@ const Wine = ({wine: data}) => {
         <Spacer />
         <h2 className="text-2xl pb-2">
           <span className="mr-2">{`#${id}`}</span>
-          {data.wine}
+          {item.wine}
         </h2>
         <div
           className={cx(
@@ -46,8 +58,8 @@ const Wine = ({wine: data}) => {
             `
           )}
         >
-          <div className="font-bold">{`Produced by ${data.winery}`}</div>
-          <div className="font-bold">{`@${data.location}`}</div>
+          <div className="font-bold">{`Produced by ${item.winery}`}</div>
+          <div className="font-bold">{`@${item.location}`}</div>
         </div>
         <Spacer />
         <div
@@ -59,13 +71,13 @@ const Wine = ({wine: data}) => {
           )}
         >
           <div className="w-full flex items-start gap-2">
-            <img src={data.image} alt={data.wine} width={130} />
+            <img src={item.image} alt={item.wine} width={130} />
             <div className="w-full">
               <div className="flex items-center w-full justify-end gap-2">
                 <span className="text-4xl text-rose-400 dark:text-amber-400">
-                  {data.rating.average}
+                  {item.rating.average}
                 </span>
-                <span className="text-md">{data.rating.reviews}</span>
+                <span className="text-md">{item.rating.reviews}</span>
               </div>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -84,35 +96,6 @@ const Wine = ({wine: data}) => {
       </section>
     </Layout>
   );
-};
-
-export const getStaticPaths = async () => {
-  // const response = await fetch(`http://localhost:3000/api/listUpWines`);
-  // const response = await fetch(`https://api.sampleapis.com/wines/reds`);
-  // const {data} = await response.json();
-  const paths = data.map((item) => {
-    return {
-      params: {
-        id: item.id.toString(),
-      },
-    };
-  });
-  return {paths, fallback: false};
-};
-
-export const getStaticProps = async ({params}) => {
-  // const response = await fetch(`http://localhost:3000/api/listUpWines`);
-  // const response = await fetch(`https://api.sampleapis.com/wines/reds`);
-  // const {data} = await response.json();
-  const matchedData = data.find((item) => {
-    return item.id === Number(params.id);
-  });
-  return {
-    props: {
-      wine: matchedData,
-    },
-    revalidate: 10,
-  };
 };
 
 export default Wine;

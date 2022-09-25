@@ -6,7 +6,7 @@ import {useRouter} from 'next/router';
 import data from '../../data/wines.json';
 import {useMemo} from 'react';
 
-const Wines = ({wines}) => {
+const Wines = () => {
   const router = useRouter();
   return (
     <Layout className={`mt-12`}>
@@ -33,7 +33,7 @@ const Wines = ({wines}) => {
             }
           `)}
         >
-          {wines.map((item, index) => {
+          {data.map((item, index) => {
             return (
               <div
                 key={index}
@@ -62,18 +62,5 @@ const Wines = ({wines}) => {
     </Layout>
   );
 };
-
-export async function getStaticProps() {
-  // const response = await fetch(`http://localhost:3000/api/listUpWines`);
-  // const response = await fetch(`https://api.sampleapis.com/wines/reds`);
-  // const {data} = await response.json();
-  // const groupedData = tidy(data, groupBy(['winery'], groupBy.object()));
-  return {
-    props: {
-      wines: data,
-    },
-    revalidate: 10,
-  };
-}
 
 export default Wines;
