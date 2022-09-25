@@ -8,7 +8,7 @@
 
 - Manual
 
-Nextjs SSG on Firebase Hosting
+Nextjs SSG on [Render Hosting](https://render.com/docs/redirects-rewrites)
 
 ```bash
 $ time yarn build

@@ -3,7 +3,6 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "deploy": "firebase deploy --only hosting:react-nextjs-tailwindcss-hamburger-menu-app",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"{,!(node_modules|dist|build)/**/}*.*\""
