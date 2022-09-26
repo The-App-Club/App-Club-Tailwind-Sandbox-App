@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useRef, useState} from 'react';
 import {css, cx} from '@emotion/css';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
@@ -29,6 +29,8 @@ const SignUpSchema = yup.object().shape({
 });
 
 const Form = () => {
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
   const [loading, setLoading] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
@@ -41,7 +43,7 @@ const Form = () => {
   const [showPasswordSuccessMessage, setShowPasswordSuccessMessage] =
     useState(null);
 
-  const {register, handleSubmit, errors} = useForm({
+  const {register, handleSubmit, errors, watch} = useForm({
     mode: 'onSubmit',
     resolver: yupResolver(SignUpSchema),
   });
@@ -78,6 +80,7 @@ const Form = () => {
       setEmailShowSuccessMessage('有効なメールアドレスです');
       setEmailShowErrorMessage('');
       setDisabled(false);
+      await yesYouCan();
     } catch (error) {
       setEmailShowSuccessMessage('');
       setEmailShowErrorMessage(error.message);
@@ -92,9 +95,25 @@ const Form = () => {
       setShowPasswordErrorMessage('');
       setShowPasswordSuccessMessage('安全なパスワードです');
       setDisabled(false);
+      await yesYouCan();
     } catch (error) {
       setShowPasswordSuccessMessage('');
       setShowPasswordErrorMessage(error.message);
+      setDisabled(true);
+    }
+  };
+
+  const yesYouCan = async () => {
+    const {email, password} = watch();
+    try {
+      await SignUpSchema.fields.email.validate(email);
+      await SignUpSchema.fields.password.validate(password);
+      if (showSuccessMessage) {
+        setDisabled(true);
+      } else {
+        setDisabled(false);
+      }
+    } catch (error) {
       setDisabled(true);
     }
   };
@@ -159,6 +178,7 @@ const Form = () => {
         <Spacer height="0.5rem" />
         <div className="flex items-center gap-2 relative">
           <input
+            ref={passwordRef}
             type={showPassword ? 'text' : 'password'}
             id="password"
             autoComplete={'new-password'}
