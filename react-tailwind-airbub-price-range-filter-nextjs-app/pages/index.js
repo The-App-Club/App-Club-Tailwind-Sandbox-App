@@ -3,15 +3,13 @@ import Link from 'next/link';
 import Layout from '../layouts/default';
 import {default as chance} from 'chance';
 import data from '../data/wines.json';
-import {useMemo, useState} from 'react';
-import {tidy, min, max, count, filter} from '@tidyjs/tidy';
+import {useCallback, useEffect, useMemo, useState} from 'react';
+import {tidy, min, max, count, filter, summarize, sum} from '@tidyjs/tidy';
 import * as d3 from 'd3';
 import Spacer from '../components/Spacer';
+import Slider from '@mui/material/Slider';
 
 const Home = () => {
-  const [minStep, setMinStep] = useState(3);
-  const [maxStep, setMaxStep] = useState(5);
-
   const priceRange = useMemo(() => {
     return {
       min: tidy(data, min('price')),
@@ -20,9 +18,18 @@ const Home = () => {
     };
   }, []);
 
-  const piece = useMemo(() => {
-    return 10;
+  const width = useMemo(() => {
+    return 320;
   }, []);
+
+  const piece = useMemo(() => {
+    // return 7;
+    // return 10;
+    return 13;
+    // return 18;
+  }, []);
+
+  const [value, setValue] = useState([0, piece]);
 
   const priceUnit = useMemo(() => {
     return (priceRange.max - priceRange.min) / piece;
@@ -55,38 +62,56 @@ const Home = () => {
     });
   }, [nuts, priceUnit, priceRange]);
 
-  const d3Scaler = useMemo(() => {
+  const heightScaler = useMemo(() => {
     return d3
       .scaleLinear()
       .domain([
         tidy(priceRangePairs, min('amount')),
         tidy(priceRangePairs, max('amount')),
       ])
-      .range([30, 320]);
-  }, [priceRangePairs]);
+      .range([30, width]);
+  }, [priceRangePairs, width]);
 
   const niceData = useMemo(() => {
     return priceRangePairs.map((item) => {
       return {
         ...item,
-        width: 30,
-        height: d3Scaler(item.amount),
+        width: width / piece,
+        height: heightScaler(item.amount),
       };
     });
-  }, [priceRangePairs, d3Scaler]);
+  }, [priceRangePairs, heightScaler, piece, width]);
 
-  const handleChangeMinStep = (e) => {
-    if (maxStep <= Number(e.target.value)) {
+  const isActiveBar = useCallback(
+    (index) => {
+      const [min, max] = value;
+      return min <= index && index <= max - 1;
+    },
+    [value]
+  );
+
+  const valuetext = (value) => {
+    return `$${value}`;
+  };
+
+  const handleChange = (event, newValue) => {
+    const [a, b] = newValue;
+    if (a === b) {
       return;
     }
-    setMinStep(Number(e.target.value));
+    setValue(newValue);
   };
-  const handleChangeMaxStep = (e) => {
-    if (minStep >= Number(e.target.value)) {
-      return;
-    }
-    setMaxStep(Number(e.target.value));
-  };
+
+  const [leastPrice, largestPrice, matchedCount] = useMemo(() => {
+    const [minIndex, maxIndex] = value;
+    const data = priceRangePairs.slice(minIndex, maxIndex);
+    return [
+      Math.min(tidy(data, min('fromPrice')), tidy(data, min('toPrice'))),
+      Math.max(tidy(data, max('fromPrice')), tidy(data, max('toPrice'))),
+      tidy(data, sum('amount')),
+    ];
+  }, [value, priceRangePairs]);
+
   return (
     <Layout className={`mt-12`}>
       <section
@@ -103,8 +128,14 @@ const Home = () => {
       >
         <h2 className="text-3xl flex items-center justify-center">Home</h2>
 
-        <div>
-          <div className={cx(css``, `flex items-end gap-1`)}>
+        <Spacer />
+
+        <div
+          className={css`
+            width: ${width}px;
+          `}
+        >
+          <div className={cx(css``, `w-full flex items-end gap-1`)}>
             {niceData.map((item, index) => {
               return (
                 <div
@@ -114,71 +145,47 @@ const Home = () => {
                       width: ${item.width}px;
                       height: ${item.height}px;
                     `,
-                    `bg-slate-300`
+                    `${
+                      isActiveBar(index)
+                        ? 'bg-slate-400 dark:bg-yellow-300'
+                        : 'bg-slate-300'
+                    }`
                   )}
                 />
               );
             })}
           </div>
-          <div
-            className={css`
-              position: relative;
-            `}
-          >
-            <label
-              htmlFor="default-range"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
-              Default range
-              <span>0 ~ 1000</span>
-            </label>
-            <input
-              id="default-range"
-              type="range"
-              value={minStep}
-              min={0}
-              max={piece}
-              step={1}
-              className={cx(
-                `w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700`,
-                css`
-                  ::-webkit-slider-thumb {
-                    position: relative;
-                    left: -0.25rem;
-                  }
-                  ::-moz-range-thumb {
-                    position: relative;
-                    left: -0.25rem;
-                  }
-                `
-              )}
-              onChange={handleChangeMinStep}
-            />
-            <input
-              id="default-range"
-              type="range"
-              value={maxStep}
-              min={0}
-              max={piece}
-              step={1}
-              className={cx(
-                `w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700`,
-                css`
-                  ::-webkit-slider-thumb {
-                    position: relative;
-                    right: -0.25rem;
-                  }
-                  ::-moz-range-thumb {
-                    position: relative;
-                    right: -0.25rem;
-                  }
-                `
-              )}
-              onChange={handleChangeMaxStep}
-            />
+          <Slider
+            min={0}
+            max={piece}
+            step={1}
+            getAriaLabel={() => {
+              return `Price range`;
+            }}
+            value={value}
+            onChange={handleChange}
+            valueLabelDisplay="auto"
+            getAriaValueText={valuetext}
+          />
+          <div className="flex items-center justify-between">
+            <div className="flex flex-col items-center">
+              <span className="text-gray-700 dark:text-gray-200">{`最低価格`}</span>
+              <span className="font-bold">{`${Math.floor(leastPrice)}円`}</span>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <span className="text-gray-700 dark:text-gray-200">{`マッチ件数`}</span>
+              <span className="font-bold">{`${matchedCount}件`}</span>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <span className="text-gray-700 dark:text-gray-200">{`最高価格`}</span>
+              <span className="font-bold">{`${Math.floor(
+                largestPrice
+              )}円`}</span>
+            </div>
           </div>
         </div>
-
         {/* <Link href={'/'}>
           <a className="hover:underline">Back to home</a>
         </Link>
