@@ -69,7 +69,7 @@ const Home = () => {
         tidy(priceRangePairs, min('amount')),
         tidy(priceRangePairs, max('amount')),
       ])
-      .range([30, width]);
+      .range([width / 2, width]);
   }, [priceRangePairs, width]);
 
   const niceData = useMemo(() => {
@@ -105,12 +105,15 @@ const Home = () => {
   const [leastPrice, largestPrice, matchedCount] = useMemo(() => {
     const [minIndex, maxIndex] = value;
     const data = priceRangePairs.slice(minIndex, maxIndex);
+    console.log(data);
     return [
       Math.min(tidy(data, min('fromPrice')), tidy(data, min('toPrice'))),
       Math.max(tidy(data, max('fromPrice')), tidy(data, max('toPrice'))),
       tidy(data, sum('amount')),
     ];
   }, [value, priceRangePairs]);
+
+  console.log(niceData);
 
   return (
     <Layout className={`mt-12`}>
