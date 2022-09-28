@@ -14,7 +14,7 @@ const Header = () => {
       className={cx(
         css`
           position: fixed;
-          z-index: 1;
+          z-index: 4;
           top: 0;
           width: 100%;
           min-height: 3rem;

@@ -530,6 +530,18 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.4.tgz#0c8b74c50f29ee44f423f7416829c0bf8bb5eb27"
   integrity sha512-LwzQKA4vzIct1zNZzBmRKI9QuNpLgTQMEjsQLf3BXuGYb3QPTP4Yjf6mkdX+X1mYttZ808QpOwAzZjv28kq7DA==
 
+"@splidejs/react-splide@^0.7.11":
+  version "0.7.11"
+  resolved "https://registry.yarnpkg.com/@splidejs/react-splide/-/react-splide-0.7.11.tgz#dbd8b2d9523612d976475708cd23e696cc3e5a85"
+  integrity sha512-+wbBwXBQrDunVJhpAgbyy6dUxxcbOUYApboMtaNx296MVUeWWDTN4EftT7ssNchzZMIF7m2wY8fqVAc/H/h7yA==
+  dependencies:
+    "@splidejs/splide" "^4.1.1"
+
+"@splidejs/splide@^4.1.1":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-4.1.2.tgz#ca7d9602ed7fb1c24b896245c663f70ff1dc487e"
+  integrity sha512-7sv4Azb4hHJ8PGT2H/ilsElrxQ3+xrKwajBX/jkntjktrsqb3u3FXzo71dNPhwVr0hXVQUFgwvn0BjhwYzUJKw==
+
 "@swc/helpers@0.4.3":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.4.3.tgz#16593dfc248c53b699d4b5026040f88ddb497012"
@@ -543,6 +555,11 @@
   integrity sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==
   dependencies:
     mini-svg-data-uri "^1.2.3"
+
+"@tailwindcss/line-clamp@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.4.2.tgz#f353c5a8ab2c939c6267ac5b907f012e5ee130f9"
+  integrity sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==
 
 "@tidyjs/tidy@^2.5.1":
   version "2.5.1"

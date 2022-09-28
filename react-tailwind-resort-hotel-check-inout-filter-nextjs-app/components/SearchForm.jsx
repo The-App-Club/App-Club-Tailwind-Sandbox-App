@@ -25,7 +25,7 @@ const SearchForm = () => {
       className={cx(
         'w-full flex items-center justify-center gap-2',
         css`
-          @media (max-width: 768px) {
+          @media (max-width: 600px) {
             flex-direction: column;
           }
         `

@@ -122,7 +122,7 @@ const Nav = () => {
       className={cx(
         css`
           opacity: 0;
-          z-index: 4;
+          z-index: 5;
           transform: translate(100%, 0%);
           max-width: 22rem;
           @media (max-width: 768px) {
