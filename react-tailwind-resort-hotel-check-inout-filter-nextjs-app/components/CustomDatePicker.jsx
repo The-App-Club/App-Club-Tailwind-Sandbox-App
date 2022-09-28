@@ -5,6 +5,8 @@ import {format} from 'date-fns';
 import ja from 'date-fns/locale/ja';
 import {dayjs, ymdslash} from '../utils/dateUtil';
 import {cx} from '@emotion/css';
+import {useRecoilState} from 'recoil';
+import searchFormState from '../stores/searchFormStore';
 registerLocale('ja', ja);
 
 const _ButtonInput = ({value, onClick}, ref) => {
@@ -31,6 +33,8 @@ const _ButtonInput = ({value, onClick}, ref) => {
 const ButtonInput = forwardRef(_ButtonInput);
 
 const CustomDatePicker = () => {
+  const [searchForm, setSearchForm] = useRecoilState(searchFormState);
+
   const [startDate, setStartDate] = useState(
     dayjs(ymdslash(dayjs(new Date()))).toDate()
   );
@@ -56,9 +60,16 @@ const CustomDatePicker = () => {
     if (startDate > endDate) {
       return;
     }
-    // do search etc...
-    console.log(`startDate,endDate`, startDate, endDate);
-  }, [startDate, endDate]);
+    setSearchForm((prevState) => {
+      return {
+        checkInDate: startDate,
+        checkOutDate: endDate,
+        selectedArea: prevState.selectedArea,
+      };
+    });
+    // // do search etc...
+    // console.log(`startDate,endDate`, startDate, endDate);
+  }, [startDate, endDate, setSearchForm]);
 
   return (
     <div className="flex items-center justify-center gap-2">
