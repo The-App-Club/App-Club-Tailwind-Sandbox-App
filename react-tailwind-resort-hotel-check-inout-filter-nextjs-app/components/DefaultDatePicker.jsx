@@ -17,7 +17,7 @@ const DefaultDatePicker = () => {
   useEffect(() => {
     if (startDate > endDate) setEndDate(startDate);
   }, [startDate]);
-  
+
   return (
     <div className="flex items-center justify-center max-w-2xl py-20 mx-auto space-x-4">
       <span className="font-medium text-gray-900">Default Components:</span>

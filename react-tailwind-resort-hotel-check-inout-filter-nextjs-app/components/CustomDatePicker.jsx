@@ -13,7 +13,13 @@ const _ButtonInput = ({value, onClick}, ref) => {
       onClick={onClick}
       ref={ref}
       type="button"
-      className="inline-flex justify-start w-full px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-blue-500"
+      className={cx(
+        `inline-flex justify-start w-full px-3 py-2`,
+        `text-gray-900 dark:text-white text-sm font-medium`,
+        `shadow-sm border rounded-lg border-gray-300 dark:border-gray-600`,
+        `focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-blue-500 focus:border-blue-500`,
+        `bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400`
+      )}
     >
       {format(new Date(value), 'yyyy年 MM月 dd日', {
         locale: ja,
@@ -55,9 +61,16 @@ const CustomDatePicker = () => {
   }, [startDate, endDate]);
 
   return (
-    <div className="flex items-center justify-center max-w-2xl py-20 mx-auto space-x-4">
+    <div className="flex items-center justify-center gap-2">
       <div className="relative w-40">
+        <label
+          htmlFor="checkin"
+          className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+        >
+          チェックイン日
+        </label>
         <DatePicker
+          id="checkin"
           locale={'ja'}
           minDate={dayjs(new Date()).toDate()}
           selected={startDate}
@@ -121,7 +134,14 @@ const CustomDatePicker = () => {
         />
       </div>
       <div className="relative w-40">
+        <label
+          htmlFor="checkout"
+          className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+        >
+          チェックアウト日
+        </label>
         <DatePicker
+          id={'checkout'}
           locale={'ja'}
           minDate={dayjs(new Date()).toDate()}
           selected={endDate}

@@ -59,7 +59,7 @@ const Filter = ({data}) => {
         ).length,
       };
     });
-  }, [nuts, priceUnit, priceRange,data]);
+  }, [nuts, priceUnit, priceRange, data]);
 
   const heightScaler = useMemo(() => {
     return d3
