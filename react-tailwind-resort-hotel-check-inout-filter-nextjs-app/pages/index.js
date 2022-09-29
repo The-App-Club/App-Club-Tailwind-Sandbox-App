@@ -24,6 +24,7 @@ import DefaultDatePicker from '../components/DefaultDatePicker';
 import SearchForm from '../components/SearchForm';
 import '@splidejs/react-splide/css';
 import {Splide, SplideSlide} from '@splidejs/react-splide';
+import Card from '../components/Card';
 
 const Home = () => {
   const groupedData = useMemo(() => {
@@ -38,6 +39,23 @@ const Home = () => {
       return key;
     });
   }, []);
+
+  return (
+    <Layout className={`mt-12`}>
+      <section
+        className={cx(
+          `max-w-7xl m-auto`,
+          css`
+            @media (max-width: 600px) {
+              padding: 0 0.5rem;
+            }
+          `
+        )}
+      >
+        <Card />
+      </section>
+    </Layout>
+  );
 
   return (
     <Layout className={`mt-12`}>
