@@ -1,0 +1,73 @@
+import {css, cx} from '@emotion/css';
+import {motion} from 'framer-motion';
+import {useRouter} from 'next/router';
+import SidebarSp from './SidebarSp';
+import Nav from './Nav';
+import hamburgerState from '../stores/hamburgerStore';
+import {useRecoilValue} from 'recoil';
+
+const Sidebar = () => {
+  const router = useRouter();
+  const {opened} = useRecoilValue(hamburgerState);
+
+  return (
+    <>
+      <SidebarSp />
+      <motion.aside
+        className={cx(
+          css`
+            position: fixed;
+            top: 0;
+            left: 0;
+            max-width: 20rem;
+            width: 100%;
+            display: block;
+            height: 100vh;
+            overflow: hidden;
+            overflow-y: auto;
+            z-index: 4;
+            transition: left 0.2s ease ${opened ? 0 : 250}ms,
+              max-width 0.2s ease ${opened ? 0 : 250}ms;
+            @media (max-width: 768px) {
+              max-width: 0;
+              border: none;
+            }
+          `,
+          `border-r-2`
+        )}
+      >
+        <div
+          className={cx(
+            'relative w-full flex items-center gap-2',
+            css`
+              min-height: 3rem;
+            `
+          )}
+        >
+          <div
+            className={`flex items-center gap-1 hover:cursor-pointer`}
+            onClick={(e) => {
+              router.push({
+                pathname: '/',
+              });
+            }}
+          >
+            <picture className={css``}>
+              <source srcSet={`/assets/logo.png`} type={`image/png`} />
+              <img
+                src={'/assets/logo.png'}
+                alt={'logo'}
+                width={40}
+                height={40}
+              />
+            </picture>
+            <h2 className="text-xl">Make YourSelf</h2>
+          </div>
+        </div>
+        <Nav />
+      </motion.aside>
+    </>
+  );
+};
+
+export default Sidebar;

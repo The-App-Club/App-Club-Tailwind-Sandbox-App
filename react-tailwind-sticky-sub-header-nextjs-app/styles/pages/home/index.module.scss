@@ -1,0 +1,19 @@
+.page {
+  &__layout {
+    @apply mt-12;
+  }
+  &__section {
+    @apply max-w-7xl mx-auto w-full flex justify-start items-center flex-col min-h-screen;
+  }
+  &__header {
+    @apply text-3xl flex items-center justify-center;
+  }
+  &__paragraph {
+    @apply flex items-center justify-center;
+    &:hover {
+      @apply cursor-pointer font-bold;
+    }
+    &_success {
+    }
+  }
+}
