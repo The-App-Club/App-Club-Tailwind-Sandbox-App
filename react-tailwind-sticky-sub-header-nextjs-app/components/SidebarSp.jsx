@@ -126,6 +126,18 @@ const SidebarSp = () => {
       )}
     >
       <motion.div
+        initial={{
+          opacity: 0,
+          x: -60,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+        }}
+        exit={{
+          opacity: 0,
+          x: -60,
+        }}
         className={cx(
           css`
             position: absolute;

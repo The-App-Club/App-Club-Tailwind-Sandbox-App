@@ -23,8 +23,19 @@ const decideBorderColor = ({theme}) => {
 const MenuItem = ({path, menuTitle, icon}) => {
   const router = useRouter();
   const theme = useRecoilValue(themeState);
+
+  const motionConfig = {
+    hidden: {opacity: 0, x: 160},
+    show: {opacity: 1, x: 0},
+  };
+
   return (
     <motion.li
+      variants={motionConfig}
+      transition={{
+        duration: 0.7,
+        ease: 'backInOut',
+      }}
       className={cx(
         css`
           width: 100%;
@@ -50,9 +61,21 @@ const MenuItem = ({path, menuTitle, icon}) => {
 };
 
 const Nav = () => {
+  const motionConfig = {
+    hidden: {opacity: 0},
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
   return (
     <motion.nav className="relative w-full">
       <motion.ul
+        variants={motionConfig}
+        initial="hidden"
+        animate="show"
         className={css`
           padding-top: 0;
           @media (max-width: 768px) {

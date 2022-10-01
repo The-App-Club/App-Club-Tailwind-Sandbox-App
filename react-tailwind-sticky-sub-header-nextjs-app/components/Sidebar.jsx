@@ -38,6 +38,22 @@ const Sidebar = () => {
         )}
       >
         <motion.div
+          initial={{
+            opacity: 0,
+            x: -60,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          exit={{
+            opacity: 0,
+            x: -60,
+          }}
+          transition={{
+            duration: 0.7,
+            ease: 'easeInOut',
+          }}
           className={cx(
             'relative w-full flex items-center gap-2',
             `border-b-2`,
