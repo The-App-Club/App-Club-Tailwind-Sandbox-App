@@ -13,7 +13,6 @@ const SidebarSp = () => {
   const {opened} = useRecoilValue(hamburgerState);
   const [hamburger, setHamburger] = useRecoilState(hamburgerState);
   const containerDomRef = useRef();
-  const controls = useAnimationControls();
 
   const handleResize = useDebouncedCallback((e) => {
     if (opened) {
@@ -93,12 +92,11 @@ const SidebarSp = () => {
         },
       });
     }
-  }, [opened, setHamburger, controls]);
+  }, [opened, setHamburger]);
 
   return (
     <motion.aside
       ref={containerDomRef}
-      animate={controls}
       className={cx(
         css`
           opacity: 0;
@@ -127,7 +125,7 @@ const SidebarSp = () => {
         `border-r-2`
       )}
     >
-      <div
+      <motion.div
         className={cx(
           css`
             position: absolute;
@@ -144,7 +142,7 @@ const SidebarSp = () => {
           <img src={'/assets/logo.png'} alt={'logo'} width={40} height={40} />
         </picture>
         <h3 className="text-2xl">Menu</h3>
-      </div>
+      </motion.div>
       <Hamburger
         className={cx(
           css`

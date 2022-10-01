@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import hamburgerState from '../stores/hamburgerStore';
 import themeState from '../stores/themeStore';
+import {motion} from 'framer-motion';
 
 const decideHamburgerColor = ({mode}) => {
   if (mode === `dark`) {
@@ -53,7 +54,22 @@ const Hamburger = ({className}) => {
   }, []);
 
   return (
-    <div className={cx(css``, className)}>
+    <motion.div
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        opacity: 0,
+      }}
+      transition={{
+        duration: 0.7,
+        ease: 'linear',
+      }}
+      className={cx(css``, className)}
+    >
       <div
         className={cx(
           css`
@@ -110,7 +126,7 @@ const Hamburger = ({className}) => {
           </span>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

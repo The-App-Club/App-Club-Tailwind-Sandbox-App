@@ -5,6 +5,7 @@ import {MdOutlineChat} from 'react-icons/md';
 import {BiTimeFive} from 'react-icons/bi';
 import {RiAdvertisementLine} from 'react-icons/ri';
 import Link from 'next/link';
+import {motion} from 'framer-motion';
 
 import Hamburger from './Hamburger';
 import {useRecoilValue} from 'recoil';
@@ -23,7 +24,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
   const router = useRouter();
   const theme = useRecoilValue(themeState);
   return (
-    <li
+    <motion.li
       className={cx(
         css`
           width: 100%;
@@ -44,14 +45,14 @@ const MenuItem = ({path, menuTitle, icon}) => {
       <Link href={path}>
         <a>{menuTitle}</a>
       </Link>
-    </li>
+    </motion.li>
   );
 };
 
 const Nav = () => {
   return (
-    <nav className="relative w-full">
-      <ul
+    <motion.nav className="relative w-full">
+      <motion.ul
         className={css`
           padding-top: 0;
           @media (max-width: 768px) {
@@ -100,8 +101,8 @@ const Nav = () => {
             return <MdOutlineNotifications size={24} />;
           }}
         />
-      </ul>
-    </nav>
+      </motion.ul>
+    </motion.nav>
   );
 };
 

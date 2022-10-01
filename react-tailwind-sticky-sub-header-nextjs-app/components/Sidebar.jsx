@@ -31,14 +31,16 @@ const Sidebar = () => {
             @media (max-width: 768px) {
               max-width: 0;
               border: none;
+              display: none;
             }
           `,
           `border-r-2`
         )}
       >
-        <div
+        <motion.div
           className={cx(
             'relative w-full flex items-center gap-2',
+            `border-b-2`,
             css`
               min-height: 3rem;
             `
@@ -63,7 +65,7 @@ const Sidebar = () => {
             </picture>
             <h2 className="text-xl">Make YourSelf</h2>
           </div>
-        </div>
+        </motion.div>
         <Nav />
       </motion.aside>
     </>

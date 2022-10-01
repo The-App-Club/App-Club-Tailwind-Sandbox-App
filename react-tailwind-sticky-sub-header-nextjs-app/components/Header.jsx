@@ -6,6 +6,7 @@ import {useRecoilState} from 'recoil';
 import hamburgerState from '../stores/hamburgerStore';
 import Hamburger from './Hamburger';
 import ThemeToggle from './ThemeToggle';
+import {motion} from 'framer-motion';
 
 const Header = ({pathname}) => {
   const router = useRouter();
@@ -28,7 +29,20 @@ const Header = ({pathname}) => {
   }, [pathname]);
 
   return (
-    <header
+    <motion.header
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        opacity: 0,
+      }}
+      transition={{
+        duration: 0.7,
+        ease: 'linear',
+      }}
       className={cx(
         css`
           position: fixed;
@@ -64,7 +78,7 @@ const Header = ({pathname}) => {
           <ThemeToggle />
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
