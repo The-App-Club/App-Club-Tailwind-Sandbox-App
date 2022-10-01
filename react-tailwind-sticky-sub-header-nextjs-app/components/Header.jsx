@@ -18,8 +18,8 @@ const Header = ({pathname}) => {
       pathname === `/price`
     ) {
       return css`
-        left: 20rem;
-        max-width: calc(100% - 20rem);
+        left: 18rem;
+        max-width: calc(100% - 18rem);
       `;
     }
     return css`

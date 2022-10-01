@@ -102,7 +102,7 @@ const SidebarSp = () => {
           opacity: 0;
           z-index: 4;
           transform: translate(0%, 0%);
-          max-width: 20rem;
+          max-width: 18rem;
           width: 100%;
           height: 100%;
           position: fixed;

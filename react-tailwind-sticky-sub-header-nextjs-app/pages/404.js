@@ -17,8 +17,8 @@ const Custom404 = () => {
             css`
               position: absolute;
               top: 0;
-              left: 20rem;
-              max-width: calc(100% - 20rem);
+              left: 18rem;
+              max-width: calc(100% - 18rem);
               width: 100%;
               min-height: 100vh;
               transition: left 0.2s ease ${opened ? 0 : 250}ms,

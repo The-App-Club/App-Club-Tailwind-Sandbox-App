@@ -19,7 +19,7 @@ const Sidebar = () => {
             position: fixed;
             top: 0;
             left: 0;
-            max-width: 20rem;
+            max-width: 18rem;
             width: 100%;
             display: block;
             height: 100vh;
