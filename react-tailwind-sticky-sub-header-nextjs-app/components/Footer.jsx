@@ -10,9 +10,10 @@ import {MdOutlineLocalPolice} from 'react-icons/md';
 import {GiChestnutLeaf} from 'react-icons/gi';
 import {AiOutlineCopyright} from 'react-icons/ai';
 import Link from 'next/link';
-import {useMemo} from 'react';
+import {useLayoutEffect, useMemo, useState} from 'react';
 
 const Footer = ({pathname}) => {
+  const [mouted, setMounted] = useState(false);
   const router = useRouter();
   const nicePosition = useMemo(() => {
     if (
@@ -33,10 +34,15 @@ const Footer = ({pathname}) => {
     `;
   }, [pathname]);
 
+  useLayoutEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <footer
       className={cx(
         css`
+          opacity: ${mouted ? 1 : 0};
           position: absolute;
           width: 100%;
           transition: left 0.2s ease 250ms, max-width 0.2s ease 250ms;
