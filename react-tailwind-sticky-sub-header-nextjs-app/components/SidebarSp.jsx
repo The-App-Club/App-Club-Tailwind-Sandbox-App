@@ -141,14 +141,7 @@ const SidebarSp = () => {
       >
         <picture className={css``}>
           <source srcSet={`/assets/logo.png`} type={`image/png`} />
-          <img
-            src={'/assets/logo.png'}
-            alt={'logo'}
-            className={css`
-              width: 40px;
-              height: 40px;
-            `}
-          />
+          <img src={'/assets/logo.png'} alt={'logo'} width={40} height={40} />
         </picture>
         <h3 className="text-2xl">Menu</h3>
       </div>

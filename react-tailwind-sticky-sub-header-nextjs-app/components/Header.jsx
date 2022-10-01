@@ -10,7 +10,12 @@ import ThemeToggle from './ThemeToggle';
 const Header = ({pathname}) => {
   const router = useRouter();
   const nicePosition = useMemo(() => {
-    if (pathname === `/`) {
+    if (
+      pathname === `/` ||
+      pathname === `/contact` ||
+      pathname === `/about` ||
+      pathname === `/price`
+    ) {
       return css`
         left: 20rem;
         max-width: calc(100% - 20rem);
