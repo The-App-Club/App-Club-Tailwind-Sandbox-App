@@ -25,6 +25,7 @@ const CowboyBebopInit = ({children}) => {
 
   const handleRouteChangeStart = useCallback(
     (e) => {
+      console.log(e);
       setHamburger((prevState) => {
         return {
           opened: false,

@@ -15,6 +15,7 @@ import hamburgerState from '../../stores/hamburgerStore';
 import Category from '../../components/Category';
 
 const Winery = () => {
+  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
   return (
     <>
@@ -109,10 +110,17 @@ const Winery = () => {
                   key={index}
                   className={cx(
                     `border-2 p-2`,
+                    `hover:cursor-pointer`,
+                    `hover:bg-gray-100 dark:hover:bg-slate-800`,
                     css`
                       width: 100%;
                     `
                   )}
+                  onClick={(e) => {
+                    router.push({
+                      pathname: `/winery/${item.wineryId}`,
+                    });
+                  }}
                 >
                   <div
                     className={css`

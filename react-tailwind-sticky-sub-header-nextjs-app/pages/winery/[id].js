@@ -129,10 +129,17 @@ const Winery = () => {
                   key={index}
                   className={cx(
                     `border-2 p-2`,
+                    `hover:cursor-pointer`,
+                    `hover:bg-gray-100 dark:hover:bg-slate-800`,
                     css`
                       width: 100%;
                     `
                   )}
+                  onClick={(e) => {
+                    router.push({
+                      pathname: `/wines/${item.id}`,
+                    });
+                  }}
                 >
                   <div
                     className={css`

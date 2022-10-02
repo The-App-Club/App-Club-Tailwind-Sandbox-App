@@ -119,6 +119,20 @@ const Nav = () => {
           }}
         />
         <MenuItem
+          path={'/wines'}
+          menuTitle={'Wines'}
+          icon={() => {
+            return <BiTimeFive size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/winery'}
+          menuTitle={'Winery'}
+          icon={() => {
+            return <MdOutlineNotifications size={24} />;
+          }}
+        />
+        <MenuItem
           path={'/about'}
           menuTitle={'About'}
           icon={() => {
@@ -130,20 +144,6 @@ const Nav = () => {
           menuTitle={'Contact'}
           icon={() => {
             return <MdOutlineChat size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/price'}
-          menuTitle={'Price'}
-          icon={() => {
-            return <BiTimeFive size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/notification'}
-          menuTitle={'Notification'}
-          icon={() => {
-            return <MdOutlineNotifications size={24} />;
           }}
         />
       </motion.ul>

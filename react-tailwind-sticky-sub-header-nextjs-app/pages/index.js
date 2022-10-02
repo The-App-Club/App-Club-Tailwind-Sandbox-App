@@ -83,14 +83,6 @@ const Home = () => {
             >
               Home
             </h2>
-            <div className="flex items-center gap-2">
-              <button className="px-6 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center">
-                Do1
-              </button>
-              <button className="px-6 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center">
-                Do2
-              </button>
-            </div>
           </div>
           <Category />
           <div
