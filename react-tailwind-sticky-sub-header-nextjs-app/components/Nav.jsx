@@ -26,7 +26,7 @@ const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
     return `border-blue-900 dark:border-yellow-300`;
   }
-  return ``;
+  return `border-transparent`;
 };
 
 const MenuItem = ({path, menuTitle, icon}) => {
@@ -59,7 +59,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
           min-height: 3rem;
         `,
         `flex items-center gap-2 pl-2 hover:cursor-pointer`,
-        `border-r-8 border-transparent`,
+        `border-r-8`,
         `hover:bg-gray-100 dark:hover:bg-slate-800`,
         isClient &&
           attachActiveMenu({activeMenuName: sidebar.activeMenuName, menuTitle})
