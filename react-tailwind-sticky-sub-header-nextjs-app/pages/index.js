@@ -8,6 +8,7 @@ import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import Tracer from '../components/Tracer';
+import Category from '../components/Category';
 
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);
@@ -33,6 +34,7 @@ const Home = () => {
                 max-width: 100%;
               }
               nav {
+                z-index: 2;
                 position: sticky;
                 top: 3rem;
                 width: 100%;
@@ -64,6 +66,7 @@ const Home = () => {
           <div
             className={cx(
               css`
+                z-index: 2;
                 position: sticky;
                 top: 6rem;
                 min-height: 3rem;
@@ -89,6 +92,7 @@ const Home = () => {
               </button>
             </div>
           </div>
+          <Category />
           <div
             className={cx(
               css`

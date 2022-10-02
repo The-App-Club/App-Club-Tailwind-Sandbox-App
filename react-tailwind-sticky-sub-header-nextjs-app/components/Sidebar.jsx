@@ -34,7 +34,7 @@ const Sidebar = () => {
               display: none;
             }
           `,
-          `border-r-2 bg-white`
+          `border-r-2 bg-white dark:bg-slate-700`
         )}
       >
         <motion.div
