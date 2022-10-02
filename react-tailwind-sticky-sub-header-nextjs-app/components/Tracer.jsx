@@ -1,6 +1,6 @@
 import {css, cx} from '@emotion/css';
 
-const Tracer = ({title = `Tracer`, children}) => {
+const Tracer = ({title = `Tracer`, className, children}) => {
   return (
     <aside
       className={cx(
@@ -14,7 +14,8 @@ const Tracer = ({title = `Tracer`, children}) => {
             max-width: 100%;
           }
         `,
-        `border-2`
+        `border-2`,
+        className
       )}
     >
       <h2

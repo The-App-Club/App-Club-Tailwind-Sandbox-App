@@ -116,7 +116,12 @@ const Home = () => {
                 Content
               </h2>
             </div>
-            <Tracer />
+            <Tracer
+              className={css`
+                position: sticky;
+                top: 15rem;
+              `}
+            />
           </div>
         </section>
       </Layout>

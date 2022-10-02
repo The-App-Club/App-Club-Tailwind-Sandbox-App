@@ -10,7 +10,6 @@ import Tracer from '../components/Tracer';
 
 const Contact = () => {
   const {opened} = useRecoilValue(hamburgerState);
-
   return (
     <>
       <Sidebar />

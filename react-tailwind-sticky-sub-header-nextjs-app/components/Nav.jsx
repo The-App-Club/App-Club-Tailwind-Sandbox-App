@@ -78,9 +78,6 @@ const MenuItem = ({path, menuTitle, icon}) => {
     >
       {icon()}
       <h2>{menuTitle}</h2>
-      {/* <Link href={path}>
-        <a>{menuTitle}</a>
-      </Link> */}
     </motion.li>
   );
 };
@@ -91,7 +88,7 @@ const Nav = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.001,
       },
     },
   };

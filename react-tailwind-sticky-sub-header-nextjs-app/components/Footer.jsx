@@ -16,7 +16,12 @@ import {useMemo, useState} from 'react';
 const Footer = ({pathname}) => {
   const router = useRouter();
   const nicePosition = useMemo(() => {
-    if (pathname === `/` || pathname === `/contact`) {
+    if (
+      pathname === `/` ||
+      pathname === `/contact` ||
+      pathname === `/winery/[id]` ||
+      pathname === `/winery`
+    ) {
       return css`
         display: none;
       `;
