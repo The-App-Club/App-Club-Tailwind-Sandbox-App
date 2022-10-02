@@ -10,17 +10,18 @@ const Tracer = ({title = `Tracer`, className, children}) => {
           width: 100%;
           position: sticky;
           top: 9rem;
+          z-index: 1;
           @media (max-width: 1000px) {
             max-width: 100%;
           }
         `,
-        `border-2`,
+        `border-2 bg-white dark:bg-slate-700`,
         className
       )}
     >
       <h2
         className={cx(
-          `text-2xl flex items-center justify-start`,
+          `text-2xl flex items-center justify-start border-b-2 mb-2 px-2`,
           css`
             min-height: 3rem;
           `
