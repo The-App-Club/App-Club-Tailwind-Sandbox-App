@@ -12,6 +12,7 @@ import {useRecoilState, useRecoilValue} from 'recoil';
 import themeState from '../stores/themeStore';
 import {useRouter} from 'next/router';
 import sidebarState from '../stores/sidebarStore';
+import {useEffect, useState} from 'react';
 
 const decideBorderColor = ({theme}) => {
   if (theme.mode === `dark`) {
@@ -21,15 +22,29 @@ const decideBorderColor = ({theme}) => {
   return `hover:border-blue-900`;
 };
 
+const attachActiveMenu = ({activeMenuName, menuTitle}) => {
+  if (activeMenuName === menuTitle) {
+    return `border-blue-900 dark:border-yellow-300`;
+  }
+  return ``;
+};
+
 const MenuItem = ({path, menuTitle, icon}) => {
   const router = useRouter();
   const theme = useRecoilValue(themeState);
+  const [isClient, setIsClient] = useState(false);
   const [sidebar, setSidebar] = useRecoilState(sidebarState);
 
   const motionConfig = {
     hidden: {opacity: 0, x: 160},
     show: {opacity: 1, x: 0},
   };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
 
   return (
     <motion.li
@@ -46,11 +61,8 @@ const MenuItem = ({path, menuTitle, icon}) => {
         `flex items-center gap-2 pl-2 hover:cursor-pointer`,
         `border-r-8 border-transparent`,
         `hover:bg-gray-100 dark:hover:bg-slate-800`,
-        `${
-          sidebar.activeMenuName === menuTitle
-            ? 'border-blue-900 dark:border-yellow-300'
-            : ''
-        }`
+        isClient &&
+          attachActiveMenu({activeMenuName: sidebar.activeMenuName, menuTitle})
         // decideBorderColor({theme})
       )}
       onClick={(e) => {
