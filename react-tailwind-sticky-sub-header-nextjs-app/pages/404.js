@@ -4,8 +4,11 @@ import Sidebar from '../components/Sidebar';
 import Layout from '../layouts/default';
 import hamburgerState from '../stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
-
+import Breadcrumbs from 'nextjs-breadcrumbs';
+import capitalize from 'capitalize-the-first-letter';
+import {useRouter} from 'next/router';
 const Custom404 = () => {
+  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
   return (
     <>
@@ -27,9 +30,36 @@ const Custom404 = () => {
                 left: 0;
                 max-width: 100%;
               }
+              nav {
+                position: sticky;
+                top: 3rem;
+                width: 100%;
+                padding: 0 0.5rem;
+                ol {
+                  width: 100%;
+                  min-height: 3rem;
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                }
+              }
             `
           )}
         >
+          <Breadcrumbs
+            useDefaultStyle={true}
+            replaceCharacterList={[{from: '.', to: ' '}]}
+            containerClassName="bg-white dark:bg-slate-700"
+            activeItemClassName={'text-gray-500 dark:text-slate-500'}
+            inactiveItemClassName={'text-gray-500 dark:text-slate-500'}
+            transformLabel={(title) => {
+              const niceTitle = capitalize(title);
+              if (niceTitle === `Home`) {
+                return `${niceTitle}`;
+              }
+              return null;
+            }}
+          />
           <h2 className="text-3xl flex items-center justify-center">
             Custom404
           </h2>
