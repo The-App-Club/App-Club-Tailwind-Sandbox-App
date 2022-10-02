@@ -8,9 +8,10 @@ import Link from 'next/link';
 import {motion} from 'framer-motion';
 
 import Hamburger from './Hamburger';
-import {useRecoilValue} from 'recoil';
+import {useRecoilState, useRecoilValue} from 'recoil';
 import themeState from '../stores/themeStore';
 import {useRouter} from 'next/router';
+import sidebarState from '../stores/sidebarStore';
 
 const decideBorderColor = ({theme}) => {
   if (theme.mode === `dark`) {
@@ -23,6 +24,7 @@ const decideBorderColor = ({theme}) => {
 const MenuItem = ({path, menuTitle, icon}) => {
   const router = useRouter();
   const theme = useRecoilValue(themeState);
+  const [sidebar, setSidebar] = useRecoilState(sidebarState);
 
   const motionConfig = {
     hidden: {opacity: 0, x: 160},
@@ -44,18 +46,29 @@ const MenuItem = ({path, menuTitle, icon}) => {
         `flex items-center gap-2 pl-2 hover:cursor-pointer`,
         `border-r-8 border-transparent`,
         `hover:bg-gray-100 dark:hover:bg-slate-800`,
-        decideBorderColor({theme})
+        `${
+          sidebar.activeMenuName === menuTitle
+            ? 'border-blue-900 dark:border-yellow-300'
+            : ''
+        }`
+        // decideBorderColor({theme})
       )}
       onClick={(e) => {
+        setSidebar((prevState) => {
+          return {
+            activeMenuName: menuTitle,
+          };
+        });
         router.push({
           pathname: path,
         });
       }}
     >
       {icon()}
-      <Link href={path}>
+      <h2>{menuTitle}</h2>
+      {/* <Link href={path}>
         <a>{menuTitle}</a>
-      </Link>
+      </Link> */}
     </motion.li>
   );
 };
