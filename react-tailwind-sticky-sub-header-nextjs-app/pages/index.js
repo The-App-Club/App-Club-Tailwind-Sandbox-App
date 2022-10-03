@@ -7,8 +7,12 @@ import hamburgerState from '../stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import Tracer from '../components/Tracer';
 import Category from '../components/Category';
+
+import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
+import {useMemo} from 'react';
+import data from '../data/wines.json';
+import PriceRanking from '../components/PriceRanking';
 
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);
@@ -96,6 +100,7 @@ const Home = () => {
                 align-items: flex-start;
                 gap: 2rem;
                 @media (max-width: 1000px) {
+                  min-height: initial;
                   flex-direction: column;
                 }
               `
@@ -108,7 +113,7 @@ const Home = () => {
                 Content
               </h2>
             </div>
-            <Tracer
+            <PriceRanking
               className={css`
                 position: sticky;
                 top: 15rem;
