@@ -22,8 +22,11 @@ import data from '../data/wines.json';
 import winerySelectorState from '../stores/winerySelectorStore';
 import WinerySelector from './WinerySelector';
 import Spacer from './Spacer';
+import {default as numbro} from 'numbro';
+import themeState from '../stores/themeStore';
 
 const AreaGraph = () => {
+  const {mode} = useRecoilValue(themeState);
   const {activeWineryName} = useRecoilValue(winerySelectorState);
   const [value, setValue] = useState([0, 14]);
 
@@ -36,6 +39,7 @@ const AreaGraph = () => {
           winery: item.winery,
           location: item.location,
           wine: item.wine,
+          id: item.id,
           price: item.price,
           average: Number(item.rating.average),
           reviews: Number(item.rating.reviews.replace('ratings', '').trim()),
@@ -95,6 +99,24 @@ const AreaGraph = () => {
     ).flat();
   }, [niceData, activeWineryName]);
 
+  const decideBarBackFaceFillColor = ({mode}) => {
+    if (mode === `light`) {
+      return `rgb(243 244 246)`; // bg-gray-100
+    }
+    if (mode === `dark`) {
+      return `rgb(30 41 59)`; // bg-slate-800
+    }
+  };
+
+  const decideAxisTickFillColor = ({mode}) => {
+    if (mode === `light`) {
+      return `rgb(75 85 99)`; // text-gray-600
+    }
+    if (mode === `dark`) {
+      return `rgb(226 232 240)`; // text-slate-200
+    }
+  };
+
   // https://recharts.org/en-US/api/AreaChart
   return (
     <div className="max-w-6xl w-full px-6">
@@ -124,18 +146,41 @@ const AreaGraph = () => {
           height={300}
           data={selectedData}
           margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
+            top: 50,
+            right: 60,
+            left: 60,
+            bottom: 10,
           }}
+          className={`shadow-2xl bg-white dark:bg-slate-700/90 rounded-xl`}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="wine" />
-          <YAxis />
-          <Tooltip />
+          <XAxis
+            dataKey="wine"
+            angle={-45}
+            textAnchor="end"
+            fontSize={'10px'}
+            tickFormatter={(value, index) => {
+              return `#${selectedData[index]?.id}`;
+            }}
+            tick={{fill: decideAxisTickFillColor({mode})}}
+          />
+          <YAxis tick={{fill: decideAxisTickFillColor({mode})}} />
+          <Tooltip
+            wrapperClassName={`!bg-white dark:!bg-slate-700 !border-gray-100 dark:!border-slate-700 shadow-2xl`}
+            labelClassName={`!bg-white dark:!bg-slate-700`}
+            cursor={{
+              fill: decideBarBackFaceFillColor({mode}),
+            }}
+            labelFormatter={(label, [item]) => {
+              return `#${item?.payload.id} ${item?.payload.wine}`;
+            }}
+            formatter={(value) => {
+              return value;
+            }}
+          />
           <Legend />
-          <Bar dataKey="reviews" fill="#1C6758" />
+          {mode === `light` && <Bar dataKey="reviews" fill="#630A10" />}
+          {mode === `dark` && <Bar dataKey="reviews" fill="#FCF0C8" />}
         </BarChart>
       </ResponsiveContainer>
       <Spacer />
@@ -145,18 +190,41 @@ const AreaGraph = () => {
           height={300}
           data={selectedData}
           margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
+            top: 50,
+            right: 60,
+            left: 60,
+            bottom: 10,
           }}
+          className={`shadow-2xl bg-white dark:bg-slate-700/90 rounded-xl`}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="wine" />
-          <YAxis />
-          <Tooltip />
+          <XAxis
+            dataKey="wine"
+            angle={-45}
+            textAnchor="end"
+            fontSize={'10px'}
+            tickFormatter={(value, index) => {
+              return `#${selectedData[index]?.id}`;
+            }}
+            tick={{fill: decideAxisTickFillColor({mode})}}
+          />
+          <YAxis tick={{fill: decideAxisTickFillColor({mode})}} />
+          <Tooltip
+            wrapperClassName={`!bg-white dark:!bg-slate-700 !border-gray-100 dark:!border-slate-700 shadow-2xl`}
+            labelClassName={`!bg-white dark:!bg-slate-700`}
+            cursor={{
+              fill: decideBarBackFaceFillColor({mode}),
+            }}
+            labelFormatter={(label, [item]) => {
+              return `#${item?.payload.id} ${item?.payload.wine}`;
+            }}
+            formatter={(value) => {
+              return value;
+            }}
+          />
           <Legend />
-          <Bar dataKey="average" fill="#8884d8" />
+          {mode === `light` && <Bar dataKey="average" fill="#42855B" />}
+          {mode === `dark` && <Bar dataKey="average" fill="#90B77D" />}
         </BarChart>
       </ResponsiveContainer>
       <Spacer />
@@ -166,18 +234,43 @@ const AreaGraph = () => {
           height={300}
           data={selectedData}
           margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
+            top: 50,
+            right: 60,
+            left: 60,
+            bottom: 10,
           }}
+          className={`shadow-2xl bg-white dark:bg-slate-700/90 rounded-xl`}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="wine" />
-          <YAxis />
-          <Tooltip />
+          <XAxis
+            dataKey="wine"
+            angle={-45}
+            textAnchor="end"
+            fontSize={'10px'}
+            tickFormatter={(value, index) => {
+              return `#${selectedData[index]?.id}`;
+            }}
+            tick={{fill: decideAxisTickFillColor({mode})}}
+          />
+          <YAxis tick={{fill: decideAxisTickFillColor({mode})}} />
+          <Tooltip
+            wrapperClassName={`!bg-white dark:!bg-slate-700 !border-gray-100 dark:!border-slate-700 shadow-2xl`}
+            labelClassName={`!bg-white dark:!bg-slate-700`}
+            cursor={{
+              fill: decideBarBackFaceFillColor({mode}),
+            }}
+            labelFormatter={(label, [item]) => {
+              return `#${item?.payload.id} ${item?.payload.wine}`;
+            }}
+            formatter={(value) => {
+              return `$${numbro(value).format({
+                thousandSeparated: true,
+              })}`;
+            }}
+          />
           <Legend />
-          <Bar dataKey="price" fill="#82ca9d" />
+          {mode === `light` && <Bar dataKey="price" fill="#E26A2C" />}
+          {mode === `dark` && <Bar dataKey="price" fill="#FFD07F" />}
         </BarChart>
       </ResponsiveContainer>
     </div>
