@@ -20,9 +20,11 @@ const Profile = ({menuData}) => {
           css`
             padding: 0.375rem 0.5rem 0.375rem 0.5rem;
           `,
+          `dark:text-white`,
+          `bg-white dark:bg-slate-700`,
           `border-l-8 border-transparent`,
           `flex items-center gap-2`,
-          `hover:border-blue-900 hover:cursor-pointer`,
+          `hover:border-blue-900 hover:dark:border-yellow-300 hover:cursor-pointer`,
           `hover:bg-gray-100 dark:hover:bg-slate-800`,
           `my-menuitem-hover`
         )
@@ -30,6 +32,8 @@ const Profile = ({menuData}) => {
           css`
             padding: 0.375rem 0.5rem 0.375rem 0.5rem;
           `,
+          `dark:text-white`,
+          `bg-white dark:bg-slate-700`,
           `border-l-8 border-transparent`,
           `flex items-center gap-2`
         );
@@ -70,7 +74,7 @@ const Profile = ({menuData}) => {
         onClose={() => {
           setOpen(false);
         }}
-        className={cx(css``)}
+        className={cx('control-menu')}
       >
         {menuData.map((menuItem, index) => {
           return (

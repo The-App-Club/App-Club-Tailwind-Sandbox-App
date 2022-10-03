@@ -18,3 +18,9 @@ body {
   overflow: hidden;
   overflow-y: auto;
 }
+
+.control-menu {
+  ul {
+    @apply bg-white dark:bg-slate-700 border-2 dark:border-white shadow-2xl;
+  }
+}
