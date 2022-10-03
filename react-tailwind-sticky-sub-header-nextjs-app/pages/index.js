@@ -108,12 +108,6 @@ const Home = () => {
             )}
           >
             <div className="w-full">
-              <h2
-                className={cx(`text-xl flex items-center justify-start`, css``)}
-              >
-                Content
-              </h2>
-
               <AreaGraph />
             </div>
             <PriceRanking
