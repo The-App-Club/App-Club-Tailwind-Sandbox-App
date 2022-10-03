@@ -18,14 +18,31 @@ import '../styles/index.scss';
 import '../styles/datepicker.css';
 import hamburgerState from '../stores/hamburgerStore';
 
-const CowboyBebopInit = ({children}) => {
+import {routes} from '../config/route';
+import sidebarState from '../stores/sidebarStore';
+
+const CowboyBebopInit = ({children, router: r}) => {
+  const [sidebar, setSidebar] = useRecoilState(sidebarState);
   const [hamburger, setHamburger] = useRecoilState(hamburgerState);
   const {mode} = useRecoilValue(themeState);
   const router = useRouter();
 
+  useEffect(() => {
+    const getMatchedRoute = ({pathName}) => {
+      return routes.find((route) => {
+        return route.pathName === pathName;
+      });
+    };
+    const {activeMenuName} = getMatchedRoute({pathName: r.pathname});
+    setSidebar((prevState) => {
+      return {
+        activeMenuName,
+      };
+    });
+  }, [r, setSidebar]);
+
   const handleRouteChangeStart = useCallback(
     (e) => {
-      console.log(e);
       setHamburger((prevState) => {
         return {
           opened: false,
@@ -60,7 +77,7 @@ const CowboyBebop = ({Component, pageProps}) => {
   return (
     <RecoilRoot>
       <CacheProvider value={cache}>
-        <CowboyBebopInit>
+        <CowboyBebopInit router={router}>
           <Meta />
           <Header {...router} />
           <main
