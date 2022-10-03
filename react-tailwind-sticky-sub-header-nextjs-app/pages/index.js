@@ -13,6 +13,7 @@ import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
 import {useMemo} from 'react';
 import data from '../data/wines.json';
 import PriceRanking from '../components/PriceRanking';
+import AreaGraph from '../components/AreaGraph';
 
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);
@@ -112,11 +113,14 @@ const Home = () => {
               >
                 Content
               </h2>
+
+              <AreaGraph />
             </div>
             <PriceRanking
               className={css`
                 position: sticky;
                 top: 15rem;
+                z-index: 1;
               `}
             />
           </div>
