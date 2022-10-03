@@ -4,6 +4,7 @@ import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
 import {useMemo} from 'react';
 import data from '../data/wines.json';
 import {useRouter} from 'next/router';
+import {default as numbro} from 'numbro';
 
 const PriceRanking = ({className}) => {
   const router = useRouter();
@@ -85,7 +86,11 @@ const PriceRanking = ({className}) => {
                 <span className="line-clamp-1 text-sm text-gray-700 dark:text-slate-300">
                   @{item.location}
                 </span>
-                <span className="line-clamp-1 text-sm">{item.price}</span>
+                <span className="line-clamp-1 text-sm">{`$${numbro(
+                  item.price
+                ).format({
+                  thousandSeparated: true,
+                })}`}</span>
               </div>
             </li>
           );

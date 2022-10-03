@@ -15,6 +15,7 @@ import Category from '../../components/Category';
 import Tracer from '../../components/Tracer';
 import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
 import ReviewRanking from '../../components/ReviewRanking';
+import {default as numbro} from 'numbro';
 
 const Wine = () => {
   const router = useRouter();
@@ -154,6 +155,9 @@ const Wine = () => {
               </picture>
               <div className="w-full">
                 <div className="flex items-center w-full justify-end gap-2">
+                  <span className="text-2xl">{`$${numbro(item.price).format({
+                    thousandSeparated: true,
+                  })}`}</span>
                   <span className="text-4xl text-rose-400 dark:text-amber-400">
                     {item.rating.average}
                   </span>

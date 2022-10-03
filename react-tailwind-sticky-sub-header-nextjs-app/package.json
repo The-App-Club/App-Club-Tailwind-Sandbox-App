@@ -31,6 +31,7 @@
     "mergician": "^1.0.3",
     "next": "12.2.3",
     "nextjs-breadcrumbs": "^1.1.9",
+    "numbro": "^2.3.6",
     "react": "18.2.0",
     "react-burger-menu": "^3.0.8",
     "react-datepicker": "^4.8.0",
