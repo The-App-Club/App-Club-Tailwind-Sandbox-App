@@ -5,6 +5,21 @@ const routes = [
     activeMenuName: `Home`,
   },
   {
+    pathName: `/404`,
+    pageName: `Not Found`,
+    activeMenuName: `Not Found`,
+  },
+  {
+    pathName: `/setting`,
+    pageName: `Setting`,
+    activeMenuName: `Setting`,
+  },
+  {
+    pathName: `/logout`,
+    pageName: `Logout`,
+    activeMenuName: `Logout`,
+  },
+  {
     pathName: `/about`,
     pageName: `About`,
     activeMenuName: `About`,

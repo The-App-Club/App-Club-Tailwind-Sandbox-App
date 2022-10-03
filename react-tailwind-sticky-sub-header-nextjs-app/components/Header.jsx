@@ -7,6 +7,9 @@ import hamburgerState from '../stores/hamburgerStore';
 import Hamburger from './Hamburger';
 import ThemeToggle from './ThemeToggle';
 import {motion} from 'framer-motion';
+import {MdSettings} from 'react-icons/md';
+import {MdOutlineLogout} from 'react-icons/md';
+import Profile from './Profile';
 
 const Header = ({pathname}) => {
   const router = useRouter();
@@ -76,6 +79,26 @@ const Header = ({pathname}) => {
         />
         <div className="absolute right-2 flex items-center gap-2">
           <ThemeToggle />
+          <Profile
+            menuData={[
+              {
+                id: 0,
+                name: `Setting`,
+                pathname: `/setting`,
+                icon: () => {
+                  return <MdSettings size={24} />;
+                },
+              },
+              {
+                id: 1,
+                name: `Logout`,
+                pathname: `/logout`,
+                icon: () => {
+                  return <MdOutlineLogout size={24} />;
+                },
+              },
+            ]}
+          />
         </div>
       </div>
     </motion.header>

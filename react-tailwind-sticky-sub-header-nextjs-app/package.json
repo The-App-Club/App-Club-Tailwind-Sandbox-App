@@ -16,6 +16,7 @@
     "@heroicons/react": "^2.0.11",
     "@mui/material": "^5.10.7",
     "@splidejs/react-splide": "^0.7.12",
+    "@szhsin/react-menu": "^3.2.0",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tidyjs/tidy": "^2.5.1",
     "capitalize-the-first-letter": "^1.0.8",

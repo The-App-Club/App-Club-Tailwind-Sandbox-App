@@ -33,6 +33,7 @@ const CowboyBebopInit = ({children, router: r}) => {
         return route.pathName === pathName;
       });
     };
+    // console.log({pathName: r.pathname})
     const {activeMenuName} = getMatchedRoute({pathName: r.pathname});
     setSidebar((prevState) => {
       return {

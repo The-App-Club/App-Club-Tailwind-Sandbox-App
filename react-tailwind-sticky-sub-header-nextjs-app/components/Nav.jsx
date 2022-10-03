@@ -13,6 +13,7 @@ import themeState from '../stores/themeStore';
 import {useRouter} from 'next/router';
 import sidebarState from '../stores/sidebarStore';
 import {useEffect, useState} from 'react';
+import {FiSettings} from 'react-icons/fi';
 
 const decideBorderColor = ({theme}) => {
   if (theme.mode === `dark`) {
@@ -137,6 +138,13 @@ const Nav = () => {
           menuTitle={'About'}
           icon={() => {
             return <RiAdvertisementLine size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/setting'}
+          menuTitle={'Setting'}
+          icon={() => {
+            return <FiSettings size={24} />;
           }}
         />
         <MenuItem
