@@ -9,5 +9,6 @@ out
 *png
 *ico
 .env
+.env.development
 yarn.lock
 .gitkeep

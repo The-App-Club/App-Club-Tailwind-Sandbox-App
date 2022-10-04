@@ -14,6 +14,7 @@ import {useMemo} from 'react';
 import data from '../data/wines.json';
 import PriceRanking from '../components/PriceRanking';
 import AreaGraph from '../components/AreaGraph';
+import Map from '../components/Map';
 
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);
@@ -90,7 +91,9 @@ const Home = () => {
             </h2>
           </div>
           <Category />
-          <div
+
+          <Map />
+          {/* <div
             className={cx(
               css`
                 width: 100%;
@@ -117,7 +120,7 @@ const Home = () => {
                 z-index: 1;
               `}
             />
-          </div>
+          </div> */}
         </section>
       </Layout>
     </>
