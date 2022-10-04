@@ -51,7 +51,7 @@ const Winery = () => {
                 max-width: 100%;
               }
               nav {
-                z-index: 2;
+                z-index: 3;
                 position: sticky;
                 top: 3rem;
                 width: 100%;
@@ -85,7 +85,7 @@ const Winery = () => {
           <div
             className={cx(
               css`
-                z-index: 2;
+                z-index: 3;
                 position: sticky;
                 top: 6rem;
                 min-height: 3rem;

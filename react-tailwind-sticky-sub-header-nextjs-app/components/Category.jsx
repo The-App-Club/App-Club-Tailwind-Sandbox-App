@@ -17,7 +17,7 @@ const Category = () => {
           width: 100%;
           position: sticky;
           top: 9rem;
-          z-index: 2;
+          z-index: 3;
         `,
         `bg-white dark:bg-slate-700`,
         `dark:text-white`
