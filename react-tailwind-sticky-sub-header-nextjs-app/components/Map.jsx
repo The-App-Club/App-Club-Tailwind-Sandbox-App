@@ -5,17 +5,29 @@ import MapboxLanguage from '@mapbox/mapbox-gl-language';
 import {css} from '@emotion/css';
 import {useDebouncedCallback} from 'use-debounce';
 
-const Map = () => {
+import data from '../data/location.json';
+import {useCallback} from 'react';
+
+const Map = ({activeLocationName}) => {
   const mapContainer = useRef(null);
+  const marker = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(2.8208953864223174); // 経度
-  const [lat, setLat] = useState(41.98233331461003); // 緯度
-  const [zoom, setZoom] = useState(8);
+  const [lng, setLng] = useState(null); // 経度
+  const [lat, setLat] = useState(null); // 緯度
+  const [zoom, setZoom] = useState(16);
+
+  const getMatchedLocation = useCallback(() => {
+    return data.find((item) => {
+      return item.location === activeLocationName;
+    });
+  }, [activeLocationName]);
 
   useEffect(() => {
-    if (map.current) return; // initialize map only once
+    if (map.current) return; // only once initialize
     mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
-
+    const {
+      latLng: [lat, lng],
+    } = getMatchedLocation();
     const mapboxglInstance = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
@@ -24,19 +36,35 @@ const Map = () => {
     });
 
     // Create a default Marker and add it to the map.
-    const marker1 = new mapboxgl.Marker()
-      .setLngLat([2.8208953864223174, 41.98233331461003])
+    marker.current = new mapboxgl.Marker()
+      .setLngLat([lng, lat])
       .addTo(mapboxglInstance);
-
-    // Create a default Marker, colored black, rotated 45 degrees.
-    // const marker2 = new mapboxgl.Marker({color: 'black', rotation: 45})
-    //   .setLngLat([12.65147, 55.608166])
-    //   .addTo(mapboxglInstance);
 
     const language = new MapboxLanguage();
     mapboxglInstance.addControl(language);
     map.current = mapboxglInstance;
-  }, [lng, lat, zoom]);
+
+    setLat(lat);
+    setLng(lng);
+  }, [lng, lat, zoom, getMatchedLocation]);
+
+  useEffect(() => {
+    if (!map.current) return; // wait for map to initialize
+    const {
+      latLng: [lat, lng],
+    } = getMatchedLocation();
+    setLat(lat);
+    setLng(lng);
+
+    // https://docs.mapbox.com/mapbox-gl-js/example/flyto/
+    // https://docs.mapbox.com/mapbox-gl-js/example/scroll-fly-to/
+    map.current.flyTo({
+      center: [lng, lat],
+      essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+    });
+
+    marker.current.setLngLat([lng, lat]);
+  }, [activeLocationName, getMatchedLocation]);
 
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
@@ -45,7 +73,7 @@ const Map = () => {
       setLat(map.current.getCenter().lat.toFixed(4));
       setZoom(map.current.getZoom().toFixed(2));
     });
-  }, []);
+  }, [lng, lat]);
 
   const handleResize = useDebouncedCallback((e) => {
     if (!map.current) return; // wait for map to initialize

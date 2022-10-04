@@ -11,14 +11,14 @@ const LocationSelector = ({data, className}) => {
 
   useEffect(() => {
     const activeWineryItem = data.find((item) => {
-      return item.name === winery.activeWineryName;
+      return item.name === winery.activeLocationName;
     });
     setSelected(activeWineryItem);
   }, [data, winery]);
 
   const handleChange = (e) => {
     setWinery({
-      activeWineryName: e.name,
+      activeLocationName: e.name,
     });
     setSelected(e);
   };

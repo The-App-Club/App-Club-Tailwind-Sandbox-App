@@ -25,11 +25,12 @@ import Spacer from './Spacer';
 import {default as numbro} from 'numbro';
 import themeState from '../stores/themeStore';
 import {useRouter} from 'next/router';
+import Map from './Map';
 
 const AreaGraph = () => {
   const router = useRouter();
   const {mode} = useRecoilValue(themeState);
-  const {activeWineryName} = useRecoilValue(locationSelectorState);
+  const {activeLocationName} = useRecoilValue(locationSelectorState);
   const [value, setValue] = useState([0, 14]);
 
   const niceData = useMemo(() => {
@@ -81,13 +82,13 @@ const AreaGraph = () => {
     return tidy(
       niceData,
       filter(([key, value]) => {
-        return key === activeWineryName;
+        return key === activeLocationName;
       }),
       map(([key, value]) => {
         return value;
       })
     ).flat();
-  }, [niceData, activeWineryName]);
+  }, [niceData, activeLocationName]);
 
   const decideBarBackFaceFillColor = ({mode}) => {
     if (mode === `light`) {
@@ -112,6 +113,8 @@ const AreaGraph = () => {
     <div className="max-w-6xl w-full px-6">
       <h3 className="text-xl">ロケーション選択</h3>
       <LocationSelector data={locationNames} />
+      <Spacer />
+      <Map activeLocationName={activeLocationName} />
       <Spacer />
       <ResponsiveContainer width="100%" height={300}>
         <BarChart

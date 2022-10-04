@@ -3,7 +3,7 @@ import {atom} from 'recoil';
 const locationSelectorState = atom({
   key: 'locationSelectorState',
   default: {
-    activeWineryName: 'Spain\n·\nEmpordà',
+    activeLocationName: 'Spain\n·\nEmpordà',
   },
 });
 

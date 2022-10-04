@@ -109,8 +109,7 @@ const Home = () => {
           </div>
           <Category />
 
-          <Map />
-          {/* <div
+          <div
             className={cx(
               css`
                 width: 100%;
@@ -119,7 +118,7 @@ const Home = () => {
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
-                gap: 2rem;
+                gap: 0;
                 @media (max-width: 1000px) {
                   min-height: initial;
                   flex-direction: column;
@@ -137,7 +136,7 @@ const Home = () => {
                 z-index: 1;
               `}
             />
-          </div> */}
+          </div>
         </section>
       </Layout>
     </>
