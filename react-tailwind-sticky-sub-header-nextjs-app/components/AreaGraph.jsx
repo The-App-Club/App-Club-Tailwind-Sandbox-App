@@ -24,8 +24,10 @@ import WinerySelector from './WinerySelector';
 import Spacer from './Spacer';
 import {default as numbro} from 'numbro';
 import themeState from '../stores/themeStore';
+import {useRouter} from 'next/router';
 
 const AreaGraph = () => {
+  const router = useRouter();
   const {mode} = useRecoilValue(themeState);
   const {activeWineryName} = useRecoilValue(winerySelectorState);
   const [value, setValue] = useState([0, 14]);
@@ -179,8 +181,30 @@ const AreaGraph = () => {
             }}
           />
           <Legend />
-          {mode === `light` && <Bar dataKey="reviews" fill="#630A10" />}
-          {mode === `dark` && <Bar dataKey="reviews" fill="#FCF0C8" />}
+          {mode === `light` && (
+            <Bar
+              dataKey="reviews"
+              fill="#630A10"
+              className="cursor-pointer"
+              onClick={(e) => {
+                router.push({
+                  pathname: `/wines/${e?.id}`,
+                });
+              }}
+            />
+          )}
+          {mode === `dark` && (
+            <Bar
+              dataKey="reviews"
+              fill="#FCF0C8"
+              className="cursor-pointer"
+              onClick={(e) => {
+                router.push({
+                  pathname: `/wines/${e?.id}`,
+                });
+              }}
+            />
+          )}
         </BarChart>
       </ResponsiveContainer>
       <Spacer />
@@ -223,8 +247,30 @@ const AreaGraph = () => {
             }}
           />
           <Legend />
-          {mode === `light` && <Bar dataKey="average" fill="#42855B" />}
-          {mode === `dark` && <Bar dataKey="average" fill="#90B77D" />}
+          {mode === `light` && (
+            <Bar
+              dataKey="average"
+              fill="#42855B"
+              className="cursor-pointer"
+              onClick={(e) => {
+                router.push({
+                  pathname: `/wines/${e?.id}`,
+                });
+              }}
+            />
+          )}
+          {mode === `dark` && (
+            <Bar
+              dataKey="average"
+              fill="#90B77D"
+              className="cursor-pointer"
+              onClick={(e) => {
+                router.push({
+                  pathname: `/wines/${e?.id}`,
+                });
+              }}
+            />
+          )}
         </BarChart>
       </ResponsiveContainer>
       <Spacer />
@@ -269,8 +315,30 @@ const AreaGraph = () => {
             }}
           />
           <Legend />
-          {mode === `light` && <Bar dataKey="price" fill="#E26A2C" />}
-          {mode === `dark` && <Bar dataKey="price" fill="#FFD07F" />}
+          {mode === `light` && (
+            <Bar
+              dataKey="price"
+              fill="#E26A2C"
+              className="cursor-pointer"
+              onClick={(e) => {
+                router.push({
+                  pathname: `/wines/${e?.id}`,
+                });
+              }}
+            />
+          )}
+          {mode === `dark` && (
+            <Bar
+              dataKey="price"
+              fill="#FFD07F"
+              className="cursor-pointer"
+              onClick={(e) => {
+                router.push({
+                  pathname: `/wines/${e?.id}`,
+                });
+              }}
+            />
+          )}
         </BarChart>
       </ResponsiveContainer>
     </div>
