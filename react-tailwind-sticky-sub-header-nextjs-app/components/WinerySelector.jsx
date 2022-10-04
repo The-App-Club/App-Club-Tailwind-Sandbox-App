@@ -27,7 +27,14 @@ const WinerySelector = ({data, className}) => {
           className
         )}
       >
-        <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+        <Listbox.Button
+          className={cx(
+            `relative w-full cursor-default rounded-lg py-2 pl-3 pr-10 text-left`,
+            `bg-gray-100 dark:bg-slate-800/90 shadow-3xl`,
+            `focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300`,
+            `text-sm`
+          )}
+        >
           <span className="block truncate">{selected?.name}</span>
           <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
             <ChevronUpDownIcon
@@ -42,15 +49,25 @@ const WinerySelector = ({data, className}) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+          <Listbox.Options
+            className={cx(
+              `absolute mt-1 max-h-60 w-full overflow-auto rounded-md py-1 ring-1`,
+              `bg-white dark:bg-slate-700 shadow-3xl`,
+              `ring-black ring-opacity-5 focus:outline-none`,
+              `text-sm`
+            )}
+          >
             {data.map((item, index) => {
               return (
                 <Listbox.Option
                   key={index}
                   className={({active}) => {
-                    return `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
-                    }`;
+                    return cx(
+                      `relative cursor-pointer select-none py-2 pl-10 pr-4`,
+                      active
+                        ? 'bg-slate-100 dark:bg-slate-800'
+                        : 'text-black dark:text-gray-100'
+                    );
                   }}
                   value={item}
                 >
@@ -65,7 +82,12 @@ const WinerySelector = ({data, className}) => {
                           {item?.name}
                         </span>
                         {selected ? (
-                          <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                          <span
+                            className={cx(
+                              `absolute inset-y-0 left-0 flex items-center pl-3`,
+                              `text-amber-600 dark:text-orange-500`
+                            )}
+                          >
                             <CheckIcon className="h-5 w-5" aria-hidden="true" />
                           </span>
                         ) : null}
