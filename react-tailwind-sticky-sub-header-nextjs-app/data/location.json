@@ -1,0 +1,182 @@
+[
+  {
+    "location": "Spain\n·\nEmpordà",
+    "latLng": [41.99267061423483, 2.8226281691249473]
+  },
+  {
+    "location": "Portugal\n·\nAlentejo",
+    "latLng": [38.36553940377808, -7.787717370327855]
+  },
+  {
+    "location": "United States\n·\nOakville",
+    "latLng": [46.84086121766615, -123.23241693510998]
+  },
+  {
+    "location": "United States\n·\nNapa Valley",
+    "latLng": [38.44264487175154, -122.39543189476561]
+  },
+  {
+    "location": "United States\n·\nHowell Mountain",
+    "latLng": [38.58215967886866, -122.45004314112288]
+  },
+  {
+    "location": "United States\n·\nCalifornia",
+    "latLng": [37.306819661836165, -119.42299883834926]
+  },
+  {
+    "location": "United States\n·\nSta. Rita Hills",
+    "latLng": [35.31914349638048, -120.2713332202781]
+  },
+  {
+    "location": "United States\n·\nYamhill County",
+    "latLng": [45.188590877413326, -123.24037270922634]
+  },
+  {
+    "location": "United States\n·\nRutherford",
+    "latLng": [40.828374962028825, -74.10693326375578]
+  },
+  {
+    "location": "Italy\n·\nVeneto",
+    "latLng": [45.53831507337642, 12.323052677740003]
+  },
+  {
+    "location": "France\n·\nCôte-Rôtie",
+    "latLng": [45.51303959255917, 4.7963785356014395]
+  },
+  {
+    "location": "France\n·\nChambertin Grand Cru",
+    "latLng": [47.233741460371675, 4.972814306214609]
+  },
+  {
+    "location": "Argentina\n·\nAgrelo",
+    "latLng": [-33.11812497070826, -68.88666826909824]
+  },
+  {
+    "location": "Spain\n·\nRibera del Duero",
+    "latLng": [41.81059862417334, -3.6678192570962516]
+  },
+  {
+    "location": "United States\n·\nMoon Mountain District",
+    "latLng": [43.20598654440291, -113.50014874405053]
+  },
+  {
+    "location": "Italy\n·\nBarolo",
+    "latLng": [44.60916785408298, 7.9402669246897055]
+  },
+  {
+    "location": "South Africa\n·\nStellenbosch",
+    "latLng": [-33.92445380049881, 18.859346999629693]
+  },
+  {
+    "location": "United States\n·\nDiamond Mountain District",
+    "latLng": [40.26252966770038, -120.55718803419622]
+  },
+  {
+    "location": "South Africa\n·\nWestern Cape",
+    "latLng": [-32.09124487319709, 21.816106914088397]
+  },
+  {
+    "location": "Hungary\n·\nSzekszárd",
+    "latLng": [46.35120451878805, 18.706686105222275]
+  },
+  {
+    "location": "France\n·\nMusigny Grand Cru",
+    "latLng": [47.17860311241133, 4.954529986302879]
+  },
+  {
+    "location": "Spain\n·\nToro",
+    "latLng": [41.528733444063235, -5.391063846226593]
+  },
+  {
+    "location": "United States\n·\nSt. Helena",
+    "latLng": [38.5073155607089, -122.47000547062463]
+  },
+  {
+    "location": "United States\n·\nRussian River Valley",
+    "latLng": [38.571430702128794, -122.82432741559757]
+  },
+  {
+    "location": "France\n·\nRomanée-Saint-Vivant Grand Cru",
+    "latLng": [47.16256597019351, 4.953990227216559]
+  },
+  {
+    "location": "France\n·\nÉchezeaux Grand Cru",
+    "latLng": [47.17052804535681, 4.954191084886887]
+  },
+  {
+    "location": "France\n·\nLa Tâche Grand Cru",
+    "latLng": [47.16068762886257, 4.9515410408005405]
+  },
+  {
+    "location": "Australia\n·\nHeathcote",
+    "latLng": [-36.910174910942885, 144.70179559119092]
+  },
+  {
+    "location": "France\n·\nHaut-Médoc",
+    "latLng": [44.55780800350205, -0.03850403653649749]
+  },
+  {
+    "location": "Italy\n·\nAmarone della Valpolicella Classico",
+    "latLng": [45.54510634278141, 10.948448663724673]
+  },
+  {
+    "location": "Australia\n·\nMcLaren Vale",
+    "latLng": [-35.20294286457551, 138.54375403603441]
+  },
+  {
+    "location": "France\n·\nVosne-Romanée Premier Cru",
+    "latLng": [47.1618863203349, 4.948541041925218]
+  },
+  {
+    "location": "Australia\n·\nFleurieu",
+    "latLng": [-35.49867152701712, 138.5002574640952]
+  },
+  {
+    "location": "France\n·\nPomerol",
+    "latLng": [44.932089166208016, -0.20070101635243903]
+  },
+  {
+    "location": "United States\n·\nSonoma Mountain",
+    "latLng": [38.2938540089754, -122.45879847313007]
+  },
+  {
+    "location": "Italy\n·\nAmarone della Valpolicella",
+    "latLng": [45.57245417300914, 10.948139139093941]
+  },
+  {
+    "location": "Portugal\n·\nMadeira",
+    "latLng": [32.903146190182376, -16.967989476261316]
+  },
+  {
+    "location": "Australia\n·\nBarossa Valley",
+    "latLng": [-34.52264647883536, 138.9490025817849]
+  },
+  {
+    "location": "Portugal\n·\nDouro",
+    "latLng": [41.61526100626732, -5.487148356708386]
+  },
+  {
+    "location": "France\n·\nPauillac",
+    "latLng": [45.203092980911315, -0.7467630326192799]
+  },
+  {
+    "location": "France\n·\nMargaux",
+    "latLng": [45.048896760512946, -0.679173878676676]
+  },
+  {
+    "location": "Italy\n·\nToscana",
+    "latLng": [43.882607825251135, 11.248397031100026]
+  },
+  {
+    "location": "Argentina\n·\nPerdriel",
+    "latLng": [-33.075855354366254, -68.88690350998215]
+  },
+  {
+    "location": "France\n·\nSaint-Émilion Grand Cru",
+    "latLng": [44.90004306459386, -0.12233353734112504]
+  },
+  {
+    "location": "Italy\n·\nBolgheri Sassicaia",
+    "latLng": [43.232773805744756, 10.600175543770693]
+  }
+]

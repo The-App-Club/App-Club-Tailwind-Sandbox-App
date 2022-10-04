@@ -16,6 +16,8 @@ import PriceRanking from '../components/PriceRanking';
 import AreaGraph from '../components/AreaGraph';
 import Map from '../components/Map';
 
+import location from '../data/location.json';
+
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);
 
@@ -32,7 +34,7 @@ const Home = () => {
     );
   }, []);
 
-  console.log(niceData);
+  // console.log(location);
 
   return (
     <>
@@ -107,8 +109,8 @@ const Home = () => {
           </div>
           <Category />
 
-          {/* <Map /> */}
-          <div
+          <Map />
+          {/* <div
             className={cx(
               css`
                 width: 100%;
@@ -135,7 +137,7 @@ const Home = () => {
                 z-index: 1;
               `}
             />
-          </div>
+          </div> */}
         </section>
       </Layout>
     </>

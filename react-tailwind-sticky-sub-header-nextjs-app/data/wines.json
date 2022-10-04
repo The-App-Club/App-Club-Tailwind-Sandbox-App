@@ -8,8 +8,7 @@
     "id": 1,
     "price": 5888,
     "description": "Obaudde ko rukvi ig vuk mawzu ahapuvecu fa dikukive vo batupjel danuju di vu.",
-    "key": "${d.winery}",
-    "latLng": [41.99267061423483, 2.8226281691249473]
+    "key": "${d.winery}"
   },
   {
     "winery": "Cartuxa",
