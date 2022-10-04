@@ -2,11 +2,11 @@ import {Fragment, useEffect, useState} from 'react';
 import {Listbox, Transition} from '@headlessui/react';
 import {CheckIcon, ChevronUpDownIcon} from '@heroicons/react/24/solid';
 import {css, cx} from '@emotion/css';
-import winerySelectorState from '../stores/winerySelectorStore';
+import locationSelectorState from '../stores/locationSelectorStore';
 import {useRecoilState} from 'recoil';
 
-const WinerySelector = ({data, className}) => {
-  const [winery, setWinery] = useRecoilState(winerySelectorState);
+const LocationSelector = ({data, className}) => {
+  const [winery, setWinery] = useRecoilState(locationSelectorState);
   const [selected, setSelected] = useState(data[0]);
 
   useEffect(() => {
@@ -111,4 +111,4 @@ const WinerySelector = ({data, className}) => {
   );
 };
 
-export default WinerySelector;
+export default LocationSelector;

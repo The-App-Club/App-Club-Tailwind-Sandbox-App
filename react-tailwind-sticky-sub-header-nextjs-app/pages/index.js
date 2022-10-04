@@ -9,7 +9,7 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import Category from '../components/Category';
 
-import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
+import {distinct, filter, map, tidy} from '@tidyjs/tidy';
 import {useMemo} from 'react';
 import data from '../data/wines.json';
 import PriceRanking from '../components/PriceRanking';
@@ -18,6 +18,21 @@ import Map from '../components/Map';
 
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);
+
+  const niceData = useMemo(() => {
+    return tidy(
+      data,
+      map((item) => {
+        return {location: item.location};
+      }),
+      filter((item) => {
+        return item.location !== '';
+      }),
+      distinct(['location'])
+    );
+  }, []);
+
+  console.log(niceData);
 
   return (
     <>
@@ -92,8 +107,8 @@ const Home = () => {
           </div>
           <Category />
 
-          <Map />
-          {/* <div
+          {/* <Map /> */}
+          <div
             className={cx(
               css`
                 width: 100%;
@@ -120,7 +135,7 @@ const Home = () => {
                 z-index: 1;
               `}
             />
-          </div> */}
+          </div>
         </section>
       </Layout>
     </>

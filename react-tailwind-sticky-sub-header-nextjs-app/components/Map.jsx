@@ -8,8 +8,8 @@ import {useDebouncedCallback} from 'use-debounce';
 const Map = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(12.550343); // 経度
-  const [lat, setLat] = useState(55.665957); // 緯度
+  const [lng, setLng] = useState(2.8208953864223174); // 経度
+  const [lat, setLat] = useState(41.98233331461003); // 緯度
   const [zoom, setZoom] = useState(8);
 
   useEffect(() => {
@@ -25,13 +25,13 @@ const Map = () => {
 
     // Create a default Marker and add it to the map.
     const marker1 = new mapboxgl.Marker()
-      .setLngLat([12.554729, 55.70651])
+      .setLngLat([2.8208953864223174, 41.98233331461003])
       .addTo(mapboxglInstance);
 
     // Create a default Marker, colored black, rotated 45 degrees.
-    const marker2 = new mapboxgl.Marker({color: 'black', rotation: 45})
-      .setLngLat([12.65147, 55.608166])
-      .addTo(mapboxglInstance);
+    // const marker2 = new mapboxgl.Marker({color: 'black', rotation: 45})
+    //   .setLngLat([12.65147, 55.608166])
+    //   .addTo(mapboxglInstance);
 
     const language = new MapboxLanguage();
     mapboxglInstance.addControl(language);

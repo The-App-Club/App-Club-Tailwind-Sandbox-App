@@ -19,8 +19,8 @@ import Slider from '@mui/material/Slider';
 import {useRecoilValue} from 'recoil';
 
 import data from '../data/wines.json';
-import winerySelectorState from '../stores/winerySelectorStore';
-import WinerySelector from './WinerySelector';
+import locationSelectorState from '../stores/locationSelectorStore';
+import LocationSelector from './LocationSelector';
 import Spacer from './Spacer';
 import {default as numbro} from 'numbro';
 import themeState from '../stores/themeStore';
@@ -29,7 +29,7 @@ import {useRouter} from 'next/router';
 const AreaGraph = () => {
   const router = useRouter();
   const {mode} = useRecoilValue(themeState);
-  const {activeWineryName} = useRecoilValue(winerySelectorState);
+  const {activeWineryName} = useRecoilValue(locationSelectorState);
   const [value, setValue] = useState([0, 14]);
 
   const niceData = useMemo(() => {
@@ -66,7 +66,7 @@ const AreaGraph = () => {
     setValue(newValue);
   };
 
-  const wineryNames = useMemo(() => {
+  const locationNames = useMemo(() => {
     return tidy(
       niceData,
       map(([key, value]) => {
@@ -110,8 +110,8 @@ const AreaGraph = () => {
   // https://recharts.org/en-US/api/AreaChart
   return (
     <div className="max-w-6xl w-full px-6">
-      <h3 className="text-xl">ワイナリー選択</h3>
-      <WinerySelector data={wineryNames} />
+      <h3 className="text-xl">ロケーション選択</h3>
+      <LocationSelector data={locationNames} />
       <Spacer />
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
