@@ -3,7 +3,7 @@ import {atom} from 'recoil';
 const winerySelectorState = atom({
   key: 'winerySelectorState',
   default: {
-    activeWineryName: 'Maselva',
+    activeWineryName: 'Spain\n·\nEmpordà',
   },
 });
 

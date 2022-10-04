@@ -1,4 +1,4 @@
-import {Fragment, useState} from 'react';
+import {Fragment, useEffect, useState} from 'react';
 import {Listbox, Transition} from '@headlessui/react';
 import {CheckIcon, ChevronUpDownIcon} from '@heroicons/react/24/solid';
 import {css, cx} from '@emotion/css';
@@ -8,6 +8,13 @@ import {useRecoilState} from 'recoil';
 const WinerySelector = ({data, className}) => {
   const [winery, setWinery] = useRecoilState(winerySelectorState);
   const [selected, setSelected] = useState(data[0]);
+
+  useEffect(() => {
+    const activeWineryItem = data.find((item) => {
+      return item.name === winery.activeWineryName;
+    });
+    setSelected(activeWineryItem);
+  }, [data, winery]);
 
   const handleChange = (e) => {
     setWinery({

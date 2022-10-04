@@ -66,18 +66,6 @@ const AreaGraph = () => {
     setValue(newValue);
   };
 
-  // const maxRangeValue = useMemo(() => {
-  //   return Math.max(
-  //     ...[
-  //       ...niceData.map(([key, value]) => {
-  //         return value;
-  //       }),
-  //     ].map((item) => {
-  //       return item.length;
-  //     })
-  //   );
-  // }, [niceData]);
-
   const wineryNames = useMemo(() => {
     return tidy(
       niceData,
@@ -122,24 +110,7 @@ const AreaGraph = () => {
   // https://recharts.org/en-US/api/AreaChart
   return (
     <div className="max-w-6xl w-full px-6">
-      <h3 className="text-xl">ワイナリーの存在個数</h3>
-      <Spacer height="2rem" />
-      <Slider
-        min={0}
-        max={14}
-        step={1}
-        getAriaLabel={() => {
-          return `Winery exists count range`;
-        }}
-        value={value}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        getAriaValueText={(value) => {
-          return `${value}`;
-        }}
-      />
-      <Spacer />
-      <h3 className="text-xl">ワイナリーの存在場所</h3>
+      <h3 className="text-xl">ワイナリー選択</h3>
       <WinerySelector data={wineryNames} />
       <Spacer />
       <ResponsiveContainer width="100%" height={300}>
