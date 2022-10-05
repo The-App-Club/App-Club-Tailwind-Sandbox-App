@@ -11,7 +11,7 @@ import {useCallback} from 'react';
 const Map = ({activeLocationName}) => {
   const mapContainer = useRef(null);
   const marker = useRef(null);
-  const map = useRef(null);
+  const mapInstance = useRef(null);
   const [lng, setLng] = useState(null); // 経度
   const [lat, setLat] = useState(null); // 緯度
   const [zoom, setZoom] = useState(16);
@@ -23,7 +23,7 @@ const Map = ({activeLocationName}) => {
   }, [activeLocationName]);
 
   useEffect(() => {
-    if (map.current) return; // only once initialize
+    if (mapInstance.current) return; // only once initialize
     mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
     const {
       latLng: [lat, lng],
@@ -35,21 +35,21 @@ const Map = ({activeLocationName}) => {
       zoom: zoom,
     });
 
-    // Create a default Marker and add it to the map.
+    // Create a default Marker and add it to the mapInstance.
     marker.current = new mapboxgl.Marker()
       .setLngLat([lng, lat])
       .addTo(mapboxglInstance);
 
     const language = new MapboxLanguage();
     mapboxglInstance.addControl(language);
-    map.current = mapboxglInstance;
+    mapInstance.current = mapboxglInstance;
 
     setLat(lat);
     setLng(lng);
   }, [lng, lat, zoom, getMatchedLocation]);
 
   useEffect(() => {
-    if (!map.current) return; // wait for map to initialize
+    if (!mapInstance.current) return; // wait for mapInstance to initialize
     const {
       latLng: [lat, lng],
     } = getMatchedLocation();
@@ -58,7 +58,7 @@ const Map = ({activeLocationName}) => {
 
     // https://docs.mapbox.com/mapbox-gl-js/example/flyto/
     // https://docs.mapbox.com/mapbox-gl-js/example/scroll-fly-to/
-    map.current.flyTo({
+    mapInstance.current.flyTo({
       center: [lng, lat],
       essential: true, // this animation is considered essential with respect to prefers-reduced-motion
     });
@@ -67,17 +67,17 @@ const Map = ({activeLocationName}) => {
   }, [activeLocationName, getMatchedLocation]);
 
   useEffect(() => {
-    if (!map.current) return; // wait for map to initialize
-    map.current.on('move', () => {
-      setLng(map.current.getCenter().lng.toFixed(4));
-      setLat(map.current.getCenter().lat.toFixed(4));
-      setZoom(map.current.getZoom().toFixed(2));
+    if (!mapInstance.current) return; // wait for mapInstance to initialize
+    mapInstance.current.on('move', () => {
+      setLng(mapInstance.current.getCenter().lng.toFixed(4));
+      setLat(mapInstance.current.getCenter().lat.toFixed(4));
+      setZoom(mapInstance.current.getZoom().toFixed(2));
     });
   }, [lng, lat]);
 
   const handleResize = useDebouncedCallback((e) => {
-    if (!map.current) return; // wait for map to initialize
-    map.current.resize();
+    if (!mapInstance.current) return; // wait for mapInstance to initialize
+    mapInstance.current.resize();
   }, 600);
 
   useEffect(() => {

@@ -11,6 +11,7 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {css, cx} from '@emotion/css';
+import ScrollStory from '../../../components/ScrollStory';
 
 const Story = () => {
   const router = useRouter();
@@ -129,14 +130,16 @@ const Story = () => {
             </div>
           </div>
 
-          <div>
+          <ScrollStory />
+
+          {/* <div>
             <p>Here Mapbox Story Telling</p>
             <p>Here Mapbox Story Telling</p>
             <p>Here Mapbox Story Telling</p>
             <p>Here Mapbox Story Telling</p>
             <p>Here Mapbox Story Telling</p>
             <p>Here Mapbox Story Telling</p>
-          </div>
+          </div> */}
         </section>
         <TraceFooter />
       </Layout>
