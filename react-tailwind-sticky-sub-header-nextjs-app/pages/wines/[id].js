@@ -241,7 +241,10 @@ const Wine = () => {
               {relativedWineryData.length !== 0 && (
                 <>
                   <Spacer />
-                  <h2 className="text-xl">Relatived Winery Wines</h2>
+                  <h2 className="text-xl">
+                    Relatived Winery Wines
+                    <span className="text-sm font-bold">{` @${item.winery}`}</span>
+                  </h2>
                   <Splide
                     options={{
                       rewind: false,
