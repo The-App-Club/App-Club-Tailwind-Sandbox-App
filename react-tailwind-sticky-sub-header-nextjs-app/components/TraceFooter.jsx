@@ -15,9 +15,12 @@ const TraceFooter = () => {
           bottom: 0;
           min-height: 5rem;
           width: 100%;
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
+          display: none;
+          @media (max-width: 768px) {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+          }
         `,
         `bg-white dark:bg-slate-700 border-2`
       )}
