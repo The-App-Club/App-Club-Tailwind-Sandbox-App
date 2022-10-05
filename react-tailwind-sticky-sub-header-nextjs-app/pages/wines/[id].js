@@ -19,6 +19,9 @@ import {default as numbro} from 'numbro';
 import TraceFooter from '../../components/TraceFooter';
 import Product from '../../components/Product';
 
+import {GiGrapes} from 'react-icons/gi';
+import {MdOutlineLocationOn} from 'react-icons/md';
+
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
@@ -147,8 +150,14 @@ const Wine = () => {
               )}
             >
               {item.wine}
-              <span className="text-sm font-bold">{`Produced by ${item.winery}`}</span>
-              <span className="text-sm font-bold">{`@${item.location}`}</span>
+              <span className="text-sm font-bold flex items-center gap-1">
+                <GiGrapes size={28} />
+                {`${item.winery}`}
+              </span>
+              <span className="text-sm font-bold flex items-center gap-1">
+                <MdOutlineLocationOn size={28} />
+                {`${item.location}`}
+              </span>
             </h2>
             <div className="flex items-center gap-2">
               <button className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center">
@@ -156,7 +165,6 @@ const Wine = () => {
               </button>
             </div>
           </div>
-          {/* <Category /> */}
           <div
             className={cx(
               css`
@@ -175,13 +183,13 @@ const Wine = () => {
             )}
           >
             <div className="w-full max-w-2xl">
-              <Product item={item} />
+              <Product item={item} className={`px-0`} />
               {relativedLocationData.length !== 0 && (
                 <>
                   <Spacer />
-                  <h2 className="text-xl">
+                  <h2 className="text-xl flex items-center gap-1">
+                    <MdOutlineLocationOn size={28} />
                     Relatived Location Wines
-                    <span className="text-sm font-bold">{` @${item.location}`}</span>
                   </h2>
                   <Splide
                     options={{
@@ -241,9 +249,9 @@ const Wine = () => {
               {relativedWineryData.length !== 0 && (
                 <>
                   <Spacer />
-                  <h2 className="text-xl">
+                  <h2 className="text-xl flex items-center gap-1">
+                    <GiGrapes size={28} />
                     Relatived Winery Wines
-                    <span className="text-sm font-bold">{` @${item.winery}`}</span>
                   </h2>
                   <Splide
                     options={{
