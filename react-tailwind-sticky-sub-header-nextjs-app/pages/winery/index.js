@@ -151,9 +151,6 @@ const Winery = () => {
                   <div className="w-full">
                     <h2 className="text-xl">{item.wineryName}</h2>
                     <div className="flex items-center w-full justify-end gap-2">
-                      {/* <span className="text-4xl text-rose-400 dark:text-amber-400">
-                        {item.rating.average}
-                      </span> */}
                       <span className="text-md font-bold">
                         {item.wines.length} type
                       </span>

@@ -17,6 +17,7 @@ import AreaGraph from '../components/AreaGraph';
 import Map from '../components/Map';
 
 import location from '../data/location.json';
+import Spacer from '../components/Spacer';
 
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);
@@ -129,6 +130,7 @@ const Home = () => {
             <div className="w-full">
               <AreaGraph />
             </div>
+            <Spacer />
             <PriceRanking
               className={css`
                 position: sticky;

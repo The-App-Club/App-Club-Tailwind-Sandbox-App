@@ -3,6 +3,7 @@ import {useRouter} from 'next/router';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {default as numbro} from 'numbro';
+import Spacer from './Spacer';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
@@ -43,7 +44,17 @@ const ProductGalleryItem = ({item}) => {
         `}
       />
       <div className="w-full">
-        <h2 className="text-xl line-clamp-1">{item.wine}</h2>
+        <h2
+          className={cx(
+            'text-xl line-clamp-2',
+            css`
+              min-height: 56px;
+            `
+          )}
+        >
+          {item.wine}
+        </h2>
+        <Spacer />
         <div className="text-sm font-bold flex items-center">
           <GiGrapes size={24} />
           <span className="line-clamp-1">{`${item.winery}`}</span>
@@ -52,16 +63,31 @@ const ProductGalleryItem = ({item}) => {
           <MdOutlineLocationOn size={24} />
           <span className="line-clamp-1">{`${item.location}`}</span>
         </div>
-        <div className="flex items-center w-full justify-end gap-2">
+        <div
+          className={css`
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: flex-end;
+            gap: 0.5rem;
+            @media (max-width: 768px) {
+              align-items: flex-start;
+              justify-content: flex-start;
+              flex-direction: column;
+            }
+          `}
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-4xl text-rose-400 dark:text-amber-400">
+              {item.rating.average}
+            </span>
+            <span className="text-sm text-rose-400 dark:text-amber-400 line-clamp-1">
+              {item.rating.reviews}
+            </span>
+          </div>
           <span className="text-2xl">{`$${numbro(item.price).format({
             thousandSeparated: true,
           })}`}</span>
-          <span className="text-4xl text-rose-400 dark:text-amber-400">
-            {item.rating.average}
-          </span>
-          <span className="text-sm text-rose-400 dark:text-amber-400">
-            {item.rating.reviews}
-          </span>
         </div>
         <p className="line-clamp-3">{item.description}</p>
       </div>

@@ -1,6 +1,6 @@
 import {cx, css} from '@emotion/css';
 import {filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
-import {useEffect, useMemo, useState} from 'react';
+import {useEffect, useMemo, useRef, useState} from 'react';
 import {
   BarChart,
   Bar,
@@ -27,11 +27,20 @@ import themeState from '../stores/themeStore';
 import {useRouter} from 'next/router';
 import Map from './Map';
 
+import {useDebouncedCallback} from 'use-debounce';
+
 const AreaGraph = () => {
   const router = useRouter();
   const {mode} = useRecoilValue(themeState);
   const {activeLocationName} = useRecoilValue(locationSelectorState);
   const [value, setValue] = useState([0, 14]);
+
+  const [margin, setMargin] = useState({
+    top: 50,
+    right: 60,
+    left: 60,
+    bottom: 10,
+  });
 
   const niceData = useMemo(() => {
     const [from, to] = value;
@@ -108,9 +117,35 @@ const AreaGraph = () => {
     }
   };
 
+  const handleResize = useDebouncedCallback((e) => {
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      setMargin({
+        top: 50,
+        right: 10,
+        left: 10,
+        bottom: 10,
+      });
+      return;
+    }
+    setMargin({
+      top: 50,
+      right: 60,
+      left: 60,
+      bottom: 10,
+    });
+  }, 600);
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [handleResize]);
+
   // https://recharts.org/en-US/api/AreaChart
   return (
-    <div className="max-w-6xl w-full px-6">
+    <div className="max-w-6xl w-full">
       <h3 className="text-xl">ロケーション選択</h3>
       <LocationSelector data={locationNames} />
       <Spacer />
@@ -121,12 +156,7 @@ const AreaGraph = () => {
           width={500}
           height={300}
           data={selectedData}
-          margin={{
-            top: 50,
-            right: 60,
-            left: 60,
-            bottom: 10,
-          }}
+          margin={margin}
           className={`shadow-2xl bg-white dark:bg-slate-700/90 rounded-xl`}
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -187,12 +217,7 @@ const AreaGraph = () => {
           width={500}
           height={300}
           data={selectedData}
-          margin={{
-            top: 50,
-            right: 60,
-            left: 60,
-            bottom: 10,
-          }}
+          margin={margin}
           className={`shadow-2xl bg-white dark:bg-slate-700/90 rounded-xl`}
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -253,12 +278,7 @@ const AreaGraph = () => {
           width={500}
           height={300}
           data={selectedData}
-          margin={{
-            top: 50,
-            right: 60,
-            left: 60,
-            bottom: 10,
-          }}
+          margin={margin}
           className={`shadow-2xl bg-white dark:bg-slate-700/90 rounded-xl`}
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -272,7 +292,14 @@ const AreaGraph = () => {
             }}
             tick={{fill: decideAxisTickFillColor({mode})}}
           />
-          <YAxis tick={{fill: decideAxisTickFillColor({mode})}} />
+          <YAxis
+            tick={{fill: decideAxisTickFillColor({mode})}}
+            tickFormatter={(value, index) => {
+              return `$${numbro(value).format({
+                average: true,
+              })}`;
+            }}
+          />
           <Tooltip
             wrapperClassName={`!bg-white dark:!bg-slate-700 !border-gray-100 dark:!border-slate-700 shadow-2xl`}
             labelClassName={`!bg-white dark:!bg-slate-700`}

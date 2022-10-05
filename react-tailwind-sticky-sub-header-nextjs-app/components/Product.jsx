@@ -2,6 +2,7 @@ import {css, cx} from '@emotion/css';
 import {default as numbro} from 'numbro';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
+import Spacer from './Spacer';
 
 const Product = ({item, className = css``}) => {
   return (
@@ -19,9 +20,9 @@ const Product = ({item, className = css``}) => {
           <span className="text-4xl text-rose-400 dark:text-amber-400">
             {item.rating.average}
           </span>
-          <span className="text-md">{item.rating.reviews}</span>
+          <span className="text-sm">{item.rating.reviews}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-start gap-2 flex-col sm:flex-row">
           <span className="text-sm font-bold flex items-center">
             <GiGrapes size={24} />
             {`${item.winery}`}
@@ -31,6 +32,7 @@ const Product = ({item, className = css``}) => {
             {`${item.location}`}
           </span>
         </div>
+        <Spacer />
         <p>{item.description}</p>
       </div>
     </div>
