@@ -50,6 +50,11 @@ const routes = [
     activeMenuName: `Wines`,
   },
   {
+    pathName: `/wines/[id]/story`,
+    pageName: `Wine Story`,
+    activeMenuName: `Wines`,
+  },
+  {
     pathName: `/winery`,
     pageName: `Winery`,
     activeMenuName: `Winery`,

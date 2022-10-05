@@ -22,6 +22,7 @@ const Footer = ({pathname}) => {
       pathname === `/winery/[id]` ||
       pathname === `/winery` ||
       pathname === `/wines/[id]` ||
+      pathname === `/wines/[id]/story` ||
       pathname === `/wines`
     ) {
       return css`

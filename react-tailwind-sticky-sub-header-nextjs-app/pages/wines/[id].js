@@ -24,6 +24,7 @@ import {MdOutlineLocationOn} from 'react-icons/md';
 
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import {BiCameraMovie} from 'react-icons/bi';
 
 const Wine = () => {
   const router = useRouter();
@@ -157,6 +158,37 @@ const Wine = () => {
               <span className="text-sm font-bold flex items-center gap-1">
                 <MdOutlineLocationOn size={28} />
                 {`${item.location}`}
+              </span>
+              <span
+                className={cx(
+                  `relative text-sm font-bold flex items-center gap-1 pl-0.5`,
+                  `hover:cursor-pointer`,
+                  css`
+                    &::after {
+                      position: absolute;
+                      bottom: -4px;
+                      left: 0;
+                      content: '';
+                      width: 100%;
+                      height: 2px;
+                      background: rgb(59 130 246); // bg-blue-500
+                      transform: scale(0, 1);
+                      transform-origin: left top;
+                      transition: transform 0.3s;
+                    }
+                    &:hover::after {
+                      transform: scale(1, 1);
+                    }
+                  `
+                )}
+                onClick={(e) => {
+                  router.push({
+                    pathname: `/wines/${id}/story`,
+                  });
+                }}
+              >
+                <BiCameraMovie size={28} />
+                {`watch story`}
               </span>
             </h2>
             <div className="flex items-center gap-2">
