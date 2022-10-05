@@ -179,7 +179,10 @@ const Wine = () => {
               {relativedLocationData.length !== 0 && (
                 <>
                   <Spacer />
-                  <h2 className="text-xl">Relatived Location Wines</h2>
+                  <h2 className="text-xl">
+                    Relatived Location Wines
+                    <span className="text-sm font-bold">{` @${item.location}`}</span>
+                  </h2>
                   <Splide
                     options={{
                       rewind: false,

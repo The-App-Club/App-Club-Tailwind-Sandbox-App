@@ -8,6 +8,7 @@ const Product = ({item}) => {
         <img src={item.image} alt={item.wine} width={130} height={'auto'} />
       </picture>
       <div className="w-full">
+        <h2 className={`text-xl flex items-start line-clamp-1`}>{item.wine}</h2>
         <div className="flex items-center w-full justify-end gap-2">
           <span className="text-2xl">{`$${numbro(item.price).format({
             thousandSeparated: true,
