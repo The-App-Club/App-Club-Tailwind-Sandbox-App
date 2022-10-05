@@ -15,6 +15,12 @@ import sidebarState from '../stores/sidebarStore';
 import {useEffect, useState} from 'react';
 import {FiSettings} from 'react-icons/fi';
 
+import {GiGrapes} from 'react-icons/gi';
+import {GiWineBottle} from 'react-icons/gi';
+import {BiHome} from 'react-icons/bi';
+import {FaHatCowboySide} from 'react-icons/fa';
+import {MdOutlineContactMail} from 'react-icons/md';
+
 const decideBorderColor = ({theme}) => {
   if (theme.mode === `dark`) {
     return `hover:border-yellow-300`;
@@ -116,28 +122,28 @@ const Nav = () => {
           path={'/'}
           menuTitle={'Home'}
           icon={() => {
-            return <FiTwitter size={24} />;
+            return <BiHome size={24} />;
           }}
         />
         <MenuItem
           path={'/wines'}
           menuTitle={'Wines'}
           icon={() => {
-            return <BiTimeFive size={24} />;
+            return <GiWineBottle size={24} />;
           }}
         />
         <MenuItem
           path={'/winery'}
           menuTitle={'Winery'}
           icon={() => {
-            return <MdOutlineNotifications size={24} />;
+            return <GiGrapes size={24} />;
           }}
         />
         <MenuItem
           path={'/about'}
           menuTitle={'About'}
           icon={() => {
-            return <RiAdvertisementLine size={24} />;
+            return <FaHatCowboySide size={24} />;
           }}
         />
         <MenuItem
@@ -151,7 +157,7 @@ const Nav = () => {
           path={'/contact'}
           menuTitle={'Contact'}
           icon={() => {
-            return <MdOutlineChat size={24} />;
+            return <MdOutlineContactMail size={24} />;
           }}
         />
       </motion.ul>

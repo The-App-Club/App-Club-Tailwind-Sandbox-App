@@ -7,8 +7,13 @@ import hamburgerState from '../stores/hamburgerStore';
 import Hamburger from './Hamburger';
 import ThemeToggle from './ThemeToggle';
 import {motion} from 'framer-motion';
-import {MdSettings} from 'react-icons/md';
-import {MdOutlineLogout} from 'react-icons/md';
+import {FiSettings} from 'react-icons/fi';
+import {
+  MdOutlineLogout,
+  MdOutlineShoppingCart,
+  MdOutlineNotificationsNone,
+} from 'react-icons/md';
+
 import Profile from './Profile';
 
 const Header = ({pathname}) => {
@@ -79,6 +84,19 @@ const Header = ({pathname}) => {
         />
         <div className="absolute right-2 flex items-center gap-2">
           <ThemeToggle />
+          <div
+            className="w-[40px] h-[40px] flex items-center justify-center"
+            onClick={(e) => {
+              router.push({
+                pathname: '/cart',
+              });
+            }}
+          >
+            <MdOutlineShoppingCart size={24} />
+          </div>
+          <div className="w-[40px] h-[40px] flex items-center justify-center">
+            <MdOutlineNotificationsNone size={24} />
+          </div>
           <Profile
             menuData={[
               {
@@ -86,7 +104,7 @@ const Header = ({pathname}) => {
                 name: `Setting`,
                 pathname: `/setting`,
                 icon: () => {
-                  return <MdSettings size={24} />;
+                  return <FiSettings size={24} />;
                 },
               },
               {

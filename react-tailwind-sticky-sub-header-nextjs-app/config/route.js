@@ -30,6 +30,11 @@ const routes = [
     activeMenuName: `Contact`,
   },
   {
+    pathName: `/cart`,
+    pageName: `Cart`,
+    activeMenuName: `Cart`,
+  },
+  {
     pathName: `/price`,
     pageName: `Price`,
     activeMenuName: `Price`,
