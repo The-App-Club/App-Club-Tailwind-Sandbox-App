@@ -127,10 +127,9 @@ const Home = () => {
               `
             )}
           >
-            <div className="w-full">
+            <div className="w-full mb-4">
               <AreaGraph />
             </div>
-            <Spacer />
             <PriceRanking
               className={css`
                 position: sticky;
