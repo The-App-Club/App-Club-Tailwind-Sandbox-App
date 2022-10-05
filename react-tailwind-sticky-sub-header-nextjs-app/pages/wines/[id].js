@@ -13,10 +13,14 @@ import hamburgerState from '../../stores/hamburgerStore';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import Category from '../../components/Category';
 import Tracer from '../../components/Tracer';
-import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
+import {arrange, desc, filter, map, sliceHead, tidy} from '@tidyjs/tidy';
 import ReviewRanking from '../../components/ReviewRanking';
 import {default as numbro} from 'numbro';
 import TraceFooter from '../../components/TraceFooter';
+import Product from '../../components/Product';
+
+import {Splide, SplideSlide} from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 const Wine = () => {
   const router = useRouter();
@@ -28,6 +32,30 @@ const Wine = () => {
       return item.id === Number(id);
     });
   }, [id]);
+
+  const relativedLocationData = useMemo(() => {
+    if (!item) {
+      return [];
+    }
+    return tidy(
+      data,
+      filter((d) => {
+        return d.location === item.location && d.id !== Number(item.id);
+      })
+    );
+  }, [item]);
+
+  const relativedWineryData = useMemo(() => {
+    if (!item) {
+      return [];
+    }
+    return tidy(
+      data,
+      filter((d) => {
+        return d.winery === item.winery && d.id !== Number(item.id);
+      })
+    );
+  }, [item]);
 
   if (!item) {
     return;
@@ -146,33 +174,125 @@ const Wine = () => {
               `
             )}
           >
-            <div className="w-full flex items-start gap-2">
-              <picture className={css``}>
-                <source srcSet={item.image} type={`image/png`} />
-                <img
-                  src={item.image}
-                  alt={item.wine}
-                  width={130}
-                  height={'auto'}
-                />
-              </picture>
-              <div className="w-full">
-                <div className="flex items-center w-full justify-end gap-2">
-                  <span className="text-2xl">{`$${numbro(item.price).format({
-                    thousandSeparated: true,
-                  })}`}</span>
-                  <span className="text-4xl text-rose-400 dark:text-amber-400">
-                    {item.rating.average}
-                  </span>
-                  <span className="text-md">{item.rating.reviews}</span>
-                </div>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry&apos;s
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled.
-                </p>
-              </div>
+            <div className="w-full max-w-2xl">
+              <Product item={item} />
+              {relativedLocationData.length !== 0 && (
+                <>
+                  <Spacer />
+                  <h2 className="text-xl">Relatived Location Wines</h2>
+                  <Splide
+                    options={{
+                      rewind: false,
+                      pagination: false,
+                      perPage: 1,
+                      gap: '1rem',
+                      padding: 0,
+                      // padding: `10rem`,
+                      breakpoints: {
+                        768: {
+                          padding: 0,
+                        },
+                      },
+                      height: 'auto',
+                    }}
+                    aria-label="Relatived Location Wines"
+                    className={cx(
+                      css`
+                        .splide__arrow--prev {
+                          left: 0;
+                        }
+                        .splide__arrow--next {
+                          right: 0;
+                        }
+                      `
+                    )}
+                  >
+                    {relativedLocationData.map((item, index) => {
+                      return (
+                        <SplideSlide
+                          key={index}
+                          className={cx(
+                            css`
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              flex-direction: column;
+                            `,
+                            `hover:cursor-pointer`,
+                            `hover:bg-gray-100 dark:hover:bg-slate-800`
+                          )}
+                          onClick={(e) => {
+                            router.push({
+                              pathname: `/wines/${item.id}`,
+                            });
+                          }}
+                        >
+                          <Product item={item} />
+                        </SplideSlide>
+                      );
+                    })}
+                  </Splide>
+                </>
+              )}
+
+              {relativedWineryData.length !== 0 && (
+                <>
+                  <Spacer />
+                  <h2 className="text-xl">Relatived Winery Wines</h2>
+                  <Splide
+                    options={{
+                      rewind: false,
+                      pagination: false,
+                      perPage: 1,
+                      gap: '1rem',
+                      padding: 0,
+                      // padding: `10rem`,
+                      breakpoints: {
+                        768: {
+                          padding: 0,
+                        },
+                      },
+                      height: 'auto',
+                    }}
+                    aria-label="Relatived Winery Wines"
+                    className={cx(
+                      css`
+                        .splide__arrow--prev {
+                          left: 0;
+                        }
+                        .splide__arrow--next {
+                          right: 0;
+                        }
+                      `
+                    )}
+                  >
+                    {relativedWineryData.map((item, index) => {
+                      return (
+                        <SplideSlide
+                          key={index}
+                          className={cx(
+                            css`
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              flex-direction: column;
+                            `,
+                            `hover:cursor-pointer`,
+                            `hover:bg-gray-100 dark:hover:bg-slate-800`
+                          )}
+                          onClick={(e) => {
+                            router.push({
+                              pathname: `/wines/${item.id}`,
+                            });
+                          }}
+                        >
+                          <Product item={item} />
+                        </SplideSlide>
+                      );
+                    })}
+                  </Splide>
+                </>
+              )}
             </div>
             <ReviewRanking />
           </div>
