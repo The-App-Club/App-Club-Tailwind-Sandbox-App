@@ -10,5 +10,6 @@ out
 *ico
 .env
 .env.development
+.env.production
 yarn.lock
 .gitkeep

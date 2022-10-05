@@ -12,6 +12,7 @@ import hamburgerState from '../../stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import Category from '../../components/Category';
+import TraceFooter from '../../components/TraceFooter';
 
 const Wines = () => {
   const router = useRouter();
@@ -34,6 +35,8 @@ const Wines = () => {
               transition: left 0.2s ease ${opened ? 0 : 250}ms,
                 max-width 0.2s ease ${opened ? 0 : 250}ms;
               @media (max-width: 768px) {
+                position: initial;
+                top: initial;
                 left: 0;
                 max-width: 100%;
               }
@@ -174,6 +177,7 @@ const Wines = () => {
             })}
           </div>
         </section>
+        <TraceFooter />
       </Layout>
     </>
   );

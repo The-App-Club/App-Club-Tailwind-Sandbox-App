@@ -16,6 +16,7 @@ import Tracer from '../../components/Tracer';
 import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
 import ReviewRanking from '../../components/ReviewRanking';
 import {default as numbro} from 'numbro';
+import TraceFooter from '../../components/TraceFooter';
 
 const Wine = () => {
   const router = useRouter();
@@ -49,6 +50,8 @@ const Wine = () => {
               transition: left 0.2s ease ${opened ? 0 : 250}ms,
                 max-width 0.2s ease ${opened ? 0 : 250}ms;
               @media (max-width: 768px) {
+                position: initial;
+                top: initial;
                 left: 0;
                 max-width: 100%;
               }
@@ -174,6 +177,7 @@ const Wine = () => {
             <ReviewRanking />
           </div>
         </section>
+        <TraceFooter />
       </Layout>
     </>
   );

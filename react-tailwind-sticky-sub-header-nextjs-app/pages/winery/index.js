@@ -13,6 +13,7 @@ import capitalize from 'capitalize-the-first-letter';
 
 import hamburgerState from '../../stores/hamburgerStore';
 import Category from '../../components/Category';
+import TraceFooter from '../../components/TraceFooter';
 
 const Winery = () => {
   const router = useRouter();
@@ -34,6 +35,8 @@ const Winery = () => {
               transition: left 0.2s ease ${opened ? 0 : 250}ms,
                 max-width 0.2s ease ${opened ? 0 : 250}ms;
               @media (max-width: 768px) {
+                position: initial;
+                top: initial;
                 left: 0;
                 max-width: 100%;
               }
@@ -162,6 +165,7 @@ const Winery = () => {
             })}
           </div>
         </section>
+        <TraceFooter />
       </Layout>
     </>
   );
