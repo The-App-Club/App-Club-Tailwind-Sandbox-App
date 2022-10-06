@@ -1,6 +1,9 @@
 import '@fullcalendar/react/dist/vdom';
 import FullCalendar, { formatDate } from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction'; // allows click events
+import googleCalendarPlugin from '@fullcalendar/google-calendar';
+
 import React, { useCallback, useState, useEffect } from 'react';
 import { css } from '@emotion/css';
 
@@ -8,6 +11,12 @@ import { Spacer } from '../../components/Spacer';
 import { Layout } from '../../layouts/default';
 
 const HomePage = () => {
+  // https://stackoverflow.com/questions/72958654/connecting-full-calendar-via-google-to-react
+
+  useEffect(() => {
+    console.log(import.meta.env.VITE_APP_GOOGLE_API_KEY);
+  }, []);
+
   return (
     <Layout>
       <div
@@ -42,15 +51,29 @@ const HomePage = () => {
         `}
       >
         <FullCalendar
-          plugins={[dayGridPlugin]}
+          plugins={[dayGridPlugin, interactionPlugin, googleCalendarPlugin]}
           initialView="dayGridMonth"
           locale="ja"
-          events={[
-            { title: 'event 1', start: '2022-10-01' },
-            { title: 'event 2', start: '2022-10-03', end: '2022-10-05' },
+          googleCalendarApiKey={import.meta.env.VITE_APP_GOOGLE_API_KEY}
+          eventClick={({ el, event, jsEvent, view }) => {
+            jsEvent.preventDefault();
+            console.log(`el,event,jsEvent,view`, el, event, jsEvent, view);
+          }}
+          eventSources={[
             {
-              title: 'event 3',
-              start: '2022-10-07T10:00:00',
+              display: 'Sample Event 1',
+              googleCalendarId: 'sample1@group.calendar.google.com',
+              color: 'rgb(120 53 15)', // text-amber-900
+            },
+            {
+              display: 'Sample Event 2',
+              googleCalendarId: 'sample2@group.calendar.google.com',
+              color: 'rgb(6 78 59)', // text-emerald-900
+            },
+            {
+              display: 'Sample Event 3',
+              googleCalendarId: 'sample3@group.calendar.google.com',
+              color: 'rgb(12 74 110)', // text-sky-900
             },
           ]}
         />

@@ -13,6 +13,8 @@
     "@emotion/styled": "^11.10.4",
     "@fontsource/inter": "^4.5.12",
     "@fullcalendar/daygrid": "^5.11.3",
+    "@fullcalendar/google-calendar": "^5.11.3",
+    "@fullcalendar/interaction": "^5.11.3",
     "@fullcalendar/react": "^5.11.2",
     "framer-motion": "^7.3.6",
     "gsap": "^3.11.1",
