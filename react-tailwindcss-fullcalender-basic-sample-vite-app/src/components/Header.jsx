@@ -9,7 +9,7 @@ const Header = () => {
     <header
       className={cx(
         css`
-          z-index: 1;
+          z-index: 4;
           height: 3rem;
         `,
         `sticky w-full top-0 bg-white`
