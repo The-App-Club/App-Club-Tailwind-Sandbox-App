@@ -1,4 +1,4 @@
-import { css } from '@emotion/css';
+import { css, cx } from '@emotion/css';
 import { motion } from 'framer-motion';
 
 const motionConfig = {
@@ -19,7 +19,7 @@ const motionConfig = {
   },
 };
 
-const Layout = ({ children }) => {
+const Layout = ({ children, className }) => {
   return (
     <motion.div
       variants={motionConfig}
@@ -30,10 +30,13 @@ const Layout = ({ children }) => {
         duration: 0.4,
         ease: 'easeInOut',
       }}
-      className={css`
-        position: relative;
-        width: 100%;
-      `}
+      className={cx(
+        css`
+          position: relative;
+          width: 100%;
+        `,
+        className
+      )}
       onAnimationStart={(e) => {}}
       onAnimationComplete={(e) => {}}
     >
