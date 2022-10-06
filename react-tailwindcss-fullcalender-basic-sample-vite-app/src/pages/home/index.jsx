@@ -5,13 +5,15 @@ import interactionPlugin from '@fullcalendar/interaction'; // allows click event
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
 
 import React, { useCallback, useState, useEffect } from 'react';
-import { css } from '@emotion/css';
+import { css, cx } from '@emotion/css';
 
+import { Modal } from '../../components/Modal';
 import { Spacer } from '../../components/Spacer';
 import { Layout } from '../../layouts/default';
 import { useRef } from 'react';
 
 const HomePage = () => {
+  const [showModal, setShowModal] = useState(false);
   const calenderLeftRef = useRef(null);
   const calenderRightRef = useRef(null);
   // https://stackoverflow.com/questions/57229955/full-calendar-prev-next-button-in-react
@@ -30,11 +32,66 @@ const HomePage = () => {
     calenderRightRef.current.getApi().next();
   };
 
+  const handleEventClick = ({ el, event, jsEvent, view }) => {
+    jsEvent.preventDefault();
+    // console.log(`el,event,jsEvent,view`, el, event, jsEvent, view);
+    setShowModal(true);
+    const html = document.documentElement;
+    const body = document.body;
+    html.classList.add('loading');
+    body.classList.add('loading');
+  };
+
+  const handleClose = (e) => {
+    setShowModal(false);
+    const html = document.documentElement;
+    const body = document.body;
+    html.classList.remove('loading');
+    body.classList.remove('loading');
+  };
+
   return (
     <Layout className={'px-2'}>
-      <div className="flex items-center gap-2">
+      <Modal show={showModal} handleClose={handleClose} />
+      <div
+        className={css`
+          min-height: 3rem;
+          position: sticky;
+          top: 3rem;
+          background: rgb(255 255 255); // bg-white
+          z-index: 4;
+          display: none;
+          @media (max-width: 768px) {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+          }
+        `}
+      >
         <button
           className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl"
+          onClick={handlePrev}
+        >
+          Prev
+        </button>
+        <button
+          className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl"
+          onClick={handleNext}
+        >
+          Next
+        </button>
+      </div>
+      <div className="flex items-center gap-2">
+        <button
+          className={cx(
+            'px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl',
+            css`
+              display: block;
+              @media (max-width: 768px) {
+                display: none;
+              }
+            `
+          )}
           onClick={handlePrev}
         >
           Prev
@@ -53,6 +110,9 @@ const HomePage = () => {
                 min-height: 3rem;
                 position: sticky;
                 top: 3rem;
+                @media (max-width: 768px) {
+                  top: 6rem;
+                }
                 background: rgb(255 255 255); // bg-white
                 z-index: 3;
                 margin: 0;
@@ -64,6 +124,9 @@ const HomePage = () => {
               thead {
                 position: sticky;
                 top: 6rem;
+                @media (max-width: 768px) {
+                  top: 9rem;
+                }
                 background: rgb(255 255 255); // bg-white
                 z-index: 2;
               }
@@ -86,10 +149,7 @@ const HomePage = () => {
             }}
             locale="ja"
             googleCalendarApiKey={import.meta.env.VITE_APP_GOOGLE_API_KEY}
-            eventClick={({ el, event, jsEvent, view }) => {
-              jsEvent.preventDefault();
-              console.log(`el,event,jsEvent,view`, el, event, jsEvent, view);
-            }}
+            eventClick={handleEventClick}
             eventSources={[
               {
                 display: 'Sample Event 1',
@@ -119,10 +179,7 @@ const HomePage = () => {
             }}
             locale="ja"
             googleCalendarApiKey={import.meta.env.VITE_APP_GOOGLE_API_KEY}
-            eventClick={({ el, event, jsEvent, view }) => {
-              jsEvent.preventDefault();
-              console.log(`el,event,jsEvent,view`, el, event, jsEvent, view);
-            }}
+            eventClick={handleEventClick}
             eventSources={[
               {
                 display: 'Sample Event 1',
@@ -144,7 +201,15 @@ const HomePage = () => {
           />
         </div>
         <button
-          className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl"
+          className={cx(
+            'px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl',
+            css`
+              display: block;
+              @media (max-width: 768px) {
+                display: none;
+              }
+            `
+          )}
           onClick={handleNext}
         >
           Next

@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  .loading {
+    overflow: hidden;
+  }
+}
+
 body {
   overflow: hidden;
   overflow-y: auto;
