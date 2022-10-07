@@ -13,3 +13,4 @@ out
 .env.production
 yarn.lock
 .gitkeep
+public/data/wine.csv

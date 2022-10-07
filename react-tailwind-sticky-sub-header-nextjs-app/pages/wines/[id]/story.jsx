@@ -12,6 +12,7 @@ import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {css, cx} from '@emotion/css';
 import ScrollStory from '../../../components/ScrollStory';
+import ScatterGraph from '../../../components/ScatterGraph';
 
 const Story = () => {
   const router = useRouter();
@@ -131,6 +132,8 @@ const Story = () => {
           </div>
 
           <ScrollStory />
+
+          <ScatterGraph />
 
           {/* <div>
             <p>Here Mapbox Story Telling</p>

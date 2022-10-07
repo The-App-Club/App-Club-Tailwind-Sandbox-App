@@ -19,6 +19,8 @@ import Map from '../components/Map';
 import location from '../data/location.json';
 import Spacer from '../components/Spacer';
 
+// console.log(data);
+
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);
 

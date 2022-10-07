@@ -301,11 +301,11 @@ const AreaGraph = () => {
             }}
           />
           <Tooltip
-            wrapperClassName={`!bg-white dark:!bg-slate-700 !border-gray-100 dark:!border-slate-700 shadow-2xl`}
-            labelClassName={`!bg-white dark:!bg-slate-700`}
             cursor={{
               fill: decideBarBackFaceFillColor({mode}),
             }}
+            wrapperClassName={`!bg-white dark:!bg-slate-700 !border-gray-100 dark:!border-slate-700 shadow-2xl`}
+            labelClassName={`!bg-white dark:!bg-slate-700`}
             labelFormatter={(label, [item]) => {
               return `#${item?.payload.id} ${item?.payload.wine}`;
             }}
