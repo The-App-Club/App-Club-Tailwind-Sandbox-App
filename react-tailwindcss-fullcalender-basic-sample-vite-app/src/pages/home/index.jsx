@@ -3,16 +3,32 @@ import FullCalendar, { formatDate } from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
 import interactionPlugin from '@fullcalendar/interaction'; // allows click events
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
-
 import React, { useCallback, useState, useEffect } from 'react';
 import { css, cx } from '@emotion/css';
+
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import ja from 'dayjs/locale/ja';
+import isToday from 'dayjs/plugin/isToday';
+import isYesterday from 'dayjs/plugin/isYesterday';
+import relativeTime from 'dayjs/plugin/relativeTime';
 
 import { Modal } from '../../components/Modal';
 import { Spacer } from '../../components/Spacer';
 import { Layout } from '../../layouts/default';
 import { useRef } from 'react';
 
+dayjs.extend(timezone);
+dayjs.extend(utc);
+dayjs.extend(isToday);
+dayjs.extend(isYesterday);
+dayjs.extend(relativeTime);
+dayjs.tz.setDefault('Asia/Tokyo');
+dayjs.locale(ja);
+
 const HomePage = () => {
+  const [modalData, setModalData] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const calenderLeftRef = useRef(null);
   const calenderRightRef = useRef(null);
@@ -25,7 +41,7 @@ const HomePage = () => {
     calenderLeftRef.current.getApi().prev();
     calenderRightRef.current.getApi().prev();
   };
-
+  // new FullCalendar().getApi().getEvents()[0].
   const handleNext = (e) => {
     console.log(`next`);
     calenderLeftRef.current.getApi().next();
@@ -34,7 +50,22 @@ const HomePage = () => {
 
   const handleEventClick = ({ el, event, jsEvent, view }) => {
     jsEvent.preventDefault();
-    // console.log(`el,event,jsEvent,view`, el, event, jsEvent, view);
+    const { title, url } = event;
+    const { location, description } = event.extendedProps;
+    const eventId = event.id;
+    const eventStartDate = event.start;
+    const eventEndDate = event.end;
+    setModalData({
+      title,
+      url,
+      location,
+      description,
+      eventId,
+      YYYYMMDD: dayjs(event.start).format('YYYY/MM/DD'),
+      dddd: dayjs(event.start).format('dddd'),
+      startTime: dayjs(event.start).format('HH:MM'),
+      endTime: dayjs(event.end).format('HH:MM'),
+    });
     setShowModal(true);
     const html = document.documentElement;
     const body = document.body;
@@ -44,6 +75,7 @@ const HomePage = () => {
 
   const handleClose = (e) => {
     setShowModal(false);
+    setModalData(null);
     const html = document.documentElement;
     const body = document.body;
     html.classList.remove('loading');
@@ -52,7 +84,7 @@ const HomePage = () => {
 
   return (
     <Layout className={'px-2'}>
-      <Modal show={showModal} handleClose={handleClose} />
+      <Modal show={showModal} handleClose={handleClose} data={modalData} />
       <div
         className={css`
           min-height: 3rem;

@@ -1,7 +1,10 @@
 import { css, cx } from '@emotion/css';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Modal = ({ show, handleClose }) => {
+const Modal = ({ show, handleClose, data }) => {
+  if (!data) {
+    return;
+  }
   return (
     <AnimatePresence>
       {show && (
@@ -49,15 +52,19 @@ const Modal = ({ show, handleClose }) => {
                 </svg>
               </button>
               <h2 className="text-2xl mt-10 flex items-center justify-center">
-                Modal Header
+                {data.title}
               </h2>
               <div>
-                <p>Modal Sentence</p>
-                <p>Modal Sentence</p>
-                <p>Modal Sentence</p>
-                <p>Modal Sentence</p>
-                <p>Modal Sentence</p>
-                <p>Modal Sentence</p>
+                <div>{data.url}</div>
+                <div>{data.YYYYMMDD}</div>
+                <div>{data.dddd}</div>
+                <div>
+                  <span>{data.startTime}</span>
+                  <span>~</span>
+                  <span>{data.endTime}</span>
+                </div>
+                <div>{data.location}</div>
+                <div>{data.description}</div>
               </div>
             </div>
           </motion.div>
