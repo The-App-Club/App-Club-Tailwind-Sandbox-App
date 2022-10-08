@@ -9,7 +9,9 @@
     "price": 5888,
     "description": "Obaudde ko rukvi ig vuk mawzu ahapuvecu fa dikukive vo batupjel danuju di vu.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 0.9499, "dry": 4.0501},
+    "dense": {"light": 0.5314, "full": 4.4686},
+    "tannin": 4.35
   },
   {
     "winery": "Cartuxa",
@@ -21,7 +23,9 @@
     "price": 5222,
     "description": "Eha ikuda ca balte vi bonhik koned zothe wuudkut limoroj ki zejel vivah cegam vilepol.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 3.5187, "dry": 1.4813},
+    "dense": {"light": 2.1954, "full": 2.8046},
+    "tannin": 2.3703
   },
   {
     "winery": "Schrader",
@@ -33,7 +37,9 @@
     "price": 7461,
     "description": "Fuvtonfu we togilun su leb akaboz ficofu mumovida re teho toza lem lechob lepgalgo metmowmu su ericanha itdocom.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 3.1519, "dry": 1.8481},
+    "dense": {"light": 2.7718, "full": 2.2282},
+    "tannin": 2.0485
   },
   {
     "winery": "Schrader",
@@ -45,7 +51,9 @@
     "price": 5951,
     "description": "Osileh ivezipiju bujbele fafcehan cer gimimhe evuwalpan wa ini bo ololesur vom uwe siiz.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 1.8314, "dry": 3.1686},
+    "dense": {"light": 1.4765, "full": 3.5235},
+    "tannin": 0.2017
   },
   {
     "winery": "Schrader",
@@ -57,7 +65,9 @@
     "price": 7004,
     "description": "Jad zebal otuguzhub awitamam okeri hukta tawduhal bameti fabvuguti zotew mo tofutiz haboso ulwojos uvfaz wo ramle.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 4.0098, "dry": 0.9902},
+    "dense": {"light": 2.9676, "full": 2.0324},
+    "tannin": 0.8928
   },
   {
     "winery": "Schrader",
@@ -69,7 +79,9 @@
     "price": 2716,
     "description": "Elazirit ilkid jamiun ufo vutis siof ovivenal vuadcel or herjosej be wojhet abevog mu fiwba duabta vaewewor.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 2.5041, "dry": 2.4959},
+    "dense": {"light": 2.2109, "full": 2.7891},
+    "tannin": 3.4977
   },
   {
     "winery": "Schrader",
@@ -81,7 +93,9 @@
     "price": 3716,
     "description": "Vikon otinipka akeheb nuru pucez ekcab ubesajak ol uri cuwalnuc goriz ves.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 1.2045, "dry": 3.7955},
+    "dense": {"light": 1.4393, "full": 3.5607},
+    "tannin": 4.9468
   },
   {
     "winery": "Hundred Acre",
@@ -93,7 +107,9 @@
     "price": 2751,
     "description": "Efe papzepez cos haicema tin webde edfuzuca newutbin vituz wu gursiuce kin paocdi.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 3.6817, "dry": 1.3183},
+    "dense": {"light": 3.7063, "full": 1.2937},
+    "tannin": 3.4475
   },
   {
     "winery": "Hundred Acre",
@@ -105,7 +121,9 @@
     "price": 9117,
     "description": "Wut ace petuiz cinzebo lil algo nivekbe ka nitdi ceurebod ijtuef ul gib ivfo fel ga wojirwe.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 0.402, "dry": 4.598},
+    "dense": {"light": 4.9282, "full": 0.0718},
+    "tannin": 3.1865
   },
   {
     "winery": "Hundred Acre",
@@ -117,7 +135,9 @@
     "price": 1503,
     "description": "Itawon di soje omjehfeb boepouho ataim vad nanhecu duk naf epku ze urnumi.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 4.1141, "dry": 0.8859},
+    "dense": {"light": 2.3891, "full": 2.6109},
+    "tannin": 4.2167
   },
   {
     "winery": "Sine Qua Non",
@@ -129,7 +149,9 @@
     "price": 2023,
     "description": "Gubeun sim tuzo hidwuw moativo lop ricume wiz arsor ijukizes wunu wecmas pemfikos me romnur gipneos romnoci ob.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 0.7281, "dry": 4.2719},
+    "dense": {"light": 3.8375, "full": 1.1625},
+    "tannin": 3.2761
   },
   {
     "winery": "Sine Qua Non",
@@ -141,7 +163,9 @@
     "price": 6656,
     "description": "Owumowred huah tiepirol dik ulukeboz ukwowec nuh gahi obo nu dathac ezkigi desojha siap.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 2.693, "dry": 2.307},
+    "dense": {"light": 4.5992, "full": 0.4008},
+    "tannin": 2.7298
   },
   {
     "winery": "Sine Qua Non",
@@ -153,7 +177,9 @@
     "price": 9565,
     "description": "Ilcunjeh luukiju ret tojawu re jizgawu le pog memkiso revju ve aj viwva uriuvwi.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 0.2557, "dry": 4.7443},
+    "dense": {"light": 3.0143, "full": 1.9857},
+    "tannin": 4.6011
   },
   {
     "winery": "Del Dotto",
@@ -165,7 +191,9 @@
     "price": 2298,
     "description": "Kiz uhjicme ro kekveire owbo ovgi odilojgic po nejel kanjare jew wiuw.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 2.405, "dry": 2.595},
+    "dense": {"light": 0.4814, "full": 4.5186},
+    "tannin": 4.7565
   },
   {
     "winery": "Del Dotto",
@@ -177,7 +205,9 @@
     "price": 1848,
     "description": "Etbotsu ciz lozopi tejkip ahe werjuw ti mo fa nac kaicdar regitet kezula raj uwovu jo.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 0.8027, "dry": 4.1973},
+    "dense": {"light": 2.6539, "full": 2.3461},
+    "tannin": 4.1868
   },
   {
     "winery": "Darioush",
@@ -189,7 +219,9 @@
     "price": 5076,
     "description": "Huj hibmok ilufir wubijpu cecevah ci muw vube livuh ma aco toar nu unjafla hevem noopulo vovik ca.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 3.9849, "dry": 1.0151},
+    "dense": {"light": 1.77, "full": 3.23},
+    "tannin": 1.6626
   },
   {
     "winery": "Garbole",
@@ -201,7 +233,9 @@
     "price": 5071,
     "description": "Pibka ik fa paij bursawvu wujvit zuav faculguw gogituzi nanin nuufu wekazbof.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 1.4745, "dry": 3.5255},
+    "dense": {"light": 3.063, "full": 1.937},
+    "tannin": 4.9625
   },
   {
     "winery": "Scarecrow",
@@ -213,7 +247,9 @@
     "price": 5114,
     "description": "Po eliba jagfoota itabov omo mat vakmap coc abiihe keda ciprofas lesjuvkid jaavve nujsu fi tijbam cahe.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 4.3136, "dry": 0.6864},
+    "dense": {"light": 0.8908, "full": 4.1092},
+    "tannin": 3.3118
   },
   {
     "winery": "E. Guigal",
@@ -225,7 +261,9 @@
     "price": 4416,
     "description": "Vi oka buew iso itu wobud zazumef du wo coci nowcim urpeak la.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 1.7337, "dry": 3.2663},
+    "dense": {"light": 4.1688, "full": 0.8312},
+    "tannin": 3.2083
   },
   {
     "winery": "Domaine Armand Rousseau",
@@ -237,7 +275,9 @@
     "price": 3136,
     "description": "Etufu zozopwe juc nelnemub guhuh napvo cat afavimpi bagwuje surji desas do talwe uw ugi regu magi.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 3.5849, "dry": 1.4151},
+    "dense": {"light": 2.9264, "full": 2.0736},
+    "tannin": 2.5654
   },
   {
     "winery": "Catena Zapata",
@@ -249,7 +289,9 @@
     "price": 5706,
     "description": "Vujfeuf kerer kembarge luhozdaf nur dove kav bocuisa urigoj aje ku jolwewgaf heur du nozoh.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 3.9902, "dry": 1.0098},
+    "dense": {"light": 4.5456, "full": 0.4544},
+    "tannin": 2.3663
   },
   {
     "winery": "Bodegas Valduero",
@@ -261,7 +303,9 @@
     "price": 8354,
     "description": "Saluom ah geobewiv mevwabaf ajediz ogni lijem ajusot mekmu coc falwa honakef vij kocegbej to imvi sorih.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 3.5058, "dry": 1.4942},
+    "dense": {"light": 0.3442, "full": 4.6558},
+    "tannin": 1.7053
   },
   {
     "winery": "Brion",
@@ -273,7 +317,9 @@
     "price": 7392,
     "description": "Cih lo vo cuw fanrasle lickidew jid bas zov cipcavit vurjab husan ze.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 1.3102, "dry": 3.6898},
+    "dense": {"light": 4.1303, "full": 0.8697},
+    "tannin": 2.9871
   },
   {
     "winery": "Gargiulo",
@@ -285,7 +331,9 @@
     "price": 5258,
     "description": "Efu ako hip laz suifpo dih jani comi fo woh pu taclamade itoci varzavfa.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 1.6182, "dry": 3.3818},
+    "dense": {"light": 0.5537, "full": 4.4463},
+    "tannin": 0.7382
   },
   {
     "winery": "Conterno",
@@ -297,7 +345,9 @@
     "price": 1540,
     "description": "Mug efo mun bup ron do ve gepwujawu junugem koweemi artim zademiub zuhac pe heblub aho.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 0.6111, "dry": 4.3889},
+    "dense": {"light": 3.4503, "full": 1.5497},
+    "tannin": 3.8096
   },
   {
     "winery": "Conterno",
@@ -309,7 +359,9 @@
     "price": 1052,
     "description": "Zidi jekah oruajuro ohosof ka mivuh uzzepal retwubpi vozuli fohfov cil untabko ba.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 1.641, "dry": 3.359},
+    "dense": {"light": 0.1817, "full": 4.8183},
+    "tannin": 4.5249
   },
   {
     "winery": "Amici",
@@ -321,7 +373,9 @@
     "price": 7220,
     "description": "Merhe boabupo rim wa sa nefrepron tapjes tocurram lareku gah ba suzeev.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 4.0792, "dry": 0.9208},
+    "dense": {"light": 4.6062, "full": 0.3938},
+    "tannin": 0.083
   },
   {
     "winery": "De Toren",
@@ -333,7 +387,9 @@
     "price": 8515,
     "description": "Owutapojo vuag woleseid sel eg rufzino ile viage zol diji tan ve an jiagfo boaz sucogfi.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 3.9152, "dry": 1.0848},
+    "dense": {"light": 3.4932, "full": 1.5068},
+    "tannin": 0.6395
   },
   {
     "winery": "B Cellars",
@@ -345,7 +401,9 @@
     "price": 9949,
     "description": "Vobuwa ep anci foliez unpehso ovohope jo ko riat zukap cewrusow it.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 1.3329, "dry": 3.6671},
+    "dense": {"light": 1.3722, "full": 3.6278},
+    "tannin": 0.6727
   },
   {
     "winery": "B Cellars",
@@ -357,7 +415,9 @@
     "price": 9534,
     "description": "Tucenjug rev toti refawi seekeci hejuhki oktozni tiwri nodolo zir turzih ufjoowa wipbes tujuk omofec ilvu ip holtuzu.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 0.4815, "dry": 4.5185},
+    "dense": {"light": 0.9125, "full": 4.0875},
+    "tannin": 3.7221
   },
   {
     "winery": "Hall",
@@ -369,7 +429,9 @@
     "price": 3087,
     "description": "Wietakug bel banacefi ze waisvuj div wuzu oruramtu ome pam obnocci eladulget vibaru.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 2.2636, "dry": 2.7364},
+    "dense": {"light": 4.9976, "full": 0.0024},
+    "tannin": 0.5824
   },
   {
     "winery": "4G",
@@ -381,7 +443,9 @@
     "price": 3195,
     "description": "Gotseva me mibizu un vusse puto buw gi mumitwo so co nadronzup fad pak pu.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 1.0301, "dry": 3.9699},
+    "dense": {"light": 4.1009, "full": 0.8991},
+    "tannin": 4.3132
   },
   {
     "winery": "Dana",
@@ -393,7 +457,9 @@
     "price": 6634,
     "description": "Cuh lis nepjekaj muwweg riowiken veziz tuphalaj raspevte hekteddik tutfo ewecu lolniapi riil baz dihin jejuvo vuz ifakuc.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 2.8145, "dry": 2.1855},
+    "dense": {"light": 3.8394, "full": 1.1606},
+    "tannin": 0.7739
   },
   {
     "winery": "Takler",
@@ -405,7 +471,9 @@
     "price": 5642,
     "description": "Mecgide nanlood ri siker iv hi nupunbo moahig nihronzot ici kimusu cidu fuscah minnokbik aboda nuvurug uf wag.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 3.6199, "dry": 1.3801},
+    "dense": {"light": 3.8544, "full": 1.1456},
+    "tannin": 3.7796
   },
   {
     "winery": "Marion",
@@ -417,7 +485,9 @@
     "price": 8841,
     "description": "Jonduche asgefreh mev ufu elo ropar tiehaoso oruteh jezfi on acolu oze it hiofzu.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 3.6863, "dry": 1.3137},
+    "dense": {"light": 4.1269, "full": 0.8731},
+    "tannin": 0.5625
   },
   {
     "winery": "Outpost",
@@ -429,7 +499,9 @@
     "price": 4726,
     "description": "Kazilre etowugwa mi haco kuphuas pomojvu ba elezactit mahnawkez iziz huvacaju ibalu zozdo ralpu uragej mebsor tik ugbol.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 4.9113, "dry": 0.0887},
+    "dense": {"light": 3.0287, "full": 1.9713},
+    "tannin": 4.713
   },
   {
     "winery": "Jacques-Frederic Mugnier",
@@ -441,7 +513,9 @@
     "price": 6260,
     "description": "Hofowen honmigi usa defulce usagahrew lubpev tinu zajse ke wi jo sewam bet te nuk erecog.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 4.4278, "dry": 0.5722},
+    "dense": {"light": 4.5876, "full": 0.4124},
+    "tannin": 0.526
   },
   {
     "winery": "Tenuta Carretta",
@@ -453,7 +527,9 @@
     "price": 1671,
     "description": "Kop gediwoc davsoma gul he nebti hitme ifu vej tocug sadtako egonuvja fil leburom.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 4.2116, "dry": 0.7884},
+    "dense": {"light": 2.421, "full": 2.579},
+    "tannin": 3.0885
   },
   {
     "winery": "Teso La Monja",
@@ -465,7 +541,9 @@
     "price": 2160,
     "description": "Mi zos dijoseca vuem zidpizu dunijbu er wu omfepa tozaihu rihnez rek ejajatni meh ohatiz po bucahi iptog.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 2.1255, "dry": 2.8745},
+    "dense": {"light": 2.748, "full": 2.252},
+    "tannin": 2.6121
   },
   {
     "winery": "Purlieu",
@@ -477,7 +555,9 @@
     "price": 8719,
     "description": "Vihavgob iraazmu la uzu gi erhep me ducu wezazi recidad ebe wo li.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 4.801, "dry": 0.199},
+    "dense": {"light": 1.0374, "full": 3.9626},
+    "tannin": 0.1278
   },
   {
     "winery": "Pine Ridge",
@@ -489,7 +569,9 @@
     "price": 9706,
     "description": "Mak bazij gu bopevo luwav mawe rejok ora re em iweoloawu nojdoeda.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 4.5421, "dry": 0.4579},
+    "dense": {"light": 2.9594, "full": 2.0406},
+    "tannin": 2.1832
   },
   {
     "winery": "Cliff Lede",
@@ -501,7 +583,9 @@
     "price": 7031,
     "description": "Veja dipjervut guguhuja bojwapuk vebojuz cigin guutuk iwco agredke epre gor ojovih fazo niezu oh.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 4.3847, "dry": 0.6153},
+    "dense": {"light": 4.0867, "full": 0.9133},
+    "tannin": 3.6329
   },
   {
     "winery": "Abreu",
@@ -513,7 +597,9 @@
     "price": 8792,
     "description": "Ra kovcapted ansibsur sa wowced geajukol vuzo lon pute aw balku ovuzul vafcim ovvigjim no wipeb vokgeb tukfuk.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 2.1466, "dry": 2.8534},
+    "dense": {"light": 4.6155, "full": 0.3845},
+    "tannin": 1.4639
   },
   {
     "winery": "Abreu",
@@ -525,7 +611,9 @@
     "price": 6554,
     "description": "Er seag nav ahdav bo evutiir wotaken aseluj ufiluw uk ga lizutfus dodabgi jimekwa mana we fimuscuz ecu.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 2.0748, "dry": 2.9252},
+    "dense": {"light": 3.7717, "full": 1.2283},
+    "tannin": 2.0976
   },
   {
     "winery": "Realm",
@@ -537,7 +625,9 @@
     "price": 3925,
     "description": "Ate som hitew rugnizkug helur ew jeevsi ref wig om vovuj ef nured tef ah.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 4.7517, "dry": 0.2483},
+    "dense": {"light": 4.3596, "full": 0.6404},
+    "tannin": 0.1443
   },
   {
     "winery": "Realm",
@@ -549,7 +639,9 @@
     "price": 2958,
     "description": "Vek nul wada ehozo tuhun nahpidhal he ucu hardinmev olru du kitnagu adujarsa woj hi vuranof vowilgah ocpopun.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 1.5776, "dry": 3.4224},
+    "dense": {"light": 4.5671, "full": 0.4329},
+    "tannin": 0.2384
   },
   {
     "winery": "Lynmar Estate",
@@ -561,7 +653,9 @@
     "price": 8505,
     "description": "Dojal fitu virovmoh ik duvgif soufu toflic tejbumkud camheban afihol si iguezjid cow fifod.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 4.2965, "dry": 0.7035},
+    "dense": {"light": 2.9992, "full": 2.0008},
+    "tannin": 4.9168
   },
   {
     "winery": "Domaine de La Romanée-Conti",
@@ -573,7 +667,9 @@
     "price": 3587,
     "description": "Koboon zoovikah wepic bed moporse hilan oscedki usgi zonze ijavejet ada ro sezedta.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 1.5164, "dry": 3.4836},
+    "dense": {"light": 4.6257, "full": 0.3743},
+    "tannin": 3.5589
   },
   {
     "winery": "Domaine de La Romanée-Conti",
@@ -585,7 +681,9 @@
     "price": 4004,
     "description": "Jerdo munonep fol zil kulgik vace ra senkuj fo cobep bojos do.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 4.296, "dry": 0.704},
+    "dense": {"light": 4.2197, "full": 0.7803},
+    "tannin": 0.5911
   },
   {
     "winery": "Domaine de La Romanée-Conti",
@@ -597,7 +695,9 @@
     "price": 1774,
     "description": "Zuis sazefewu pekahmef catewir pozzi feh cu iz tuuwovub monlul faibutu bapzah tahopes vid.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 2.6877, "dry": 2.3123},
+    "dense": {"light": 3.6511, "full": 1.3489},
+    "tannin": 2.0318
   },
   {
     "winery": "Domaine de La Romanée-Conti",
@@ -609,7 +709,9 @@
     "price": 8896,
     "description": "Vefisa doznes po rel goj dow maara icrilgez bofeba lib tuwcuje gekdav guteji.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 2.0567, "dry": 2.9433},
+    "dense": {"light": 2.3229, "full": 2.6771},
+    "tannin": 3.02
   },
   {
     "winery": "Domaine de La Romanée-Conti",
@@ -621,7 +723,9 @@
     "price": 6014,
     "description": "Bed pidlewe ej rujivur wuznar tuviud aves anfit gezful lul wipace nu ge ewo zewobjif teheb jepafo.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 0.0654, "dry": 4.9346},
+    "dense": {"light": 2.1742, "full": 2.8258},
+    "tannin": 3.0947
   },
   {
     "winery": "Bryant Family Vineyard",
@@ -633,7 +737,9 @@
     "price": 5983,
     "description": "Gotsalda kodtac ewegute bibro celel taj sibsof buunu bave dolbaw gokim sab ziwiwwuh gib.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 3.3984, "dry": 1.6016},
+    "dense": {"light": 4.4065, "full": 0.5935},
+    "tannin": 4.7727
   },
   {
     "winery": "Antonio Don Px",
@@ -645,7 +751,9 @@
     "price": 7732,
     "description": "Dadfe cobtanhed hiovhok faep ukeomiva if jeb nitfuk izidafodi togogu guozwel zijseb.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 0.3639, "dry": 4.6361},
+    "dense": {"light": 1.0006, "full": 3.9994},
+    "tannin": 4.5807
   },
   {
     "winery": "Wild Duck Creek Estate",
@@ -657,7 +765,9 @@
     "price": 1665,
     "description": "Bolaj her pugup midha okutafta nav ep lavlawha viaz apjicir uvwu worocgat pocfa juwfudkoh hesuc bepiwaov vaggi.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 1.2175, "dry": 3.7825},
+    "dense": {"light": 1.1489, "full": 3.8511},
+    "tannin": 1.2784
   },
   {
     "winery": "Blason Louis",
@@ -669,7 +779,9 @@
     "price": 9368,
     "description": "Vew kuwacmu hi zi cuw dat fobih ej nu ehhama jeujo saker ibazas cigfona obaada maf ban.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 0.7653, "dry": 4.2347},
+    "dense": {"light": 3.0722, "full": 1.9278},
+    "tannin": 1.6403
   },
   {
     "winery": "Tedeschi",
@@ -681,7 +793,9 @@
     "price": 8913,
     "description": "Isuloawo koho bec zoko ohe pudusbi wamovigu jabij ovoju rijef led di.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 0.9891, "dry": 4.0109},
+    "dense": {"light": 1.3693, "full": 3.6307},
+    "tannin": 3.1332
   },
   {
     "winery": "Vietti",
@@ -693,7 +807,9 @@
     "price": 8153,
     "description": "Ce beuz zeski liuz jig ibo vi ludfobah ef vubzof ohvo giv vuv okafownah loponu.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 2.7974, "dry": 2.2026},
+    "dense": {"light": 4.3795, "full": 0.6205},
+    "tannin": 3.2198
   },
   {
     "winery": "Geoff Merrill",
@@ -705,7 +821,9 @@
     "price": 4327,
     "description": "Pe rezpatri efhored cahja ciswa webor elekuija wakisanuf bazduzde vog mu go et duhsabha jiubcag ba.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 0.7537, "dry": 4.2463},
+    "dense": {"light": 2.1845, "full": 2.8155},
+    "tannin": 3.0175
   },
   {
     "winery": "Robert Foley Vineyards",
@@ -717,7 +835,9 @@
     "price": 7325,
     "description": "Fetuto ezuc tocop zikog lekerre povif etiimati parsi mubelcil wersahat sorkibleh vikta nuwze izevowe rokazbo gazu zinevuki.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 4.2804, "dry": 0.7196},
+    "dense": {"light": 2.6506, "full": 2.3494},
+    "tannin": 2.5697
   },
   {
     "winery": "Henri Jayer",
@@ -729,7 +849,9 @@
     "price": 5873,
     "description": "Ba hafhukpoj ma guwoj kagwoser gid nipjeemi fugerazi figelhe god mobducode ditotkov tur fo.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 0.1678, "dry": 4.8322},
+    "dense": {"light": 4.2173, "full": 0.7827},
+    "tannin": 3.9686
   },
   {
     "winery": "Henri Jayer",
@@ -741,7 +863,9 @@
     "price": 9584,
     "description": "Uleumjiv ha kalladcum ufijewe sag mehogpu noztefej fuhe il mipozeh rojjumked kofhur.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 1.459, "dry": 3.541},
+    "dense": {"light": 0.83, "full": 4.17},
+    "tannin": 3.3527
   },
   {
     "winery": "Henri Jayer",
@@ -753,7 +877,9 @@
     "price": 9993,
     "description": "Obubo jenjot raj boumecon tezmitna fupinwi otume oreevu buj dur edair bo topib fidemfo gik.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 1.302, "dry": 3.698},
+    "dense": {"light": 4.0285, "full": 0.9715},
+    "tannin": 4.6284
   },
   {
     "winery": "Promise",
@@ -765,7 +891,9 @@
     "price": 2579,
     "description": "Wevonmij wadurim ukapu ha tupak emcu husliuf uka ifbil zolpouvi zizura wob ovozibak na.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 2.9747, "dry": 2.0253},
+    "dense": {"light": 4.5609, "full": 0.4391},
+    "tannin": 2.9365
   },
   {
     "winery": "Giacomo Fenocchio",
@@ -777,7 +905,9 @@
     "price": 8098,
     "description": "Cupizbew ohiodpu niruvo bu woallen wac jodob inicid jimokos zohgono afteb fesvikej ebgudki duenuule hudes kucop mudugo.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 0.2991, "dry": 4.7009},
+    "dense": {"light": 4.0658, "full": 0.9342},
+    "tannin": 4.7583
   },
   {
     "winery": "Black Stallion",
@@ -789,7 +919,9 @@
     "price": 3650,
     "description": "Numo jemheg bow ufo eko um ca iluteeka si jazi lawjadu temogah.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 2.9066, "dry": 2.0934},
+    "dense": {"light": 3.002, "full": 1.998},
+    "tannin": 1.7963
   },
   {
     "winery": "Mollydooker",
@@ -801,7 +933,9 @@
     "price": 4903,
     "description": "Baru pog ziwgani vivnenbav ezupozbam bewvaguz kaah geharku sucmu sow uz visbortil uwaib ovaopuros zekhibvo.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 3.0067, "dry": 1.9933},
+    "dense": {"light": 1.5552, "full": 3.4448},
+    "tannin": 1.3533
   },
   {
     "winery": "Le Pin",
@@ -813,7 +947,9 @@
     "price": 8413,
     "description": "Rivkikuh ommirrin ub ubtogmu bublo mu hibelca voz bijkuk gisuige huz fomnahzir ad vahufe.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 4.0449, "dry": 0.9551},
+    "dense": {"light": 2.6476, "full": 2.3524},
+    "tannin": 1.2335
   },
   {
     "winery": "Benziger",
@@ -825,7 +961,9 @@
     "price": 4781,
     "description": "Je kaw zun bir en ba ihgiwipa biwu pe jacida kal ohme vegid.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 1.6926, "dry": 3.3074},
+    "dense": {"light": 2.5352, "full": 2.4648},
+    "tannin": 0.3495
   },
   {
     "winery": "Ernesto Ruffo",
@@ -837,7 +975,9 @@
     "price": 6932,
     "description": "Oroeclaf osupusi ki lug kimuwu tihah pogloc lutjam ifa wibuvpo mekud jareje mulnalow vak rano.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 4.2267, "dry": 0.7733},
+    "dense": {"light": 4.2066, "full": 0.7934},
+    "tannin": 3.9746
   },
   {
     "winery": "Veiga",
@@ -849,7 +989,9 @@
     "price": 6606,
     "description": "Sedena do vo wacafis digoh wijico lomi kopuj vakdo mineda alwi ucbad saof ujget.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 0.1575, "dry": 4.8425},
+    "dense": {"light": 3.8172, "full": 1.1828},
+    "tannin": 3.773
   },
   {
     "winery": "Small Gully",
@@ -861,7 +1003,9 @@
     "price": 1588,
     "description": "Cidfev ej pahe fikab vamvo veod uzbaak kojpamuf ajafefe kulul tuge cabohuh figeba zuohi ajosin ebejisfaz zun zujowane.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 1.9361, "dry": 3.0639},
+    "dense": {"light": 2.1221, "full": 2.8779},
+    "tannin": 1.938
   },
   {
     "winery": "Casa Ferreirinha",
@@ -873,7 +1017,9 @@
     "price": 3093,
     "description": "Dugawafo luh kir fo awhewor haki vuocaku tichaw kujaggad iszu voz nidfod widad.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 2.692, "dry": 2.308},
+    "dense": {"light": 3.5416, "full": 1.4584},
+    "tannin": 1.9709
   },
   {
     "winery": "Casa Ferreirinha",
@@ -885,7 +1031,9 @@
     "price": 5928,
     "description": "Mictiso fucpokoji bi gitvoc luwo loke cok rotjo ges av lur sicecva.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 3.6336, "dry": 1.3664},
+    "dense": {"light": 3.4641, "full": 1.5359},
+    "tannin": 1.4135
   },
   {
     "winery": "Casa Ferreirinha",
@@ -897,7 +1045,9 @@
     "price": 3197,
     "description": "Somlima donit koskiho mu im ahe tum adtu mesgebfe guna cu vuipsi kif teozurog nol uppaeb gop.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 2.842, "dry": 2.158},
+    "dense": {"light": 1.8154, "full": 3.1846},
+    "tannin": 2.5685
   },
   {
     "winery": "Vega Sicilia",
@@ -909,7 +1059,9 @@
     "price": 1498,
     "description": "Sif pefhu zuuk pevkas jihuf uda li wegug cumlor va sodgem valaswa beh onidesu tebsuz voitova.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 0.7366, "dry": 4.2634},
+    "dense": {"light": 2.8475, "full": 2.1525},
+    "tannin": 0.7144
   },
   {
     "winery": "Vega Sicilia",
@@ -921,7 +1073,9 @@
     "price": 6801,
     "description": "Zuojril taj rop osohighe gis lan ji umsozmav vet kasucipu vanhuh oni kaube taajini jowuodo.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 3.5007, "dry": 1.4993},
+    "dense": {"light": 4.037, "full": 0.963},
+    "tannin": 0.9313
   },
   {
     "winery": "Vega Sicilia",
@@ -933,7 +1087,9 @@
     "price": 6628,
     "description": "Nifit goacaha agopinpah hejufmim bu voctupgaf zuhvu eni kej luffakopo obvi mobsu ebo zujlol ah.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 0.8315, "dry": 4.1685},
+    "dense": {"light": 2.3047, "full": 2.6953},
+    "tannin": 4.8467
   },
   {
     "winery": "Vega Sicilia",
@@ -945,7 +1101,9 @@
     "price": 5280,
     "description": "Imowog wuufno bevupa kajsico wobeji eziku soizo vi cefomi howtaf wide vawdibge wace ucgawca bu umbokuf.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 2.6606, "dry": 2.3394},
+    "dense": {"light": 3.7019, "full": 1.2981},
+    "tannin": 0.609
   },
   {
     "winery": "Vega Sicilia",
@@ -957,7 +1115,9 @@
     "price": 4716,
     "description": "Fuikte mohodin lama jujlomupa catana muf asoteure nemozepet corbo gomossek lus sicovlas boztuc.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 0.1068, "dry": 4.8932},
+    "dense": {"light": 0.2678, "full": 4.7322},
+    "tannin": 1.6624
   },
   {
     "winery": "Vega Sicilia",
@@ -969,7 +1129,9 @@
     "price": 7303,
     "description": "Hitbaeg pakoho seswig met rolduf nus ujaej raopnat ricobfag neeju cohil gera kopufevah ef liutekok nulgeb buzmu lav.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 2.4677, "dry": 2.5323},
+    "dense": {"light": 4.227, "full": 0.773},
+    "tannin": 1.14
   },
   {
     "winery": "Vega Sicilia",
@@ -981,7 +1143,9 @@
     "price": 3327,
     "description": "Miedada alinip gic ku dackepwu ojese re fanpoj li ib ciwsiupa buci egabuuj lanluaf tapajsap.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 2.733, "dry": 2.267},
+    "dense": {"light": 2.4043, "full": 2.5957},
+    "tannin": 1.282
   },
   {
     "winery": "Château Latour",
@@ -993,7 +1157,9 @@
     "price": 8017,
     "description": "Ovare eridohov gafefa tarutbom hukweewa sesid co isi cel tiz nice itwam ogorewlo.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 3.2584, "dry": 1.7416},
+    "dense": {"light": 0.4744, "full": 4.5256},
+    "tannin": 0.7573
   },
   {
     "winery": "Château Latour",
@@ -1005,7 +1171,9 @@
     "price": 6785,
     "description": "Mot nozubugo tin izilu licgaiv cejlu ni vob kuijedu fo urajudo nafi tacfibnic.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 1.185, "dry": 3.815},
+    "dense": {"light": 1.3971, "full": 3.6029},
+    "tannin": 4.9487
   },
   {
     "winery": "Château Margaux",
@@ -1017,7 +1185,9 @@
     "price": 7262,
     "description": "Lob det zihimmir ziw jur wa elu coh socak odrok dujaf nag looz wedkoj kad hulik hut wo.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 2.818, "dry": 2.182},
+    "dense": {"light": 2.8493, "full": 2.1507},
+    "tannin": 2.2935
   },
   {
     "winery": "Pétrus",
@@ -1029,7 +1199,9 @@
     "price": 8856,
     "description": "Sonkusut zapip asonivuh ivoges lucekuw ofanitiz saciju basjeloj todgazip rohfu fifiru aro.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 1.7836, "dry": 3.2164},
+    "dense": {"light": 4.3308, "full": 0.6692},
+    "tannin": 4.1263
   },
   {
     "winery": "Quintarelli Giuseppe",
@@ -1041,7 +1213,9 @@
     "price": 5350,
     "description": "Redawuzez jud zaj rov et zubur remosu cuf paju vim nog gaptu lam domidbo wumawbo.",
     "key": "${d.winery}",
-    "taste": {"sugar": 4, "acid": 4}
+    "taste": {"sweet": 4.312, "dry": 0.688},
+    "dense": {"light": 4.1154, "full": 0.8846},
+    "tannin": 3.8584
   },
   {
     "winery": "Château Lafite Rothschild",
@@ -1053,7 +1227,9 @@
     "price": 2812,
     "description": "Awowu be dawhen zeugi fazi muwpiwzer webutbez di gan cecanev gage cujuk ruw wazag.",
     "key": "${d.winery}",
-    "taste": {"sugar": 5, "acid": 5}
+    "taste": {"sweet": 0.732, "dry": 4.268},
+    "dense": {"light": 3.9564, "full": 1.0436},
+    "tannin": 4.7768
   },
   {
     "winery": "Masseto",
@@ -1065,7 +1241,9 @@
     "price": 8185,
     "description": "Epujuc leseb si lev dajvu mu jahoaga tefwu komu deunuged kor pebov rostufipe.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 1.5717, "dry": 3.4283},
+    "dense": {"light": 2.3056, "full": 2.6944},
+    "tannin": 2.7625
   },
   {
     "winery": "Masseto",
@@ -1077,7 +1255,9 @@
     "price": 7170,
     "description": "Rebzepvej wupog mav de ulkibe fudco gecvi bi neb muphih sari mofuraba ufotuh vakmoziza rergetdo elmagde.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 2.1748, "dry": 2.8252},
+    "dense": {"light": 4.7174, "full": 0.2826},
+    "tannin": 0.5304
   },
   {
     "winery": "Viña Cobos",
@@ -1089,7 +1269,9 @@
     "price": 1414,
     "description": "Pete fefhuwa ol cesbifpuk depgulu avtof udoige ko ag pu gad nuddi.",
     "key": "${d.winery}",
-    "taste": {"sugar": 0, "acid": 0}
+    "taste": {"sweet": 1.7742, "dry": 3.2258},
+    "dense": {"light": 2.8374, "full": 2.1626},
+    "tannin": 0.4266
   },
   {
     "winery": "Viña Cobos",
@@ -1101,7 +1283,9 @@
     "price": 5360,
     "description": "Idzoap zizzig eko tufhe je wefjuwwi zapcoz ke guwiji iloginwaz ku he koajojiv.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 0.0217, "dry": 4.9783},
+    "dense": {"light": 0.8184, "full": 4.1816},
+    "tannin": 2.0784
   },
   {
     "winery": "Viña Cobos",
@@ -1113,7 +1297,9 @@
     "price": 5632,
     "description": "Ihedid udoro hiivmil facfosa cunmicof duzefena vane we fuwilatu danazsub ok towvaw gargab gegujo gufeude agrekon.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 1.7276, "dry": 3.2724},
+    "dense": {"light": 4.9957, "full": 0.0043},
+    "tannin": 2.8004
   },
   {
     "winery": "Château Cheval Blanc",
@@ -1125,7 +1311,9 @@
     "price": 3784,
     "description": "Junreewi wuk vepa hi ses uf moj la fahzuki va gu zigtili jowmejod urakucroc bi eznuhki.",
     "key": "${d.winery}",
-    "taste": {"sugar": 1, "acid": 1}
+    "taste": {"sweet": 0.6377, "dry": 4.3623},
+    "dense": {"light": 3.6703, "full": 1.3297},
+    "tannin": 1.3448
   },
   {
     "winery": "Tenuta San Guido",
@@ -1137,7 +1325,9 @@
     "price": 4027,
     "description": "Vedo beol ik lev wa mep mudeuci oruge reemi gefdu bo rif tewrufi keup bismaham.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 2.775, "dry": 2.225},
+    "dense": {"light": 0.1835, "full": 4.8165},
+    "tannin": 1.783
   },
   {
     "winery": "Cakebread",
@@ -1149,7 +1339,9 @@
     "price": 8053,
     "description": "Neduhwi pojok cidewi cicsorba mozo zitobce femvumpel aw alzefo hej gurjumhi fanig lehurohu.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 4.7198, "dry": 0.2802},
+    "dense": {"light": 4.7198, "full": 0.2802},
+    "tannin": 3.0903
   },
   {
     "winery": "ZD Wines",
@@ -1161,7 +1353,9 @@
     "price": 8183,
     "description": "Tu kit wilzizpe pemkozhok ijuamko jot ceno luajovi un adkew senaduf agoc wapnof.",
     "key": "${d.winery}",
-    "taste": {"sugar": 3, "acid": 3}
+    "taste": {"sweet": 3.4217, "dry": 1.5783},
+    "dense": {"light": 2.0228, "full": 2.9772},
+    "tannin": 3.0286
   },
   {
     "winery": "Frank Family",
@@ -1173,6 +1367,8 @@
     "price": 9240,
     "description": "Vidnoja ocekode pufof ba hefo sahosbil fi ta jonube litdanu dopuf fef ileejik oze refeldi dalo de.",
     "key": "${d.winery}",
-    "taste": {"sugar": 2, "acid": 2}
+    "taste": {"sweet": 1.1794, "dry": 3.8206},
+    "dense": {"light": 1.0935, "full": 3.9065},
+    "tannin": 2.2479
   }
 ]

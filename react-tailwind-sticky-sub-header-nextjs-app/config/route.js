@@ -15,6 +15,11 @@ const routes = [
     activeMenuName: `Setting`,
   },
   {
+    pathName: `/feed`,
+    pageName: `Feed`,
+    activeMenuName: `Feed`,
+  },
+  {
     pathName: `/logout`,
     pageName: `Logout`,
     activeMenuName: `Logout`,

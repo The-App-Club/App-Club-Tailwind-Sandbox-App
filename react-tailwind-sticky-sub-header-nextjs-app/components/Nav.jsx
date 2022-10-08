@@ -20,6 +20,7 @@ import {GiWineBottle} from 'react-icons/gi';
 import {BiHome} from 'react-icons/bi';
 import {FaHatCowboySide} from 'react-icons/fa';
 import {MdOutlineContactMail} from 'react-icons/md';
+import {MdRssFeed} from 'react-icons/md';
 
 const decideBorderColor = ({theme}) => {
   if (theme.mode === `dark`) {
@@ -137,6 +138,13 @@ const Nav = () => {
           menuTitle={'Winery'}
           icon={() => {
             return <GiGrapes size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/feed'}
+          menuTitle={'Feed'}
+          icon={() => {
+            return <MdRssFeed size={24} />;
           }}
         />
         <MenuItem
