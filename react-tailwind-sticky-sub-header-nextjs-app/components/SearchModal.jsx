@@ -1,5 +1,7 @@
 import {css, cx} from '@emotion/css';
 import {motion, AnimatePresence} from 'framer-motion';
+import {useEffect} from 'react';
+import {useDebouncedCallback} from 'use-debounce';
 
 const motionConfig = {
   initial: {
@@ -20,6 +22,20 @@ const motionConfig = {
 };
 
 const SearchModal = ({show, handleClose}) => {
+  //
+  const handleResize = useDebouncedCallback((e) => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }, 600);
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [handleResize]);
+
   return (
     <AnimatePresence>
       {show && (
@@ -59,7 +75,7 @@ const SearchModal = ({show, handleClose}) => {
                 margin: 5rem auto 0;
                 @media (max-width: 768px) {
                   max-width: initial;
-                  height: calc(100vh - 6rem);
+                  height: calc(calc(var(--vh, 1vh) * 100) - 6rem);
                   top: initial;
                 }
               `
