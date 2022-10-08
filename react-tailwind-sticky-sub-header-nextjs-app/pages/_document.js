@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>{this.props.emotionStyleTags}</Head>
-        <body className="scrollbar-none dark:bg-slate-700 dark:text-white">
+        <body className="dark:bg-slate-700 dark:text-white">
           <Main />
           <NextScript />
         </body>

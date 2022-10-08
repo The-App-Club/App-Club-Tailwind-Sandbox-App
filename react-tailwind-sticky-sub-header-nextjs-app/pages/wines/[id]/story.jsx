@@ -13,6 +13,7 @@ import {MdOutlineLocationOn} from 'react-icons/md';
 import {css, cx} from '@emotion/css';
 import ScrollStory from '../../../components/ScrollStory';
 import ScatterGraph from '../../../components/ScatterGraph';
+import ScrollStory2 from '../../../components/ScrollStory2';
 
 const Story = () => {
   const router = useRouter();
@@ -131,9 +132,11 @@ const Story = () => {
             </div>
           </div>
 
-          <ScrollStory />
+          {/* <ScrollStory /> */}
 
-          <ScatterGraph />
+          {/* <ScatterGraph /> */}
+
+          <ScrollStory2 />
 
           {/* <div>
             <p>Here Mapbox Story Telling</p>
