@@ -18,9 +18,11 @@ import {useScrollDirection} from 'react-use-scroll-direction';
 import {motion, useAnimationControls} from 'framer-motion';
 import {scrollDirectionState} from '../../../stores/scrollDirectionStore';
 import Spacer from '../../../components/Spacer';
+import wineState from '../../../stores/wineStore';
 
 const Story = () => {
   const [_, setScrollDirectionState] = useRecoilState(scrollDirectionState);
+  const [activeWine, setActiveWine] = useRecoilState(wineState);
   const headerControls = useAnimationControls();
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
@@ -34,35 +36,47 @@ const Story = () => {
     });
   }, [id]);
 
+  // useEffect(() => {
+  //   if (!scrollDirection) {
+  //     return;
+  //   }
+  //   if (!window.matchMedia('(max-width: 768px)').matches) {
+  //     return;
+  //   }
+  //   setScrollDirectionState({
+  //     scrollDirection,
+  //   });
+  //   if (scrollDirection === `UP`) {
+  //     headerControls.start({
+  //       y: 0,
+  //       opacity: 1,
+  //       zIndex: 1,
+  //     });
+
+  //     return;
+  //   }
+  //   if (scrollDirection === `DOWN`) {
+  //     headerControls.start({
+  //       y: -60,
+  //       opacity: 0,
+  //       zIndex: -1,
+  //     });
+
+  //     return;
+  //   }
+  // }, [scrollDirection, headerControls, setScrollDirectionState]);
+
   useEffect(() => {
-    if (!scrollDirection) {
-      return;
-    }
-    if (!window.matchMedia('(max-width: 768px)').matches) {
-      return;
-    }
-    setScrollDirectionState({
-      scrollDirection,
+    setActiveWine({
+      activeWine: item,
     });
-    if (scrollDirection === `UP`) {
-      headerControls.start({
-        y: 0,
-        opacity: 1,
-        zIndex: 1,
-      });
 
-      return;
-    }
-    if (scrollDirection === `DOWN`) {
-      headerControls.start({
-        y: -60,
-        opacity: 0,
-        zIndex: -1,
+    return () => {
+      setActiveWine({
+        activeWine: null,
       });
-
-      return;
-    }
-  }, [scrollDirection, headerControls, setScrollDirectionState]);
+    };
+  }, [item, setActiveWine]);
 
   if (!item) {
     return;
@@ -138,13 +152,12 @@ const Story = () => {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-              `,
-              `bg-white dark:bg-slate-700`,
-              css`
                 @media (max-width: 768px) {
+                  display: none;
                   min-height: 9rem;
                 }
-              `
+              `,
+              `bg-white dark:bg-slate-700`
             )}
           >
             <h2
