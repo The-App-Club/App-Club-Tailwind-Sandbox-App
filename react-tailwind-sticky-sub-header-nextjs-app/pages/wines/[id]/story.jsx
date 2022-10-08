@@ -1,6 +1,6 @@
 import {useRouter} from 'next/router';
-import {useMemo} from 'react';
-import {useRecoilValue} from 'recoil';
+import {useEffect, useMemo} from 'react';
+import {useRecoilState, useRecoilValue} from 'recoil';
 import hamburgerState from '../../../stores/hamburgerStore';
 import data from '../../../data/wines.json';
 import capitalize from 'capitalize-the-first-letter';
@@ -14,17 +14,55 @@ import {css, cx} from '@emotion/css';
 import ScrollStory from '../../../components/ScrollStory';
 import ScatterGraph from '../../../components/ScatterGraph';
 import ScrollStory2 from '../../../components/ScrollStory2';
+import {useScrollDirection} from 'react-use-scroll-direction';
+import {motion, useAnimationControls} from 'framer-motion';
+import {scrollDirectionState} from '../../../stores/scrollDirectionStore';
+import Spacer from '../../../components/Spacer';
 
 const Story = () => {
+  const [_, setScrollDirectionState] = useRecoilState(scrollDirectionState);
+  const headerControls = useAnimationControls();
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
+
+  const {scrollDirection} = useScrollDirection();
 
   const item = useMemo(() => {
     return data.find((item) => {
       return item.id === Number(id);
     });
   }, [id]);
+
+  useEffect(() => {
+    if (!scrollDirection) {
+      return;
+    }
+    if (!window.matchMedia('(max-width: 768px)').matches) {
+      return;
+    }
+    setScrollDirectionState({
+      scrollDirection,
+    });
+    if (scrollDirection === `UP`) {
+      headerControls.start({
+        y: 0,
+        opacity: 1,
+        zIndex: 1,
+      });
+
+      return;
+    }
+    if (scrollDirection === `DOWN`) {
+      headerControls.start({
+        y: -60,
+        opacity: 0,
+        zIndex: -1,
+      });
+
+      return;
+    }
+  }, [scrollDirection, headerControls, setScrollDirectionState]);
 
   if (!item) {
     return;
@@ -84,7 +122,12 @@ const Story = () => {
               return `${niceTitle} > `;
             }}
           />
-          <div
+          <motion.div
+            animate={headerControls}
+            transition={{
+              duration: 0.4,
+              ease: 'easeInOut',
+            }}
             className={cx(
               css`
                 z-index: 3;
@@ -99,7 +142,7 @@ const Story = () => {
               `bg-white dark:bg-slate-700`,
               css`
                 @media (max-width: 768px) {
-                  padding: 0.5rem 0;
+                  min-height: 9rem;
                 }
               `
             )}
@@ -130,22 +173,26 @@ const Story = () => {
                 Add Cart
               </button>
             </div>
-          </div>
+          </motion.div>
 
-          {/* <ScrollStory /> */}
+          <ScrollStory />
 
-          {/* <ScatterGraph /> */}
+          <Spacer height="50vh" />
+
+          <ScatterGraph />
+
+          <Spacer height="50vh" />
 
           <ScrollStory2 />
 
-          {/* <div>
-            <p>Here Mapbox Story Telling</p>
-            <p>Here Mapbox Story Telling</p>
-            <p>Here Mapbox Story Telling</p>
-            <p>Here Mapbox Story Telling</p>
-            <p>Here Mapbox Story Telling</p>
-            <p>Here Mapbox Story Telling</p>
-          </div> */}
+          <div className="flex items-center justify-center min-h-screen w-full gap-2">
+            <p className="text-2xl">Let&apos;s Now Buy!</p>
+            <div className="flex items-center gap-2">
+              <button className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center">
+                Add Cart
+              </button>
+            </div>
+          </div>
         </section>
         <TraceFooter />
       </Layout>

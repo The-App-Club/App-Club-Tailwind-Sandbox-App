@@ -3,7 +3,15 @@ import {useCallback, useEffect, useRef, useState} from 'react';
 import ScrollStorySection from './ScrollStorySection';
 import {Scrollama, Step} from 'react-scrollama';
 import {MathUtils} from 'three';
+import Spacer from './Spacer';
+import {motion, useAnimationControls} from 'framer-motion';
+import {useRecoilValue} from 'recoil';
+import {scrollDirectionState} from '../stores/scrollDirectionStore';
+
 const ScrollStory2 = () => {
+  const mapContainerControls = useAnimationControls();
+  const {scrollDirection} = useRecoilValue(scrollDirectionState);
+  const mapContainer = useRef(null);
   const prevProgress = useRef(0);
 
   const clampProgress = ({direction, progress}) => {
@@ -26,11 +34,11 @@ const ScrollStory2 = () => {
     let {data, progress, direction} = e;
     progress = MathUtils.clamp(progress, 0, 1);
 
-    console.log(
-      `[section${data}]`,
-      clampProgress({direction, progress}),
-      direction
-    );
+    // console.log(
+    //   `[section${data}]`,
+    //   clampProgress({direction, progress}),
+    //   direction
+    // );
 
     prevProgress.current = progress;
   };
@@ -39,25 +47,56 @@ const ScrollStory2 = () => {
 
   const handleStepProgress = (e) => {};
 
-  const doMarked = useCallback(({activeChapterName, inView}) => {
-    // if (inView) {
-    //   mapInstance.current.flyTo(chapters[activeChapterName]);
-    //   marker.current.setLngLat(chapters[activeChapterName].center);
-    // }
-  }, []);
+  useEffect(() => {
+    if (!scrollDirection) {
+      return;
+    }
+    if (scrollDirection === `UP`) {
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        mapContainerControls.start({
+          top: `15rem`,
+        });
+      } else {
+        mapContainerControls.start({
+          top: `9rem`,
+        });
+      }
+
+      return;
+    }
+    if (scrollDirection === `DOWN`) {
+      mapContainerControls.start({
+        top: `6rem`,
+      });
+
+      return;
+    }
+  }, [scrollDirection, mapContainerControls]);
 
   return (
     <div className="relative">
-      <div
+      <motion.div
+        ref={mapContainer}
+        animate={mapContainerControls}
+        transition={{
+          duration: 0.4,
+          ease: 'easeInOut',
+        }}
         className={cx(
           css`
             position: sticky;
             top: calc(
               3rem * 3
-            ); // header height + navbar height + page header height
+            ); // (header height) + navbar height + page header height
             left: 0;
             width: 50%;
             height: calc(100vh - calc(3rem * 3));
+            @media (max-width: 768px) {
+              top: calc(
+                3rem * 2
+              ); // (header height) + navbar height + page header height
+              height: calc(100vh - calc(3rem * 2));
+            }
           `,
           `bg-slate-200`
         )}
@@ -82,16 +121,28 @@ const ScrollStory2 = () => {
                   padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
-                  &:first-child {
-                    /* margin-top: 100vh; */
-                  }
-                  &:last-child {
-                    /* margin-bottom: 100vh; */
-                  }
                 `
               )}
             >
-              <h3>221b Baker St.</h3>
+              <h3
+                className={cx(
+                  css`
+                    position: sticky;
+                    top: calc(
+                      3rem * 3
+                    ); // (header height) + navbar height + page header height
+                    @media (max-width: 768px) {
+                      top: calc(
+                        3rem * 2
+                      ); // (header height) + navbar height + page header height
+                    }
+                  `,
+                  `bg-white text-xl dark:bg-slate-700`
+                )}
+              >
+                221b Baker St.
+              </h3>
+              <Spacer height="90vh" />
               <p>
                 November 1895. London is shrouded in fog and Sherlock Holmes and
                 Watson pass time restlessly awaiting a new case. &quot;The
@@ -109,16 +160,28 @@ const ScrollStory2 = () => {
                   padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
-                  &:first-child {
-                    /* margin-top: 100vh; */
-                  }
-                  &:last-child {
-                    /* margin-bottom: 100vh; */
-                  }
                 `
               )}
             >
-              <h3>Aldgate Station</h3>
+              <h3
+                className={cx(
+                  css`
+                    position: sticky;
+                    top: calc(
+                      3rem * 3
+                    ); // (header height) + navbar height + page header height
+                    @media (max-width: 768px) {
+                      top: calc(
+                        3rem * 2
+                      ); // (header height) + navbar height + page header height
+                    }
+                  `,
+                  `bg-white text-xl dark:bg-slate-700`
+                )}
+              >
+                Aldgate Station
+              </h3>
+              <Spacer height="90vh" />
               <p>
                 Arthur Cadogan West was found dead, head crushed in on train
                 tracks at Aldgate Station at 6AM Tuesday morning. West worked at
@@ -137,16 +200,28 @@ const ScrollStory2 = () => {
                   padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
-                  &:first-child {
-                    /* margin-top: 100vh; */
-                  }
-                  &:last-child {
-                    /* margin-bottom: 100vh; */
-                  }
                 `
               )}
             >
-              <h3>London Bridge</h3>
+              <h3
+                className={cx(
+                  css`
+                    position: sticky;
+                    top: calc(
+                      3rem * 3
+                    ); // (header height) + navbar height + page header height
+                    @media (max-width: 768px) {
+                      top: calc(
+                        3rem * 2
+                      ); // (header height) + navbar height + page header height
+                    }
+                  `,
+                  `bg-white text-xl dark:bg-slate-700`
+                )}
+              >
+                London Bridge
+              </h3>
+              <Spacer height="90vh" />
               <p>
                 Holmes and Watson&apos;s investigations take them across London.
                 Sherlock deduces that West was murdered elsewhere, then moved to
@@ -165,16 +240,28 @@ const ScrollStory2 = () => {
                   padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
-                  &:first-child {
-                    /* margin-top: 100vh; */
-                  }
-                  &:last-child {
-                    /* margin-bottom: 100vh; */
-                  }
                 `
               )}
             >
-              <h3>Woolwich Arsenal</h3>
+              <h3
+                className={cx(
+                  css`
+                    position: sticky;
+                    top: calc(
+                      3rem * 3
+                    ); // (header height) + navbar height + page header height
+                    @media (max-width: 768px) {
+                      top: calc(
+                        3rem * 2
+                      ); // (header height) + navbar height + page header height
+                    }
+                  `,
+                  `bg-white text-xl dark:bg-slate-700`
+                )}
+              >
+                Woolwich Arsenal
+              </h3>
+              <Spacer height="90vh" />
               <p>
                 While investigating at Woolwich Arsenal Sherlock learns that
                 West did not have the three keys&mdash;door, office, and
@@ -193,16 +280,28 @@ const ScrollStory2 = () => {
                   padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
-                  &:first-child {
-                    /* margin-top: 100vh; */
-                  }
-                  &:last-child {
-                    /* margin-bottom: 100vh; */
-                  }
                 `
               )}
             >
-              <h3>Gloucester Road</h3>
+              <h3
+                className={cx(
+                  css`
+                    position: sticky;
+                    top: calc(
+                      3rem * 3
+                    ); // (header height) + navbar height + page header height
+                    @media (max-width: 768px) {
+                      top: calc(
+                        3rem * 2
+                      ); // (header height) + navbar height + page header height
+                    }
+                  `,
+                  `bg-white text-xl dark:bg-slate-700`
+                )}
+              >
+                Gloucester Road
+              </h3>
+              <Spacer height="90vh" />
               <p>
                 Mycroft responds to Sherlock&apos;s telegram and mentions
                 several spies. Hugo Oberstein of 13 Caulfield Gardens catches
@@ -219,16 +318,28 @@ const ScrollStory2 = () => {
                   padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
-                  &:first-child {
-                    /* margin-top: 100vh; */
-                  }
-                  &:last-child {
-                    /* margin-bottom: 100vh; */
-                  }
                 `
               )}
             >
-              <h3>13 Caulfield Gardens</h3>
+              <h3
+                className={cx(
+                  css`
+                    position: sticky;
+                    top: calc(
+                      3rem * 3
+                    ); // (header height) + navbar height + page header height
+                    @media (max-width: 768px) {
+                      top: calc(
+                        3rem * 2
+                      ); // (header height) + navbar height + page header height
+                    }
+                  `,
+                  `bg-white text-xl dark:bg-slate-700`
+                )}
+              >
+                13 Caulfield Gardens
+              </h3>
+              <Spacer height="90vh" />
               <p>
                 Holmes deduces that the murderer placed West atop a stopped
                 train at Caulfield Gardens. The train traveled to Aldgate
@@ -249,16 +360,28 @@ const ScrollStory2 = () => {
                   padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
-                  &:first-child {
-                    /* margin-top: 100vh; */
-                  }
-                  &:last-child {
-                    /* margin-bottom: 100vh; */
-                  }
                 `
               )}
             >
-              <h3>The Daily Telegraph</h3>
+              <h3
+                className={cx(
+                  css`
+                    position: sticky;
+                    top: calc(
+                      3rem * 3
+                    ); // (header height) + navbar height + page header height
+                    @media (max-width: 768px) {
+                      top: calc(
+                        3rem * 2
+                      ); // (header height) + navbar height + page header height
+                    }
+                  `,
+                  `bg-white text-xl dark:bg-slate-700`
+                )}
+              >
+                The Daily Telegraph
+              </h3>
+              <Spacer height="90vh" />
               <p>
                 Holmes and Watson head to The Daily Telegraph and place an ad to
                 draw out the criminal. It reads: &quot;To-night. Same hour. Same
@@ -277,16 +400,28 @@ const ScrollStory2 = () => {
                   padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
-                  &:first-child {
-                    /* margin-top: 100vh; */
-                  }
-                  &:last-child {
-                    /* margin-bottom: 100vh; */
-                  }
                 `
               )}
             >
-              <h3>Charing Cross Hotel</h3>
+              <h3
+                className={cx(
+                  css`
+                    position: sticky;
+                    top: calc(
+                      3rem * 3
+                    ); // (header height) + navbar height + page header height
+                    @media (max-width: 768px) {
+                      top: calc(
+                        3rem * 2
+                      ); // (header height) + navbar height + page header height
+                    }
+                  `,
+                  `bg-white text-xl dark:bg-slate-700`
+                )}
+              >
+                Charing Cross Hotel
+              </h3>
+              <Spacer height="90vh" />
               <p>
                 Walter writes to Oberstein and convinces him to meet in the
                 smoking room of the Charing Cross Hotel where he promises
