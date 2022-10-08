@@ -5,7 +5,7 @@ import {useRecoilValue} from 'recoil';
 import wineState from '../../stores/wineStore';
 import Layout from '../../layouts/default';
 import Spacer from '../../components/Spacer';
-import {useMemo} from 'react';
+import {useMemo, useState} from 'react';
 import data from '../../data/wineries.json';
 import Sidebar from '../../components/Sidebar';
 import Breadcrumbs from 'nextjs-breadcrumbs';
@@ -14,13 +14,33 @@ import capitalize from 'capitalize-the-first-letter';
 import hamburgerState from '../../stores/hamburgerStore';
 import Category from '../../components/Category';
 import TraceFooter from '../../components/TraceFooter';
+import SearchModal from '../../components/SearchModal';
 
 const Winery = () => {
+  const [showModal, setShowModal] = useState(false);
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
+
+  const handleModalOpen = (e) => {
+    setShowModal(true);
+    const html = document.documentElement;
+    const body = document.body;
+    html.classList.add('loading');
+    body.classList.add('loading');
+  };
+
+  const handleModalClose = (e) => {
+    setShowModal(false);
+    const html = document.documentElement;
+    const body = document.body;
+    html.classList.remove('loading');
+    body.classList.remove('loading');
+  };
+
   return (
     <>
       <Sidebar />
+      <SearchModal show={showModal} handleClose={handleModalClose} />
       <Layout>
         <section
           className={cx(
@@ -89,12 +109,19 @@ const Winery = () => {
           >
             <h2
               className={cx(
-                `text-xl flex items-center justify-start line-clamp-1`,
-                css``
+                `w-full text-xl flex items-center justify-start gap-2`
               )}
             >
-              Winery List
+              Winery
             </h2>
+            <div className="flex items-center gap-2">
+              <button
+                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
+                onClick={handleModalOpen}
+              >
+                Filter
+              </button>
+            </div>
           </div>
           <Category />
           <div

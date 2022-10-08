@@ -4,7 +4,7 @@ import Layout from '../../layouts/default';
 import {tidy, summarize, sum, groupBy} from '@tidyjs/tidy';
 import {useRouter} from 'next/router';
 import data from '../../data/wines.json';
-import {useMemo} from 'react';
+import {useMemo, useState} from 'react';
 import capitalize from 'capitalize-the-first-letter';
 
 import Sidebar from '../../components/Sidebar';
@@ -14,14 +14,34 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import Category from '../../components/Category';
 import TraceFooter from '../../components/TraceFooter';
 import ProductGalleryItem from '../../components/ProductGalleryItem';
+import SearchModal from '../../components/SearchModal';
 
 const Wines = () => {
+  const [showModal, setShowModal] = useState(false);
+
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
+
+  const handleModalOpen = (e) => {
+    setShowModal(true);
+    const html = document.documentElement;
+    const body = document.body;
+    html.classList.add('loading');
+    body.classList.add('loading');
+  };
+
+  const handleModalClose = (e) => {
+    setShowModal(false);
+    const html = document.documentElement;
+    const body = document.body;
+    html.classList.remove('loading');
+    body.classList.remove('loading');
+  };
 
   return (
     <>
       <Sidebar />
+      <SearchModal show={showModal} handleClose={handleModalClose} />
       <Layout>
         <section
           className={cx(
@@ -101,7 +121,10 @@ const Wines = () => {
               Wines
             </h2>
             <div className="flex items-center gap-2">
-              <button className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center">
+              <button
+                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
+                onClick={handleModalOpen}
+              >
                 Filter
               </button>
             </div>
