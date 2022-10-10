@@ -20,7 +20,10 @@ const Footer = ({pathname}) => {
       pathname === `/` ||
       pathname === `/feed` ||
       pathname === `/favorite` ||
-      pathname === `/contact` ||
+      pathname === `/location` ||
+      pathname === `/setting` ||
+      pathname === `/notification` ||
+      pathname === `/cart` ||
       pathname === `/winery/[id]` ||
       pathname === `/winery` ||
       pathname === `/wines/[id]` ||
@@ -33,9 +36,9 @@ const Footer = ({pathname}) => {
     }
 
     if (
-      pathname === `/contact` ||
       pathname === `/about` ||
-      pathname === `/price`
+      pathname === `/price` ||
+      pathname === `/contact`
     ) {
       return css`
         left: 18rem;

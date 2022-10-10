@@ -19,8 +19,9 @@ import {useRouter} from 'next/router';
 import sidebarState from '../stores/sidebarStore';
 import {useEffect, useState} from 'react';
 import {FiSettings} from 'react-icons/fi';
+import {MdOutlineLocationOn} from 'react-icons/md';
 
-import {GiGrapes} from 'react-icons/gi';
+import {GiGrapes, GiPriceTag} from 'react-icons/gi';
 import {GiWineBottle} from 'react-icons/gi';
 import {BiHome} from 'react-icons/bi';
 import {FaHatCowboySide} from 'react-icons/fa';
@@ -132,6 +133,13 @@ const Nav = () => {
           }}
         />
         <MenuItem
+          path={'/location'}
+          menuTitle={'Location'}
+          icon={() => {
+            return <MdOutlineLocationOn size={24} />;
+          }}
+        />
+        <MenuItem
           path={'/wines'}
           menuTitle={'Wines'}
           icon={() => {
@@ -174,13 +182,6 @@ const Nav = () => {
           }}
         />
         <MenuItem
-          path={'/about'}
-          menuTitle={'About'}
-          icon={() => {
-            return <FaHatCowboySide size={24} />;
-          }}
-        />
-        <MenuItem
           path={'/setting'}
           menuTitle={'Setting'}
           icon={() => {
@@ -192,6 +193,20 @@ const Nav = () => {
           menuTitle={'Contact'}
           icon={() => {
             return <MdOutlineContactMail size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/about'}
+          menuTitle={'About'}
+          icon={() => {
+            return <FaHatCowboySide size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/price'}
+          menuTitle={'Price'}
+          icon={() => {
+            return <GiPriceTag size={24} />;
           }}
         />
       </motion.ul>

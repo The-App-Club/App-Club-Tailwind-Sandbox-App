@@ -24,6 +24,9 @@ const Header = ({pathname}) => {
       pathname === `/contact` ||
       pathname === `/feed` ||
       pathname === `/favorite` ||
+      pathname === `/notification` ||
+      pathname === `/cart` ||
+      pathname === `/location` ||
       pathname === `/about` ||
       pathname === `/price`
     ) {
