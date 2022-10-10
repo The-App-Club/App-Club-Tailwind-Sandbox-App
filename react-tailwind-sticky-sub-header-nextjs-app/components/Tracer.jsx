@@ -38,7 +38,8 @@ const Tracer = ({title = `Tracer`, className, children}) => {
       </div>
       <div className="p-2 flex justify-end">
         <span className="font-bold text-sm">
-          Lastest updated <span>{yyyymmddhhmmss(dayjs(new Date()))}</span>
+          {/* Lastest updated <span>{yyyymmddhhmmss(dayjs(new Date()))}</span> */}
+          Lastest updated <span>{`2022/10/10 11:25:23`}</span>
         </span>
       </div>
     </aside>

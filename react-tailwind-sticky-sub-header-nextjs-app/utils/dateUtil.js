@@ -22,6 +22,6 @@ const yyyymmddhhmmss = (inputDay) => {
   return dayjs(inputDay).format('YYYY/MM/DD HH:mm:ss');
 };
 
-console.log(yyyymmddhhmmss(dayjs(new Date())));
+// console.log(yyyymmddhhmmss(dayjs(new Date())));
 
 export {dayjs, ymdslash, yyyymmddhhmmss};
