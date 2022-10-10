@@ -16,12 +16,13 @@ import useFavorite from '../hooks/useFavorite';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
-  const [isClient, setIsClient] = useState(false);
+  // const [isClient, setIsClient] = useState(false);
   const [initialFavFillColor, setInitialFavFillColor] = useState('transparent');
   const theme = useRecoilValue(themeState);
-  const {favorite, favorited, toggleFavorite} = useFavorite({
-    focusedItem: item,
-  });
+  const favorited = false;
+  // const {favorite, favorited, toggleFavorite} = useFavorite({
+  //   focusedItem: item,
+  // });
 
   const decideFavFillColor = ({theme}) => {
     if (theme.mode === `dark`) {
@@ -33,7 +34,7 @@ const ProductGalleryItem = ({item}) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setInitialFavFillColor(decideFavFillColor({theme}));
+      // setInitialFavFillColor(decideFavFillColor({theme}));
     }
   }, [theme]);
 
@@ -60,7 +61,7 @@ const ProductGalleryItem = ({item}) => {
         )}
         onClick={(e) => {
           e.stopPropagation();
-          toggleFavorite();
+          // toggleFavorite();
         }}
       >
         {/* bg-pink-400 */}

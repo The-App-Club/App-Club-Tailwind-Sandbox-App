@@ -45,7 +45,7 @@ const attachActiveMenu = ({activeMenuName, menuTitle}) => {
 };
 
 const MenuItem = ({path, menuTitle, icon}) => {
-  const {favoriteWines} = useRecoilValue(favoriteState);
+  // const {favoriteWines} = useRecoilValue(favoriteState);
 
   const router = useRouter();
   const theme = useRecoilValue(themeState);
@@ -63,21 +63,21 @@ const MenuItem = ({path, menuTitle, icon}) => {
     }
   }, []);
 
-  const renderShortHandMetrics = () => {
-    if (menuTitle === `Favorite`) {
-      return (
-        <motion.span
-          className={cx(
-            'absolute right-2 w-8 h-8 rounded-full bg-pink-400 text-white flex items-center justify-center font-bold',
-            `${favoriteWines.length === 0 ? 'opacity-0' : 'opacity-100'}`
-          )}
-        >
-          {favoriteWines.length}
-        </motion.span>
-      );
-    }
-    return null;
-  };
+  // const renderShortHandMetrics = () => {
+  //   if (menuTitle === `Favorite`) {
+  //     return (
+  //       <motion.span
+  //         className={cx(
+  //           'absolute right-2 w-8 h-8 rounded-full bg-pink-400 text-white flex items-center justify-center font-bold',
+  //           `${favoriteWines.length === 0 ? 'opacity-0' : 'opacity-100'}`
+  //         )}
+  //       >
+  //         {favoriteWines.length}
+  //       </motion.span>
+  //     );
+  //   }
+  //   return null;
+  // };
 
   return (
     <motion.li
@@ -112,7 +112,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
     >
       {icon()}
       <h2>{menuTitle}</h2>
-      {renderShortHandMetrics()}
+      {/* {renderShortHandMetrics()} */}
     </motion.li>
   );
 };
