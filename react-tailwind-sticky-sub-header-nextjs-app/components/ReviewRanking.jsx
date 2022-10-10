@@ -4,6 +4,8 @@ import {useMemo} from 'react';
 import {css, cx} from '@emotion/css';
 import data from '../data/wines.json';
 import {useRouter} from 'next/router';
+import {GiGrapes} from 'react-icons/gi';
+import {MdOutlineLocationOn} from 'react-icons/md';
 
 const ReviewRanking = ({className}) => {
   const router = useRouter();
@@ -94,13 +96,27 @@ const ReviewRanking = ({className}) => {
               />
               <div className="flex items-start justify-start flex-col">
                 <h2 className="line-clamp-1 font-bold">{item.wine}</h2>
-                <span className="line-clamp-1 text-sm text-gray-700 dark:text-slate-300">
-                  {item.winery}
+                <div className="text-sm font-bold flex items-center text-gray-700 dark:text-slate-300">
+                  <GiGrapes
+                    size={24}
+                    className={css`
+                      min-width: 24px;
+                    `}
+                  />
+                  <span className="line-clamp-1">{`${item.winery}`}</span>
+                </div>
+                <div className="text-sm font-bold flex items-center text-gray-700 dark:text-slate-300">
+                  <MdOutlineLocationOn
+                    size={24}
+                    className={css`
+                      min-width: 24px;
+                    `}
+                  />
+                  <span className="line-clamp-1">{`${item.location}`}</span>
+                </div>
+                <span className="line-clamp-1 text-sm font-bold">
+                  {item.reviews}
                 </span>
-                <span className="line-clamp-1 text-sm text-gray-700 dark:text-slate-300">
-                  @{item.location}
-                </span>
-                <span className="line-clamp-1 text-sm">{item.reviews}</span>
               </div>
             </li>
           );

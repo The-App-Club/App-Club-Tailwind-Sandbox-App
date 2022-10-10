@@ -7,6 +7,7 @@ import Layout from '../../layouts/default';
 import Spacer from '../../components/Spacer';
 import {useMemo} from 'react';
 import data from '../../data/wines.json';
+import dataWineries from '../../data/wineries.json';
 import capitalize from 'capitalize-the-first-letter';
 import Sidebar from '../../components/Sidebar';
 import hamburgerState from '../../stores/hamburgerStore';
@@ -151,7 +152,17 @@ const Wine = () => {
               )}
             >
               {item.wine}
-              <span className="text-sm font-bold flex items-center gap-1">
+              <span
+                className="text-sm font-bold flex items-center gap-1 hover:cursor-pointer hover:underline"
+                onClick={(e) => {
+                  const activeWineryItem = dataWineries.find((d) => {
+                    return d.wineryName === item.winery;
+                  });
+                  router.push({
+                    pathname: `/winery/${activeWineryItem.wineryId}`,
+                  });
+                }}
+              >
                 <GiGrapes size={28} />
                 {`${item.winery}`}
               </span>
