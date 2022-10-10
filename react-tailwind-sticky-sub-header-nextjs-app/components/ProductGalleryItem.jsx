@@ -1,15 +1,51 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {GiGrapes} from 'react-icons/gi';
-import {MdOutlineLocationOn} from 'react-icons/md';
+import {
+  MdFavoriteBorder,
+  MdOutlineFavorite,
+  MdOutlineLocationOn,
+} from 'react-icons/md';
 import {default as numbro} from 'numbro';
 import Spacer from './Spacer';
+import {useRecoilState, useRecoilValue} from 'recoil';
+import favoriteState from '../stores/favoriteStore';
+import {useEffect, useMemo, useState} from 'react';
+import themeState from '../stores/themeStore';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+  const [initialFavFillColor, setInitialFavFillColor] = useState('transparent');
+  const theme = useRecoilValue(themeState);
+  const [favorite, setFavorite] = useRecoilState(favoriteState);
+  const favorited = useMemo(() => {
+    if (favorite.favoriteWines.length === 0) {
+      return false;
+    }
+    return favorite.favoriteWines.some((favItem) => {
+      return favItem.id === item.id;
+    });
+  }, [favorite, item]);
+
+  const decideFavFillColor = ({theme}) => {
+    if (theme.mode === `dark`) {
+      return `rgb(255 255 255)`; // bg-white
+    }
+
+    return `rgb(0 0 0)`; // bg-black
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setInitialFavFillColor(decideFavFillColor({theme}));
+    }
+  }, [theme]);
+
   return (
     <div
       className={cx(
+        `relative`,
         `w-full border-2 p-2`,
         `hover:cursor-pointer`,
         `hover:bg-gray-100 dark:hover:bg-slate-800`
@@ -20,6 +56,53 @@ const ProductGalleryItem = ({item}) => {
         });
       }}
     >
+      <div
+        className={cx(
+          'absolute top-2 right-2 flex items-center',
+          css`
+            z-index: 1;
+          `
+        )}
+        onClick={(e) => {
+          e.stopPropagation();
+          setFavorite((prevState) => {
+            const isFaved = [...prevState.favoriteWines].some((favItem) => {
+              return favItem.id === item.id;
+            });
+            if (!isFaved) {
+              return {
+                favoriteWines: [...prevState.favoriteWines].concat({
+                  ...item,
+                  favorited: true,
+                }),
+              };
+            } else {
+              return {
+                favoriteWines: [...prevState.favoriteWines].filter(
+                  (favItem) => {
+                    return favItem.id !== item.id;
+                  }
+                ),
+              };
+            }
+          });
+        }}
+      >
+        {/* bg-pink-400 */}
+        {favorited ? (
+          <MdOutlineFavorite
+            size={32}
+            fill={`rgb(244 114 182)`}
+            className={css``}
+          />
+        ) : (
+          <MdFavoriteBorder
+            size={32}
+            fill={initialFavFillColor}
+            className={css``}
+          />
+        )}
+      </div>
       <div
         className={css`
           width: 100%;

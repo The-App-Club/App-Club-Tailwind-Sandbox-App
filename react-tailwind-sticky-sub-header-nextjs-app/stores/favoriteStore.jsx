@@ -2,13 +2,12 @@ import {atom} from 'recoil';
 import {recoilPersist} from 'recoil-persist';
 
 const {persistAtom} = recoilPersist();
-
-const sidebarState = atom({
-  key: 'sidebarState',
+const favoriteState = atom({
+  key: 'favoriteState',
   default: {
-    activeMenuName: 'Home',
+    favoriteWines: [],
   },
   effects_UNSTABLE: [persistAtom],
 });
 
-export default sidebarState;
+export default favoriteState;
