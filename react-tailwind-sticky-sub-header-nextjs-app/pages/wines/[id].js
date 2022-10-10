@@ -6,6 +6,7 @@ import wineState from '../../stores/wineStore';
 import Layout from '../../layouts/default';
 import Spacer from '../../components/Spacer';
 import {useMemo} from 'react';
+import {motion} from 'framer-motion';
 import data from '../../data/wines.json';
 import dataWineries from '../../data/wineries.json';
 import capitalize from 'capitalize-the-first-letter';
@@ -130,19 +131,14 @@ const Wine = () => {
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
+                align-items: flex-start;
               `,
-              `bg-white dark:bg-slate-700`,
-              css`
-                @media (max-width: 768px) {
-                  padding: 0.5rem 0;
-                }
-              `
+              `bg-white dark:bg-slate-700 shadow-md p-2`
             )}
           >
             <h2
               className={cx(
-                `w-full text-xl flex items-center justify-start gap-2`,
+                `w-full text-xl flex flex-col justify-start gap-1`,
                 css`
                   @media (max-width: 768px) {
                     flex-direction: column;
@@ -153,7 +149,10 @@ const Wine = () => {
             >
               {item.wine}
               <span
-                className="text-sm font-bold flex items-center gap-1 hover:cursor-pointer hover:underline"
+                className={cx(
+                  `text-sm font-bold flex items-center gap-1`,
+                  `hover:cursor-pointer hover:underline`
+                )}
                 onClick={(e) => {
                   const activeWineryItem = dataWineries.find((d) => {
                     return d.wineryName === item.winery;
@@ -163,34 +162,27 @@ const Wine = () => {
                   });
                 }}
               >
-                <GiGrapes size={28} />
+                <GiGrapes
+                  size={24}
+                  className={css`
+                    min-width: 24px;
+                  `}
+                />
                 {`${item.winery}`}
               </span>
               <span className="text-sm font-bold flex items-center gap-1">
-                <MdOutlineLocationOn size={28} />
+                <MdOutlineLocationOn
+                  size={24}
+                  className={css`
+                    min-width: 24px;
+                  `}
+                />
                 {`${item.location}`}
               </span>
               <span
                 className={cx(
-                  `relative text-sm font-bold flex items-center gap-1 pl-0.5`,
-                  `hover:cursor-pointer`,
-                  css`
-                    &::after {
-                      position: absolute;
-                      bottom: -4px;
-                      left: 0;
-                      content: '';
-                      width: 100%;
-                      height: 2px;
-                      background: rgb(59 130 246); // bg-blue-500
-                      transform: scale(0, 1);
-                      transform-origin: left top;
-                      transition: transform 0.3s;
-                    }
-                    &:hover::after {
-                      transform: scale(1, 1);
-                    }
-                  `
+                  `text-sm font-bold flex items-center gap-1`,
+                  `hover:cursor-pointer hover:underline`
                 )}
                 onClick={(e) => {
                   router.push({
@@ -198,16 +190,31 @@ const Wine = () => {
                   });
                 }}
               >
-                <BiCameraMovie size={28} />
-                {`watch story`}
+                <BiCameraMovie
+                  size={24}
+                  className={css`
+                    min-width: 24px;
+                  `}
+                />
+                {`Watch story`}
               </span>
             </h2>
-            <div className="flex items-center gap-2">
+            <motion.div className="flex items-start gap-2 flex-col">
               <button className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center">
                 Add Cart
               </button>
-            </div>
+              <div className="w-full">
+                <div className="text-xl w-full">{`$${numbro(item.price).format({
+                  thousandSeparated: true,
+                })}`}</div>
+                <div className="text-xl text-rose-400 dark:text-amber-400">
+                  {item.rating.average}
+                </div>
+                <div className="text-sm">{item.rating.reviews}</div>
+              </div>
+            </motion.div>
           </div>
+          <Spacer />
           <div
             className={cx(
               css`
@@ -351,7 +358,13 @@ const Wine = () => {
                 </>
               )}
             </div>
-            <ReviewRanking />
+            <ReviewRanking
+              className={css`
+                position: sticky;
+                top: calc(3rem + 3rem + 136px + 16px);
+                z-index: 1;
+              `}
+            />
           </div>
         </section>
         <TraceFooter />

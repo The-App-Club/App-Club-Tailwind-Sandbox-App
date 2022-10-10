@@ -26,8 +26,8 @@ const Product = ({item, className = css``}) => {
           </span>
           <span className="text-sm">{item.rating.reviews}</span>
         </div>
-        <div className="flex items-start gap-2 flex-col sm:flex-row">
-          <span
+        <div className="flex items-start gap-2 flex-col">
+          <div
             className="text-sm font-bold flex items-center hover:cursor-pointer hover:underline"
             onClick={(e) => {
               e.stopPropagation();
@@ -39,13 +39,23 @@ const Product = ({item, className = css``}) => {
               });
             }}
           >
-            <GiGrapes size={24} />
-            {`${item.winery}`}
-          </span>
-          <span className="text-sm font-bold flex items-center">
-            <MdOutlineLocationOn size={24} />
-            {`${item.location}`}
-          </span>
+            <GiGrapes
+              size={24}
+              className={css`
+                min-width: 24px;
+              `}
+            />
+            <span className="break-words">{`${item.winery}`}</span>
+          </div>
+          <div className="text-sm font-bold flex items-center">
+            <MdOutlineLocationOn
+              size={24}
+              className={css`
+                min-width: 24px;
+              `}
+            />
+            <span className="break-words">{`${item.location}`}</span>
+          </div>
         </div>
         <Spacer />
         <p>{item.description}</p>

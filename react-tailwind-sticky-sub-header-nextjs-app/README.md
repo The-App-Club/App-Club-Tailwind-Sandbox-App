@@ -1,3 +1,7 @@
+- Pioneers
+
+  - [vivino](https://www.vivino.com/)
+
 - Data
 
   - [Wine Dataset](https://gist.github.com/tijptjik/9408623)

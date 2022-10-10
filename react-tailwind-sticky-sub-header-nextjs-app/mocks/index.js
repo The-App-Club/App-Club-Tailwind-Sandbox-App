@@ -1,6 +1,6 @@
 import {AsyncWeather} from '@cicciosgamino/openweather-apis';
 const weatherInstance = await new AsyncWeather();
-const apiKey = 'b694df3877db9781389f29d6a5102875';
+const apiKey = 'HERE_YOUR_KEY';
 weatherInstance.setApiKey(apiKey);
 weatherInstance.setLang('ja');
 weatherInstance.setCoordinates('41.7797357331468', '-5.45534528919309');
@@ -12,7 +12,7 @@ weatherInstance.setCoordinates('41.7797357331468', '-5.45534528919309');
 //   console.log(response);
 // })();
 
-// $ time node mocks/index.js 
+// $ time node mocks/index.js
 // {
 //   coord: { lon: -5.4553, lat: 41.7797 },
 //   weather: [ { id: 804, main: 'Clouds', description: '厚い雲', icon: '04n' } ],
@@ -44,13 +44,12 @@ weatherInstance.setCoordinates('41.7797357331468', '-5.45534528919309');
 //   cod: 200
 // }
 
-
 // (async () => {
 //   const response = await weatherInstance.getSmartJSON();
 //   console.log(response);
 // })();
 
-// $ time node mocks/index.js 
+// $ time node mocks/index.js
 // {
 //   temp: 12.68,
 //   humidity: 47,
