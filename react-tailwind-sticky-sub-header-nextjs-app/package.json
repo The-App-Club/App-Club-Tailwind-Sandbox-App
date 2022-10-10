@@ -8,6 +8,7 @@
     "format": "prettier --write \"{,!(node_modules|dist|build)/**/}*.*\""
   },
   "dependencies": {
+    "@cicciosgamino/openweather-apis": "^5.2.0",
     "@emotion/css": "^11.9.0",
     "@emotion/react": "^11.9.3",
     "@emotion/server": "^11.10.0",

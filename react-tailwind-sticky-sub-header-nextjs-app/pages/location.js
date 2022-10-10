@@ -6,6 +6,23 @@ import hamburgerState from '../stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
+import data from '../data/wines.json';
+import {arrange, asc, distinct, filter, map, tidy} from '@tidyjs/tidy';
+
+// const niceData = tidy(
+//   data,
+//   filter((item) => {
+//     return item.location !== '';
+//   }),
+//   map((item) => {
+//     const [a, b] = item.location.split(/·/);
+//     return {location: a.replace(/\n/g, ''), subLocation: b.replace(/\n/g, '')};
+//   }),
+//   distinct(['location', 'subLocation'])
+// );
+
+// console.log(niceData);
+
 const Location = () => {
   const {opened} = useRecoilValue(hamburgerState);
 
@@ -65,6 +82,7 @@ const Location = () => {
           <h2 className="text-3xl flex items-center justify-center">
             Location
           </h2>
+
           <p className="flex items-center justify-center">At Here World Maps</p>
         </section>
       </Layout>
