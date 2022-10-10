@@ -12,21 +12,16 @@ import {useRecoilState, useRecoilValue} from 'recoil';
 import favoriteState from '../stores/favoriteStore';
 import {useEffect, useMemo, useState} from 'react';
 import themeState from '../stores/themeStore';
+import useFavorite from '../hooks/useFavorite';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const [initialFavFillColor, setInitialFavFillColor] = useState('transparent');
   const theme = useRecoilValue(themeState);
-  const [favorite, setFavorite] = useRecoilState(favoriteState);
-  const favorited = useMemo(() => {
-    if (favorite.favoriteWines.length === 0) {
-      return false;
-    }
-    return favorite.favoriteWines.some((favItem) => {
-      return favItem.id === item.id;
-    });
-  }, [favorite, item]);
+  const {favorite, favorited, toggleFavorite} = useFavorite({
+    focusedItem: item,
+  });
 
   const decideFavFillColor = ({theme}) => {
     if (theme.mode === `dark`) {
@@ -65,27 +60,7 @@ const ProductGalleryItem = ({item}) => {
         )}
         onClick={(e) => {
           e.stopPropagation();
-          setFavorite((prevState) => {
-            const isFaved = [...prevState.favoriteWines].some((favItem) => {
-              return favItem.id === item.id;
-            });
-            if (!isFaved) {
-              return {
-                favoriteWines: [...prevState.favoriteWines].concat({
-                  ...item,
-                  favorited: true,
-                }),
-              };
-            } else {
-              return {
-                favoriteWines: [...prevState.favoriteWines].filter(
-                  (favItem) => {
-                    return favItem.id !== item.id;
-                  }
-                ),
-              };
-            }
-          });
+          toggleFavorite();
         }}
       >
         {/* bg-pink-400 */}
