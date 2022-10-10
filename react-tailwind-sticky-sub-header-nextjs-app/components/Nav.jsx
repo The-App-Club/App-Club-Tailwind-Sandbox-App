@@ -29,14 +29,6 @@ import {MdOutlineContactMail} from 'react-icons/md';
 import {MdRssFeed} from 'react-icons/md';
 import favoriteState from '../stores/favoriteStore';
 
-const decideBorderColor = ({theme}) => {
-  if (theme.mode === `dark`) {
-    return `hover:border-yellow-300`;
-  }
-
-  return `hover:border-blue-900`;
-};
-
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
     return `border-blue-900 dark:border-yellow-300`;
@@ -45,10 +37,9 @@ const attachActiveMenu = ({activeMenuName, menuTitle}) => {
 };
 
 const MenuItem = ({path, menuTitle, icon}) => {
-  // const {favoriteWines} = useRecoilValue(favoriteState);
-
   const router = useRouter();
   const theme = useRecoilValue(themeState);
+  const {favoriteWines} = useRecoilValue(favoriteState);
   const [isClient, setIsClient] = useState(false);
   const [sidebar, setSidebar] = useRecoilState(sidebarState);
 
@@ -63,21 +54,21 @@ const MenuItem = ({path, menuTitle, icon}) => {
     }
   }, []);
 
-  // const renderShortHandMetrics = () => {
-  //   if (menuTitle === `Favorite`) {
-  //     return (
-  //       <motion.span
-  //         className={cx(
-  //           'absolute right-2 w-8 h-8 rounded-full bg-pink-400 text-white flex items-center justify-center font-bold',
-  //           `${favoriteWines.length === 0 ? 'opacity-0' : 'opacity-100'}`
-  //         )}
-  //       >
-  //         {favoriteWines.length}
-  //       </motion.span>
-  //     );
-  //   }
-  //   return null;
-  // };
+  const renderShortHandMetrics = () => {
+    if (menuTitle === `Favorite`) {
+      return (
+        <motion.span
+          className={cx(
+            'absolute right-2 w-8 h-8 rounded-full bg-pink-400 text-white flex items-center justify-center font-bold',
+            `${favoriteWines.length === 0 ? 'opacity-0' : 'opacity-100'}`
+          )}
+        >
+          {favoriteWines.length}
+        </motion.span>
+      );
+    }
+    return null;
+  };
 
   return (
     <motion.li
@@ -97,7 +88,6 @@ const MenuItem = ({path, menuTitle, icon}) => {
         `hover:bg-gray-100 dark:hover:bg-slate-800`,
         isClient &&
           attachActiveMenu({activeMenuName: sidebar.activeMenuName, menuTitle})
-        // decideBorderColor({theme})
       )}
       onClick={(e) => {
         setSidebar((prevState) => {
@@ -112,7 +102,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
     >
       {icon()}
       <h2>{menuTitle}</h2>
-      {/* {renderShortHandMetrics()} */}
+      {isClient && renderShortHandMetrics()}
     </motion.li>
   );
 };

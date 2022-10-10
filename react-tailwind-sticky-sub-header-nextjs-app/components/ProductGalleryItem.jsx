@@ -16,27 +16,11 @@ import useFavorite from '../hooks/useFavorite';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
-  // const [isClient, setIsClient] = useState(false);
   const [initialFavFillColor, setInitialFavFillColor] = useState('transparent');
   const theme = useRecoilValue(themeState);
-  const favorited = false;
-  // const {favorite, favorited, toggleFavorite} = useFavorite({
-  //   focusedItem: item,
-  // });
-
-  const decideFavFillColor = ({theme}) => {
-    if (theme.mode === `dark`) {
-      return `rgb(255 255 255)`; // bg-white
-    }
-
-    return `rgb(0 0 0)`; // bg-black
-  };
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // setInitialFavFillColor(decideFavFillColor({theme}));
-    }
-  }, [theme]);
+  const {favorite, favorited, toggleFavorite} = useFavorite({
+    focusedItem: item,
+  });
 
   return (
     <div
@@ -61,20 +45,19 @@ const ProductGalleryItem = ({item}) => {
         )}
         onClick={(e) => {
           e.stopPropagation();
-          // toggleFavorite();
+          toggleFavorite();
         }}
       >
-        {/* bg-pink-400 */}
         {favorited ? (
           <MdOutlineFavorite
             size={32}
-            fill={`rgb(244 114 182)`}
+            fill={`rgb(244 114 182)`} // bg-pink-400
             className={css``}
           />
         ) : (
           <MdFavoriteBorder
             size={32}
-            fill={initialFavFillColor}
+            fill={`rgb(209 213 219)`} // bg-gray-300
             className={css``}
           />
         )}
