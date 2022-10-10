@@ -22,11 +22,12 @@ import TraceFooter from '../../components/TraceFooter';
 import Product from '../../components/Product';
 
 import {GiGrapes} from 'react-icons/gi';
-import {MdOutlineLocationOn} from 'react-icons/md';
+import {MdOutlineHistory, MdOutlineLocationOn} from 'react-icons/md';
 
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import {BiCameraMovie} from 'react-icons/bi';
+import {FaRegComments} from 'react-icons/fa';
 
 const Wine = () => {
   const router = useRouter();
@@ -179,25 +180,46 @@ const Wine = () => {
                 />
                 {`${item.location}`}
               </span>
-              <span
-                className={cx(
-                  `text-sm font-bold flex items-center gap-1`,
-                  `hover:cursor-pointer hover:underline`
-                )}
-                onClick={(e) => {
-                  router.push({
-                    pathname: `/wines/${id}/story`,
-                  });
-                }}
-              >
-                <BiCameraMovie
-                  size={24}
-                  className={css`
-                    min-width: 24px;
-                  `}
-                />
-                {`Watch story`}
-              </span>
+              <div className="w-full flex items-center gap-2">
+                <span
+                  className={cx(
+                    `text-sm font-bold flex items-center gap-1`,
+                    `hover:cursor-pointer hover:underline`
+                  )}
+                  onClick={(e) => {
+                    router.push({
+                      pathname: `/wines/${id}/story`,
+                    });
+                  }}
+                >
+                  <MdOutlineHistory
+                    size={24}
+                    className={css`
+                      min-width: 24px;
+                    `}
+                  />
+                  {`See story`}
+                </span>
+                <span
+                  className={cx(
+                    `text-sm font-bold flex items-center gap-1`,
+                    `hover:cursor-pointer hover:underline`
+                  )}
+                  onClick={(e) => {
+                    router.push({
+                      pathname: `/wines/${id}/comment`,
+                    });
+                  }}
+                >
+                  <FaRegComments
+                    size={24}
+                    className={css`
+                      min-width: 24px;
+                    `}
+                  />
+                  {`See comment`}
+                </span>
+              </div>
             </h2>
             <motion.div className="flex items-start gap-2 flex-col">
               <button className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center">
@@ -233,7 +255,8 @@ const Wine = () => {
             )}
           >
             <div className="w-full max-w-2xl">
-              <Product item={item} className={`px-0`} />
+              <Product item={item} className={`shadow-2xl rounded-2xl`} />
+              <Spacer height="3rem" />
               {relativedLocationData.length !== 0 && (
                 <>
                   <Spacer />
