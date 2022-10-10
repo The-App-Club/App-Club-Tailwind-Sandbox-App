@@ -30,6 +30,11 @@ const routes = [
     activeMenuName: `About`,
   },
   {
+    pathName: `/notification`,
+    pageName: `Notification`,
+    activeMenuName: `Notification`,
+  },
+  {
     pathName: `/contact`,
     pageName: `Contact`,
     activeMenuName: `Contact`,

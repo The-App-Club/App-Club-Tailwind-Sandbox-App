@@ -15,7 +15,7 @@ const Tracer = ({title = `Tracer`, className, children}) => {
             max-width: 100%;
           }
         `,
-        `border-2 bg-white dark:bg-slate-700`,
+        `border-2 bg-white dark:bg-slate-700 shadow-2xl rounded-xl`,
         className
       )}
     >

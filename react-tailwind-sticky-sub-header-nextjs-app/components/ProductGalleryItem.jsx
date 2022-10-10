@@ -54,14 +54,24 @@ const ProductGalleryItem = ({item}) => {
         >
           {item.wine}
         </h2>
-        <Spacer />
+        <Spacer height="0.5rem" />
         <div className="text-sm font-bold flex items-center">
-          <GiGrapes size={24} />
-          <span className="line-clamp-1">{`${item.winery}`}</span>
+          <GiGrapes
+            size={24}
+            className={css`
+              min-width: 24px;
+            `}
+          />
+          <span className="break-words">{`${item.winery}`}</span>
         </div>
         <div className="text-sm font-bold flex items-center">
-          <MdOutlineLocationOn size={24} />
-          <span className="line-clamp-1">{`${item.location}`}</span>
+          <MdOutlineLocationOn
+            size={24}
+            className={css`
+              min-width: 24px;
+            `}
+          />
+          <span className="break-words">{`${item.location}`}</span>
         </div>
         <div
           className={css`
@@ -89,7 +99,7 @@ const ProductGalleryItem = ({item}) => {
             thousandSeparated: true,
           })}`}</span>
         </div>
-        <p className="line-clamp-3">{item.description}</p>
+        <p className="text-sm line-clamp-3">{item.description}</p>
       </div>
     </div>
   );

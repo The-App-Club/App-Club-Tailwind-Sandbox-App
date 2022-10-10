@@ -1,6 +1,10 @@
 import {css, cx} from '@emotion/css';
 import {FiTwitter} from 'react-icons/fi';
-import {MdOutlineNotifications} from 'react-icons/md';
+import {
+  MdOutlineNotifications,
+  MdOutlineNotificationsNone,
+  MdOutlineShoppingCart,
+} from 'react-icons/md';
 import {MdOutlineChat} from 'react-icons/md';
 import {BiTimeFive} from 'react-icons/bi';
 import {RiAdvertisementLine} from 'react-icons/ri';
@@ -145,6 +149,20 @@ const Nav = () => {
           menuTitle={'Feed'}
           icon={() => {
             return <MdRssFeed size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/cart'}
+          menuTitle={'Cart'}
+          icon={() => {
+            return <MdOutlineShoppingCart size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/notification'}
+          menuTitle={'Notification'}
+          icon={() => {
+            return <MdOutlineNotificationsNone size={24} />;
           }}
         />
         <MenuItem
