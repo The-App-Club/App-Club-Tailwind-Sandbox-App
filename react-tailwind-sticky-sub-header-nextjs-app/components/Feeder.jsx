@@ -8,20 +8,22 @@ import tasteState from '../stores/tasteStore';
 import ReviewRanking from './ReviewRanking';
 import {css} from '@emotion/css';
 import PriceRanking from './PriceRanking';
+import RecentOrderRanking from './RecentOrderRanking';
+import LocationRanking from './LocationRanking';
+import WineryRanking from './WineryRanking';
 
 const Feeder = () => {
   return (
     <div className="w-full">
       <div
         className={css`
-          display: grid;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
           gap: 1rem;
-          grid-template-columns: repeat(4, 1fr);
-          @media (max-width: 1200px) {
-            grid-template-columns: repeat(2, 1fr);
-          }
           @media (max-width: 768px) {
-            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+            flex-direction: column;
           }
         `}
       >
@@ -33,6 +35,27 @@ const Feeder = () => {
           `}
         />
         <PriceRanking
+          className={css`
+            position: initial;
+            top: initial;
+            z-index: initial;
+          `}
+        />
+        <RecentOrderRanking
+          className={css`
+            position: initial;
+            top: initial;
+            z-index: initial;
+          `}
+        />
+        <LocationRanking
+          className={css`
+            position: initial;
+            top: initial;
+            z-index: initial;
+          `}
+        />
+        <WineryRanking
           className={css`
             position: initial;
             top: initial;

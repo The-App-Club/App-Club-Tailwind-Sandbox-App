@@ -48,7 +48,7 @@ const Feed = () => {
       <Layout>
         <section
           className={cx(
-            `mt-12`,
+            `mt-12 px-2 pb-2`,
             css`
               position: absolute;
               top: 0;
