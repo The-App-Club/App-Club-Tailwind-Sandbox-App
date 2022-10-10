@@ -18,6 +18,10 @@ const ymdslash = (inputDay) => {
   return dayjs(inputDay).format('YYYY/MM/DD');
 };
 
-// console.log(ymdslash(dayjs(new Date()).add(1, 'days')));
+const yyyymmddhhmmss = (inputDay) => {
+  return dayjs(inputDay).format('YYYY/MM/DD HH:mm:ss');
+};
 
-export {dayjs, ymdslash};
+console.log(yyyymmddhhmmss(dayjs(new Date())));
+
+export {dayjs, ymdslash, yyyymmddhhmmss};

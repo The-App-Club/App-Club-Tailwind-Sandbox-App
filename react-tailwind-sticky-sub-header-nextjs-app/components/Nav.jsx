@@ -4,6 +4,7 @@ import {
   MdOutlineNotifications,
   MdOutlineNotificationsNone,
   MdOutlineShoppingCart,
+  MdFavoriteBorder,
 } from 'react-icons/md';
 import {MdOutlineChat} from 'react-icons/md';
 import {BiTimeFive} from 'react-icons/bi';
@@ -142,6 +143,13 @@ const Nav = () => {
           menuTitle={'Winery'}
           icon={() => {
             return <GiGrapes size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/favorite'}
+          menuTitle={'Favorite'}
+          icon={() => {
+            return <MdFavoriteBorder size={24} />;
           }}
         />
         <MenuItem

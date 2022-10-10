@@ -15,6 +15,11 @@ const routes = [
     activeMenuName: `Setting`,
   },
   {
+    pathName: `/favorite`,
+    pageName: `Favorite`,
+    activeMenuName: `Favorite`,
+  },
+  {
     pathName: `/feed`,
     pageName: `Feed`,
     activeMenuName: `Feed`,

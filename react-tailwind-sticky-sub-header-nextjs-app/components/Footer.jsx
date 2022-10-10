@@ -18,6 +18,8 @@ const Footer = ({pathname}) => {
   const nicePosition = useMemo(() => {
     if (
       pathname === `/` ||
+      pathname === `/feed` ||
+      pathname === `/favorite` ||
       pathname === `/contact` ||
       pathname === `/winery/[id]` ||
       pathname === `/winery` ||
@@ -32,7 +34,6 @@ const Footer = ({pathname}) => {
 
     if (
       pathname === `/contact` ||
-      pathname === `/feed` ||
       pathname === `/about` ||
       pathname === `/price`
     ) {

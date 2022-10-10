@@ -128,7 +128,10 @@ const Map = ({activeLocationName}) => {
       <div
         ref={mapContainer}
         className={css`
-          height: 400px;
+          height: 300px;
+          @media (max-width: 768px) {
+            height: 200px;
+          }
         `}
       />
     </div>

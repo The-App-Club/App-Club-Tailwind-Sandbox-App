@@ -145,7 +145,7 @@ const AreaGraph = () => {
 
   // https://recharts.org/en-US/api/AreaChart
   return (
-    <div className="max-w-6xl w-full">
+    <div className="max-w-2xl w-full">
       <h3 className="text-xl">ロケーション選択</h3>
       <LocationSelector data={locationNames} />
       <Spacer />

@@ -23,6 +23,7 @@ const Header = ({pathname}) => {
       pathname === `/` ||
       pathname === `/contact` ||
       pathname === `/feed` ||
+      pathname === `/favorite` ||
       pathname === `/about` ||
       pathname === `/price`
     ) {
@@ -86,7 +87,7 @@ const Header = ({pathname}) => {
         <div className="absolute right-2 flex items-center gap-2">
           <ThemeToggle />
           <div
-            className="w-[40px] h-[40px] flex items-center justify-center hover:cursor-pointer hover:bg-gray-100"
+            className="w-[40px] h-[40px] flex items-center justify-center hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-800"
             onClick={(e) => {
               router.push({
                 pathname: '/cart',
@@ -96,7 +97,7 @@ const Header = ({pathname}) => {
             <MdOutlineShoppingCart size={24} />
           </div>
           <div
-            className="w-[40px] h-[40px] flex items-center justify-center hover:cursor-pointer hover:bg-gray-100"
+            className="w-[40px] h-[40px] flex items-center justify-center hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-800"
             onClick={(e) => {
               router.push({
                 pathname: '/notification',

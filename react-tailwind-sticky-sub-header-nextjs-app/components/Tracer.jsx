@@ -1,4 +1,7 @@
 import {css, cx} from '@emotion/css';
+import Spacer from './Spacer';
+
+import {dayjs, yyyymmddhhmmss} from '../utils/dateUtil';
 
 const Tracer = ({title = `Tracer`, className, children}) => {
   return (
@@ -30,6 +33,14 @@ const Tracer = ({title = `Tracer`, className, children}) => {
         {title}
       </h2>
       {children}
+      <div className="p-2 flex justify-end">
+        <span>More See...</span>
+      </div>
+      <div className="p-2 flex justify-end">
+        <span className="font-bold text-sm">
+          Lastest updated <span>{yyyymmddhhmmss(dayjs(new Date()))}</span>
+        </span>
+      </div>
     </aside>
   );
 };

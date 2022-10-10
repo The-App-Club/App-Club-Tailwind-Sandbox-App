@@ -5,7 +5,7 @@ import {useRecoilValue} from 'recoil';
 import wineState from '../../stores/wineStore';
 import Layout from '../../layouts/default';
 import Spacer from '../../components/Spacer';
-import {useMemo} from 'react';
+import {useMemo, useState} from 'react';
 import data from '../../data/wineries.json';
 import Sidebar from '../../components/Sidebar';
 import Breadcrumbs from 'nextjs-breadcrumbs';
@@ -15,8 +15,11 @@ import hamburgerState from '../../stores/hamburgerStore';
 import Category from '../../components/Category';
 import TraceFooter from '../../components/TraceFooter';
 import ProductGalleryItem from '../../components/ProductGalleryItem';
+import SearchModal from '../../components/SearchModal';
 
 const Winery = () => {
+  const [showModal, setShowModal] = useState(false);
+
   const {opened} = useRecoilValue(hamburgerState);
 
   const router = useRouter();
@@ -32,9 +35,26 @@ const Winery = () => {
     return <p>loading...</p>;
   }
 
+  const handleModalOpen = (e) => {
+    setShowModal(true);
+    const html = document.documentElement;
+    const body = document.body;
+    html.classList.add('loading');
+    body.classList.add('loading');
+  };
+
+  const handleModalClose = (e) => {
+    setShowModal(false);
+    const html = document.documentElement;
+    const body = document.body;
+    html.classList.remove('loading');
+    body.classList.remove('loading');
+  };
+
   return (
     <>
       <Sidebar />
+      <SearchModal show={showModal} handleClose={handleModalClose} />
       <Layout>
         <section
           className={cx(
@@ -110,8 +130,11 @@ const Winery = () => {
               Winery<span>@{matchedData.wineryName}</span>
             </h2>
             <div className="flex items-center gap-2">
-              <button className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center">
-                Add All Cart
+              <button
+                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
+                onClick={handleModalOpen}
+              >
+                Filter
               </button>
             </div>
           </div>
