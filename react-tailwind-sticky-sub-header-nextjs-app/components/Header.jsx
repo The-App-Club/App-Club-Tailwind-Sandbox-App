@@ -19,6 +19,7 @@ import cartState from '../stores/cartStore';
 import useCart from '../hooks/useCart';
 
 const Header = ({pathname}) => {
+  const [isClient, setIsClient] = useState(false);
   const {carts} = useCart();
   const router = useRouter();
   const nicePosition = useMemo(() => {
@@ -43,6 +44,12 @@ const Header = ({pathname}) => {
       max-width: calc(100% - 0rem);
     `;
   }, [pathname]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
 
   const renderCartItemCount = () => {
     if (carts.length !== 0) {
@@ -117,7 +124,7 @@ const Header = ({pathname}) => {
             }}
           >
             <MdOutlineShoppingCart size={24} />
-            {renderCartItemCount()}
+            {isClient && renderCartItemCount()}
           </div>
           <div
             className="w-[40px] h-[40px] flex items-center justify-center hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-800"

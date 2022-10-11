@@ -27,6 +27,14 @@ const useFavorite = () => {
     });
   };
 
+  const removeAllFromFav = () => {
+    setFavorite((prevState) => {
+      return {
+        favoriteWines: [],
+      };
+    });
+  };
+
   const isFavorited = ({focusedItem}) => {
     if (favorite.favoriteWines.length === 0) {
       return false;
@@ -40,7 +48,13 @@ const useFavorite = () => {
     return favorite.favoriteWines;
   }, [favorite]);
 
-  return {favorite, favoriteWines, isFavorited, toggleFavorite};
+  return {
+    favorite,
+    favoriteWines,
+    isFavorited,
+    removeAllFromFav,
+    toggleFavorite,
+  };
 };
 
 export default useFavorite;

@@ -10,8 +10,10 @@ import {useRecoilValue} from 'recoil';
 import {motion} from 'framer-motion';
 import cartState from '../stores/cartStore';
 import useCart from '../hooks/useCart';
+import {useEffect, useState} from 'react';
 
 const TraceFooter = () => {
+  const [isClient, setIsClient] = useState(false);
   const {activeWine} = useRecoilValue(wineState);
   const router = useRouter();
   const {carts} = useCart();
@@ -30,6 +32,12 @@ const TraceFooter = () => {
     }
     return null;
   };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
 
   if (activeWine) {
     return (
@@ -132,7 +140,7 @@ const TraceFooter = () => {
       >
         <MdOutlineShoppingCart size={24} />
         <span className="font-bold text-sm">Cart</span>
-        {renderCartItemCount()}
+        {isClient && renderCartItemCount()}
       </div>
     </aside>
   );

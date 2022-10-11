@@ -13,10 +13,17 @@ import useFavorite from '../hooks/useFavorite';
 
 const Favorite = () => {
   const {opened} = useRecoilValue(hamburgerState);
-  const {favoriteWines} = useFavorite();
+  const {favoriteWines, removeAllFromFav} = useFavorite();
   const renderFavContent = () => {
     if (favoriteWines.length === 0) {
-      return <p>Nothing fav wines...</p>;
+      return (
+        <div>
+          <p>Nothing fav wines...</p>
+          <Link href={`/wines`}>
+            <a className="hover:underline">See Wines</a>
+          </Link>
+        </div>
+      );
     } else {
       return (
         <div
@@ -36,6 +43,10 @@ const Favorite = () => {
         </div>
       );
     }
+  };
+
+  const handleRemoveAllFromFav = (e) => {
+    removeAllFromFav();
   };
 
   return (
@@ -91,10 +102,38 @@ const Favorite = () => {
               return `${niceTitle} > `;
             }}
           />
-
-          <h2 className="text-3xl flex items-center justify-center">
-            Favorite
-          </h2>
+          <div
+            className={cx(
+              css`
+                z-index: 3;
+                position: sticky;
+                top: 6rem;
+                min-height: 3rem;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+              `,
+              `bg-white dark:bg-slate-700 shadow-md`
+            )}
+          >
+            <h2
+              className={cx(
+                `w-full text-xl flex items-center justify-start gap-2`
+              )}
+            >
+              Favorite
+            </h2>
+            <div className="flex items-center gap-2">
+              <button
+                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
+                onClick={handleRemoveAllFromFav}
+              >
+                Remove All
+              </button>
+            </div>
+          </div>
           {renderFavContent()}
         </section>
       </Layout>

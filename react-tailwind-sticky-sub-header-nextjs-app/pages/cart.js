@@ -146,7 +146,6 @@ const Cart = () => {
               </button>
             </div>
           </div>
-          <h2 className="text-3xl flex items-center justify-center">Cart</h2>
           {renderCartContent()}
         </section>
       </Layout>
