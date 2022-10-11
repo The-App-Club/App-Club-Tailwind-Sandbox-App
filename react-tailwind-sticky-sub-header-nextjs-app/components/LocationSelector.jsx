@@ -1,20 +1,58 @@
-import {Fragment, useEffect, useState} from 'react';
+import {Fragment, useEffect, useMemo, useState} from 'react';
 import {Listbox, Transition} from '@headlessui/react';
 import {CheckIcon, ChevronUpDownIcon} from '@heroicons/react/24/solid';
 import {css, cx} from '@emotion/css';
 import locationSelectorState from '../stores/locationSelectorStore';
 import {useRecoilState} from 'recoil';
+import {filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
+import data from '../data/wines.json';
 
-const LocationSelector = ({data, className}) => {
+const LocationSelector = ({className}) => {
   const [winery, setWinery] = useRecoilState(locationSelectorState);
-  const [selected, setSelected] = useState(data[0]);
+  const [selected, setSelected] = useState({name: winery.activeLocationName});
+
+  const niceData = useMemo(() => {
+    return tidy(
+      data,
+      map((item) => {
+        return {
+          winery: item.winery,
+          location: item.location,
+          wine: item.wine,
+          id: item.id,
+          price: item.price,
+          average: Number(item.rating.average),
+          reviews: Number(item.rating.reviews.replace('ratings', '').trim()),
+        };
+      }),
+      groupBy(
+        ['location'],
+        [mutate({key: (d) => `\${d.location}`})],
+        groupBy.entries()
+      ),
+      filter(([key, value]) => {
+        return key !== '';
+      })
+    );
+  }, []);
+
+  const locationNames = useMemo(() => {
+    return tidy(
+      niceData,
+      map(([key, value]) => {
+        return {
+          name: key,
+        };
+      })
+    );
+  }, [niceData]);
 
   useEffect(() => {
-    const activeWineryItem = data.find((item) => {
+    const activeWineryItem = locationNames.find((item) => {
       return item.name === winery.activeLocationName;
     });
     setSelected(activeWineryItem);
-  }, [data, winery]);
+  }, [locationNames, winery]);
 
   const handleChange = (e) => {
     setWinery({
@@ -64,7 +102,7 @@ const LocationSelector = ({data, className}) => {
               `text-sm`
             )}
           >
-            {data.map((item, index) => {
+            {locationNames.map((item, index) => {
               return (
                 <Listbox.Option
                   key={index}

@@ -2,19 +2,22 @@ import React, {useRef, useEffect, useState} from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
-import {css} from '@emotion/css';
+import {css, cx} from '@emotion/css';
 import {useDebouncedCallback} from 'use-debounce';
 
 import data from '../data/location.json';
 import {useCallback} from 'react';
+import {useRecoilValue} from 'recoil';
+import locationSelectorState from '../stores/locationSelectorStore';
 
-const Map = ({activeLocationName}) => {
+const Map = ({defaultZoom = 11, showGeoInfo = false, className = css``}) => {
+  const {activeLocationName} = useRecoilValue(locationSelectorState);
   const mapContainer = useRef(null);
   const marker = useRef(null);
   const mapInstance = useRef(null);
   const [lng, setLng] = useState(null); // 経度
   const [lat, setLat] = useState(null); // 緯度
-  const [zoom, setZoom] = useState(16);
+  const [zoom, setZoom] = useState(defaultZoom);
 
   const getMatchedLocation = useCallback(() => {
     return data.find((item) => {
@@ -88,43 +91,45 @@ const Map = ({activeLocationName}) => {
   }, [handleResize]);
 
   return (
-    <div>
-      <div
-        className={css`
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          gap: 1rem;
-        `}
-      >
+    <div className={cx('w-full p-2', className)}>
+      {showGeoInfo && (
         <div
           className={css`
             display: flex;
-            align-items: flex-start;
-            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
           `}
         >
-          Longitude<span className="font-bold">{lng}</span>
+          <div
+            className={css`
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
+            `}
+          >
+            Longitude<span className="font-bold">{lng}</span>
+          </div>
+          <div
+            className={css`
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
+            `}
+          >
+            Latitude<span className="font-bold">{lat}</span>
+          </div>
+          <div
+            className={css`
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
+            `}
+          >
+            Zoom<span className="font-bold">{zoom}</span>
+          </div>
         </div>
-        <div
-          className={css`
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column;
-          `}
-        >
-          Latitude<span className="font-bold">{lat}</span>
-        </div>
-        <div
-          className={css`
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column;
-          `}
-        >
-          Zoom<span className="font-bold">{zoom}</span>
-        </div>
-      </div>
+      )}
       <div
         ref={mapContainer}
         className={css`

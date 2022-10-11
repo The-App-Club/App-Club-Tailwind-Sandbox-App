@@ -44,6 +44,7 @@
     "react-intersection-observer": "^9.4.0",
     "react-merge-refs": "^2.0.1",
     "react-scrollama": "^2.3.2",
+    "react-simple-maps": "^3.0.0",
     "react-tabs": "^5.1.0",
     "react-use-scroll-direction": "^0.1.0",
     "recharts": "2.1.12",

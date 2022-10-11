@@ -29,11 +29,10 @@ import Map from './Map';
 
 import {useDebouncedCallback} from 'use-debounce';
 
-const AreaGraph = () => {
+const AreaGraph = ({className = css``}) => {
   const router = useRouter();
   const {mode} = useRecoilValue(themeState);
   const {activeLocationName} = useRecoilValue(locationSelectorState);
-  const [value, setValue] = useState([0, 14]);
 
   const [margin, setMargin] = useState({
     top: 50,
@@ -43,7 +42,6 @@ const AreaGraph = () => {
   });
 
   const niceData = useMemo(() => {
-    const [from, to] = value;
     return tidy(
       data,
       map((item) => {
@@ -63,29 +61,10 @@ const AreaGraph = () => {
         groupBy.entries()
       ),
       filter(([key, value]) => {
-        return key !== '' && from <= value.length && value.length <= to;
+        return key !== '';
       })
     );
-  }, [value]);
-
-  const handleChange = (event, newValue) => {
-    const [a, b] = newValue;
-    if (a === b) {
-      return;
-    }
-    setValue(newValue);
-  };
-
-  const locationNames = useMemo(() => {
-    return tidy(
-      niceData,
-      map(([key, value]) => {
-        return {
-          name: key,
-        };
-      })
-    );
-  }, [niceData]);
+  }, []);
 
   const selectedData = useMemo(() => {
     return tidy(
@@ -145,12 +124,7 @@ const AreaGraph = () => {
 
   // https://recharts.org/en-US/api/AreaChart
   return (
-    <div className="max-w-2xl w-full">
-      <h3 className="text-xl">ロケーション選択</h3>
-      <LocationSelector data={locationNames} />
-      <Spacer />
-      <Map activeLocationName={activeLocationName} />
-      <Spacer />
+    <div className={cx('w-full', className)}>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
           width={500}

@@ -8,24 +8,16 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import data from '../data/wines.json';
 import {arrange, asc, distinct, filter, map, tidy} from '@tidyjs/tidy';
-
-// const niceData = tidy(
-//   data,
-//   filter((item) => {
-//     return item.location !== '';
-//   }),
-//   map((item) => {
-//     const [a, b] = item.location.split(/·/);
-//     return {location: a.replace(/\n/g, ''), subLocation: b.replace(/\n/g, '')};
-//   }),
-//   distinct(['location', 'subLocation'])
-// );
-
-// console.log(niceData);
+import locationSelectorState from '../stores/locationSelectorStore';
+import Map from '../components/Map';
+import AreaGraph from '../components/AreaGraph';
+import LocationSelector from '../components/LocationSelector';
+import Spacer from '../components/Spacer';
+import Tracer from '../components/Tracer';
 
 const Location = () => {
   const {opened} = useRecoilValue(hamburgerState);
-
+  const {activeLocationName} = useRecoilValue(locationSelectorState);
   return (
     <>
       <Sidebar />
@@ -47,6 +39,7 @@ const Location = () => {
                 max-width: 100%;
               }
               nav {
+                z-index: 3;
                 position: sticky;
                 top: 3rem;
                 width: 100%;
@@ -78,12 +71,86 @@ const Location = () => {
               return `${niceTitle} > `;
             }}
           />
-
-          <h2 className="text-3xl flex items-center justify-center">
-            Location
-          </h2>
-
-          <p className="flex items-center justify-center">At Here World Maps</p>
+          <div
+            className={cx(
+              css`
+                z-index: 3;
+                position: sticky;
+                top: 6rem;
+                min-height: 3rem;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @media (max-width: 768px) {
+                  justify-content: flex-start;
+                  align-items: flex-start;
+                  flex-direction: column;
+                }
+              `,
+              `bg-white dark:bg-slate-700 shadow-md`
+            )}
+          >
+            <h2 className="text-xl flex items-center justify-center">
+              {`Location@${activeLocationName}`}
+            </h2>
+            <LocationSelector />
+          </div>
+          <Spacer />
+          <div
+            className={cx(
+              css`
+                width: 100%;
+                max-width: 100%;
+                min-height: 100vh;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 1rem;
+                @media (max-width: 1000px) {
+                  min-height: initial;
+                  flex-direction: column;
+                }
+              `
+            )}
+          >
+            <AreaGraph className={`max-w-full`} />
+            <aside
+              className={cx(
+                css`
+                  width: 100%;
+                  position: sticky;
+                  top: calc(9rem + 16px);
+                  z-index: 1;
+                  @media (max-width: 1000px) {
+                    order: 2;
+                    max-width: 100%;
+                  }
+                `,
+                `border-2 bg-white dark:bg-slate-700 shadow-2xl rounded-xl`
+              )}
+            >
+              <h2
+                className={cx(
+                  `text-2xl flex items-center justify-start border-b-2 mb-2 px-2`,
+                  css`
+                    min-height: 3rem;
+                  `
+                )}
+              >
+                Map
+              </h2>
+              <Map
+                defaultZoom={9}
+                showGeoInfo={true}
+                className={css`
+                  @media (max-width: 1000px) {
+                    order: 1;
+                  }
+                `}
+              />
+            </aside>
+          </div>
         </section>
       </Layout>
     </>

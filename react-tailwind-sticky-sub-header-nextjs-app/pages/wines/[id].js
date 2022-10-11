@@ -29,9 +29,11 @@ import '@splidejs/react-splide/css';
 import {BiCameraMovie} from 'react-icons/bi';
 import {FaRegComments} from 'react-icons/fa';
 import useCart from '../../hooks/useCart';
+import locationSelectorState from '../../stores/locationSelectorStore';
 
 const Wine = () => {
   const router = useRouter();
+  const [winery, setWinery] = useRecoilState(locationSelectorState);
   const {addCart, removeCart, isCarted} = useCart();
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
@@ -182,7 +184,20 @@ const Wine = () => {
                 />
                 {`${item.winery}`}
               </span>
-              <span className="text-sm font-bold flex items-center gap-1">
+              <span
+                className={cx(
+                  `text-sm font-bold flex items-center gap-1`,
+                  `hover:cursor-pointer hover:underline`
+                )}
+                onClick={(e) => {
+                  setWinery({
+                    activeLocationName: item.location,
+                  });
+                  router.push({
+                    pathname: `/location`,
+                  });
+                }}
+              >
                 <MdOutlineLocationOn
                   size={24}
                   className={css`

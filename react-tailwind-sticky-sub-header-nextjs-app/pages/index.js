@@ -19,8 +19,6 @@ import Map from '../components/Map';
 import location from '../data/location.json';
 import Spacer from '../components/Spacer';
 
-// console.log(data);
-
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);
 
@@ -36,8 +34,6 @@ const Home = () => {
       distinct(['location'])
     );
   }, []);
-
-  // console.log(location);
 
   return (
     <>
@@ -129,9 +125,6 @@ const Home = () => {
               `
             )}
           >
-            <div className="w-full mb-4">
-              <AreaGraph />
-            </div>
             <PriceRanking
               className={css`
                 position: sticky;
