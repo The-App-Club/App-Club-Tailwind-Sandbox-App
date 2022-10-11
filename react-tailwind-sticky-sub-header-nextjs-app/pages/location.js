@@ -82,6 +82,7 @@ const Location = () => {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                padding: 0 0.5rem;
                 @media (max-width: 768px) {
                   justify-content: flex-start;
                   align-items: flex-start;
@@ -91,7 +92,7 @@ const Location = () => {
               `bg-white dark:bg-slate-700 shadow-md`
             )}
           >
-            <h2 className="text-xl flex items-center justify-center">
+            <h2 className="text-2xl flex items-center justify-center">
               {`Location@${activeLocationName}`}
             </h2>
             <LocationSelector />
@@ -132,7 +133,7 @@ const Location = () => {
             >
               <h2
                 className={cx(
-                  `text-2xl flex items-center justify-start border-b-2 mb-2 px-2`,
+                  `text-lg flex items-center justify-start border-b-2 mb-2 px-2`,
                   css`
                     min-height: 3rem;
                   `
