@@ -5,6 +5,30 @@ import cartState from '../stores/cartStore';
 const useCart = () => {
   const [cart, setCart] = useRecoilState(cartState);
 
+  const updateCart = ({focusedItem, willPurchasedAmount}) => {
+    setCart((prevState) => {
+      const matchedItem = [...prevState.carts].find((cart) => {
+        return cart.id === focusedItem.id;
+      });
+      if (matchedItem) {
+        return {
+          carts: [...prevState.carts].map((cart) => {
+            if (cart.id === focusedItem.id) {
+              return {
+                ...matchedItem,
+                amount: willPurchasedAmount,
+              };
+            } else {
+              return cart;
+            }
+          }),
+        };
+      } else {
+        return prevState;
+      }
+    });
+  };
+
   const addCart = ({focusedItem}) => {
     if (!focusedItem) {
       return;
@@ -14,6 +38,7 @@ const useCart = () => {
         return {
           carts: [...prevState.carts].concat({
             ...focusedItem,
+            amount: 1,
           }),
         };
       }
@@ -24,6 +49,7 @@ const useCart = () => {
         return {
           carts: [...prevState.carts].concat({
             ...focusedItem,
+            amount: 1,
           }),
         };
       } else {
@@ -73,7 +99,7 @@ const useCart = () => {
     return cart.carts;
   }, [cart]);
 
-  return {carts, addCart, removeCart, removeAllFromCart, isCarted};
+  return {carts, addCart, removeCart, removeAllFromCart, isCarted, updateCart};
 };
 
 export default useCart;

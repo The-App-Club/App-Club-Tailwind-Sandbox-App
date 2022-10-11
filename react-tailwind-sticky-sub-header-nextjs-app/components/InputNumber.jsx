@@ -1,0 +1,121 @@
+import {css, cx} from '@emotion/css';
+import {useCallback, useEffect} from 'react';
+import {useState} from 'react';
+import {FaTrashAlt} from 'react-icons/fa';
+import useCart from '../hooks/useCart';
+
+FaTrashAlt;
+
+const InputNumber = ({item}) => {
+  const {carts, updateCart, removeCart} = useCart();
+  // https://tailwindcomponents.com/component/number-input-counter
+  const [amount, setAmount] = useState(item.amount);
+  const handleChange = (e) => {
+    e.stopPropagation();
+    const willPurchasedAmount = Number(e.target.value);
+    if (willPurchasedAmount < 1) {
+      return;
+    }
+    setAmount(willPurchasedAmount);
+    updateCart({
+      focusedItem: item,
+      willPurchasedAmount,
+    });
+  };
+
+  const handleDecrement = (e) => {
+    e.stopPropagation();
+    if (amount < 2) {
+      return;
+    }
+    setAmount((prevAmount) => {
+      return prevAmount - 1;
+    });
+  };
+
+  const handleIncrement = (e) => {
+    e.stopPropagation();
+    setAmount((prevAmount) => {
+      return prevAmount + 1;
+    });
+  };
+
+  const handleRemove = useCallback(
+    (e) => {
+      removeCart({focusedItem: item});
+    },
+    [item] /* eslint-disable-line */
+  );
+
+  useEffect(() => {
+    updateCart({
+      focusedItem: item,
+      willPurchasedAmount: amount,
+    });
+  }, [amount]); /* eslint-disable-line */
+
+  return (
+    <div
+      className={cx(
+        'custom-number-input w-[100px]',
+        css`
+          input[type='number']::-webkit-inner-spin-button,
+          input[type='number']::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          .custom-number-input input:focus {
+            outline: none !important;
+          }
+
+          .custom-number-input button:focus {
+            outline: none !important;
+          }
+        `
+      )}
+    >
+      <label
+        htmlFor="custom-input-number"
+        className="w-full text-gray-700 dark:text-slate-200 text-sm font-semibold"
+      >
+        Amount
+      </label>
+      <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1 gap-2">
+        <div className="flex flex-row w-full">
+          <button
+            data-action="decrement"
+            className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
+            onClick={handleDecrement}
+          >
+            <span className="m-auto text-2xl font-thin">−</span>
+          </button>
+          <input
+            type="number"
+            className="focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none"
+            name="custom-input-number"
+            value={amount}
+            onChange={handleChange}
+          />
+          <button
+            data-action="increment"
+            className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
+            onClick={handleIncrement}
+          >
+            <span className="m-auto text-2xl font-thin">+</span>
+          </button>
+        </div>
+        <div>
+          <button
+            className="px-2 py-2 bg-gray-300 rounded-lg w-10 h-10 text-sm flex items-center justify-center"
+            onClick={handleRemove}
+          >
+            <FaTrashAlt size={24} />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default InputNumber;

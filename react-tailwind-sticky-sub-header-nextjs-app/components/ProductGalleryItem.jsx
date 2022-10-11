@@ -12,9 +12,12 @@ import {useRecoilState, useRecoilValue} from 'recoil';
 import {useEffect, useMemo, useState} from 'react';
 import themeState from '../stores/themeStore';
 import useFavorite from '../hooks/useFavorite';
+import dataWineries from '../data/wineries.json';
+import locationSelectorState from '../stores/locationSelectorStore';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
+  const [winery, setWinery] = useRecoilState(locationSelectorState);
   const theme = useRecoilValue(themeState);
   const {isFavorited, toggleFavorite} = useFavorite();
 
@@ -93,7 +96,21 @@ const ProductGalleryItem = ({item}) => {
           {item.wine}
         </h2>
         <Spacer height="0.5rem" />
-        <div className="text-sm font-bold flex items-center">
+        <div
+          className={cx(
+            `text-sm font-bold flex items-center`,
+            `hover:cursor-pointer hover:underline`
+          )}
+          onClick={(e) => {
+            e.stopPropagation();
+            const activeWineryItem = dataWineries.find((d) => {
+              return d.wineryName === item.winery;
+            });
+            router.push({
+              pathname: `/winery/${activeWineryItem.wineryId}`,
+            });
+          }}
+        >
           <GiGrapes
             size={24}
             className={css`
@@ -102,7 +119,21 @@ const ProductGalleryItem = ({item}) => {
           />
           <span className="break-words">{`${item.winery}`}</span>
         </div>
-        <div className="text-sm font-bold flex items-center">
+        <div
+          className={cx(
+            `text-sm font-bold flex items-center`,
+            `hover:cursor-pointer hover:underline`
+          )}
+          onClick={(e) => {
+            e.stopPropagation();
+            setWinery({
+              activeLocationName: item.location,
+            });
+            router.push({
+              pathname: `/location`,
+            });
+          }}
+        >
           <MdOutlineLocationOn
             size={24}
             className={css`

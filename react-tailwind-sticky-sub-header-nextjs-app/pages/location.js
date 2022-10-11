@@ -135,7 +135,6 @@ const Location = () => {
                   top: calc(9rem + 16px);
                   z-index: 1;
                   @media (max-width: 1000px) {
-                    order: 2;
                     max-width: 100%;
                   }
                 `,
@@ -158,7 +157,6 @@ const Location = () => {
                 showGeoInfo={true}
                 className={css`
                   @media (max-width: 1000px) {
-                    order: 1;
                   }
                 `}
               />

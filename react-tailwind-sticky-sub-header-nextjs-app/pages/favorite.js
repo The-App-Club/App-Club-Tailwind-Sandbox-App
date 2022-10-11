@@ -10,6 +10,7 @@ import {useEffect, useMemo, useRef, useState} from 'react';
 import favoriteState from '../stores/favoriteStore';
 import ProductGalleryItem from '../components/ProductGalleryItem';
 import useFavorite from '../hooks/useFavorite';
+import Spacer from '../components/Spacer';
 
 const Favorite = () => {
   const [isClient, setIsClient] = useState(false);
@@ -25,7 +26,12 @@ const Favorite = () => {
   const renderFavContent = () => {
     if (favoriteWines.length === 0) {
       return (
-        <div>
+        <div
+          className={cx(
+            `w-full flex justify-center flex-col items-center`,
+            `border-2  rounded-lg shadow-lg p-2`
+          )}
+        >
           <p>Nothing fav wines...</p>
           <Link href={`/wines`}>
             <a className="hover:underline">See Wines</a>
@@ -142,6 +148,7 @@ const Favorite = () => {
               </button>
             </div>
           </div>
+          <Spacer />
           {isClient && renderFavContent()}
         </section>
       </Layout>
