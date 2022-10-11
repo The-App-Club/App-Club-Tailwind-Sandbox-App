@@ -1,11 +1,11 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
-import {useRecoilValue} from 'recoil';
+import {useRecoilState, useRecoilValue} from 'recoil';
 import wineState from '../../stores/wineStore';
 import Layout from '../../layouts/default';
 import Spacer from '../../components/Spacer';
-import {useMemo} from 'react';
+import {useCallback, useMemo} from 'react';
 import {motion} from 'framer-motion';
 import data from '../../data/wines.json';
 import dataWineries from '../../data/wineries.json';
@@ -28,9 +28,11 @@ import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import {BiCameraMovie} from 'react-icons/bi';
 import {FaRegComments} from 'react-icons/fa';
+import useCart from '../../hooks/useCart';
 
 const Wine = () => {
   const router = useRouter();
+  const {addCart, removeCart, isCarted} = useCart();
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
 
@@ -63,6 +65,14 @@ const Wine = () => {
       })
     );
   }, [item]);
+
+  const handleAddCart = (e) => {
+    addCart({focusedItem: item});
+  };
+
+  const handleRemoveCart = (e) => {
+    removeCart({focusedItem: item});
+  };
 
   if (!item) {
     return;
@@ -133,6 +143,7 @@ const Wine = () => {
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
+                gap: 0.5rem;
               `,
               `bg-white dark:bg-slate-700 shadow-md p-2`
             )}
@@ -222,9 +233,21 @@ const Wine = () => {
               </div>
             </h2>
             <motion.div className="flex items-start gap-2 flex-col">
-              <button className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center">
-                Add Cart
-              </button>
+              {isCarted({focusedItem: item}) ? (
+                <button
+                  className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+                  onClick={handleRemoveCart}
+                >
+                  Remove Cart
+                </button>
+              ) : (
+                <button
+                  className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+                  onClick={handleAddCart}
+                >
+                  Add Cart
+                </button>
+              )}
               <div className="w-full">
                 <div className="text-xl w-full">{`$${numbro(item.price).format({
                   thousandSeparated: true,

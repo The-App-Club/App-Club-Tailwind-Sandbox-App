@@ -2,7 +2,7 @@ import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {useCallback, useEffect, useMemo, useState} from 'react';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useRecoilValue} from 'recoil';
 import hamburgerState from '../stores/hamburgerStore';
 import Hamburger from './Hamburger';
 import ThemeToggle from './ThemeToggle';
@@ -15,8 +15,11 @@ import {
 } from 'react-icons/md';
 
 import Profile from './Profile';
+import cartState from '../stores/cartStore';
+import useCart from '../hooks/useCart';
 
 const Header = ({pathname}) => {
+  const {carts} = useCart();
   const router = useRouter();
   const nicePosition = useMemo(() => {
     if (
@@ -40,6 +43,22 @@ const Header = ({pathname}) => {
       max-width: calc(100% - 0rem);
     `;
   }, [pathname]);
+
+  const renderCartItemCount = () => {
+    if (carts.length !== 0) {
+      return (
+        <motion.span
+          className={cx(
+            'absolute -top-0.5 -right-2 w-6 h-6 rounded-full bg-pink-400 text-white flex items-center justify-center font-bold text-sm',
+            `${carts.length === 0 ? 'opacity-0' : 'opacity-100'}`
+          )}
+        >
+          {carts.length}
+        </motion.span>
+      );
+    }
+    return null;
+  };
 
   return (
     <motion.header
@@ -90,7 +109,7 @@ const Header = ({pathname}) => {
         <div className="absolute right-2 flex items-center gap-2">
           <ThemeToggle />
           <div
-            className="w-[40px] h-[40px] flex items-center justify-center hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-800"
+            className="relative w-[40px] h-[40px] flex items-center justify-center hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-800"
             onClick={(e) => {
               router.push({
                 pathname: '/cart',
@@ -98,6 +117,7 @@ const Header = ({pathname}) => {
             }}
           >
             <MdOutlineShoppingCart size={24} />
+            {renderCartItemCount()}
           </div>
           <div
             className="w-[40px] h-[40px] flex items-center justify-center hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-800"

@@ -6,9 +6,31 @@ import {MdOutlineShoppingCart} from 'react-icons/md';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import wineState from '../stores/wineStore';
 import {useRecoilValue} from 'recoil';
+
+import {motion} from 'framer-motion';
+import cartState from '../stores/cartStore';
+import useCart from '../hooks/useCart';
+
 const TraceFooter = () => {
   const {activeWine} = useRecoilValue(wineState);
   const router = useRouter();
+  const {carts} = useCart();
+  const renderCartItemCount = () => {
+    if (carts.length !== 0) {
+      return (
+        <motion.span
+          className={cx(
+            'absolute -top-2 right-3 w-6 h-6 rounded-full bg-pink-400 text-white flex items-center justify-center font-bold text-sm',
+            `${carts.length === 0 ? 'opacity-0' : 'opacity-100'}`
+          )}
+        >
+          {carts.length}
+        </motion.span>
+      );
+    }
+    return null;
+  };
+
   if (activeWine) {
     return (
       <aside
@@ -101,7 +123,7 @@ const TraceFooter = () => {
         <span className="font-bold text-sm">Winery</span>
       </div>
       <div
-        className="w-full  flex items-center justify-center flex-col"
+        className="w-full relative flex items-center justify-center flex-col"
         onClick={(e) => {
           router.push({
             pathname: '/cart',
@@ -110,6 +132,7 @@ const TraceFooter = () => {
       >
         <MdOutlineShoppingCart size={24} />
         <span className="font-bold text-sm">Cart</span>
+        {renderCartItemCount()}
       </div>
     </aside>
   );

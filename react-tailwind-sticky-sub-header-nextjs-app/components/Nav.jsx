@@ -28,6 +28,7 @@ import {FaHatCowboySide} from 'react-icons/fa';
 import {MdOutlineContactMail} from 'react-icons/md';
 import {MdRssFeed} from 'react-icons/md';
 import favoriteState from '../stores/favoriteStore';
+import cartState from '../stores/cartStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
@@ -40,6 +41,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
   const router = useRouter();
   const theme = useRecoilValue(themeState);
   const {favoriteWines} = useRecoilValue(favoriteState);
+  const {carts} = useRecoilValue(cartState);
   const [isClient, setIsClient] = useState(false);
   const [sidebar, setSidebar] = useRecoilState(sidebarState);
 
@@ -64,6 +66,18 @@ const MenuItem = ({path, menuTitle, icon}) => {
           )}
         >
           {favoriteWines.length}
+        </motion.span>
+      );
+    }
+    if (menuTitle === `Cart`) {
+      return (
+        <motion.span
+          className={cx(
+            'absolute right-2 w-8 h-8 rounded-full bg-pink-400 text-white flex items-center justify-center font-bold',
+            `${carts.length === 0 ? 'opacity-0' : 'opacity-100'}`
+          )}
+        >
+          {carts.length}
         </motion.span>
       );
     }
