@@ -32,7 +32,13 @@ const Header = ({pathname}) => {
       pathname === `/cart` ||
       pathname === `/location` ||
       pathname === `/about` ||
-      pathname === `/price`
+      pathname === `/price` ||
+      pathname === `/winery/[id]` ||
+      pathname === `/winery` ||
+      pathname === `/wines/[id]` ||
+      pathname === `/wines/[id]/story` ||
+      pathname === `/wines/[id]/comment` ||
+      pathname === `/wines`
     ) {
       return css`
         left: 18rem;
