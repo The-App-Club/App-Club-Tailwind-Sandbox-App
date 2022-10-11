@@ -9,18 +9,14 @@ import {
 import {default as numbro} from 'numbro';
 import Spacer from './Spacer';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import favoriteState from '../stores/favoriteStore';
 import {useEffect, useMemo, useState} from 'react';
 import themeState from '../stores/themeStore';
 import useFavorite from '../hooks/useFavorite';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
-  const [initialFavFillColor, setInitialFavFillColor] = useState('transparent');
   const theme = useRecoilValue(themeState);
-  const {favorite, favorited, toggleFavorite} = useFavorite({
-    focusedItem: item,
-  });
+  const {isFavorited, toggleFavorite} = useFavorite();
 
   return (
     <div
@@ -45,10 +41,10 @@ const ProductGalleryItem = ({item}) => {
         )}
         onClick={(e) => {
           e.stopPropagation();
-          toggleFavorite();
+          toggleFavorite({focusedItem: item});
         }}
       >
-        {favorited ? (
+        {isFavorited({focusedItem: item}) ? (
           <MdOutlineFavorite
             size={32}
             fill={`rgb(244 114 182)`} // bg-pink-400

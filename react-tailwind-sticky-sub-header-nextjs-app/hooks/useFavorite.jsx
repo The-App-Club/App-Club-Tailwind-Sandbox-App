@@ -2,10 +2,10 @@ import {useMemo} from 'react';
 import {useRecoilState} from 'recoil';
 import favoriteState from '../stores/favoriteStore';
 
-const useFavorite = ({focusedItem}) => {
+const useFavorite = () => {
   const [favorite, setFavorite] = useRecoilState(favoriteState);
 
-  const toggleFavorite = () => {
+  const toggleFavorite = ({focusedItem}) => {
     setFavorite((prevState) => {
       const isFaved = [...prevState.favoriteWines].some((favItem) => {
         return favItem.id === focusedItem.id;
@@ -27,16 +27,20 @@ const useFavorite = ({focusedItem}) => {
     });
   };
 
-  const favorited = useMemo(() => {
+  const isFavorited = ({focusedItem}) => {
     if (favorite.favoriteWines.length === 0) {
       return false;
     }
     return favorite.favoriteWines.some((favItem) => {
       return favItem.id === focusedItem.id;
     });
-  }, [favorite, focusedItem]);
+  };
 
-  return {favorite, favorited, toggleFavorite};
+  const favoriteWines = useMemo(() => {
+    return favorite.favoriteWines;
+  }, [favorite]);
+
+  return {favorite, favoriteWines, isFavorited, toggleFavorite};
 };
 
 export default useFavorite;

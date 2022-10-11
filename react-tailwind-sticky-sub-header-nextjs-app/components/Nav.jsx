@@ -29,6 +29,7 @@ import {MdOutlineContactMail} from 'react-icons/md';
 import {MdRssFeed} from 'react-icons/md';
 import favoriteState from '../stores/favoriteStore';
 import cartState from '../stores/cartStore';
+import useFavorite from '../hooks/useFavorite';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
@@ -40,7 +41,7 @@ const attachActiveMenu = ({activeMenuName, menuTitle}) => {
 const MenuItem = ({path, menuTitle, icon}) => {
   const router = useRouter();
   const theme = useRecoilValue(themeState);
-  const {favoriteWines} = useRecoilValue(favoriteState);
+  const {favoriteWines} = useFavorite();
   const {carts} = useRecoilValue(cartState);
   const [isClient, setIsClient] = useState(false);
   const [sidebar, setSidebar] = useRecoilState(sidebarState);

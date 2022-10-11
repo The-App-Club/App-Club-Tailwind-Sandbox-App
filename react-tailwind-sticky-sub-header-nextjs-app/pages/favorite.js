@@ -9,10 +9,11 @@ import capitalize from 'capitalize-the-first-letter';
 import {useMemo, useRef, useState} from 'react';
 import favoriteState from '../stores/favoriteStore';
 import ProductGalleryItem from '../components/ProductGalleryItem';
+import useFavorite from '../hooks/useFavorite';
 
 const Favorite = () => {
   const {opened} = useRecoilValue(hamburgerState);
-  const {favoriteWines} = useRecoilValue(favoriteState);
+  const {favoriteWines} = useFavorite();
   const renderFavContent = () => {
     if (favoriteWines.length === 0) {
       return <p>Nothing fav wines...</p>;
