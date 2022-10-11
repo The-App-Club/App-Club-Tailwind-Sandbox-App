@@ -70,7 +70,7 @@ const FeatureColumnSelector = ({data, className, isX = true}) => {
               `text-sm`
             )}
           >
-            {data.map((item, index) => {
+            {data?.map((item, index) => {
               return (
                 <Listbox.Option
                   key={index}

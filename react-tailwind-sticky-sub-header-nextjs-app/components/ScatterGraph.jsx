@@ -168,7 +168,7 @@ const ScatterGraph = () => {
             fill="#8884d8"
             className="text-white"
           >
-            {data.items.map((entry, index) => {
+            {data.items?.map((entry, index) => {
               return <Cell key={`cell-${index}`} fill={colors[entry.Wine]} />;
             })}
           </Scatter>
