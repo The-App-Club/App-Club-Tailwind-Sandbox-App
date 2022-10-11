@@ -5,9 +5,12 @@ import {MdOutlineLocationOn} from 'react-icons/md';
 import Spacer from './Spacer';
 import dataWineries from '../data/wineries.json';
 import {useRouter} from 'next/router';
+import {useRecoilState} from 'recoil';
+import locationSelectorState from '../stores/locationSelectorStore';
 
 const Product = ({item, className = css``}) => {
   const router = useRouter();
+  const [winery, setWinery] = useRecoilState(locationSelectorState);
 
   return (
     <div className={cx('w-full flex items-start gap-2 py-2 px-12', className)}>
@@ -28,7 +31,10 @@ const Product = ({item, className = css``}) => {
         </div>
         <div className="flex items-start gap-2 flex-col">
           <div
-            className="text-sm font-bold flex items-center hover:cursor-pointer hover:underline"
+            className={cx(
+              `text-sm font-bold flex items-center`,
+              `hover:cursor-pointer hover:underline`
+            )}
             onClick={(e) => {
               e.stopPropagation();
               const activeWineryItem = dataWineries.find((d) => {
@@ -47,7 +53,21 @@ const Product = ({item, className = css``}) => {
             />
             <span className="break-words">{`${item.winery}`}</span>
           </div>
-          <div className="text-sm font-bold flex items-center">
+          <div
+            className={cx(
+              `text-sm font-bold flex items-center`,
+              `hover:cursor-pointer hover:underline`
+            )}
+            onClick={(e) => {
+              e.stopPropagation();
+              setWinery({
+                activeLocationName: item.location,
+              });
+              router.push({
+                pathname: `/location`,
+              });
+            }}
+          >
             <MdOutlineLocationOn
               size={24}
               className={css`

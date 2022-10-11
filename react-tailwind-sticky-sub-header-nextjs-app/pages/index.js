@@ -97,17 +97,12 @@ const Home = () => {
                 justify-content: space-between;
                 align-items: center;
               `,
-              `bg-white dark:bg-slate-700`
+              `bg-white dark:bg-slate-700 px-2 shadow-md`
             )}
           >
-            <h2
-              className={cx(`text-3xl flex items-center justify-start`, css``)}
-            >
-              Home
-            </h2>
+            <h2 className="text-2xl flex items-center justify-center">Home</h2>
           </div>
-          <Category />
-
+          <Spacer />
           <div
             className={cx(
               css`
@@ -128,7 +123,7 @@ const Home = () => {
             <PriceRanking
               className={css`
                 position: sticky;
-                top: 15rem;
+                top: calc(9rem + 16px);
                 z-index: 1;
               `}
             />

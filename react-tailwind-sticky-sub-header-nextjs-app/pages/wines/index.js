@@ -15,6 +15,7 @@ import Category from '../../components/Category';
 import TraceFooter from '../../components/TraceFooter';
 import ProductGalleryItem from '../../components/ProductGalleryItem';
 import SearchModal from '../../components/SearchModal';
+import Spacer from '../../components/Spacer';
 
 const Wines = () => {
   const [showModal, setShowModal] = useState(false);
@@ -105,12 +106,7 @@ const Wines = () => {
                 justify-content: space-between;
                 align-items: center;
               `,
-              `bg-white dark:bg-slate-700`,
-              css`
-                @media (max-width: 768px) {
-                  padding: 0.5rem 0;
-                }
-              `
+              `bg-white dark:bg-slate-700 px-2`
             )}
           >
             <h2
@@ -129,7 +125,13 @@ const Wines = () => {
               </button>
             </div>
           </div>
-          <Category />
+          <Category
+            className={css`
+              position: sticky;
+              top: calc(9rem);
+            `}
+          />
+          <Spacer />
           <div
             className={css`
               display: grid;

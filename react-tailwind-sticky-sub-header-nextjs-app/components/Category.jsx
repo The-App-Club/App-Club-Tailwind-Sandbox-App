@@ -7,7 +7,7 @@ import {default as chance} from 'chance';
 import data from '../data/wineries.json';
 import {useRouter} from 'next/router';
 
-const Category = () => {
+const Category = ({className = css``}) => {
   const router = useRouter();
 
   return (
@@ -19,8 +19,9 @@ const Category = () => {
           top: 9rem;
           z-index: 3;
         `,
-        `bg-white dark:bg-slate-700`,
-        `dark:text-white`
+        `bg-white dark:bg-slate-700 shadow-md`,
+        `dark:text-white`,
+        className
       )}
     >
       <Splide

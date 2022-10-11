@@ -20,6 +20,7 @@ import {FaTemperatureHigh, FaTemperatureLow} from 'react-icons/fa';
 import Weather from '../components/Weather';
 
 import {GrMap} from 'react-icons/gr';
+import {MdOutlineLocationOn} from 'react-icons/md';
 
 const Location = () => {
   const {opened} = useRecoilValue(hamburgerState);
@@ -95,10 +96,14 @@ const Location = () => {
                   flex-direction: column;
                 }
               `,
-              `bg-white dark:bg-slate-700 shadow-md`
+              `bg-white dark:bg-slate-700 shadow-md px-2`
             )}
           >
-            <h2 className="text-2xl flex items-center justify-center">
+            <h2
+              className={cx(
+                `w-full text-xl flex items-center justify-start gap-2`
+              )}
+            >
               {`Location@${activeLocationName}`}
             </h2>
             <LocationSelector />
@@ -145,7 +150,7 @@ const Location = () => {
                   `
                 )}
               >
-                <GrMap size={24} />
+                <MdOutlineLocationOn size={24} />
                 Map
               </h2>
               <Map

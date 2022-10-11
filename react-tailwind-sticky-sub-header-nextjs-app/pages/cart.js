@@ -10,6 +10,7 @@ import cartState from '../stores/cartStore';
 import ProductGalleryItem from '../components/ProductGalleryItem';
 import useCart from '../hooks/useCart';
 import {useEffect, useState} from 'react';
+import Spacer from '../components/Spacer';
 
 const Cart = () => {
   const [isClient, setIsClient] = useState(false);
@@ -127,7 +128,7 @@ const Cart = () => {
                 align-items: center;
                 gap: 1rem;
               `,
-              `bg-white dark:bg-slate-700 shadow-md`
+              `bg-white dark:bg-slate-700 shadow-md px-2`
             )}
           >
             <h2
@@ -154,6 +155,7 @@ const Cart = () => {
               </button>
             </div>
           </div>
+          <Spacer />
           {isClient && renderCartContent()}
         </section>
       </Layout>

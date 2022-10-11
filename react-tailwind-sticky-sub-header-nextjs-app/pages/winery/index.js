@@ -123,7 +123,13 @@ const Winery = () => {
               </button>
             </div>
           </div>
-          <Category />
+          <Category
+            className={css`
+              position: sticky;
+              top: calc(9rem);
+            `}
+          />
+          <Spacer />
           <div
             className={css`
               display: grid;

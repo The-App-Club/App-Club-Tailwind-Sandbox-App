@@ -123,8 +123,7 @@ const Winery = () => {
           >
             <h2
               className={cx(
-                `text-xl flex items-center justify-start line-clamp-1`,
-                css``
+                `w-full text-xl flex items-center justify-start gap-2 line-clamp-1`
               )}
             >
               Winery<span>@{matchedData.wineryName}</span>
@@ -138,7 +137,13 @@ const Winery = () => {
               </button>
             </div>
           </div>
-          <Category />
+          <Category
+            className={css`
+              position: sticky;
+              top: calc(9rem);
+            `}
+          />
+          <Spacer />
           <div
             className={css`
               width: 100%;

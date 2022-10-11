@@ -3,13 +3,17 @@ import Tracer from './Tracer';
 import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
 import {useMemo} from 'react';
 import data from '../data/wines.json';
+import dataWineries from '../data/wineries.json';
 import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
+import {useRecoilState} from 'recoil';
+import locationSelectorState from '../stores/locationSelectorStore';
 
 const PriceRanking = ({className}) => {
   const router = useRouter();
+  const [winery, setWinery] = useRecoilState(locationSelectorState);
   const rankingData = useMemo(() => {
     // https://stackoverflow.com/a/48218209
     return tidy(
@@ -82,7 +86,21 @@ const PriceRanking = ({className}) => {
               />
               <div className="flex items-start justify-start flex-col">
                 <h2 className="line-clamp-1 font-bold">{item.wine}</h2>
-                <div className="text-sm font-bold flex items-center text-gray-700 dark:text-slate-300">
+                <div
+                  className={cx(
+                    'text-sm font-bold flex items-center text-gray-700 dark:text-slate-300',
+                    `hover:cursor-pointer hover:underline`
+                  )}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const activeWineryItem = dataWineries.find((d) => {
+                      return d.wineryName === item.winery;
+                    });
+                    router.push({
+                      pathname: `/winery/${activeWineryItem.wineryId}`,
+                    });
+                  }}
+                >
                   <GiGrapes
                     size={24}
                     className={css`
@@ -91,7 +109,21 @@ const PriceRanking = ({className}) => {
                   />
                   <span className="line-clamp-1">{`${item.winery}`}</span>
                 </div>
-                <div className="text-sm font-bold flex items-center text-gray-700 dark:text-slate-300">
+                <div
+                  className={cx(
+                    'text-sm font-bold flex items-center text-gray-700 dark:text-slate-300',
+                    `hover:cursor-pointer hover:underline`
+                  )}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setWinery({
+                      activeLocationName: item.location,
+                    });
+                    router.push({
+                      pathname: `/location`,
+                    });
+                  }}
+                >
                   <MdOutlineLocationOn
                     size={24}
                     className={css`

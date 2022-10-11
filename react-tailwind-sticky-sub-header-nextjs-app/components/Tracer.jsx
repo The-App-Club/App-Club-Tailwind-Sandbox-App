@@ -24,7 +24,7 @@ const Tracer = ({title = `Tracer`, className, children}) => {
     >
       <h2
         className={cx(
-          `text-2xl flex items-center justify-start border-b-2 mb-2 px-2`,
+          `text-lg flex items-center justify-start border-b-2 mb-2 px-2`,
           css`
             min-height: 3rem;
           `
