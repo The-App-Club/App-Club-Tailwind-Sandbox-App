@@ -83,21 +83,38 @@ const InputNumber = ({item}) => {
         <div className="flex flex-row w-full">
           <button
             data-action="decrement"
-            className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
+            className={cx(
+              `h-full w-20 rounded-l cursor-pointer outline-none`,
+              `text-gray-700 dark:text-gray-100 hover:text-black focus:text-black`,
+              `bg-gray-300/70 hover:bg-gray-300/100 `,
+              `hover:dark:text-white dark:bg-slate-600/70 hover:dark:bg-slate-600/100`
+            )}
             onClick={handleDecrement}
           >
             <span className="m-auto text-2xl font-thin">−</span>
           </button>
           <input
             type="number"
-            className="focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none"
+            className={cx(
+              ` w-full flex items-center text-center`,
+              `focus:outline-none outline-none`,
+              `font-semibold text-md md:text-basecursor-default`,
+              `text-gray-700 dark:text-gray-100 hover:text-black focus:text-black`,
+              `hover:text-gray-700 bg-gray-300/70 hover:bg-gray-300/100 `,
+              `hover:dark:text-white dark:bg-slate-600/70 hover:dark:bg-slate-600/100`
+            )}
             name="custom-input-number"
             value={amount}
             onChange={handleChange}
           />
           <button
             data-action="increment"
-            className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
+            className={cx(
+              `h-full w-20 rounded-r cursor-pointer outline-none`,
+              `text-gray-700 dark:text-gray-100 hover:text-black focus:text-black`,
+              `bg-gray-300/70 hover:bg-gray-300/100 `,
+              `hover:dark:text-white dark:bg-slate-600/70 hover:dark:bg-slate-600/100`
+            )}
             onClick={handleIncrement}
           >
             <span className="m-auto text-2xl font-thin">+</span>
@@ -105,7 +122,11 @@ const InputNumber = ({item}) => {
         </div>
         <div>
           <button
-            className="px-2 py-2 bg-gray-300 rounded-lg w-10 h-10 text-sm flex items-center justify-center"
+            className={cx(
+              'px-2 py-2 rounded-lg w-10 h-10 text-sm flex items-center justify-center',
+              `hover:text-gray-700 bg-gray-300/70 hover:bg-gray-300/100 `,
+              `hover:dark:text-white dark:bg-slate-600/70 hover:dark:bg-slate-600/100`
+            )}
             onClick={handleRemove}
           >
             <FaTrashAlt size={24} />

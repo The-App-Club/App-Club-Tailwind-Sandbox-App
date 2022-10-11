@@ -27,7 +27,7 @@ const ProductCartItem = ({item}) => {
       className={cx(
         `relative`,
         `w-full h-full border-2 py-2 px-12`,
-        `hover:bg-gray-100 dark:hover:bg-slate-800`,
+        `hover:bg-gray-100 dark:hover:bg-slate-800 shadow-md`,
         `hover:shadow-2xl hover:cursor-pointer rounded-2xl`
       )}
     >

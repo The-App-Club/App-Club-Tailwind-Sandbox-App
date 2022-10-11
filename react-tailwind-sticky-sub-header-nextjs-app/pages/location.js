@@ -94,6 +94,7 @@ const Location = () => {
                   justify-content: flex-start;
                   align-items: flex-start;
                   flex-direction: column;
+                  padding: 0.5rem;
                 }
               `,
               `bg-white dark:bg-slate-700 shadow-md px-2`
