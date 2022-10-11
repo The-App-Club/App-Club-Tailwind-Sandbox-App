@@ -11,10 +11,12 @@ import favoriteState from '../stores/favoriteStore';
 import ProductGalleryItem from '../components/ProductGalleryItem';
 import useFavorite from '../hooks/useFavorite';
 import Spacer from '../components/Spacer';
+import useCart from '../hooks/useCart';
 
 const Favorite = () => {
   const [isClient, setIsClient] = useState(false);
   const {opened} = useRecoilValue(hamburgerState);
+  const {addAllCart} = useCart();
   const {favoriteWines, removeAllFromFav} = useFavorite();
 
   useEffect(() => {
@@ -61,6 +63,10 @@ const Favorite = () => {
 
   const handleRemoveAllFromFav = (e) => {
     removeAllFromFav();
+  };
+
+  const handleAddAllCart = (e) => {
+    addAllCart({favedItems: favoriteWines});
   };
 
   return (
@@ -140,6 +146,12 @@ const Favorite = () => {
               Favorite
             </h2>
             <div className="flex items-center gap-2">
+              <button
+                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
+                onClick={handleAddAllCart}
+              >
+                Add All Cart
+              </button>
               <button
                 className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
                 onClick={handleRemoveAllFromFav}

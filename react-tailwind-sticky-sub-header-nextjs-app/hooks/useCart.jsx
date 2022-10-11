@@ -29,6 +29,43 @@ const useCart = () => {
     });
   };
 
+  const addAllCart = ({favedItems}) => {
+    if (favedItems.length === 0) {
+      return;
+    }
+    setCart((prevState) => {
+      if ([...prevState.carts].length === 0) {
+        return {
+          carts: [...prevState.carts].concat(
+            ...favedItems.map((favedItem) => {
+              return {
+                ...favedItem,
+                amount: 1,
+              };
+            })
+          ),
+        };
+      }
+
+      for (let index = 0; index < favedItems.length; index++) {
+        const focusedItem = favedItems[index];
+        const isExists = [...prevState.carts].some((cart) => {
+          return cart.id === focusedItem.id;
+        });
+        if (!isExists) {
+          return {
+            carts: [...prevState.carts].concat({
+              ...focusedItem,
+              amount: 1,
+            }),
+          };
+        } else {
+          return prevState;
+        }
+      }
+    });
+  };
+
   const addCart = ({focusedItem}) => {
     if (!focusedItem) {
       return;
@@ -99,7 +136,15 @@ const useCart = () => {
     return cart.carts;
   }, [cart]);
 
-  return {carts, addCart, removeCart, removeAllFromCart, isCarted, updateCart};
+  return {
+    carts,
+    addAllCart,
+    addCart,
+    removeCart,
+    removeAllFromCart,
+    isCarted,
+    updateCart,
+  };
 };
 
 export default useCart;
