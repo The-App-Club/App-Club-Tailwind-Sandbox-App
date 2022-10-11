@@ -4,8 +4,6 @@ import {useState} from 'react';
 import {FaTrashAlt} from 'react-icons/fa';
 import useCart from '../hooks/useCart';
 
-FaTrashAlt;
-
 const InputNumber = ({item}) => {
   const {carts, updateCart, removeCart} = useCart();
   // https://tailwindcomponents.com/component/number-input-counter
