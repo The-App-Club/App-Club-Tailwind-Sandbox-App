@@ -9,10 +9,18 @@ import capitalize from 'capitalize-the-first-letter';
 import cartState from '../stores/cartStore';
 import ProductGalleryItem from '../components/ProductGalleryItem';
 import useCart from '../hooks/useCart';
+import {useEffect, useState} from 'react';
 
 const Cart = () => {
+  const [isClient, setIsClient] = useState(false);
   const {opened} = useRecoilValue(hamburgerState);
   const {carts, removeAllFromCart} = useCart();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
 
   const renderCartContent = () => {
     if (carts.length === 0) {
@@ -146,7 +154,7 @@ const Cart = () => {
               </button>
             </div>
           </div>
-          {renderCartContent()}
+          {isClient && renderCartContent()}
         </section>
       </Layout>
     </>

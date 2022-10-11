@@ -6,14 +6,22 @@ import hamburgerState from '../stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import {useMemo, useRef, useState} from 'react';
+import {useEffect, useMemo, useRef, useState} from 'react';
 import favoriteState from '../stores/favoriteStore';
 import ProductGalleryItem from '../components/ProductGalleryItem';
 import useFavorite from '../hooks/useFavorite';
 
 const Favorite = () => {
+  const [isClient, setIsClient] = useState(false);
   const {opened} = useRecoilValue(hamburgerState);
   const {favoriteWines, removeAllFromFav} = useFavorite();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
+
   const renderFavContent = () => {
     if (favoriteWines.length === 0) {
       return (
@@ -134,7 +142,7 @@ const Favorite = () => {
               </button>
             </div>
           </div>
-          {renderFavContent()}
+          {isClient && renderFavContent()}
         </section>
       </Layout>
     </>
