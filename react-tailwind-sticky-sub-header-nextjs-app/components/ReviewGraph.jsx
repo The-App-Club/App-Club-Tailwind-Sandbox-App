@@ -15,6 +15,7 @@ import {useDebouncedCallback} from 'use-debounce';
 import themeState from '../stores/themeStore';
 import {decideAxisTickFillColor, decideBarBackFaceFillColor} from './AreaGraph';
 import {css, cx} from '@emotion/css';
+import {MdOutlineReviews} from 'react-icons/md';
 
 const ReviewGraph = ({selectedData}) => {
   const router = useRouter();
@@ -58,12 +59,13 @@ const ReviewGraph = ({selectedData}) => {
     >
       <h2
         className={cx(
-          `text-lg flex items-center justify-start border-b-2 mb-2 px-2`,
+          `text-lg flex items-center justify-start gap-1 border-b-2 mb-2 px-2`,
           css`
             min-height: 3rem;
           `
         )}
       >
+        <MdOutlineReviews size={24} />
         Reviews
       </h2>
       <ResponsiveContainer width="100%" height={300}>

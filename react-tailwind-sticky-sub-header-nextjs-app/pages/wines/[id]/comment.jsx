@@ -9,7 +9,7 @@ import Sidebar from '../../../components/Sidebar';
 import Layout from '../../../layouts/default';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import {GiGrapes} from 'react-icons/gi';
-import {MdOutlineLocationOn} from 'react-icons/md';
+import {MdOutlineLocationOn, MdOutlineTimeline} from 'react-icons/md';
 import {css, cx} from '@emotion/css';
 import ScrollStory from '../../../components/ScrollStory';
 import ScatterGraph from '../../../components/ScatterGraph';
@@ -19,6 +19,7 @@ import {motion, useAnimationControls} from 'framer-motion';
 import {scrollDirectionState} from '../../../stores/scrollDirectionStore';
 import Spacer from '../../../components/Spacer';
 import wineState from '../../../stores/wineStore';
+import {FaRegComments} from 'react-icons/fa';
 
 const Comment = () => {
   const [activeWine, setActiveWine] = useRecoilState(wineState);
@@ -135,7 +136,76 @@ const Comment = () => {
               Comment
             </h2>
           </div>
+          <Spacer />
+          <div
+            className={cx(
+              css`
+                width: 100%;
+                max-width: 100%;
+                min-height: 100vh;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 1rem;
+                @media (max-width: 1000px) {
+                  min-height: initial;
+                  flex-direction: column;
+                }
+              `
+            )}
+          >
+            <div
+              className={cx(
+                'w-full max-w-2xl',
+                `border-2 bg-white dark:bg-slate-700 shadow-2xl rounded-xl`,
+                css`
+                  min-height: calc(100vh + 34rem); // mock attach
+                `
+              )}
+            >
+              <h2
+                className={cx(
+                  `text-lg flex items-center justify-start gap-1 border-b-2 mb-2 px-2`,
+                  css`
+                    min-height: 3rem;
+                  `
+                )}
+              >
+                <MdOutlineTimeline size={24} />
+                Timeline
+              </h2>
+            </div>
+            <aside
+              className={cx(
+                css`
+                  width: 100%;
+                  position: sticky;
+                  top: calc(9rem + 16px);
+                  z-index: 1;
+                  min-height: 20rem; // mock attach
+                  @media (max-width: 1000px) {
+                    order: 2;
+                    max-width: 100%;
+                  }
+                `,
+                `border-2 bg-white dark:bg-slate-700 shadow-2xl rounded-xl`
+              )}
+            >
+              <h2
+                className={cx(
+                  `text-lg flex items-center justify-start gap-1 border-b-2 mb-2 px-2`,
+                  css`
+                    min-height: 3rem;
+                  `
+                )}
+              >
+                <FaRegComments size={24} />
+                Focused Comment
+              </h2>
+            </aside>
+          </div>
         </section>
+        <TraceFooter />
       </Layout>
     </>
   );

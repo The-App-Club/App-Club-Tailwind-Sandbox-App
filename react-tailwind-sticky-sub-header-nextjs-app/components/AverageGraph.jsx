@@ -15,6 +15,8 @@ import {useDebouncedCallback} from 'use-debounce';
 import themeState from '../stores/themeStore';
 import {decideAxisTickFillColor, decideBarBackFaceFillColor} from './AreaGraph';
 import {css, cx} from '@emotion/css';
+import {GrScorecard} from 'react-icons/gr';
+import {MdOutlineScore} from 'react-icons/md';
 
 const AverageGraph = ({selectedData}) => {
   const router = useRouter();
@@ -58,12 +60,13 @@ const AverageGraph = ({selectedData}) => {
     >
       <h2
         className={cx(
-          `text-lg flex items-center justify-start border-b-2 mb-2 px-2`,
+          `text-lg flex items-center justify-start gap-1 border-b-2 mb-2 px-2`,
           css`
             min-height: 3rem;
           `
         )}
       >
+        <MdOutlineScore size={24} />
         Average
       </h2>
       <ResponsiveContainer width="100%" height={300}>
