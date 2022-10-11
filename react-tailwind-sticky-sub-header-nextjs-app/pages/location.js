@@ -14,6 +14,12 @@ import AreaGraph from '../components/AreaGraph';
 import LocationSelector from '../components/LocationSelector';
 import Spacer from '../components/Spacer';
 import Tracer from '../components/Tracer';
+import {TbTemperature} from 'react-icons/tb';
+import {WiBarometer, WiHumidity} from 'react-icons/wi';
+import {FaTemperatureHigh, FaTemperatureLow} from 'react-icons/fa';
+import Weather from '../components/Weather';
+
+import {GrMap} from 'react-icons/gr';
 
 const Location = () => {
   const {opened} = useRecoilValue(hamburgerState);
@@ -133,12 +139,13 @@ const Location = () => {
             >
               <h2
                 className={cx(
-                  `text-lg flex items-center justify-start border-b-2 mb-2 px-2`,
+                  `text-lg flex items-center justify-start gap-1 border-b-2 mb-2 px-2`,
                   css`
                     min-height: 3rem;
                   `
                 )}
               >
+                <GrMap size={24} />
                 Map
               </h2>
               <Map
@@ -150,6 +157,7 @@ const Location = () => {
                   }
                 `}
               />
+              <Weather />
             </aside>
           </div>
         </section>

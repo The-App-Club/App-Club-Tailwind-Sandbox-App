@@ -10,6 +10,8 @@ import {useCallback} from 'react';
 import {useRecoilValue} from 'recoil';
 import locationSelectorState from '../stores/locationSelectorStore';
 
+import {TbWorldLatitude, TbWorldLongitude, TbZoomPan} from 'react-icons/tb';
+
 const Map = ({defaultZoom = 11, showGeoInfo = false, className = css``}) => {
   const {activeLocationName} = useRecoilValue(locationSelectorState);
   const mapContainer = useRef(null);
@@ -101,32 +103,26 @@ const Map = ({defaultZoom = 11, showGeoInfo = false, className = css``}) => {
             gap: 1rem;
           `}
         >
-          <div
-            className={css`
-              display: flex;
-              align-items: flex-start;
-              flex-direction: column;
-            `}
-          >
-            Longitude<span className="font-bold">{lng}</span>
+          <div className={`flex items-start flex-col`}>
+            <span className="flex items-center gap-1">
+              <TbWorldLongitude size={24} />
+              Longitude
+            </span>
+            <span className="font-bold">{lng}</span>
           </div>
-          <div
-            className={css`
-              display: flex;
-              align-items: flex-start;
-              flex-direction: column;
-            `}
-          >
-            Latitude<span className="font-bold">{lat}</span>
+          <div className={`flex items-start flex-col`}>
+            <span className="flex items-center gap-1">
+              <TbWorldLatitude size={24} />
+              Latitude
+            </span>
+            <span className="font-bold">{lat}</span>
           </div>
-          <div
-            className={css`
-              display: flex;
-              align-items: flex-start;
-              flex-direction: column;
-            `}
-          >
-            Zoom<span className="font-bold">{zoom}</span>
+          <div className={`flex items-start flex-col`}>
+            <span className="flex items-center gap-1">
+              <TbZoomPan size={24} />
+              Zoom
+            </span>
+            <span className="font-bold">{zoom}</span>
           </div>
         </div>
       )}
