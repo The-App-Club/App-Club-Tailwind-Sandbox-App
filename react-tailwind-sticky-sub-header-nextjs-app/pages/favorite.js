@@ -1,74 +1,16 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
 import Sidebar from '../components/Sidebar';
 import Layout from '../layouts/default';
 import hamburgerState from '../stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import {useEffect, useMemo, useRef, useState} from 'react';
-import favoriteState from '../stores/favoriteStore';
-import ProductGalleryItem from '../components/ProductGalleryItem';
-import useFavorite from '../hooks/useFavorite';
 import Spacer from '../components/Spacer';
-import useCart from '../hooks/useCart';
+import Header from '../components/favorite/Header';
+import Container from '../components/favorite/Container';
 
 const Favorite = () => {
-  const [isClient, setIsClient] = useState(false);
   const {opened} = useRecoilValue(hamburgerState);
-  const {addAllCart} = useCart();
-  const {favoriteWines, removeAllFromFav} = useFavorite();
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsClient(true);
-    }
-  }, []);
-
-  const renderFavContent = () => {
-    if (favoriteWines.length === 0) {
-      return (
-        <div
-          className={cx(
-            `w-full flex justify-center flex-col items-center`,
-            `border-2  rounded-lg shadow-lg p-2`
-          )}
-        >
-          <p>Nothing fav wines...</p>
-          <Link href={`/wines`}>
-            <a className="hover:underline">See Wines</a>
-          </Link>
-        </div>
-      );
-    } else {
-      return (
-        <div
-          className={css`
-            width: 100%;
-            display: grid;
-            gap: 0.5rem;
-            grid-template-columns: repeat(4, 1fr);
-            @media (max-width: 1200px) {
-              grid-template-columns: repeat(2, 1fr);
-            }
-          `}
-        >
-          {favoriteWines.map((item, index) => {
-            return <ProductGalleryItem key={index} item={item} />;
-          })}
-        </div>
-      );
-    }
-  };
-
-  const handleRemoveAllFromFav = (e) => {
-    removeAllFromFav();
-  };
-
-  const handleAddAllCart = (e) => {
-    addAllCart({favedItems: favoriteWines});
-  };
-
   return (
     <>
       <Sidebar />
@@ -122,46 +64,9 @@ const Favorite = () => {
               return `${niceTitle} > `;
             }}
           />
-          <div
-            className={cx(
-              css`
-                z-index: 3;
-                position: sticky;
-                top: 6rem;
-                min-height: 3rem;
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 1rem;
-              `,
-              `bg-white dark:bg-slate-700 shadow-md`
-            )}
-          >
-            <h2
-              className={cx(
-                `w-full text-xl flex items-center justify-start gap-2`
-              )}
-            >
-              Favorite
-            </h2>
-            <div className="flex items-center gap-2">
-              <button
-                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
-                onClick={handleAddAllCart}
-              >
-                Add All Cart
-              </button>
-              <button
-                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
-                onClick={handleRemoveAllFromFav}
-              >
-                Remove All
-              </button>
-            </div>
-          </div>
+          <Header />
           <Spacer />
-          {isClient && renderFavContent()}
+          <Container />
         </section>
       </Layout>
     </>
