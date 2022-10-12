@@ -12,7 +12,6 @@ const FocusedComment = () => {
           z-index: 1;
           min-height: 20rem; // mock attach
           @media (max-width: 1000px) {
-            order: 2;
             max-width: 100%;
           }
         `,

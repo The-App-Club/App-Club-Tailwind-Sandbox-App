@@ -5,12 +5,18 @@ import {
   MdFavoriteBorder,
   MdOutlineFavorite,
   MdOutlineQuickreply,
+  MdUpdate,
 } from 'react-icons/md';
 import CommentForm from './CommentForm';
 import Spacer from './Spacer';
 import Layout from '../layouts/default';
+import {TiPencil} from 'react-icons/ti';
+import {useRouter} from 'next/router';
+import Link from 'next/link';
 
-const Comment = ({parentCommentId = null, commentId, replyCount = 0}) => {
+const Comment = ({data}) => {
+  const router = useRouter();
+  const replyCount = 0;
   // const replyCount = useMemo(() => {
   //   return 3;
   // }, [parentCommentId]);
@@ -25,33 +31,45 @@ const Comment = ({parentCommentId = null, commentId, replyCount = 0}) => {
 
   return (
     <div
+      id={data.commentId}
       className={cx(
         'relative w-full min-h-[8rem] border-2 rounded-xl px-2 py-2',
-        `border-2 border-gray-200 dark:border-slate-500`
+        `border-2 border-gray-200 dark:border-slate-500`,
+        `mb-2`
       )}
     >
-      <div className="w-full flex items-center gap-2 min-h-[3rem]">
-        <div className="w-full flex items-center gap-2">
-          <picture className={css``}>
-            <source srcSet={`/assets/profile.png`} type={`image/png`} />
-            <img
-              src={'/assets/profile.png'}
-              alt={'profile'}
-              width={40}
-              height={40}
-              className={`rounded-full border-2`}
-            />
-          </picture>
-          <span>nap5</span>
-          <span>{`2022/10/10 11:25:23`}</span>
+      <div className="w-full flex items-start gap-2 min-h-[3rem]">
+        <div className={cx('w-full flex flex-col items-start gap-2')}>
+          <div className="w-full flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <picture className={css``}>
+                <source srcSet={data.avatorURL} type={`image/png`} />
+                <img
+                  src={data.avatorURL}
+                  alt={'profile'}
+                  width={40}
+                  height={40}
+                  className={`rounded-full border-2`}
+                />
+              </picture>
+              <span>{data.userName}</span>
+            </div>
+            <span className="flex items-center justify-center">{`#${data.commentId}`}</span>
+          </div>
+          <div className={cx('w-full flex items-center gap-1 px-1')}>
+            <time className="flex items-center">
+              <TiPencil size={16} />
+              <span className="text-sm">{data.createdAt}</span>
+            </time>
+            <time className="flex items-center">
+              <MdUpdate size={16} />
+              <span className="text-sm">{data.updatedAt}</span>
+            </time>
+          </div>
         </div>
-        <span className="flex items-center justify-center">{`#${commentId}`}</span>
       </div>
       <div className="w-full p-2">
-        <p className="break-words">
-          NiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNiceNice
-        </p>
-        <p className="break-words">Hey🤞</p>
+        <p className="break-words">{data.text}</p>
       </div>
       <div
         className={cx(
@@ -59,8 +77,21 @@ const Comment = ({parentCommentId = null, commentId, replyCount = 0}) => {
           `border-t-2 border-gray-200 dark:border-slate-500`
         )}
       >
-        {parentCommentId && (
-          <span className="w-full flex items-start justify-start hover:underline hover:cursor-pointer">{`linked to #${parentCommentId}`}</span>
+        {data.parentCommentId && (
+          <Link
+            replace
+            passHref
+            scroll={false}
+            shallow
+            href={{
+              pathname: router.pathname,
+              query: router.query,
+              hash: data.parentCommentId,
+            }}
+            // https://nextjs.org/docs/api-reference/next/link
+          >
+            <span className="w-full flex items-start justify-start hover:underline hover:cursor-pointer">{`linked to #${data.parentCommentId}`}</span>
+          </Link>
         )}
         {replyCount !== 0 && (
           <span className="w-full flex items-start justify-start">{`have ${replyCount} reply`}</span>
@@ -94,7 +125,9 @@ const Comment = ({parentCommentId = null, commentId, replyCount = 0}) => {
         </div>
       </div>
       <AnimatePresence>
-        {isShow && <CommentForm commentId={commentId} setIsShow={setIsShow} />}
+        {isShow && (
+          <CommentForm commentId={data.commentId} setIsShow={setIsShow} />
+        )}
       </AnimatePresence>
     </div>
   );

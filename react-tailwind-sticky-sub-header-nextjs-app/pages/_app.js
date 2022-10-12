@@ -20,8 +20,10 @@ import hamburgerState from '../stores/hamburgerStore';
 
 import {routes} from '../config/route';
 import sidebarState from '../stores/sidebarStore';
+import {useSmoothScroll} from '../hooks/useSmoothScroll';
 
 const CowboyBebopInit = ({children, router: r}) => {
+  useSmoothScroll();
   const [sidebar, setSidebar] = useRecoilState(sidebarState);
   const [hamburger, setHamburger] = useRecoilState(hamburgerState);
   const {mode} = useRecoilValue(themeState);
@@ -33,7 +35,6 @@ const CowboyBebopInit = ({children, router: r}) => {
         return route.pathName === pathName;
       });
     };
-    // console.log({pathName: r.pathname})
     const {activeMenuName} = getMatchedRoute({pathName: r.pathname});
     setSidebar((prevState) => {
       return {
