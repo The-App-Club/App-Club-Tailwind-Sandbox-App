@@ -20,33 +20,19 @@ import {scrollDirectionState} from '../../../stores/scrollDirectionStore';
 import Spacer from '../../../components/Spacer';
 import wineState from '../../../stores/wineStore';
 import {FaRegComments} from 'react-icons/fa';
+import CommentTimeline from '../../../components/CommentTimeline';
+import FocusedComment from '../../../components/FocusedComment';
 
 const Comment = () => {
-  const [activeWine, setActiveWine] = useRecoilState(wineState);
-  const headerControls = useAnimationControls();
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
-
-  const {scrollDirection} = useScrollDirection();
 
   const item = useMemo(() => {
     return data.find((item) => {
       return item.id === Number(id);
     });
   }, [id]);
-
-  useEffect(() => {
-    setActiveWine({
-      activeWine: item,
-    });
-
-    return () => {
-      setActiveWine({
-        activeWine: null,
-      });
-    };
-  }, [item, setActiveWine]);
 
   if (!item) {
     return;
@@ -154,55 +140,8 @@ const Comment = () => {
               `
             )}
           >
-            <div
-              className={cx(
-                'w-full max-w-2xl',
-                `border-2 bg-white dark:bg-slate-700 shadow-2xl rounded-xl`,
-                css`
-                  min-height: calc(100vh + 34rem); // mock attach
-                `
-              )}
-            >
-              <h2
-                className={cx(
-                  `text-lg flex items-center justify-start gap-1 border-b-2 mb-2 px-2`,
-                  css`
-                    min-height: 3rem;
-                  `
-                )}
-              >
-                <MdOutlineTimeline size={24} />
-                Timeline
-              </h2>
-            </div>
-            <aside
-              className={cx(
-                css`
-                  width: 100%;
-                  position: sticky;
-                  top: calc(9rem + 16px);
-                  z-index: 1;
-                  min-height: 20rem; // mock attach
-                  @media (max-width: 1000px) {
-                    order: 2;
-                    max-width: 100%;
-                  }
-                `,
-                `border-2 bg-white dark:bg-slate-700 shadow-2xl rounded-xl`
-              )}
-            >
-              <h2
-                className={cx(
-                  `text-lg flex items-center justify-start gap-1 border-b-2 mb-2 px-2`,
-                  css`
-                    min-height: 3rem;
-                  `
-                )}
-              >
-                <FaRegComments size={24} />
-                Focused Comment
-              </h2>
-            </aside>
+            <CommentTimeline />
+            <FocusedComment />
           </div>
         </section>
         <TraceFooter />
