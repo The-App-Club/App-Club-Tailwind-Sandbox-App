@@ -1,18 +1,10 @@
 import {css, cx} from '@emotion/css';
-import {FiTwitter} from 'react-icons/fi';
 import {
-  MdOutlineNotifications,
   MdOutlineNotificationsNone,
   MdOutlineShoppingCart,
   MdFavoriteBorder,
 } from 'react-icons/md';
-import {MdOutlineChat} from 'react-icons/md';
-import {BiTimeFive} from 'react-icons/bi';
-import {RiAdvertisementLine} from 'react-icons/ri';
-import Link from 'next/link';
 import {motion} from 'framer-motion';
-
-import Hamburger from './Hamburger';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import themeState from '../stores/themeStore';
 import {useRouter} from 'next/router';
@@ -27,9 +19,8 @@ import {BiHome} from 'react-icons/bi';
 import {FaHatCowboySide} from 'react-icons/fa';
 import {MdOutlineContactMail} from 'react-icons/md';
 import {MdRssFeed} from 'react-icons/md';
-import favoriteState from '../stores/favoriteStore';
-import cartState from '../stores/cartStore';
-import useFavorite from '../hooks/useFavorite';
+import NavMarkedCart from './NavMarkedCart';
+import NavMarkedFav from './NavMarkedFav';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
@@ -40,9 +31,6 @@ const attachActiveMenu = ({activeMenuName, menuTitle}) => {
 
 const MenuItem = ({path, menuTitle, icon}) => {
   const router = useRouter();
-  const theme = useRecoilValue(themeState);
-  const {favoriteWines} = useFavorite();
-  const {carts} = useRecoilValue(cartState);
   const [isClient, setIsClient] = useState(false);
   const [sidebar, setSidebar] = useRecoilState(sidebarState);
 
@@ -59,28 +47,10 @@ const MenuItem = ({path, menuTitle, icon}) => {
 
   const renderShortHandMetrics = () => {
     if (menuTitle === `Favorite`) {
-      return (
-        <motion.span
-          className={cx(
-            'absolute right-2 w-8 h-8 rounded-full bg-pink-400 text-white flex items-center justify-center font-bold',
-            `${favoriteWines.length === 0 ? 'opacity-0' : 'opacity-100'}`
-          )}
-        >
-          {favoriteWines.length}
-        </motion.span>
-      );
+      return <NavMarkedFav />;
     }
     if (menuTitle === `Cart`) {
-      return (
-        <motion.span
-          className={cx(
-            'absolute right-2 w-8 h-8 rounded-full bg-pink-400 text-white flex items-center justify-center font-bold',
-            `${carts.length === 0 ? 'opacity-0' : 'opacity-100'}`
-          )}
-        >
-          {carts.length}
-        </motion.span>
-      );
+      return <NavMarkedCart />;
     }
     return null;
   };
