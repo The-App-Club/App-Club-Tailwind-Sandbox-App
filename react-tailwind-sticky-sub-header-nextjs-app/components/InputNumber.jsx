@@ -21,6 +21,10 @@ const InputNumber = ({item}) => {
     });
   };
 
+  useEffect(() => {
+    setAmount(item.amount);
+  }, [item, carts]);
+
   const handleDecrement = (e) => {
     e.stopPropagation();
     if (amount < 2) {
@@ -137,4 +141,4 @@ const InputNumber = ({item}) => {
   );
 };
 
-export default memo(InputNumber);
+export default InputNumber;
