@@ -18,6 +18,7 @@ import SearchModal from '../../components/SearchModal';
 import Spacer from '../../components/Spacer';
 
 const Wines = () => {
+  console.log(`Wines`);
   const [showModal, setShowModal] = useState(false);
 
   const router = useRouter();

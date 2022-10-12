@@ -14,27 +14,22 @@ import themeState from '../stores/themeStore';
 import useFavorite from '../hooks/useFavorite';
 import dataWineries from '../data/wineries.json';
 import locationSelectorState from '../stores/locationSelectorStore';
+import {memo} from 'react';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
   const [winery, setWinery] = useRecoilState(locationSelectorState);
   const theme = useRecoilValue(themeState);
   const {isFavorited, toggleFavorite} = useFavorite();
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
 
-  return (
-    <div
-      className={cx(
-        `relative`,
-        `w-full border-2 p-2`,
-        `hover:cursor-pointer`,
-        `hover:bg-gray-100 dark:hover:bg-slate-800`
-      )}
-      onClick={(e) => {
-        router.push({
-          pathname: `/wines/${item.id}`,
-        });
-      }}
-    >
+  const renderFavMarked = () => {
+    return (
       <div
         className={cx(
           'absolute top-2 right-2 flex items-center',
@@ -51,16 +46,32 @@ const ProductGalleryItem = ({item}) => {
           <MdOutlineFavorite
             size={32}
             fill={`rgb(244 114 182)`} // bg-pink-400
-            className={css``}
           />
         ) : (
           <MdFavoriteBorder
             size={32}
             fill={`rgb(209 213 219)`} // bg-gray-300
-            className={css``}
           />
         )}
       </div>
+    );
+  };
+
+  return (
+    <div
+      className={cx(
+        `relative`,
+        `w-full border-2 p-2`,
+        `hover:cursor-pointer`,
+        `hover:bg-gray-100 dark:hover:bg-slate-800`
+      )}
+      onClick={(e) => {
+        router.push({
+          pathname: `/wines/${item.id}`,
+        });
+      }}
+    >
+      {isClient && renderFavMarked()}
       <div
         className={css`
           width: 100%;
@@ -174,4 +185,4 @@ const ProductGalleryItem = ({item}) => {
   );
 };
 
-export default ProductGalleryItem;
+export default memo(ProductGalleryItem);
