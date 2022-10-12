@@ -16,9 +16,11 @@ import dataWineries from '../data/wineries.json';
 import locationSelectorState from '../stores/locationSelectorStore';
 import {memo} from 'react';
 import ProductGalleryItemFav from './ProductGalleryItemFav';
+import useCart from '../hooks/useCart';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
+  const {addCart, removeCart, isCarted} = useCart();
   const [isClient, setIsClient] = useState(false);
   const theme = useRecoilValue(themeState);
   const [winery, setWinery] = useRecoilState(locationSelectorState);
@@ -28,6 +30,16 @@ const ProductGalleryItem = ({item}) => {
       setIsClient(true);
     }
   }, []);
+
+  const handleAddCart = (e) => {
+    e.stopPropagation();
+    addCart({focusedItem: item});
+  };
+
+  const handleRemoveCart = (e) => {
+    e.stopPropagation();
+    removeCart({focusedItem: item});
+  };
 
   return (
     <div
@@ -125,6 +137,7 @@ const ProductGalleryItem = ({item}) => {
           />
           <span className="break-words">{`${item.location}`}</span>
         </div>
+        <Spacer height="0.5rem" />
         <div
           className={css`
             display: flex;
@@ -140,17 +153,37 @@ const ProductGalleryItem = ({item}) => {
           `}
         >
           <div className="flex items-center gap-2">
-            <span className="text-4xl text-rose-400 dark:text-amber-400">
+            <span className="text-2xl text-rose-400 dark:text-amber-400">
               {item.rating.average}
             </span>
             <span className="text-sm text-rose-400 dark:text-amber-400 line-clamp-1">
               {item.rating.reviews}
             </span>
           </div>
-          <span className="text-2xl">{`$${numbro(item.price).format({
-            thousandSeparated: true,
-          })}`}</span>
+          <div className="flex items-center gap-2">
+            <span className="text-md">{`$${numbro(item.price).format({
+              thousandSeparated: true,
+            })}`}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            {isCarted({focusedItem: item}) ? (
+              <button
+                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+                onClick={handleRemoveCart}
+              >
+                Remove Cart
+              </button>
+            ) : (
+              <button
+                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+                onClick={handleAddCart}
+              >
+                Add Cart
+              </button>
+            )}
+          </div>
         </div>
+        <Spacer height="0.5rem" />
         <p className="text-sm line-clamp-3">{item.description}</p>
       </div>
     </div>

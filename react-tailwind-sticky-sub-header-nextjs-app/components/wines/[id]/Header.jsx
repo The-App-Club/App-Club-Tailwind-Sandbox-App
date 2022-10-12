@@ -1,6 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
-import {memo} from 'react';
+import {memo, useMemo} from 'react';
 import {motion} from 'framer-motion';
 import {FaRegComments} from 'react-icons/fa';
 import {GiGrapes} from 'react-icons/gi';
@@ -23,6 +23,10 @@ const Header = ({item}) => {
   const handleRemoveCart = (e) => {
     removeCart({focusedItem: item});
   };
+
+  const id = useMemo(() => {
+    return router.query.id;
+  }, [router]);
 
   if (!item) {
     return;
