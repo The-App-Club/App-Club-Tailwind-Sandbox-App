@@ -1,5 +1,5 @@
 import {count, groupBy, map, sum, summarize, tidy} from '@tidyjs/tidy';
-import {useEffect, useMemo, useState} from 'react';
+import {memo, useEffect, useMemo, useState} from 'react';
 import useCart from '../hooks/useCart';
 import {default as numbro} from 'numbro';
 import {css, cx} from '@emotion/css';
@@ -77,4 +77,4 @@ const CartSummary = () => {
   );
 };
 
-export default CartSummary;
+export default memo(CartSummary);

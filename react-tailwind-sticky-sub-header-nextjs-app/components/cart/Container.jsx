@@ -4,6 +4,7 @@ import {memo, useEffect, useState} from 'react';
 import useCart from '../../hooks/useCart';
 import ProductCartItem from '../ProductCartItem';
 import ReviewRanking from '../ReviewRanking';
+import Product from './Product';
 
 const Container = () => {
   const [isClient, setIsClient] = useState(false);
@@ -41,7 +42,7 @@ const Container = () => {
           `}
         >
           {carts.map((item, index) => {
-            return <ProductCartItem key={index} item={item} />;
+            return <Product key={index} item={item} />;
           })}
         </div>
       );

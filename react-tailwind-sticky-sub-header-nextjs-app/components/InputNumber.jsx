@@ -1,5 +1,5 @@
 import {css, cx} from '@emotion/css';
-import {useCallback, useEffect} from 'react';
+import {memo, useCallback, useEffect} from 'react';
 import {useState} from 'react';
 import {FaTrashAlt} from 'react-icons/fa';
 import useCart from '../hooks/useCart';
@@ -137,4 +137,4 @@ const InputNumber = ({item}) => {
   );
 };
 
-export default InputNumber;
+export default memo(InputNumber);
