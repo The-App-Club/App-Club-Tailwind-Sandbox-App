@@ -13,13 +13,19 @@ import Layout from '../layouts/default';
 import {TiPencil} from 'react-icons/ti';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
+import data from '../data/comment.json';
 
-const Comment = ({data}) => {
+const Comment = ({item}) => {
   const router = useRouter();
-  const replyCount = 0;
-  // const replyCount = useMemo(() => {
-  //   return 3;
-  // }, [parentCommentId]);
+
+  const replyCount = useMemo(() => {
+    if (!item) {
+      return 0;
+    }
+    return data.filter((d) => {
+      return d.parentCommentId === item.commentId;
+    }).length;
+  }, [item]);
 
   const [isShow, setIsShow] = useState(false);
 
@@ -31,7 +37,7 @@ const Comment = ({data}) => {
 
   return (
     <div
-      id={data.commentId}
+      id={item.commentId}
       className={cx(
         'relative w-full min-h-[8rem] border-2 rounded-xl px-2 py-2',
         `border-2 border-gray-200 dark:border-slate-500`,
@@ -43,33 +49,33 @@ const Comment = ({data}) => {
           <div className="w-full flex items-center justify-between">
             <div className="flex items-center gap-2">
               <picture className={css``}>
-                <source srcSet={data.avatorURL} type={`image/png`} />
+                <source srcSet={item.avatorURL} type={`image/png`} />
                 <img
-                  src={data.avatorURL}
+                  src={item.avatorURL}
                   alt={'profile'}
                   width={40}
                   height={40}
                   className={`rounded-full border-2`}
                 />
               </picture>
-              <span>{data.userName}</span>
+              <span>{item.userName}</span>
             </div>
-            <span className="flex items-center justify-center">{`#${data.commentId}`}</span>
+            <span className="flex items-center justify-center">{`#${item.commentId}`}</span>
           </div>
           <div className={cx('w-full flex items-center gap-1 px-1')}>
             <time className="flex items-center">
               <TiPencil size={16} />
-              <span className="text-sm">{data.createdAt}</span>
+              <span className="text-sm">{item.createdAt}</span>
             </time>
             <time className="flex items-center">
               <MdUpdate size={16} />
-              <span className="text-sm">{data.updatedAt}</span>
+              <span className="text-sm">{item.updatedAt}</span>
             </time>
           </div>
         </div>
       </div>
       <div className="w-full p-2">
-        <p className="break-words">{data.text}</p>
+        <p className="break-words">{item.text}</p>
       </div>
       <div
         className={cx(
@@ -77,7 +83,7 @@ const Comment = ({data}) => {
           `border-t-2 border-gray-200 dark:border-slate-500`
         )}
       >
-        {data.parentCommentId && (
+        {item.parentCommentId && (
           <Link
             replace
             passHref
@@ -86,11 +92,11 @@ const Comment = ({data}) => {
             href={{
               pathname: router.pathname,
               query: router.query,
-              hash: data.parentCommentId,
+              hash: item.parentCommentId,
             }}
             // https://nextjs.org/docs/api-reference/next/link
           >
-            <span className="w-full flex items-start justify-start hover:underline hover:cursor-pointer">{`linked to #${data.parentCommentId}`}</span>
+            <span className="w-full flex items-start justify-start hover:underline hover:cursor-pointer">{`linked to #${item.parentCommentId}`}</span>
           </Link>
         )}
         {replyCount !== 0 && (
@@ -126,7 +132,7 @@ const Comment = ({data}) => {
       </div>
       <AnimatePresence>
         {isShow && (
-          <CommentForm commentId={data.commentId} setIsShow={setIsShow} />
+          <CommentForm commentId={item.commentId} setIsShow={setIsShow} />
         )}
       </AnimatePresence>
     </div>

@@ -44,7 +44,7 @@ const Comment = () => {
       <Layout>
         <section
           className={cx(
-            `mt-12 px-2 pb-2`,
+            `mt-2 px-2 pb-2`,
             css`
               position: absolute;
               top: 0;
@@ -76,7 +76,7 @@ const Comment = () => {
             `
           )}
         >
-          <Breadcrumbs
+          {/* <Breadcrumbs
             useDefaultStyle={true}
             replaceCharacterList={[{from: '.', to: ' '}]}
             containerClassName="bg-white dark:bg-slate-700"
@@ -91,8 +91,8 @@ const Comment = () => {
               }
               return `${niceTitle} > `;
             }}
-          />
-          <div
+          /> */}
+          {/* <div
             className={cx(
               css`
                 z-index: 3;
@@ -122,7 +122,7 @@ const Comment = () => {
               Comment
             </h2>
           </div>
-          <Spacer />
+          <Spacer /> */}
           <div
             className={cx(
               css`

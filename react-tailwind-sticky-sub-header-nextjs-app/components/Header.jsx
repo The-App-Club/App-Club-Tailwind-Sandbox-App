@@ -23,6 +23,11 @@ const Header = ({pathname}) => {
   const {carts} = useCart();
   const router = useRouter();
   const nicePosition = useMemo(() => {
+    if (pathname === `/wines/[id]/comment`) {
+      return css`
+        display: none;
+      `;
+    }
     if (
       pathname === `/` ||
       pathname === `/contact` ||
@@ -37,7 +42,6 @@ const Header = ({pathname}) => {
       pathname === `/winery` ||
       pathname === `/wines/[id]` ||
       pathname === `/wines/[id]/story` ||
-      pathname === `/wines/[id]/comment` ||
       pathname === `/wines`
     ) {
       return css`
