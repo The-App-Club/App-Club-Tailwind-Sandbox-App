@@ -9,53 +9,25 @@ import {
 import {default as numbro} from 'numbro';
 import Spacer from './Spacer';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import {useEffect, useMemo, useState} from 'react';
+import {useCallback, useEffect, useMemo, useState} from 'react';
 import themeState from '../stores/themeStore';
 import useFavorite from '../hooks/useFavorite';
 import dataWineries from '../data/wineries.json';
 import locationSelectorState from '../stores/locationSelectorStore';
 import {memo} from 'react';
+import ProductGalleryItemFav from './ProductGalleryItemFav';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
-  const [winery, setWinery] = useRecoilState(locationSelectorState);
   const theme = useRecoilValue(themeState);
-  const {isFavorited, toggleFavorite} = useFavorite();
+  const [winery, setWinery] = useRecoilState(locationSelectorState);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
-
-  const renderFavMarked = () => {
-    return (
-      <div
-        className={cx(
-          'absolute top-2 right-2 flex items-center',
-          css`
-            z-index: 1;
-          `
-        )}
-        onClick={(e) => {
-          e.stopPropagation();
-          toggleFavorite({focusedItem: item});
-        }}
-      >
-        {isFavorited({focusedItem: item}) ? (
-          <MdOutlineFavorite
-            size={32}
-            fill={`rgb(244 114 182)`} // bg-pink-400
-          />
-        ) : (
-          <MdFavoriteBorder
-            size={32}
-            fill={`rgb(209 213 219)`} // bg-gray-300
-          />
-        )}
-      </div>
-    );
-  };
 
   return (
     <div
@@ -71,7 +43,7 @@ const ProductGalleryItem = ({item}) => {
         });
       }}
     >
-      {isClient && renderFavMarked()}
+      {isClient && <ProductGalleryItemFav item={item} />}
       <div
         className={css`
           width: 100%;
