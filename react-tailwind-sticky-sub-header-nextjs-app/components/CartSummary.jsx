@@ -1,11 +1,11 @@
 import {count, groupBy, map, sum, summarize, tidy} from '@tidyjs/tidy';
-import {useMemo} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import useCart from '../hooks/useCart';
 import {default as numbro} from 'numbro';
 import {css, cx} from '@emotion/css';
-
 const CartSummary = () => {
   const {carts} = useCart();
+  const [isClient, setIsClient] = useState(false);
 
   const productCount = useMemo(() => {
     return carts.length;
@@ -35,6 +35,12 @@ const CartSummary = () => {
     );
   }, [carts]);
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
+
   return (
     <div
       className={cx(
@@ -49,17 +55,23 @@ const CartSummary = () => {
     >
       <div className="flex items-center gap-1">
         <span className="text-md">Summary</span>
-        <span className="text-sm font-bold">{`$${numbro(totalPrice).format({
-          thousandSeparated: true,
-        })}`}</span>
+        {isClient && (
+          <span className="text-sm font-bold">{`$${numbro(totalPrice).format({
+            thousandSeparated: true,
+          })}`}</span>
+        )}
       </div>
       <div className="flex items-center gap-1">
         <span className="text-md">Products</span>
-        <span className="text-sm font-bold">{`${productCount} items`}</span>
+        {isClient && (
+          <span className="text-sm font-bold">{`${productCount} items`}</span>
+        )}
       </div>
       <div className="flex items-center gap-1">
         <span className="text-md">Amount</span>
-        <span className="text-sm font-bold">{`${totalAmount} amount`}</span>
+        {isClient && (
+          <span className="text-sm font-bold">{`${totalAmount} amount`}</span>
+        )}
       </div>
     </div>
   );
