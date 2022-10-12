@@ -1,39 +1,15 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
 import Layout from '../layouts/default';
-import styles from '../styles/pages/home/index.module.scss';
 import Sidebar from '../components/Sidebar';
 import hamburgerState from '../stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import Category from '../components/Category';
-
-import {distinct, filter, map, tidy} from '@tidyjs/tidy';
-import {useMemo} from 'react';
-import data from '../data/wines.json';
 import PriceRanking from '../components/PriceRanking';
-import AreaGraph from '../components/AreaGraph';
-import Map from '../components/Map';
-
-import location from '../data/location.json';
 import Spacer from '../components/Spacer';
 
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);
-
-  const niceData = useMemo(() => {
-    return tidy(
-      data,
-      map((item) => {
-        return {location: item.location};
-      }),
-      filter((item) => {
-        return item.location !== '';
-      }),
-      distinct(['location'])
-    );
-  }, []);
 
   return (
     <>

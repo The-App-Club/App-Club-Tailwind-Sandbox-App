@@ -1,8 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
-import {memo, useEffect} from 'react';
-import {useRecoilState} from 'recoil';
-import hamburgerState from '../stores/hamburgerStore';
+import {memo} from 'react';
 
 const motionConfig = {
   initial: {
@@ -23,8 +21,6 @@ const motionConfig = {
 };
 
 const Layout = ({children, className}) => {
-  const [hamburger, setHamburger] = useRecoilState(hamburgerState);
-
   return (
     <motion.div
       className={cx(
@@ -43,14 +39,7 @@ const Layout = ({children, className}) => {
       }}
       variants={motionConfig}
       onAnimationStart={(e) => {}}
-      onAnimationComplete={(e) => {
-        setHamburger((prevState) => {
-          return {
-            opened: false,
-            isTrigger: true,
-          };
-        });
-      }}
+      onAnimationComplete={(e) => {}}
     >
       {children}
     </motion.div>
