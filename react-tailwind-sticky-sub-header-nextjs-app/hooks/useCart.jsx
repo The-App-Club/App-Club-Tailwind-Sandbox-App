@@ -47,22 +47,24 @@ const useCart = () => {
         };
       }
 
+      const willAddedItems = [];
+
       for (let index = 0; index < favedItems.length; index++) {
         const focusedItem = favedItems[index];
         const isExists = [...prevState.carts].some((cart) => {
           return cart.id === focusedItem.id;
         });
         if (!isExists) {
-          return {
-            carts: [...prevState.carts].concat({
-              ...focusedItem,
-              amount: 1,
-            }),
-          };
-        } else {
-          return prevState;
+          willAddedItems.push({
+            ...focusedItem,
+            amount: 1,
+          });
         }
       }
+
+      return {
+        carts: [...prevState.carts].concat(...willAddedItems),
+      };
     });
   };
 
