@@ -1,10 +1,7 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
 import Layout from '../../layouts/default';
-import {tidy, summarize, sum, groupBy} from '@tidyjs/tidy';
-import {useRouter} from 'next/router';
 import data from '../../data/wines.json';
-import {useMemo, useState} from 'react';
+import {useState} from 'react';
 import capitalize from 'capitalize-the-first-letter';
 
 import Sidebar from '../../components/Sidebar';
@@ -18,10 +15,8 @@ import SearchModal from '../../components/SearchModal';
 import Spacer from '../../components/Spacer';
 
 const Wines = () => {
-  console.log(`Wines`);
   const [showModal, setShowModal] = useState(false);
 
-  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
 
   const handleModalOpen = (e) => {
