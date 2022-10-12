@@ -137,7 +137,6 @@ const ProductGalleryItem = ({item}) => {
           />
           <span className="break-words">{`${item.location}`}</span>
         </div>
-        <Spacer height="0.5rem" />
         <div
           className={css`
             display: flex;
@@ -146,8 +145,9 @@ const ProductGalleryItem = ({item}) => {
             justify-content: flex-end;
             gap: 0.5rem;
             @media (max-width: 768px) {
-              align-items: flex-start;
-              justify-content: flex-start;
+              gap: 0;
+              align-items: flex-end;
+              justify-content: flex-end;
               flex-direction: column;
             }
           `}
@@ -165,23 +165,24 @@ const ProductGalleryItem = ({item}) => {
               thousandSeparated: true,
             })}`}</span>
           </div>
-          <div className="flex items-center gap-2">
-            {isCarted({focusedItem: item}) ? (
-              <button
-                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-                onClick={handleRemoveCart}
-              >
-                Remove Cart
-              </button>
-            ) : (
-              <button
-                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-                onClick={handleAddCart}
-              >
-                Add Cart
-              </button>
-            )}
-          </div>
+        </div>
+        <Spacer height="0.5rem" />
+        <div className="flex items-center justify-end gap-2">
+          {isCarted({focusedItem: item}) ? (
+            <button
+              className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+              onClick={handleRemoveCart}
+            >
+              Remove Cart
+            </button>
+          ) : (
+            <button
+              className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+              onClick={handleAddCart}
+            >
+              Add Cart
+            </button>
+          )}
         </div>
         <Spacer height="0.5rem" />
         <p className="text-sm line-clamp-3">{item.description}</p>
