@@ -167,6 +167,7 @@ const Comment = () => {
             <aside
               className={cx(
                 css`
+                  max-width: 34rem;
                   width: 100%;
                   position: sticky;
                   top: 0.5rem;
