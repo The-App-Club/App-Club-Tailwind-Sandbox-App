@@ -22,6 +22,9 @@ import wineState from '../../../stores/wineStore';
 import {FaRegComments} from 'react-icons/fa';
 import CommentTimeline from '../../../components/CommentTimeline';
 import FocusedComment from '../../../components/FocusedComment';
+import Product from '../../../components/comment/Product';
+import mergician from 'mergician';
+import commentData from '../../../data/comment.json';
 
 const Comment = () => {
   const router = useRouter();
@@ -34,6 +37,12 @@ const Comment = () => {
     });
   }, [id]);
 
+  const itemWithAmount = useMemo(() => {
+    return mergician(item, {
+      amount: 0,
+    });
+  }, [item]);
+
   if (!item) {
     return;
   }
@@ -44,7 +53,7 @@ const Comment = () => {
       <Layout>
         <section
           className={cx(
-            `mt-2 px-2 pb-2`,
+            `p-2`,
             css`
               position: absolute;
               top: 0;
@@ -141,7 +150,25 @@ const Comment = () => {
             )}
           >
             <CommentTimeline />
-            <FocusedComment />
+            <aside
+              className={cx(
+                css`
+                  width: 100%;
+                  position: sticky;
+                  top: 0.5rem;
+                  z-index: 1;
+                  min-height: 20rem; // mock attach
+                  @media (max-width: 1000px) {
+                    max-width: 100%;
+                  }
+                `,
+                `bg-white dark:bg-slate-700 shadow-2xl rounded-xl`,
+                `border-2 border-gray-200 dark:border-slate-500`
+              )}
+            >
+              <Product item={itemWithAmount} />
+              <FocusedComment item={commentData[4]} />
+            </aside>
           </div>
         </section>
         <TraceFooter />

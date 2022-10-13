@@ -17,7 +17,7 @@ import data from '../data/comment.json';
 import {default as numbro} from 'numbro';
 import {formatRelativeTime} from '../utils/dateUtil';
 
-const Comment = ({item}) => {
+const Comment = ({item, className = css``}) => {
   const router = useRouter();
 
   const replyCount = useMemo(() => {
@@ -50,7 +50,8 @@ const Comment = ({item}) => {
       className={cx(
         'relative w-full min-h-[8rem] border-2 rounded-xl px-2 py-2',
         `border-2 border-gray-200 dark:border-slate-500`,
-        `mb-2`
+        `mb-2`,
+        className
       )}
     >
       <div className="w-full flex items-start gap-2 min-h-[3rem]">
