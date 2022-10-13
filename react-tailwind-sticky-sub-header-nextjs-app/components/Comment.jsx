@@ -15,6 +15,7 @@ import {useRouter} from 'next/router';
 import Link from 'next/link';
 import data from '../data/comment.json';
 import {default as numbro} from 'numbro';
+import {formatRelativeTime} from '../utils/dateUtil';
 
 const Comment = ({item}) => {
   const router = useRouter();
@@ -67,10 +68,13 @@ const Comment = ({item}) => {
                 />
               </picture>
               <span>{item.userName}</span>
+              <span className="text-sm">
+                {formatRelativeTime(item.updatedAt)}
+              </span>
             </div>
             <span className="flex items-center justify-center">{`#${item.commentId}`}</span>
           </div>
-          <div className={cx('w-full flex items-center gap-1 px-1')}>
+          {/* <div className={cx('w-full flex items-center gap-1 px-1')}>
             <time className="flex items-center">
               <TiPencil size={16} />
               <span className="text-sm">{item.createdAt}</span>
@@ -79,7 +83,7 @@ const Comment = ({item}) => {
               <MdUpdate size={16} />
               <span className="text-sm">{item.updatedAt}</span>
             </time>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="w-full p-2">

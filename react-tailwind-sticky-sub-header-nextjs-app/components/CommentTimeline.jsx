@@ -29,7 +29,7 @@ const CommentTimeline = () => {
       <h2
         className={cx(
           `rounded-t-xl`,
-          `text-lg flex items-center justify-start gap-1 px-2`,
+          `text-lg flex items-center justify-start flex-col gap-1 p-2`,
           `border-b-2 border-gray-200 dark:border-slate-500`,
           `bg-white dark:bg-slate-700 shadow-md`,
           css`

@@ -22,6 +22,13 @@ const yyyymmddhhmmss = (inputDay) => {
   return dayjs(inputDay).format('YYYY/MM/DD HH:mm:ss');
 };
 
+const formatRelativeTime = (inputDay) => {
+  // https://day.js.org/docs/en/plugin/relative-time
+  // https://zenn.dev/lulzneko/articles/handles-relative-datetime-in-dayjs
+  // https://zenn.dev/catnose99/articles/ba540f5c233847
+  return dayjs(inputDay).fromNow();
+};
+
 // console.log(yyyymmddhhmmss(dayjs(new Date())));
 
-export {dayjs, ymdslash, yyyymmddhhmmss};
+export {dayjs, ymdslash, yyyymmddhhmmss, formatRelativeTime};
