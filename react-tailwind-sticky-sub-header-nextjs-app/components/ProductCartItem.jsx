@@ -16,12 +16,21 @@ import InputNumber from './InputNumber';
 import dataWineries from '../data/wineries.json';
 import locationSelectorState from '../stores/locationSelectorStore';
 import useCart from '../hooks/useCart';
+import ProductCartItemFav from './ProductCartItemFav';
+import ProductCartItemCarted from './ProductCartItemCarted';
 
 const ProductCartItem = ({item}) => {
   const router = useRouter();
   const [winery, setWinery] = useRecoilState(locationSelectorState);
   const theme = useRecoilValue(themeState);
   const {isFavorited, toggleFavorite} = useFavorite();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
   return (
     <div
       className={cx(
@@ -31,32 +40,8 @@ const ProductCartItem = ({item}) => {
         `hover:shadow-2xl hover:cursor-pointer rounded-2xl`
       )}
     >
-      <div
-        className={cx(
-          'absolute top-2 right-2 flex items-center',
-          css`
-            z-index: 1;
-          `
-        )}
-        onClick={(e) => {
-          e.stopPropagation();
-          toggleFavorite({focusedItem: item});
-        }}
-      >
-        {isFavorited({focusedItem: item}) ? (
-          <MdOutlineFavorite
-            size={32}
-            fill={`rgb(244 114 182)`} // bg-pink-400
-            className={css``}
-          />
-        ) : (
-          <MdFavoriteBorder
-            size={32}
-            fill={`rgb(209 213 219)`} // bg-gray-300
-            className={css``}
-          />
-        )}
-      </div>
+      {isClient && <ProductCartItemCarted item={item} />}
+      {isClient && <ProductCartItemFav item={item} />}
       <div className="w-full flex gap-2">
         <div
           className={cx(

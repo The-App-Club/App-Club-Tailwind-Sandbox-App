@@ -17,6 +17,7 @@ import dataWineries from '../../data/wineries.json';
 import locationSelectorState from '../../stores/locationSelectorStore';
 import useCart from '../../hooks/useCart';
 import ProductFav from './ProductFav';
+import ProductCarted from './ProductCarted';
 
 const Product = ({item}) => {
   const router = useRouter();
@@ -31,6 +32,7 @@ const Product = ({item}) => {
         `hover:shadow-2xl hover:cursor-pointer rounded-2xl`
       )}
     >
+      <ProductCarted item={item} />
       <ProductFav item={item} />
       <div className="w-full flex gap-2">
         <div

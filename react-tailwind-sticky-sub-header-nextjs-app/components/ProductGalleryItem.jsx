@@ -17,6 +17,7 @@ import locationSelectorState from '../stores/locationSelectorStore';
 import {memo} from 'react';
 import ProductGalleryItemFav from './ProductGalleryItemFav';
 import useCart from '../hooks/useCart';
+import ProductGalleryItemCarted from './ProductGalleryItemCarted';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
@@ -55,6 +56,7 @@ const ProductGalleryItem = ({item}) => {
         });
       }}
     >
+      {isClient && <ProductGalleryItemCarted item={item} />}
       {isClient && <ProductGalleryItemFav item={item} />}
       <div
         className={css`
@@ -167,23 +169,25 @@ const ProductGalleryItem = ({item}) => {
           </div>
         </div>
         <Spacer height="0.5rem" />
-        <div className="flex items-center justify-end gap-2">
-          {isCarted({focusedItem: item}) ? (
-            <button
-              className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-              onClick={handleRemoveCart}
-            >
-              Remove Cart
-            </button>
-          ) : (
-            <button
-              className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-              onClick={handleAddCart}
-            >
-              Add Cart
-            </button>
-          )}
-        </div>
+        {isClient && (
+          <div className="flex items-center justify-end gap-2">
+            {isCarted({focusedItem: item}) ? (
+              <button
+                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+                onClick={handleRemoveCart}
+              >
+                Remove Cart
+              </button>
+            ) : (
+              <button
+                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+                onClick={handleAddCart}
+              >
+                Add Cart
+              </button>
+            )}
+          </div>
+        )}
         <Spacer height="0.5rem" />
         <p className="text-sm line-clamp-3">{item.description}</p>
       </div>
