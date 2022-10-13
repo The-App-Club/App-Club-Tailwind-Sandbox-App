@@ -12,13 +12,13 @@ import {useRecoilState, useRecoilValue} from 'recoil';
 import {memo, useCallback, useEffect, useMemo, useState} from 'react';
 import themeState from '../../stores/themeStore';
 import useFavorite from '../../hooks/useFavorite';
-import InputNumber from '../InputNumber';
 import dataWineries from '../../data/wineries.json';
 import locationSelectorState from '../../stores/locationSelectorStore';
 import useCart from '../../hooks/useCart';
 import ProductFav from './ProductFav';
 import ProductCarted from './ProductCarted';
 import {FaRegComments} from 'react-icons/fa';
+import InputNumber from './InputNumber';
 
 const Product = ({item}) => {
   const router = useRouter();

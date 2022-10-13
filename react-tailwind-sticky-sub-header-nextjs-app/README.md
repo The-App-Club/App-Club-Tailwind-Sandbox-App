@@ -8,6 +8,7 @@
 
 - Reference
 
+  - [why-dropoff-ec-site](https://uxdaystokyo.com/articles/why-dropoff-ec-site/)
   - [timeline comment ui design web](https://www.pinterest.jp/search/pins/?q=timeline%20comment%20ui%20design%20web&rs=typed)
   - [react-simple-maps](https://www.react-simple-maps.io/docs/getting-started/)
   - [mapbox add-a-marker](https://docs.mapbox.com/mapbox-gl-js/example/add-a-marker/)

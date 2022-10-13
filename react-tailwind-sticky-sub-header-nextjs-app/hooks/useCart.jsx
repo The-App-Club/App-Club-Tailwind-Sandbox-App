@@ -68,7 +68,7 @@ const useCart = () => {
     });
   };
 
-  const addCart = ({focusedItem}) => {
+  const addCart = ({focusedItem, amount = 0}) => {
     if (!focusedItem) {
       return;
     }
@@ -77,7 +77,7 @@ const useCart = () => {
         return {
           carts: [...prevState.carts].concat({
             ...focusedItem,
-            amount: 1,
+            amount: amount >= 1 ? amount : 1,
           }),
         };
       }
@@ -88,7 +88,7 @@ const useCart = () => {
         return {
           carts: [...prevState.carts].concat({
             ...focusedItem,
-            amount: 1,
+            amount: amount >= 1 ? amount : 1,
           }),
         };
       } else {

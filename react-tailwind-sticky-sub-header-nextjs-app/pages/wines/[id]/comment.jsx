@@ -25,23 +25,37 @@ import FocusedComment from '../../../components/FocusedComment';
 import Product from '../../../components/comment/Product';
 import mergician from 'mergician';
 import commentData from '../../../data/comment.json';
+import useCart from '../../../hooks/useCart';
 
 const Comment = () => {
   const router = useRouter();
-  const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
+  const {opened} = useRecoilValue(hamburgerState);
+  const {carts} = useCart();
 
-  const item = useMemo(() => {
-    return data.find((item) => {
-      return item.id === Number(id);
+  const unCartedItem = useMemo(() => {
+    return data.find((cart) => {
+      return cart.id === Number(id);
     });
   }, [id]);
 
-  const itemWithAmount = useMemo(() => {
-    return mergician(item, {
+  const cartedItem = useMemo(() => {
+    return carts.find((cart) => {
+      return cart.id === Number(id);
+    });
+  }, [id, carts]);
+
+  const item = useMemo(() => {
+    if (!unCartedItem) {
+      return;
+    }
+    if (cartedItem) {
+      return cartedItem;
+    }
+    return mergician(unCartedItem, {
       amount: 0,
     });
-  }, [item]);
+  }, [unCartedItem, cartedItem]);
 
   if (!item) {
     return;
@@ -166,7 +180,7 @@ const Comment = () => {
                 `border-2 border-gray-200 dark:border-slate-500`
               )}
             >
-              <Product item={itemWithAmount} />
+              <Product item={item} />
               <FocusedComment item={commentData[4]} />
             </aside>
           </div>
