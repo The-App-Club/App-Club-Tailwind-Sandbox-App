@@ -2,18 +2,28 @@ import {css, cx} from '@emotion/css';
 import {default as numbro} from 'numbro';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import Spacer from './Spacer';
-import dataWineries from '../data/wineries.json';
+import Spacer from '../../Spacer';
+import dataWineries from '../../../data/wineries.json';
 import {useRouter} from 'next/router';
 import {useRecoilState} from 'recoil';
-import locationSelectorState from '../stores/locationSelectorStore';
+import locationSelectorState from '../../../stores/locationSelectorStore';
+import ProductFav from './ProductFav';
+import ProductCarted from './ProductCarted';
 
 const Product = ({item, className = css``}) => {
   const router = useRouter();
   const [winery, setWinery] = useRecoilState(locationSelectorState);
 
   return (
-    <div className={cx('w-full flex items-start gap-2 py-2 px-12', className)}>
+    <div
+      className={cx(
+        `relative`,
+        'w-full flex items-start gap-2 py-2 px-12',
+        className
+      )}
+    >
+      <ProductCarted item={item} />
+      <ProductFav item={item} />
       <picture>
         <source srcSet={item.image} type={`image/png`} />
         <img src={item.image} alt={item.wine} width={130} height={'auto'} />

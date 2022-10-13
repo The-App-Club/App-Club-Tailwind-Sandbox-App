@@ -19,7 +19,7 @@ import {arrange, desc, filter, map, sliceHead, tidy} from '@tidyjs/tidy';
 import ReviewRanking from '../../components/ReviewRanking';
 import {default as numbro} from 'numbro';
 import TraceFooter from '../../components/TraceFooter';
-import Product from '../../components/Product';
+import Product from '../../components/wines/[id]/Product';
 
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineHistory, MdOutlineLocationOn} from 'react-icons/md';
