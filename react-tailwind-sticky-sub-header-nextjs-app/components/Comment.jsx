@@ -14,6 +14,7 @@ import {TiPencil} from 'react-icons/ti';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
 import data from '../data/comment.json';
+import {default as numbro} from 'numbro';
 
 const Comment = ({item}) => {
   const router = useRouter();
@@ -28,9 +29,16 @@ const Comment = ({item}) => {
   }, [item]);
 
   const [isShow, setIsShow] = useState(false);
+  const [liked, setLiked] = useState(false);
 
   const handleReply = (e) => {
     setIsShow((prev) => {
+      return !prev;
+    });
+  };
+
+  const handleLiked = (e) => {
+    setLiked((prev) => {
       return !prev;
     });
   };
@@ -103,28 +111,38 @@ const Comment = ({item}) => {
           <span className="w-full flex items-start justify-start">{`have ${replyCount} reply`}</span>
         )}
         <div className="w-full flex justify-end items-center gap-4">
-          <div className="flex items-center gap-1 hover:cursor-pointer">
-            {false ? (
+          <div
+            className="flex items-center gap-1 hover:cursor-pointer"
+            onClick={handleLiked}
+          >
+            {liked ? (
               <MdOutlineFavorite
-                size={24}
+                size={20}
                 fill={`rgb(244 114 182)`} // bg-pink-400
               />
             ) : (
               <MdFavoriteBorder
-                size={24}
+                size={20}
                 fill={`rgb(156 163 175)`} // text-gray-400
               />
             )}
-            <span className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-50">
+            <span className="text-sm text-gray-400 hover:text-gray-500 dark:hover:text-gray-50 flex items-center gap-1">
               Like
+              <span className="flex items-center justify-center">
+                {item.likedCount === 0
+                  ? null
+                  : numbro(item.likedCount).format({
+                      average: true,
+                    })}
+              </span>
             </span>
           </div>
           <div
             className="flex items-center gap-1 hover:cursor-pointer"
             onClick={handleReply}
           >
-            <MdOutlineQuickreply size={24} fill={`rgb(156 163 175)`} />
-            <span className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-50">
+            <MdOutlineQuickreply size={20} fill={`rgb(156 163 175)`} />
+            <span className="text-sm text-gray-400 hover:text-gray-500 dark:hover:text-gray-50">
               {isShow ? `Cancel` : `Reply`}
             </span>
           </div>
