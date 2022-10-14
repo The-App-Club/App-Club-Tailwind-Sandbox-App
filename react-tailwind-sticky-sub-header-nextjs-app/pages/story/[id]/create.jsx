@@ -68,7 +68,6 @@ const CreateStory = () => {
               return `${niceTitle} > `;
             }}
           />
-
           <div
             className={cx(
               css`
@@ -85,6 +84,7 @@ const CreateStory = () => {
                   justify-content: flex-start;
                   align-items: flex-start;
                   flex-direction: column;
+                  display: none;
                 }
               `,
               `bg-white dark:bg-slate-700 shadow-md px-2`
