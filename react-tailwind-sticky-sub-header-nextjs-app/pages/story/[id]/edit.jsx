@@ -32,6 +32,7 @@ const EditStory = () => {
                 max-width: 100%;
               }
               nav {
+                z-index: 3;
                 position: sticky;
                 top: 3rem;
                 width: 100%;

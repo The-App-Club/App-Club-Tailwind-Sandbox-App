@@ -10,6 +10,7 @@ import {motion} from 'framer-motion';
 import Header from '@/components/story/create/Header';
 import wineState from '@/stores/wineStore';
 import {useEffect} from 'react';
+import ScrollStory from '@/components/story/create/ScrollStory';
 
 const CreateStory = () => {
   const {opened} = useRecoilValue(hamburgerState);
@@ -35,6 +36,7 @@ const CreateStory = () => {
                 max-width: 100%;
               }
               nav {
+                z-index: 3;
                 position: sticky;
                 top: 3rem;
                 width: 100%;
@@ -90,15 +92,7 @@ const CreateStory = () => {
           >
             <Header />
           </div>
-
-          <div className="w-full flex justify-start">
-            <div className="w-full flex items-center justify-center">
-              Sticky Model
-            </div>
-            <div className="w-full flex items-center justify-center">
-              HERE ScrollStory2 component
-            </div>
-          </div>
+          <ScrollStory />
         </section>
       </Layout>
     </>
