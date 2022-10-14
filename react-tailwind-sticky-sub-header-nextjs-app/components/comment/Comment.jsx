@@ -7,15 +7,15 @@ import {
   MdOutlineQuickreply,
   MdUpdate,
 } from 'react-icons/md';
-import CommentForm from './CommentForm';
-import Spacer from '../Spacer';
-import Layout from '../../layouts/default';
+import CommentForm from '@/components/comment/CommentForm';
+import Spacer from '@/components/Spacer';
+import Layout from '@/layouts/default';
 import {TiPencil} from 'react-icons/ti';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
-import data from '../../data/comment.json';
+import data from '@/data/comment.json';
 import {default as numbro} from 'numbro';
-import {formatRelativeTime} from '../../utils/dateUtil';
+import {formatRelativeTime} from '@/utils/dateUtil';
 
 const Comment = ({item, className = css``}) => {
   const router = useRouter();

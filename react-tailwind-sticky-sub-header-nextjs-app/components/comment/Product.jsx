@@ -7,18 +7,18 @@ import {
   MdOutlineLocationOn,
 } from 'react-icons/md';
 import {default as numbro} from 'numbro';
-import Spacer from '../Spacer';
+import Spacer from '@/components/Spacer';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import {memo, useCallback, useEffect, useMemo, useState} from 'react';
-import themeState from '../../stores/themeStore';
-import useFavorite from '../../hooks/useFavorite';
-import dataWineries from '../../data/wineries.json';
-import locationSelectorState from '../../stores/locationSelectorStore';
-import useCart from '../../hooks/useCart';
-import ProductFav from './ProductFav';
-import ProductCarted from './ProductCarted';
+import themeState from '@/stores/themeStore';
+import useFavorite from '@/hooks/useFavorite';
+import dataWineries from '@/data/wineries.json';
+import locationSelectorState from '@/stores/locationSelectorStore';
+import useCart from '@/hooks/useCart';
+import ProductFav from '@/components/comment/ProductFav';
+import ProductCarted from '@/components/comment/ProductCarted';
 import {FaRegComments} from 'react-icons/fa';
-import InputNumber from './InputNumber';
+import InputNumber from '@/components/comment/InputNumber';
 
 const Product = ({item}) => {
   const router = useRouter();

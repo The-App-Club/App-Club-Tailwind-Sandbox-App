@@ -1,7 +1,7 @@
 import {css, cx} from '@emotion/css';
 import {memo, useCallback} from 'react';
 import {BsCart, BsCartCheck} from 'react-icons/bs';
-import useCart from '../../hooks/useCart';
+import useCart from '@/hooks/useCart';
 
 const ProductCarted = ({item}) => {
   const {carts, addCart, removeCart, isCarted} = useCart();

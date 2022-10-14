@@ -8,6 +8,7 @@
 
 - Reference
 
+  - [module-path-alia](https://nextjs-ja-translation-docs.vercel.app/docs/advanced-features/module-path-aliases)
   - [why-dropoff-ec-site](https://uxdaystokyo.com/articles/why-dropoff-ec-site/)
   - [timeline comment ui design web](https://www.pinterest.jp/search/pins/?q=timeline%20comment%20ui%20design%20web&rs=typed)
   - [react-simple-maps](https://www.react-simple-maps.io/docs/getting-started/)

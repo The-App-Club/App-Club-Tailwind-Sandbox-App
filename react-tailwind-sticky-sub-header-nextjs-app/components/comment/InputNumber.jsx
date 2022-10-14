@@ -2,8 +2,8 @@ import {css, cx} from '@emotion/css';
 import {memo, useCallback, useEffect} from 'react';
 import {useState} from 'react';
 import {FaTrashAlt} from 'react-icons/fa';
-import useCart from '../../hooks/useCart';
-import Spacer from '../Spacer';
+import useCart from '@/hooks/useCart';
+import Spacer from '@/components/Spacer';
 
 const InputNumber = ({item}) => {
   const {carts, updateCart, addCart, removeCart, isCarted} = useCart();

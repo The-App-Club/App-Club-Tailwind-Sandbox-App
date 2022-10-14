@@ -1,6 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {FaRegComments} from 'react-icons/fa';
-import Comment from './Comment';
+import Comment from '@/components/comment/Comment';
 
 const FocusedComment = ({item}) => {
   if (!item) {
