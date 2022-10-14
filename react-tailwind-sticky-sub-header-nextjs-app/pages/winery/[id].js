@@ -1,13 +1,13 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
-import {useRecoilValue} from 'recoil';
+import {useRecoilState, useRecoilValue} from 'recoil';
 import wineState from '../../stores/wineStore';
 import Layout from '../../layouts/default';
 import Spacer from '../../components/Spacer';
-import {useMemo, useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import data from '../../data/wineries.json';
-import Sidebar from '../../components/Sidebar';
+import Sidebar from '@/components/winery/Sidebar';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 
@@ -16,10 +16,14 @@ import Category from '../../components/Category';
 import TraceFooter from '../../components/TraceFooter';
 import ProductGalleryItem from '../../components/ProductGalleryItem';
 import SearchModal from '../../components/SearchModal';
+import {count, filter, groupBy, mutate, sliceHead, tidy} from '@tidyjs/tidy';
+import multiLocationSelectorState from '@/stores/multiLocationSelectorStore';
 
 const Winery = () => {
   const [showModal, setShowModal] = useState(false);
-
+  const [multiLocation, setMultiLocation] = useRecoilState(
+    multiLocationSelectorState
+  );
   const {opened} = useRecoilValue(hamburgerState);
 
   const router = useRouter();
@@ -30,6 +34,45 @@ const Winery = () => {
       return item.wineryId === id;
     });
   }, [id]);
+
+  const [winery, wines] = useMemo(() => {
+    if (!matchedData) {
+      return [null, null];
+    }
+    // "Hundred Acre", "Sine Qua Non", "Domaine de La Romanée-Conti"
+    return tidy(
+      matchedData.wines,
+      count(['winery', 'location']),
+      groupBy(
+        ['winery'],
+        [mutate({key: (d) => `\${d.winery}`})],
+        groupBy.entries()
+      ),
+      filter((item) => {
+        const [a, b] = item;
+        return b.length !== 1;
+      })
+    ).flat();
+  }, [matchedData]);
+
+  useEffect(() => {
+    if (!winery || !wines) {
+      return;
+    }
+    setMultiLocation({
+      activeWineryName: winery,
+      activeLocationNameList: wines.map((wine) => {
+        return wine.location;
+      }),
+    });
+
+    return () => {
+      setMultiLocation({
+        activeWineryName: '',
+        activeLocationNameList: [],
+      });
+    };
+  }, [winery, wines, setMultiLocation]);
 
   if (!matchedData) {
     return <p>loading...</p>;

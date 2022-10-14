@@ -12,7 +12,7 @@ import locationSelectorState from '../stores/locationSelectorStore';
 
 const ReviewRanking = ({className}) => {
   const router = useRouter();
-  const [winery, setWinery] = useRecoilState(locationSelectorState);
+  const [location, setLocation] = useRecoilState(locationSelectorState);
   const rankingData = useMemo(() => {
     // https://stackoverflow.com/a/48218209
     return tidy(
@@ -129,7 +129,7 @@ const ReviewRanking = ({className}) => {
                   )}
                   onClick={(e) => {
                     e.stopPropagation();
-                    setWinery({
+                    setLocation({
                       activeLocationName: item.location,
                     });
                     router.push({

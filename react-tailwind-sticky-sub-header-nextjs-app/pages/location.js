@@ -155,7 +155,6 @@ const Location = () => {
               </h2>
               <Map
                 defaultZoom={9}
-                showGeoInfo={true}
                 className={css`
                   @media (max-width: 1000px) {
                   }

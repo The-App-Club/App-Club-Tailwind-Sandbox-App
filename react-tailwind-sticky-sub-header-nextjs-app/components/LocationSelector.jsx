@@ -8,8 +8,8 @@ import {filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
 import data from '../data/wines.json';
 
 const LocationSelector = ({className}) => {
-  const [winery, setWinery] = useRecoilState(locationSelectorState);
-  const [selected, setSelected] = useState({name: winery.activeLocationName});
+  const [location, setLocation] = useRecoilState(locationSelectorState);
+  const [selected, setSelected] = useState({name: location.activeLocationName});
 
   const niceData = useMemo(() => {
     return tidy(
@@ -49,13 +49,13 @@ const LocationSelector = ({className}) => {
 
   useEffect(() => {
     const activeWineryItem = locationNames.find((item) => {
-      return item.name === winery.activeLocationName;
+      return item.name === location.activeLocationName;
     });
     setSelected(activeWineryItem);
-  }, [locationNames, winery]);
+  }, [locationNames, location]);
 
   const handleChange = (e) => {
-    setWinery({
+    setLocation({
       activeLocationName: e.name,
     });
     setSelected(e);

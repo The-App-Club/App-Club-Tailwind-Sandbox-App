@@ -12,7 +12,7 @@ import locationSelectorState from '../stores/locationSelectorStore';
 
 const RecentOrderRanking = ({className}) => {
   const router = useRouter();
-  const [winery, setWinery] = useRecoilState(locationSelectorState);
+  const [location, setLocation] = useRecoilState(locationSelectorState);
 
   const rankingData = useMemo(() => {
     // https://stackoverflow.com/a/48218209
@@ -130,7 +130,7 @@ const RecentOrderRanking = ({className}) => {
                   )}
                   onClick={(e) => {
                     e.stopPropagation();
-                    setWinery({
+                    setLocation({
                       activeLocationName: item.location,
                     });
                     router.push({

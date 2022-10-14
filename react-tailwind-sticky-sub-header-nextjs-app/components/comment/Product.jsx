@@ -22,7 +22,7 @@ import InputNumber from '@/components/comment/InputNumber';
 
 const Product = ({item}) => {
   const router = useRouter();
-  const [winery, setWinery] = useRecoilState(locationSelectorState);
+  const [location, setLocation] = useRecoilState(locationSelectorState);
   const theme = useRecoilValue(themeState);
   return (
     <div>
@@ -116,7 +116,7 @@ const Product = ({item}) => {
               )}
               onClick={(e) => {
                 e.stopPropagation();
-                setWinery({
+                setLocation({
                   activeLocationName: item.location,
                 });
                 router.push({

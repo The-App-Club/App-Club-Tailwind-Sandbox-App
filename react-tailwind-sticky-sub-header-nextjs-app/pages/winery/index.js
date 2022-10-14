@@ -7,6 +7,8 @@ import Layout from '../../layouts/default';
 import Spacer from '../../components/Spacer';
 import {useMemo, useState} from 'react';
 import data from '../../data/wineries.json';
+import dataWines from '../../data/wines.json';
+
 import Sidebar from '../../components/Sidebar';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
@@ -15,11 +17,30 @@ import hamburgerState from '../../stores/hamburgerStore';
 import Category from '../../components/Category';
 import TraceFooter from '../../components/TraceFooter';
 import SearchModal from '../../components/SearchModal';
+import {count, filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
 
 const Winery = () => {
   const [showModal, setShowModal] = useState(false);
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
+
+  // const a = useMemo(() => {
+  //   return tidy(
+  //     dataWines,
+  //     count(['winery', 'location']),
+  //     groupBy(
+  //       ['winery'],
+  //       [mutate({key: (d) => `\${d.winery}`})],
+  //       groupBy.entries()
+  //     ),
+  //     filter((item) => {
+  //       const [a, b] = item;
+  //       return b.length !== 1;
+  //     })
+  //   );
+  // }, []);
+
+  // console.log(a);
 
   const handleModalOpen = (e) => {
     setShowModal(true);

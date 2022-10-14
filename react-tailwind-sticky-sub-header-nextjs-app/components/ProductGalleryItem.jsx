@@ -24,7 +24,7 @@ const ProductGalleryItem = ({item}) => {
   const {addCart, removeCart, isCarted} = useCart();
   const [isClient, setIsClient] = useState(false);
   const theme = useRecoilValue(themeState);
-  const [winery, setWinery] = useRecoilState(locationSelectorState);
+  const [location, setLocation] = useRecoilState(locationSelectorState);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -123,7 +123,7 @@ const ProductGalleryItem = ({item}) => {
           )}
           onClick={(e) => {
             e.stopPropagation();
-            setWinery({
+            setLocation({
               activeLocationName: item.location,
             });
             router.push({

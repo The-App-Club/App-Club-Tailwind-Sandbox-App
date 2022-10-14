@@ -1,14 +1,72 @@
 import {css, cx} from '@emotion/css';
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import {tidy, groupBy, mutate, filter, map} from '@tidyjs/tidy';
-import {useMemo} from 'react';
+import {tidy, groupBy, mutate, filter, map, count} from '@tidyjs/tidy';
+import {useEffect, useMemo} from 'react';
 import {default as chance} from 'chance';
 import data from '../data/wineries.json';
 import {useRouter} from 'next/router';
+import locationSelectorState from '@/stores/locationSelectorStore';
+import {useRecoilState} from 'recoil';
+import multiLocationSelectorState from '@/stores/multiLocationSelectorStore';
 
 const Category = ({className = css``}) => {
   const router = useRouter();
+  const {id} = router.query;
+  const [location, setLocation] = useRecoilState(locationSelectorState);
+  const [multiLocation, setMultiLocation] = useRecoilState(
+    multiLocationSelectorState
+  );
+
+  const matchedData = useMemo(() => {
+    return data.find((item) => {
+      return item.wineryId === id;
+    });
+  }, [id]);
+
+  const niceData = useMemo(() => {
+    if (!matchedData) {
+      return [null, null];
+    }
+    // "Hundred Acre", "Sine Qua Non", "Domaine de La Romanée-Conti"
+    return tidy(
+      matchedData.wines,
+      count(['winery', 'location']),
+      groupBy(
+        ['winery'],
+        [mutate({key: (d) => `\${d.winery}`})],
+        groupBy.entries()
+      )
+    ).flat();
+  }, [matchedData]);
+
+  useEffect(() => {
+    const [winery, wines] = niceData;
+    if (!winery || !wines) {
+      return;
+    }
+    if (wines.length === 1) {
+      setLocation({
+        activeLocationName: wines[0].location,
+      });
+    } else {
+      setMultiLocation({
+        activeWineryName: winery,
+        activeLocationNameList: wines.map((wine) => {
+          return wine.location;
+        }),
+      });
+    }
+    return () => {
+      setLocation({
+        activeLocationName: '',
+      });
+      setMultiLocation({
+        activeWineryName: '',
+        activeLocationNameList: [],
+      });
+    };
+  }, [niceData, setLocation, setMultiLocation]);
 
   return (
     <div
@@ -77,6 +135,9 @@ const Category = ({className = css``}) => {
                 `hover:bg-gray-100 dark:hover:bg-slate-800`
               )}
               onClick={(e) => {
+                setLocation({
+                  activeLocationName: item.location,
+                });
                 router.push({
                   pathname: `/winery/${item.wineryId}`,
                 });

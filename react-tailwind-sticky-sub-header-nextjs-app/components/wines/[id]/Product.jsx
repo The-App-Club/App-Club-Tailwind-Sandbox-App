@@ -12,7 +12,7 @@ import ProductCarted from './ProductCarted';
 
 const Product = ({item, className = css``}) => {
   const router = useRouter();
-  const [winery, setWinery] = useRecoilState(locationSelectorState);
+  const [location, setLocation] = useRecoilState(locationSelectorState);
 
   return (
     <div
@@ -70,7 +70,7 @@ const Product = ({item, className = css``}) => {
             )}
             onClick={(e) => {
               e.stopPropagation();
-              setWinery({
+              setLocation({
                 activeLocationName: item.location,
               });
               router.push({

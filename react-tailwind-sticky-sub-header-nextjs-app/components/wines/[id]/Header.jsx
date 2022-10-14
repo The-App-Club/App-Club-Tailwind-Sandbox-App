@@ -13,7 +13,7 @@ import useCart from '../../../hooks/useCart';
 
 const Header = ({item}) => {
   const router = useRouter();
-  const [winery, setWinery] = useRecoilState(locationSelectorState);
+  const [location, setLocation] = useRecoilState(locationSelectorState);
   const {addCart, removeCart, isCarted} = useCart();
 
   const handleAddCart = (e) => {
@@ -89,7 +89,7 @@ const Header = ({item}) => {
             `hover:cursor-pointer hover:underline`
           )}
           onClick={(e) => {
-            setWinery({
+            setLocation({
               activeLocationName: item.location,
             });
             router.push({

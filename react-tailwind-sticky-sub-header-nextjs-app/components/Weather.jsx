@@ -10,7 +10,7 @@ const Weather = () => {
     <div className="w-full">
       <div
         className={cx(
-          `border-t-2 p-2 w-full`,
+          `border-t-2 p-2 w-full text-sm`,
           css`
             display: grid;
             grid-template-columns: repeat(3, 1fr);
