@@ -5,12 +5,15 @@ import {Scrollama, Step} from 'react-scrollama';
 import {MathUtils} from 'three';
 import Spacer from '@/components/Spacer';
 import {motion, useAnimationControls} from 'framer-motion';
-import {useRecoilValue} from 'recoil';
+import {useRecoilState, useRecoilValue} from 'recoil';
 import {scrollDirectionState} from '@/stores/scrollDirectionStore';
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 
 const ScrollStory = () => {
   const mapContainerControls = useAnimationControls();
   const {scrollDirection} = useRecoilValue(scrollDirectionState);
+  const [scrollTrigger, setScrollTrigger] = useRecoilState(scrollTriggerState);
+
   const mapContainer = useRef(null);
   const prevProgress = useRef(0);
 
@@ -33,13 +36,11 @@ const ScrollStory = () => {
   const handleStepEnter = (e) => {
     let {data, progress, direction} = e;
     progress = MathUtils.clamp(progress, 0, 1);
-
-    // console.log(
-    //   `[section${data}]`,
-    //   clampProgress({direction, progress}),
-    //   direction
-    // );
-
+    setScrollTrigger({
+      chapterId: data,
+      progress: clampProgress({direction, progress}),
+      direction,
+    });
     prevProgress.current = progress;
   };
 
@@ -98,9 +99,13 @@ const ScrollStory = () => {
               height: calc(100vh - calc(3rem * 2));
             }
           `,
-          `bg-slate-200`
+          `bg-slate-200 flex items-center justify-center flex-col`
         )}
-      />
+      >
+        <p>{scrollTrigger.chapterId}</p>
+        <p>{scrollTrigger.progress}</p>
+        <p>{scrollTrigger.direction}</p>
+      </motion.div>
       <div
         className={css`
           width: 50%;

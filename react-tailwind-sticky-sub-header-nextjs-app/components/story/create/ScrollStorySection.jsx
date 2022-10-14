@@ -1,10 +1,30 @@
 import {css, cx} from '@emotion/css';
 import {Step} from 'react-scrollama';
 import Spacer from '@/components/Spacer';
-import {forwardRef} from 'react';
+import {forwardRef, useEffect, useMemo} from 'react';
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
+import {useRecoilValue} from 'recoil';
 
 const _ScrollStorySection = ({chapterId}, ref) => {
   // title,sentence textarea form by chapterId
+  const {
+    direction,
+    progress,
+    chapterId: activeChapterId,
+  } = useRecoilValue(scrollTriggerState);
+
+  useEffect(() => {
+    if (activeChapterId === Number(chapterId)) {
+      // console.log(
+      //   `direction, progress, activeChapterId, chapterId`,
+      //   direction,
+      //   progress,
+      //   activeChapterId,
+      //   Number(chapterId)
+      // );
+    }
+  }, [direction, progress, activeChapterId, chapterId]);
+
   return (
     <section
       ref={ref}
