@@ -1,21 +1,69 @@
 import {css, cx} from '@emotion/css';
-import {createRef, useCallback, useEffect, useRef, useState} from 'react';
+import {
+  createRef,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import ScrollStorySection from '@/components/story/create/ScrollStorySection';
 import {Scrollama, Step} from 'react-scrollama';
 import {MathUtils} from 'three';
 import Spacer from '@/components/Spacer';
-import {motion, useAnimationControls} from 'framer-motion';
+import {AnimatePresence, motion, useAnimationControls} from 'framer-motion';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import {scrollDirectionState} from '@/stores/scrollDirectionStore';
 import {scrollTriggerState} from '@/stores/scrollTriggerStore';
+import {usePrevious} from '@/hooks/usePrevious';
+import ScrollStoryCaption from '@/components/story/create/ScrollStoryCaption';
+import ScrollStoryModel from '@/components/story/create/ScrollStoryModel';
 
 const ScrollStory = () => {
   const mapContainerControls = useAnimationControls();
   const {scrollDirection} = useRecoilValue(scrollDirectionState);
   const [scrollTrigger, setScrollTrigger] = useRecoilState(scrollTriggerState);
-
+  const [chapterId, setChapterId] = useState(1);
   const mapContainer = useRef(null);
   const prevProgress = useRef(0);
+
+  const data = useMemo(() => {
+    return [
+      {
+        chapterId: 1,
+        model: () => {
+          return <ScrollStoryModel chapterId={1} />;
+        },
+        caption: () => {
+          return <ScrollStoryCaption a={'aaaa'} chapterId={1} />;
+        },
+      },
+      {
+        chapterId: 2,
+        model: () => {
+          return <ScrollStoryModel chapterId={2} />;
+        },
+        caption: () => {
+          return <ScrollStoryCaption a={'bbbb'} chapterId={2} />;
+        },
+      },
+      {
+        chapterId: 3,
+        model: () => {
+          return <ScrollStoryModel chapterId={3} />;
+        },
+        caption: () => {
+          return <ScrollStoryCaption a={'cccc'} chapterId={3} />;
+        },
+      },
+    ];
+  }, []);
+
+  const matchedData = useMemo(() => {
+    return data.find((item) => {
+      return item.chapterId === chapterId;
+    });
+  }, [chapterId, data]);
 
   const clampProgress = ({direction, progress}) => {
     if (direction === 'up') {
@@ -36,6 +84,7 @@ const ScrollStory = () => {
   const handleStepEnter = (e) => {
     let {data, progress, direction} = e;
     progress = MathUtils.clamp(progress, 0, 1);
+    setChapterId(data);
     setScrollTrigger({
       chapterId: data,
       progress: clampProgress({direction, progress}),
@@ -47,32 +96,6 @@ const ScrollStory = () => {
   const handleStepExit = (e) => {};
 
   const handleStepProgress = (e) => {};
-
-  useEffect(() => {
-    if (!scrollDirection) {
-      return;
-    }
-    if (scrollDirection === `UP`) {
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        mapContainerControls.start({
-          top: `15rem`,
-        });
-      } else {
-        mapContainerControls.start({
-          top: `9rem`,
-        });
-      }
-
-      return;
-    }
-    if (scrollDirection === `DOWN`) {
-      mapContainerControls.start({
-        top: `6rem`,
-      });
-
-      return;
-    }
-  }, [scrollDirection, mapContainerControls]);
 
   return (
     <div className="relative">
@@ -102,9 +125,8 @@ const ScrollStory = () => {
           `bg-slate-200 flex items-center justify-center flex-col`
         )}
       >
-        <p>{scrollTrigger.chapterId}</p>
-        <p>{scrollTrigger.progress}</p>
-        <p>{scrollTrigger.direction}</p>
+        {matchedData.model()}
+        {matchedData.caption()}
       </motion.div>
       <div
         className={css`
