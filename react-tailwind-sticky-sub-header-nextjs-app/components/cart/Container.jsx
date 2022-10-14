@@ -2,7 +2,6 @@ import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {memo, useEffect, useState} from 'react';
 import useCart from '../../hooks/useCart';
-import ProductCartItem from '../ProductCartItem';
 import ReviewRanking from '../ReviewRanking';
 import Product from './Product';
 
