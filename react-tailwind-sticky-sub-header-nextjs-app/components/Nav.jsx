@@ -201,41 +201,6 @@ const Nav = () => {
             return <GiPriceTag size={24} />;
           }}
         />
-        <MenuItem
-          path={'/price'}
-          menuTitle={'Price'}
-          icon={() => {
-            return <GiPriceTag size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/price'}
-          menuTitle={'Price'}
-          icon={() => {
-            return <GiPriceTag size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/price'}
-          menuTitle={'Price'}
-          icon={() => {
-            return <GiPriceTag size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/price'}
-          menuTitle={'Price'}
-          icon={() => {
-            return <GiPriceTag size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/price'}
-          menuTitle={'Price'}
-          icon={() => {
-            return <GiPriceTag size={24} />;
-          }}
-        />
       </motion.ul>
     </motion.nav>
   );
