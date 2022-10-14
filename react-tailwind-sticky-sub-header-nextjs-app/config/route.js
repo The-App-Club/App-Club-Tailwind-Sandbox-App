@@ -15,6 +15,21 @@ const routes = [
     activeMenuName: `Setting`,
   },
   {
+    pathName: `/story/[id]/create`,
+    pageName: `Create Story`,
+    activeMenuName: `Create Story`,
+  },
+  {
+    pathName: `/story/[id]/edit`,
+    pageName: `Edit Story`,
+    activeMenuName: `Edit Story`,
+  },
+  {
+    pathName: `/story`,
+    pageName: `Story`,
+    activeMenuName: `Story`,
+  },
+  {
     pathName: `/location`,
     pageName: `Location`,
     activeMenuName: `Location`,

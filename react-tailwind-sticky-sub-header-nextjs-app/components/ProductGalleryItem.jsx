@@ -18,6 +18,8 @@ import {memo} from 'react';
 import ProductGalleryItemFav from './ProductGalleryItemFav';
 import useCart from '../hooks/useCart';
 import ProductGalleryItemCarted from './ProductGalleryItemCarted';
+import {BsPencilSquare} from 'react-icons/bs';
+import wineState from '@/stores/wineStore';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
@@ -25,7 +27,7 @@ const ProductGalleryItem = ({item}) => {
   const [isClient, setIsClient] = useState(false);
   const theme = useRecoilValue(themeState);
   const [location, setLocation] = useRecoilState(locationSelectorState);
-
+  const [activeWine, setActiveWine] = useRecoilState(wineState);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
@@ -40,6 +42,16 @@ const ProductGalleryItem = ({item}) => {
   const handleRemoveCart = (e) => {
     e.stopPropagation();
     removeCart({focusedItem: item});
+  };
+
+  const handleNewStory = (e) => {
+    e.stopPropagation();
+    setActiveWine({
+      activeWine: item,
+    });
+    router.push({
+      pathname: `/story/${item.id}/create`,
+    });
   };
 
   return (
@@ -80,7 +92,22 @@ const ProductGalleryItem = ({item}) => {
             background-repeat: no-repeat;
           }
         `}
-      />
+      >
+        <div
+          className={cx(
+            'absolute bottom-2 right-0 flex items-center',
+            css`
+              z-index: 1;
+            `
+          )}
+          onClick={handleNewStory}
+        >
+          <BsPencilSquare
+            size={32}
+            fill={`rgb(209 213 219)`} // bg-gray-300
+          />
+        </div>
+      </div>
       <div className="w-full">
         <h2
           className={cx(

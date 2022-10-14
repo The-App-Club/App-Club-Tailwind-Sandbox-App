@@ -26,6 +26,9 @@ const Footer = ({pathname}) => {
       pathname === `/cart` ||
       pathname === `/winery/[id]` ||
       pathname === `/winery` ||
+      pathname === `/story` ||
+      pathname === `/story/[id]/create` ||
+      pathname === `/story/[id]/edit` ||
       pathname === `/wines/[id]` ||
       pathname === `/wines/[id]/story` ||
       pathname === `/wines/[id]/comment` ||

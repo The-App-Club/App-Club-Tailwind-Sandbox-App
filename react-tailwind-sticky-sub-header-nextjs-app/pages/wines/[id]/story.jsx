@@ -70,12 +70,6 @@ const Story = () => {
     setActiveWine({
       activeWine: item,
     });
-
-    return () => {
-      setActiveWine({
-        activeWine: null,
-      });
-    };
   }, [item, setActiveWine]);
 
   if (!item) {
