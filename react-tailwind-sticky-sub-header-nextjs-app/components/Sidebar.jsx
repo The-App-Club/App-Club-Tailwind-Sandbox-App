@@ -34,7 +34,9 @@ const Sidebar = () => {
               display: none;
             }
           `,
-          `border-r-2 bg-white dark:bg-slate-700`
+          `scrollbar-none`,
+          `bg-white dark:bg-slate-700 dark:text-white`,
+          `border-r-2`
         )}
       >
         <motion.div
@@ -55,11 +57,15 @@ const Sidebar = () => {
             ease: 'easeInOut',
           }}
           className={cx(
-            'relative w-full flex items-center gap-2',
-            `border-b-2`,
             css`
+              position: sticky;
+              top: 0;
+              left: 0;
+              width: 100%;
               min-height: 3rem;
-            `
+              z-index: 1;
+            `,
+            `flex items-center gap-2 border-b-2 bg-white dark:bg-slate-700`
           )}
         >
           <div

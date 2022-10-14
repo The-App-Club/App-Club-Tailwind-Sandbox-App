@@ -109,10 +109,6 @@ const Nav = () => {
         initial="hidden"
         animate="show"
         className={css`
-          padding-top: 0;
-          @media (max-width: 768px) {
-            padding-top: 3rem;
-          }
           width: 100%;
           list-style: none;
           display: flex;
@@ -196,6 +192,41 @@ const Nav = () => {
           menuTitle={'About'}
           icon={() => {
             return <FaHatCowboySide size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/price'}
+          menuTitle={'Price'}
+          icon={() => {
+            return <GiPriceTag size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/price'}
+          menuTitle={'Price'}
+          icon={() => {
+            return <GiPriceTag size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/price'}
+          menuTitle={'Price'}
+          icon={() => {
+            return <GiPriceTag size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/price'}
+          menuTitle={'Price'}
+          icon={() => {
+            return <GiPriceTag size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/price'}
+          menuTitle={'Price'}
+          icon={() => {
+            return <GiPriceTag size={24} />;
           }}
         />
         <MenuItem
