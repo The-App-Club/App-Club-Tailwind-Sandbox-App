@@ -1,24 +1,24 @@
 import {useRouter} from 'next/router';
 import {useEffect, useMemo} from 'react';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import hamburgerState from '../../../stores/hamburgerStore';
-import data from '../../../data/wines.json';
+import hamburgerState from '@/stores/hamburgerStore';
+import data from '@/data/wines.json';
 import capitalize from 'capitalize-the-first-letter';
-import TraceFooter from '../../../components/TraceFooter';
-import Sidebar from '../../../components/Sidebar';
-import Layout from '../../../layouts/default';
+import TraceFooter from '@/components/TraceFooter';
+import Sidebar from '@/components/Sidebar';
+import Layout from '@/layouts/default';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {css, cx} from '@emotion/css';
-import ScrollStory from '../../../components/ScrollStory';
-import ScatterGraph from '../../../components/ScatterGraph';
-import ScrollStory2 from '../../../components/ScrollStory2';
+import ScrollStory from '@/components/wines/[id]/story/ScrollStory';
+import ScatterGraph from '@/components/ScatterGraph';
+import ScrollStory2 from '@/components/wines/[id]/story/ScrollStory2';
 import {useScrollDirection} from 'react-use-scroll-direction';
 import {motion, useAnimationControls} from 'framer-motion';
-import {scrollDirectionState} from '../../../stores/scrollDirectionStore';
-import Spacer from '../../../components/Spacer';
-import wineState from '../../../stores/wineStore';
+import {scrollDirectionState} from '@/stores/scrollDirectionStore';
+import Spacer from '@/components/Spacer';
+import wineState from '@/stores/wineStore';
 
 const Story = () => {
   const [_, setScrollDirectionState] = useRecoilState(scrollDirectionState);
