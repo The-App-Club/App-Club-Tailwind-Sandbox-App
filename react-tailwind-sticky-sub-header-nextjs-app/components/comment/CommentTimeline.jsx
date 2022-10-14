@@ -7,12 +7,12 @@ import {
   MdOutlineLocationOn,
 } from 'react-icons/md';
 import Comment from './Comment';
-import Spacer from './Spacer';
+import Spacer from '../Spacer';
 
 import {default as chance} from 'chance';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import data from '../data/comment.json';
+import data from '../../data/comment.json';
 
 const CommentTimeline = () => {
   return (
