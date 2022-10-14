@@ -19,7 +19,7 @@ const Map = ({defaultZoom = 11, className = css``}) => {
   const mapInstance = useRef(null);
   const [lng, setLng] = useState(null); // 経度
   const [lat, setLat] = useState(null); // 緯度
-  const [zoom, setZoom] = useState(defaultZoom);
+  const [zoom, setZoom] = useState(defaultZoom.toFixed(2));
 
   const matchedLocation = useMemo(() => {
     if (!activeLocationName) {
@@ -55,8 +55,8 @@ const Map = ({defaultZoom = 11, className = css``}) => {
     mapboxglInstance.addControl(language);
     mapInstance.current = mapboxglInstance;
 
-    setLat(lat);
-    setLng(lng);
+    setLat(lat.toFixed(4));
+    setLng(lng.toFixed(4));
   }, [lng, lat, zoom, matchedLocation]);
 
   useEffect(() => {
@@ -67,8 +67,8 @@ const Map = ({defaultZoom = 11, className = css``}) => {
     const {
       latLng: [lat, lng],
     } = matchedLocation;
-    setLat(lat);
-    setLng(lng);
+    setLat(lat.toFixed(4));
+    setLng(lng.toFixed(4));
 
     // https://docs.mapbox.com/mapbox-gl-js/example/flyto/
     // https://docs.mapbox.com/mapbox-gl-js/example/scroll-fly-to/
