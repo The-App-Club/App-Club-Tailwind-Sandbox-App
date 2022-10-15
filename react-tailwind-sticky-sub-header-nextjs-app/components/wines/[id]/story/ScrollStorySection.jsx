@@ -34,12 +34,6 @@ const ScrollStorySection = ({children, chapterName, doMarked}) => {
           padding: 0.5rem;
           min-height: 100vh;
           margin-bottom: 100vh;
-          &:first-child {
-            /* margin-top: 100vh; */
-          }
-          &:last-child {
-            /* margin-bottom: 100vh; */
-          }
         `
       )}
     >

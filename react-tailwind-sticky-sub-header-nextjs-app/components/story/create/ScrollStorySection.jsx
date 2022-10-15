@@ -4,6 +4,8 @@ import Spacer from '@/components/Spacer';
 import {forwardRef, useEffect, useMemo} from 'react';
 import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 import {useRecoilValue} from 'recoil';
+import ScrollStorySentence from '@/components/story/create/ScrollStorySentence';
+import ScrollStorySectionTitle from '@/components/story/create/ScrollStorySectionTitle';
 
 const _ScrollStorySection = ({chapterId}, ref) => {
   // title,sentence textarea form by chapterId
@@ -37,42 +39,11 @@ const _ScrollStorySection = ({chapterId}, ref) => {
         `
       )}
     >
-      <h3
-        className={cx(
-          css`
-            position: sticky;
-            top: calc(
-              3rem * 3
-            ); // (header height) + navbar height + page header height
-            @media (max-width: 768px) {
-              top: calc(
-                3rem * 2
-              ); // (header height) + navbar height + page header height
-            }
-          `,
-          `bg-white text-xl dark:bg-slate-700`
-        )}
-      >
-        221b Baker St.
-      </h3>
+      <ScrollStorySectionTitle />
       <Spacer height="90vh" />
-      <p>
-        November 1895. London is shrouded in fog and Sherlock Holmes and Watson
-        pass time restlessly awaiting a new case. &quot;The London criminal is
-        certainly a dull fellow,&quot; Sherlock bemoans. &quot;There have been
-        numerous petty thefts,&quot; Watson offers in response. Just then a
-        telegram arrives from Sherlock&apos;s brother Mycroft with a mysterious
-        case.
-      </p>
-      {/* <Spacer height="90vh" />
-      <p>
-        November 1895. London is shrouded in fog and Sherlock Holmes and Watson
-        pass time restlessly awaiting a new case. &quot;The London criminal is
-        certainly a dull fellow,&quot; Sherlock bemoans. &quot;There have been
-        numerous petty thefts,&quot; Watson offers in response. Just then a
-        telegram arrives from Sherlock&apos;s brother Mycroft with a mysterious
-        case.
-      </p> */}
+      <ScrollStorySentence chapterId={chapterId} />
+      <Spacer height="10vh" />
+      <ScrollStorySentence chapterId={chapterId} />
     </section>
   );
 };
