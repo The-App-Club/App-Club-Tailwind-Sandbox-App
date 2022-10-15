@@ -61,7 +61,7 @@ const GalleryItem = ({item}) => {
             `
           )}
         >
-          {item.title}
+          {`${item.wine}`}
         </h2>
         <Spacer height="0.5rem" />
         <div
