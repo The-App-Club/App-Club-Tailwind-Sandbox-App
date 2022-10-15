@@ -44,6 +44,11 @@ const Product = ({item}) => {
   const router = useRouter();
   const [location, setLocation] = useRecoilState(locationSelectorState);
   const theme = useRecoilValue(themeState);
+
+  if (!item) {
+    return;
+  }
+
   return (
     <motion.div
       initial={'initial'}

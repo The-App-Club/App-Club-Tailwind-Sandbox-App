@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Sidebar from '@/components/story/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import {useRecoilValue} from 'recoil';
+import {useRecoilState, useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import {motion} from 'framer-motion';
@@ -11,10 +11,13 @@ import Header from '@/components/story/edit/Header';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
 import data from '@/data/stories.json';
+import dataWines from '@/data/wines.json';
 import Spacer from '@/components/Spacer';
+import wineState from '@/stores/wineStore';
 
 const Story = () => {
   const router = useRouter();
+  const [activeWine, setActiveWine] = useRecoilState(wineState);
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
 
@@ -92,9 +95,23 @@ const Story = () => {
               )}
             >
               <p>Not yet published? Here create new.</p>
-              <Link href={`/story/${item.storyId}/create`}>
-                <a className="hover:underline">Create new story</a>
-              </Link>
+
+              <button
+                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+                onClick={(e) => {
+                  const activeWine = dataWines.find((d) => {
+                    return d.id === item.id;
+                  });
+                  setActiveWine({
+                    activeWine,
+                  });
+                  router.push({
+                    pathname: `/story/${item.storyId}/create`,
+                  });
+                }}
+              >
+                Create story
+              </button>
             </div>
 
             <div
@@ -104,9 +121,23 @@ const Story = () => {
               )}
             >
               <p>Editting now? Continue below link.</p>
-              <Link href={`/story/${item.storyId}/edit`}>
-                <a className="hover:underline">Edit story</a>
-              </Link>
+
+              <button
+                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+                onClick={(e) => {
+                  const activeWine = dataWines.find((d) => {
+                    return d.id === item.id;
+                  });
+                  setActiveWine({
+                    activeWine,
+                  });
+                  router.push({
+                    pathname: `/story/${item.storyId}/edit`,
+                  });
+                }}
+              >
+                Edit story
+              </button>
             </div>
           </div>
 
@@ -121,9 +152,17 @@ const Story = () => {
                 Do you like this story? If you like, Subscribe then, Copy this
                 story.
               </p>
-              <Link href={`/subscribe`}>
-                <a className="hover:underline">Now Subscribe!</a>
-              </Link>
+
+              <button
+                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+                onClick={(e) => {
+                  router.push({
+                    pathname: `/subscribe`,
+                  });
+                }}
+              >
+                Subscribe
+              </button>
             </div>
           </div>
         </section>
