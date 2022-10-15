@@ -30,6 +30,11 @@ const routes = [
     activeMenuName: `Story`,
   },
   {
+    pathName: `/story/favorite`,
+    pageName: `Favorite Story`,
+    activeMenuName: `Favorite Story`,
+  },
+  {
     pathName: `/location`,
     pageName: `Location`,
     activeMenuName: `Location`,

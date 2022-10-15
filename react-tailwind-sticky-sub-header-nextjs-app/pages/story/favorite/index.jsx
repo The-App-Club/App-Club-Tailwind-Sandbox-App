@@ -5,11 +5,10 @@ import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import Header from '@/components/story/Header';
-import Container from '@/components/story/Container';
-import Spacer from '@/components/Spacer';
+import {useRouter} from 'next/router';
 
-const Story = () => {
+const FavoriteStory = () => {
+  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
 
   return (
@@ -59,19 +58,16 @@ const Story = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === `Story`) {
+              if (niceTitle === `Favorite`) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
             }}
           />
-          <Header />
-          <Spacer />
-          <Container />
         </section>
       </Layout>
     </>
   );
 };
 
-export default Story;
+export default FavoriteStory;
