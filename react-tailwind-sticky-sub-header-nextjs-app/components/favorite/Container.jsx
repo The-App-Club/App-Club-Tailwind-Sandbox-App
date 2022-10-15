@@ -1,12 +1,12 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
-import useFavorite from '../../hooks/useFavorite';
-import ProductGalleryItem from '../ProductGalleryItem';
+import useFavoriteWine from '@/hooks/useFavoriteWine';
+import ProductGalleryItem from '@/components/ProductGalleryItem';
 
 const Container = () => {
   const [isClient, setIsClient] = useState(false);
-  const {favoriteWines} = useFavorite();
+  const {favoriteWines} = useFavoriteWine();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

@@ -13,7 +13,7 @@ import ProductGalleryItemCarted from '@/components/ProductGalleryItemCarted';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import {useCallback, useEffect, useMemo, useState} from 'react';
 import themeState from '@/stores/themeStore';
-import useFavorite from '@/hooks/useFavorite';
+import useFavoriteWine from '@/hooks/useFavoriteWine';
 import dataWineries from '@/data/wineries.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import {memo} from 'react';

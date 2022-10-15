@@ -1,10 +1,10 @@
 import {css, cx} from '@emotion/css';
 import {memo, useCallback} from 'react';
 import {MdFavoriteBorder, MdOutlineFavorite} from 'react-icons/md';
-import useFavorite from '../../../hooks/useFavorite';
+import useFavoriteWine from '@/hooks/useFavoriteWine';
 
 const ProductFav = ({item}) => {
-  const {isFavorited, toggleFavorite} = useFavorite(item);
+  const {isFavorited, toggleFavorite} = useFavoriteWine(item);
   const handleFav = useCallback(
     (e) => {
       e.stopPropagation();

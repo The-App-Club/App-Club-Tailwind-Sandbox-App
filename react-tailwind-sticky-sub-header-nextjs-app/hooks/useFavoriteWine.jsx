@@ -1,9 +1,9 @@
 import {useMemo} from 'react';
 import {useRecoilState} from 'recoil';
-import favoriteState from '@/stores/favoriteStore';
+import favoriteWineState from '@/stores/favoriteWineStore';
 
-const useFavorite = () => {
-  const [favorite, setFavorite] = useRecoilState(favoriteState);
+const useFavoriteWine = () => {
+  const [favorite, setFavorite] = useRecoilState(favoriteWineState);
 
   const toggleFavorite = ({focusedItem}) => {
     setFavorite((prevState) => {
@@ -57,4 +57,4 @@ const useFavorite = () => {
   };
 };
 
-export default useFavorite;
+export default useFavoriteWine;

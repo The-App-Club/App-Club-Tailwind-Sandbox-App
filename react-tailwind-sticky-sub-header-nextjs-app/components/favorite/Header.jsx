@@ -1,11 +1,11 @@
 import {css, cx} from '@emotion/css';
 import {memo} from 'react';
-import useCart from '../../hooks/useCart';
-import useFavorite from '../../hooks/useFavorite';
+import useCart from '@/hooks/useCart';
+import useFavoriteWine from '@/hooks/useFavoriteWine';
 
 const Header = () => {
   const {addAllCart} = useCart();
-  const {favoriteWines, removeAllFromFav} = useFavorite();
+  const {favoriteWines, removeAllFromFav} = useFavoriteWine();
 
   const handleRemoveAllFromFav = (e) => {
     removeAllFromFav();

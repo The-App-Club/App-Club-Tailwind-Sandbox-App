@@ -2,10 +2,10 @@ import {cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {memo, useEffect, useState} from 'react';
 import {useRecoilValue} from 'recoil';
-import useFavorite from '@/hooks/useFavorite';
+import useFavoriteWine from '@/hooks/useFavoriteWine';
 
 const NavMarkedFav = () => {
-  const {favoriteWines} = useFavorite();
+  const {favoriteWines} = useFavoriteWine();
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
