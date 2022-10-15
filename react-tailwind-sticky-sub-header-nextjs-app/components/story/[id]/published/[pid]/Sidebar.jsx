@@ -1,14 +1,24 @@
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
-import SidebarSp from '@/components/story/SidebarSp';
-import Nav from '@/components/story/Nav';
+import SidebarSp from '@/components/story/[id]/published/[pid]/SidebarSp';
+import Nav from '@/components/story/[id]/published/[pid]/Nav';
 import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
+import wineState from '@/stores/wineStore';
+import Product from '@/components/story/[id]/published/[pid]/Product';
+import {useEffect, useState} from 'react';
 
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
+  const {activeWine} = useRecoilValue(wineState);
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
   return (
     <>
       <SidebarSp />
@@ -87,6 +97,7 @@ const Sidebar = () => {
             <h2 className="text-xl">Make YourSelf</h2>
           </div>
         </motion.div>
+        {isClient && <Product item={activeWine} />}
         <Nav />
       </motion.aside>
     </>

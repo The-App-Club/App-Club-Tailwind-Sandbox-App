@@ -7,27 +7,37 @@ import {useRecoilState, useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import {motion} from 'framer-motion';
-import Header from '@/components/story/edit/Header';
+import Header from '@/components/story/[id]/Header';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
-import data from '@/data/stories.json';
+import dataStories from '@/data/stories.json';
 import dataWines from '@/data/wines.json';
 import Spacer from '@/components/Spacer';
 import wineState from '@/stores/wineStore';
+import GalleryItem from '@/components/story/[id]/GalleryItem';
 
 const Story = () => {
   const router = useRouter();
-  const [activeWine, setActiveWine] = useRecoilState(wineState);
+  const [_, setActiveWine] = useRecoilState(wineState);
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
 
   const item = useMemo(() => {
-    return data.find((item) => {
-      return item.storyId === id;
+    return dataStories.find((item) => {
+      return item.wineId === Number(id);
     });
   }, [id]);
 
-  if (!item) {
+  const activeWine = useMemo(() => {
+    if (!item) {
+      return;
+    }
+    return dataWines.find((d) => {
+      return d.id === item.wineId;
+    });
+  }, [item]);
+
+  if (!activeWine) {
     return;
   }
 
@@ -85,9 +95,13 @@ const Story = () => {
             }}
           />
 
-          <Header item={item} />
+          <Header item={activeWine} />
           <Spacer />
-          <div className="flex items-center gap-2">
+          <h2>My Stories</h2>
+
+          <GalleryItem item={item} />
+
+          {item.stories.length === 0 ? (
             <div
               className={cx(
                 `w-full flex justify-center flex-col items-center`,
@@ -99,72 +113,38 @@ const Story = () => {
               <button
                 className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
                 onClick={(e) => {
-                  const activeWine = dataWines.find((d) => {
-                    return d.id === item.id;
-                  });
                   setActiveWine({
                     activeWine,
                   });
                   router.push({
-                    pathname: `/story/${item.storyId}/create`,
+                    pathname: `/story/${id}/create`,
                   });
                 }}
               >
                 Create story
               </button>
             </div>
-
+          ) : (
             <div
               className={cx(
                 `w-full flex justify-center flex-col items-center`,
                 `border-2  rounded-lg shadow-lg p-2`
               )}
             >
-              <p>Editting now? Continue below link.</p>
-
-              <button
-                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-                onClick={(e) => {
-                  const activeWine = dataWines.find((d) => {
-                    return d.id === item.id;
-                  });
-                  setActiveWine({
-                    activeWine,
-                  });
-                  router.push({
-                    pathname: `/story/${item.storyId}/edit`,
-                  });
-                }}
-              >
-                Edit story
-              </button>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <div
-              className={cx(
-                `w-full flex justify-center flex-col items-center`,
-                `border-2  rounded-lg shadow-lg p-2`
-              )}
-            >
-              <p>
-                Do you like this story? If you like, Subscribe then, Copy this
-                story.
-              </p>
+              <p>You already published some stories. See stories.</p>
 
               <button
                 className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
                 onClick={(e) => {
                   router.push({
-                    pathname: `/subscribe`,
+                    pathname: `/story/${id}/published`,
                   });
                 }}
               >
-                Subscribe
+                See story
               </button>
             </div>
-          </div>
+          )}
         </section>
       </Layout>
     </>

@@ -1,8 +1,8 @@
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
-import SidebarSp from '@/components/story/SidebarSp';
-import Nav from '@/components/story/Nav';
+import SidebarSp from '@/components/story/[id]/published/SidebarSp';
+import Nav from '@/components/story/[id]/published/Nav';
 import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 

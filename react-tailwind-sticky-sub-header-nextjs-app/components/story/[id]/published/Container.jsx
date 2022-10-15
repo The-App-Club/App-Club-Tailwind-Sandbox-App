@@ -1,12 +1,10 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
-import GalleryItem from '@/components/story/favorite/GalleryItem';
-import useFavoriteStory from '@/hooks/useFavoriteStory';
+import GalleryItem from '@/components/story/[id]/published/GalleryItem';
 
-const Container = () => {
+const Container = ({stories}) => {
   const [isClient, setIsClient] = useState(false);
-  const {favoriteStories} = useFavoriteStory();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -14,8 +12,12 @@ const Container = () => {
     }
   }, []);
 
+  if (!stories || stories.length === 0) {
+    return;
+  }
+
   const renderContainer = () => {
-    if (favoriteStories.length === 0) {
+    if (stories.length === 0) {
       return (
         <div
           className={cx(
@@ -42,7 +44,7 @@ const Container = () => {
             }
           `}
         >
-          {favoriteStories.map((item, index) => {
+          {stories.map((item, index) => {
             return <GalleryItem key={index} item={item} />;
           })}
         </div>

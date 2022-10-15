@@ -1,6 +1,12 @@
 import {css, cx} from '@emotion/css';
 
-const Header = () => {
+const Header = ({item, storyItem}) => {
+  if (!item) {
+    return;
+  }
+  if (!storyItem) {
+    return;
+  }
   return (
     <div
       className={cx(
@@ -23,13 +29,11 @@ const Header = () => {
         `bg-white dark:bg-slate-700 shadow-md px-2`
       )}
     >
-      <div className="w-full flex justify-between items-center gap-4">
-        <h2
-          className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
-        >
-          &quot;Wine Story&quot; or &quot;Winery Story&quot;[WIP]
-        </h2>
-      </div>
+      <h2
+        className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
+      >
+        {`${storyItem.storyTitle}@${item.wine}`}
+      </h2>
     </div>
   );
 };

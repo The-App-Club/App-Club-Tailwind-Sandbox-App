@@ -40,6 +40,16 @@ const routes = [
     activeMenuName: `Story`,
   },
   {
+    pathName: `/story/[id]/published`,
+    pageName: `Published Story`,
+    activeMenuName: `Published Story`,
+  },
+  {
+    pathName: `/story/[id]/published/[pid]`,
+    pageName: `Published Story`,
+    activeMenuName: `Published Story`,
+  },
+  {
     pathName: `/story/favorite`,
     pageName: `Favorite Story`,
     activeMenuName: `Favorite Story`,

@@ -1,5 +1,5 @@
 import {css, cx} from '@emotion/css';
-import GalleryItemFav from '@/components/story/GalleryItemFav';
+import GalleryItemFav from '@/components/story/[id]/GalleryItemFav';
 import Spacer from '@/components/Spacer';
 import {GiGrapes} from 'react-icons/gi';
 import {

@@ -1,5 +1,5 @@
 import {css, cx} from '@emotion/css';
-import GalleryItemFav from '@/components/story/GalleryItemFav';
+import GalleryItemFav from '@/components/story/favorite/GalleryItemFav';
 import Spacer from '@/components/Spacer';
 import {GiGrapes} from 'react-icons/gi';
 import {
@@ -27,12 +27,24 @@ const GalleryItem = ({item}) => {
       return;
     }
     return dataWines.find((d) => {
-      return d.id === item.wineId;
+      return d.id === item.id;
+    });
+  }, [item]);
+
+  const activeStory = useMemo(() => {
+    if (!item) {
+      return;
+    }
+    return dataStories.find((d) => {
+      return d.wineId === item.id;
     });
   }, [item]);
 
   if (!activeWine) {
     return;
+  }
+
+  if (!activeStory) {
   }
 
   return (
@@ -139,7 +151,9 @@ const GalleryItem = ({item}) => {
               min-width: 24px;
             `}
           />
-          <span className="text-sm">{`${numbro(item.stories.length).format({
+          <span className="text-sm">{`${numbro(
+            activeStory.stories.length
+          ).format({
             thousandSeparated: true,
           })} stories published`}</span>
         </div>

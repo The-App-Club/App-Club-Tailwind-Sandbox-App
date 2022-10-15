@@ -1,27 +1,61 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
-import Sidebar from '@/components/story/create/Sidebar';
-import Layout from '@/layouts/default';
-import hamburgerState from '@/stores/hamburgerStore';
-import {useRecoilState, useRecoilValue} from 'recoil';
+import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import {motion} from 'framer-motion';
-import Header from '@/components/story/create/Header';
-import wineState from '@/stores/wineStore';
-import {useEffect, useMemo} from 'react';
-import ScrollStory from '@/components/story/create/ScrollStory';
-import Footer from '@/components/story/create/Footer';
-import data from '@/data/wines.json';
 import {useRouter} from 'next/router';
-import {default as chance} from 'chance';
+import {useMemo} from 'react';
 
-const CreateStory = () => {
-  const {opened} = useRecoilValue(hamburgerState);
-  const {activeWine} = useRecoilValue(wineState);
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
+import dataWines from '@/data/wines.json';
+import dataStories from '@/data/stories.json';
+import Spacer from '@/components/Spacer';
+import Header from '@/components/story/[id]/published/[pid]/Header';
+import Sidebar from '@/components/story/[id]/published/[pid]/Sidebar';
+import Footer from '@/components/story/[id]/published/[pid]/Footer';
+
+const PublishedStory = () => {
   const router = useRouter();
+  const {opened} = useRecoilValue(hamburgerState);
+  const {id, pid} = router.query;
+
+  const item = useMemo(() => {
+    return dataStories.find((d) => {
+      return d.wineId === Number(id);
+    });
+  }, [id]);
+
+  const activeWine = useMemo(() => {
+    if (!item) {
+      return;
+    }
+    return dataWines.find((d) => {
+      return d.id === item.wineId;
+    });
+  }, [item]);
+
+  const activeStory = useMemo(() => {
+    if (!item) {
+      return;
+    }
+    return dataStories
+      .find((d) => {
+        return d.wineId === item.wineId;
+      })
+      .stories.find((d) => {
+        return d.storyId === pid;
+      });
+  }, [item, pid]);
+
+  if (!item) {
+    return;
+  }
 
   if (!activeWine) {
+    return;
+  }
+
+  if (!activeStory) {
     return;
   }
 
@@ -72,20 +106,21 @@ const CreateStory = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === `Create`) {
+              if (title === pid) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
             }}
           />
 
-          <Header />
-          <ScrollStory />
-          <Footer item={activeWine} />
+          <Header item={activeWine} storyItem={activeStory} />
+          <Spacer />
+          <p>At here published scroll story.</p>
+          <Footer />
         </section>
       </Layout>
     </>
   );
 };
 
-export default CreateStory;
+export default PublishedStory;

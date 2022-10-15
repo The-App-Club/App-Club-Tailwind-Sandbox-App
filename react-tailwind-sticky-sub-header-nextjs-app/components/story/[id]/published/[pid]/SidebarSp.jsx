@@ -8,7 +8,7 @@ import {useRecoilState, useRecoilValue} from 'recoil';
 import {useClickOutside} from '@/hooks/useClickOutside';
 import hamburgerState from '@/stores/hamburgerStore';
 import Hamburger from '@/components/Hamburger';
-import Nav from '@/components/story/Nav';
+import Nav from '@/components/story/[id]/published/[pid]/Nav';
 
 const SidebarSp = () => {
   const {opened} = useRecoilValue(hamburgerState);

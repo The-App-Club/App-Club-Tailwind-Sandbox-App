@@ -1,25 +1,44 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
-import Sidebar from '@/components/story/create/Sidebar';
+import Sidebar from '@/components/story/[id]/published/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import {motion} from 'framer-motion';
-import Header from '@/components/story/create/Header';
-import wineState from '@/stores/wineStore';
-import {useEffect, useMemo} from 'react';
-import ScrollStory from '@/components/story/create/ScrollStory';
-import Footer from '@/components/story/create/Footer';
-import data from '@/data/wines.json';
 import {useRouter} from 'next/router';
-import {default as chance} from 'chance';
+import {useMemo} from 'react';
+import dataWines from '@/data/wines.json';
+import dataStories from '@/data/stories.json';
+import Spacer from '@/components/Spacer';
+import wineState from '@/stores/wineStore';
+import Header from '@/components/story/[id]/published/Header';
+import Container from '@/components/story/[id]/published/Container';
 
-const CreateStory = () => {
-  const {opened} = useRecoilValue(hamburgerState);
-  const {activeWine} = useRecoilValue(wineState);
+const PublishedStories = () => {
   const router = useRouter();
+  const {opened} = useRecoilValue(hamburgerState);
+  const {id} = router.query;
+
+  const item = useMemo(() => {
+    return dataStories.find((d) => {
+      return d.wineId === Number(id);
+    });
+  }, [id]);
+
+  const activeWine = useMemo(() => {
+    if (!item) {
+      return;
+    }
+    return dataWines.find((d) => {
+      return d.id === item.wineId;
+    });
+  }, [item]);
+
+  if (!item) {
+    return;
+  }
 
   if (!activeWine) {
     return;
@@ -72,20 +91,20 @@ const CreateStory = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === `Create`) {
+              if (niceTitle === `Published`) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
             }}
           />
 
-          <Header />
-          <ScrollStory />
-          <Footer item={activeWine} />
+          <Header item={activeWine} />
+          <Spacer />
+          <Container stories={item.stories} />
         </section>
       </Layout>
     </>
   );
 };
 
-export default CreateStory;
+export default PublishedStories;
