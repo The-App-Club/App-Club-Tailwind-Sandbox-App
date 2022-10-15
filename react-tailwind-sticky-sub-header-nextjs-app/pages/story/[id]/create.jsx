@@ -14,6 +14,7 @@ import ScrollStory from '@/components/story/create/ScrollStory';
 import Footer from '@/components/story/create/Footer';
 import data from '@/data/wines.json';
 import {useRouter} from 'next/router';
+import {default as chance} from 'chance';
 
 const CreateStory = () => {
   const {opened} = useRecoilValue(hamburgerState);
@@ -22,7 +23,8 @@ const CreateStory = () => {
 
   const item = useMemo(() => {
     return data.find((item) => {
-      return item.id === Number(id);
+      const storyId = chance(item.wine).string({alpha: true});
+      return storyId === id;
     });
   }, [id]);
 
@@ -36,7 +38,7 @@ const CreateStory = () => {
       <Layout>
         <section
           className={cx(
-            `mt-12`,
+            `mt-12 px-2 pb-2`,
             css`
               position: absolute;
               top: 0;

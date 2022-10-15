@@ -1,6 +1,6 @@
 import {css, cx} from '@emotion/css';
-import Layout from '../../layouts/default';
-import data from '../../data/wines.json';
+import Layout from '@/layouts/default';
+import data from '@/data/wines.json';
 import {useState} from 'react';
 import capitalize from 'capitalize-the-first-letter';
 

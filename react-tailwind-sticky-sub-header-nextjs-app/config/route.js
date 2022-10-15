@@ -10,6 +10,11 @@ const routes = [
     activeMenuName: `Not Found`,
   },
   {
+    pathName: `/subscribe`,
+    pageName: `Subscribe`,
+    activeMenuName: `Subscribe`,
+  },
+  {
     pathName: `/setting`,
     pageName: `Setting`,
     activeMenuName: `Setting`,

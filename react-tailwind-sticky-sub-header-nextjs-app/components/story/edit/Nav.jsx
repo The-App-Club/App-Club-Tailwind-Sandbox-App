@@ -114,7 +114,7 @@ const Nav = () => {
           flex-direction: column;
         `}
       >
-        {/* {isClient && (
+        {isClient && (
           <MenuItem
             path={`/story/${activeWine.id}/create`}
             menuTitle={'Create Story'}
@@ -122,7 +122,7 @@ const Nav = () => {
               return <BsPencilSquare size={24} />;
             }}
           />
-        )} */}
+        )}
         <MenuItem
           path={'/story'}
           menuTitle={'Story'}

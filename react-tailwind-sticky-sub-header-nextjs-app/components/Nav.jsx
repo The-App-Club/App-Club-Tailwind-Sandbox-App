@@ -13,7 +13,7 @@ import sidebarState from '@/stores/sidebarStore';
 import {useEffect, useState} from 'react';
 import {FiSettings} from 'react-icons/fi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-
+import {SiBuymeacoffee} from 'react-icons/si';
 import {GiGrapes, GiPriceTag} from 'react-icons/gi';
 import {GiWineBottle} from 'react-icons/gi';
 import {BiHome} from 'react-icons/bi';
@@ -218,6 +218,13 @@ const Nav = () => {
           menuTitle={'Favorite Story'}
           icon={() => {
             return <MdFavoriteBorder size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/subscribe'}
+          menuTitle={'Subscribe'}
+          icon={() => {
+            return <SiBuymeacoffee size={24} />;
           }}
         />
       </motion.ul>

@@ -19,6 +19,7 @@ const Footer = ({pathname}) => {
     if (
       pathname === `/` ||
       pathname === `/feed` ||
+      pathname === `/subscribe` ||
       pathname === `/favorite` ||
       pathname === `/location` ||
       pathname === `/setting` ||

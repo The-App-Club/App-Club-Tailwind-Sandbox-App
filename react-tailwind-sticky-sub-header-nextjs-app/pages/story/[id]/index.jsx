@@ -11,6 +11,7 @@ import Header from '@/components/story/edit/Header';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
 import data from '@/data/stories.json';
+import Spacer from '@/components/Spacer';
 
 const Story = () => {
   const router = useRouter();
@@ -23,13 +24,17 @@ const Story = () => {
     });
   }, [id]);
 
+  if (!item) {
+    return;
+  }
+
   return (
     <>
       <Sidebar />
       <Layout>
         <section
           className={cx(
-            `mt-12`,
+            `mt-12 px-2 pb-2`,
             css`
               position: absolute;
               top: 0;
@@ -78,7 +83,49 @@ const Story = () => {
           />
 
           <Header item={item} />
-          <p>aaaaaa</p>
+          <Spacer />
+          <div className="flex items-center gap-2">
+            <div
+              className={cx(
+                `w-full flex justify-center flex-col items-center`,
+                `border-2  rounded-lg shadow-lg p-2`
+              )}
+            >
+              <p>Not yet published? Here create new.</p>
+              <Link href={`/story/${item.storyId}/create`}>
+                <a className="hover:underline">Create new story</a>
+              </Link>
+            </div>
+
+            <div
+              className={cx(
+                `w-full flex justify-center flex-col items-center`,
+                `border-2  rounded-lg shadow-lg p-2`
+              )}
+            >
+              <p>Editting now? Continue below link.</p>
+              <Link href={`/story/${item.storyId}/edit`}>
+                <a className="hover:underline">Edit story</a>
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <div
+              className={cx(
+                `w-full flex justify-center flex-col items-center`,
+                `border-2  rounded-lg shadow-lg p-2`
+              )}
+            >
+              <p>
+                Do you like this story? If you like, Subscribe then, Copy this
+                story.
+              </p>
+              <Link href={`/subscribe`}>
+                <a className="hover:underline">Now Subscribe!</a>
+              </Link>
+            </div>
+          </div>
         </section>
       </Layout>
     </>

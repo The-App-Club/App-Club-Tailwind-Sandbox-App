@@ -20,6 +20,7 @@ import {memo} from 'react';
 import useCart from '@/hooks/useCart';
 import {BsPencilSquare} from 'react-icons/bs';
 import wineState from '@/stores/wineStore';
+import {default as chance} from 'chance';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
@@ -49,8 +50,11 @@ const ProductGalleryItem = ({item}) => {
     setActiveWine({
       activeWine: item,
     });
+
+    const storyId = chance(item.wine).string({alpha: true});
+
     router.push({
-      pathname: `/story/${item.id}/create`,
+      pathname: `/story/${storyId}/create`,
     });
   };
 

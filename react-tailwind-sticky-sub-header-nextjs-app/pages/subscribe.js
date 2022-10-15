@@ -6,10 +6,9 @@ import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import {useMemo, useRef, useState} from 'react';
-
-const Notification = () => {
+const Subscribe = () => {
   const {opened} = useRecoilValue(hamburgerState);
+
   return (
     <>
       <Sidebar />
@@ -56,7 +55,7 @@ const Notification = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === `Notification`) {
+              if (niceTitle === `Subscribe`) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
@@ -88,7 +87,7 @@ const Notification = () => {
                 `w-full text-xl flex items-center justify-start gap-2`
               )}
             >
-              Notification
+              Subscribe
             </h2>
           </div>
         </section>
@@ -97,4 +96,4 @@ const Notification = () => {
   );
 };
 
-export default Notification;
+export default Subscribe;

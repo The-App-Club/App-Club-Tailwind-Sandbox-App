@@ -1,14 +1,14 @@
 import {css, cx} from '@emotion/css';
-import Sidebar from '../components/Sidebar';
-import Layout from '../layouts/default';
-import hamburgerState from '../stores/hamburgerStore';
+import Sidebar from '@/components/Sidebar';
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import Map from '../components/Map';
-import AreaGraph from '../components/AreaGraph';
-import Spacer from '../components/Spacer';
-import Weather from '../components/Weather';
+import Map from '@/components/Map';
+import AreaGraph from '@/components/AreaGraph';
+import Spacer from '@/components/Spacer';
+import Weather from '@/components/Weather';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import Header from '@/components/location/Header';
 

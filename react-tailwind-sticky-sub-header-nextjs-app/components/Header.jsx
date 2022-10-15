@@ -30,6 +30,7 @@ const Header = ({pathname}) => {
     }
     if (
       pathname === `/` ||
+      pathname === `/subscribe` ||
       pathname === `/contact` ||
       pathname === `/feed` ||
       pathname === `/favorite` ||

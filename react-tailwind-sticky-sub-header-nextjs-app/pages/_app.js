@@ -5,22 +5,22 @@ import {useCallback, useEffect, useRef, useState} from 'react';
 import {useRouter} from 'next/router';
 import {RecoilRoot, useRecoilState, useRecoilValue} from 'recoil';
 
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Meta from '../components/Meta';
-import Nav from '../components/Nav';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import Meta from '@/components/Meta';
+import Nav from '@/components/Nav';
 
-import themeState from '../stores/themeStore';
+import themeState from '@/stores/themeStore';
 
 import '@fontsource/inter';
-import '../styles/index.css';
-import '../styles/index.scss';
-import '../styles/datepicker.css';
-import hamburgerState from '../stores/hamburgerStore';
+import '@/styles/index.css';
+import '@/styles/index.scss';
+import '@/styles/datepicker.css';
+import hamburgerState from '@/stores/hamburgerStore';
 
-import {routes} from '../config/route';
-import sidebarState from '../stores/sidebarStore';
-import {useSmoothScroll} from '../hooks/useSmoothScroll';
+import {routes} from '@/config/route';
+import sidebarState from '@/stores/sidebarStore';
+import {useSmoothScroll} from '@/hooks/useSmoothScroll';
 
 const CowboyBebopInit = ({children, router: r}) => {
   useSmoothScroll();

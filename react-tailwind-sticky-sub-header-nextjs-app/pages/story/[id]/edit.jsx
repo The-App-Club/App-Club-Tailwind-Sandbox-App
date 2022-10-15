@@ -1,6 +1,6 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
-import Sidebar from '@/components/story/Sidebar';
+import Sidebar from '@/components/story/edit/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
@@ -8,17 +8,34 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import {motion} from 'framer-motion';
 import Header from '@/components/story/edit/Header';
+import {useRouter} from 'next/router';
+import {useMemo} from 'react';
+import {default as chance} from 'chance';
+import Footer from '@/components/story/edit/Footer';
+import data from '@/data/wines.json';
 
 const EditStory = () => {
   const {opened} = useRecoilValue(hamburgerState);
+  const router = useRouter();
+  const {id} = router.query;
 
+  const item = useMemo(() => {
+    return data.find((item) => {
+      const storyId = chance(item.wine).string({alpha: true});
+      return storyId === id;
+    });
+  }, [id]);
+
+  if (!item) {
+    return;
+  }
   return (
     <>
       <Sidebar />
       <Layout>
         <section
           className={cx(
-            `mt-12`,
+            `mt-12 px-2 pb-2`,
             css`
               position: absolute;
               top: 0;
@@ -67,6 +84,7 @@ const EditStory = () => {
           />
 
           <Header />
+          <Footer item={item} />
         </section>
       </Layout>
     </>
