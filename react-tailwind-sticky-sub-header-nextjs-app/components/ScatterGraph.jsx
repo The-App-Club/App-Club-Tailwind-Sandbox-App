@@ -17,11 +17,11 @@ import useSWR from 'swr';
 import * as d3 from 'd3';
 import {useEffect, useMemo, useState} from 'react';
 import {filter, map, sliceHead, tidy} from '@tidyjs/tidy';
-import {default as XFeatureColumnSelector} from './FeatureColumnSelector';
-import {default as YFeatureColumnSelector} from './FeatureColumnSelector';
-import featureColumnSelectorState from '../stores/featureColumnSelectorStore';
+import {default as XFeatureColumnSelector} from '@/components/FeatureColumnSelector';
+import {default as YFeatureColumnSelector} from '@/components/FeatureColumnSelector';
+import featureColumnSelectorState from '@/stores/featureColumnSelectorStore';
 import {useRecoilValue} from 'recoil';
-import themeState from '../stores/themeStore';
+import themeState from '@/stores/themeStore';
 import {default as numbro} from 'numbro';
 import {useDebouncedCallback} from 'use-debounce';
 

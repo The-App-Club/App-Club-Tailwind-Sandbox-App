@@ -16,13 +16,13 @@ import {
   AreaChart,
 } from 'recharts';
 import {useRecoilValue} from 'recoil';
-import data from '../data/wines.json';
-import Spacer from './Spacer';
+import data from '@/data/wines.json';
+import Spacer from '@/components/Spacer';
 import {useRouter} from 'next/router';
-import ReviewGraph from './ReviewGraph';
-import AverageGraph from './AverageGraph';
-import PriceGraph from './PriceGraph';
-import locationSelectorState from '../stores/locationSelectorStore';
+import ReviewGraph from '@/components/ReviewGraph';
+import AverageGraph from '@/components/AverageGraph';
+import PriceGraph from '@/components/PriceGraph';
+import locationSelectorState from '@/stores/locationSelectorStore';
 
 export const decideBarBackFaceFillColor = ({mode}) => {
   if (mode === `light`) {

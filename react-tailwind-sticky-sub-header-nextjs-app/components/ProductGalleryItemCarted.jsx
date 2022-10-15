@@ -1,9 +1,8 @@
 import {css, cx} from '@emotion/css';
 import {memo, useCallback} from 'react';
 import {MdFavoriteBorder, MdOutlineFavorite} from 'react-icons/md';
-import useFavorite from '../hooks/useFavorite';
 import {BsCart, BsCartCheck} from 'react-icons/bs';
-import useCart from '../hooks/useCart';
+import useCart from '@/hooks/useCart';
 
 const ProductGalleryItemCarted = ({item}) => {
   const {carts, addCart, removeCart, isCarted} = useCart();

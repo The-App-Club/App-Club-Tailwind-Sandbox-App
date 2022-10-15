@@ -2,8 +2,8 @@ import {css, cx} from '@emotion/css';
 import 'hamburgers/dist/hamburgers.css';
 import {useEffect, useState} from 'react';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import hamburgerState from '../stores/hamburgerStore';
-import themeState from '../stores/themeStore';
+import hamburgerState from '@/stores/hamburgerStore';
+import themeState from '@/stores/themeStore';
 import {motion} from 'framer-motion';
 
 const decideHamburgerColor = ({mode}) => {

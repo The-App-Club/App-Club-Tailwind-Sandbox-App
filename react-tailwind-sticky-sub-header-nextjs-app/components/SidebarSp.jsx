@@ -5,10 +5,10 @@ import {gsap, Power3, Linear} from 'gsap';
 import {useRouter} from 'next/router';
 import {useEffect, useRef, useState} from 'react';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import {useClickOutside} from '../hooks/useClickOutside';
-import hamburgerState from '../stores/hamburgerStore';
-import Nav from './Nav';
-import Hamburger from './Hamburger';
+import {useClickOutside} from '@/hooks/useClickOutside';
+import hamburgerState from '@/stores/hamburgerStore';
+import Nav from '@/components/Nav';
+import Hamburger from '@/components/Hamburger';
 const SidebarSp = () => {
   const {opened} = useRecoilValue(hamburgerState);
   const [hamburger, setHamburger] = useRecoilState(hamburgerState);

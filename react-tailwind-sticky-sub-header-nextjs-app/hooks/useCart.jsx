@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 import {useRecoilState} from 'recoil';
-import cartState from '../stores/cartStore';
+import cartState from '@/stores/cartStore';
 
 const useCart = () => {
   const [cart, setCart] = useRecoilState(cartState);

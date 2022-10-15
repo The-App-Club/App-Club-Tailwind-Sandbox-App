@@ -4,7 +4,7 @@ import '@splidejs/react-splide/css';
 import {tidy, groupBy, mutate, filter, map, count} from '@tidyjs/tidy';
 import {useEffect, useMemo} from 'react';
 import {default as chance} from 'chance';
-import data from '../data/wineries.json';
+import data from '@/data/wineries.json';
 import {useRouter} from 'next/router';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import {useRecoilState} from 'recoil';

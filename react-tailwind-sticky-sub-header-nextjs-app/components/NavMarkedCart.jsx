@@ -2,7 +2,7 @@ import {cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {memo, useEffect, useState} from 'react';
 import {useRecoilValue} from 'recoil';
-import useCart from '../hooks/useCart';
+import useCart from '@/hooks/useCart';
 
 const NavMarkedCart = () => {
   const {carts} = useCart();

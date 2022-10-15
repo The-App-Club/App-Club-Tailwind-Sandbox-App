@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 import {useRecoilState} from 'recoil';
-import favoriteState from '../stores/favoriteStore';
+import favoriteState from '@/stores/favoriteStore';
 
 const useFavorite = () => {
   const [favorite, setFavorite] = useRecoilState(favoriteState);

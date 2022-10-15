@@ -1,9 +1,9 @@
 import {css, cx} from '@emotion/css';
 import {useCallback, useEffect, useRef, useState} from 'react';
-import ScrollStorySection from './ScrollStorySection';
+import ScrollStorySection from '@/components/ScrollStorySection';
 import {Scrollama, Step} from 'react-scrollama';
 import {MathUtils} from 'three';
-import Spacer from './Spacer';
+import Spacer from '@/components/Spacer';
 import {motion, useAnimationControls} from 'framer-motion';
 import {useRecoilValue} from 'recoil';
 

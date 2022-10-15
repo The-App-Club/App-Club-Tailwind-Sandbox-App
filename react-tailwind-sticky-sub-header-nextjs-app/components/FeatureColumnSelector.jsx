@@ -3,7 +3,7 @@ import {Listbox, Transition} from '@headlessui/react';
 import {CheckIcon, ChevronUpDownIcon} from '@heroicons/react/24/solid';
 import {css, cx} from '@emotion/css';
 import {useRecoilState} from 'recoil';
-import featureColumnSelectorState from '../stores/featureColumnSelectorStore';
+import featureColumnSelectorState from '@/stores/featureColumnSelectorStore';
 
 const FeatureColumnSelector = ({data, className, isX = true}) => {
   const [featureColumn, setFeatureColumn] = useRecoilState(

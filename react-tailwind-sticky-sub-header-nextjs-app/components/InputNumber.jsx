@@ -2,7 +2,7 @@ import {css, cx} from '@emotion/css';
 import {memo, useCallback, useEffect} from 'react';
 import {useState} from 'react';
 import {FaTrashAlt} from 'react-icons/fa';
-import useCart from '../hooks/useCart';
+import useCart from '@/hooks/useCart';
 
 const InputNumber = ({item}) => {
   const {carts, updateCart, removeCart} = useCart();

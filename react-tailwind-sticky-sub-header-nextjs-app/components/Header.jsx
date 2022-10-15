@@ -3,9 +3,9 @@ import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {useCallback, useEffect, useMemo, useState} from 'react';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import hamburgerState from '../stores/hamburgerStore';
-import Hamburger from './Hamburger';
-import ThemeToggle from './ThemeToggle';
+import hamburgerState from '@/stores/hamburgerStore';
+import Hamburger from '@/components/Hamburger';
+import ThemeToggle from '@/components/ThemeToggle';
 import {motion} from 'framer-motion';
 import {FiSettings} from 'react-icons/fi';
 import {
@@ -14,9 +14,9 @@ import {
   MdOutlineNotificationsNone,
 } from 'react-icons/md';
 
-import Profile from './Profile';
-import cartState from '../stores/cartStore';
-import useCart from '../hooks/useCart';
+import Profile from '@/components/Profile';
+import cartState from '@/stores/cartStore';
+import useCart from '@/hooks/useCart';
 
 const Header = ({pathname}) => {
   const [isClient, setIsClient] = useState(false);

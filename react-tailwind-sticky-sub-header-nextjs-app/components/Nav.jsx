@@ -6,9 +6,9 @@ import {
 } from 'react-icons/md';
 import {motion} from 'framer-motion';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import themeState from '../stores/themeStore';
+import themeState from '@/stores/themeStore';
 import {useRouter} from 'next/router';
-import sidebarState from '../stores/sidebarStore';
+import sidebarState from '@/stores/sidebarStore';
 import {useEffect, useState} from 'react';
 import {FiSettings} from 'react-icons/fi';
 import {MdOutlineLocationOn} from 'react-icons/md';
@@ -19,8 +19,8 @@ import {BiHome} from 'react-icons/bi';
 import {FaHatCowboySide} from 'react-icons/fa';
 import {MdOutlineContactMail} from 'react-icons/md';
 import {MdRssFeed} from 'react-icons/md';
-import NavMarkedCart from './NavMarkedCart';
-import NavMarkedFav from './NavMarkedFav';
+import NavMarkedCart from '@/components/NavMarkedCart';
+import NavMarkedFav from '@/components/NavMarkedFav';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {

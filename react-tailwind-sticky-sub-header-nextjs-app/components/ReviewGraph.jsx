@@ -12,8 +12,11 @@ import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import {useRecoilValue} from 'recoil';
 import {useDebouncedCallback} from 'use-debounce';
-import themeState from '../stores/themeStore';
-import {decideAxisTickFillColor, decideBarBackFaceFillColor} from './AreaGraph';
+import themeState from '@/stores/themeStore';
+import {
+  decideAxisTickFillColor,
+  decideBarBackFaceFillColor,
+} from '@/components/AreaGraph';
 import {css, cx} from '@emotion/css';
 import {MdOutlineReviews} from 'react-icons/md';
 

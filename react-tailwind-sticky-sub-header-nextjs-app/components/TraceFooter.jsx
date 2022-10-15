@@ -4,12 +4,12 @@ import {BiHome} from 'react-icons/bi';
 import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 import {MdOutlineShoppingCart} from 'react-icons/md';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import wineState from '../stores/wineStore';
+import wineState from '@/stores/wineStore';
 import {useRecoilValue} from 'recoil';
 
 import {motion} from 'framer-motion';
-import cartState from '../stores/cartStore';
-import useCart from '../hooks/useCart';
+import cartState from '@/stores/cartStore';
+import useCart from '@/hooks/useCart';
 import {useEffect, useState} from 'react';
 
 const TraceFooter = () => {

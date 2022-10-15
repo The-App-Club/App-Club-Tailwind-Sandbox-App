@@ -5,7 +5,7 @@ import {useRouter} from 'next/router';
 import {useRef, useState} from 'react';
 import {MdOutlineAccountCircle} from 'react-icons/md';
 import {useRecoilValue} from 'recoil';
-import themeState from '../stores/themeStore';
+import themeState from '@/stores/themeStore';
 
 const Profile = ({menuData}) => {
   const router = useRouter();

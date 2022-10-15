@@ -5,10 +5,10 @@ import MapboxLanguage from '@mapbox/mapbox-gl-language';
 import {css, cx} from '@emotion/css';
 import {useDebouncedCallback} from 'use-debounce';
 
-import data from '../data/location.json';
+import data from '@/data/location.json';
 import {useCallback} from 'react';
 import {useRecoilValue} from 'recoil';
-import locationSelectorState from '../stores/locationSelectorStore';
+import locationSelectorState from '@/stores/locationSelectorStore';
 
 import {TbWorldLatitude, TbWorldLongitude, TbZoomPan} from 'react-icons/tb';
 import multiLocationSelectorState from '@/stores/multiLocationSelectorStore';

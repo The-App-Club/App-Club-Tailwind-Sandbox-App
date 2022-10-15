@@ -7,17 +7,17 @@ import {
   MdOutlineLocationOn,
 } from 'react-icons/md';
 import {default as numbro} from 'numbro';
-import Spacer from './Spacer';
+import Spacer from '@/components/Spacer';
+import ProductGalleryItemFav from '@/components/ProductGalleryItemFav';
+import ProductGalleryItemCarted from '@/components/ProductGalleryItemCarted';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import {useCallback, useEffect, useMemo, useState} from 'react';
-import themeState from '../stores/themeStore';
-import useFavorite from '../hooks/useFavorite';
-import dataWineries from '../data/wineries.json';
-import locationSelectorState from '../stores/locationSelectorStore';
+import themeState from '@/stores/themeStore';
+import useFavorite from '@/hooks/useFavorite';
+import dataWineries from '@/data/wineries.json';
+import locationSelectorState from '@/stores/locationSelectorStore';
 import {memo} from 'react';
-import ProductGalleryItemFav from './ProductGalleryItemFav';
-import useCart from '../hooks/useCart';
-import ProductGalleryItemCarted from './ProductGalleryItemCarted';
+import useCart from '@/hooks/useCart';
 import {BsPencilSquare} from 'react-icons/bs';
 import wineState from '@/stores/wineStore';
 
