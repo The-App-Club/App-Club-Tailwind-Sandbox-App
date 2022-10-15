@@ -3,6 +3,7 @@ import {
   MdOutlineNotificationsNone,
   MdOutlineShoppingCart,
   MdFavoriteBorder,
+  MdOutlineHistory,
 } from 'react-icons/md';
 import {motion} from 'framer-motion';
 import {useRecoilState, useRecoilValue} from 'recoil';
@@ -20,7 +21,8 @@ import {FaHatCowboySide} from 'react-icons/fa';
 import {MdOutlineContactMail} from 'react-icons/md';
 import {MdRssFeed} from 'react-icons/md';
 import NavMarkedCart from '@/components/NavMarkedCart';
-import NavMarkedFav from '@/components/NavMarkedFav';
+import {default as NavMarkedWineFav} from '@/components/NavMarkedFav';
+import {default as NavMarkedStoryFav} from '@/components/story/NavMarkedFav';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
@@ -47,7 +49,10 @@ const MenuItem = ({path, menuTitle, icon}) => {
 
   const renderShortHandMetrics = () => {
     if (menuTitle === `Favorite`) {
-      return <NavMarkedFav />;
+      return <NavMarkedWineFav />;
+    }
+    if (menuTitle === `Favorite Story`) {
+      return <NavMarkedStoryFav />;
     }
     if (menuTitle === `Cart`) {
       return <NavMarkedCart />;
@@ -199,6 +204,20 @@ const Nav = () => {
           menuTitle={'Price'}
           icon={() => {
             return <GiPriceTag size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/story'}
+          menuTitle={'Story'}
+          icon={() => {
+            return <MdOutlineHistory size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/story/favorite'}
+          menuTitle={'Favorite Story'}
+          icon={() => {
+            return <MdFavoriteBorder size={24} />;
           }}
         />
       </motion.ul>
