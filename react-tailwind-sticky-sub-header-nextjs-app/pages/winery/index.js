@@ -2,21 +2,21 @@ import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {useRecoilValue} from 'recoil';
-import wineState from '../../stores/wineStore';
-import Layout from '../../layouts/default';
-import Spacer from '../../components/Spacer';
+import wineState from '@/stores/wineStore';
+import Layout from '@/layouts/default';
+import Spacer from '@/components/Spacer';
 import {useMemo, useState} from 'react';
-import data from '../../data/wineries.json';
-import dataWines from '../../data/wines.json';
+import data from '@/data/wineries.json';
+import dataWines from '@/data/wines.json';
 
-import Sidebar from '../../components/Sidebar';
+import Sidebar from '@/components/Sidebar';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 
-import hamburgerState from '../../stores/hamburgerStore';
-import Category from '../../components/Category';
-import TraceFooter from '../../components/TraceFooter';
-import SearchModal from '../../components/SearchModal';
+import hamburgerState from '@/stores/hamburgerStore';
+import Category from '@/components/Category';
+import TraceFooter from '@/components/winery/TraceFooter';
+import SearchModal from '@/components/SearchModal';
 import {count, filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
 
 const Winery = () => {

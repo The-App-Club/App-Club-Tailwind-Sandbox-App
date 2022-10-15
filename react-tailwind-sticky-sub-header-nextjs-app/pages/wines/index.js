@@ -4,15 +4,15 @@ import data from '../../data/wines.json';
 import {useState} from 'react';
 import capitalize from 'capitalize-the-first-letter';
 
-import Sidebar from '../../components/Sidebar';
-import hamburgerState from '../../stores/hamburgerStore';
+import Sidebar from '@/components/Sidebar';
+import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import Category from '../../components/Category';
-import TraceFooter from '../../components/TraceFooter';
-import ProductGalleryItem from '../../components/ProductGalleryItem';
-import SearchModal from '../../components/SearchModal';
-import Spacer from '../../components/Spacer';
+import Category from '@/components/Category';
+import TraceFooter from '@/components/wines/TraceFooter';
+import ProductGalleryItem from '@/components/ProductGalleryItem';
+import SearchModal from '@/components/SearchModal';
+import Spacer from '@/components/Spacer';
 
 const Wines = () => {
   const [showModal, setShowModal] = useState(false);

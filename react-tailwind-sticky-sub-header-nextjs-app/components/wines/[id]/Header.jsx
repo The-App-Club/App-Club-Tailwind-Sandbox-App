@@ -1,20 +1,22 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
-import {memo, useMemo} from 'react';
+import {memo, useEffect, useMemo} from 'react';
 import {motion} from 'framer-motion';
 import {FaRegComments} from 'react-icons/fa';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineHistory, MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
-import locationSelectorState from '../../../stores/locationSelectorStore';
-import dataWineries from '../../../data/wineries.json';
+import locationSelectorState from '@/stores/locationSelectorStore';
+import dataWineries from '@/data/wineries.json';
 import {default as numbro} from 'numbro';
-import useCart from '../../../hooks/useCart';
+import useCart from '@/hooks/useCart';
+import wineState from '@/stores/wineStore';
 
 const Header = ({item}) => {
   const router = useRouter();
   const [location, setLocation] = useRecoilState(locationSelectorState);
   const {addCart, removeCart, isCarted} = useCart();
+  const [activeWine, setActiveWine] = useRecoilState(wineState);
 
   const handleAddCart = (e) => {
     addCart({focusedItem: item});
@@ -112,6 +114,9 @@ const Header = ({item}) => {
               `hover:cursor-pointer hover:underline`
             )}
             onClick={(e) => {
+              setActiveWine({
+                activeWine: item,
+              });
               router.push({
                 pathname: `/wines/${id}/story`,
               });
@@ -131,6 +136,9 @@ const Header = ({item}) => {
               `hover:cursor-pointer hover:underline`
             )}
             onClick={(e) => {
+              setActiveWine({
+                activeWine: item,
+              });
               router.push({
                 pathname: `/wines/${id}/comment`,
               });
