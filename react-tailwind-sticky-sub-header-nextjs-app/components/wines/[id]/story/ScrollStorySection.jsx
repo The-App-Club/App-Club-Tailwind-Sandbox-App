@@ -31,7 +31,6 @@ const ScrollStorySection = ({children, chapterName, doMarked}) => {
       ref={mergeRefs([itemRef, ref])}
       className={cx(
         css`
-          padding: 0.5rem;
           min-height: 100vh;
           margin-bottom: 100vh;
         `

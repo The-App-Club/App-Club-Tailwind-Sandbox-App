@@ -84,7 +84,6 @@ const ScrollStory2 = () => {
             <section
               className={cx(
                 css`
-                  padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
                 `
@@ -103,13 +102,13 @@ const ScrollStory2 = () => {
                       ); // (header height) + navbar height + page header height
                     }
                   `,
-                  `bg-white text-xl dark:bg-slate-700`
+                  `bg-white text-xl dark:bg-slate-700 shadow-md p-2`
                 )}
               >
                 221b Baker St.
               </h3>
               <Spacer height="90vh" />
-              <p>
+              <p className={cx(`bg-white dark:bg-slate-700 shadow-md p-2`)}>
                 November 1895. London is shrouded in fog and Sherlock Holmes and
                 Watson pass time restlessly awaiting a new case. &quot;The
                 London criminal is certainly a dull fellow,&quot; Sherlock
@@ -123,7 +122,6 @@ const ScrollStory2 = () => {
             <section
               className={cx(
                 css`
-                  padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
                 `
@@ -142,13 +140,13 @@ const ScrollStory2 = () => {
                       ); // (header height) + navbar height + page header height
                     }
                   `,
-                  `bg-white text-xl dark:bg-slate-700`
+                  `bg-white text-xl dark:bg-slate-700 shadow-md p-2`
                 )}
               >
                 Aldgate Station
               </h3>
               <Spacer height="90vh" />
-              <p>
+              <p className={cx(`bg-white dark:bg-slate-700 shadow-md p-2`)}>
                 Arthur Cadogan West was found dead, head crushed in on train
                 tracks at Aldgate Station at 6AM Tuesday morning. West worked at
                 Woolwich Arsenal on the Bruce-Partington submarine, a secret
@@ -163,7 +161,6 @@ const ScrollStory2 = () => {
             <section
               className={cx(
                 css`
-                  padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
                 `
@@ -182,13 +179,13 @@ const ScrollStory2 = () => {
                       ); // (header height) + navbar height + page header height
                     }
                   `,
-                  `bg-white text-xl dark:bg-slate-700`
+                  `bg-white text-xl dark:bg-slate-700 shadow-md p-2`
                 )}
               >
                 London Bridge
               </h3>
               <Spacer height="90vh" />
-              <p>
+              <p className={cx(`bg-white dark:bg-slate-700 shadow-md p-2`)}>
                 Holmes and Watson&apos;s investigations take them across London.
                 Sherlock deduces that West was murdered elsewhere, then moved to
                 Aldgate Station to create the illusion that he was crushed on
@@ -203,7 +200,6 @@ const ScrollStory2 = () => {
             <section
               className={cx(
                 css`
-                  padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
                 `
@@ -222,13 +218,13 @@ const ScrollStory2 = () => {
                       ); // (header height) + navbar height + page header height
                     }
                   `,
-                  `bg-white text-xl dark:bg-slate-700`
+                  `bg-white text-xl dark:bg-slate-700 shadow-md p-2`
                 )}
               >
                 Woolwich Arsenal
               </h3>
               <Spacer height="90vh" />
-              <p>
+              <p className={cx(`bg-white dark:bg-slate-700 shadow-md p-2`)}>
                 While investigating at Woolwich Arsenal Sherlock learns that
                 West did not have the three keys&mdash;door, office, and
                 safe&mdash;necessary to steal the papers. The train station
@@ -243,7 +239,6 @@ const ScrollStory2 = () => {
             <section
               className={cx(
                 css`
-                  padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
                 `
@@ -262,13 +257,13 @@ const ScrollStory2 = () => {
                       ); // (header height) + navbar height + page header height
                     }
                   `,
-                  `bg-white text-xl dark:bg-slate-700`
+                  `bg-white text-xl dark:bg-slate-700 shadow-md p-2`
                 )}
               >
                 Gloucester Road
               </h3>
               <Spacer height="90vh" />
-              <p>
+              <p className={cx(`bg-white dark:bg-slate-700 shadow-md p-2`)}>
                 Mycroft responds to Sherlock&apos;s telegram and mentions
                 several spies. Hugo Oberstein of 13 Caulfield Gardens catches
                 Sherlock&apos;s eye. He heads to the nearby Gloucester Road
@@ -281,7 +276,6 @@ const ScrollStory2 = () => {
             <section
               className={cx(
                 css`
-                  padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
                 `
@@ -300,13 +294,13 @@ const ScrollStory2 = () => {
                       ); // (header height) + navbar height + page header height
                     }
                   `,
-                  `bg-white text-xl dark:bg-slate-700`
+                  `bg-white text-xl dark:bg-slate-700 shadow-md p-2`
                 )}
               >
                 13 Caulfield Gardens
               </h3>
               <Spacer height="90vh" />
-              <p>
+              <p className={cx(`bg-white dark:bg-slate-700 shadow-md p-2`)}>
                 Holmes deduces that the murderer placed West atop a stopped
                 train at Caulfield Gardens. The train traveled to Aldgate
                 Station before West&apos;s body finally toppled off.
@@ -323,7 +317,6 @@ const ScrollStory2 = () => {
             <section
               className={cx(
                 css`
-                  padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
                 `
@@ -342,13 +335,13 @@ const ScrollStory2 = () => {
                       ); // (header height) + navbar height + page header height
                     }
                   `,
-                  `bg-white text-xl dark:bg-slate-700`
+                  `bg-white text-xl dark:bg-slate-700 shadow-md p-2`
                 )}
               >
                 The Daily Telegraph
               </h3>
               <Spacer height="90vh" />
-              <p>
+              <p className={cx(`bg-white dark:bg-slate-700 shadow-md p-2`)}>
                 Holmes and Watson head to The Daily Telegraph and place an ad to
                 draw out the criminal. It reads: &quot;To-night. Same hour. Same
                 place. Two taps. Most vitally important. Your own safety at
@@ -363,7 +356,6 @@ const ScrollStory2 = () => {
             <section
               className={cx(
                 css`
-                  padding: 0.5rem;
                   min-height: 100vh;
                   margin-bottom: 100vh;
                 `
@@ -382,13 +374,13 @@ const ScrollStory2 = () => {
                       ); // (header height) + navbar height + page header height
                     }
                   `,
-                  `bg-white text-xl dark:bg-slate-700`
+                  `bg-white text-xl dark:bg-slate-700 shadow-md p-2`
                 )}
               >
                 Charing Cross Hotel
               </h3>
               <Spacer height="90vh" />
-              <p>
+              <p className={cx(`bg-white dark:bg-slate-700 shadow-md p-2`)}>
                 Walter writes to Oberstein and convinces him to meet in the
                 smoking room of the Charing Cross Hotel where he promises
                 additional plans for the submarine in exchange for money. The

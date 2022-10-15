@@ -32,7 +32,6 @@ const _ScrollStorySection = ({chapterId}, ref) => {
       ref={ref}
       className={cx(
         css`
-          padding: 0.5rem;
           min-height: 100vh;
           /* margin-bottom: 100vh; */
           padding-bottom: 100vh;

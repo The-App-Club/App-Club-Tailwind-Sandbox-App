@@ -18,7 +18,6 @@ const ScrollStorySection = ({children, chapterName, doMarked}) => {
       return;
     }
     doMarked({activeChapterName: chapterName, inView});
-    // console.log(`inView, chapterName`, inView, chapterName);
     if (inView) {
       gsap.to(entry.target, {opacity: 1, duration: 0.75});
     } else {
@@ -31,15 +30,8 @@ const ScrollStorySection = ({children, chapterName, doMarked}) => {
       ref={mergeRefs([itemRef, ref])}
       className={cx(
         css`
-          padding: 0.5rem;
           min-height: 100vh;
           margin-bottom: 100vh;
-          &:first-child {
-            /* margin-top: 100vh; */
-          }
-          &:last-child {
-            /* margin-bottom: 100vh; */
-          }
         `
       )}
     >
