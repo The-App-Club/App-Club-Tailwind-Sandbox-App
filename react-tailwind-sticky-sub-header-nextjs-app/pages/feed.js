@@ -9,8 +9,9 @@ import capitalize from 'capitalize-the-first-letter';
 import data from '../data/wines.json';
 import {motion, transform} from 'framer-motion';
 import {useMemo, useRef, useState} from 'react';
-import Feeder from '../components/Feeder';
-import Spacer from '../components/Spacer';
+import Feeder from '@/components/feed/Feeder';
+import Spacer from '@/components/Spacer';
+import Header from '@/components/feed/Header';
 
 // import {default as chance} from 'chance';
 
@@ -97,30 +98,7 @@ const Feed = () => {
             }}
           />
 
-          <div
-            className={cx(
-              css`
-                z-index: 3;
-                position: sticky;
-                top: 6rem;
-                min-height: 3rem;
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 1rem;
-              `,
-              `bg-white dark:bg-slate-700 shadow-md px-2`
-            )}
-          >
-            <h2
-              className={cx(
-                `w-full text-xl flex items-center justify-start gap-2`
-              )}
-            >
-              Feed
-            </h2>
-          </div>
+          <Header />
           <Spacer />
           <Feeder />
         </section>

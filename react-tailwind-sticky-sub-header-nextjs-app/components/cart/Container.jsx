@@ -1,9 +1,8 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {memo, useEffect, useState} from 'react';
-import useCart from '../../hooks/useCart';
-import ReviewRanking from '../ReviewRanking';
-import Product from './Product';
+import useCart from '@/hooks/useCart';
+import Product from '@/components/cart/Product';
 
 const Container = () => {
   const [isClient, setIsClient] = useState(false);

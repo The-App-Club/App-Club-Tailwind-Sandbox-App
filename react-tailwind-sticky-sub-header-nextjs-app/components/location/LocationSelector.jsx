@@ -2,10 +2,10 @@ import {Fragment, useEffect, useMemo, useState} from 'react';
 import {Listbox, Transition} from '@headlessui/react';
 import {CheckIcon, ChevronUpDownIcon} from '@heroicons/react/24/solid';
 import {css, cx} from '@emotion/css';
-import locationSelectorState from '../stores/locationSelectorStore';
+import locationSelectorState from '@/stores/locationSelectorStore';
 import {useRecoilState} from 'recoil';
 import {filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
-import data from '../data/wines.json';
+import data from '@/data/wines.json';
 
 const LocationSelector = ({className}) => {
   const [location, setLocation] = useRecoilState(locationSelectorState);

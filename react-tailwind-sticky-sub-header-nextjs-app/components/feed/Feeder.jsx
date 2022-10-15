@@ -1,16 +1,15 @@
 import {useRecoilValue} from 'recoil';
-import FeedController from './FeedController';
-
-import data from '../data/wines.json';
+import data from '@/data/wines.json';
 import {useMemo} from 'react';
 import {filter, tidy} from '@tidyjs/tidy';
-import tasteState from '../stores/tasteStore';
-import ReviewRanking from './ReviewRanking';
+import tasteState from '@/stores/tasteStore';
 import {css} from '@emotion/css';
-import PriceRanking from './PriceRanking';
-import RecentOrderRanking from './RecentOrderRanking';
-import LocationRanking from './LocationRanking';
-import WineryRanking from './WineryRanking';
+
+import ReviewRanking from '@/components/feed/ReviewRanking';
+import PriceRanking from '@/components/feed/PriceRanking';
+import RecentOrderRanking from '@/components/feed/RecentOrderRanking';
+import LocationRanking from '@/components/feed/LocationRanking';
+import WineryRanking from '@/components/feed/WineryRanking';
 
 const Feeder = () => {
   return (

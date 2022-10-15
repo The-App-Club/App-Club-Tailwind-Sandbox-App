@@ -1,14 +1,14 @@
 import {css, cx} from '@emotion/css';
-import Sidebar from '../components/Sidebar';
-import Layout from '../layouts/default';
-import hamburgerState from '../stores/hamburgerStore';
+import Sidebar from '@/components/Sidebar';
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import Spacer from '../components/Spacer';
-import ReviewRanking from '../components/ReviewRanking';
-import Header from '../components/cart/Header';
-import Container from '../components/cart/Container';
+import Spacer from '@/components/Spacer';
+import ReviewRanking from '@/components/feed/ReviewRanking';
+import Header from '@/components/cart/Header';
+import Container from '@/components/cart/Container';
 
 const Cart = () => {
   const {opened} = useRecoilValue(hamburgerState);

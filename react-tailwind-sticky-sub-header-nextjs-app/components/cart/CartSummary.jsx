@@ -1,6 +1,6 @@
 import {count, groupBy, map, sum, summarize, tidy} from '@tidyjs/tidy';
 import {memo, useEffect, useMemo, useState} from 'react';
-import useCart from '../hooks/useCart';
+import useCart from '@/hooks/useCart';
 import {default as numbro} from 'numbro';
 import {css, cx} from '@emotion/css';
 const CartSummary = () => {

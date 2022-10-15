@@ -7,17 +7,17 @@ import {
   MdOutlineLocationOn,
 } from 'react-icons/md';
 import {default as numbro} from 'numbro';
-import Spacer from '../Spacer';
+import Spacer from '@/components/Spacer';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import {memo, useCallback, useEffect, useMemo, useState} from 'react';
-import themeState from '../../stores/themeStore';
-import useFavorite from '../../hooks/useFavorite';
+import themeState from '@/stores/themeStore';
+import useFavorite from '@/hooks/useFavorite';
 import InputNumber from '../InputNumber';
-import dataWineries from '../../data/wineries.json';
-import locationSelectorState from '../../stores/locationSelectorStore';
-import useCart from '../../hooks/useCart';
-import ProductFav from './ProductFav';
-import ProductCarted from './ProductCarted';
+import dataWineries from '@/data/wineries.json';
+import locationSelectorState from '@/stores/locationSelectorStore';
+import useCart from '@/hooks/useCart';
+import ProductFav from '@/components/cart/ProductFav';
+import ProductCarted from '@/components/cart/ProductCarted';
 
 const Product = ({item}) => {
   const router = useRouter();

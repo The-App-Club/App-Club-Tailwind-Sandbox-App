@@ -1,19 +1,18 @@
-import Tracer from './Tracer';
+import Tracer from '@/components/Tracer';
 import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
 import {useMemo} from 'react';
 import {css, cx} from '@emotion/css';
-import data from '../data/wines.json';
-import dataWineries from '../data/wineries.json';
+import data from '@/data/wines.json';
+import dataWineries from '@/data/wineries.json';
 import {useRouter} from 'next/router';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
-import locationSelectorState from '../stores/locationSelectorStore';
+import locationSelectorState from '@/stores/locationSelectorStore';
 
-const LocationRanking = ({className}) => {
+const ReviewRanking = ({className}) => {
   const router = useRouter();
   const [location, setLocation] = useRecoilState(locationSelectorState);
-
   const rankingData = useMemo(() => {
     // https://stackoverflow.com/a/48218209
     return tidy(
@@ -51,7 +50,7 @@ const LocationRanking = ({className}) => {
   }, []);
 
   return (
-    <Tracer title="Top5 Location Order" className={className}>
+    <Tracer title="Top5 Reviews" className={className}>
       <ul className="flex flex-col items-start gap-2">
         {rankingData.map((item, index) => {
           return (
@@ -158,4 +157,4 @@ const LocationRanking = ({className}) => {
   );
 };
 
-export default LocationRanking;
+export default ReviewRanking;

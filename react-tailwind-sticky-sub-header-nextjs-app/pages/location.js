@@ -1,30 +1,19 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
 import Sidebar from '../components/Sidebar';
 import Layout from '../layouts/default';
 import hamburgerState from '../stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import data from '../data/wines.json';
-import {arrange, asc, distinct, filter, map, tidy} from '@tidyjs/tidy';
-import locationSelectorState from '../stores/locationSelectorStore';
 import Map from '../components/Map';
 import AreaGraph from '../components/AreaGraph';
-import LocationSelector from '../components/LocationSelector';
 import Spacer from '../components/Spacer';
-import Tracer from '../components/Tracer';
-import {TbTemperature} from 'react-icons/tb';
-import {WiBarometer, WiHumidity} from 'react-icons/wi';
-import {FaTemperatureHigh, FaTemperatureLow} from 'react-icons/fa';
 import Weather from '../components/Weather';
-
-import {GrMap} from 'react-icons/gr';
 import {MdOutlineLocationOn} from 'react-icons/md';
+import Header from '@/components/location/Header';
 
 const Location = () => {
   const {opened} = useRecoilValue(hamburgerState);
-  const {activeLocationName} = useRecoilValue(locationSelectorState);
   return (
     <>
       <Sidebar />
@@ -78,37 +67,7 @@ const Location = () => {
               return `${niceTitle} > `;
             }}
           />
-          <div
-            className={cx(
-              css`
-                z-index: 3;
-                position: sticky;
-                top: 6rem;
-                min-height: 3rem;
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0 0.5rem;
-                @media (max-width: 768px) {
-                  justify-content: flex-start;
-                  align-items: flex-start;
-                  flex-direction: column;
-                  padding: 0.5rem;
-                }
-              `,
-              `bg-white dark:bg-slate-700 shadow-md px-2`
-            )}
-          >
-            <h2
-              className={cx(
-                `w-full text-xl flex items-center justify-start gap-2`
-              )}
-            >
-              {`Location@${activeLocationName}`}
-            </h2>
-            <LocationSelector />
-          </div>
+          <Header />
           <Spacer />
           <div
             className={cx(

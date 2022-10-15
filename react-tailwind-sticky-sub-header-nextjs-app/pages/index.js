@@ -1,12 +1,12 @@
 import {css, cx} from '@emotion/css';
-import Layout from '../layouts/default';
-import Sidebar from '../components/Sidebar';
-import hamburgerState from '../stores/hamburgerStore';
+import Layout from '@/layouts/default';
+import Sidebar from '@/components/Sidebar';
+import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import PriceRanking from '../components/PriceRanking';
-import Spacer from '../components/Spacer';
+import PriceRanking from '@/components/feed/PriceRanking';
+import Spacer from '@/components/Spacer';
 
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);

@@ -1,8 +1,4 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
-import {memo} from 'react';
-import CartSummary from '@/components/cart/CartSummary';
-import SubHeader from '@/components/cart/SubHeader';
 
 const Header = () => {
   return (
@@ -17,16 +13,18 @@ const Header = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          flex-direction: column;
           gap: 1rem;
         `,
-        `bg-white dark:bg-slate-700 shadow-md p-2`
+        `bg-white dark:bg-slate-700 shadow-md px-2`
       )}
     >
-      <SubHeader />
-      <CartSummary />
+      <h2
+        className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
+      >
+        Feed
+      </h2>
     </div>
   );
 };
 
-export default memo(Header);
+export default Header;

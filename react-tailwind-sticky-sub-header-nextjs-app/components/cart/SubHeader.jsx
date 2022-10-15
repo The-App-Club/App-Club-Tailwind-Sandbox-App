@@ -1,6 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {memo} from 'react';
-import useCart from '../../hooks/useCart';
+import useCart from '@/hooks/useCart';
 
 const SubHeader = () => {
   const {removeAllFromCart} = useCart();

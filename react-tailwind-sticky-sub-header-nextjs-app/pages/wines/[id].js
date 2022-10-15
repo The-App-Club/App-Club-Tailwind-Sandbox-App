@@ -16,7 +16,7 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import Category from '@/components/Category';
 import Tracer from '@/components/Tracer';
 import {arrange, desc, filter, map, sliceHead, tidy} from '@tidyjs/tidy';
-import ReviewRanking from '@/components/ReviewRanking';
+import ReviewRanking from '@/components/feed/ReviewRanking';
 import {default as numbro} from 'numbro';
 import TraceFooter from '@/components/wines/[id]/TraceFooter';
 import Product from '@/components/wines/[id]/Product';

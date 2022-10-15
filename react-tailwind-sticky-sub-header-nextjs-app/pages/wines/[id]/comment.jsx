@@ -98,53 +98,6 @@ const Comment = () => {
             `
           )}
         >
-          {/* <Breadcrumbs
-            useDefaultStyle={true}
-            replaceCharacterList={[{from: '.', to: ' '}]}
-            containerClassName="bg-white dark:bg-slate-700"
-            activeItemClassName={'text-gray-500 dark:text-slate-500'}
-            inactiveItemClassName={
-              'text-gray-800 font-bold dark:text-slate-300'
-            }
-            transformLabel={(title) => {
-              const niceTitle = capitalize(title);
-              if (niceTitle === `Comment`) {
-                return `${niceTitle}`;
-              }
-              return `${niceTitle} > `;
-            }}
-          /> */}
-          {/* <div
-            className={cx(
-              css`
-                z-index: 3;
-                position: sticky;
-                top: 6rem;
-                min-height: 3rem;
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                gap: 0.5rem;
-              `,
-              `bg-white dark:bg-slate-700 shadow-md p-2`
-            )}
-          >
-            <h2
-              className={cx(
-                `w-full text-xl flex flex-col justify-start gap-1`,
-                css`
-                  @media (max-width: 768px) {
-                    flex-direction: column;
-                    align-items: flex-start;
-                  }
-                `
-              )}
-            >
-              Comment
-            </h2>
-          </div>
-          <Spacer /> */}
           <div
             className={cx(
               css`
