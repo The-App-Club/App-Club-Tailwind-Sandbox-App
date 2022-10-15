@@ -6,11 +6,8 @@ import {MathUtils} from 'three';
 import Spacer from '@/components/Spacer';
 import {motion, useAnimationControls} from 'framer-motion';
 import {useRecoilValue} from 'recoil';
-import {scrollDirectionState} from '@/stores/scrollDirectionStore';
 
 const ScrollStory2 = () => {
-  const mapContainerControls = useAnimationControls();
-  const {scrollDirection} = useRecoilValue(scrollDirectionState);
   const mapContainer = useRef(null);
   const prevProgress = useRef(0);
 
@@ -47,41 +44,10 @@ const ScrollStory2 = () => {
 
   const handleStepProgress = (e) => {};
 
-  useEffect(() => {
-    if (!scrollDirection) {
-      return;
-    }
-    if (scrollDirection === `UP`) {
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        mapContainerControls.start({
-          top: `15rem`,
-        });
-      } else {
-        mapContainerControls.start({
-          top: `9rem`,
-        });
-      }
-
-      return;
-    }
-    if (scrollDirection === `DOWN`) {
-      mapContainerControls.start({
-        top: `6rem`,
-      });
-
-      return;
-    }
-  }, [scrollDirection, mapContainerControls]);
-
   return (
     <div className="relative">
-      <motion.div
+      <div
         ref={mapContainer}
-        animate={mapContainerControls}
-        transition={{
-          duration: 0.4,
-          ease: 'easeInOut',
-        }}
         className={cx(
           css`
             position: sticky;

@@ -13,14 +13,12 @@ import {MathUtils} from 'three';
 import Spacer from '@/components/Spacer';
 import {AnimatePresence, motion, useAnimationControls} from 'framer-motion';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import {scrollDirectionState} from '@/stores/scrollDirectionStore';
 import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 import {usePrevious} from '@/hooks/usePrevious';
 import ScrollStoryCaption from '@/components/story/create/ScrollStoryCaption';
 import ScrollStoryModel from '@/components/story/create/ScrollStoryModel';
 
 const ScrollStory = () => {
-  const mapContainerControls = useAnimationControls();
   const [scrollTrigger, setScrollTrigger] = useRecoilState(scrollTriggerState);
   const [chapterId, setChapterId] = useState(1);
   const mapContainer = useRef(null);
@@ -116,13 +114,8 @@ const ScrollStory = () => {
 
   return (
     <div className="relative">
-      <motion.div
+      <div
         ref={mapContainer}
-        animate={mapContainerControls}
-        transition={{
-          duration: 0.4,
-          ease: 'easeInOut',
-        }}
         className={cx(
           css`
             position: sticky;
@@ -154,7 +147,7 @@ const ScrollStory = () => {
         </div>
         {matchedData.model()}
         {matchedData.caption()}
-      </motion.div>
+      </div>
       <div
         className={css`
           width: 50%;

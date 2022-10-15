@@ -7,7 +7,6 @@ import MapboxLanguage from '@mapbox/mapbox-gl-language';
 import {useDebouncedCallback} from 'use-debounce';
 import ScrollStorySection from '@/components/wines/[id]/story/ScrollStorySection';
 import {useCallback} from 'react';
-import {scrollDirectionState} from '@/stores/scrollDirectionStore';
 import {useRecoilValue} from 'recoil';
 import {useState} from 'react';
 import {motion, useAnimationControls} from 'framer-motion';
@@ -66,9 +65,6 @@ const chapters = {
 };
 
 const ScrollStory = () => {
-  console.log(`ppp`);
-  const mapContainerControls = useAnimationControls();
-  const {scrollDirection} = useRecoilValue(scrollDirectionState);
   const mapContainer = useRef(null);
   const mapInstance = useRef(null);
   const marker = useRef(null);
@@ -103,41 +99,10 @@ const ScrollStory = () => {
     }
   }, []);
 
-  useEffect(() => {
-    if (!scrollDirection) {
-      return;
-    }
-    if (scrollDirection === `UP`) {
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        mapContainerControls.start({
-          top: `15rem`,
-        });
-      } else {
-        mapContainerControls.start({
-          top: `9rem`,
-        });
-      }
-
-      return;
-    }
-    if (scrollDirection === `DOWN`) {
-      mapContainerControls.start({
-        top: `6rem`,
-      });
-
-      return;
-    }
-  }, [scrollDirection, mapContainerControls]);
-
   return (
     <div className="relative">
-      <motion.div
+      <div
         ref={mapContainer}
-        animate={mapContainerControls}
-        transition={{
-          duration: 0.4,
-          ease: 'easeInOut',
-        }}
         className={cx(
           css`
             position: sticky;

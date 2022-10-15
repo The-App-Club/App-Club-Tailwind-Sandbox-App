@@ -16,7 +16,6 @@ import ScatterGraph from '../../../components/ScatterGraph';
 import ScrollStory2 from '../../../components/ScrollStory2';
 import {useScrollDirection} from 'react-use-scroll-direction';
 import {motion, useAnimationControls} from 'framer-motion';
-import {scrollDirectionState} from '../../../stores/scrollDirectionStore';
 import Spacer from '../../../components/Spacer';
 import wineState from '../../../stores/wineStore';
 import {FaRegComments} from 'react-icons/fa';

@@ -16,55 +16,19 @@ import ScatterGraph from '@/components/ScatterGraph';
 import ScrollStory2 from '@/components/wines/[id]/story/ScrollStory2';
 import {useScrollDirection} from 'react-use-scroll-direction';
 import {motion, useAnimationControls} from 'framer-motion';
-import {scrollDirectionState} from '@/stores/scrollDirectionStore';
 import Spacer from '@/components/Spacer';
 import wineState from '@/stores/wineStore';
 
 const Story = () => {
-  const [_, setScrollDirectionState] = useRecoilState(scrollDirectionState);
   const [activeWine, setActiveWine] = useRecoilState(wineState);
-  const headerControls = useAnimationControls();
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
-
-  const {scrollDirection} = useScrollDirection();
-
   const item = useMemo(() => {
     return data.find((item) => {
       return item.id === Number(id);
     });
   }, [id]);
-
-  // useEffect(() => {
-  //   if (!scrollDirection) {
-  //     return;
-  //   }
-  //   if (!window.matchMedia('(max-width: 768px)').matches) {
-  //     return;
-  //   }
-  //   setScrollDirectionState({
-  //     scrollDirection,
-  //   });
-  //   if (scrollDirection === `UP`) {
-  //     headerControls.start({
-  //       y: 0,
-  //       opacity: 1,
-  //       zIndex: 1,
-  //     });
-
-  //     return;
-  //   }
-  //   if (scrollDirection === `DOWN`) {
-  //     headerControls.start({
-  //       y: -60,
-  //       opacity: 0,
-  //       zIndex: -1,
-  //     });
-
-  //     return;
-  //   }
-  // }, [scrollDirection, headerControls, setScrollDirectionState]);
 
   useEffect(() => {
     setActiveWine({
@@ -130,12 +94,7 @@ const Story = () => {
               return `${niceTitle} > `;
             }}
           />
-          <motion.div
-            animate={headerControls}
-            transition={{
-              duration: 0.4,
-              ease: 'easeInOut',
-            }}
+          <div
             className={cx(
               css`
                 z-index: 3;
@@ -180,7 +139,7 @@ const Story = () => {
                 Add Cart
               </button>
             </div>
-          </motion.div>
+          </div>
 
           <ScrollStory />
 
