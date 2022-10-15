@@ -21,7 +21,6 @@ import ScrollStoryModel from '@/components/story/create/ScrollStoryModel';
 
 const ScrollStory = () => {
   const mapContainerControls = useAnimationControls();
-  const {scrollDirection} = useRecoilValue(scrollDirectionState);
   const [scrollTrigger, setScrollTrigger] = useRecoilState(scrollTriggerState);
   const [chapterId, setChapterId] = useState(1);
   const mapContainer = useRef(null);
@@ -32,28 +31,46 @@ const ScrollStory = () => {
       {
         chapterId: 1,
         model: () => {
-          return <ScrollStoryModel chapterId={1} />;
+          return (
+            <ScrollStoryModel
+              chapterId={1}
+              title={`Food-and-Drinks-12`}
+              modelURL={`/assets/Food-and-Drinks-12.png`}
+            />
+          );
         },
         caption: () => {
-          return <ScrollStoryCaption a={'aaaa'} chapterId={1} />;
+          return <ScrollStoryCaption a={'This is Cake'} chapterId={1} />;
         },
       },
       {
         chapterId: 2,
         model: () => {
-          return <ScrollStoryModel chapterId={2} />;
+          return (
+            <ScrollStoryModel
+              chapterId={2}
+              title={`Food-and-Drinks-19`}
+              modelURL={`/assets/Food-and-Drinks-19.png`}
+            />
+          );
         },
         caption: () => {
-          return <ScrollStoryCaption a={'bbbb'} chapterId={2} />;
+          return <ScrollStoryCaption a={'Cool Beer'} chapterId={2} />;
         },
       },
       {
         chapterId: 3,
         model: () => {
-          return <ScrollStoryModel chapterId={3} />;
+          return (
+            <ScrollStoryModel
+              chapterId={3}
+              title={`Food-and-Drinks-20`}
+              modelURL={`/assets/Food-and-Drinks-20.png`}
+            />
+          );
         },
         caption: () => {
-          return <ScrollStoryCaption a={'cccc'} chapterId={3} />;
+          return <ScrollStoryCaption a={'Nice Coffee'} chapterId={3} />;
         },
       },
     ];
@@ -122,9 +139,19 @@ const ScrollStory = () => {
               height: calc(100vh - calc(3rem * 2));
             }
           `,
-          `bg-slate-200 flex items-center justify-center flex-col`
+          `border-2`,
+          `bg-white dark:bg-slate-700`,
+          `flex items-center justify-center flex-col`
         )}
       >
+        <div className={`absolute top-3 right-3 border-2 p-2 w-[130px]`}>
+          <div className="font-bold flex items-center gap-1 text-black dark:text-slate-300">
+            chapterId<span>{scrollTrigger.chapterId}</span>
+          </div>
+          <div className="font-bold flex items-center gap-1 text-black dark:text-slate-300">
+            progress<span>{scrollTrigger.progress?.toFixed(2)}</span>
+          </div>
+        </div>
         {matchedData.model()}
         {matchedData.caption()}
       </motion.div>
@@ -135,7 +162,8 @@ const ScrollStory = () => {
         `}
       >
         <Scrollama
-          offset={0.8}
+          // offset={0.8}
+          offset={1.0}
           onStepEnter={handleStepEnter}
           onStepExit={handleStepExit}
           onStepProgress={handleStepEnter}

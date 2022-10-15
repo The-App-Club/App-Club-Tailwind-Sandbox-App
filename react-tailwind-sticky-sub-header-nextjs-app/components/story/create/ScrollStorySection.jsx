@@ -32,7 +32,8 @@ const _ScrollStorySection = ({chapterId}, ref) => {
         css`
           padding: 0.5rem;
           min-height: 100vh;
-          margin-bottom: 100vh;
+          /* margin-bottom: 100vh; */
+          padding-bottom: 100vh;
         `
       )}
     >
@@ -63,6 +64,15 @@ const _ScrollStorySection = ({chapterId}, ref) => {
         telegram arrives from Sherlock&apos;s brother Mycroft with a mysterious
         case.
       </p>
+      {/* <Spacer height="90vh" />
+      <p>
+        November 1895. London is shrouded in fog and Sherlock Holmes and Watson
+        pass time restlessly awaiting a new case. &quot;The London criminal is
+        certainly a dull fellow,&quot; Sherlock bemoans. &quot;There have been
+        numerous petty thefts,&quot; Watson offers in response. Just then a
+        telegram arrives from Sherlock&apos;s brother Mycroft with a mysterious
+        case.
+      </p> */}
     </section>
   );
 };

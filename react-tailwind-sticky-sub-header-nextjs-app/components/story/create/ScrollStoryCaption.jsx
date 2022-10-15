@@ -32,7 +32,7 @@ const ScrollStoryCaption = ({a, chapterId}) => {
     chapterId: activeChapterId,
   } = useRecoilValue(scrollTriggerState);
   const opacity = useTransform(motionValue(progress), [0, 0.5, 1], [0, 1, 0]);
-  const x = useTransform(motionValue(progress), [0, 0.5, 1], [70, 0, 70]);
+  const x = useTransform(motionValue(progress), [0, 0.5, 1], [-70, 0, -70]);
   if (isNaN(opacity.get())) {
     return;
   }
@@ -41,6 +41,7 @@ const ScrollStoryCaption = ({a, chapterId}) => {
   }
   return (
     <motion.p
+      className="text-lg font-bold"
       style={{
         opacity,
         x,
