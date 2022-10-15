@@ -11,17 +11,20 @@ import Header from '@/components/story/Header';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
 import data from '@/data/wines.json';
+import Container from '@/components/story/Container';
+import Spacer from '@/components/Spacer';
 
 const Story = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
+
   return (
     <>
       <Sidebar />
       <Layout>
         <section
           className={cx(
-            `mt-12`,
+            `mt-12 px-2 pb-2`,
             css`
               position: absolute;
               top: 0;
@@ -69,10 +72,8 @@ const Story = () => {
             }}
           />
           <Header />
-          <p>Nothing story yet. select wine for writting.</p>
-          <Link href={`/wines`}>
-            <a className="hover:underline">create new story</a>
-          </Link>
+          <Spacer />
+          <Container />
         </section>
       </Layout>
     </>
