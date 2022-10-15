@@ -4,7 +4,7 @@ import {useRecoilState, useRecoilValue} from 'recoil';
 import hamburgerState from '@/stores/hamburgerStore';
 import data from '@/data/wines.json';
 import capitalize from 'capitalize-the-first-letter';
-import TraceFooter from '@/components/TraceFooter';
+import TraceFooter from '@/components/wines/[id]/story/TraceFooter';
 import Sidebar from '@/components/Sidebar';
 import Layout from '@/layouts/default';
 import Breadcrumbs from 'nextjs-breadcrumbs';
