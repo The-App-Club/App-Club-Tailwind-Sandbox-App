@@ -1,16 +1,17 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
-import {default as numbro} from 'numbro';
-import Layout from '@/layouts/default';
-import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import Sidebar from '@/components/story/Sidebar';
-import Header from '@/components/story/Header';
+import {useRouter} from 'next/router';
+
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
+import Sidebar from '@/components/story/favorite/wines/Sidebar';
+import Header from '@/components/story/favorite/wines/Header';
 import Spacer from '@/components/Spacer';
 
-const Story = () => {
+const FavoriteWineStories = () => {
+  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
 
   return (
@@ -60,7 +61,7 @@ const Story = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === `Story`) {
+              if (niceTitle === `Wines`) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
@@ -68,28 +69,10 @@ const Story = () => {
           />
           <Header />
           <Spacer />
-          <div className="w-full flex items-center gap-2">
-            <div className="w-full flex flex-col items-center justify-center min-h-[20rem] border-2">
-              <Link href={`/story/wines`}>
-                <a className="hover:underline">See Wine Story</a>
-              </Link>
-              <p className="font-bold">{`Today ${numbro(32030).format({
-                thousandSeparated: true,
-              })} stories published`}</p>
-            </div>
-            <div className="w-full flex flex-col items-center justify-center min-h-[20rem] border-2">
-              <Link href={`/story/wineries`}>
-                <a className="hover:underline">See Winery Story</a>
-              </Link>
-              <p className="font-bold">{`Today ${numbro(213).format({
-                thousandSeparated: true,
-              })} stories published`}</p>
-            </div>
-          </div>
         </section>
       </Layout>
     </>
   );
 };
 
-export default Story;
+export default FavoriteWineStories;

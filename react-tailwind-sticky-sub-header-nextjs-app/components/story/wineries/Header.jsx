@@ -27,7 +27,7 @@ const Header = () => {
         <h2
           className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
         >
-          Story
+          Winery Story
         </h2>
       </div>
     </div>
