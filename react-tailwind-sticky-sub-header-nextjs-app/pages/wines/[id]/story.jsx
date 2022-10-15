@@ -18,11 +18,13 @@ import {useScrollDirection} from 'react-use-scroll-direction';
 import {motion, useAnimationControls} from 'framer-motion';
 import Spacer from '@/components/Spacer';
 import wineState from '@/stores/wineStore';
+import Header from '@/components/wines/[id]/story/Header';
+import Footer from '@/components/wines/[id]/story/Footer';
 
 const Story = () => {
   const [activeWine, setActiveWine] = useRecoilState(wineState);
-  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
+  const router = useRouter();
   const {id} = router.query;
   const item = useMemo(() => {
     return data.find((item) => {
@@ -94,52 +96,7 @@ const Story = () => {
               return `${niceTitle} > `;
             }}
           />
-          <div
-            className={cx(
-              css`
-                z-index: 3;
-                position: sticky;
-                top: 6rem;
-                min-height: 3rem;
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                @media (max-width: 768px) {
-                  display: none;
-                  min-height: 9rem;
-                }
-              `,
-              `bg-white dark:bg-slate-700`
-            )}
-          >
-            <h2
-              className={cx(
-                `w-full text-xl flex items-center justify-start gap-2`,
-                css`
-                  @media (max-width: 768px) {
-                    flex-direction: column;
-                    align-items: flex-start;
-                  }
-                `
-              )}
-            >
-              Scroll Story@{item.wine}
-              <span className="text-sm font-bold flex items-center gap-1">
-                <GiGrapes size={28} />
-                {`${item.winery}`}
-              </span>
-              <span className="text-sm font-bold flex items-center gap-1">
-                <MdOutlineLocationOn size={28} />
-                {`${item.location}`}
-              </span>
-            </h2>
-            <div className="flex items-center gap-2">
-              <button className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center">
-                Add Cart
-              </button>
-            </div>
-          </div>
+          <Header />
 
           <ScrollStory />
 
@@ -151,14 +108,7 @@ const Story = () => {
 
           <ScrollStory2 />
 
-          <div className="flex items-center justify-center min-h-screen w-full gap-2">
-            <p className="text-2xl">Let&apos;s Now Buy!</p>
-            <div className="flex items-center gap-2">
-              <button className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center">
-                Add Cart
-              </button>
-            </div>
-          </div>
+          <Footer item={item} />
         </section>
         <TraceFooter />
       </Layout>

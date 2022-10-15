@@ -9,11 +9,26 @@ import capitalize from 'capitalize-the-first-letter';
 import {motion} from 'framer-motion';
 import Header from '@/components/story/create/Header';
 import wineState from '@/stores/wineStore';
-import {useEffect} from 'react';
+import {useEffect, useMemo} from 'react';
 import ScrollStory from '@/components/story/create/ScrollStory';
+import Footer from '@/components/story/create/Footer';
+import data from '@/data/wines.json';
+import {useRouter} from 'next/router';
 
 const CreateStory = () => {
   const {opened} = useRecoilValue(hamburgerState);
+  const router = useRouter();
+  const {id} = router.query;
+
+  const item = useMemo(() => {
+    return data.find((item) => {
+      return item.id === Number(id);
+    });
+  }, [id]);
+
+  if (!item) {
+    return;
+  }
 
   return (
     <>
@@ -93,14 +108,8 @@ const CreateStory = () => {
             <Header />
           </div>
           <ScrollStory />
-          <div className="flex items-center justify-center min-h-screen w-full gap-2">
-            <p className="text-2xl">Let&apos;s Now Buy!</p>
-            <div className="flex items-center gap-2">
-              <button className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center">
-                Add Cart
-              </button>
-            </div>
-          </div>
+
+          <Footer item={item} />
         </section>
       </Layout>
     </>
