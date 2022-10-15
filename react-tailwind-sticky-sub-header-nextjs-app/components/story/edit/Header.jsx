@@ -1,6 +1,9 @@
 import {css, cx} from '@emotion/css';
 
-const Header = () => {
+const Header = ({item}) => {
+  if (!item) {
+    return;
+  }
   return (
     <div
       className={cx(
@@ -26,7 +29,7 @@ const Header = () => {
       <h2
         className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
       >
-        Edit Story
+        {item.title}
       </h2>
     </div>
   );
