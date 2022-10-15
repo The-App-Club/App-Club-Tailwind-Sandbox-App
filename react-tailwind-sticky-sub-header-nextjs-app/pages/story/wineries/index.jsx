@@ -6,6 +6,7 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import Sidebar from '@/components/story/wineries/Sidebar';
 import Header from '@/components/story/wineries/Header';
+import Container from '@/components/story/wineries/Container';
 import Spacer from '@/components/Spacer';
 
 const WineryStories = () => {
@@ -66,6 +67,7 @@ const WineryStories = () => {
           />
           <Header />
           <Spacer />
+          <Container />
         </section>
       </Layout>
     </>

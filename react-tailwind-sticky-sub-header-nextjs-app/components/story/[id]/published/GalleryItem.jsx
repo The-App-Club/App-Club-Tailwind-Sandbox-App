@@ -1,5 +1,4 @@
 import {css, cx} from '@emotion/css';
-import GalleryItemFav from '@/components/story/GalleryItemFav';
 import Spacer from '@/components/Spacer';
 import {GiGrapes, GiPriceTag} from 'react-icons/gi';
 import {
@@ -10,17 +9,19 @@ import {
   MdPublish,
   MdUpdate,
 } from 'react-icons/md';
-import dataWines from '@/data/wines.json';
-import dataStories from '@/data/stories.json';
-import dataWineries from '@/data/wineries.json';
 import {useRouter} from 'next/router';
-import locationSelectorState from '@/stores/locationSelectorStore';
 import {useRecoilState} from 'recoil';
-import {formatRelativeTime} from '@/utils/dateUtil';
 import {default as numbro} from 'numbro';
 import {useMemo} from 'react';
 import {FiEye} from 'react-icons/fi';
+
+import dataWines from '@/data/wines.json';
+import dataStories from '@/data/stories.json';
+import dataWineries from '@/data/wineries.json';
+import GalleryItemFav from '@/components/story/[id]/published/GalleryItemFav';
+import locationSelectorState from '@/stores/locationSelectorStore';
 import wineState from '@/stores/wineStore';
+import {formatRelativeTime} from '@/utils/dateUtil';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
