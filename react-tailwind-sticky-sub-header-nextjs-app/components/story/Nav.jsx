@@ -5,6 +5,7 @@ import {useRecoilState} from 'recoil';
 import {useRouter} from 'next/router';
 import sidebarState from '@/stores/sidebarStore';
 import {useEffect, useState} from 'react';
+import NavMarkedFav from '@/components/story/NavMarkedFav';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
@@ -28,6 +29,13 @@ const MenuItem = ({path, menuTitle, icon}) => {
       setIsClient(true);
     }
   }, []);
+
+  const renderShortHandMetrics = () => {
+    if (menuTitle === `Favorite Story`) {
+      return <NavMarkedFav />;
+    }
+    return null;
+  };
 
   return (
     <motion.li
@@ -61,6 +69,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
     >
       {icon()}
       <h2>{menuTitle}</h2>
+      {isClient && renderShortHandMetrics()}
     </motion.li>
   );
 };

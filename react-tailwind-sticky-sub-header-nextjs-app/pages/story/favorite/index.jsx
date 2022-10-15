@@ -6,6 +6,9 @@ import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
+import Header from '@/components/story/favorite/Header';
+import Spacer from '@/components/Spacer';
+import Container from '@/components/story/favorite/Container';
 
 const FavoriteStory = () => {
   const router = useRouter();
@@ -64,6 +67,9 @@ const FavoriteStory = () => {
               return `${niceTitle} > `;
             }}
           />
+          <Header />
+          <Spacer />
+          <Container />
         </section>
       </Layout>
     </>
