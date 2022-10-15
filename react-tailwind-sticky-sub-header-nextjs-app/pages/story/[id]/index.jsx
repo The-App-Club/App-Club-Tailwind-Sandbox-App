@@ -70,7 +70,7 @@ const Story = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === id) {
+              if (title === id) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
