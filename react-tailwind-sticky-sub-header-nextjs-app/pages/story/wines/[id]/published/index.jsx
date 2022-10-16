@@ -1,6 +1,5 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
-import Sidebar from '@/components/story/wineries/[id]/published/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilState, useRecoilValue} from 'recoil';
@@ -13,8 +12,9 @@ import dataWines from '@/data/wines.json';
 import dataStories from '@/data/stories.json';
 import Spacer from '@/components/Spacer';
 import wineState from '@/stores/wineStore';
-import Header from '@/components/story/wineries/[id]/published/Header';
-import Container from '@/components/story/wineries/[id]/published/Container';
+import Sidebar from '@/components/story/wines/[id]/published/Sidebar';
+import Header from '@/components/story/wines/[id]/published/Header';
+import Container from '@/components/story/wines/[id]/published/Container';
 
 const PublishedStories = () => {
   const router = useRouter();

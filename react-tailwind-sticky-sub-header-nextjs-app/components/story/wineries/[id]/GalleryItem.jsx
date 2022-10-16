@@ -18,20 +18,13 @@ import {formatRelativeTime} from '@/utils/dateUtil';
 import {default as numbro} from 'numbro';
 import {useMemo} from 'react';
 
-const GalleryItem = ({item}) => {
+const GalleryItem = ({item, storyItem}) => {
   const router = useRouter();
   const [location, setLocation] = useRecoilState(locationSelectorState);
 
-  const activeWine = useMemo(() => {
-    if (!item) {
-      return;
-    }
-    return dataWines.find((d) => {
-      return d.id === item.wineId;
-    });
-  }, [item]);
+  console.log(item);
 
-  if (!activeWine) {
+  if (!item) {
     return;
   }
 
@@ -46,11 +39,11 @@ const GalleryItem = ({item}) => {
       onClick={(e) => {
         e.stopPropagation();
         router.push({
-          pathname: `/story/${activeWine.id}/published`,
+          pathname: `/story/${item.wineryId}/published`,
         });
       }}
     >
-      <GalleryItemFav item={activeWine} />
+      {/* <GalleryItemFav item={item} /> */}
       <div
         className={css`
           width: 100%;
@@ -66,7 +59,7 @@ const GalleryItem = ({item}) => {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url(${activeWine.image});
+            background-image: url(${item.thumbnail});
             background-size: contain;
             background-position: center center;
             background-origin: center center;
@@ -83,7 +76,7 @@ const GalleryItem = ({item}) => {
             `
           )}
         >
-          {`${activeWine.wine}`}
+          {`${item.wineryName}`}
         </h2>
         <Spacer height="0.5rem" />
         <div
@@ -93,11 +86,8 @@ const GalleryItem = ({item}) => {
           )}
           onClick={(e) => {
             e.stopPropagation();
-            const activeWineryItem = dataWineries.find((d) => {
-              return d.wineryName === activeWine.winery;
-            });
             router.push({
-              pathname: `/winery/${activeWineryItem.wineryId}`,
+              pathname: `/winery/${item.wineryId}`,
             });
           }}
         >
@@ -107,30 +97,7 @@ const GalleryItem = ({item}) => {
               min-width: 24px;
             `}
           />
-          <span className="break-words">{`${activeWine.winery}`}</span>
-        </div>
-        <div
-          className={cx(
-            `text-sm font-bold flex items-center`,
-            `hover:cursor-pointer hover:underline`
-          )}
-          onClick={(e) => {
-            e.stopPropagation();
-            setLocation({
-              activeLocationName: activeWine.location,
-            });
-            router.push({
-              pathname: `/location`,
-            });
-          }}
-        >
-          <MdOutlineLocationOn
-            size={24}
-            className={css`
-              min-width: 24px;
-            `}
-          />
-          <span className="break-words">{`${activeWine.location}`}</span>
+          <span className="break-words">{`${item.wineryName}`}</span>
         </div>
         <div className={cx(`text-sm font-bold flex items-center`)}>
           <MdOutlinePublish
@@ -139,9 +106,11 @@ const GalleryItem = ({item}) => {
               min-width: 24px;
             `}
           />
-          <span className="text-sm">{`${numbro(item.stories.length).format({
-            thousandSeparated: true,
-          })} stories published`}</span>
+          <span className="text-sm">{`${numbro(storyItem.stories.length).format(
+            {
+              thousandSeparated: true,
+            }
+          )} stories published`}</span>
         </div>
       </div>
     </div>

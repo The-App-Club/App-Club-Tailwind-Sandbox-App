@@ -11,33 +11,38 @@ import Header from '@/components/story/wineries/[id]/Header';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
 import dataStories from '@/data/stories.json';
+import dataWineryStories from '@/data/wineryStories.json';
+
 import dataWines from '@/data/wines.json';
+import dataWineries from '@/data/wineries.json';
+
 import Spacer from '@/components/Spacer';
 import wineState from '@/stores/wineStore';
 import GalleryItem from '@/components/story/wineries/[id]/GalleryItem';
+import wineryState from '@/stores/wineryStore';
 
 const Story = () => {
   const router = useRouter();
-  const [_, setActiveWine] = useRecoilState(wineState);
+  const [winery, setWinery] = useRecoilState(wineryState);
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
 
   const item = useMemo(() => {
-    return dataStories.find((item) => {
-      return item.wineId === Number(id);
+    return dataWineryStories.find((item) => {
+      return item.wineryId === id;
     });
   }, [id]);
 
-  const activeWine = useMemo(() => {
+  const activeWinery = useMemo(() => {
     if (!item) {
       return;
     }
-    return dataWines.find((d) => {
-      return d.id === item.wineId;
+    return dataWineries.find((d) => {
+      return d.wineryId === item.wineryId;
     });
   }, [item]);
 
-  if (!activeWine) {
+  if (!activeWinery) {
     return;
   }
 
@@ -95,11 +100,13 @@ const Story = () => {
             }}
           />
 
-          <Header item={activeWine} />
+          <Header item={activeWinery} />
           <Spacer />
           <h2>My Stories</h2>
 
-          <GalleryItem item={item} />
+          <div>HERE MY PUBLISHED Stories Gallery</div>
+
+          <GalleryItem item={activeWinery} storyItem={item} />
 
           {item.stories.length === 0 ? (
             <div
@@ -113,11 +120,11 @@ const Story = () => {
               <button
                 className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
                 onClick={(e) => {
-                  setActiveWine({
-                    activeWine,
+                  setWinery({
+                    activeWinery,
                   });
                   router.push({
-                    pathname: `/story/${id}/create`,
+                    pathname: `/story/wineries/${id}/create`,
                   });
                 }}
               >
@@ -131,13 +138,13 @@ const Story = () => {
                 `border-2  rounded-lg shadow-lg p-2`
               )}
             >
-              <p>You already published some stories. See stories.</p>
+              <p>Someone already published some stories. See stories.</p>
 
               <button
                 className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
                 onClick={(e) => {
                   router.push({
-                    pathname: `/story/${id}/published`,
+                    pathname: `/story/wineries/${id}/published`,
                   });
                 }}
               >

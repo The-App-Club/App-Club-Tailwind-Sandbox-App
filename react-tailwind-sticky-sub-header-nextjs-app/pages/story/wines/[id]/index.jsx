@@ -1,20 +1,21 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
-import Sidebar from '@/components/story/wineries/[id]/Sidebar';
-import Layout from '@/layouts/default';
-import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import {motion} from 'framer-motion';
-import Header from '@/components/story/wineries/[id]/Header';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
 import dataStories from '@/data/stories.json';
 import dataWines from '@/data/wines.json';
+import Layout from '@/layouts/default';
 import Spacer from '@/components/Spacer';
 import wineState from '@/stores/wineStore';
-import GalleryItem from '@/components/story/wineries/[id]/GalleryItem';
+import hamburgerState from '@/stores/hamburgerStore';
+
+import Sidebar from '@/components/story/wines/[id]/Sidebar';
+import Header from '@/components/story/wines/[id]/Header';
+import GalleryItem from '@/components/story/wines/[id]/GalleryItem';
 
 const Story = () => {
   const router = useRouter();
@@ -99,7 +100,7 @@ const Story = () => {
           <Spacer />
           <h2>My Stories</h2>
 
-          <GalleryItem item={item} />
+          <GalleryItem item={activeWine} storyItem={item} />
 
           {item.stories.length === 0 ? (
             <div
@@ -117,7 +118,7 @@ const Story = () => {
                     activeWine,
                   });
                   router.push({
-                    pathname: `/story/${id}/create`,
+                    pathname: `/story/wines/${id}/create`,
                   });
                 }}
               >
@@ -137,7 +138,7 @@ const Story = () => {
                 className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
                 onClick={(e) => {
                   router.push({
-                    pathname: `/story/${id}/published`,
+                    pathname: `/story/wines/${id}/published`,
                   });
                 }}
               >

@@ -1,24 +1,37 @@
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
-import SidebarSp from '@/components/story/wineries/[id]/published/[pid]/SidebarSp';
-import Nav from '@/components/story/wineries/[id]/published/[pid]/Nav';
 import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import wineState from '@/stores/wineStore';
-import Product from '@/components/story/wineries/[id]/published/[pid]/Product';
-import {useEffect, useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
+
+import dataWines from '@/data/wines.json';
+import Product from '@/components/story/wines/[id]/published/[pid]/Product';
+import SidebarSp from '@/components/story/wines/[id]/published/[pid]/SidebarSp';
+import Nav from '@/components/story/wines/[id]/published/[pid]/Nav';
 
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-  const {activeWine} = useRecoilValue(wineState);
   const [isClient, setIsClient] = useState(false);
+  const {id} = router.query;
+  const activeWine = useMemo(() => {
+    return dataWines.find((item) => {
+      return item.id === Number(id);
+    });
+  }, [id]);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
+
+  if (!activeWine) {
+    return;
+  }
+
   return (
     <>
       <SidebarSp />

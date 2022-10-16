@@ -10,9 +10,9 @@ import hamburgerState from '@/stores/hamburgerStore';
 import dataWines from '@/data/wines.json';
 import dataStories from '@/data/stories.json';
 import Spacer from '@/components/Spacer';
-import Header from '@/components/story/wineries/[id]/published/[pid]/Header';
-import Sidebar from '@/components/story/wineries/[id]/published/[pid]/Sidebar';
-import Footer from '@/components/story/wineries/[id]/published/[pid]/Footer';
+import Header from '@/components/story/wines/[id]/published/[pid]/Header';
+import Sidebar from '@/components/story/wines/[id]/published/[pid]/Sidebar';
+import Footer from '@/components/story/wines/[id]/published/[pid]/Footer';
 
 const PublishedStory = () => {
   const router = useRouter();

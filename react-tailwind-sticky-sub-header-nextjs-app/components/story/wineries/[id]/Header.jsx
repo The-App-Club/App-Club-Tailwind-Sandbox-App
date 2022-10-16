@@ -29,7 +29,7 @@ const Header = ({item}) => {
       <h2
         className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
       >
-        {item.wine}
+        {item.wineryName}
       </h2>
     </div>
   );
