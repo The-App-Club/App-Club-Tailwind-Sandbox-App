@@ -1,17 +1,20 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
-import {useEffect, useState} from 'react';
+import {memo, useEffect, useState} from 'react';
 import {BsPencilSquare} from 'react-icons/bs';
+import {GiGrapes} from 'react-icons/gi';
 import {useRecoilState} from 'recoil';
 
 import GalleryItemFav from './GalleryItemFav';
 
+import Spacer from '@/components/Spacer';
 import wineryState from '@/stores/wineryStore';
 
 const GalleryItem = ({item}) => {
-  const [winery, setWinery] = useRecoilState(wineryState);
-  const [isClient, setIsClient] = useState(false);
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+  const [winery, setWinery] = useRecoilState(wineryState);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
@@ -28,20 +31,14 @@ const GalleryItem = ({item}) => {
       pathname: `/story/wineries/${item.wineryId}/create`,
     });
   };
-  if (!item) {
-    return;
-  }
 
   return (
     <div
       className={cx(
         `relative`,
-        `border-2 p-2`,
+        `w-full border-2 p-2`,
         `hover:cursor-pointer`,
-        `hover:bg-gray-100 dark:hover:bg-slate-800`,
-        css`
-          width: 100%;
-        `
+        `hover:bg-gray-100 dark:hover:bg-slate-800`
       )}
       onClick={(e) => {
         router.push({
@@ -65,7 +62,7 @@ const GalleryItem = ({item}) => {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url(https://via.placeholder.com/300x200);
+            background-image: url(${item.thumbnail});
             background-size: contain;
             background-position: center center;
             background-origin: center center;
@@ -89,14 +86,41 @@ const GalleryItem = ({item}) => {
         </div>
       </div>
       <div className="w-full">
-        <h2 className="text-xl">{item.wineryName}</h2>
-        <div className="flex items-center w-full justify-end gap-2">
-          <span className="text-md font-bold">{item.wines.length} type</span>
+        <h2
+          className={cx(
+            'text-xl line-clamp-2',
+            css`
+              min-height: 56px;
+            `
+          )}
+        >
+          {item.wineryName}
+        </h2>
+        <Spacer height="0.5rem" />
+        <div
+          className={cx(
+            `text-sm font-bold flex items-center`,
+            `hover:cursor-pointer hover:underline`
+          )}
+          onClick={(e) => {
+            e.stopPropagation();
+            router.push({
+              pathname: `/wineries/${item.wineryId}`,
+            });
+          }}
+        >
+          <GiGrapes
+            size={24}
+            className={css`
+              min-width: 24px;
+            `}
+          />
+          <span className="break-words">{`${item.wineryName}`}</span>
         </div>
-        <p className="line-clamp-3">{item.description}</p>
+        <p className="text-sm line-clamp-3">{item.description}</p>
       </div>
     </div>
   );
 };
 
-export default GalleryItem;
+export default memo(GalleryItem);

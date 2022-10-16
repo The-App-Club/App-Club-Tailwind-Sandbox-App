@@ -6,8 +6,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"{,!(node_modules|dist|build)/**/}*.*\"",
-    "kitting": "npx eslint . src --ext .js,.jsx,.ts,.tsx --fix",
-    "confirm": "npx eslint . src --ext .js,.jsx,.ts,.tsx"
+    "kitting": "npx eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
     "@cicciosgamino/openweather-apis": "^5.2.0",

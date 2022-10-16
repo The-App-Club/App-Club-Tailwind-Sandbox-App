@@ -127,6 +127,16 @@ const routes = [
     activeMenuName: `Favorite`,
   },
   {
+    pathName: `/favorite/wines`,
+    pageName: `Favorite`,
+    activeMenuName: `Favorite`,
+  },
+  {
+    pathName: `/favorite/wineries`,
+    pageName: `Favorite`,
+    activeMenuName: `Favorite`,
+  },
+  {
     pathName: `/feed`,
     pageName: `Feed`,
     activeMenuName: `Feed`,
