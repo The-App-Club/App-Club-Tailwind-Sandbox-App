@@ -32,7 +32,7 @@ const routes = [
   {
     pathName: `/story`,
     pageName: `Story`,
-    activeMenuName: `Story`,
+    activeMenuName: `Select Story`,
   },
   {
     pathName: `/story/wines`,

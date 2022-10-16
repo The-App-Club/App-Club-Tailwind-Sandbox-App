@@ -208,7 +208,7 @@ const Nav = () => {
         />
         <MenuItem
           path={'/story'}
-          menuTitle={'Story'}
+          menuTitle={'Select Story'}
           icon={() => {
             return <MdOutlineHistory size={24} />;
           }}
