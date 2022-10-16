@@ -22,17 +22,16 @@ import Spacer from '@/components/Spacer';
 const GalleryItem = ({item}) => {
   const router = useRouter();
   const [location, setLocation] = useRecoilState(locationSelectorState);
-
-  const activeWine = useMemo(() => {
+  const activeWinery = useMemo(() => {
     if (!item) {
       return;
     }
-    return dataWines.find((d) => {
-      return d.id === item.wineId;
+    return dataWineries.find((d) => {
+      return d.wineryId === item.wineryId;
     });
   }, [item]);
 
-  if (!activeWine) {
+  if (!activeWinery) {
     return;
   }
 
@@ -46,12 +45,13 @@ const GalleryItem = ({item}) => {
       )}
       onClick={(e) => {
         e.stopPropagation();
+        // [WIP]
         router.push({
-          pathname: `/story/${activeWine.id}/published`,
+          pathname: `/story/${activeWinery.wineryId}/published`,
         });
       }}
     >
-      <GalleryItemFav item={activeWine} />
+      {/* <GalleryItemFav item={activeWine} /> */}
       <div
         className={css`
           width: 100%;
@@ -67,7 +67,7 @@ const GalleryItem = ({item}) => {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url(${activeWine.image});
+            background-image: url(${activeWinery.thumbnail});
             background-size: contain;
             background-position: center center;
             background-origin: center center;
@@ -80,11 +80,11 @@ const GalleryItem = ({item}) => {
           className={cx(
             'text-xl line-clamp-2',
             css`
-              min-height: 56px;
+              /* min-height: 56px; */
             `
           )}
         >
-          {`${activeWine.wine}`}
+          {`${activeWinery.wineryName}`}
         </h2>
         <Spacer height="0.5rem" />
         <div
@@ -94,11 +94,8 @@ const GalleryItem = ({item}) => {
           )}
           onClick={(e) => {
             e.stopPropagation();
-            const activeWineryItem = dataWineries.find((d) => {
-              return d.wineryName === activeWine.winery;
-            });
             router.push({
-              pathname: `/winery/${activeWineryItem.wineryId}`,
+              pathname: `/winery/${activeWinery.wineryId}`,
             });
           }}
         >
@@ -108,30 +105,7 @@ const GalleryItem = ({item}) => {
               min-width: 24px;
             `}
           />
-          <span className="break-words">{`${activeWine.winery}`}</span>
-        </div>
-        <div
-          className={cx(
-            `text-sm font-bold flex items-center`,
-            `hover:cursor-pointer hover:underline`
-          )}
-          onClick={(e) => {
-            e.stopPropagation();
-            setLocation({
-              activeLocationName: activeWine.location,
-            });
-            router.push({
-              pathname: `/location`,
-            });
-          }}
-        >
-          <MdOutlineLocationOn
-            size={24}
-            className={css`
-              min-width: 24px;
-            `}
-          />
-          <span className="break-words">{`${activeWine.location}`}</span>
+          <span className="break-words">{`${activeWinery.wineryName}`}</span>
         </div>
         <div className={cx(`text-sm font-bold flex items-center`)}>
           <MdOutlinePublish

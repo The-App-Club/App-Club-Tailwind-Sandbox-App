@@ -9,10 +9,13 @@ import capitalize from 'capitalize-the-first-letter';
 import Sidebar from '@/components/story/Sidebar';
 import Header from '@/components/story/Header';
 import Spacer from '@/components/Spacer';
+import {AiOutlineSelect} from 'react-icons/ai';
+import {GiGrapes, GiWineBottle} from 'react-icons/gi';
+import {useRouter} from 'next/router';
 
 const Story = () => {
   const {opened} = useRecoilValue(hamburgerState);
-
+  const router = useRouter();
   return (
     <>
       <Sidebar />
@@ -69,18 +72,36 @@ const Story = () => {
           <Header />
           <Spacer />
           <div className="w-full flex items-center gap-2">
-            <div className="w-full flex flex-col items-center justify-center min-h-[20rem] border-2">
-              <Link href={`/story/wines`}>
-                <a className="hover:underline">See Wine Story</a>
-              </Link>
+            <div
+              className={cx(
+                `w-full flex flex-col items-center justify-center min-h-[20rem] border-2`,
+                `hover:bg-gray-100 dark:hover:bg-slate-800 hover:cursor-pointer`
+              )}
+              onClick={(e) => {
+                router.push({
+                  pathname: `/story/wines`,
+                });
+              }}
+            >
+              <h3 className="text-xl">See Wine Story</h3>
+              <GiWineBottle size={64} />
               <p className="font-bold">{`Today ${numbro(32030).format({
                 thousandSeparated: true,
               })} stories published`}</p>
             </div>
-            <div className="w-full flex flex-col items-center justify-center min-h-[20rem] border-2">
-              <Link href={`/story/wineries`}>
-                <a className="hover:underline">See Winery Story</a>
-              </Link>
+            <div
+              className={cx(
+                `w-full flex flex-col items-center justify-center min-h-[20rem] border-2`,
+                `hover:bg-gray-100 dark:hover:bg-slate-800 hover:cursor-pointer`
+              )}
+              onClick={(e) => {
+                router.push({
+                  pathname: `/story/wineries`,
+                });
+              }}
+            >
+              <h3 className="text-xl">See Winery Story</h3>
+              <GiGrapes size={64} />
               <p className="font-bold">{`Today ${numbro(213).format({
                 thousandSeparated: true,
               })} stories published`}</p>

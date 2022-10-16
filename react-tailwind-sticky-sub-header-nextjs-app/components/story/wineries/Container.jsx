@@ -3,6 +3,8 @@ import Link from 'next/link';
 import {memo, useEffect, useMemo, useState} from 'react';
 import GalleryItem from '@/components/story/wineries/GalleryItem';
 import data from '@/data/stories.json';
+import dataWineryStories from '@/data/wineryStories.json';
+import dataWineries from '@/data/wineries.json';
 
 const Container = () => {
   const [isClient, setIsClient] = useState(false);
@@ -40,7 +42,7 @@ const Container = () => {
             }
           `}
         >
-          {data.map((item, index) => {
+          {dataWineryStories.map((item, index) => {
             return <GalleryItem key={index} item={item} />;
           })}
         </div>

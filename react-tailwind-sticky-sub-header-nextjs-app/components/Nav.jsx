@@ -23,6 +23,7 @@ import {MdRssFeed} from 'react-icons/md';
 import NavMarkedCart from '@/components/NavMarkedCart';
 import {default as NavMarkedWineFav} from '@/components/NavMarkedFav';
 import {default as NavMarkedStoryFav} from '@/components/story/NavMarkedFav';
+import {AiOutlineSelect} from 'react-icons/ai';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
@@ -210,7 +211,7 @@ const Nav = () => {
           path={'/story'}
           menuTitle={'Select Story'}
           icon={() => {
-            return <MdOutlineHistory size={24} />;
+            return <AiOutlineSelect size={24} />;
           }}
         />
         <MenuItem

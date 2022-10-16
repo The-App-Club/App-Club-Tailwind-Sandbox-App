@@ -8,6 +8,7 @@ import {GiGrapes} from 'react-icons/gi';
 
 import sidebarState from '@/stores/sidebarStore';
 import NavMarkedFav from '@/components/story/wineries/NavMarkedFav';
+import {AiOutlineSelect} from 'react-icons/ai';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
@@ -105,7 +106,7 @@ const Nav = () => {
           path={'/story'}
           menuTitle={'Select Story'}
           icon={() => {
-            return <MdOutlineHistory size={24} />;
+            return <AiOutlineSelect size={24} />;
           }}
         />
         <MenuItem
