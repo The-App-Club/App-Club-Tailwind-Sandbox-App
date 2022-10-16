@@ -30,6 +30,8 @@ const Header = ({pathname}) => {
       pathname === `/contact` ||
       pathname === `/feed` ||
       pathname === `/favorite` ||
+      pathname === `/favorite/wines` ||
+      pathname === `/favorite/wineries` ||
       pathname === `/notification` ||
       pathname === `/cart` ||
       pathname === `/location` ||

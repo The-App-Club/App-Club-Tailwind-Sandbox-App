@@ -14,6 +14,8 @@ const Footer = ({pathname}) => {
       pathname === `/feed` ||
       pathname === `/subscribe` ||
       pathname === `/favorite` ||
+      pathname === `/favorite/wines` ||
+      pathname === `/favorite/wineries` ||
       pathname === `/location` ||
       pathname === `/setting` ||
       pathname === `/notification` ||
