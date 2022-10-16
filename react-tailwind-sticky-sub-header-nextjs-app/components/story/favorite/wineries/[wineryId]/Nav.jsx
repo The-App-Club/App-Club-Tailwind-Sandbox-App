@@ -2,7 +2,7 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {GiGrapes, GiWineBottle} from 'react-icons/gi';
+import {GiGrapes} from 'react-icons/gi';
 import {MdFavoriteBorder} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 

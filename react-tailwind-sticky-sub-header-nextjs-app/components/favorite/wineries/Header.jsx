@@ -1,8 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {memo, useState} from 'react';
 
-import useCart from '@/hooks/useCart';
-import useFavoriteWine from '@/hooks/useFavoriteWine';
 import SearchModal from '@/components/SearchModal';
 import useFavoriteWinery from '@/hooks/useFavoriteWinery';
 

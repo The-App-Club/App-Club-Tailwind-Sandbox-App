@@ -1,9 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {memo} from 'react';
 
-import useCart from '@/hooks/useCart';
-import useFavoriteWine from '@/hooks/useFavoriteWine';
-
 const Header = () => {
   return (
     <div

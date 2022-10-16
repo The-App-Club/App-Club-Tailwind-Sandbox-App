@@ -1,10 +1,9 @@
 import {cx} from '@emotion/css';
 import {motion} from 'framer-motion';
-import {memo, useEffect, useState} from 'react';
+import {useRouter} from 'next/router';
+import {memo, useEffect, useMemo, useState} from 'react';
 
 import useFavoriteWineryStory from '@/hooks/useFavoriteWineryStory';
-import {useRouter} from 'next/router';
-import {useMemo} from 'react';
 
 const NavMarkedFav = () => {
   const router = useRouter();

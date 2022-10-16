@@ -7,7 +7,6 @@ import {MdOutlineLocationOn, MdOutlinePublish} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
-import GalleryItemFav from '@/components/story/wines/GalleryItemFav';
 import dataWineries from '@/data/wineries.json';
 import dataWines from '@/data/wines.json';
 import locationSelectorState from '@/stores/locationSelectorStore';

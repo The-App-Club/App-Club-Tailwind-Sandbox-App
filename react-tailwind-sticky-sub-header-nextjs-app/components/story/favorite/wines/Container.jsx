@@ -1,10 +1,10 @@
 import {css, cx} from '@emotion/css';
+import {groupBy, mutate, tidy} from '@tidyjs/tidy';
 import Link from 'next/link';
 import {useEffect, useMemo, useState} from 'react';
 
 import GalleryItem from '@/components/story/favorite/wines/GalleryItem';
 import useFavoriteWineStory from '@/hooks/useFavoriteWineStory';
-import {groupBy, mutate, tidy} from '@tidyjs/tidy';
 
 const Container = () => {
   const [isClient, setIsClient] = useState(false);

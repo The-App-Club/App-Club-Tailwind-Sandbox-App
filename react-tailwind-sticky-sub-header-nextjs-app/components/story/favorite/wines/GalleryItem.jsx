@@ -1,24 +1,16 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
-import {FiEye} from 'react-icons/fi';
-import {GiGrapes, GiPriceTag} from 'react-icons/gi';
-import {
-  MdFavoriteBorder,
-  MdHistory,
-  MdOutlineLocationOn,
-  MdOutlinePublish,
-} from 'react-icons/md';
+import {useMemo} from 'react';
+import {GiGrapes} from 'react-icons/gi';
+import {MdFavoriteBorder, MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import dataWines from '@/data/wines.json';
-import dataWineries from '@/data/wineries.json';
-import wineState from '@/stores/wineStore';
-import {formatRelativeTime} from '@/utils/dateUtil';
-import GalleryItemFav from '@/components/story/favorite/wines/GalleryItemFav';
-import {useMemo} from 'react';
 import Spacer from '@/components/Spacer';
+import dataWineries from '@/data/wineries.json';
+import dataWines from '@/data/wines.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
+import wineState from '@/stores/wineStore';
 
 const GalleryItem = ({wineId, stories}) => {
   const router = useRouter();

@@ -5,9 +5,9 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
-import Sidebar from '@/components/story/favorite/Sidebar';
 import Container from '@/components/story/favorite/Container';
 import Header from '@/components/story/favorite/Header';
+import Sidebar from '@/components/story/favorite/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 

@@ -1,14 +1,11 @@
-import {css, cx} from '@emotion/css';
-import Link from 'next/link';
-import {useEffect, useState} from 'react';
-
+import {cx} from '@emotion/css';
 import {motion} from 'framer-motion';
+import {useRouter} from 'next/router';
+import {useEffect, useState} from 'react';
+import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 
-import GalleryItem from '@/components/story/favorite/GalleryItem';
 import useFavoriteWineStory from '@/hooks/useFavoriteWineStory';
 import useFavoriteWineryStory from '@/hooks/useFavoriteWineryStory';
-import {GiGrapes, GiWineBottle} from 'react-icons/gi';
-import {useRouter} from 'next/router';
 
 const Container = () => {
   const router = useRouter();

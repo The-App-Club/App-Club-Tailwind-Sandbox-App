@@ -6,10 +6,11 @@ import {GiPriceTag} from 'react-icons/gi';
 import {MdHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
+import GalleryItemFav from './GalleryItemFav';
+
 import dataWines from '@/data/wines.json';
 import wineState from '@/stores/wineStore';
 import {formatRelativeTime} from '@/utils/dateUtil';
-import GalleryItemFav from './GalleryItemFav';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();

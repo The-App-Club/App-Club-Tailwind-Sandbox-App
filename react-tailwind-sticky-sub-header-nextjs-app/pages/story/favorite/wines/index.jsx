@@ -5,11 +5,11 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
+import Container from '@/components/story/favorite/wines/Container';
 import Header from '@/components/story/favorite/wines/Header';
 import Sidebar from '@/components/story/favorite/wines/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import Container from '@/components/story/favorite/wines/Container';
 
 const FavoriteWineStories = () => {
   const router = useRouter();
