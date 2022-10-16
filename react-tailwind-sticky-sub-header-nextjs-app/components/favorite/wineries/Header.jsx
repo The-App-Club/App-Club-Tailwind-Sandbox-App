@@ -4,9 +4,15 @@ import {memo, useState} from 'react';
 import useCart from '@/hooks/useCart';
 import useFavoriteWine from '@/hooks/useFavoriteWine';
 import SearchModal from '@/components/SearchModal';
+import useFavoriteWinery from '@/hooks/useFavoriteWinery';
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
+  const {removeAllFromFav} = useFavoriteWinery();
+
+  const handleRemoveAllFromFav = (e) => {
+    removeAllFromFav();
+  };
 
   const handleModalOpen = (e) => {
     setShowModal(true);
@@ -54,6 +60,12 @@ const Header = () => {
             onClick={handleModalOpen}
           >
             Filter
+          </button>
+          <button
+            className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
+            onClick={handleRemoveAllFromFav}
+          >
+            Remove All
           </button>
         </div>
       </div>
