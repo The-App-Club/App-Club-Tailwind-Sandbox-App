@@ -7,6 +7,7 @@ import {useRecoilState, useRecoilValue} from 'recoil';
 
 import locationSelectorState from '@/stores/locationSelectorStore';
 import themeState from '@/stores/themeStore';
+import GalleryItemFav from '@/components/story/wineries/[id]/create/GalleryItemFav';
 
 const motionConfig = {
   initial: {
@@ -26,7 +27,7 @@ const motionConfig = {
   },
 };
 
-const Product = ({item}) => {
+const GalleryItem = ({item}) => {
   const router = useRouter();
   const [location, setLocation] = useRecoilState(locationSelectorState);
   const theme = useRecoilValue(themeState);
@@ -57,13 +58,12 @@ const Product = ({item}) => {
           `
         )}
       >
-        <GiWineBottle size={24} />
-        Focused Wine
+        <GiGrapes size={24} />
+        Focused Winery
       </h2>
 
       <div className={cx(`relative`, `w-full h-full px-12 border-b-2`)}>
-        {/* <ProductCarted item={item} />
-        <ProductFav item={item} /> */}
+        <GalleryItemFav item={item} />
         <div className="w-full flex gap-2">
           <div
             className={cx(
@@ -130,4 +130,4 @@ const Product = ({item}) => {
   );
 };
 
-export default memo(Product);
+export default memo(GalleryItem);

@@ -6,7 +6,7 @@ import {useRecoilValue} from 'recoil';
 
 import SidebarSp from '@/components/story/wineries/[id]/SidebarSp';
 import Nav from '@/components/story/wineries/[id]/create/Nav';
-import Product from '@/components/story/wineries/[id]/create/Product';
+import GalleryItem from '@/components/story/wineries/[id]/create/GalleryItem';
 import dataWineries from '@/data/wineries.json';
 import hamburgerState from '@/stores/hamburgerStore';
 
@@ -109,7 +109,7 @@ const Sidebar = () => {
             <h2 className="text-xl">Make YourSelf</h2>
           </div>
         </motion.div>
-        {isClient && <Product item={activeWinery} />}
+        {isClient && <GalleryItem item={activeWinery} />}
         <Nav />
       </motion.aside>
     </>

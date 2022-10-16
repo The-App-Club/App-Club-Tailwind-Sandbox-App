@@ -2,7 +2,9 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
+import {BsPencilSquare} from 'react-icons/bs';
 import {GiGrapes} from 'react-icons/gi';
+import {RiDraftLine} from 'react-icons/ri';
 import {useRecoilState} from 'recoil';
 
 import NavMarkedFav from '@/components/story/NavMarkedFav';
@@ -107,6 +109,13 @@ const Nav = () => {
           menuTitle={'Winery Story'}
           icon={() => {
             return <GiGrapes size={24} />;
+          }}
+        />
+        <MenuItem
+          path={`/story/wineries/${id}/create`}
+          menuTitle={'Create Winery Story'}
+          icon={() => {
+            return <BsPencilSquare size={24} />;
           }}
         />
       </motion.ul>
