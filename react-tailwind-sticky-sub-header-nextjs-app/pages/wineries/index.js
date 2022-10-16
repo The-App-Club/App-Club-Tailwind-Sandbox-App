@@ -1,82 +1,46 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
-import {useRecoilState, useRecoilValue} from 'recoil';
+import {useRecoilValue} from 'recoil';
 import wineState from '@/stores/wineStore';
 import Layout from '@/layouts/default';
 import Spacer from '@/components/Spacer';
-import {useEffect, useMemo, useState} from 'react';
+import {useMemo, useState} from 'react';
 import data from '@/data/wineries.json';
-import Sidebar from '@/components/winery/Sidebar';
+import dataWines from '@/data/wines.json';
+
+import Sidebar from '@/components/Sidebar';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 
 import hamburgerState from '@/stores/hamburgerStore';
 import Category from '@/components/Category';
-import TraceFooter from '@/components/winery/[id]/TraceFooter';
-import ProductGalleryItem from '@/components/ProductGalleryItem';
+import TraceFooter from '@/components/wineries/TraceFooter';
 import SearchModal from '@/components/SearchModal';
-import {count, filter, groupBy, mutate, sliceHead, tidy} from '@tidyjs/tidy';
-import multiLocationSelectorState from '@/stores/multiLocationSelectorStore';
+import {count, filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
 
 const Winery = () => {
   const [showModal, setShowModal] = useState(false);
-  const [multiLocation, setMultiLocation] = useRecoilState(
-    multiLocationSelectorState
-  );
+  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
 
-  const router = useRouter();
-  const {id} = router.query;
+  // const a = useMemo(() => {
+  //   return tidy(
+  //     dataWines,
+  //     count(['winery', 'location']),
+  //     groupBy(
+  //       ['winery'],
+  //       [mutate({key: (d) => `\${d.winery}`})],
+  //       groupBy.entries()
+  //     ),
+  //     filter((item) => {
+  //       const [a, b] = item;
+  //       return b.length !== 1;
+  //     })
+  //   );
+  // }, []);
 
-  const matchedData = useMemo(() => {
-    return data.find((item) => {
-      return item.wineryId === id;
-    });
-  }, [id]);
-
-  const [winery, wines] = useMemo(() => {
-    if (!matchedData) {
-      return [null, null];
-    }
-    // "Hundred Acre", "Sine Qua Non", "Domaine de La Romanée-Conti"
-    return tidy(
-      matchedData.wines,
-      count(['winery', 'location']),
-      groupBy(
-        ['winery'],
-        [mutate({key: (d) => `\${d.winery}`})],
-        groupBy.entries()
-      ),
-      filter((item) => {
-        const [a, b] = item;
-        return b.length !== 1;
-      })
-    ).flat();
-  }, [matchedData]);
-
-  useEffect(() => {
-    if (!winery || !wines) {
-      return;
-    }
-    setMultiLocation({
-      activeWineryName: winery,
-      activeLocationNameList: wines.map((wine) => {
-        return wine.location;
-      }),
-    });
-
-    return () => {
-      setMultiLocation({
-        activeWineryName: '',
-        activeLocationNameList: [],
-      });
-    };
-  }, [winery, wines, setMultiLocation]);
-
-  if (!matchedData) {
-    return <p>loading...</p>;
-  }
+  // console.log(a);
 
   const handleModalOpen = (e) => {
     setShowModal(true);
@@ -143,7 +107,7 @@ const Winery = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (title === id) {
+              if (title === 'winery') {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
@@ -166,10 +130,10 @@ const Winery = () => {
           >
             <h2
               className={cx(
-                `w-full text-xl flex items-center justify-start gap-2 line-clamp-1`
+                `w-full text-xl flex items-center justify-start gap-2`
               )}
             >
-              Winery<span>@{matchedData.wineryName}</span>
+              Winery
             </h2>
             <div className="flex items-center gap-2">
               <button
@@ -189,7 +153,6 @@ const Winery = () => {
           <Spacer />
           <div
             className={css`
-              width: 100%;
               display: grid;
               gap: 0.5rem;
               grid-template-columns: repeat(4, 1fr);
@@ -198,8 +161,58 @@ const Winery = () => {
               }
             `}
           >
-            {matchedData.wines.map((item, index) => {
-              return <ProductGalleryItem key={index} item={item} />;
+            {data.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className={cx(
+                    `border-2 p-2`,
+                    `hover:cursor-pointer`,
+                    `hover:bg-gray-100 dark:hover:bg-slate-800`,
+                    css`
+                      width: 100%;
+                    `
+                  )}
+                  onClick={(e) => {
+                    router.push({
+                      pathname: `/wineries/${item.wineryId}`,
+                    });
+                  }}
+                >
+                  <div
+                    className={css`
+                      width: 100%;
+                      height: 200px;
+                      position: relative;
+                      ::before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        content: '';
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-image: url(https://via.placeholder.com/300x200);
+                        background-size: contain;
+                        background-position: center center;
+                        background-origin: center center;
+                        background-repeat: no-repeat;
+                      }
+                    `}
+                  />
+                  <div className="w-full">
+                    <h2 className="text-xl">{item.wineryName}</h2>
+                    <div className="flex items-center w-full justify-end gap-2">
+                      <span className="text-md font-bold">
+                        {item.wines.length} type
+                      </span>
+                    </div>
+                    <p className="line-clamp-3">{item.description}</p>
+                  </div>
+                </div>
+              );
             })}
           </div>
         </section>

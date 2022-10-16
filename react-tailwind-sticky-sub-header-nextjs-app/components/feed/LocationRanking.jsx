@@ -111,7 +111,7 @@ const LocationRanking = ({className}) => {
                       return d.wineryName === item.winery;
                     });
                     router.push({
-                      pathname: `/winery/${activeWineryItem.wineryId}`,
+                      pathname: `/wineries/${activeWineryItem.wineryId}`,
                     });
                   }}
                 >

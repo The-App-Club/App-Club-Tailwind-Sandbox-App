@@ -109,7 +109,7 @@ const GalleryItem = ({item}) => {
               return d.wineryName === activeWine.winery;
             });
             router.push({
-              pathname: `/winery/${activeWineryItem.wineryId}`,
+              pathname: `/wineries/${activeWineryItem.wineryId}`,
             });
           }}
         >

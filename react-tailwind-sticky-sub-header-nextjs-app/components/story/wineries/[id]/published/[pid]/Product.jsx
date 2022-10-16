@@ -94,7 +94,7 @@ const Product = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 router.push({
-                  pathname: `/winery/${item.wineryId}`,
+                  pathname: `/wineries/${item.wineryId}`,
                 });
               }}
             >
@@ -108,7 +108,7 @@ const Product = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 router.push({
-                  pathname: `/winery/${item.wineryId}`,
+                  pathname: `/wineries/${item.wineryId}`,
                 });
               }}
             >

@@ -94,7 +94,7 @@ const GalleryItem = ({item}) => {
           onClick={(e) => {
             e.stopPropagation();
             router.push({
-              pathname: `/winery/${activeWinery.wineryId}`,
+              pathname: `/wineries/${activeWinery.wineryId}`,
             });
           }}
         >

@@ -118,7 +118,7 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={'/winery'}
+          path={'/wineries'}
           menuTitle={'Winery'}
           icon={() => {
             return <GiGrapes size={24} />;

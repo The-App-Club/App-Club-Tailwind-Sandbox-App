@@ -170,12 +170,12 @@ const routes = [
     activeMenuName: `Comment`,
   },
   {
-    pathName: `/winery`,
+    pathName: `/wineries`,
     pageName: `Winery`,
     activeMenuName: `Winery`,
   },
   {
-    pathName: `/winery/[id]`,
+    pathName: `/wineries/[id]`,
     pageName: `Winery Id`,
     activeMenuName: `Winery`,
   },

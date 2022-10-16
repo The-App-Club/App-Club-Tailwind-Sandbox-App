@@ -127,7 +127,7 @@ const Product = ({item}) => {
                   return d.wineryName === item.winery;
                 });
                 router.push({
-                  pathname: `/winery/${activeWineryItem.wineryId}`,
+                  pathname: `/wineries/${activeWineryItem.wineryId}`,
                 });
               }}
             >

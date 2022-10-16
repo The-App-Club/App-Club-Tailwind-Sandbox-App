@@ -1,8 +1,8 @@
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
-import SidebarSp from '@/components/winery/SidebarSp';
-import Nav from '@/components/winery/Nav';
+import SidebarSp from '@/components/wineries/SidebarSp';
+import Nav from '@/components/wineries/Nav';
 import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilValue} from 'recoil';
 import {MdOutlineLocationOn} from 'react-icons/md';

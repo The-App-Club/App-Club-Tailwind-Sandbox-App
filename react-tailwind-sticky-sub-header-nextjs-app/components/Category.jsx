@@ -139,7 +139,7 @@ const Category = ({className = css``}) => {
                   activeLocationName: item.location,
                 });
                 router.push({
-                  pathname: `/winery/${item.wineryId}`,
+                  pathname: `/wineries/${item.wineryId}`,
                 });
               }}
             >

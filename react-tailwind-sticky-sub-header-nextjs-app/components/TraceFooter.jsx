@@ -123,7 +123,7 @@ const TraceFooter = () => {
         className="w-full  flex items-center justify-center flex-col"
         onClick={(e) => {
           router.push({
-            pathname: '/winery',
+            pathname: '/wineries',
           });
         }}
       >
