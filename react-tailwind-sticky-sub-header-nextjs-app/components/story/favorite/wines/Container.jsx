@@ -2,13 +2,12 @@ import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
 
-import GalleryItem from '@/components/story/favorite/GalleryItem';
+import GalleryItem from '@/components/story/favorite/wines/GalleryItem';
 import useFavoriteWineStory from '@/hooks/useFavoriteWineStory';
 
 const Container = () => {
   const [isClient, setIsClient] = useState(false);
   const {favoriteWineStories} = useFavoriteWineStory();
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);

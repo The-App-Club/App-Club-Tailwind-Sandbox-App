@@ -3,11 +3,11 @@ import Link from 'next/link';
 import {useEffect, useState} from 'react';
 
 import GalleryItem from '@/components/favorite/wines/GalleryItem';
-import useFavoriteWine from '@/hooks/useFavoriteWine';
+import useFavoriteWineStory from '@/hooks/useFavoriteWineStory';
 
 const Container = () => {
   const [isClient, setIsClient] = useState(false);
-  const {favoriteWines} = useFavoriteWine();
+  const {favoriteWineStories} = useFavoriteWineStory();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -16,7 +16,7 @@ const Container = () => {
   }, []);
 
   const renderContainer = () => {
-    if (favoriteWines.length === 0) {
+    if (favoriteWineStories.length === 0) {
       return (
         <div
           className={cx(
@@ -24,9 +24,9 @@ const Container = () => {
             `border-2  rounded-lg shadow-lg p-2`
           )}
         >
-          <p>Nothing fav wines...</p>
-          <Link href={`/wines`}>
-            <a className="hover:underline">See Wines</a>
+          <p>Nothing fav wine stories...</p>
+          <Link href={`/story/wines`}>
+            <a className="hover:underline">See Wine Story</a>
           </Link>
         </div>
       );
@@ -43,7 +43,7 @@ const Container = () => {
             }
           `}
         >
-          {favoriteWines.map((item, index) => {
+          {favoriteWineStories.map((item, index) => {
             return <GalleryItem key={index} item={item} />;
           })}
         </div>

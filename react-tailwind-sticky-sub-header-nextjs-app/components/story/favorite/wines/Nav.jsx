@@ -33,7 +33,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
   }, []);
 
   const renderShortHandMetrics = () => {
-    if (menuTitle === `Favorite Story`) {
+    if (menuTitle === `Favorite Wine Story`) {
       return <NavMarkedFav />;
     }
     return null;

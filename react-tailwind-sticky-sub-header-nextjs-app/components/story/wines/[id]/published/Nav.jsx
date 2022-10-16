@@ -5,7 +5,7 @@ import {useEffect, useMemo, useState} from 'react';
 import {MdFavoriteBorder, MdOutlineHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import NavMarkedFav from '@/components/story/NavMarkedFav';
+import NavMarkedFav from '@/components/story/wines/[id]/published/NavMarkedFav';
 import dataWines from '@/data/wines.json';
 import sidebarState from '@/stores/sidebarStore';
 
@@ -33,7 +33,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
   }, []);
 
   const renderShortHandMetrics = () => {
-    if (menuTitle === `Favorite Story`) {
+    if (menuTitle === `Favorite Wine Story`) {
       return <NavMarkedFav />;
     }
     return null;

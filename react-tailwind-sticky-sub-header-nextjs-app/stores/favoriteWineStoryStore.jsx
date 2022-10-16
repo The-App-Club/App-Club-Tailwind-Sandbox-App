@@ -2,12 +2,12 @@ import {atom} from 'recoil';
 import {recoilPersist} from 'recoil-persist';
 
 const {persistAtom} = recoilPersist();
-const favoriteStoryState = atom({
-  key: 'favoriteStoryState',
+const favoriteWineStoryState = atom({
+  key: 'favoriteWineStoryState',
   default: {
-    favoriteStories: [],
+    favoriteWineStories: [],
   },
   effects_UNSTABLE: [persistAtom],
 });
 
-export default favoriteStoryState;
+export default favoriteWineStoryState;

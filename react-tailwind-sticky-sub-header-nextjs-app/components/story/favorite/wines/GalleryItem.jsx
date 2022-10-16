@@ -9,7 +9,7 @@ import {useRecoilState} from 'recoil';
 import dataWines from '@/data/wines.json';
 import wineState from '@/stores/wineStore';
 import {formatRelativeTime} from '@/utils/dateUtil';
-import GalleryItemFav from './GalleryItemFav';
+import GalleryItemFav from '@/components/story/favorite/wines/GalleryItemFav';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();

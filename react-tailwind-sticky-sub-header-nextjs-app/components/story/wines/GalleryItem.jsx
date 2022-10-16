@@ -44,7 +44,6 @@ const GalleryItem = ({item}) => {
         });
       }}
     >
-      <GalleryItemFav item={activeWine} />
       <div
         className={css`
           width: 100%;

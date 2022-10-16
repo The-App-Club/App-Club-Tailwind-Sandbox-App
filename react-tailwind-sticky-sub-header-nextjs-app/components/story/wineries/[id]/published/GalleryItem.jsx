@@ -11,6 +11,7 @@ import dataWineries from '@/data/wineries.json';
 import dataWines from '@/data/wines.json';
 import wineState from '@/stores/wineStore';
 import {formatRelativeTime} from '@/utils/dateUtil';
+import GalleryItemFav from './GalleryItemFav';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
@@ -50,6 +51,7 @@ const GalleryItem = ({item}) => {
         });
       }}
     >
+      <GalleryItemFav item={item} />
       <div
         className={css`
           width: 100%;
