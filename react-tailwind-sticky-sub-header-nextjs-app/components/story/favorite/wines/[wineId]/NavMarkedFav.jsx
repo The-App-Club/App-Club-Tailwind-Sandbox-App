@@ -2,10 +2,10 @@ import {cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {memo, useEffect, useState} from 'react';
 
-import useFavoriteWineryStory from '@/hooks/useFavoriteWineryStory';
+import useFavoriteWineStory from '@/hooks/useFavoriteWineStory';
 
 const NavMarkedFav = () => {
-  const {favoriteWineryStories} = useFavoriteWineryStory();
+  const {favoriteWineStories} = useFavoriteWineStory();
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -16,10 +16,10 @@ const NavMarkedFav = () => {
     <motion.span
       className={cx(
         'absolute right-2 w-8 h-8 rounded-full bg-pink-400 text-white flex items-center justify-center font-bold',
-        `${favoriteWineryStories.length === 0 ? 'opacity-0' : 'opacity-100'}`
+        `${favoriteWineStories.length === 0 ? 'opacity-0' : 'opacity-100'}`
       )}
     >
-      {favoriteWineryStories.length}
+      {favoriteWineStories.length}
     </motion.span>
   );
 };

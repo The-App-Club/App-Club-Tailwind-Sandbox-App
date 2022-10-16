@@ -5,7 +5,7 @@ import {useEffect, useState} from 'react';
 import {MdFavoriteBorder, MdOutlineHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import NavMarkedFav from '@/components/story/NavMarkedFav';
+import NavMarkedFav from '@/components/story/wineries/[id]/published/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
@@ -32,7 +32,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
   }, []);
 
   const renderShortHandMetrics = () => {
-    if (menuTitle === `Favorite Story`) {
+    if (menuTitle === `Favorite Winery Story`) {
       return <NavMarkedFav />;
     }
     return null;
@@ -118,8 +118,8 @@ const Nav = () => {
           />
         )}
         <MenuItem
-          path={'/story/favorite'}
-          menuTitle={'Favorite Story'}
+          path={'/story/favorite/wineries'}
+          menuTitle={'Favorite Winery Story'}
           icon={() => {
             return <MdFavoriteBorder size={24} />;
           }}

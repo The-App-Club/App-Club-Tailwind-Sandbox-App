@@ -2,36 +2,36 @@ import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useEffect, useMemo, useState} from 'react';
 
-import GalleryItem from '@/components/story/favorite/wines/GalleryItem';
-import useFavoriteWineStory from '@/hooks/useFavoriteWineStory';
+import GalleryItem from '@/components/story/favorite/wineries/GalleryItem';
 import {groupBy, mutate, tidy} from '@tidyjs/tidy';
+import useFavoriteWineryStory from '@/hooks/useFavoriteWineryStory';
 
 const Container = () => {
   const [isClient, setIsClient] = useState(false);
-  const {favoriteWineStories} = useFavoriteWineStory();
+  const {favoriteWineryStories} = useFavoriteWineryStory();
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
 
-  const groupedFavoriteWineStories = useMemo(() => {
-    if (favoriteWineStories.length === 0) {
+  const groupedFavoriteWineryStories = useMemo(() => {
+    if (favoriteWineryStories.length === 0) {
       return [];
     }
 
     return tidy(
-      favoriteWineStories,
+      favoriteWineryStories,
       groupBy(
-        ['wineId'],
-        [mutate({key: (d) => `\${d.wineId}`})],
+        ['wineryId'],
+        [mutate({key: (d) => `\${d.wineryId}`})],
         groupBy.entries()
       )
     );
-  }, [favoriteWineStories]);
+  }, [favoriteWineryStories]);
 
   const renderContainer = () => {
-    if (groupedFavoriteWineStories.length === 0) {
+    if (groupedFavoriteWineryStories.length === 0) {
       return (
         <div
           className={cx(
@@ -58,9 +58,9 @@ const Container = () => {
             }
           `}
         >
-          {groupedFavoriteWineStories.map(([wineId, stories], index) => {
+          {groupedFavoriteWineryStories.map(([wineryId, stories], index) => {
             return (
-              <GalleryItem key={index} wineId={wineId} stories={stories} />
+              <GalleryItem key={index} wineryId={wineryId} stories={stories} />
             );
           })}
         </div>

@@ -112,7 +112,17 @@ const routes = [
     activeMenuName: `Favorite Wine Story`,
   },
   {
+    pathName: `/story/favorite/wines/[wineId]`,
+    pageName: `Favorite Wine Story`,
+    activeMenuName: `Favorite Wine Story`,
+  },
+  {
     pathName: `/story/favorite/wineries`,
+    pageName: `Favorite Winery Story`,
+    activeMenuName: `Favorite Winery Story`,
+  },
+  {
+    pathName: `/story/favorite/wineries/[wineryId]`,
     pageName: `Favorite Winery Story`,
     activeMenuName: `Favorite Winery Story`,
   },

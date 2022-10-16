@@ -2,11 +2,11 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {GiGrapes} from 'react-icons/gi';
+import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 import {MdFavoriteBorder} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import NavMarkedFav from '@/components/story/wineries/NavMarkedFav';
+import NavMarkedFav from '@/components/story/favorite/wineries/[wineryId]/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
@@ -33,7 +33,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
   }, []);
 
   const renderShortHandMetrics = () => {
-    if (menuTitle === `Favorite Story`) {
+    if (menuTitle === `Favorite Winery Story`) {
       return <NavMarkedFav />;
     }
     return null;
@@ -106,6 +106,13 @@ const Nav = () => {
           menuTitle={'Winery Story'}
           icon={() => {
             return <GiGrapes size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/story/favorite/wineries'}
+          menuTitle={'Favorite Winery Story'}
+          icon={() => {
+            return <MdFavoriteBorder size={24} />;
           }}
         />
       </motion.ul>

@@ -108,13 +108,6 @@ const Nav = () => {
             return <GiWineBottle size={24} />;
           }}
         />
-        <MenuItem
-          path={'/story/favorite/wines'}
-          menuTitle={'Favorite Wine Story'}
-          icon={() => {
-            return <MdFavoriteBorder size={24} />;
-          }}
-        />
       </motion.ul>
     </motion.nav>
   );

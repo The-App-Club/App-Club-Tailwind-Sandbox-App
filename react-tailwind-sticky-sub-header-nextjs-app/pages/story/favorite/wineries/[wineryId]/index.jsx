@@ -4,16 +4,18 @@ import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRecoilValue} from 'recoil';
 
-import Spacer from '@/components/Spacer';
-import Header from '@/components/story/favorite/wineries/Header';
-import Sidebar from '@/components/story/favorite/wineries/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import Container from '@/components/story/favorite/wineries/Container';
+import Spacer from '@/components/Spacer';
+import Header from '@/components/story/favorite/wineries/[wineryId]/Header';
+import Sidebar from '@/components/story/favorite/wineries/[wineryId]/Sidebar';
+import Container from '@/components/story/favorite/wineries/[wineryId]/Container';
 
 const FavoriteWineryStories = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
+
+  const {wineryId} = router.query;
 
   return (
     <>
@@ -65,7 +67,7 @@ const FavoriteWineryStories = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === `Wineries`) {
+              if (title === wineryId) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
