@@ -1,20 +1,17 @@
 import {css, cx} from '@emotion/css';
 import {AnimatePresence} from 'framer-motion';
+import Link from 'next/link';
+import {useRouter} from 'next/router';
+import {default as numbro} from 'numbro';
 import {useMemo, useState} from 'react';
 import {
   MdFavoriteBorder,
   MdOutlineFavorite,
   MdOutlineQuickreply,
-  MdUpdate,
 } from 'react-icons/md';
+
 import CommentForm from '@/components/comment/CommentForm';
-import Spacer from '@/components/Spacer';
-import Layout from '@/layouts/default';
-import {TiPencil} from 'react-icons/ti';
-import {useRouter} from 'next/router';
-import Link from 'next/link';
 import data from '@/data/comment.json';
-import {default as numbro} from 'numbro';
 import {formatRelativeTime} from '@/utils/dateUtil';
 
 const Comment = ({item, className = css``}) => {

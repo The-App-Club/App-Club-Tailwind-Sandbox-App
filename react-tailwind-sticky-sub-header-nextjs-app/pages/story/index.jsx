@@ -1,17 +1,18 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
+import capitalize from 'capitalize-the-first-letter';
+import {useRouter} from 'next/router';
+import Breadcrumbs from 'nextjs-breadcrumbs';
 import {default as numbro} from 'numbro';
+import {GiGrapes, GiWineBottle} from 'react-icons/gi';
+import {useRecoilValue} from 'recoil';
+
+import Spacer from '@/components/Spacer';
+import Header from '@/components/story/Header';
+import Sidebar from '@/components/story/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import {useRecoilValue} from 'recoil';
-import Breadcrumbs from 'nextjs-breadcrumbs';
-import capitalize from 'capitalize-the-first-letter';
-import Sidebar from '@/components/story/Sidebar';
-import Header from '@/components/story/Header';
-import Spacer from '@/components/Spacer';
-import {AiOutlineSelect} from 'react-icons/ai';
-import {GiGrapes, GiWineBottle} from 'react-icons/gi';
-import {useRouter} from 'next/router';
+
+
 
 const Story = () => {
   const {opened} = useRecoilValue(hamburgerState);

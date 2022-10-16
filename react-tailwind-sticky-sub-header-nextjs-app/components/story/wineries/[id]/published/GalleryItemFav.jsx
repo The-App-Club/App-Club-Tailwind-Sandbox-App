@@ -1,7 +1,8 @@
-import useFavoriteStory from '@/hooks/useFavoriteStory';
 import {css, cx} from '@emotion/css';
 import {memo, useCallback} from 'react';
 import {MdFavoriteBorder, MdOutlineFavorite} from 'react-icons/md';
+
+import useFavoriteStory from '@/hooks/useFavoriteStory';
 
 const GalleryItemFav = ({item}) => {
   const {isFavorited, toggleFavorite} = useFavoriteStory(item);

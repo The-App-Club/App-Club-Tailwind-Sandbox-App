@@ -1,6 +1,7 @@
 import {css, cx} from '@emotion/css';
 import {memo, useCallback} from 'react';
 import {MdFavoriteBorder, MdOutlineFavorite} from 'react-icons/md';
+
 import useFavoriteWine from '@/hooks/useFavoriteWine';
 
 const ProductFav = ({item}) => {

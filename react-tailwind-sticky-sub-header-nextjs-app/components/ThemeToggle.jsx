@@ -1,7 +1,7 @@
 import {css, cx} from '@emotion/css';
-import {useEffect, useState} from 'react';
-import {MdWbSunny, MdNightlightRound} from 'react-icons/md';
+import { useState} from 'react';
 import {useRecoilState} from 'recoil';
+
 import themeState from '@/stores/themeStore';
 
 const ThemeToggle = ({className}) => {

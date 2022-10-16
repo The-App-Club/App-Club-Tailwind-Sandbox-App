@@ -1,11 +1,12 @@
-import {Fragment, useEffect, useMemo, useState} from 'react';
+import {css, cx} from '@emotion/css';
 import {Listbox, Transition} from '@headlessui/react';
 import {CheckIcon, ChevronUpDownIcon} from '@heroicons/react/24/solid';
-import {css, cx} from '@emotion/css';
-import locationSelectorState from '@/stores/locationSelectorStore';
-import {useRecoilState} from 'recoil';
 import {filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
+import {Fragment, useEffect, useMemo, useState} from 'react';
+import {useRecoilState} from 'recoil';
+
 import data from '@/data/wines.json';
+import locationSelectorState from '@/stores/locationSelectorStore';
 
 const LocationSelector = ({className}) => {
   const [location, setLocation] = useRecoilState(locationSelectorState);

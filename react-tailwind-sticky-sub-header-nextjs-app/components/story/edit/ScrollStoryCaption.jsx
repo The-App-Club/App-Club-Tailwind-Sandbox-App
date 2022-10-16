@@ -1,12 +1,12 @@
-import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 import {
-  AnimatePresence,
   motion,
   motionValue,
   useTransform,
 } from 'framer-motion';
-import {useEffect} from 'react';
 import {useRecoilValue} from 'recoil';
+
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
+
 const motionConfig = {
   initial: {
     x: 0,

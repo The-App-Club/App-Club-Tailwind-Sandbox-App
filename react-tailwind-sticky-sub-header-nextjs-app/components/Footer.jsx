@@ -1,17 +1,10 @@
 import {css, cx} from '@emotion/css';
-import {useRouter} from 'next/router';
-import {BsTwitter} from 'react-icons/bs';
-import {FaFacebookF} from 'react-icons/fa';
-import {AiFillInstagram} from 'react-icons/ai';
-import {BsPinterest} from 'react-icons/bs';
-import {RiAccountCircleLine} from 'react-icons/ri';
-import {AiOutlineQuestionCircle} from 'react-icons/ai';
-import {MdOutlineLocalPolice} from 'react-icons/md';
-import {GiChestnutLeaf} from 'react-icons/gi';
-import {AiOutlineCopyright} from 'react-icons/ai';
 import {motion} from 'framer-motion';
-import Link from 'next/link';
-import {useMemo, useState} from 'react';
+import {useRouter} from 'next/router';
+import {useMemo} from 'react';
+import {AiFillInstagram,AiOutlineCopyright} from 'react-icons/ai';
+import {BsPinterest,BsTwitter} from 'react-icons/bs';
+import {FaFacebookF} from 'react-icons/fa';
 
 const Footer = ({pathname}) => {
   const router = useRouter();

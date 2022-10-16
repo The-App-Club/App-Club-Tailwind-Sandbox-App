@@ -1,4 +1,5 @@
 import {AsyncWeather} from '@cicciosgamino/openweather-apis';
+
 const weatherInstance = await new AsyncWeather();
 const apiKey = 'HERE_YOUR_KEY';
 weatherInstance.setApiKey(apiKey);

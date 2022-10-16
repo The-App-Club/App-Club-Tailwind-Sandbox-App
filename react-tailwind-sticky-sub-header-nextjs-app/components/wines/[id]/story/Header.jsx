@@ -3,6 +3,7 @@ import {useRouter} from 'next/router';
 import {useCallback, useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
+
 import data from '@/data/wines.json';
 import useCart from '@/hooks/useCart';
 

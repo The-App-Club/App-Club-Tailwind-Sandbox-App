@@ -1,36 +1,25 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
-import {useRouter} from 'next/router';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import wineState from '@/stores/wineStore';
-import Layout from '@/layouts/default';
-import Spacer from '@/components/Spacer';
-import {useCallback, useMemo} from 'react';
-import {motion} from 'framer-motion';
-import data from '@/data/wines.json';
-import dataWineries from '@/data/wineries.json';
-import capitalize from 'capitalize-the-first-letter';
-import Sidebar from '@/components/Sidebar';
-import hamburgerState from '@/stores/hamburgerStore';
-import Breadcrumbs from 'nextjs-breadcrumbs';
-import Category from '@/components/Category';
-import Tracer from '@/components/Tracer';
-import {arrange, desc, filter, map, sliceHead, tidy} from '@tidyjs/tidy';
-import ReviewRanking from '@/components/feed/ReviewRanking';
-import {default as numbro} from 'numbro';
-import TraceFooter from '@/components/wines/[id]/TraceFooter';
-import Product from '@/components/wines/[id]/Product';
-
-import {GiGrapes} from 'react-icons/gi';
-import {MdOutlineHistory, MdOutlineLocationOn} from 'react-icons/md';
-
 import {Splide, SplideSlide} from '@splidejs/react-splide';
+import { filter, tidy} from '@tidyjs/tidy';
+import capitalize from 'capitalize-the-first-letter';
+import {useRouter} from 'next/router';
+import Breadcrumbs from 'nextjs-breadcrumbs';
+import { useMemo} from 'react';
+import {GiGrapes} from 'react-icons/gi';
+import { MdOutlineLocationOn} from 'react-icons/md';
+import { useRecoilValue} from 'recoil';
+
+import Sidebar from '@/components/Sidebar';
+import Spacer from '@/components/Spacer';
+import ReviewRanking from '@/components/feed/ReviewRanking';
 import '@splidejs/react-splide/css';
-import {BiCameraMovie} from 'react-icons/bi';
-import {FaRegComments} from 'react-icons/fa';
-import useCart from '@/hooks/useCart';
-import locationSelectorState from '@/stores/locationSelectorStore';
+
 import Header from '@/components/wines/[id]/Header';
+import Product from '@/components/wines/[id]/Product';
+import TraceFooter from '@/components/wines/[id]/TraceFooter';
+import data from '@/data/wines.json';
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
 
 const Wine = () => {
   const router = useRouter();

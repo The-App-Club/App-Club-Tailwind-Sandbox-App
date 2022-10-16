@@ -1,23 +1,18 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
-import Sidebar from '@/components/story/wineries/[id]/published/Sidebar';
-import Layout from '@/layouts/default';
-import hamburgerState from '@/stores/hamburgerStore';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
+import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useMemo} from 'react';
-import dataWines from '@/data/wines.json';
-import dataWineries from '@/data/wineries.json';
-import dataWineStories from '@/data/wineStories.json';
-import dataWineryStories from '@/data/wineryStories.json';
+import { useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
-import wineState from '@/stores/wineStore';
-import Header from '@/components/story/wineries/[id]/published/Header';
 import Container from '@/components/story/wineries/[id]/published/Container';
+import Header from '@/components/story/wineries/[id]/published/Header';
+import Sidebar from '@/components/story/wineries/[id]/published/Sidebar';
+import dataWineries from '@/data/wineries.json';
+import dataWineryStories from '@/data/wineryStories.json';
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
 
 const PublishedWineryStories = () => {
   const router = useRouter();

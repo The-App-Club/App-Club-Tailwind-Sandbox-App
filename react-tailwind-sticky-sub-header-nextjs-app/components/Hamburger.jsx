@@ -1,10 +1,11 @@
 import {css, cx} from '@emotion/css';
 import 'hamburgers/dist/hamburgers.css';
+import {motion} from 'framer-motion';
 import {useEffect, useState} from 'react';
 import {useRecoilState, useRecoilValue} from 'recoil';
+
 import hamburgerState from '@/stores/hamburgerStore';
 import themeState from '@/stores/themeStore';
-import {motion} from 'framer-motion';
 
 const decideHamburgerColor = ({mode}) => {
   if (mode === `dark`) {

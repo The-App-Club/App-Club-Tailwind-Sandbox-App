@@ -1,21 +1,16 @@
-import {css, cx} from '@emotion/css';
-import {Step} from 'react-scrollama';
-import Spacer from '@/components/Spacer';
+import { cx} from '@emotion/css';
+import {AnimatePresence} from 'framer-motion';
+import {gsap} from 'gsap';
 import {
-  forwardRef,
   useEffect,
   useLayoutEffect,
-  useMemo,
   useRef,
   useState,
 } from 'react';
-import {scrollTriggerState} from '@/stores/scrollTriggerStore';
-import {useRecoilValue} from 'recoil';
-import {useInView} from 'react-intersection-observer';
-import gsap from 'gsap';
-import {mergeRefs} from 'react-merge-refs';
 import {BiPencil} from 'react-icons/bi';
-import {AnimatePresence} from 'framer-motion';
+import {useInView} from 'react-intersection-observer';
+import {mergeRefs} from 'react-merge-refs';
+
 import ScrollStorySentenceForm from '@/components/story/create/ScrollStorySentenceForm';
 
 const ScrollStorySentence = ({chapterId}) => {

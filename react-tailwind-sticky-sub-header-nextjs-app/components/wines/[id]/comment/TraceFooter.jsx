@@ -1,13 +1,14 @@
 import {css, cx} from '@emotion/css';
+import {useRouter} from 'next/router';
+import {useCallback} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import wineState from '@/stores/wineStore';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import locationSelectorState from '@/stores/locationSelectorStore';
-import {useRouter} from 'next/router';
+
 import dataWineries from '@/data/wineries.json';
-import {useCallback} from 'react';
 import useCart from '@/hooks/useCart';
+import locationSelectorState from '@/stores/locationSelectorStore';
+import wineState from '@/stores/wineStore';
 
 const TraceFooter = () => {
   const router = useRouter();

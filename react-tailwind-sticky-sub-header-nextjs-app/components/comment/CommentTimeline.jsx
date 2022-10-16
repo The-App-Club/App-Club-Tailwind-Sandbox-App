@@ -1,17 +1,13 @@
 import {css, cx} from '@emotion/css';
-import {MdOutlineQuickreply, MdOutlineTimeline} from 'react-icons/md';
-// https://dev.to/readymadecode/timeline-component-in-react-81c
-import {
-  MdFavoriteBorder,
-  MdOutlineFavorite,
-  MdOutlineLocationOn,
-} from 'react-icons/md';
-import Comment from '@/components/comment/Comment';
-import Spacer from '@/components/Spacer';
-
-import {default as chance} from 'chance';
-import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
+import Breadcrumbs from 'nextjs-breadcrumbs';
+import { MdOutlineTimeline} from 'react-icons/md';
+// https://dev.to/readymadecode/timeline-component-in-react-81c
+
+
+
+import Spacer from '@/components/Spacer';
+import Comment from '@/components/comment/Comment';
 import data from '@/data/comment.json';
 
 const CommentTimeline = () => {

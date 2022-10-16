@@ -1,10 +1,10 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
-import {useMemo} from 'react';
-import dataWineries from '@/data/wineries.json';
 import {BsPencilSquare} from 'react-icons/bs';
-import wineryState from '@/stores/wineryStore';
 import {useRecoilState} from 'recoil';
+
+import wineryState from '@/stores/wineryStore';
+
 
 const GalleryItem = ({item}) => {
   const [winery, setWinery] = useRecoilState(wineryState);

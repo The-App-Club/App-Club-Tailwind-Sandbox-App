@@ -1,13 +1,14 @@
-import Tracer from '@/components/Tracer';
-import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
-import {useMemo} from 'react';
 import {css, cx} from '@emotion/css';
-import data from '@/data/wines.json';
-import dataWineries from '@/data/wineries.json';
+import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
 import {useRouter} from 'next/router';
+import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
+
+import Tracer from '@/components/Tracer';
+import dataWineries from '@/data/wineries.json';
+import data from '@/data/wines.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
 
 const RecentOrderRanking = ({className}) => {

@@ -1,6 +1,7 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
+
 import GalleryItem from '@/components/story/favorite/GalleryItem';
 import useFavoriteStory from '@/hooks/useFavoriteStory';
 

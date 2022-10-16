@@ -1,24 +1,18 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
-import {useRouter} from 'next/router';
-import {useRecoilValue} from 'recoil';
-import wineState from '@/stores/wineStore';
-import Layout from '@/layouts/default';
-import Spacer from '@/components/Spacer';
-import {useMemo, useState} from 'react';
-import data from '@/data/wineries.json';
-import dataWines from '@/data/wines.json';
-
-import Sidebar from '@/components/Sidebar';
-import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
+import {useRouter} from 'next/router';
+import Breadcrumbs from 'nextjs-breadcrumbs';
+import { useState} from 'react';
+import {useRecoilValue} from 'recoil';
 
-import hamburgerState from '@/stores/hamburgerStore';
 import Category from '@/components/Category';
-import TraceFooter from '@/components/wineries/TraceFooter';
 import SearchModal from '@/components/SearchModal';
-import {count, filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
+import Sidebar from '@/components/Sidebar';
+import Spacer from '@/components/Spacer';
 import Container from '@/components/wineries/Container';
+import TraceFooter from '@/components/wineries/TraceFooter';
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
 
 const Winery = () => {
   const [showModal, setShowModal] = useState(false);

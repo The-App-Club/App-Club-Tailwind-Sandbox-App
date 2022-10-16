@@ -1,18 +1,14 @@
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
-import {useRecoilValue} from 'recoil';
-import {MdOutlineLocationOn} from 'react-icons/md';
 import {useEffect, useMemo, useState} from 'react';
-import {GiWineBottle} from 'react-icons/gi';
+import {useRecoilValue} from 'recoil';
 
 import SidebarSp from '@/components/story/wineries/[id]/SidebarSp';
 import Nav from '@/components/story/wineries/[id]/create/Nav';
 import Product from '@/components/story/wineries/[id]/create/Product';
-
-import hamburgerState from '@/stores/hamburgerStore';
-import wineState from '@/stores/wineStore';
 import dataWineries from '@/data/wineries.json';
+import hamburgerState from '@/stores/hamburgerStore';
 
 const Sidebar = () => {
   const router = useRouter();

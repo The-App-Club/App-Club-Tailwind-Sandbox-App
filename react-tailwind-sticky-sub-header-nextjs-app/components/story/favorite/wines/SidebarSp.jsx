@@ -1,14 +1,14 @@
 import {css, cx} from '@emotion/css';
-import {useDebouncedCallback} from 'use-debounce';
-import {motion, useAnimationControls} from 'framer-motion';
-import {gsap, Power3, Linear} from 'gsap';
-import {useRouter} from 'next/router';
-import {useEffect, useRef, useState} from 'react';
+import {motion} from 'framer-motion';
+import {gsap, Linear, Power3} from 'gsap';
+import {useEffect, useRef} from 'react';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import {useClickOutside} from '@/hooks/useClickOutside';
-import hamburgerState from '@/stores/hamburgerStore';
+import {useDebouncedCallback} from 'use-debounce';
+
 import Hamburger from '@/components/Hamburger';
 import Nav from '@/components/story/favorite/wines/Nav';
+import {useClickOutside} from '@/hooks/useClickOutside';
+import hamburgerState from '@/stores/hamburgerStore';
 
 const SidebarSp = () => {
   const {opened} = useRecoilValue(hamburgerState);

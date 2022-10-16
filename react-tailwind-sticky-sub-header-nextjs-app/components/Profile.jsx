@@ -3,8 +3,8 @@ import {ControlledMenu, MenuItem} from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import {useRouter} from 'next/router';
 import {useRef, useState} from 'react';
-import {MdOutlineAccountCircle} from 'react-icons/md';
 import {useRecoilValue} from 'recoil';
+
 import themeState from '@/stores/themeStore';
 
 const Profile = ({menuData}) => {

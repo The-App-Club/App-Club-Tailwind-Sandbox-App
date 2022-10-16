@@ -1,14 +1,14 @@
 import {css, cx} from '@emotion/css';
-import {useRecoilValue} from 'recoil';
-import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
+import Breadcrumbs from 'nextjs-breadcrumbs';
+import {useRecoilValue} from 'recoil';
 
+import Spacer from '@/components/Spacer';
+import Header from '@/components/story/favorite/wines/Header';
+import Sidebar from '@/components/story/favorite/wines/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import Sidebar from '@/components/story/favorite/wines/Sidebar';
-import Header from '@/components/story/favorite/wines/Header';
-import Spacer from '@/components/Spacer';
 
 const FavoriteWineStories = () => {
   const router = useRouter();

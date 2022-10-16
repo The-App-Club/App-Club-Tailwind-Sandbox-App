@@ -1,12 +1,8 @@
 import {css, cx} from '@emotion/css';
-import {Step} from 'react-scrollama';
-import Spacer from '@/components/Spacer';
-import {forwardRef, useEffect, useMemo, useState} from 'react';
-import {scrollTriggerState} from '@/stores/scrollTriggerStore';
-import {useRecoilValue} from 'recoil';
-import ScrollStorySentence from '@/components/story/create/ScrollStorySentence';
-import {BiPencil} from 'react-icons/bi';
 import {AnimatePresence} from 'framer-motion';
+import { useState} from 'react';
+import {BiPencil} from 'react-icons/bi';
+
 import ScrollStoryTitleForm from '@/components/story/create/ScrollStoryTitleForm';
 
 const ScrollStorySectionTitle = ({chapterId}) => {

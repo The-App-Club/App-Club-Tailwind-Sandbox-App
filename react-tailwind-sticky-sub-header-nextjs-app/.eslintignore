@@ -1,0 +1,4 @@
+dist
+out
+postcss.config.js
+tailwind.config.js

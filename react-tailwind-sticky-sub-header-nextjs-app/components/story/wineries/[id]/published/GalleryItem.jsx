@@ -1,25 +1,16 @@
 import {css, cx} from '@emotion/css';
-import Spacer from '@/components/Spacer';
-import {GiGrapes, GiPriceTag} from 'react-icons/gi';
-import {
-  MdHistory,
-  MdOutlineLocationOn,
-  MdOutlinePublish,
-  MdOutlinePublishedWithChanges,
-  MdPublish,
-  MdUpdate,
-} from 'react-icons/md';
 import {useRouter} from 'next/router';
-import {useRecoilState} from 'recoil';
 import {default as numbro} from 'numbro';
 import {useMemo} from 'react';
 import {FiEye} from 'react-icons/fi';
+import {GiGrapes, GiPriceTag} from 'react-icons/gi';
+import {
+  MdHistory,
+} from 'react-icons/md';
+import {useRecoilState} from 'recoil';
 
-import dataWines from '@/data/wines.json';
-import dataWineStories from '@/data/wineStories.json';
 import dataWineries from '@/data/wineries.json';
-import GalleryItemFav from '@/components/story/wineries/[id]/published/GalleryItemFav';
-import locationSelectorState from '@/stores/locationSelectorStore';
+import dataWines from '@/data/wines.json';
 import wineState from '@/stores/wineStore';
 import {formatRelativeTime} from '@/utils/dateUtil';
 

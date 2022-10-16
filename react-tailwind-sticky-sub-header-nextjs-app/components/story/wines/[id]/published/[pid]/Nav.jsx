@@ -1,28 +1,14 @@
 import {css, cx} from '@emotion/css';
+import {motion} from 'framer-motion';
+import {useRouter} from 'next/router';
+import {useEffect, useMemo, useState} from 'react';
 import {
-  MdOutlineNotificationsNone,
-  MdOutlineShoppingCart,
-  MdFavoriteBorder,
   MdOutlineHistory,
 } from 'react-icons/md';
-import {motion} from 'framer-motion';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import themeState from '@/stores/themeStore';
-import {useRouter} from 'next/router';
-import sidebarState from '@/stores/sidebarStore';
-import {useEffect, useMemo, useState} from 'react';
-import {FiSettings} from 'react-icons/fi';
-import {MdOutlineLocationOn} from 'react-icons/md';
+import {useRecoilState} from 'recoil';
 
-import {GiGrapes, GiPriceTag} from 'react-icons/gi';
-import {GiWineBottle} from 'react-icons/gi';
-import {BiHome} from 'react-icons/bi';
-import {FaHatCowboySide} from 'react-icons/fa';
-import {MdOutlineContactMail} from 'react-icons/md';
-import {MdRssFeed} from 'react-icons/md';
-import {BsPencilSquare} from 'react-icons/bs';
 import dataWines from '@/data/wines.json';
-import wineState from '@/stores/wineStore';
+import sidebarState from '@/stores/sidebarStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {

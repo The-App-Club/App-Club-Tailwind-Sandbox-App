@@ -1,27 +1,13 @@
-import {cx, css} from '@emotion/css';
+import {css, cx} from '@emotion/css';
 import {filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
-import {useEffect, useMemo, useRef, useState} from 'react';
-import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  Text,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  Area,
-  AreaChart,
-} from 'recharts';
+import { useMemo, useState} from 'react';
 import {useRecoilValue} from 'recoil';
-import data from '@/data/wines.json';
-import Spacer from '@/components/Spacer';
-import {useRouter} from 'next/router';
-import ReviewGraph from '@/components/ReviewGraph';
+
 import AverageGraph from '@/components/AverageGraph';
 import PriceGraph from '@/components/PriceGraph';
+import ReviewGraph from '@/components/ReviewGraph';
+import Spacer from '@/components/Spacer';
+import data from '@/data/wines.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
 
 export const decideBarBackFaceFillColor = ({mode}) => {

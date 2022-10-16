@@ -1,5 +1,6 @@
-import useCart from '@/hooks/useCart';
 import {useCallback, useEffect, useState} from 'react';
+
+import useCart from '@/hooks/useCart';
 
 const Footer = ({item}) => {
   const {addCart, removeCart, isCarted} = useCart();

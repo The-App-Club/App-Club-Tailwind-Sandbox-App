@@ -1,8 +1,9 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
-import dataWineries from '@/data/wineries.json';
+
 import GalleryItem from '@/components/wineries/GalleryItem';
+import dataWineries from '@/data/wineries.json';
 
 const Container = () => {
   const [isClient, setIsClient] = useState(false);

@@ -1,16 +1,13 @@
-import React, {useRef, useEffect, useState, useMemo, createRef} from 'react';
+import React, {createRef, useEffect, useMemo, useRef,useState} from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
 import {css, cx} from '@emotion/css';
+import {useRecoilValue} from 'recoil';
 import {useDebouncedCallback} from 'use-debounce';
 
 import data from '@/data/location.json';
-import {useCallback} from 'react';
-import {useRecoilValue} from 'recoil';
 import locationSelectorState from '@/stores/locationSelectorStore';
-
-import {TbWorldLatitude, TbWorldLongitude, TbZoomPan} from 'react-icons/tb';
 import multiLocationSelectorState from '@/stores/multiLocationSelectorStore';
 
 const MapMultiLocation = ({defaultZoom = 11, className = css``}) => {

@@ -1,14 +1,15 @@
 import {css, cx} from '@emotion/css';
+import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import Spacer from '../../Spacer';
-import dataWineries from '../../../data/wineries.json';
-import {useRouter} from 'next/router';
 import {useRecoilState} from 'recoil';
+
+import dataWineries from '../../../data/wineries.json';
 import locationSelectorState from '../../../stores/locationSelectorStore';
-import ProductFav from './ProductFav';
+import Spacer from '../../Spacer';
 import ProductCarted from './ProductCarted';
+import ProductFav from './ProductFav';
 
 const Product = ({item, className = css``}) => {
   const router = useRouter();

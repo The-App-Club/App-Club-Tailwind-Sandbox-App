@@ -1,22 +1,17 @@
 import {css, cx} from '@emotion/css';
-import GalleryItemFav from '@/components/story/favorite/GalleryItemFav';
-import Spacer from '@/components/Spacer';
-import {GiGrapes} from 'react-icons/gi';
-import {
-  MdOutlineLocationOn,
-  MdOutlinePublish,
-  MdOutlinePublishedWithChanges,
-  MdUpdate,
-} from 'react-icons/md';
-import dataWines from '@/data/wines.json';
-import dataWineStories from '@/data/wineStories.json';
-import dataWineries from '@/data/wineries.json';
 import {useRouter} from 'next/router';
-import locationSelectorState from '@/stores/locationSelectorStore';
-import {useRecoilState} from 'recoil';
-import {formatRelativeTime} from '@/utils/dateUtil';
 import {default as numbro} from 'numbro';
 import {useMemo} from 'react';
+import {GiGrapes} from 'react-icons/gi';
+import {MdOutlineLocationOn, MdOutlinePublish} from 'react-icons/md';
+import {useRecoilState} from 'recoil';
+
+import Spacer from '@/components/Spacer';
+import GalleryItemFav from '@/components/story/favorite/GalleryItemFav';
+import dataWineStories from '@/data/wineStories.json';
+import dataWineries from '@/data/wineries.json';
+import dataWines from '@/data/wines.json';
+import locationSelectorState from '@/stores/locationSelectorStore';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
@@ -45,6 +40,7 @@ const GalleryItem = ({item}) => {
   }
 
   if (!activeStory) {
+    return;
   }
 
   return (

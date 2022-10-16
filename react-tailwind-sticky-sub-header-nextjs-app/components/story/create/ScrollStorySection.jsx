@@ -1,11 +1,11 @@
 import {css, cx} from '@emotion/css';
-import {Step} from 'react-scrollama';
-import Spacer from '@/components/Spacer';
-import {forwardRef, useEffect, useMemo} from 'react';
-import {scrollTriggerState} from '@/stores/scrollTriggerStore';
+import {forwardRef, useEffect} from 'react';
 import {useRecoilValue} from 'recoil';
-import ScrollStorySentence from '@/components/story/create/ScrollStorySentence';
+
+import Spacer from '@/components/Spacer';
 import ScrollStorySectionTitle from '@/components/story/create/ScrollStorySectionTitle';
+import ScrollStorySentence from '@/components/story/create/ScrollStorySentence';
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 
 const _ScrollStorySection = ({chapterId}, ref) => {
   // title,sentence textarea form by chapterId

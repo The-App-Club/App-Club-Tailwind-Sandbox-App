@@ -1,26 +1,23 @@
-import {css} from '@emotion/css';
+import {cache,css} from '@emotion/css';
 import {CacheProvider} from '@emotion/react';
-import {cache} from '@emotion/css';
-import {useCallback, useEffect, useRef, useState} from 'react';
 import {useRouter} from 'next/router';
+import {useCallback, useEffect} from 'react';
 import {RecoilRoot, useRecoilState, useRecoilValue} from 'recoil';
 
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Meta from '@/components/Meta';
-import Nav from '@/components/Nav';
-
-import themeState from '@/stores/themeStore';
 
 import '@fontsource/inter';
 import '@/styles/index.css';
 import '@/styles/index.scss';
 import '@/styles/datepicker.css';
-import hamburgerState from '@/stores/hamburgerStore';
 
 import {routes} from '@/config/route';
-import sidebarState from '@/stores/sidebarStore';
 import {useSmoothScroll} from '@/hooks/useSmoothScroll';
+import hamburgerState from '@/stores/hamburgerStore';
+import sidebarState from '@/stores/sidebarStore';
+import themeState from '@/stores/themeStore';
 
 const CowboyBebopInit = ({children, router: r}) => {
   useSmoothScroll();

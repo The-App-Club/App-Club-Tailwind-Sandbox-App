@@ -1,26 +1,22 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
+import {default as numbro} from 'numbro';
+import { memo, useEffect,useState} from 'react';
+import {BsPencilSquare} from 'react-icons/bs';
 import {GiGrapes} from 'react-icons/gi';
 import {
-  MdFavoriteBorder,
-  MdOutlineFavorite,
   MdOutlineLocationOn,
 } from 'react-icons/md';
-import {default as numbro} from 'numbro';
-import Spacer from '@/components/Spacer';
-import ProductGalleryItemFav from '@/components/ProductGalleryItemFav';
-import ProductGalleryItemCarted from '@/components/ProductGalleryItemCarted';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import {useCallback, useEffect, useMemo, useState} from 'react';
-import themeState from '@/stores/themeStore';
-import useFavoriteWine from '@/hooks/useFavoriteWine';
+
+import ProductGalleryItemCarted from '@/components/ProductGalleryItemCarted';
+import ProductGalleryItemFav from '@/components/ProductGalleryItemFav';
+import Spacer from '@/components/Spacer';
 import dataWineries from '@/data/wineries.json';
-import locationSelectorState from '@/stores/locationSelectorStore';
-import {memo} from 'react';
 import useCart from '@/hooks/useCart';
-import {BsPencilSquare} from 'react-icons/bs';
+import locationSelectorState from '@/stores/locationSelectorStore';
+import themeState from '@/stores/themeStore';
 import wineState from '@/stores/wineStore';
-import {default as chance} from 'chance';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();

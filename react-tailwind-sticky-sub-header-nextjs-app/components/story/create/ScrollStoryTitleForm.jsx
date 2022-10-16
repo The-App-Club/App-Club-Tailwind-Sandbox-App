@@ -1,7 +1,6 @@
 import {cx} from '@emotion/css';
 import {motion} from 'framer-motion';
-import {useState} from 'react';
-import {useRef} from 'react';
+import {useRef,useState} from 'react';
 
 const motionConfig = {
   initial: {

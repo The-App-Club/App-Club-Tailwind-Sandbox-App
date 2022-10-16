@@ -1,6 +1,7 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
-import {memo, useEffect, useMemo, useState} from 'react';
+import {memo, useEffect, useState} from 'react';
+
 import GalleryItem from '@/components/story/wines/GalleryItem';
 import data from '@/data/wineStories.json';
 

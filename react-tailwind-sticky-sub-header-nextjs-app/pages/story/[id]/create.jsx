@@ -1,20 +1,17 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
+import capitalize from 'capitalize-the-first-letter';
+import {useRouter} from 'next/router';
+import Breadcrumbs from 'nextjs-breadcrumbs';
+import { useRecoilValue} from 'recoil';
+
+import Footer from '@/components/story/create/Footer';
+import Header from '@/components/story/create/Header';
+import ScrollStory from '@/components/story/create/ScrollStory';
 import Sidebar from '@/components/story/create/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import Breadcrumbs from 'nextjs-breadcrumbs';
-import capitalize from 'capitalize-the-first-letter';
-import {motion} from 'framer-motion';
-import Header from '@/components/story/create/Header';
 import wineState from '@/stores/wineStore';
-import {useEffect, useMemo} from 'react';
-import ScrollStory from '@/components/story/create/ScrollStory';
-import Footer from '@/components/story/create/Footer';
-import data from '@/data/wines.json';
-import {useRouter} from 'next/router';
-import {default as chance} from 'chance';
+
 
 const CreateStory = () => {
   const {opened} = useRecoilValue(hamburgerState);

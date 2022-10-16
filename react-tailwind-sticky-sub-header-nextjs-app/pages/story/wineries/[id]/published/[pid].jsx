@@ -1,22 +1,18 @@
 import {css, cx} from '@emotion/css';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
+import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useMemo} from 'react';
+import { useRecoilValue} from 'recoil';
 
-import Layout from '@/layouts/default';
-import hamburgerState from '@/stores/hamburgerStore';
-import dataWines from '@/data/wines.json';
-import dataWineries from '@/data/wineries.json';
-
-import dataWineStories from '@/data/wineStories.json';
-import dataWineryStories from '@/data/wineryStories.json';
 import Spacer from '@/components/Spacer';
+import Footer from '@/components/story/wineries/[id]/published/[pid]/Footer';
 import Header from '@/components/story/wineries/[id]/published/[pid]/Header';
 import Sidebar from '@/components/story/wineries/[id]/published/[pid]/Sidebar';
-import Footer from '@/components/story/wineries/[id]/published/[pid]/Footer';
-import wineryState from '@/stores/wineryStore';
+import dataWineries from '@/data/wineries.json';
+import dataWineryStories from '@/data/wineryStories.json';
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
 
 const PublishedStory = () => {
   const router = useRouter();

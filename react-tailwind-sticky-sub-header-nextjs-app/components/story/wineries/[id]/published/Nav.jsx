@@ -1,11 +1,12 @@
 import {css, cx} from '@emotion/css';
-import {MdFavoriteBorder, MdOutlineHistory} from 'react-icons/md';
 import {motion} from 'framer-motion';
-import {useRecoilState} from 'recoil';
 import {useRouter} from 'next/router';
-import sidebarState from '@/stores/sidebarStore';
 import {useEffect, useState} from 'react';
+import {MdFavoriteBorder, MdOutlineHistory} from 'react-icons/md';
+import {useRecoilState} from 'recoil';
+
 import NavMarkedFav from '@/components/story/NavMarkedFav';
+import sidebarState from '@/stores/sidebarStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {

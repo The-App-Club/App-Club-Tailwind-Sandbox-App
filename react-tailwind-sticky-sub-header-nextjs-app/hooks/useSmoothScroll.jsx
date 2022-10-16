@@ -1,8 +1,8 @@
+import {gsap} from 'gsap';
+import {ScrollToPlugin} from 'gsap/dist/ScrollToPlugin';
 import {useRouter} from 'next/router';
 import {useEffect} from 'react';
 
-import {gsap} from 'gsap';
-import {ScrollToPlugin} from 'gsap/dist/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollToPlugin);
 

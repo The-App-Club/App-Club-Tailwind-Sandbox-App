@@ -1,18 +1,18 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
+import capitalize from 'capitalize-the-first-letter';
+import {default as chance} from 'chance';
+import {useRouter} from 'next/router';
+import Breadcrumbs from 'nextjs-breadcrumbs';
+import {useMemo} from 'react';
+import {useRecoilValue} from 'recoil';
+
+import Footer from '@/components/story/edit/Footer';
+import Header from '@/components/story/edit/Header';
 import Sidebar from '@/components/story/edit/Sidebar';
+import data from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import {useRecoilValue} from 'recoil';
-import Breadcrumbs from 'nextjs-breadcrumbs';
-import capitalize from 'capitalize-the-first-letter';
-import {motion} from 'framer-motion';
-import Header from '@/components/story/edit/Header';
-import {useRouter} from 'next/router';
-import {useMemo} from 'react';
-import {default as chance} from 'chance';
-import Footer from '@/components/story/edit/Footer';
-import data from '@/data/wines.json';
+
 
 const EditStory = () => {
   const {opened} = useRecoilValue(hamburgerState);

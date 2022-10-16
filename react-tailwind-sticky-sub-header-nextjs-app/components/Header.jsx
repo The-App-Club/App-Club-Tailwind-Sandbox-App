@@ -1,21 +1,17 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
-import {useRouter} from 'next/router';
-import {useCallback, useEffect, useMemo, useState} from 'react';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import hamburgerState from '@/stores/hamburgerStore';
-import Hamburger from '@/components/Hamburger';
-import ThemeToggle from '@/components/ThemeToggle';
 import {motion} from 'framer-motion';
+import {useRouter} from 'next/router';
+import { useEffect, useMemo, useState} from 'react';
 import {FiSettings} from 'react-icons/fi';
 import {
   MdOutlineLogout,
-  MdOutlineShoppingCart,
   MdOutlineNotificationsNone,
+  MdOutlineShoppingCart,
 } from 'react-icons/md';
 
+import Hamburger from '@/components/Hamburger';
 import Profile from '@/components/Profile';
-import cartState from '@/stores/cartStore';
+import ThemeToggle from '@/components/ThemeToggle';
 import useCart from '@/hooks/useCart';
 
 const Header = ({pathname}) => {

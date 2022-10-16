@@ -1,7 +1,8 @@
-import locationSelectorState from '@/stores/locationSelectorStore';
 import {css, cx} from '@emotion/css';
 import {useRecoilValue} from 'recoil';
+
 import LocationSelector from '@/components/location/LocationSelector';
+import locationSelectorState from '@/stores/locationSelectorStore';
 
 const Header = () => {
   const {activeLocationName} = useRecoilValue(locationSelectorState);

@@ -1,6 +1,6 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
 import {memo} from 'react';
+
 import CartSummary from '@/components/cart/CartSummary';
 import SubHeader from '@/components/cart/SubHeader';
 

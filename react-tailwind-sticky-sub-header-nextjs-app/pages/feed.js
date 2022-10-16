@@ -1,17 +1,15 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
+import capitalize from 'capitalize-the-first-letter';
+import Breadcrumbs from 'nextjs-breadcrumbs';
+import { useRef} from 'react';
+import {useRecoilValue} from 'recoil';
+
 import Sidebar from '@/components/Sidebar';
+import Spacer from '@/components/Spacer';
+import Feeder from '@/components/feed/Feeder';
+import Header from '@/components/feed/Header';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import {useRecoilValue} from 'recoil';
-import Breadcrumbs from 'nextjs-breadcrumbs';
-import capitalize from 'capitalize-the-first-letter';
-import data from '@/data/wines.json';
-import {motion, transform} from 'framer-motion';
-import {useMemo, useRef, useState} from 'react';
-import Feeder from '@/components/feed/Feeder';
-import Spacer from '@/components/Spacer';
-import Header from '@/components/feed/Header';
 
 // import {default as chance} from 'chance';
 

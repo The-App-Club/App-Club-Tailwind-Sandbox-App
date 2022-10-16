@@ -1,8 +1,9 @@
-import {Fragment, useEffect, useState} from 'react';
+import {css, cx} from '@emotion/css';
 import {Listbox, Transition} from '@headlessui/react';
 import {CheckIcon, ChevronUpDownIcon} from '@heroicons/react/24/solid';
-import {css, cx} from '@emotion/css';
+import {Fragment, useState} from 'react';
 import {useRecoilState} from 'recoil';
+
 import featureColumnSelectorState from '@/stores/featureColumnSelectorStore';
 
 const FeatureColumnSelector = ({data, className, isX = true}) => {

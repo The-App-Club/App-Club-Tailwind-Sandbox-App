@@ -1,7 +1,7 @@
 import {cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {memo, useEffect, useState} from 'react';
-import {useRecoilValue} from 'recoil';
+
 import useFavoriteWine from '@/hooks/useFavoriteWine';
 
 const NavMarkedFav = () => {

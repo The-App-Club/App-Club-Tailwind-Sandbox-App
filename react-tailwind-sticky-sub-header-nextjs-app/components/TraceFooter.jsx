@@ -1,16 +1,15 @@
 import {css, cx} from '@emotion/css';
+import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
+import {useEffect, useState} from 'react';
 import {BiHome} from 'react-icons/bi';
 import {GiGrapes, GiWineBottle} from 'react-icons/gi';
-import {MdOutlineShoppingCart} from 'react-icons/md';
-import {MdOutlineLocationOn} from 'react-icons/md';
-import wineState from '@/stores/wineStore';
+import {MdOutlineLocationOn,MdOutlineShoppingCart} from 'react-icons/md';
 import {useRecoilValue} from 'recoil';
 
-import {motion} from 'framer-motion';
-import cartState from '@/stores/cartStore';
 import useCart from '@/hooks/useCart';
-import {useEffect, useState} from 'react';
+import wineState from '@/stores/wineStore';
+
 
 const TraceFooter = () => {
   const [isClient, setIsClient] = useState(false);

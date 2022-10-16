@@ -1,16 +1,15 @@
-import React, {useRef, useEffect, useState, useMemo} from 'react';
+import React, { useEffect, useMemo, useRef,useState} from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
 import {css, cx} from '@emotion/css';
+import {TbWorldLatitude, TbWorldLongitude, TbZoomPan} from 'react-icons/tb';
+import {useRecoilValue} from 'recoil';
 import {useDebouncedCallback} from 'use-debounce';
 
 import data from '@/data/location.json';
-import {useCallback} from 'react';
-import {useRecoilValue} from 'recoil';
 import locationSelectorState from '@/stores/locationSelectorStore';
 
-import {TbWorldLatitude, TbWorldLongitude, TbZoomPan} from 'react-icons/tb';
 
 const Map = ({defaultZoom = 11, className = css``}) => {
   const {activeLocationName} = useRecoilValue(locationSelectorState);

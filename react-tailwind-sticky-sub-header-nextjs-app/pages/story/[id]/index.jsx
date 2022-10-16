@@ -1,20 +1,19 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
-import Sidebar from '@/components/story/wineries/[id]/Sidebar';
-import Layout from '@/layouts/default';
-import hamburgerState from '@/stores/hamburgerStore';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import {motion} from 'framer-motion';
-import Header from '@/components/story/wineries/[id]/Header';
 import {useRouter} from 'next/router';
+import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useMemo} from 'react';
+import {useRecoilState, useRecoilValue} from 'recoil';
+
+import Spacer from '@/components/Spacer';
+import GalleryItem from '@/components/story/wineries/[id]/GalleryItem';
+import Header from '@/components/story/wineries/[id]/Header';
+import Sidebar from '@/components/story/wineries/[id]/Sidebar';
 import dataWineStories from '@/data/wineStories.json';
 import dataWines from '@/data/wines.json';
-import Spacer from '@/components/Spacer';
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
 import wineState from '@/stores/wineStore';
-import GalleryItem from '@/components/story/wineries/[id]/GalleryItem';
 
 const Story = () => {
   const router = useRouter();

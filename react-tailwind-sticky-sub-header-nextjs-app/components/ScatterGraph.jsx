@@ -1,29 +1,25 @@
-import {
-  ScatterChart,
-  Scatter,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Cell,
-  ResponsiveContainer,
-  Legend,
-} from 'recharts';
-import {css, cx} from '@emotion/css';
+import * as d3 from 'd3';
 import {scaleOrdinal} from 'd3-scale';
 import {schemeCategory10} from 'd3-scale-chromatic';
-import {default as chance} from 'chance';
-import useSWR from 'swr';
-import * as d3 from 'd3';
-import {useEffect, useMemo, useState} from 'react';
-import {filter, map, sliceHead, tidy} from '@tidyjs/tidy';
-import {default as XFeatureColumnSelector} from '@/components/FeatureColumnSelector';
-import {default as YFeatureColumnSelector} from '@/components/FeatureColumnSelector';
-import featureColumnSelectorState from '@/stores/featureColumnSelectorStore';
+import {useEffect, useState} from 'react';
+import {
+  CartesianGrid,
+  Cell,
+  ResponsiveContainer,
+  Scatter,
+  ScatterChart,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts';
 import {useRecoilValue} from 'recoil';
-import themeState from '@/stores/themeStore';
-import {default as numbro} from 'numbro';
+import useSWR from 'swr';
 import {useDebouncedCallback} from 'use-debounce';
+
+import {default as XFeatureColumnSelector,default as YFeatureColumnSelector} from '@/components/FeatureColumnSelector';
+import featureColumnSelectorState from '@/stores/featureColumnSelectorStore';
+import themeState from '@/stores/themeStore';
+
 
 const colors = scaleOrdinal(schemeCategory10).range();
 

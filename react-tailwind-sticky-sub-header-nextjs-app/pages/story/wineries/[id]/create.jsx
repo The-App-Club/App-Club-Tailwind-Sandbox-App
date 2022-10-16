@@ -1,24 +1,19 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
-import {default as chance} from 'chance';
-import {useEffect, useMemo} from 'react';
+import Breadcrumbs from 'nextjs-breadcrumbs';
+import { useMemo} from 'react';
+import { useRecoilValue} from 'recoil';
 
-import Layout from '@/layouts/default';
-import wineState from '@/stores/wineStore';
-import wineryState from '@/stores/wineryStore';
-import hamburgerState from '@/stores/hamburgerStore';
-
-import dataWineries from '@/data/wineries.json';
-
-import Sidebar from '@/components/story/wineries/[id]/create/Sidebar';
+import Footer from '@/components/story/wineries/[id]/create/Footer';
 import Header from '@/components/story/wineries/[id]/create/Header';
 import ScrollStory from '@/components/story/wineries/[id]/create/ScrollStory';
-import Footer from '@/components/story/wineries/[id]/create/Footer';
+import Sidebar from '@/components/story/wineries/[id]/create/Sidebar';
+import dataWineries from '@/data/wineries.json';
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
+
+
 
 const CreateStory = () => {
   const {opened} = useRecoilValue(hamburgerState);

@@ -1,22 +1,20 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
-import {useRouter} from 'next/router';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import wineState from '@/stores/wineStore';
-import Layout from '@/layouts/default';
-import Spacer from '@/components/Spacer';
-import {useEffect, useMemo, useState} from 'react';
-import data from '@/data/wineries.json';
-import Sidebar from '@/components/wineries/Sidebar';
-import Breadcrumbs from 'nextjs-breadcrumbs';
+import {count, filter, groupBy, mutate, tidy} from '@tidyjs/tidy';
 import capitalize from 'capitalize-the-first-letter';
+import {useRouter} from 'next/router';
+import Breadcrumbs from 'nextjs-breadcrumbs';
+import {useEffect, useMemo, useState} from 'react';
+import {useRecoilState, useRecoilValue} from 'recoil';
 
-import hamburgerState from '@/stores/hamburgerStore';
 import Category from '@/components/Category';
-import TraceFooter from '@/components/wineries/[id]/TraceFooter';
 import ProductGalleryItem from '@/components/ProductGalleryItem';
 import SearchModal from '@/components/SearchModal';
-import {count, filter, groupBy, mutate, sliceHead, tidy} from '@tidyjs/tidy';
+import Spacer from '@/components/Spacer';
+import Sidebar from '@/components/wineries/Sidebar';
+import TraceFooter from '@/components/wineries/[id]/TraceFooter';
+import data from '@/data/wineries.json';
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
 import multiLocationSelectorState from '@/stores/multiLocationSelectorStore';
 
 const Winery = () => {

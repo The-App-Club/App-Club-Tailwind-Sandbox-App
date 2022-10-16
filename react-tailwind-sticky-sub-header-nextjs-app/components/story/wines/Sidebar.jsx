@@ -2,8 +2,9 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useRecoilValue} from 'recoil';
-import SidebarSp from '@/components/story/wines/SidebarSp';
+
 import Nav from '@/components/story/wines/Nav';
+import SidebarSp from '@/components/story/wines/SidebarSp';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const Sidebar = () => {

@@ -1,4 +1,5 @@
 import {cx} from '@emotion/css';
+
 import styles from './index.module.scss';
 
 const Card = () => {

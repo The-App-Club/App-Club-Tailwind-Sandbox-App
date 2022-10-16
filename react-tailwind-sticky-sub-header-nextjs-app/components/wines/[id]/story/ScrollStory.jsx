@@ -1,16 +1,11 @@
 import {css, cx} from '@emotion/css';
-import {useEffect} from 'react';
-import {useRef} from 'react';
+import {useCallback,useEffect,useRef} from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import mapboxgl from 'mapbox-gl';
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
-import {useDebouncedCallback} from 'use-debounce';
-import ScrollStorySection from '@/components/wines/[id]/story/ScrollStorySection';
-import {useCallback} from 'react';
-import {useRecoilValue} from 'recoil';
-import {useState} from 'react';
-import {motion, useAnimationControls} from 'framer-motion';
+import mapboxgl from 'mapbox-gl';
+
 import Spacer from '@/components/Spacer';
+import ScrollStorySection from '@/components/wines/[id]/story/ScrollStorySection';
 
 const chapters = {
   baker: {

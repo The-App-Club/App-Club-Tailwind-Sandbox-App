@@ -1,22 +1,18 @@
 import {css, cx} from '@emotion/css';
 import {
   createRef,
-  useCallback,
-  useEffect,
   useMemo,
   useRef,
   useState,
 } from 'react';
-import ScrollStorySection from '@/components/story/create/ScrollStorySection';
 import {Scrollama, Step} from 'react-scrollama';
+import {useRecoilState} from 'recoil';
 import {MathUtils} from 'three';
-import Spacer from '@/components/Spacer';
-import {AnimatePresence, motion, useAnimationControls} from 'framer-motion';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import {scrollTriggerState} from '@/stores/scrollTriggerStore';
-import {usePrevious} from '@/hooks/usePrevious';
+
 import ScrollStoryCaption from '@/components/story/create/ScrollStoryCaption';
 import ScrollStoryModel from '@/components/story/create/ScrollStoryModel';
+import ScrollStorySection from '@/components/story/create/ScrollStorySection';
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 
 const ScrollStory = () => {
   const [scrollTrigger, setScrollTrigger] = useRecoilState(scrollTriggerState);

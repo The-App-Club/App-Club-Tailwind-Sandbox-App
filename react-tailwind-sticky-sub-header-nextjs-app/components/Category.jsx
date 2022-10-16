@@ -1,13 +1,13 @@
 import {css, cx} from '@emotion/css';
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import {tidy, groupBy, mutate, filter, map, count} from '@tidyjs/tidy';
-import {useEffect, useMemo} from 'react';
-import {default as chance} from 'chance';
-import data from '@/data/wineries.json';
+import {count, groupBy, mutate, tidy} from '@tidyjs/tidy';
 import {useRouter} from 'next/router';
-import locationSelectorState from '@/stores/locationSelectorStore';
+import {useEffect, useMemo} from 'react';
 import {useRecoilState} from 'recoil';
+
+import data from '@/data/wineries.json';
+import locationSelectorState from '@/stores/locationSelectorStore';
 import multiLocationSelectorState from '@/stores/multiLocationSelectorStore';
 
 const Category = ({className = css``}) => {

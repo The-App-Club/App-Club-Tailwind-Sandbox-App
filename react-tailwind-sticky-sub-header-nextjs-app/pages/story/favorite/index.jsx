@@ -1,14 +1,15 @@
 import {css, cx} from '@emotion/css';
-import Sidebar from '@/components/story/Sidebar';
-import Layout from '@/layouts/default';
-import hamburgerState from '@/stores/hamburgerStore';
-import {useRecoilValue} from 'recoil';
-import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
-import Header from '@/components/story/favorite/Header';
+import Breadcrumbs from 'nextjs-breadcrumbs';
+import {useRecoilValue} from 'recoil';
+
 import Spacer from '@/components/Spacer';
+import Sidebar from '@/components/story/Sidebar';
 import Container from '@/components/story/favorite/Container';
+import Header from '@/components/story/favorite/Header';
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
 
 const FavoriteStory = () => {
   const router = useRouter();

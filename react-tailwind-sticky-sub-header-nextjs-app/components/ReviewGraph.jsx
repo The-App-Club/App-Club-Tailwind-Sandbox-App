@@ -1,3 +1,7 @@
+import {css, cx} from '@emotion/css';
+import {useRouter} from 'next/router';
+import {useEffect, useState} from 'react';
+import {MdOutlineReviews} from 'react-icons/md';
 import {
   Bar,
   BarChart,
@@ -8,17 +12,15 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import {useRouter} from 'next/router';
-import {useEffect, useState} from 'react';
 import {useRecoilValue} from 'recoil';
 import {useDebouncedCallback} from 'use-debounce';
-import themeState from '@/stores/themeStore';
+
 import {
   decideAxisTickFillColor,
   decideBarBackFaceFillColor,
 } from '@/components/AreaGraph';
-import {css, cx} from '@emotion/css';
-import {MdOutlineReviews} from 'react-icons/md';
+import themeState from '@/stores/themeStore';
+
 
 const ReviewGraph = ({selectedData}) => {
   const router = useRouter();

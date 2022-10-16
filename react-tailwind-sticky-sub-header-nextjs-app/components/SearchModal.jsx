@@ -1,5 +1,5 @@
 import {css, cx} from '@emotion/css';
-import {motion, AnimatePresence} from 'framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 import {useEffect} from 'react';
 import {useDebouncedCallback} from 'use-debounce';
 

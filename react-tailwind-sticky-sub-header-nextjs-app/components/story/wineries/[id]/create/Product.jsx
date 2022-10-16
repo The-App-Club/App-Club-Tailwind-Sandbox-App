@@ -1,26 +1,14 @@
 import {css, cx} from '@emotion/css';
-import {useRouter} from 'next/router';
-import {GiGrapes, GiWineBottle} from 'react-icons/gi';
-import {
-  MdFavoriteBorder,
-  MdOutlineFavorite,
-  MdOutlineLocationOn,
-} from 'react-icons/md';
-import {default as numbro} from 'numbro';
-import Spacer from '@/components/Spacer';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import {memo, useCallback, useEffect, useMemo, useState} from 'react';
-import themeState from '@/stores/themeStore';
-import useFavoriteWine from '@/hooks/useFavoriteWine';
-import dataWineries from '@/data/wineries.json';
-import locationSelectorState from '@/stores/locationSelectorStore';
-import useCart from '@/hooks/useCart';
-import ProductFav from '@/components/comment/ProductFav';
-import ProductCarted from '@/components/comment/ProductCarted';
-import {FaRegComments} from 'react-icons/fa';
-import InputNumber from '@/components/comment/InputNumber';
-
 import {motion} from 'framer-motion';
+import {useRouter} from 'next/router';
+import {memo} from 'react';
+import {GiGrapes, GiWineBottle} from 'react-icons/gi';
+import {useRecoilState, useRecoilValue} from 'recoil';
+
+import locationSelectorState from '@/stores/locationSelectorStore';
+import themeState from '@/stores/themeStore';
+
+
 
 const motionConfig = {
   initial: {

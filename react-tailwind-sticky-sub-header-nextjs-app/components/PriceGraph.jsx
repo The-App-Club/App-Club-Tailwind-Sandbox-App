@@ -1,5 +1,8 @@
 import {css, cx} from '@emotion/css';
+import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
+import {useEffect, useState} from 'react';
+import {GiPriceTag} from 'react-icons/gi';
 import {
   Bar,
   BarChart,
@@ -10,13 +13,12 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import {useRouter} from 'next/router';
-import {useEffect, useState} from 'react';
 import {useRecoilValue} from 'recoil';
 import {useDebouncedCallback} from 'use-debounce';
+
 import themeState from '../stores/themeStore';
 import {decideAxisTickFillColor, decideBarBackFaceFillColor} from './AreaGraph';
-import {GiPriceTag} from 'react-icons/gi';
+
 
 const PriceGraph = ({selectedData}) => {
   const router = useRouter();

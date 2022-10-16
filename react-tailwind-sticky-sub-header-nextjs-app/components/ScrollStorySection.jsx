@@ -1,9 +1,8 @@
-import {cx, css} from '@emotion/css';
+import {css, cx} from '@emotion/css';
+import {gsap} from 'gsap';
 import {useEffect, useLayoutEffect, useRef} from 'react';
 import {useInView} from 'react-intersection-observer';
-import gsap from 'gsap';
 import {mergeRefs} from 'react-merge-refs';
-import {useRecoilState} from 'recoil';
 
 const ScrollStorySection = ({children, chapterName, doMarked}) => {
   const itemRef = useRef(null);
