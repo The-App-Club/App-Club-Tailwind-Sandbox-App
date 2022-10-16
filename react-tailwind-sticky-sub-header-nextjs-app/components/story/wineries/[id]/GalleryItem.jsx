@@ -27,11 +27,10 @@ const GalleryItem = ({item, storyItem}) => {
       onClick={(e) => {
         e.stopPropagation();
         router.push({
-          pathname: `/story/${item.wineryId}/published`,
+          pathname: `/story/wineries/${item.wineryId}/published`,
         });
       }}
     >
-      {/* <GalleryItemFav item={item} /> */}
       <div
         className={css`
           width: 100%;

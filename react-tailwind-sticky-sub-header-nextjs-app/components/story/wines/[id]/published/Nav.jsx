@@ -5,7 +5,7 @@ import {useEffect, useMemo, useState} from 'react';
 import {MdFavoriteBorder, MdOutlineHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import NavMarkedFav from '@/components/story/wines/[id]/NavMarkedFav';
+import NavMarkedFav from '@/components/story/wines/[id]/published/NavMarkedFav';
 import dataWines from '@/data/wines.json';
 import sidebarState from '@/stores/sidebarStore';
 

@@ -6,7 +6,6 @@ import {MdOutlineLocationOn, MdOutlinePublish} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
-import GalleryItemFav from '@/components/story/wineries/[id]/GalleryItemFav';
 import dataWineries from '@/data/wineries.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
 
@@ -29,7 +28,6 @@ const GalleryItem = ({item, storyItem}) => {
         });
       }}
     >
-      <GalleryItemFav item={item} />
       <div
         className={css`
           width: 100%;

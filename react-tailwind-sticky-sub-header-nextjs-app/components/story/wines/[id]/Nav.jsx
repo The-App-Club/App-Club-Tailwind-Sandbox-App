@@ -2,8 +2,7 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {GiGrapes, GiWineBottle} from 'react-icons/gi';
-import {MdFavoriteBorder} from 'react-icons/md';
+import {GiWineBottle} from 'react-icons/gi';
 import {useRecoilState} from 'recoil';
 
 import NavMarkedFav from '@/components/story/wines/[id]/NavMarkedFav';
@@ -77,6 +76,8 @@ const MenuItem = ({path, menuTitle, icon}) => {
 };
 
 const Nav = () => {
+  const router = useRouter();
+  const {id} = router.query;
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -102,24 +103,10 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={'/story/wineries'}
-          menuTitle={'Winery Story'}
-          icon={() => {
-            return <GiGrapes size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/story/wines'}
+          path={`/story/wines/${id}`}
           menuTitle={'Wine Story'}
           icon={() => {
             return <GiWineBottle size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/story/favorite'}
-          menuTitle={'Favorite Story'}
-          icon={() => {
-            return <MdFavoriteBorder size={24} />;
           }}
         />
       </motion.ul>

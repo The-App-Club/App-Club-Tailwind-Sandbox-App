@@ -23,8 +23,9 @@ const GalleryItem = ({wineId, stories}) => {
     });
   }, [wineId]);
 
-  // console.log(`wineId, stories`, activeWine, stories);
-  // return null;
+  if (!activeWine) {
+    return;
+  }
 
   return (
     <div

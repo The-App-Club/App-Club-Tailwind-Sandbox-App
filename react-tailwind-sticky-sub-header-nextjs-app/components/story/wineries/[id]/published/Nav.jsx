@@ -118,7 +118,7 @@ const Nav = () => {
           />
         )}
         <MenuItem
-          path={'/story/favorite/wineries'}
+          path={`/story/favorite/wineries/${id}`}
           menuTitle={'Favorite Winery Story'}
           icon={() => {
             return <MdFavoriteBorder size={24} />;

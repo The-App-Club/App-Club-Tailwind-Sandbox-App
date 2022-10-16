@@ -1,25 +1,42 @@
 import {cx} from '@emotion/css';
 import {motion} from 'framer-motion';
-import {memo, useEffect, useState} from 'react';
+import {useRouter} from 'next/router';
+import {memo, useEffect, useMemo, useState} from 'react';
 
 import useFavoriteWineryStory from '@/hooks/useFavoriteWineryStory';
 
 const NavMarkedFav = () => {
   const {favoriteWineryStories} = useFavoriteWineryStory();
   const [isClient, setIsClient] = useState(false);
+
+  const router = useRouter();
+
+  const {id} = router.query;
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
+
+  const matchedFavoriteWineryStories = useMemo(() => {
+    return favoriteWineryStories.filter((item) => {
+      return item.wineryId === id;
+    });
+  }, [id, favoriteWineryStories]);
+
   return (
     <motion.span
       className={cx(
         'absolute right-2 w-8 h-8 rounded-full bg-pink-400 text-white flex items-center justify-center font-bold',
-        `${favoriteWineryStories.length === 0 ? 'opacity-0' : 'opacity-100'}`
+        `${
+          matchedFavoriteWineryStories.length === 0
+            ? 'opacity-0'
+            : 'opacity-100'
+        }`
       )}
     >
-      {favoriteWineryStories.length}
+      {matchedFavoriteWineryStories.length}
     </motion.span>
   );
 };

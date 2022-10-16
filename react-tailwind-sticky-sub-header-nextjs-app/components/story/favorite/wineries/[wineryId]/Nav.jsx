@@ -77,6 +77,8 @@ const MenuItem = ({path, menuTitle, icon}) => {
 };
 
 const Nav = () => {
+  const router = useRouter();
+  const {wineryId} = router.query;
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -109,7 +111,7 @@ const Nav = () => {
           }}
         />
         <MenuItem
-          path={'/story/favorite/wineries'}
+          path={`/story/favorite/wineries/${wineryId}`}
           menuTitle={'Favorite Winery Story'}
           icon={() => {
             return <MdFavoriteBorder size={24} />;
