@@ -64,6 +64,8 @@ const Wines = () => {
                 top: 3rem;
                 width: 100%;
                 ol {
+                  font-size: 0.875rem /* 14px */;
+                  line-height: 1.25rem /* 20px */;
                   width: 100%;
                   min-height: 3rem;
                   display: flex;

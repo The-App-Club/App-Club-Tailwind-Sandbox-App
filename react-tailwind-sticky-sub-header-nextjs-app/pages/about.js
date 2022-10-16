@@ -36,6 +36,8 @@ const About = () => {
                 width: 100%;
                 padding: 0 0.5rem;
                 ol {
+                  font-size: 0.875rem /* 14px */;
+                  line-height: 1.25rem /* 20px */;
                   width: 100%;
                   min-height: 3rem;
                   display: flex;
