@@ -1,49 +1,34 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
-import Sidebar from '@/components/story/wineries/[id]/published/Sidebar';
+import Sidebar from '@/components/story/edit/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import {useRecoilState, useRecoilValue} from 'recoil';
+import {useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import {motion} from 'framer-motion';
+import Header from '@/components/story/edit/Header';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
-import dataWines from '@/data/wines.json';
-import dataStories from '@/data/stories.json';
-import Spacer from '@/components/Spacer';
-import wineState from '@/stores/wineStore';
-import Header from '@/components/story/wineries/[id]/published/Header';
-import Container from '@/components/story/wineries/[id]/published/Container';
+import {default as chance} from 'chance';
+import Footer from '@/components/story/edit/Footer';
+import data from '@/data/wines.json';
 
-const PublishedStories = () => {
-  const router = useRouter();
+const EditStory = () => {
   const {opened} = useRecoilValue(hamburgerState);
+  const router = useRouter();
   const {id} = router.query;
 
   const item = useMemo(() => {
-    return dataStories.find((d) => {
-      return d.wineId === Number(id);
+    return data.find((item) => {
+      const storyId = chance(item.wine).string({alpha: true});
+      return storyId === id;
     });
   }, [id]);
-
-  const activeWine = useMemo(() => {
-    if (!item) {
-      return;
-    }
-    return dataWines.find((d) => {
-      return d.id === item.wineId;
-    });
-  }, [item]);
 
   if (!item) {
     return;
   }
-
-  if (!activeWine) {
-    return;
-  }
-
   return (
     <>
       <Sidebar />
@@ -91,20 +76,19 @@ const PublishedStories = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === `Published`) {
+              if (niceTitle === `Edit`) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
             }}
           />
 
-          <Header item={activeWine} />
-          <Spacer />
-          <Container stories={item.stories} />
+          <Header />
+          <Footer item={item} />
         </section>
       </Layout>
     </>
   );
 };
 
-export default PublishedStories;
+export default EditStory;

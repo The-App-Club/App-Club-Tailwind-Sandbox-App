@@ -1,7 +1,7 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
-import GalleryItem from '@/components/story/[id]/published/GalleryItem';
+import GalleryItem from '@/components/story/wineries/[id]/published/GalleryItem';
 
 const Container = ({stories}) => {
   const [isClient, setIsClient] = useState(false);
@@ -25,7 +25,7 @@ const Container = ({stories}) => {
             `border-2  rounded-lg shadow-lg p-2`
           )}
         >
-          <p>Nothing fav stories...</p>
+          <p>Nothing stories...</p>
           <Link href={`/story`}>
             <a className="hover:underline">See Story</a>
           </Link>

@@ -1,48 +1,60 @@
 import {css, cx} from '@emotion/css';
-import Link from 'next/link';
-import Sidebar from '@/components/story/wineries/[id]/published/Sidebar';
-import Layout from '@/layouts/default';
-import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
-import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
-import dataWines from '@/data/wines.json';
-import dataStories from '@/data/stories.json';
-import Spacer from '@/components/Spacer';
-import wineState from '@/stores/wineStore';
-import Header from '@/components/story/wineries/[id]/published/Header';
-import Container from '@/components/story/wineries/[id]/published/Container';
 
-const PublishedStories = () => {
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
+import dataWines from '@/data/wines.json';
+import dataWineries from '@/data/wineries.json';
+
+import dataStories from '@/data/stories.json';
+import dataWineryStories from '@/data/wineryStories.json';
+import Spacer from '@/components/Spacer';
+import Header from '@/components/story/wineries/[id]/published/[pid]/Header';
+import Sidebar from '@/components/story/wineries/[id]/published/[pid]/Sidebar';
+import Footer from '@/components/story/wineries/[id]/published/[pid]/Footer';
+import wineryState from '@/stores/wineryStore';
+
+const PublishedStory = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-  const {id} = router.query;
+  const {id, pid} = router.query;
 
-  const item = useMemo(() => {
-    return dataStories.find((d) => {
-      return d.wineId === Number(id);
+  const activeWinery = useMemo(() => {
+    return dataWineries.find((d) => {
+      return d.wineryId === id;
     });
   }, [id]);
 
-  const activeWine = useMemo(() => {
-    if (!item) {
+  const activeStory = useMemo(() => {
+    const data = dataWineryStories.find((d) => {
+      return d.wineryId === id;
+    });
+    if (!data) {
       return;
     }
-    return dataWines.find((d) => {
-      return d.id === item.wineId;
+
+    return data.stories.find((d) => {
+      return d.storyId === pid;
     });
-  }, [item]);
+  }, [id, pid]);
 
-  if (!item) {
+  if (!activeWinery) {
     return;
   }
 
-  if (!activeWine) {
+  if (!activeStory) {
     return;
   }
+
+  // console.log(activeWinery);
+
+  // console.log(activeStory);
+
+  // return null;
 
   return (
     <>
@@ -91,20 +103,21 @@ const PublishedStories = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === `Published`) {
+              if (title === pid) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
             }}
           />
 
-          <Header item={activeWine} />
+          <Header item={activeWinery} storyItem={activeStory} />
           <Spacer />
-          <Container stories={item.stories} />
+          <p>At here published scroll story.</p>
+          <Footer />
         </section>
       </Layout>
     </>
   );
 };
 
-export default PublishedStories;
+export default PublishedStory;

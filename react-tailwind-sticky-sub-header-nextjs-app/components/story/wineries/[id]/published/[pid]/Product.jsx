@@ -5,8 +5,8 @@ import {MdOutlineLocationOn} from 'react-icons/md';
 import {default as numbro} from 'numbro';
 import {memo} from 'react';
 import dataWineries from '@/data/wineries.json';
-import ProductFav from '@/components/story/[id]/published/[pid]/ProductFav';
-import ProductCarted from '@/components/story/[id]/published/[pid]/ProductCarted';
+import ProductFav from '@/components/story/wineries/[id]/published/[pid]/ProductFav';
+import ProductCarted from '@/components/story/wineries/[id]/published/[pid]/ProductCarted';
 import {motion} from 'framer-motion';
 
 const motionConfig = {
@@ -56,13 +56,12 @@ const Product = ({item}) => {
           `
         )}
       >
-        <GiWineBottle size={24} />
-        Focused Wine
+        <GiGrapes size={24} />
+        Focused Winery
       </h2>
 
       <div className={cx(`relative`, `w-full h-full px-12 border-b-2`)}>
-        <ProductCarted item={item} />
-        <ProductFav item={item} />
+        {/* <ProductFav item={item} /> */}
         <div className="w-full flex gap-2">
           <div
             className={cx(
@@ -80,7 +79,7 @@ const Product = ({item}) => {
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  background-image: url(${item.image});
+                  background-image: url(${item.thumbnail});
                   background-size: contain;
                   background-position: center center;
                   background-origin: center center;
@@ -95,11 +94,11 @@ const Product = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 router.push({
-                  pathname: `/wines/${item.id}`,
+                  pathname: `/winery/${item.wineryId}`,
                 });
               }}
             >
-              {item.wine}
+              {item.wineryName}
             </h2>
             <div
               className={cx(
@@ -108,11 +107,8 @@ const Product = ({item}) => {
               )}
               onClick={(e) => {
                 e.stopPropagation();
-                const activeWineryItem = dataWineries.find((d) => {
-                  return d.wineryName === item.winery;
-                });
                 router.push({
-                  pathname: `/winery/${activeWineryItem.wineryId}`,
+                  pathname: `/winery/${item.wineryId}`,
                 });
               }}
             >
@@ -122,53 +118,7 @@ const Product = ({item}) => {
                   min-width: 24px;
                 `}
               />
-              <span className="break-words">{`${item.winery}`}</span>
-            </div>
-            <div
-              className={cx(
-                `text-sm font-bold flex items-center`,
-                `hover:cursor-pointer hover:underline`
-              )}
-              onClick={(e) => {
-                e.stopPropagation();
-                setLocation({
-                  activeLocationName: item.location,
-                });
-                router.push({
-                  pathname: `/location`,
-                });
-              }}
-            >
-              <MdOutlineLocationOn
-                size={24}
-                className={css`
-                  min-width: 24px;
-                `}
-              />
-              <span className="break-words">{`${item.location}`}</span>
-            </div>
-            <div
-              className={css`
-                width: 100%;
-                display: flex;
-                align-items: flex-end;
-                justify-content: flex-end;
-                flex-direction: column;
-              `}
-            >
-              <div className="flex items-start flex-col gap-2 sm:flex-row sm:items-center sm:justify-center">
-                <span className="text-xl text-rose-400 dark:text-amber-400">
-                  {item.rating.average}
-                </span>
-                <span className="text-sm text-rose-400 dark:text-amber-400 line-clamp-1">
-                  {item.rating.reviews}
-                </span>
-              </div>
-              <div className="flex items-end justify-center">
-                <span className="text-lg">{`$${numbro(item.price).format({
-                  thousandSeparated: true,
-                })}`}</span>
-              </div>
+              <span className="break-words">{`${item.wineryName}`}</span>
             </div>
           </div>
         </div>

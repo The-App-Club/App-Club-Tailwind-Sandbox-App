@@ -18,7 +18,7 @@ import {FiEye} from 'react-icons/fi';
 import dataWines from '@/data/wines.json';
 import dataStories from '@/data/stories.json';
 import dataWineries from '@/data/wineries.json';
-import GalleryItemFav from '@/components/story/[id]/published/GalleryItemFav';
+import GalleryItemFav from '@/components/story/wineries/[id]/published/GalleryItemFav';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import wineState from '@/stores/wineStore';
 import {formatRelativeTime} from '@/utils/dateUtil';
@@ -44,7 +44,7 @@ const GalleryItem = ({item}) => {
           activeWine,
         });
         router.push({
-          pathname: `/story/${item.wineId}/published/${item.storyId}`,
+          pathname: `/story/wines/${item.wineId}/published/${item.storyId}`,
         });
       }}
     >

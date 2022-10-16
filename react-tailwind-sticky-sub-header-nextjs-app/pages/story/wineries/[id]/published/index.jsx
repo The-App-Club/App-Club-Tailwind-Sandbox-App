@@ -10,29 +10,32 @@ import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
 import dataWines from '@/data/wines.json';
+import dataWineries from '@/data/wineries.json';
 import dataStories from '@/data/stories.json';
+import dataWineryStories from '@/data/wineryStories.json';
+
 import Spacer from '@/components/Spacer';
 import wineState from '@/stores/wineStore';
 import Header from '@/components/story/wineries/[id]/published/Header';
 import Container from '@/components/story/wineries/[id]/published/Container';
 
-const PublishedStories = () => {
+const PublishedWineryStories = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
 
   const item = useMemo(() => {
-    return dataStories.find((d) => {
-      return d.wineId === Number(id);
+    return dataWineryStories.find((d) => {
+      return d.wineryId === id;
     });
   }, [id]);
 
-  const activeWine = useMemo(() => {
+  const activeWinery = useMemo(() => {
     if (!item) {
       return;
     }
-    return dataWines.find((d) => {
-      return d.id === item.wineId;
+    return dataWineries.find((d) => {
+      return d.wineryId === item.wineryId;
     });
   }, [item]);
 
@@ -40,7 +43,7 @@ const PublishedStories = () => {
     return;
   }
 
-  if (!activeWine) {
+  if (!activeWinery) {
     return;
   }
 
@@ -98,7 +101,7 @@ const PublishedStories = () => {
             }}
           />
 
-          <Header item={activeWine} />
+          <Header item={activeWinery} />
           <Spacer />
           <Container stories={item.stories} />
         </section>
@@ -107,4 +110,4 @@ const PublishedStories = () => {
   );
 };
 
-export default PublishedStories;
+export default PublishedWineryStories;

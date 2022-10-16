@@ -45,12 +45,32 @@ const routes = [
     activeMenuName: `Winery Story`,
   },
   {
-    pathName: `/story/[id]`,
-    pageName: `Story`,
-    activeMenuName: `Story`,
+    pathName: `/story/wines/[id]`,
+    pageName: `Wine Story`,
+    activeMenuName: `Focused Wine Story`,
   },
   {
-    pathName: `/story/[id]/published`,
+    pathName: `/story/wineries/[id]`,
+    pageName: `Winery Story`,
+    activeMenuName: `Focused Winery Story`,
+  },
+  {
+    pathName: `/story/wines/[id]/published`,
+    pageName: `Published Wine Story`,
+    activeMenuName: `Published Wine Story`,
+  },
+  {
+    pathName: `/story/wineries/[id]/published`,
+    pageName: `Published Winery Story`,
+    activeMenuName: `Published Winery Story`,
+  },
+  {
+    pathName: `/story/wines/[id]/published/[pid]`,
+    pageName: `Published Story`,
+    activeMenuName: `Published Story`,
+  },
+  {
+    pathName: `/story/wineries/[id]/published/[pid]`,
     pageName: `Published Story`,
     activeMenuName: `Published Story`,
   },

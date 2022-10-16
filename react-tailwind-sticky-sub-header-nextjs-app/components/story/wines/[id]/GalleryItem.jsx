@@ -1,4 +1,6 @@
 import {css, cx} from '@emotion/css';
+import GalleryItemFav from '@/components/story/wineries/[id]/GalleryItemFav';
+import Spacer from '@/components/Spacer';
 import {GiGrapes} from 'react-icons/gi';
 import {
   MdOutlineLocationOn,
@@ -6,32 +8,30 @@ import {
   MdOutlinePublishedWithChanges,
   MdUpdate,
 } from 'react-icons/md';
-import {useRouter} from 'next/router';
-import {useRecoilState} from 'recoil';
-import {default as numbro} from 'numbro';
-import {useMemo} from 'react';
-
 import dataWines from '@/data/wines.json';
 import dataStories from '@/data/stories.json';
 import dataWineries from '@/data/wineries.json';
+import {useRouter} from 'next/router';
 import locationSelectorState from '@/stores/locationSelectorStore';
+import {useRecoilState} from 'recoil';
 import {formatRelativeTime} from '@/utils/dateUtil';
-import GalleryItemFav from '@/components/story/wineries/GalleryItemFav';
-import Spacer from '@/components/Spacer';
+import {default as numbro} from 'numbro';
+import {useMemo} from 'react';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
   const [location, setLocation] = useRecoilState(locationSelectorState);
-  const activeWinery = useMemo(() => {
+
+  const activeWine = useMemo(() => {
     if (!item) {
       return;
     }
-    return dataWineries.find((d) => {
-      return d.wineryId === item.wineryId;
+    return dataWines.find((d) => {
+      return d.id === item.wineId;
     });
   }, [item]);
 
-  if (!activeWinery) {
+  if (!activeWine) {
     return;
   }
 
@@ -46,11 +46,11 @@ const GalleryItem = ({item}) => {
       onClick={(e) => {
         e.stopPropagation();
         router.push({
-          pathname: `/story/wineries/${activeWinery.wineryId}/published`,
+          pathname: `/story/${activeWine.id}/published`,
         });
       }}
     >
-      {/* <GalleryItemFav item={activeWine} /> */}
+      <GalleryItemFav item={activeWine} />
       <div
         className={css`
           width: 100%;
@@ -66,7 +66,7 @@ const GalleryItem = ({item}) => {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url(${activeWinery.thumbnail});
+            background-image: url(${activeWine.image});
             background-size: contain;
             background-position: center center;
             background-origin: center center;
@@ -79,11 +79,11 @@ const GalleryItem = ({item}) => {
           className={cx(
             'text-xl line-clamp-2',
             css`
-              /* min-height: 56px; */
+              min-height: 56px;
             `
           )}
         >
-          {`${activeWinery.wineryName}`}
+          {`${activeWine.wine}`}
         </h2>
         <Spacer height="0.5rem" />
         <div
@@ -93,8 +93,11 @@ const GalleryItem = ({item}) => {
           )}
           onClick={(e) => {
             e.stopPropagation();
+            const activeWineryItem = dataWineries.find((d) => {
+              return d.wineryName === activeWine.winery;
+            });
             router.push({
-              pathname: `/winery/${activeWinery.wineryId}`,
+              pathname: `/winery/${activeWineryItem.wineryId}`,
             });
           }}
         >
@@ -104,7 +107,30 @@ const GalleryItem = ({item}) => {
               min-width: 24px;
             `}
           />
-          <span className="break-words">{`${activeWinery.wineryName}`}</span>
+          <span className="break-words">{`${activeWine.winery}`}</span>
+        </div>
+        <div
+          className={cx(
+            `text-sm font-bold flex items-center`,
+            `hover:cursor-pointer hover:underline`
+          )}
+          onClick={(e) => {
+            e.stopPropagation();
+            setLocation({
+              activeLocationName: activeWine.location,
+            });
+            router.push({
+              pathname: `/location`,
+            });
+          }}
+        >
+          <MdOutlineLocationOn
+            size={24}
+            className={css`
+              min-width: 24px;
+            `}
+          />
+          <span className="break-words">{`${activeWine.location}`}</span>
         </div>
         <div className={cx(`text-sm font-bold flex items-center`)}>
           <MdOutlinePublish
