@@ -11,7 +11,8 @@
         "storyTitle": "Lillie Wallace",
         "pageViews": 1313,
         "awardsPrice": 8463,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "GLTpwYaRZkhUNLBWuH",
@@ -21,7 +22,8 @@
         "updatedAt": "2022/09/22 12:30:31",
         "storyTitle": "Leah Clark",
         "pageViews": 847,
-        "awardsPrice": 17929
+        "awardsPrice": 17929,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "GLTpwYaRZkhUNLBWuH",
@@ -31,7 +33,8 @@
         "updatedAt": "2022/09/13 14:52:41",
         "storyTitle": "Minerva Garner",
         "pageViews": 259,
-        "awardsPrice": 16824
+        "awardsPrice": 16824,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "GLTpwYaRZkhUNLBWuH",
@@ -41,7 +44,8 @@
         "updatedAt": "2022/09/09 08:14:27",
         "storyTitle": "Susie Kelley",
         "pageViews": 766,
-        "awardsPrice": 15903
+        "awardsPrice": 15903,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "GLTpwYaRZkhUNLBWuH",
@@ -51,7 +55,8 @@
         "updatedAt": "2022/09/19 07:12:16",
         "storyTitle": "Tony Rodriguez",
         "pageViews": 508,
-        "awardsPrice": 3864
+        "awardsPrice": 3864,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "GLTpwYaRZkhUNLBWuH",
@@ -61,7 +66,8 @@
         "updatedAt": "2022/09/15 21:28:25",
         "storyTitle": "Elsie Morgan",
         "pageViews": 1877,
-        "awardsPrice": 14687
+        "awardsPrice": 14687,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "GLTpwYaRZkhUNLBWuH",
@@ -71,7 +77,8 @@
         "updatedAt": "2022/09/23 04:00:47",
         "storyTitle": "Willie Pratt",
         "pageViews": 1988,
-        "awardsPrice": 7147
+        "awardsPrice": 7147,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "GLTpwYaRZkhUNLBWuH",
@@ -81,7 +88,8 @@
         "updatedAt": "2022/09/22 08:23:41",
         "storyTitle": "Olivia Burgess",
         "pageViews": 1604,
-        "awardsPrice": 2979
+        "awardsPrice": 2979,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "GLTpwYaRZkhUNLBWuH",
@@ -91,7 +99,8 @@
         "updatedAt": "2022/09/09 08:27:47",
         "storyTitle": "Billy Doyle",
         "pageViews": 695,
-        "awardsPrice": 13301
+        "awardsPrice": 13301,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -107,7 +116,8 @@
         "storyTitle": "Floyd Wheeler",
         "pageViews": 575,
         "awardsPrice": 6731,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "hjalUvaLXyV",
@@ -117,7 +127,8 @@
         "updatedAt": "2022/09/03 17:55:06",
         "storyTitle": "Hannah Reynolds",
         "pageViews": 1218,
-        "awardsPrice": 7940
+        "awardsPrice": 7940,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "hjalUvaLXyV",
@@ -127,7 +138,8 @@
         "updatedAt": "2022/09/15 21:09:04",
         "storyTitle": "Iva Howard",
         "pageViews": 196,
-        "awardsPrice": 6564
+        "awardsPrice": 6564,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "hjalUvaLXyV",
@@ -137,7 +149,8 @@
         "updatedAt": "2022/09/04 19:17:11",
         "storyTitle": "Christine Ryan",
         "pageViews": 168,
-        "awardsPrice": 18108
+        "awardsPrice": 18108,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "hjalUvaLXyV",
@@ -147,7 +160,8 @@
         "updatedAt": "2022/09/23 21:05:12",
         "storyTitle": "Sylvia Collins",
         "pageViews": 326,
-        "awardsPrice": 4261
+        "awardsPrice": 4261,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "hjalUvaLXyV",
@@ -157,7 +171,8 @@
         "updatedAt": "2022/09/11 18:07:22",
         "storyTitle": "Trevor Stone",
         "pageViews": 1367,
-        "awardsPrice": 8786
+        "awardsPrice": 8786,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "hjalUvaLXyV",
@@ -167,7 +182,8 @@
         "updatedAt": "2022/09/30 21:55:08",
         "storyTitle": "Eugene Daniels",
         "pageViews": 1281,
-        "awardsPrice": 14845
+        "awardsPrice": 14845,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "hjalUvaLXyV",
@@ -177,7 +193,8 @@
         "updatedAt": "2022/09/10 09:06:25",
         "storyTitle": "Sadie Robinson",
         "pageViews": 1706,
-        "awardsPrice": 15358
+        "awardsPrice": 15358,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "hjalUvaLXyV",
@@ -187,7 +204,8 @@
         "updatedAt": "2022/09/05 11:34:33",
         "storyTitle": "Lois Armstrong",
         "pageViews": 926,
-        "awardsPrice": 3101
+        "awardsPrice": 3101,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "hjalUvaLXyV",
@@ -197,7 +215,8 @@
         "updatedAt": "2022/09/30 20:15:50",
         "storyTitle": "Bessie McGuire",
         "pageViews": 845,
-        "awardsPrice": 5616
+        "awardsPrice": 5616,
+        "userId": "QjWAdUS"
       }
     ]
   },
@@ -213,7 +232,8 @@
         "storyTitle": "Stephen Kennedy",
         "pageViews": 1107,
         "awardsPrice": 9494,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "bXgHwpFoHC",
@@ -223,7 +243,8 @@
         "updatedAt": "2022/09/19 05:55:16",
         "storyTitle": "Lela Copeland",
         "pageViews": 1778,
-        "awardsPrice": 13115
+        "awardsPrice": 13115,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "bXgHwpFoHC",
@@ -233,7 +254,8 @@
         "updatedAt": "2022/09/11 10:55:12",
         "storyTitle": "Ray Wheeler",
         "pageViews": 790,
-        "awardsPrice": 7228
+        "awardsPrice": 7228,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "bXgHwpFoHC",
@@ -243,7 +265,8 @@
         "updatedAt": "2022/09/05 00:45:52",
         "storyTitle": "George Chavez",
         "pageViews": 319,
-        "awardsPrice": 12837
+        "awardsPrice": 12837,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "bXgHwpFoHC",
@@ -253,7 +276,8 @@
         "updatedAt": "2022/09/11 05:08:47",
         "storyTitle": "Jessie Chapman",
         "pageViews": 1343,
-        "awardsPrice": 13505
+        "awardsPrice": 13505,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "bXgHwpFoHC",
@@ -263,7 +287,8 @@
         "updatedAt": "2022/09/29 23:25:54",
         "storyTitle": "Curtis Harper",
         "pageViews": 697,
-        "awardsPrice": 2903
+        "awardsPrice": 2903,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "bXgHwpFoHC",
@@ -273,7 +298,8 @@
         "updatedAt": "2022/09/19 07:20:21",
         "storyTitle": "John Carlson",
         "pageViews": 531,
-        "awardsPrice": 15947
+        "awardsPrice": 15947,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "bXgHwpFoHC",
@@ -283,7 +309,8 @@
         "updatedAt": "2022/09/12 22:45:42",
         "storyTitle": "Elijah Ingram",
         "pageViews": 1043,
-        "awardsPrice": 19800
+        "awardsPrice": 19800,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "bXgHwpFoHC",
@@ -293,7 +320,8 @@
         "updatedAt": "2022/09/21 21:36:57",
         "storyTitle": "Winifred Jordan",
         "pageViews": 1401,
-        "awardsPrice": 18139
+        "awardsPrice": 18139,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "bXgHwpFoHC",
@@ -303,7 +331,8 @@
         "updatedAt": "2022/09/03 01:28:37",
         "storyTitle": "Alfred Hudson",
         "pageViews": 1231,
-        "awardsPrice": 3732
+        "awardsPrice": 3732,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "bXgHwpFoHC",
@@ -313,7 +342,8 @@
         "updatedAt": "2022/09/11 03:55:37",
         "storyTitle": "Ian Wagner",
         "pageViews": 541,
-        "awardsPrice": 14968
+        "awardsPrice": 14968,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -329,7 +359,8 @@
         "storyTitle": "Frank Garrett",
         "pageViews": 384,
         "awardsPrice": 9686,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "MuJsScjrNbz",
@@ -339,7 +370,8 @@
         "updatedAt": "2022/09/26 00:39:46",
         "storyTitle": "Mittie Hunt",
         "pageViews": 936,
-        "awardsPrice": 16445
+        "awardsPrice": 16445,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "MuJsScjrNbz",
@@ -349,7 +381,8 @@
         "updatedAt": "2022/09/24 23:48:25",
         "storyTitle": "Philip McDaniel",
         "pageViews": 628,
-        "awardsPrice": 16804
+        "awardsPrice": 16804,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "MuJsScjrNbz",
@@ -359,7 +392,8 @@
         "updatedAt": "2022/09/04 15:02:42",
         "storyTitle": "Olga Craig",
         "pageViews": 944,
-        "awardsPrice": 20718
+        "awardsPrice": 20718,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "MuJsScjrNbz",
@@ -369,7 +403,8 @@
         "updatedAt": "2022/09/25 05:16:13",
         "storyTitle": "Cordelia Hawkins",
         "pageViews": 1888,
-        "awardsPrice": 2881
+        "awardsPrice": 2881,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "MuJsScjrNbz",
@@ -379,7 +414,8 @@
         "updatedAt": "2022/09/28 10:50:40",
         "storyTitle": "Rosa Patrick",
         "pageViews": 284,
-        "awardsPrice": 18041
+        "awardsPrice": 18041,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "MuJsScjrNbz",
@@ -389,7 +425,8 @@
         "updatedAt": "2022/09/17 04:33:40",
         "storyTitle": "Melvin Allison",
         "pageViews": 518,
-        "awardsPrice": 13206
+        "awardsPrice": 13206,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "MuJsScjrNbz",
@@ -399,7 +436,8 @@
         "updatedAt": "2022/09/16 15:12:00",
         "storyTitle": "Belle Lawrence",
         "pageViews": 1308,
-        "awardsPrice": 15094
+        "awardsPrice": 15094,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "MuJsScjrNbz",
@@ -409,7 +447,8 @@
         "updatedAt": "2022/09/09 15:55:14",
         "storyTitle": "Norman Stephens",
         "pageViews": 1187,
-        "awardsPrice": 9897
+        "awardsPrice": 9897,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "MuJsScjrNbz",
@@ -419,7 +458,8 @@
         "updatedAt": "2022/09/01 19:50:36",
         "storyTitle": "Lewis Davidson",
         "pageViews": 1571,
-        "awardsPrice": 15863
+        "awardsPrice": 15863,
+        "userId": "rgdxbVz"
       }
     ]
   },
@@ -435,7 +475,8 @@
         "storyTitle": "Mattie Lewis",
         "pageViews": 983,
         "awardsPrice": 20042,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "yRRTOq",
@@ -445,7 +486,8 @@
         "updatedAt": "2022/09/21 23:14:14",
         "storyTitle": "James Martin",
         "pageViews": 1849,
-        "awardsPrice": 19537
+        "awardsPrice": 19537,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "yRRTOq",
@@ -455,7 +497,8 @@
         "updatedAt": "2022/09/13 01:44:54",
         "storyTitle": "Harriett Mitchell",
         "pageViews": 1972,
-        "awardsPrice": 19595
+        "awardsPrice": 19595,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "yRRTOq",
@@ -465,7 +508,8 @@
         "updatedAt": "2022/09/09 00:59:32",
         "storyTitle": "Lillian Ryan",
         "pageViews": 1097,
-        "awardsPrice": 15269
+        "awardsPrice": 15269,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "yRRTOq",
@@ -475,7 +519,8 @@
         "updatedAt": "2022/09/18 11:52:56",
         "storyTitle": "Mitchell Stevenson",
         "pageViews": 1798,
-        "awardsPrice": 7497
+        "awardsPrice": 7497,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "yRRTOq",
@@ -485,7 +530,8 @@
         "updatedAt": "2022/09/15 23:51:51",
         "storyTitle": "Willie Sandoval",
         "pageViews": 1044,
-        "awardsPrice": 7312
+        "awardsPrice": 7312,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "yRRTOq",
@@ -495,7 +541,8 @@
         "updatedAt": "2022/09/22 09:34:56",
         "storyTitle": "Marie Hart",
         "pageViews": 797,
-        "awardsPrice": 10359
+        "awardsPrice": 10359,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "yRRTOq",
@@ -505,7 +552,8 @@
         "updatedAt": "2022/09/05 17:31:04",
         "storyTitle": "Jeanette Taylor",
         "pageViews": 912,
-        "awardsPrice": 4163
+        "awardsPrice": 4163,
+        "userId": "XxECYbo"
       }
     ]
   },
@@ -521,7 +569,8 @@
         "storyTitle": "Susan Hardy",
         "pageViews": 1290,
         "awardsPrice": 17237,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "HBkvkBqqhIR",
@@ -531,7 +580,8 @@
         "updatedAt": "2022/09/12 18:15:31",
         "storyTitle": "Nelle Harrington",
         "pageViews": 1058,
-        "awardsPrice": 10756
+        "awardsPrice": 10756,
+        "userId": "LjzqRfU"
       }
     ]
   },
@@ -547,7 +597,8 @@
         "storyTitle": "Lura Hamilton",
         "pageViews": 1010,
         "awardsPrice": 14871,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "eKMIGV",
@@ -557,7 +608,8 @@
         "updatedAt": "2022/09/14 17:54:19",
         "storyTitle": "Evan Schultz",
         "pageViews": 656,
-        "awardsPrice": 5020
+        "awardsPrice": 5020,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "eKMIGV",
@@ -567,7 +619,8 @@
         "updatedAt": "2022/09/18 03:57:44",
         "storyTitle": "Shawn Shaw",
         "pageViews": 477,
-        "awardsPrice": 20164
+        "awardsPrice": 20164,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "eKMIGV",
@@ -577,7 +630,8 @@
         "updatedAt": "2022/09/28 03:50:34",
         "storyTitle": "Minnie Carlson",
         "pageViews": 572,
-        "awardsPrice": 4680
+        "awardsPrice": 4680,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "eKMIGV",
@@ -587,7 +641,8 @@
         "updatedAt": "2022/09/12 17:17:52",
         "storyTitle": "Todd Diaz",
         "pageViews": 409,
-        "awardsPrice": 10559
+        "awardsPrice": 10559,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "eKMIGV",
@@ -597,7 +652,8 @@
         "updatedAt": "2022/09/25 02:25:55",
         "storyTitle": "Julia Wright",
         "pageViews": 1008,
-        "awardsPrice": 1787
+        "awardsPrice": 1787,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "eKMIGV",
@@ -607,7 +663,8 @@
         "updatedAt": "2022/09/12 00:48:48",
         "storyTitle": "Eleanor Cummings",
         "pageViews": 460,
-        "awardsPrice": 17924
+        "awardsPrice": 17924,
+        "userId": "RpfdGqk"
       }
     ]
   },
@@ -623,7 +680,8 @@
         "storyTitle": "Adeline Craig",
         "pageViews": 1910,
         "awardsPrice": 18764,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "SLVWEyopPnhfesL",
@@ -633,7 +691,8 @@
         "updatedAt": "2022/09/25 09:27:19",
         "storyTitle": "Maud Kennedy",
         "pageViews": 548,
-        "awardsPrice": 19661
+        "awardsPrice": 19661,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "SLVWEyopPnhfesL",
@@ -643,7 +702,8 @@
         "updatedAt": "2022/09/08 06:41:16",
         "storyTitle": "Jay Atkins",
         "pageViews": 1133,
-        "awardsPrice": 15542
+        "awardsPrice": 15542,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "SLVWEyopPnhfesL",
@@ -653,7 +713,8 @@
         "updatedAt": "2022/09/25 15:01:45",
         "storyTitle": "Dollie Malone",
         "pageViews": 1672,
-        "awardsPrice": 7215
+        "awardsPrice": 7215,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "SLVWEyopPnhfesL",
@@ -663,7 +724,8 @@
         "updatedAt": "2022/09/03 09:19:17",
         "storyTitle": "Hulda Andrews",
         "pageViews": 569,
-        "awardsPrice": 1660
+        "awardsPrice": 1660,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "SLVWEyopPnhfesL",
@@ -673,7 +735,8 @@
         "updatedAt": "2022/09/12 22:08:04",
         "storyTitle": "Rosalie Alvarez",
         "pageViews": 642,
-        "awardsPrice": 17767
+        "awardsPrice": 17767,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "SLVWEyopPnhfesL",
@@ -683,7 +746,8 @@
         "updatedAt": "2022/09/03 18:30:19",
         "storyTitle": "Trevor Evans",
         "pageViews": 682,
-        "awardsPrice": 15029
+        "awardsPrice": 15029,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "SLVWEyopPnhfesL",
@@ -693,7 +757,8 @@
         "updatedAt": "2022/09/06 12:45:49",
         "storyTitle": "John Perry",
         "pageViews": 309,
-        "awardsPrice": 6184
+        "awardsPrice": 6184,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "SLVWEyopPnhfesL",
@@ -703,7 +768,8 @@
         "updatedAt": "2022/09/16 08:43:01",
         "storyTitle": "Marion Casey",
         "pageViews": 1821,
-        "awardsPrice": 5449
+        "awardsPrice": 5449,
+        "userId": "XxECYbo"
       }
     ]
   },
@@ -719,7 +785,8 @@
         "storyTitle": "Jeanette Cannon",
         "pageViews": 1804,
         "awardsPrice": 19844,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "ojvbxZNViZSoPOBitZy",
@@ -729,7 +796,8 @@
         "updatedAt": "2022/09/19 14:37:33",
         "storyTitle": "Leona Gordon",
         "pageViews": 1305,
-        "awardsPrice": 4254
+        "awardsPrice": 4254,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "ojvbxZNViZSoPOBitZy",
@@ -739,7 +807,8 @@
         "updatedAt": "2022/09/06 17:04:17",
         "storyTitle": "Gussie Jordan",
         "pageViews": 1708,
-        "awardsPrice": 3986
+        "awardsPrice": 3986,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "ojvbxZNViZSoPOBitZy",
@@ -749,7 +818,8 @@
         "updatedAt": "2022/09/11 08:59:53",
         "storyTitle": "Dollie Simpson",
         "pageViews": 1777,
-        "awardsPrice": 7876
+        "awardsPrice": 7876,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "ojvbxZNViZSoPOBitZy",
@@ -759,7 +829,8 @@
         "updatedAt": "2022/09/08 08:41:09",
         "storyTitle": "Isabel Haynes",
         "pageViews": 1874,
-        "awardsPrice": 12354
+        "awardsPrice": 12354,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "ojvbxZNViZSoPOBitZy",
@@ -769,7 +840,8 @@
         "updatedAt": "2022/09/22 09:19:12",
         "storyTitle": "Kyle Saunders",
         "pageViews": 1604,
-        "awardsPrice": 9644
+        "awardsPrice": 9644,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "ojvbxZNViZSoPOBitZy",
@@ -779,7 +851,8 @@
         "updatedAt": "2022/09/14 09:11:37",
         "storyTitle": "Adelaide Young",
         "pageViews": 998,
-        "awardsPrice": 17987
+        "awardsPrice": 17987,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "ojvbxZNViZSoPOBitZy",
@@ -789,7 +862,8 @@
         "updatedAt": "2022/09/07 21:09:46",
         "storyTitle": "Chris Adkins",
         "pageViews": 1019,
-        "awardsPrice": 9668
+        "awardsPrice": 9668,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "ojvbxZNViZSoPOBitZy",
@@ -799,7 +873,8 @@
         "updatedAt": "2022/09/03 02:22:44",
         "storyTitle": "Mittie Barker",
         "pageViews": 1709,
-        "awardsPrice": 14576
+        "awardsPrice": 14576,
+        "userId": "UhEsGNZ"
       }
     ]
   },
@@ -815,7 +890,8 @@
         "storyTitle": "Jesse Abbott",
         "pageViews": 248,
         "awardsPrice": 13964,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "iQpoNNPkzpUcoR",
@@ -825,7 +901,8 @@
         "updatedAt": "2022/09/22 06:44:57",
         "storyTitle": "Betty Farmer",
         "pageViews": 1791,
-        "awardsPrice": 6549
+        "awardsPrice": 6549,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "iQpoNNPkzpUcoR",
@@ -835,7 +912,8 @@
         "updatedAt": "2022/09/10 18:19:36",
         "storyTitle": "Wayne Holland",
         "pageViews": 1954,
-        "awardsPrice": 16430
+        "awardsPrice": 16430,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "iQpoNNPkzpUcoR",
@@ -845,7 +923,8 @@
         "updatedAt": "2022/09/23 17:51:59",
         "storyTitle": "Carrie Hopkins",
         "pageViews": 1573,
-        "awardsPrice": 7816
+        "awardsPrice": 7816,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "iQpoNNPkzpUcoR",
@@ -855,7 +934,8 @@
         "updatedAt": "2022/09/25 10:53:17",
         "storyTitle": "Sophia Ball",
         "pageViews": 624,
-        "awardsPrice": 13460
+        "awardsPrice": 13460,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "iQpoNNPkzpUcoR",
@@ -865,7 +945,8 @@
         "updatedAt": "2022/09/25 16:07:56",
         "storyTitle": "Caleb Bowers",
         "pageViews": 1295,
-        "awardsPrice": 13076
+        "awardsPrice": 13076,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "iQpoNNPkzpUcoR",
@@ -875,7 +956,8 @@
         "updatedAt": "2022/09/06 23:21:26",
         "storyTitle": "Adeline Norman",
         "pageViews": 356,
-        "awardsPrice": 18163
+        "awardsPrice": 18163,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "iQpoNNPkzpUcoR",
@@ -885,7 +967,8 @@
         "updatedAt": "2022/09/16 12:38:13",
         "storyTitle": "Darrell Young",
         "pageViews": 1346,
-        "awardsPrice": 8710
+        "awardsPrice": 8710,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -901,7 +984,8 @@
         "storyTitle": "Lena Wilkerson",
         "pageViews": 1163,
         "awardsPrice": 6724,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "TtFyCm",
@@ -911,7 +995,8 @@
         "updatedAt": "2022/09/19 02:16:07",
         "storyTitle": "Connor Mendez",
         "pageViews": 1192,
-        "awardsPrice": 9755
+        "awardsPrice": 9755,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "TtFyCm",
@@ -921,7 +1006,8 @@
         "updatedAt": "2022/09/15 02:08:15",
         "storyTitle": "Cole Evans",
         "pageViews": 1639,
-        "awardsPrice": 3543
+        "awardsPrice": 3543,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "TtFyCm",
@@ -931,7 +1017,8 @@
         "updatedAt": "2022/09/02 14:51:40",
         "storyTitle": "Chase Austin",
         "pageViews": 366,
-        "awardsPrice": 18356
+        "awardsPrice": 18356,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "TtFyCm",
@@ -941,7 +1028,8 @@
         "updatedAt": "2022/09/30 20:14:32",
         "storyTitle": "Martha Arnold",
         "pageViews": 1262,
-        "awardsPrice": 3872
+        "awardsPrice": 3872,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "TtFyCm",
@@ -951,7 +1039,8 @@
         "updatedAt": "2022/09/17 09:24:30",
         "storyTitle": "Edwin Sherman",
         "pageViews": 602,
-        "awardsPrice": 13510
+        "awardsPrice": 13510,
+        "userId": "UhEsGNZ"
       }
     ]
   },
@@ -967,7 +1056,8 @@
         "storyTitle": "Mae Parks",
         "pageViews": 288,
         "awardsPrice": 17979,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "bWPiWnqpJ",
@@ -977,7 +1067,8 @@
         "updatedAt": "2022/09/06 10:26:47",
         "storyTitle": "Josephine Hines",
         "pageViews": 1893,
-        "awardsPrice": 2148
+        "awardsPrice": 2148,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "bWPiWnqpJ",
@@ -987,7 +1078,8 @@
         "updatedAt": "2022/09/09 20:07:01",
         "storyTitle": "Benjamin Simon",
         "pageViews": 252,
-        "awardsPrice": 1962
+        "awardsPrice": 1962,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "bWPiWnqpJ",
@@ -997,7 +1089,8 @@
         "updatedAt": "2022/09/13 23:51:01",
         "storyTitle": "Francis Meyer",
         "pageViews": 529,
-        "awardsPrice": 4436
+        "awardsPrice": 4436,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "bWPiWnqpJ",
@@ -1007,7 +1100,8 @@
         "updatedAt": "2022/09/22 08:00:35",
         "storyTitle": "Joseph Allison",
         "pageViews": 1642,
-        "awardsPrice": 5972
+        "awardsPrice": 5972,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "bWPiWnqpJ",
@@ -1017,7 +1111,8 @@
         "updatedAt": "2022/09/24 04:38:09",
         "storyTitle": "Ola Sharp",
         "pageViews": 1349,
-        "awardsPrice": 15963
+        "awardsPrice": 15963,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "bWPiWnqpJ",
@@ -1027,7 +1122,8 @@
         "updatedAt": "2022/09/07 21:25:14",
         "storyTitle": "Cody Blair",
         "pageViews": 777,
-        "awardsPrice": 18026
+        "awardsPrice": 18026,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "bWPiWnqpJ",
@@ -1037,7 +1133,8 @@
         "updatedAt": "2022/09/10 06:15:14",
         "storyTitle": "Hulda Gilbert",
         "pageViews": 1880,
-        "awardsPrice": 13580
+        "awardsPrice": 13580,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "bWPiWnqpJ",
@@ -1047,7 +1144,8 @@
         "updatedAt": "2022/09/16 00:43:30",
         "storyTitle": "Caroline Adams",
         "pageViews": 985,
-        "awardsPrice": 3219
+        "awardsPrice": 3219,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -1063,7 +1161,8 @@
         "storyTitle": "Jason Frank",
         "pageViews": 1390,
         "awardsPrice": 19324,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "RDCWuMmLapI",
@@ -1073,7 +1172,8 @@
         "updatedAt": "2022/09/20 13:16:09",
         "storyTitle": "Harriett Abbott",
         "pageViews": 562,
-        "awardsPrice": 4882
+        "awardsPrice": 4882,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "RDCWuMmLapI",
@@ -1083,7 +1183,8 @@
         "updatedAt": "2022/09/15 09:29:23",
         "storyTitle": "Francis Alexander",
         "pageViews": 1586,
-        "awardsPrice": 17701
+        "awardsPrice": 17701,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "RDCWuMmLapI",
@@ -1093,7 +1194,8 @@
         "updatedAt": "2022/09/15 20:28:02",
         "storyTitle": "Henrietta Hogan",
         "pageViews": 939,
-        "awardsPrice": 16755
+        "awardsPrice": 16755,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "RDCWuMmLapI",
@@ -1103,7 +1205,8 @@
         "updatedAt": "2022/09/06 10:33:59",
         "storyTitle": "Eddie Briggs",
         "pageViews": 1502,
-        "awardsPrice": 20341
+        "awardsPrice": 20341,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "RDCWuMmLapI",
@@ -1113,7 +1216,8 @@
         "updatedAt": "2022/09/10 15:11:05",
         "storyTitle": "Roxie Carlson",
         "pageViews": 1081,
-        "awardsPrice": 19187
+        "awardsPrice": 19187,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "RDCWuMmLapI",
@@ -1123,7 +1227,8 @@
         "updatedAt": "2022/09/29 09:41:34",
         "storyTitle": "Isabelle Barker",
         "pageViews": 1827,
-        "awardsPrice": 15462
+        "awardsPrice": 15462,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "RDCWuMmLapI",
@@ -1133,7 +1238,8 @@
         "updatedAt": "2022/09/14 16:11:46",
         "storyTitle": "Paul Moore",
         "pageViews": 1493,
-        "awardsPrice": 11601
+        "awardsPrice": 11601,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "RDCWuMmLapI",
@@ -1143,7 +1249,8 @@
         "updatedAt": "2022/09/19 09:38:48",
         "storyTitle": "Annie Quinn",
         "pageViews": 1756,
-        "awardsPrice": 20802
+        "awardsPrice": 20802,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "RDCWuMmLapI",
@@ -1153,7 +1260,8 @@
         "updatedAt": "2022/09/22 06:38:22",
         "storyTitle": "Mattie Arnold",
         "pageViews": 117,
-        "awardsPrice": 6241
+        "awardsPrice": 6241,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -1169,7 +1277,8 @@
         "storyTitle": "Manuel Berry",
         "pageViews": 872,
         "awardsPrice": 4295,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "HkaRFxAyOS",
@@ -1179,7 +1288,8 @@
         "updatedAt": "2022/09/07 16:42:00",
         "storyTitle": "Claudia Silva",
         "pageViews": 1349,
-        "awardsPrice": 19705
+        "awardsPrice": 19705,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "HkaRFxAyOS",
@@ -1189,7 +1299,8 @@
         "updatedAt": "2022/09/25 05:40:20",
         "storyTitle": "Glenn Moreno",
         "pageViews": 867,
-        "awardsPrice": 5306
+        "awardsPrice": 5306,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "HkaRFxAyOS",
@@ -1199,7 +1310,8 @@
         "updatedAt": "2022/09/22 21:34:31",
         "storyTitle": "Nettie Rodriguez",
         "pageViews": 1766,
-        "awardsPrice": 5702
+        "awardsPrice": 5702,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "HkaRFxAyOS",
@@ -1209,7 +1321,8 @@
         "updatedAt": "2022/09/25 10:41:02",
         "storyTitle": "Catherine Bowen",
         "pageViews": 1599,
-        "awardsPrice": 18616
+        "awardsPrice": 18616,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "HkaRFxAyOS",
@@ -1219,7 +1332,8 @@
         "updatedAt": "2022/09/21 21:03:15",
         "storyTitle": "Marie Nunez",
         "pageViews": 129,
-        "awardsPrice": 8276
+        "awardsPrice": 8276,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "HkaRFxAyOS",
@@ -1229,7 +1343,8 @@
         "updatedAt": "2022/09/22 15:40:23",
         "storyTitle": "Betty Cummings",
         "pageViews": 130,
-        "awardsPrice": 20746
+        "awardsPrice": 20746,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "HkaRFxAyOS",
@@ -1239,7 +1354,8 @@
         "updatedAt": "2022/09/18 03:52:33",
         "storyTitle": "Anthony Atkins",
         "pageViews": 567,
-        "awardsPrice": 3982
+        "awardsPrice": 3982,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "HkaRFxAyOS",
@@ -1249,7 +1365,8 @@
         "updatedAt": "2022/09/02 01:07:01",
         "storyTitle": "Susie Norton",
         "pageViews": 1163,
-        "awardsPrice": 3208
+        "awardsPrice": 3208,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "HkaRFxAyOS",
@@ -1259,7 +1376,8 @@
         "updatedAt": "2022/09/19 02:20:21",
         "storyTitle": "Kathryn Powell",
         "pageViews": 721,
-        "awardsPrice": 10117
+        "awardsPrice": 10117,
+        "userId": "UhEsGNZ"
       }
     ]
   },
@@ -1275,7 +1393,8 @@
         "storyTitle": "Loretta Black",
         "pageViews": 942,
         "awardsPrice": 13077,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "dwHDo",
@@ -1285,7 +1404,8 @@
         "updatedAt": "2022/09/14 04:56:36",
         "storyTitle": "Bryan Howard",
         "pageViews": 1092,
-        "awardsPrice": 11406
+        "awardsPrice": 11406,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -1301,7 +1421,8 @@
         "storyTitle": "Lester McGuire",
         "pageViews": 816,
         "awardsPrice": 15850,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "IsispKueGcbgH",
@@ -1311,7 +1432,8 @@
         "updatedAt": "2022/09/22 09:29:20",
         "storyTitle": "Lena Jimenez",
         "pageViews": 1417,
-        "awardsPrice": 9561
+        "awardsPrice": 9561,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -1327,7 +1449,8 @@
         "storyTitle": "Callie Phelps",
         "pageViews": 1274,
         "awardsPrice": 8762,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "wihnF",
@@ -1337,7 +1460,8 @@
         "updatedAt": "2022/09/03 05:27:14",
         "storyTitle": "Dominic Lindsey",
         "pageViews": 1879,
-        "awardsPrice": 1698
+        "awardsPrice": 1698,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "wihnF",
@@ -1347,7 +1471,8 @@
         "updatedAt": "2022/09/09 13:26:48",
         "storyTitle": "Philip Lindsey",
         "pageViews": 1851,
-        "awardsPrice": 18906
+        "awardsPrice": 18906,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "wihnF",
@@ -1357,7 +1482,8 @@
         "updatedAt": "2022/09/06 20:41:17",
         "storyTitle": "Mittie Green",
         "pageViews": 1017,
-        "awardsPrice": 5886
+        "awardsPrice": 5886,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "wihnF",
@@ -1367,7 +1493,8 @@
         "updatedAt": "2022/09/05 22:07:15",
         "storyTitle": "Austin Townsend",
         "pageViews": 531,
-        "awardsPrice": 6075
+        "awardsPrice": 6075,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "wihnF",
@@ -1377,7 +1504,8 @@
         "updatedAt": "2022/09/04 09:41:54",
         "storyTitle": "Mason Wheeler",
         "pageViews": 832,
-        "awardsPrice": 6319
+        "awardsPrice": 6319,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "wihnF",
@@ -1387,7 +1515,8 @@
         "updatedAt": "2022/09/30 22:06:19",
         "storyTitle": "Viola Pearson",
         "pageViews": 301,
-        "awardsPrice": 4194
+        "awardsPrice": 4194,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "wihnF",
@@ -1397,7 +1526,8 @@
         "updatedAt": "2022/09/06 06:58:48",
         "storyTitle": "Luella Gray",
         "pageViews": 932,
-        "awardsPrice": 13441
+        "awardsPrice": 13441,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "wihnF",
@@ -1407,7 +1537,8 @@
         "updatedAt": "2022/09/12 00:27:25",
         "storyTitle": "Benjamin Fox",
         "pageViews": 1062,
-        "awardsPrice": 4686
+        "awardsPrice": 4686,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "wihnF",
@@ -1417,7 +1548,8 @@
         "updatedAt": "2022/09/03 13:14:03",
         "storyTitle": "Essie Mann",
         "pageViews": 860,
-        "awardsPrice": 12333
+        "awardsPrice": 12333,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -1433,7 +1565,8 @@
         "storyTitle": "Ethan Parsons",
         "pageViews": 1065,
         "awardsPrice": 10529,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "ceLRmF",
@@ -1443,7 +1576,8 @@
         "updatedAt": "2022/09/16 09:25:00",
         "storyTitle": "Shawn Douglas",
         "pageViews": 909,
-        "awardsPrice": 14254
+        "awardsPrice": 14254,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "ceLRmF",
@@ -1453,7 +1587,8 @@
         "updatedAt": "2022/09/05 04:39:58",
         "storyTitle": "Maggie Brooks",
         "pageViews": 1830,
-        "awardsPrice": 20102
+        "awardsPrice": 20102,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "ceLRmF",
@@ -1463,7 +1598,8 @@
         "updatedAt": "2022/09/17 21:59:46",
         "storyTitle": "Maud Garner",
         "pageViews": 904,
-        "awardsPrice": 20228
+        "awardsPrice": 20228,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "ceLRmF",
@@ -1473,7 +1609,8 @@
         "updatedAt": "2022/09/03 02:14:40",
         "storyTitle": "Charles Floyd",
         "pageViews": 323,
-        "awardsPrice": 14080
+        "awardsPrice": 14080,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "ceLRmF",
@@ -1483,7 +1620,8 @@
         "updatedAt": "2022/09/23 07:31:32",
         "storyTitle": "Marc Carpenter",
         "pageViews": 664,
-        "awardsPrice": 4522
+        "awardsPrice": 4522,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "ceLRmF",
@@ -1493,7 +1631,8 @@
         "updatedAt": "2022/09/02 17:53:53",
         "storyTitle": "Margaret McDonald",
         "pageViews": 349,
-        "awardsPrice": 4787
+        "awardsPrice": 4787,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "ceLRmF",
@@ -1503,7 +1642,8 @@
         "updatedAt": "2022/09/03 19:23:59",
         "storyTitle": "Juan Graves",
         "pageViews": 1071,
-        "awardsPrice": 11542
+        "awardsPrice": 11542,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -1519,7 +1659,8 @@
         "storyTitle": "Rena Fletcher",
         "pageViews": 381,
         "awardsPrice": 10544,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "EHIbzTq",
@@ -1529,7 +1670,8 @@
         "updatedAt": "2022/09/28 22:17:28",
         "storyTitle": "Jane McKenzie",
         "pageViews": 522,
-        "awardsPrice": 5883
+        "awardsPrice": 5883,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "EHIbzTq",
@@ -1539,7 +1681,8 @@
         "updatedAt": "2022/09/12 04:52:12",
         "storyTitle": "Mathilda Buchanan",
         "pageViews": 574,
-        "awardsPrice": 17413
+        "awardsPrice": 17413,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "EHIbzTq",
@@ -1549,7 +1692,8 @@
         "updatedAt": "2022/09/13 02:08:01",
         "storyTitle": "Leo Owen",
         "pageViews": 882,
-        "awardsPrice": 2344
+        "awardsPrice": 2344,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "EHIbzTq",
@@ -1559,7 +1703,8 @@
         "updatedAt": "2022/09/30 16:17:52",
         "storyTitle": "Ola Lane",
         "pageViews": 1718,
-        "awardsPrice": 4805
+        "awardsPrice": 4805,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "EHIbzTq",
@@ -1569,7 +1714,8 @@
         "updatedAt": "2022/09/11 23:11:11",
         "storyTitle": "Roxie Mack",
         "pageViews": 399,
-        "awardsPrice": 5837
+        "awardsPrice": 5837,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "EHIbzTq",
@@ -1579,7 +1725,8 @@
         "updatedAt": "2022/09/15 04:21:17",
         "storyTitle": "Connor Miller",
         "pageViews": 1814,
-        "awardsPrice": 4003
+        "awardsPrice": 4003,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -1595,7 +1742,8 @@
         "storyTitle": "Luke Yates",
         "pageViews": 947,
         "awardsPrice": 5454,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "BpRKBsVDjkAph",
@@ -1605,7 +1753,8 @@
         "updatedAt": "2022/09/04 15:57:04",
         "storyTitle": "Wayne French",
         "pageViews": 235,
-        "awardsPrice": 17382
+        "awardsPrice": 17382,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "BpRKBsVDjkAph",
@@ -1615,7 +1764,8 @@
         "updatedAt": "2022/09/30 16:15:47",
         "storyTitle": "Ina Duncan",
         "pageViews": 784,
-        "awardsPrice": 19314
+        "awardsPrice": 19314,
+        "userId": "XxECYbo"
       }
     ]
   },
@@ -1631,7 +1781,8 @@
         "storyTitle": "Michael Wells",
         "pageViews": 1500,
         "awardsPrice": 8599,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "RuiVNMHBqZGjwcbNmTyI",
@@ -1641,7 +1792,8 @@
         "updatedAt": "2022/09/01 06:07:14",
         "storyTitle": "Rosa Osborne",
         "pageViews": 996,
-        "awardsPrice": 4273
+        "awardsPrice": 4273,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "RuiVNMHBqZGjwcbNmTyI",
@@ -1651,7 +1803,8 @@
         "updatedAt": "2022/09/18 23:22:42",
         "storyTitle": "Cory Valdez",
         "pageViews": 232,
-        "awardsPrice": 14171
+        "awardsPrice": 14171,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "RuiVNMHBqZGjwcbNmTyI",
@@ -1661,7 +1814,8 @@
         "updatedAt": "2022/09/30 20:25:58",
         "storyTitle": "Vernon Kelly",
         "pageViews": 1496,
-        "awardsPrice": 13711
+        "awardsPrice": 13711,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "RuiVNMHBqZGjwcbNmTyI",
@@ -1671,7 +1825,8 @@
         "updatedAt": "2022/09/04 09:05:26",
         "storyTitle": "Lucinda Lowe",
         "pageViews": 1824,
-        "awardsPrice": 11101
+        "awardsPrice": 11101,
+        "userId": "LjzqRfU"
       }
     ]
   },
@@ -1687,7 +1842,8 @@
         "storyTitle": "Travis Valdez",
         "pageViews": 1762,
         "awardsPrice": 16228,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "mqISdovpvEmPNzV",
@@ -1697,7 +1853,8 @@
         "updatedAt": "2022/09/18 02:56:30",
         "storyTitle": "Margaret Lopez",
         "pageViews": 1733,
-        "awardsPrice": 14239
+        "awardsPrice": 14239,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "mqISdovpvEmPNzV",
@@ -1707,7 +1864,8 @@
         "updatedAt": "2022/09/12 10:27:34",
         "storyTitle": "Mathilda Klein",
         "pageViews": 1361,
-        "awardsPrice": 8096
+        "awardsPrice": 8096,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "mqISdovpvEmPNzV",
@@ -1717,7 +1875,8 @@
         "updatedAt": "2022/09/15 01:18:43",
         "storyTitle": "Oscar Nash",
         "pageViews": 1585,
-        "awardsPrice": 19281
+        "awardsPrice": 19281,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "mqISdovpvEmPNzV",
@@ -1727,7 +1886,8 @@
         "updatedAt": "2022/09/16 09:21:57",
         "storyTitle": "Rhoda Jenkins",
         "pageViews": 1892,
-        "awardsPrice": 15419
+        "awardsPrice": 15419,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -1743,7 +1903,8 @@
         "storyTitle": "Leon Banks",
         "pageViews": 1969,
         "awardsPrice": 6844,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "CNwKqHKTnwGxACaAt",
@@ -1753,7 +1914,8 @@
         "updatedAt": "2022/09/23 20:22:30",
         "storyTitle": "Nicholas Andrews",
         "pageViews": 1216,
-        "awardsPrice": 14016
+        "awardsPrice": 14016,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "CNwKqHKTnwGxACaAt",
@@ -1763,7 +1925,8 @@
         "updatedAt": "2022/09/11 04:56:27",
         "storyTitle": "Isaac Black",
         "pageViews": 182,
-        "awardsPrice": 3291
+        "awardsPrice": 3291,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "CNwKqHKTnwGxACaAt",
@@ -1773,7 +1936,8 @@
         "updatedAt": "2022/09/12 11:00:17",
         "storyTitle": "Linnie Salazar",
         "pageViews": 1759,
-        "awardsPrice": 12709
+        "awardsPrice": 12709,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "CNwKqHKTnwGxACaAt",
@@ -1783,7 +1947,8 @@
         "updatedAt": "2022/09/02 19:33:03",
         "storyTitle": "Ida Bryan",
         "pageViews": 1727,
-        "awardsPrice": 18651
+        "awardsPrice": 18651,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "CNwKqHKTnwGxACaAt",
@@ -1793,7 +1958,8 @@
         "updatedAt": "2022/09/24 03:32:47",
         "storyTitle": "Bertha Castro",
         "pageViews": 906,
-        "awardsPrice": 5202
+        "awardsPrice": 5202,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "CNwKqHKTnwGxACaAt",
@@ -1803,7 +1969,8 @@
         "updatedAt": "2022/09/08 19:35:11",
         "storyTitle": "Micheal Barnett",
         "pageViews": 1605,
-        "awardsPrice": 13586
+        "awardsPrice": 13586,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "CNwKqHKTnwGxACaAt",
@@ -1813,7 +1980,8 @@
         "updatedAt": "2022/09/12 23:27:49",
         "storyTitle": "Georgia George",
         "pageViews": 1461,
-        "awardsPrice": 15299
+        "awardsPrice": 15299,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "CNwKqHKTnwGxACaAt",
@@ -1823,7 +1991,8 @@
         "updatedAt": "2022/09/18 20:26:39",
         "storyTitle": "Jorge Schneider",
         "pageViews": 1809,
-        "awardsPrice": 17180
+        "awardsPrice": 17180,
+        "userId": "QjWAdUS"
       }
     ]
   },
@@ -1839,7 +2008,8 @@
         "storyTitle": "James Doyle",
         "pageViews": 1019,
         "awardsPrice": 11655,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "AeTniK",
@@ -1849,7 +2019,8 @@
         "updatedAt": "2022/09/30 15:54:47",
         "storyTitle": "Alma Edwards",
         "pageViews": 658,
-        "awardsPrice": 17915
+        "awardsPrice": 17915,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "AeTniK",
@@ -1859,7 +2030,8 @@
         "updatedAt": "2022/09/06 03:13:26",
         "storyTitle": "Harry Jones",
         "pageViews": 110,
-        "awardsPrice": 1499
+        "awardsPrice": 1499,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "AeTniK",
@@ -1869,7 +2041,8 @@
         "updatedAt": "2022/09/28 06:10:23",
         "storyTitle": "Lela Stevenson",
         "pageViews": 1410,
-        "awardsPrice": 15545
+        "awardsPrice": 15545,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "AeTniK",
@@ -1879,7 +2052,8 @@
         "updatedAt": "2022/09/30 17:53:43",
         "storyTitle": "Max Abbott",
         "pageViews": 301,
-        "awardsPrice": 19533
+        "awardsPrice": 19533,
+        "userId": "rgdxbVz"
       }
     ]
   },
@@ -1895,7 +2069,8 @@
         "storyTitle": "Olive Bradley",
         "pageViews": 479,
         "awardsPrice": 18515,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "lbhugTpPKxqzFGcDYJH",
@@ -1905,7 +2080,8 @@
         "updatedAt": "2022/09/04 09:58:14",
         "storyTitle": "Pearl Fowler",
         "pageViews": 251,
-        "awardsPrice": 6512
+        "awardsPrice": 6512,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "lbhugTpPKxqzFGcDYJH",
@@ -1915,7 +2091,8 @@
         "updatedAt": "2022/09/19 07:59:12",
         "storyTitle": "Ophelia Rowe",
         "pageViews": 1136,
-        "awardsPrice": 16534
+        "awardsPrice": 16534,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "lbhugTpPKxqzFGcDYJH",
@@ -1925,7 +2102,8 @@
         "updatedAt": "2022/09/18 13:30:17",
         "storyTitle": "Bertie Barber",
         "pageViews": 1374,
-        "awardsPrice": 9778
+        "awardsPrice": 9778,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "lbhugTpPKxqzFGcDYJH",
@@ -1935,7 +2113,8 @@
         "updatedAt": "2022/09/12 19:28:12",
         "storyTitle": "Dominic Cummings",
         "pageViews": 1699,
-        "awardsPrice": 7492
+        "awardsPrice": 7492,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "lbhugTpPKxqzFGcDYJH",
@@ -1945,7 +2124,8 @@
         "updatedAt": "2022/09/11 16:14:29",
         "storyTitle": "Patrick Klein",
         "pageViews": 1919,
-        "awardsPrice": 20040
+        "awardsPrice": 20040,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "lbhugTpPKxqzFGcDYJH",
@@ -1955,7 +2135,8 @@
         "updatedAt": "2022/09/11 18:50:19",
         "storyTitle": "Luke Walters",
         "pageViews": 1367,
-        "awardsPrice": 19089
+        "awardsPrice": 19089,
+        "userId": "UhEsGNZ"
       }
     ]
   },
@@ -1971,7 +2152,8 @@
         "storyTitle": "Lucile Wilson",
         "pageViews": 1656,
         "awardsPrice": 14131,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "IcHwVuCmTMiuoIW",
@@ -1981,7 +2163,8 @@
         "updatedAt": "2022/09/24 08:10:22",
         "storyTitle": "Minerva Bass",
         "pageViews": 221,
-        "awardsPrice": 15935
+        "awardsPrice": 15935,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "IcHwVuCmTMiuoIW",
@@ -1991,7 +2174,8 @@
         "updatedAt": "2022/09/14 10:12:53",
         "storyTitle": "Cora Hart",
         "pageViews": 660,
-        "awardsPrice": 19231
+        "awardsPrice": 19231,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "IcHwVuCmTMiuoIW",
@@ -2001,7 +2185,8 @@
         "updatedAt": "2022/09/10 00:57:02",
         "storyTitle": "Lucile Alexander",
         "pageViews": 912,
-        "awardsPrice": 1504
+        "awardsPrice": 1504,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "IcHwVuCmTMiuoIW",
@@ -2011,7 +2196,8 @@
         "updatedAt": "2022/09/16 02:24:36",
         "storyTitle": "Jean Hughes",
         "pageViews": 1171,
-        "awardsPrice": 2789
+        "awardsPrice": 2789,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "IcHwVuCmTMiuoIW",
@@ -2021,7 +2207,8 @@
         "updatedAt": "2022/09/20 01:03:05",
         "storyTitle": "Lena Love",
         "pageViews": 1261,
-        "awardsPrice": 15812
+        "awardsPrice": 15812,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "IcHwVuCmTMiuoIW",
@@ -2031,7 +2218,8 @@
         "updatedAt": "2022/09/28 00:10:42",
         "storyTitle": "Alvin Santos",
         "pageViews": 1935,
-        "awardsPrice": 7114
+        "awardsPrice": 7114,
+        "userId": "rgdxbVz"
       }
     ]
   },
@@ -2047,7 +2235,8 @@
         "storyTitle": "Ralph May",
         "pageViews": 1252,
         "awardsPrice": 20574,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "yLPCEkLMQtrQVrUhJUNz",
@@ -2057,7 +2246,8 @@
         "updatedAt": "2022/09/03 03:41:48",
         "storyTitle": "Hallie Owens",
         "pageViews": 1036,
-        "awardsPrice": 4432
+        "awardsPrice": 4432,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "yLPCEkLMQtrQVrUhJUNz",
@@ -2067,7 +2257,8 @@
         "updatedAt": "2022/09/27 07:39:15",
         "storyTitle": "Leona Farmer",
         "pageViews": 553,
-        "awardsPrice": 5034
+        "awardsPrice": 5034,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "yLPCEkLMQtrQVrUhJUNz",
@@ -2077,7 +2268,8 @@
         "updatedAt": "2022/09/06 04:09:20",
         "storyTitle": "Hester Miles",
         "pageViews": 387,
-        "awardsPrice": 2697
+        "awardsPrice": 2697,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "yLPCEkLMQtrQVrUhJUNz",
@@ -2087,7 +2279,8 @@
         "updatedAt": "2022/09/13 21:51:17",
         "storyTitle": "Bertha Simmons",
         "pageViews": 482,
-        "awardsPrice": 19336
+        "awardsPrice": 19336,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "yLPCEkLMQtrQVrUhJUNz",
@@ -2097,7 +2290,8 @@
         "updatedAt": "2022/09/22 02:09:10",
         "storyTitle": "Vernon Hayes",
         "pageViews": 1280,
-        "awardsPrice": 16351
+        "awardsPrice": 16351,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "yLPCEkLMQtrQVrUhJUNz",
@@ -2107,7 +2301,8 @@
         "updatedAt": "2022/09/20 12:18:13",
         "storyTitle": "Jerry Perry",
         "pageViews": 940,
-        "awardsPrice": 7032
+        "awardsPrice": 7032,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "yLPCEkLMQtrQVrUhJUNz",
@@ -2117,7 +2312,8 @@
         "updatedAt": "2022/09/01 17:47:18",
         "storyTitle": "Marion Curtis",
         "pageViews": 1293,
-        "awardsPrice": 9613
+        "awardsPrice": 9613,
+        "userId": "XxECYbo"
       }
     ]
   },
@@ -2133,7 +2329,8 @@
         "storyTitle": "Brent Nunez",
         "pageViews": 1411,
         "awardsPrice": 7907,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "xGhPNdmthZdSNIqyUm",
@@ -2143,7 +2340,8 @@
         "updatedAt": "2022/09/26 01:47:35",
         "storyTitle": "Tony Higgins",
         "pageViews": 406,
-        "awardsPrice": 11622
+        "awardsPrice": 11622,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "xGhPNdmthZdSNIqyUm",
@@ -2153,7 +2351,8 @@
         "updatedAt": "2022/09/13 04:04:57",
         "storyTitle": "Samuel Fletcher",
         "pageViews": 947,
-        "awardsPrice": 13698
+        "awardsPrice": 13698,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "xGhPNdmthZdSNIqyUm",
@@ -2163,7 +2362,8 @@
         "updatedAt": "2022/09/15 10:28:58",
         "storyTitle": "Lizzie King",
         "pageViews": 1774,
-        "awardsPrice": 9303
+        "awardsPrice": 9303,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "xGhPNdmthZdSNIqyUm",
@@ -2173,7 +2373,8 @@
         "updatedAt": "2022/09/02 20:18:12",
         "storyTitle": "Randall Alexander",
         "pageViews": 1473,
-        "awardsPrice": 16206
+        "awardsPrice": 16206,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -2189,7 +2390,8 @@
         "storyTitle": "Helen Barber",
         "pageViews": 1771,
         "awardsPrice": 16144,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "crpelvKmPzok",
@@ -2199,7 +2401,8 @@
         "updatedAt": "2022/09/18 07:03:37",
         "storyTitle": "Theresa Mann",
         "pageViews": 236,
-        "awardsPrice": 19255
+        "awardsPrice": 19255,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "crpelvKmPzok",
@@ -2209,7 +2412,8 @@
         "updatedAt": "2022/09/27 17:05:31",
         "storyTitle": "Edgar McDaniel",
         "pageViews": 1303,
-        "awardsPrice": 20698
+        "awardsPrice": 20698,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "crpelvKmPzok",
@@ -2219,7 +2423,8 @@
         "updatedAt": "2022/09/29 03:33:52",
         "storyTitle": "Bryan Holt",
         "pageViews": 505,
-        "awardsPrice": 17776
+        "awardsPrice": 17776,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "crpelvKmPzok",
@@ -2229,7 +2434,8 @@
         "updatedAt": "2022/09/04 06:31:30",
         "storyTitle": "Jose Wright",
         "pageViews": 1168,
-        "awardsPrice": 4557
+        "awardsPrice": 4557,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "crpelvKmPzok",
@@ -2239,7 +2445,8 @@
         "updatedAt": "2022/09/19 15:14:04",
         "storyTitle": "Henrietta Morrison",
         "pageViews": 797,
-        "awardsPrice": 20115
+        "awardsPrice": 20115,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "crpelvKmPzok",
@@ -2249,7 +2456,8 @@
         "updatedAt": "2022/09/02 13:08:33",
         "storyTitle": "Steven Carson",
         "pageViews": 910,
-        "awardsPrice": 12634
+        "awardsPrice": 12634,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "crpelvKmPzok",
@@ -2259,7 +2467,8 @@
         "updatedAt": "2022/09/14 00:03:36",
         "storyTitle": "Gary Francis",
         "pageViews": 446,
-        "awardsPrice": 7109
+        "awardsPrice": 7109,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -2275,7 +2484,8 @@
         "storyTitle": "Trevor Wade",
         "pageViews": 280,
         "awardsPrice": 3306,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "OYDAcqbx",
@@ -2285,7 +2495,8 @@
         "updatedAt": "2022/09/15 15:28:19",
         "storyTitle": "Chris Mack",
         "pageViews": 1882,
-        "awardsPrice": 13643
+        "awardsPrice": 13643,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "OYDAcqbx",
@@ -2295,7 +2506,8 @@
         "updatedAt": "2022/09/03 20:51:11",
         "storyTitle": "Virgie Shaw",
         "pageViews": 1955,
-        "awardsPrice": 15927
+        "awardsPrice": 15927,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "OYDAcqbx",
@@ -2305,7 +2517,8 @@
         "updatedAt": "2022/09/30 10:05:06",
         "storyTitle": "Brandon Lewis",
         "pageViews": 145,
-        "awardsPrice": 6886
+        "awardsPrice": 6886,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "OYDAcqbx",
@@ -2315,7 +2528,8 @@
         "updatedAt": "2022/09/24 22:50:11",
         "storyTitle": "Verna Fisher",
         "pageViews": 415,
-        "awardsPrice": 17615
+        "awardsPrice": 17615,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "OYDAcqbx",
@@ -2325,7 +2539,8 @@
         "updatedAt": "2022/09/17 07:38:27",
         "storyTitle": "Scott Malone",
         "pageViews": 508,
-        "awardsPrice": 12620
+        "awardsPrice": 12620,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "OYDAcqbx",
@@ -2335,7 +2550,8 @@
         "updatedAt": "2022/09/23 08:10:21",
         "storyTitle": "Caroline Clarke",
         "pageViews": 593,
-        "awardsPrice": 14528
+        "awardsPrice": 14528,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "OYDAcqbx",
@@ -2345,7 +2561,8 @@
         "updatedAt": "2022/09/11 10:20:17",
         "storyTitle": "Jack Robertson",
         "pageViews": 1308,
-        "awardsPrice": 15271
+        "awardsPrice": 15271,
+        "userId": "LjzqRfU"
       }
     ]
   },
@@ -2361,7 +2578,8 @@
         "storyTitle": "Leah Curtis",
         "pageViews": 1588,
         "awardsPrice": 18161,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "gsvqBItmqLkOBBV",
@@ -2371,7 +2589,8 @@
         "updatedAt": "2022/09/22 22:59:34",
         "storyTitle": "Austin Herrera",
         "pageViews": 1881,
-        "awardsPrice": 10242
+        "awardsPrice": 10242,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -2387,7 +2606,8 @@
         "storyTitle": "Elnora May",
         "pageViews": 1165,
         "awardsPrice": 11867,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "rGdVYkflwWCoIwOT",
@@ -2397,7 +2617,8 @@
         "updatedAt": "2022/09/30 22:48:35",
         "storyTitle": "Emilie Becker",
         "pageViews": 1131,
-        "awardsPrice": 6376
+        "awardsPrice": 6376,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "rGdVYkflwWCoIwOT",
@@ -2407,7 +2628,8 @@
         "updatedAt": "2022/09/28 02:24:40",
         "storyTitle": "Sean Larson",
         "pageViews": 1984,
-        "awardsPrice": 15822
+        "awardsPrice": 15822,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "rGdVYkflwWCoIwOT",
@@ -2417,7 +2639,8 @@
         "updatedAt": "2022/09/24 22:29:59",
         "storyTitle": "Effie Barker",
         "pageViews": 1466,
-        "awardsPrice": 14309
+        "awardsPrice": 14309,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "rGdVYkflwWCoIwOT",
@@ -2427,7 +2650,8 @@
         "updatedAt": "2022/09/26 05:13:50",
         "storyTitle": "Maude Rivera",
         "pageViews": 1420,
-        "awardsPrice": 4501
+        "awardsPrice": 4501,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "rGdVYkflwWCoIwOT",
@@ -2437,7 +2661,8 @@
         "updatedAt": "2022/09/23 11:49:19",
         "storyTitle": "Belle Snyder",
         "pageViews": 113,
-        "awardsPrice": 8961
+        "awardsPrice": 8961,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "rGdVYkflwWCoIwOT",
@@ -2447,7 +2672,8 @@
         "updatedAt": "2022/09/06 19:25:15",
         "storyTitle": "Jacob Morales",
         "pageViews": 1026,
-        "awardsPrice": 3320
+        "awardsPrice": 3320,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "rGdVYkflwWCoIwOT",
@@ -2457,7 +2683,8 @@
         "updatedAt": "2022/09/09 18:44:21",
         "storyTitle": "Julian Vargas",
         "pageViews": 532,
-        "awardsPrice": 5865
+        "awardsPrice": 5865,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "rGdVYkflwWCoIwOT",
@@ -2467,7 +2694,8 @@
         "updatedAt": "2022/09/22 09:54:15",
         "storyTitle": "Cynthia Jennings",
         "pageViews": 1742,
-        "awardsPrice": 11986
+        "awardsPrice": 11986,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "rGdVYkflwWCoIwOT",
@@ -2477,7 +2705,8 @@
         "updatedAt": "2022/09/18 15:22:27",
         "storyTitle": "Ernest Lynch",
         "pageViews": 1852,
-        "awardsPrice": 18956
+        "awardsPrice": 18956,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "rGdVYkflwWCoIwOT",
@@ -2487,7 +2716,8 @@
         "updatedAt": "2022/09/25 03:58:45",
         "storyTitle": "Julia Norris",
         "pageViews": 216,
-        "awardsPrice": 6399
+        "awardsPrice": 6399,
+        "userId": "rgdxbVz"
       }
     ]
   },
@@ -2503,7 +2733,8 @@
         "storyTitle": "Lora Dawson",
         "pageViews": 1110,
         "awardsPrice": 2699,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "qHGHCNMTUvSDbS",
@@ -2513,7 +2744,8 @@
         "updatedAt": "2022/09/12 23:37:45",
         "storyTitle": "Winifred Rice",
         "pageViews": 836,
-        "awardsPrice": 7166
+        "awardsPrice": 7166,
+        "userId": "RpfdGqk"
       }
     ]
   },
@@ -2529,7 +2761,8 @@
         "storyTitle": "Arthur Joseph",
         "pageViews": 1359,
         "awardsPrice": 20301,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "xxlLkJOMfyXEpGc",
@@ -2539,7 +2772,8 @@
         "updatedAt": "2022/09/03 08:26:24",
         "storyTitle": "Alan Franklin",
         "pageViews": 1736,
-        "awardsPrice": 11669
+        "awardsPrice": 11669,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "xxlLkJOMfyXEpGc",
@@ -2549,7 +2783,8 @@
         "updatedAt": "2022/09/02 17:37:12",
         "storyTitle": "Alejandro Lyons",
         "pageViews": 722,
-        "awardsPrice": 12969
+        "awardsPrice": 12969,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "xxlLkJOMfyXEpGc",
@@ -2559,7 +2794,8 @@
         "updatedAt": "2022/09/06 02:42:23",
         "storyTitle": "Gerald Fields",
         "pageViews": 882,
-        "awardsPrice": 18715
+        "awardsPrice": 18715,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "xxlLkJOMfyXEpGc",
@@ -2569,7 +2805,8 @@
         "updatedAt": "2022/09/21 05:20:53",
         "storyTitle": "Nicholas Yates",
         "pageViews": 819,
-        "awardsPrice": 13056
+        "awardsPrice": 13056,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "xxlLkJOMfyXEpGc",
@@ -2579,7 +2816,8 @@
         "updatedAt": "2022/09/02 20:05:51",
         "storyTitle": "Charlotte Mendoza",
         "pageViews": 1874,
-        "awardsPrice": 7734
+        "awardsPrice": 7734,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "xxlLkJOMfyXEpGc",
@@ -2589,7 +2827,8 @@
         "updatedAt": "2022/09/04 03:46:08",
         "storyTitle": "Rena Warren",
         "pageViews": 1185,
-        "awardsPrice": 11923
+        "awardsPrice": 11923,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "xxlLkJOMfyXEpGc",
@@ -2599,7 +2838,8 @@
         "updatedAt": "2022/09/08 21:26:39",
         "storyTitle": "Maggie Hammond",
         "pageViews": 1827,
-        "awardsPrice": 2012
+        "awardsPrice": 2012,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "xxlLkJOMfyXEpGc",
@@ -2609,7 +2849,8 @@
         "updatedAt": "2022/09/20 02:11:20",
         "storyTitle": "Jackson Copeland",
         "pageViews": 364,
-        "awardsPrice": 4872
+        "awardsPrice": 4872,
+        "userId": "rgdxbVz"
       }
     ]
   },
@@ -2625,7 +2866,8 @@
         "storyTitle": "Elizabeth Patterson",
         "pageViews": 1300,
         "awardsPrice": 15578,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "NeEmFDqbZZyVEbG",
@@ -2635,7 +2877,8 @@
         "updatedAt": "2022/09/29 22:10:34",
         "storyTitle": "Allie Austin",
         "pageViews": 1296,
-        "awardsPrice": 9510
+        "awardsPrice": 9510,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "NeEmFDqbZZyVEbG",
@@ -2645,7 +2888,8 @@
         "updatedAt": "2022/09/26 07:12:34",
         "storyTitle": "Georgia Roy",
         "pageViews": 1888,
-        "awardsPrice": 15654
+        "awardsPrice": 15654,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "NeEmFDqbZZyVEbG",
@@ -2655,7 +2899,8 @@
         "updatedAt": "2022/09/08 11:56:57",
         "storyTitle": "Lilly Chavez",
         "pageViews": 852,
-        "awardsPrice": 2858
+        "awardsPrice": 2858,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "NeEmFDqbZZyVEbG",
@@ -2665,7 +2910,8 @@
         "updatedAt": "2022/09/14 14:17:41",
         "storyTitle": "Jason Poole",
         "pageViews": 1082,
-        "awardsPrice": 10035
+        "awardsPrice": 10035,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "NeEmFDqbZZyVEbG",
@@ -2675,7 +2921,8 @@
         "updatedAt": "2022/09/11 12:24:37",
         "storyTitle": "Victor Phillips",
         "pageViews": 1988,
-        "awardsPrice": 18426
+        "awardsPrice": 18426,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "NeEmFDqbZZyVEbG",
@@ -2685,7 +2932,8 @@
         "updatedAt": "2022/09/08 09:45:59",
         "storyTitle": "Tyler Hopkins",
         "pageViews": 627,
-        "awardsPrice": 15823
+        "awardsPrice": 15823,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "NeEmFDqbZZyVEbG",
@@ -2695,7 +2943,8 @@
         "updatedAt": "2022/09/09 13:19:46",
         "storyTitle": "Christine Warren",
         "pageViews": 131,
-        "awardsPrice": 2174
+        "awardsPrice": 2174,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -2711,7 +2960,8 @@
         "storyTitle": "Danny Freeman",
         "pageViews": 1869,
         "awardsPrice": 18992,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "DcXhdlDYyedYw",
@@ -2721,7 +2971,8 @@
         "updatedAt": "2022/09/09 12:32:36",
         "storyTitle": "Evelyn Stanley",
         "pageViews": 430,
-        "awardsPrice": 13185
+        "awardsPrice": 13185,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "DcXhdlDYyedYw",
@@ -2731,7 +2982,8 @@
         "updatedAt": "2022/09/02 22:28:30",
         "storyTitle": "Alexander Barton",
         "pageViews": 1156,
-        "awardsPrice": 11462
+        "awardsPrice": 11462,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "DcXhdlDYyedYw",
@@ -2741,7 +2993,8 @@
         "updatedAt": "2022/09/21 17:11:33",
         "storyTitle": "Edna Adams",
         "pageViews": 1086,
-        "awardsPrice": 4380
+        "awardsPrice": 4380,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "DcXhdlDYyedYw",
@@ -2751,7 +3004,8 @@
         "updatedAt": "2022/09/26 07:50:10",
         "storyTitle": "Kyle Townsend",
         "pageViews": 949,
-        "awardsPrice": 7350
+        "awardsPrice": 7350,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "DcXhdlDYyedYw",
@@ -2761,7 +3015,8 @@
         "updatedAt": "2022/09/17 14:02:55",
         "storyTitle": "Brent Patterson",
         "pageViews": 988,
-        "awardsPrice": 13351
+        "awardsPrice": 13351,
+        "userId": "QjWAdUS"
       }
     ]
   },
@@ -2777,7 +3032,8 @@
         "storyTitle": "Allen Holmes",
         "pageViews": 1339,
         "awardsPrice": 20935,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "BDkuVwDKjDVj",
@@ -2787,7 +3043,8 @@
         "updatedAt": "2022/09/07 00:02:40",
         "storyTitle": "Rose Alvarado",
         "pageViews": 136,
-        "awardsPrice": 5006
+        "awardsPrice": 5006,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "BDkuVwDKjDVj",
@@ -2797,7 +3054,8 @@
         "updatedAt": "2022/09/05 07:39:43",
         "storyTitle": "Sylvia Gutierrez",
         "pageViews": 1983,
-        "awardsPrice": 1576
+        "awardsPrice": 1576,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "BDkuVwDKjDVj",
@@ -2807,7 +3065,8 @@
         "updatedAt": "2022/09/14 20:05:18",
         "storyTitle": "Carlos Francis",
         "pageViews": 1649,
-        "awardsPrice": 10189
+        "awardsPrice": 10189,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "BDkuVwDKjDVj",
@@ -2817,7 +3076,8 @@
         "updatedAt": "2022/09/10 21:21:32",
         "storyTitle": "Joel Potter",
         "pageViews": 424,
-        "awardsPrice": 10812
+        "awardsPrice": 10812,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "BDkuVwDKjDVj",
@@ -2827,7 +3087,8 @@
         "updatedAt": "2022/09/13 22:02:12",
         "storyTitle": "Jeffrey Sandoval",
         "pageViews": 687,
-        "awardsPrice": 5456
+        "awardsPrice": 5456,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "BDkuVwDKjDVj",
@@ -2837,7 +3098,8 @@
         "updatedAt": "2022/09/22 05:20:23",
         "storyTitle": "Fannie Briggs",
         "pageViews": 1168,
-        "awardsPrice": 19771
+        "awardsPrice": 19771,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "BDkuVwDKjDVj",
@@ -2847,7 +3109,8 @@
         "updatedAt": "2022/09/14 15:52:35",
         "storyTitle": "Jorge Harrington",
         "pageViews": 750,
-        "awardsPrice": 7557
+        "awardsPrice": 7557,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "BDkuVwDKjDVj",
@@ -2857,7 +3120,8 @@
         "updatedAt": "2022/09/06 12:00:32",
         "storyTitle": "Julian Maldonado",
         "pageViews": 1088,
-        "awardsPrice": 14079
+        "awardsPrice": 14079,
+        "userId": "UhEsGNZ"
       }
     ]
   },
@@ -2873,7 +3137,8 @@
         "storyTitle": "Wayne Ellis",
         "pageViews": 1743,
         "awardsPrice": 14796,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "dicDtHZz",
@@ -2883,7 +3148,8 @@
         "updatedAt": "2022/09/02 16:05:32",
         "storyTitle": "Clayton Wong",
         "pageViews": 1687,
-        "awardsPrice": 9184
+        "awardsPrice": 9184,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "dicDtHZz",
@@ -2893,7 +3159,8 @@
         "updatedAt": "2022/09/19 04:58:49",
         "storyTitle": "Hulda Mann",
         "pageViews": 1462,
-        "awardsPrice": 18437
+        "awardsPrice": 18437,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "dicDtHZz",
@@ -2903,7 +3170,8 @@
         "updatedAt": "2022/09/01 17:35:26",
         "storyTitle": "Bernice Graves",
         "pageViews": 255,
-        "awardsPrice": 10041
+        "awardsPrice": 10041,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "dicDtHZz",
@@ -2913,7 +3181,8 @@
         "updatedAt": "2022/09/09 08:50:09",
         "storyTitle": "Carolyn Lynch",
         "pageViews": 1212,
-        "awardsPrice": 12172
+        "awardsPrice": 12172,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "dicDtHZz",
@@ -2923,7 +3192,8 @@
         "updatedAt": "2022/09/19 19:36:20",
         "storyTitle": "Ellen Medina",
         "pageViews": 1227,
-        "awardsPrice": 14869
+        "awardsPrice": 14869,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "dicDtHZz",
@@ -2933,7 +3203,8 @@
         "updatedAt": "2022/09/05 12:41:14",
         "storyTitle": "Linnie Miller",
         "pageViews": 1526,
-        "awardsPrice": 11228
+        "awardsPrice": 11228,
+        "userId": "UhEsGNZ"
       }
     ]
   },
@@ -2949,7 +3220,8 @@
         "storyTitle": "Aaron West",
         "pageViews": 1347,
         "awardsPrice": 17129,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "JbDWPSxaJZwdnlDLFEFS",
@@ -2959,7 +3231,8 @@
         "updatedAt": "2022/09/03 15:33:21",
         "storyTitle": "Francisco McLaughlin",
         "pageViews": 658,
-        "awardsPrice": 16389
+        "awardsPrice": 16389,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "JbDWPSxaJZwdnlDLFEFS",
@@ -2969,7 +3242,8 @@
         "updatedAt": "2022/09/08 21:03:46",
         "storyTitle": "Jay Lucas",
         "pageViews": 1929,
-        "awardsPrice": 5449
+        "awardsPrice": 5449,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "JbDWPSxaJZwdnlDLFEFS",
@@ -2979,7 +3253,8 @@
         "updatedAt": "2022/09/22 15:26:20",
         "storyTitle": "Ola Francis",
         "pageViews": 237,
-        "awardsPrice": 3184
+        "awardsPrice": 3184,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "JbDWPSxaJZwdnlDLFEFS",
@@ -2989,7 +3264,8 @@
         "updatedAt": "2022/09/07 02:42:25",
         "storyTitle": "Charlotte Hernandez",
         "pageViews": 429,
-        "awardsPrice": 20774
+        "awardsPrice": 20774,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "JbDWPSxaJZwdnlDLFEFS",
@@ -2999,7 +3275,8 @@
         "updatedAt": "2022/09/29 19:57:34",
         "storyTitle": "Owen Cummings",
         "pageViews": 1396,
-        "awardsPrice": 4265
+        "awardsPrice": 4265,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "JbDWPSxaJZwdnlDLFEFS",
@@ -3009,7 +3286,8 @@
         "updatedAt": "2022/09/07 21:08:42",
         "storyTitle": "Luis Hoffman",
         "pageViews": 208,
-        "awardsPrice": 17102
+        "awardsPrice": 17102,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "JbDWPSxaJZwdnlDLFEFS",
@@ -3019,7 +3297,8 @@
         "updatedAt": "2022/09/27 01:18:29",
         "storyTitle": "Seth Perry",
         "pageViews": 732,
-        "awardsPrice": 10545
+        "awardsPrice": 10545,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "JbDWPSxaJZwdnlDLFEFS",
@@ -3029,7 +3308,8 @@
         "updatedAt": "2022/09/24 00:00:24",
         "storyTitle": "Georgia Burton",
         "pageViews": 1966,
-        "awardsPrice": 15838
+        "awardsPrice": 15838,
+        "userId": "LjzqRfU"
       }
     ]
   },
@@ -3045,7 +3325,8 @@
         "storyTitle": "Hulda Duncan",
         "pageViews": 1862,
         "awardsPrice": 10839,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "doIexNEzxFW",
@@ -3055,7 +3336,8 @@
         "updatedAt": "2022/09/17 08:21:27",
         "storyTitle": "Esther Torres",
         "pageViews": 903,
-        "awardsPrice": 11816
+        "awardsPrice": 11816,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "doIexNEzxFW",
@@ -3065,7 +3347,8 @@
         "updatedAt": "2022/09/17 01:28:46",
         "storyTitle": "May Guerrero",
         "pageViews": 1412,
-        "awardsPrice": 12494
+        "awardsPrice": 12494,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "doIexNEzxFW",
@@ -3075,7 +3358,8 @@
         "updatedAt": "2022/09/10 07:39:43",
         "storyTitle": "Victor Hogan",
         "pageViews": 791,
-        "awardsPrice": 13721
+        "awardsPrice": 13721,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "doIexNEzxFW",
@@ -3085,7 +3369,8 @@
         "updatedAt": "2022/09/14 11:20:20",
         "storyTitle": "Seth Tucker",
         "pageViews": 964,
-        "awardsPrice": 4653
+        "awardsPrice": 4653,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "doIexNEzxFW",
@@ -3095,7 +3380,8 @@
         "updatedAt": "2022/09/12 06:54:27",
         "storyTitle": "Eugenia Flores",
         "pageViews": 905,
-        "awardsPrice": 17145
+        "awardsPrice": 17145,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "doIexNEzxFW",
@@ -3105,7 +3391,8 @@
         "updatedAt": "2022/09/15 05:20:42",
         "storyTitle": "Rodney Long",
         "pageViews": 862,
-        "awardsPrice": 7536
+        "awardsPrice": 7536,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "doIexNEzxFW",
@@ -3115,7 +3402,8 @@
         "updatedAt": "2022/09/26 05:17:54",
         "storyTitle": "Jesse Freeman",
         "pageViews": 1916,
-        "awardsPrice": 12517
+        "awardsPrice": 12517,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "doIexNEzxFW",
@@ -3125,7 +3413,8 @@
         "updatedAt": "2022/09/15 21:09:11",
         "storyTitle": "Hunter Reynolds",
         "pageViews": 899,
-        "awardsPrice": 15361
+        "awardsPrice": 15361,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "doIexNEzxFW",
@@ -3135,7 +3424,8 @@
         "updatedAt": "2022/09/25 23:38:39",
         "storyTitle": "Elnora Baldwin",
         "pageViews": 1220,
-        "awardsPrice": 16969
+        "awardsPrice": 16969,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -3151,7 +3441,8 @@
         "storyTitle": "Vera Stephens",
         "pageViews": 428,
         "awardsPrice": 5192,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "erxWMLlvG",
@@ -3161,7 +3452,8 @@
         "updatedAt": "2022/09/27 01:47:12",
         "storyTitle": "Thomas Richardson",
         "pageViews": 1603,
-        "awardsPrice": 13353
+        "awardsPrice": 13353,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "erxWMLlvG",
@@ -3171,7 +3463,8 @@
         "updatedAt": "2022/09/13 09:32:28",
         "storyTitle": "Joseph Cross",
         "pageViews": 1219,
-        "awardsPrice": 8628
+        "awardsPrice": 8628,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "erxWMLlvG",
@@ -3181,7 +3474,8 @@
         "updatedAt": "2022/09/29 21:44:07",
         "storyTitle": "Thomas Bowen",
         "pageViews": 1954,
-        "awardsPrice": 1370
+        "awardsPrice": 1370,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -3197,7 +3491,8 @@
         "storyTitle": "Ruth Ross",
         "pageViews": 365,
         "awardsPrice": 5270,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "QRGRBAIJcQWUMw",
@@ -3207,7 +3502,8 @@
         "updatedAt": "2022/09/16 00:09:03",
         "storyTitle": "Derrick Nelson",
         "pageViews": 1382,
-        "awardsPrice": 16029
+        "awardsPrice": 16029,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "QRGRBAIJcQWUMw",
@@ -3217,7 +3513,8 @@
         "updatedAt": "2022/09/07 00:04:52",
         "storyTitle": "Alta Wolfe",
         "pageViews": 1353,
-        "awardsPrice": 12163
+        "awardsPrice": 12163,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "QRGRBAIJcQWUMw",
@@ -3227,7 +3524,8 @@
         "updatedAt": "2022/09/21 00:18:47",
         "storyTitle": "Mina Hanson",
         "pageViews": 1163,
-        "awardsPrice": 13518
+        "awardsPrice": 13518,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "QRGRBAIJcQWUMw",
@@ -3237,7 +3535,8 @@
         "updatedAt": "2022/09/12 16:06:51",
         "storyTitle": "Phoebe Gibson",
         "pageViews": 185,
-        "awardsPrice": 9913
+        "awardsPrice": 9913,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -3253,7 +3552,8 @@
         "storyTitle": "Blanche Francis",
         "pageViews": 830,
         "awardsPrice": 17514,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "OacVmrmGEiY",
@@ -3263,7 +3563,8 @@
         "updatedAt": "2022/09/24 09:53:29",
         "storyTitle": "Leon Boone",
         "pageViews": 761,
-        "awardsPrice": 16869
+        "awardsPrice": 16869,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "OacVmrmGEiY",
@@ -3273,7 +3574,8 @@
         "updatedAt": "2022/09/01 22:47:41",
         "storyTitle": "Gabriel Cobb",
         "pageViews": 173,
-        "awardsPrice": 15110
+        "awardsPrice": 15110,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "OacVmrmGEiY",
@@ -3283,7 +3585,8 @@
         "updatedAt": "2022/09/06 12:46:05",
         "storyTitle": "Mike Garcia",
         "pageViews": 1863,
-        "awardsPrice": 14651
+        "awardsPrice": 14651,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "OacVmrmGEiY",
@@ -3293,7 +3596,8 @@
         "updatedAt": "2022/09/29 12:26:52",
         "storyTitle": "Andre Lloyd",
         "pageViews": 1257,
-        "awardsPrice": 1680
+        "awardsPrice": 1680,
+        "userId": "rgdxbVz"
       }
     ]
   },
@@ -3309,7 +3613,8 @@
         "storyTitle": "Bernard Lewis",
         "pageViews": 192,
         "awardsPrice": 7926,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "JVCTrsX",
@@ -3319,7 +3624,8 @@
         "updatedAt": "2022/09/04 23:33:54",
         "storyTitle": "Elsie Willis",
         "pageViews": 825,
-        "awardsPrice": 12014
+        "awardsPrice": 12014,
+        "userId": "rgdxbVz"
       }
     ]
   },
@@ -3335,7 +3641,8 @@
         "storyTitle": "Scott Stanley",
         "pageViews": 315,
         "awardsPrice": 4761,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "zxkgjdUWOjklLDgpbJwa",
@@ -3345,7 +3652,8 @@
         "updatedAt": "2022/09/16 12:30:51",
         "storyTitle": "Katie Ballard",
         "pageViews": 728,
-        "awardsPrice": 3269
+        "awardsPrice": 3269,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "zxkgjdUWOjklLDgpbJwa",
@@ -3355,7 +3663,8 @@
         "updatedAt": "2022/09/09 00:23:20",
         "storyTitle": "Bernice Graves",
         "pageViews": 1206,
-        "awardsPrice": 8425
+        "awardsPrice": 8425,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "zxkgjdUWOjklLDgpbJwa",
@@ -3365,7 +3674,8 @@
         "updatedAt": "2022/09/16 13:52:16",
         "storyTitle": "Shane Benson",
         "pageViews": 1811,
-        "awardsPrice": 9189
+        "awardsPrice": 9189,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -3381,7 +3691,8 @@
         "storyTitle": "Minnie Warner",
         "pageViews": 565,
         "awardsPrice": 3300,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "AXiRWsctWdywprhjC",
@@ -3391,7 +3702,8 @@
         "updatedAt": "2022/09/15 22:39:11",
         "storyTitle": "George Reed",
         "pageViews": 1583,
-        "awardsPrice": 9101
+        "awardsPrice": 9101,
+        "userId": "RpfdGqk"
       }
     ]
   },
@@ -3407,7 +3719,8 @@
         "storyTitle": "Harriett Boone",
         "pageViews": 704,
         "awardsPrice": 12344,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "qVXaonWggrelpikcyDsP",
@@ -3417,7 +3730,8 @@
         "updatedAt": "2022/09/19 01:24:38",
         "storyTitle": "Madge Gordon",
         "pageViews": 1403,
-        "awardsPrice": 5075
+        "awardsPrice": 5075,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "qVXaonWggrelpikcyDsP",
@@ -3427,7 +3741,8 @@
         "updatedAt": "2022/09/09 16:41:01",
         "storyTitle": "Landon Yates",
         "pageViews": 1680,
-        "awardsPrice": 8081
+        "awardsPrice": 8081,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "qVXaonWggrelpikcyDsP",
@@ -3437,7 +3752,8 @@
         "updatedAt": "2022/09/06 09:50:46",
         "storyTitle": "Dean Buchanan",
         "pageViews": 1219,
-        "awardsPrice": 7467
+        "awardsPrice": 7467,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "qVXaonWggrelpikcyDsP",
@@ -3447,7 +3763,8 @@
         "updatedAt": "2022/09/01 10:02:06",
         "storyTitle": "Dollie Martin",
         "pageViews": 1586,
-        "awardsPrice": 8257
+        "awardsPrice": 8257,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "qVXaonWggrelpikcyDsP",
@@ -3457,7 +3774,8 @@
         "updatedAt": "2022/09/28 20:29:55",
         "storyTitle": "Maud Moss",
         "pageViews": 1119,
-        "awardsPrice": 1594
+        "awardsPrice": 1594,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -3473,7 +3791,8 @@
         "storyTitle": "Linnie Hamilton",
         "pageViews": 459,
         "awardsPrice": 11291,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "yPecEZEPyUYoaRslz",
@@ -3483,7 +3802,8 @@
         "updatedAt": "2022/09/23 11:27:40",
         "storyTitle": "Jay James",
         "pageViews": 594,
-        "awardsPrice": 20042
+        "awardsPrice": 20042,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "yPecEZEPyUYoaRslz",
@@ -3493,7 +3813,8 @@
         "updatedAt": "2022/09/27 11:12:49",
         "storyTitle": "Lulu Jenkins",
         "pageViews": 879,
-        "awardsPrice": 7789
+        "awardsPrice": 7789,
+        "userId": "QjWAdUS"
       }
     ]
   },
@@ -3509,7 +3830,8 @@
         "storyTitle": "James Munoz",
         "pageViews": 1798,
         "awardsPrice": 10354,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "XbOoWuEjJgDkUAkWarG",
@@ -3519,7 +3841,8 @@
         "updatedAt": "2022/09/08 06:37:11",
         "storyTitle": "Pearl Valdez",
         "pageViews": 1469,
-        "awardsPrice": 7685
+        "awardsPrice": 7685,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "XbOoWuEjJgDkUAkWarG",
@@ -3529,7 +3852,8 @@
         "updatedAt": "2022/09/02 17:37:03",
         "storyTitle": "Delia Holland",
         "pageViews": 1119,
-        "awardsPrice": 2496
+        "awardsPrice": 2496,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "XbOoWuEjJgDkUAkWarG",
@@ -3539,7 +3863,8 @@
         "updatedAt": "2022/09/28 21:33:56",
         "storyTitle": "Stanley Little",
         "pageViews": 129,
-        "awardsPrice": 8745
+        "awardsPrice": 8745,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "XbOoWuEjJgDkUAkWarG",
@@ -3549,7 +3874,8 @@
         "updatedAt": "2022/09/15 10:17:14",
         "storyTitle": "Inez Burgess",
         "pageViews": 180,
-        "awardsPrice": 9471
+        "awardsPrice": 9471,
+        "userId": "UhEsGNZ"
       }
     ]
   },
@@ -3565,7 +3891,8 @@
         "storyTitle": "Miguel Williams",
         "pageViews": 905,
         "awardsPrice": 15913,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "bAvuaSGRVzOV",
@@ -3575,7 +3902,8 @@
         "updatedAt": "2022/09/12 03:20:03",
         "storyTitle": "Louis Tyler",
         "pageViews": 1810,
-        "awardsPrice": 13211
+        "awardsPrice": 13211,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "bAvuaSGRVzOV",
@@ -3585,7 +3913,8 @@
         "updatedAt": "2022/09/08 02:59:05",
         "storyTitle": "Olive Hicks",
         "pageViews": 1677,
-        "awardsPrice": 7788
+        "awardsPrice": 7788,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "bAvuaSGRVzOV",
@@ -3595,7 +3924,8 @@
         "updatedAt": "2022/09/01 19:51:34",
         "storyTitle": "Calvin Alvarez",
         "pageViews": 487,
-        "awardsPrice": 3084
+        "awardsPrice": 3084,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "bAvuaSGRVzOV",
@@ -3605,7 +3935,8 @@
         "updatedAt": "2022/09/11 12:25:05",
         "storyTitle": "Jesse Tran",
         "pageViews": 579,
-        "awardsPrice": 13717
+        "awardsPrice": 13717,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "bAvuaSGRVzOV",
@@ -3615,7 +3946,8 @@
         "updatedAt": "2022/09/17 20:50:37",
         "storyTitle": "Cora Clayton",
         "pageViews": 866,
-        "awardsPrice": 12839
+        "awardsPrice": 12839,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "bAvuaSGRVzOV",
@@ -3625,7 +3957,8 @@
         "updatedAt": "2022/09/28 01:37:35",
         "storyTitle": "Helen Gordon",
         "pageViews": 477,
-        "awardsPrice": 19632
+        "awardsPrice": 19632,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "bAvuaSGRVzOV",
@@ -3635,7 +3968,8 @@
         "updatedAt": "2022/09/19 20:09:56",
         "storyTitle": "Jon Haynes",
         "pageViews": 1425,
-        "awardsPrice": 8441
+        "awardsPrice": 8441,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "bAvuaSGRVzOV",
@@ -3645,7 +3979,8 @@
         "updatedAt": "2022/09/20 09:58:24",
         "storyTitle": "Lillie Howell",
         "pageViews": 1853,
-        "awardsPrice": 11794
+        "awardsPrice": 11794,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -3661,7 +3996,8 @@
         "storyTitle": "Ernest Abbott",
         "pageViews": 478,
         "awardsPrice": 14685,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "xhHIbFIZnSyiYakzPQMN",
@@ -3671,7 +4007,8 @@
         "updatedAt": "2022/09/03 14:03:54",
         "storyTitle": "Tillie Gill",
         "pageViews": 626,
-        "awardsPrice": 2395
+        "awardsPrice": 2395,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "xhHIbFIZnSyiYakzPQMN",
@@ -3681,7 +4018,8 @@
         "updatedAt": "2022/09/19 15:00:14",
         "storyTitle": "Marion Wilkins",
         "pageViews": 1752,
-        "awardsPrice": 2928
+        "awardsPrice": 2928,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "xhHIbFIZnSyiYakzPQMN",
@@ -3691,7 +4029,8 @@
         "updatedAt": "2022/09/22 09:58:05",
         "storyTitle": "Elizabeth Logan",
         "pageViews": 1632,
-        "awardsPrice": 20180
+        "awardsPrice": 20180,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "xhHIbFIZnSyiYakzPQMN",
@@ -3701,7 +4040,8 @@
         "updatedAt": "2022/09/27 19:45:32",
         "storyTitle": "Harry Waters",
         "pageViews": 204,
-        "awardsPrice": 8670
+        "awardsPrice": 8670,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "xhHIbFIZnSyiYakzPQMN",
@@ -3711,7 +4051,8 @@
         "updatedAt": "2022/09/09 00:45:24",
         "storyTitle": "Celia Lloyd",
         "pageViews": 109,
-        "awardsPrice": 7299
+        "awardsPrice": 7299,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "xhHIbFIZnSyiYakzPQMN",
@@ -3721,7 +4062,8 @@
         "updatedAt": "2022/09/07 09:35:09",
         "storyTitle": "Noah Becker",
         "pageViews": 1136,
-        "awardsPrice": 11753
+        "awardsPrice": 11753,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "xhHIbFIZnSyiYakzPQMN",
@@ -3731,7 +4073,8 @@
         "updatedAt": "2022/09/25 22:24:46",
         "storyTitle": "Derek Cook",
         "pageViews": 1118,
-        "awardsPrice": 14980
+        "awardsPrice": 14980,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "xhHIbFIZnSyiYakzPQMN",
@@ -3741,7 +4084,8 @@
         "updatedAt": "2022/09/25 21:46:03",
         "storyTitle": "Ethan Norton",
         "pageViews": 1182,
-        "awardsPrice": 9013
+        "awardsPrice": 9013,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "xhHIbFIZnSyiYakzPQMN",
@@ -3751,7 +4095,8 @@
         "updatedAt": "2022/09/20 02:36:04",
         "storyTitle": "Francis Reeves",
         "pageViews": 1655,
-        "awardsPrice": 8504
+        "awardsPrice": 8504,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "xhHIbFIZnSyiYakzPQMN",
@@ -3761,7 +4106,8 @@
         "updatedAt": "2022/09/12 02:35:56",
         "storyTitle": "Barbara Jenkins",
         "pageViews": 473,
-        "awardsPrice": 9688
+        "awardsPrice": 9688,
+        "userId": "rgdxbVz"
       }
     ]
   },
@@ -3777,7 +4123,8 @@
         "storyTitle": "Nelle Paul",
         "pageViews": 542,
         "awardsPrice": 20484,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "fhaSwGjxJErMZhl",
@@ -3787,7 +4134,8 @@
         "updatedAt": "2022/09/05 05:56:19",
         "storyTitle": "Andrew Dunn",
         "pageViews": 449,
-        "awardsPrice": 4671
+        "awardsPrice": 4671,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "fhaSwGjxJErMZhl",
@@ -3797,7 +4145,8 @@
         "updatedAt": "2022/09/27 20:11:46",
         "storyTitle": "Eric Conner",
         "pageViews": 344,
-        "awardsPrice": 6048
+        "awardsPrice": 6048,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "fhaSwGjxJErMZhl",
@@ -3807,7 +4156,8 @@
         "updatedAt": "2022/09/30 02:20:33",
         "storyTitle": "Gordon Alexander",
         "pageViews": 1549,
-        "awardsPrice": 10621
+        "awardsPrice": 10621,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "fhaSwGjxJErMZhl",
@@ -3817,7 +4167,8 @@
         "updatedAt": "2022/09/16 20:29:13",
         "storyTitle": "Darrell Santos",
         "pageViews": 1294,
-        "awardsPrice": 15287
+        "awardsPrice": 15287,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "fhaSwGjxJErMZhl",
@@ -3827,7 +4178,8 @@
         "updatedAt": "2022/09/11 10:28:22",
         "storyTitle": "Justin Arnold",
         "pageViews": 1696,
-        "awardsPrice": 10378
+        "awardsPrice": 10378,
+        "userId": "QjWAdUS"
       }
     ]
   },
@@ -3843,7 +4195,8 @@
         "storyTitle": "Henrietta Hammond",
         "pageViews": 696,
         "awardsPrice": 2098,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "BaJUz",
@@ -3853,7 +4206,8 @@
         "updatedAt": "2022/09/15 03:02:36",
         "storyTitle": "Caroline Jordan",
         "pageViews": 416,
-        "awardsPrice": 20056
+        "awardsPrice": 20056,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "BaJUz",
@@ -3863,7 +4217,8 @@
         "updatedAt": "2022/09/03 06:15:36",
         "storyTitle": "Alta Zimmerman",
         "pageViews": 715,
-        "awardsPrice": 13430
+        "awardsPrice": 13430,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "BaJUz",
@@ -3873,7 +4228,8 @@
         "updatedAt": "2022/09/09 18:51:18",
         "storyTitle": "Esther McDonald",
         "pageViews": 1314,
-        "awardsPrice": 14273
+        "awardsPrice": 14273,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "BaJUz",
@@ -3883,7 +4239,8 @@
         "updatedAt": "2022/09/05 10:29:58",
         "storyTitle": "Micheal Bates",
         "pageViews": 846,
-        "awardsPrice": 7565
+        "awardsPrice": 7565,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "BaJUz",
@@ -3893,7 +4250,8 @@
         "updatedAt": "2022/09/17 08:18:32",
         "storyTitle": "Ella Bates",
         "pageViews": 1027,
-        "awardsPrice": 17403
+        "awardsPrice": 17403,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "BaJUz",
@@ -3903,7 +4261,8 @@
         "updatedAt": "2022/09/07 08:09:11",
         "storyTitle": "Lottie Garza",
         "pageViews": 1948,
-        "awardsPrice": 7941
+        "awardsPrice": 7941,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "BaJUz",
@@ -3913,7 +4272,8 @@
         "updatedAt": "2022/09/07 03:12:57",
         "storyTitle": "Cora Gibson",
         "pageViews": 812,
-        "awardsPrice": 12742
+        "awardsPrice": 12742,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -3929,7 +4289,8 @@
         "storyTitle": "Eunice Bradley",
         "pageViews": 468,
         "awardsPrice": 20947,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "OraCBIndhIwlHLex",
@@ -3939,7 +4300,8 @@
         "updatedAt": "2022/09/28 07:01:25",
         "storyTitle": "Belle Turner",
         "pageViews": 886,
-        "awardsPrice": 7507
+        "awardsPrice": 7507,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "OraCBIndhIwlHLex",
@@ -3949,7 +4311,8 @@
         "updatedAt": "2022/09/09 16:37:28",
         "storyTitle": "Alfred Nash",
         "pageViews": 989,
-        "awardsPrice": 2068
+        "awardsPrice": 2068,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "OraCBIndhIwlHLex",
@@ -3959,7 +4322,8 @@
         "updatedAt": "2022/09/28 23:08:52",
         "storyTitle": "Jon Graham",
         "pageViews": 1490,
-        "awardsPrice": 1909
+        "awardsPrice": 1909,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "OraCBIndhIwlHLex",
@@ -3969,7 +4333,8 @@
         "updatedAt": "2022/09/25 21:11:19",
         "storyTitle": "Jared Gregory",
         "pageViews": 735,
-        "awardsPrice": 9090
+        "awardsPrice": 9090,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "OraCBIndhIwlHLex",
@@ -3979,7 +4344,8 @@
         "updatedAt": "2022/09/11 21:16:13",
         "storyTitle": "Gussie Harris",
         "pageViews": 362,
-        "awardsPrice": 10642
+        "awardsPrice": 10642,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "OraCBIndhIwlHLex",
@@ -3989,7 +4355,8 @@
         "updatedAt": "2022/09/25 20:04:45",
         "storyTitle": "Louis Tucker",
         "pageViews": 1774,
-        "awardsPrice": 1435
+        "awardsPrice": 1435,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "OraCBIndhIwlHLex",
@@ -3999,7 +4366,8 @@
         "updatedAt": "2022/09/16 00:59:46",
         "storyTitle": "Amanda Barker",
         "pageViews": 1649,
-        "awardsPrice": 6174
+        "awardsPrice": 6174,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "OraCBIndhIwlHLex",
@@ -4009,7 +4377,8 @@
         "updatedAt": "2022/09/01 09:20:41",
         "storyTitle": "Georgia Richardson",
         "pageViews": 1703,
-        "awardsPrice": 11981
+        "awardsPrice": 11981,
+        "userId": "rgdxbVz"
       }
     ]
   },
@@ -4025,7 +4394,8 @@
         "storyTitle": "Alan Diaz",
         "pageViews": 352,
         "awardsPrice": 15800,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "xOqMvf",
@@ -4035,7 +4405,8 @@
         "updatedAt": "2022/09/16 02:11:13",
         "storyTitle": "Mina Griffith",
         "pageViews": 1828,
-        "awardsPrice": 5297
+        "awardsPrice": 5297,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "xOqMvf",
@@ -4045,7 +4416,8 @@
         "updatedAt": "2022/09/06 00:01:38",
         "storyTitle": "Brandon Berry",
         "pageViews": 1330,
-        "awardsPrice": 12298
+        "awardsPrice": 12298,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "xOqMvf",
@@ -4055,7 +4427,8 @@
         "updatedAt": "2022/09/24 18:39:48",
         "storyTitle": "Martin Owens",
         "pageViews": 1472,
-        "awardsPrice": 1880
+        "awardsPrice": 1880,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "xOqMvf",
@@ -4065,7 +4438,8 @@
         "updatedAt": "2022/09/12 21:46:02",
         "storyTitle": "Madge Underwood",
         "pageViews": 916,
-        "awardsPrice": 20015
+        "awardsPrice": 20015,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "xOqMvf",
@@ -4075,7 +4449,8 @@
         "updatedAt": "2022/09/26 16:18:58",
         "storyTitle": "Isabel Mendez",
         "pageViews": 1091,
-        "awardsPrice": 9485
+        "awardsPrice": 9485,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "xOqMvf",
@@ -4085,7 +4460,8 @@
         "updatedAt": "2022/09/21 14:16:46",
         "storyTitle": "Maria Pope",
         "pageViews": 1162,
-        "awardsPrice": 9054
+        "awardsPrice": 9054,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "xOqMvf",
@@ -4095,7 +4471,8 @@
         "updatedAt": "2022/09/17 14:01:00",
         "storyTitle": "Chris Wilson",
         "pageViews": 1484,
-        "awardsPrice": 13824
+        "awardsPrice": 13824,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "xOqMvf",
@@ -4105,7 +4482,8 @@
         "updatedAt": "2022/09/22 22:19:08",
         "storyTitle": "Grace Riley",
         "pageViews": 648,
-        "awardsPrice": 5712
+        "awardsPrice": 5712,
+        "userId": "SmfNTBD"
       }
     ]
   },
@@ -4121,7 +4499,8 @@
         "storyTitle": "Lily Stephens",
         "pageViews": 1466,
         "awardsPrice": 19907,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "GDBjodW",
@@ -4131,7 +4510,8 @@
         "updatedAt": "2022/09/01 03:02:04",
         "storyTitle": "Jeffery Simmons",
         "pageViews": 1078,
-        "awardsPrice": 10095
+        "awardsPrice": 10095,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "GDBjodW",
@@ -4141,7 +4521,8 @@
         "updatedAt": "2022/09/26 21:36:23",
         "storyTitle": "Esther Freeman",
         "pageViews": 1164,
-        "awardsPrice": 17280
+        "awardsPrice": 17280,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "GDBjodW",
@@ -4151,7 +4532,8 @@
         "updatedAt": "2022/09/02 10:57:23",
         "storyTitle": "Jane Salazar",
         "pageViews": 1804,
-        "awardsPrice": 15265
+        "awardsPrice": 15265,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "GDBjodW",
@@ -4161,7 +4543,8 @@
         "updatedAt": "2022/09/22 00:40:33",
         "storyTitle": "Derek Estrada",
         "pageViews": 1467,
-        "awardsPrice": 4228
+        "awardsPrice": 4228,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "GDBjodW",
@@ -4171,7 +4554,8 @@
         "updatedAt": "2022/09/28 02:22:07",
         "storyTitle": "Adam Freeman",
         "pageViews": 1907,
-        "awardsPrice": 14577
+        "awardsPrice": 14577,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "GDBjodW",
@@ -4181,7 +4565,8 @@
         "updatedAt": "2022/09/07 12:00:21",
         "storyTitle": "Lettie Adkins",
         "pageViews": 373,
-        "awardsPrice": 12674
+        "awardsPrice": 12674,
+        "userId": "LjzqRfU"
       }
     ]
   },
@@ -4197,7 +4582,8 @@
         "storyTitle": "Carolyn Aguilar",
         "pageViews": 1078,
         "awardsPrice": 1674,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "IOyeTWARA",
@@ -4207,7 +4593,8 @@
         "updatedAt": "2022/09/02 17:39:32",
         "storyTitle": "Antonio Francis",
         "pageViews": 1518,
-        "awardsPrice": 10860
+        "awardsPrice": 10860,
+        "userId": "rgdxbVz"
       }
     ]
   },
@@ -4223,7 +4610,8 @@
         "storyTitle": "Austin Cole",
         "pageViews": 376,
         "awardsPrice": 8032,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "SrGnXPfjye",
@@ -4233,7 +4621,8 @@
         "updatedAt": "2022/09/21 17:24:35",
         "storyTitle": "Gussie May",
         "pageViews": 938,
-        "awardsPrice": 15459
+        "awardsPrice": 15459,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "SrGnXPfjye",
@@ -4243,7 +4632,8 @@
         "updatedAt": "2022/09/27 03:12:06",
         "storyTitle": "Erik Weber",
         "pageViews": 602,
-        "awardsPrice": 14508
+        "awardsPrice": 14508,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "SrGnXPfjye",
@@ -4253,7 +4643,8 @@
         "updatedAt": "2022/09/13 19:15:30",
         "storyTitle": "Edgar Graves",
         "pageViews": 572,
-        "awardsPrice": 19894
+        "awardsPrice": 19894,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "SrGnXPfjye",
@@ -4263,7 +4654,8 @@
         "updatedAt": "2022/09/30 09:42:58",
         "storyTitle": "Iva Bass",
         "pageViews": 1790,
-        "awardsPrice": 4565
+        "awardsPrice": 4565,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "SrGnXPfjye",
@@ -4273,7 +4665,8 @@
         "updatedAt": "2022/09/22 02:19:42",
         "storyTitle": "Genevieve McBride",
         "pageViews": 1210,
-        "awardsPrice": 20030
+        "awardsPrice": 20030,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "SrGnXPfjye",
@@ -4283,7 +4676,8 @@
         "updatedAt": "2022/09/12 21:47:27",
         "storyTitle": "Gene Adams",
         "pageViews": 366,
-        "awardsPrice": 15098
+        "awardsPrice": 15098,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "SrGnXPfjye",
@@ -4293,7 +4687,8 @@
         "updatedAt": "2022/09/04 18:02:17",
         "storyTitle": "Randy Love",
         "pageViews": 1118,
-        "awardsPrice": 20593
+        "awardsPrice": 20593,
+        "userId": "XxECYbo"
       }
     ]
   },
@@ -4309,7 +4704,8 @@
         "storyTitle": "Pearl Santos",
         "pageViews": 364,
         "awardsPrice": 2729,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "avDrfEypnwmmPzcNkw",
@@ -4319,7 +4715,8 @@
         "updatedAt": "2022/09/17 19:03:13",
         "storyTitle": "Samuel Fletcher",
         "pageViews": 117,
-        "awardsPrice": 1864
+        "awardsPrice": 1864,
+        "userId": "UhEsGNZ"
       },
       {
         "wineryId": "avDrfEypnwmmPzcNkw",
@@ -4329,7 +4726,8 @@
         "updatedAt": "2022/09/28 09:58:54",
         "storyTitle": "Thomas Payne",
         "pageViews": 1623,
-        "awardsPrice": 15487
+        "awardsPrice": 15487,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "avDrfEypnwmmPzcNkw",
@@ -4339,7 +4737,8 @@
         "updatedAt": "2022/09/10 12:10:08",
         "storyTitle": "Jimmy McGuire",
         "pageViews": 473,
-        "awardsPrice": 6001
+        "awardsPrice": 6001,
+        "userId": "RpfdGqk"
       }
     ]
   },
@@ -4355,7 +4754,8 @@
         "storyTitle": "Ronnie Bowman",
         "pageViews": 998,
         "awardsPrice": 13909,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "sPBLYjH",
@@ -4365,7 +4765,8 @@
         "updatedAt": "2022/09/30 22:23:59",
         "storyTitle": "Amanda Chavez",
         "pageViews": 1210,
-        "awardsPrice": 13797
+        "awardsPrice": 13797,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "sPBLYjH",
@@ -4375,7 +4776,8 @@
         "updatedAt": "2022/09/26 21:34:42",
         "storyTitle": "Jacob Keller",
         "pageViews": 896,
-        "awardsPrice": 14701
+        "awardsPrice": 14701,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "sPBLYjH",
@@ -4385,7 +4787,8 @@
         "updatedAt": "2022/09/11 11:44:34",
         "storyTitle": "Sallie May",
         "pageViews": 1497,
-        "awardsPrice": 17497
+        "awardsPrice": 17497,
+        "userId": "LjzqRfU"
       }
     ]
   },
@@ -4401,7 +4804,8 @@
         "storyTitle": "Glen Jimenez",
         "pageViews": 735,
         "awardsPrice": 17878,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "SXvJCjoGMHu",
@@ -4411,7 +4815,8 @@
         "updatedAt": "2022/09/26 09:36:01",
         "storyTitle": "Cole Reed",
         "pageViews": 994,
-        "awardsPrice": 5568
+        "awardsPrice": 5568,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "SXvJCjoGMHu",
@@ -4421,7 +4826,8 @@
         "updatedAt": "2022/09/08 11:42:31",
         "storyTitle": "Mary Dixon",
         "pageViews": 978,
-        "awardsPrice": 16515
+        "awardsPrice": 16515,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "SXvJCjoGMHu",
@@ -4431,7 +4837,8 @@
         "updatedAt": "2022/09/08 11:15:10",
         "storyTitle": "Myrtle Bailey",
         "pageViews": 1539,
-        "awardsPrice": 4645
+        "awardsPrice": 4645,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "SXvJCjoGMHu",
@@ -4441,7 +4848,8 @@
         "updatedAt": "2022/09/04 00:47:54",
         "storyTitle": "Clarence Vaughn",
         "pageViews": 1957,
-        "awardsPrice": 15369
+        "awardsPrice": 15369,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "SXvJCjoGMHu",
@@ -4451,7 +4859,8 @@
         "updatedAt": "2022/09/18 07:50:18",
         "storyTitle": "Chad Morgan",
         "pageViews": 1494,
-        "awardsPrice": 3295
+        "awardsPrice": 3295,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "SXvJCjoGMHu",
@@ -4461,7 +4870,8 @@
         "updatedAt": "2022/09/02 20:41:43",
         "storyTitle": "Tom Webb",
         "pageViews": 518,
-        "awardsPrice": 5395
+        "awardsPrice": 5395,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -4477,7 +4887,8 @@
         "storyTitle": "Cynthia Harvey",
         "pageViews": 1707,
         "awardsPrice": 19251,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "FMDowfstQRga",
@@ -4487,7 +4898,8 @@
         "updatedAt": "2022/09/30 07:50:10",
         "storyTitle": "Mina Chambers",
         "pageViews": 655,
-        "awardsPrice": 7882
+        "awardsPrice": 7882,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "FMDowfstQRga",
@@ -4497,7 +4909,8 @@
         "updatedAt": "2022/09/29 05:22:06",
         "storyTitle": "Henrietta Barker",
         "pageViews": 1133,
-        "awardsPrice": 7473
+        "awardsPrice": 7473,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "FMDowfstQRga",
@@ -4507,7 +4920,8 @@
         "updatedAt": "2022/09/23 22:31:12",
         "storyTitle": "Donald Hoffman",
         "pageViews": 845,
-        "awardsPrice": 18168
+        "awardsPrice": 18168,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "FMDowfstQRga",
@@ -4517,7 +4931,8 @@
         "updatedAt": "2022/09/10 02:48:57",
         "storyTitle": "Nell Buchanan",
         "pageViews": 569,
-        "awardsPrice": 7940
+        "awardsPrice": 7940,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "FMDowfstQRga",
@@ -4527,7 +4942,8 @@
         "updatedAt": "2022/09/19 03:48:02",
         "storyTitle": "George Valdez",
         "pageViews": 1850,
-        "awardsPrice": 6617
+        "awardsPrice": 6617,
+        "userId": "RpfdGqk"
       }
     ]
   },
@@ -4543,7 +4959,8 @@
         "storyTitle": "Isabelle Swanson",
         "pageViews": 269,
         "awardsPrice": 7955,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "PnevGWcKhPYJiIunhnl",
@@ -4553,7 +4970,8 @@
         "updatedAt": "2022/09/08 18:41:58",
         "storyTitle": "Rosie Burton",
         "pageViews": 1667,
-        "awardsPrice": 7417
+        "awardsPrice": 7417,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "PnevGWcKhPYJiIunhnl",
@@ -4563,7 +4981,8 @@
         "updatedAt": "2022/09/20 11:19:47",
         "storyTitle": "Leroy Collier",
         "pageViews": 848,
-        "awardsPrice": 5819
+        "awardsPrice": 5819,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "PnevGWcKhPYJiIunhnl",
@@ -4573,7 +4992,8 @@
         "updatedAt": "2022/09/13 07:29:42",
         "storyTitle": "Eugenia Harper",
         "pageViews": 139,
-        "awardsPrice": 12234
+        "awardsPrice": 12234,
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "PnevGWcKhPYJiIunhnl",
@@ -4583,7 +5003,8 @@
         "updatedAt": "2022/09/18 05:48:37",
         "storyTitle": "Maude Herrera",
         "pageViews": 1797,
-        "awardsPrice": 3429
+        "awardsPrice": 3429,
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "PnevGWcKhPYJiIunhnl",
@@ -4593,7 +5014,8 @@
         "updatedAt": "2022/09/17 10:32:15",
         "storyTitle": "Dustin Copeland",
         "pageViews": 845,
-        "awardsPrice": 16570
+        "awardsPrice": 16570,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "PnevGWcKhPYJiIunhnl",
@@ -4603,7 +5025,8 @@
         "updatedAt": "2022/09/06 18:44:38",
         "storyTitle": "Olivia Doyle",
         "pageViews": 492,
-        "awardsPrice": 4961
+        "awardsPrice": 4961,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -4619,7 +5042,8 @@
         "storyTitle": "Annie Schultz",
         "pageViews": 414,
         "awardsPrice": 13686,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "HZTUjKipnCwDgX",
@@ -4629,7 +5053,8 @@
         "updatedAt": "2022/09/06 07:02:40",
         "storyTitle": "Elsie Brown",
         "pageViews": 1528,
-        "awardsPrice": 11790
+        "awardsPrice": 11790,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "HZTUjKipnCwDgX",
@@ -4639,7 +5064,8 @@
         "updatedAt": "2022/09/02 17:54:34",
         "storyTitle": "Alma Sherman",
         "pageViews": 1484,
-        "awardsPrice": 17569
+        "awardsPrice": 17569,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "HZTUjKipnCwDgX",
@@ -4649,7 +5075,8 @@
         "updatedAt": "2022/09/01 00:38:53",
         "storyTitle": "Sophia Ortega",
         "pageViews": 1762,
-        "awardsPrice": 4308
+        "awardsPrice": 4308,
+        "userId": "avDLMsS"
       },
       {
         "wineryId": "HZTUjKipnCwDgX",
@@ -4659,7 +5086,8 @@
         "updatedAt": "2022/09/10 20:18:46",
         "storyTitle": "Josephine Estrada",
         "pageViews": 1353,
-        "awardsPrice": 18876
+        "awardsPrice": 18876,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "HZTUjKipnCwDgX",
@@ -4669,7 +5097,8 @@
         "updatedAt": "2022/09/05 17:42:49",
         "storyTitle": "Nell Ellis",
         "pageViews": 1989,
-        "awardsPrice": 12112
+        "awardsPrice": 12112,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "HZTUjKipnCwDgX",
@@ -4679,7 +5108,8 @@
         "updatedAt": "2022/09/04 10:42:02",
         "storyTitle": "Eugene Wilson",
         "pageViews": 316,
-        "awardsPrice": 12491
+        "awardsPrice": 12491,
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "HZTUjKipnCwDgX",
@@ -4689,7 +5119,8 @@
         "updatedAt": "2022/09/22 20:29:33",
         "storyTitle": "Harriet Lyons",
         "pageViews": 1678,
-        "awardsPrice": 16598
+        "awardsPrice": 16598,
+        "userId": "SmfNTBD"
       },
       {
         "wineryId": "HZTUjKipnCwDgX",
@@ -4699,7 +5130,8 @@
         "updatedAt": "2022/09/16 10:20:59",
         "storyTitle": "Catherine Reese",
         "pageViews": 1675,
-        "awardsPrice": 11426
+        "awardsPrice": 11426,
+        "userId": "avDLMsS"
       }
     ]
   },
@@ -4715,7 +5147,8 @@
         "storyTitle": "Mable Perkins",
         "pageViews": 349,
         "awardsPrice": 15299,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "XxECYbo"
       },
       {
         "wineryId": "hAcYgX",
@@ -4725,7 +5158,8 @@
         "updatedAt": "2022/09/15 16:54:45",
         "storyTitle": "Bertha Mills",
         "pageViews": 1844,
-        "awardsPrice": 19431
+        "awardsPrice": 19431,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "hAcYgX",
@@ -4735,7 +5169,8 @@
         "updatedAt": "2022/09/05 07:25:41",
         "storyTitle": "Chase Moore",
         "pageViews": 1629,
-        "awardsPrice": 1548
+        "awardsPrice": 1548,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "hAcYgX",
@@ -4745,7 +5180,8 @@
         "updatedAt": "2022/09/16 20:52:30",
         "storyTitle": "Eric Padilla",
         "pageViews": 413,
-        "awardsPrice": 8943
+        "awardsPrice": 8943,
+        "userId": "XxECYbo"
       }
     ]
   },
@@ -4761,7 +5197,8 @@
         "storyTitle": "Sylvia Fletcher",
         "pageViews": 847,
         "awardsPrice": 2930,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "QjWAdUS"
       },
       {
         "wineryId": "DpPTVp",
@@ -4771,7 +5208,8 @@
         "updatedAt": "2022/09/29 09:50:32",
         "storyTitle": "Anne Greer",
         "pageViews": 859,
-        "awardsPrice": 4958
+        "awardsPrice": 4958,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "DpPTVp",
@@ -4781,7 +5219,8 @@
         "updatedAt": "2022/09/21 19:28:39",
         "storyTitle": "Juan Bowen",
         "pageViews": 842,
-        "awardsPrice": 20991
+        "awardsPrice": 20991,
+        "userId": "LjzqRfU"
       },
       {
         "wineryId": "DpPTVp",
@@ -4791,7 +5230,8 @@
         "updatedAt": "2022/09/26 00:29:36",
         "storyTitle": "Donald Gross",
         "pageViews": 770,
-        "awardsPrice": 9280
+        "awardsPrice": 9280,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "DpPTVp",
@@ -4801,7 +5241,8 @@
         "updatedAt": "2022/09/19 08:25:23",
         "storyTitle": "Amanda Brady",
         "pageViews": 110,
-        "awardsPrice": 3556
+        "awardsPrice": 3556,
+        "userId": "LjzqRfU"
       }
     ]
   },
@@ -4817,7 +5258,8 @@
         "storyTitle": "Joel Hammond",
         "pageViews": 268,
         "awardsPrice": 13183,
-        "key": "${d.wineryId}"
+        "key": "${d.wineryId}",
+        "userId": "rgdxbVz"
       },
       {
         "wineryId": "SEFrbUVSyqQ",
@@ -4827,7 +5269,8 @@
         "updatedAt": "2022/09/10 19:11:31",
         "storyTitle": "Amanda Daniel",
         "pageViews": 806,
-        "awardsPrice": 18935
+        "awardsPrice": 18935,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "SEFrbUVSyqQ",
@@ -4837,7 +5280,8 @@
         "updatedAt": "2022/09/02 11:45:21",
         "storyTitle": "Rosalie Harris",
         "pageViews": 285,
-        "awardsPrice": 17048
+        "awardsPrice": 17048,
+        "userId": "RpfdGqk"
       },
       {
         "wineryId": "SEFrbUVSyqQ",
@@ -4847,7 +5291,8 @@
         "updatedAt": "2022/09/10 10:03:54",
         "storyTitle": "Genevieve Olson",
         "pageViews": 382,
-        "awardsPrice": 6548
+        "awardsPrice": 6548,
+        "userId": "rgdxbVz"
       }
     ]
   }
