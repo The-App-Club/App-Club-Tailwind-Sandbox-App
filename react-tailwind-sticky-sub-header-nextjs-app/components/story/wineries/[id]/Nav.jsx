@@ -76,6 +76,8 @@ const MenuItem = ({path, menuTitle, icon}) => {
 };
 
 const Nav = () => {
+  const router = useRouter();
+  const {id} = router.query;
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -101,7 +103,7 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={'/story/wineries'}
+          path={`/story/wineries/${id}`}
           menuTitle={'Winery Story'}
           icon={() => {
             return <GiGrapes size={24} />;
