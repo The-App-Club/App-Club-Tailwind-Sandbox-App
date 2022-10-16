@@ -11,7 +11,7 @@ import {useRouter} from 'next/router';
 import {useMemo} from 'react';
 import dataWines from '@/data/wines.json';
 import dataWineries from '@/data/wineries.json';
-import dataStories from '@/data/stories.json';
+import dataWineStories from '@/data/wineStories.json';
 import dataWineryStories from '@/data/wineryStories.json';
 
 import Spacer from '@/components/Spacer';

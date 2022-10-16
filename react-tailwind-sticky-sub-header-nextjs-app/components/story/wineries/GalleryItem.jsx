@@ -12,7 +12,7 @@ import {default as numbro} from 'numbro';
 import {useMemo} from 'react';
 
 import dataWines from '@/data/wines.json';
-import dataStories from '@/data/stories.json';
+import dataWineStories from '@/data/wineStories.json';
 import dataWineries from '@/data/wineries.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import {formatRelativeTime} from '@/utils/dateUtil';

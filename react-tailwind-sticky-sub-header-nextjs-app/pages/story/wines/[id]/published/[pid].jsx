@@ -8,7 +8,7 @@ import {useMemo} from 'react';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 import dataWines from '@/data/wines.json';
-import dataStories from '@/data/stories.json';
+import dataWineStories from '@/data/wineStories.json';
 import Spacer from '@/components/Spacer';
 import Header from '@/components/story/wines/[id]/published/[pid]/Header';
 import Sidebar from '@/components/story/wines/[id]/published/[pid]/Sidebar';
@@ -20,7 +20,7 @@ const PublishedStory = () => {
   const {id, pid} = router.query;
 
   const item = useMemo(() => {
-    return dataStories.find((d) => {
+    return dataWineStories.find((d) => {
       return d.wineId === Number(id);
     });
   }, [id]);
@@ -32,7 +32,7 @@ const PublishedStory = () => {
   }, [id]);
 
   const activeStory = useMemo(() => {
-    const data = dataStories.find((d) => {
+    const data = dataWineStories.find((d) => {
       return d.wineId === Number(id);
     });
     if (!data) {

@@ -10,7 +10,7 @@ import hamburgerState from '@/stores/hamburgerStore';
 import dataWines from '@/data/wines.json';
 import dataWineries from '@/data/wineries.json';
 
-import dataStories from '@/data/stories.json';
+import dataWineStories from '@/data/wineStories.json';
 import dataWineryStories from '@/data/wineryStories.json';
 import Spacer from '@/components/Spacer';
 import Header from '@/components/story/wineries/[id]/published/[pid]/Header';

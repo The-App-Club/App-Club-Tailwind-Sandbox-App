@@ -10,7 +10,7 @@ import {motion} from 'framer-motion';
 import Header from '@/components/story/wineries/[id]/Header';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
-import dataStories from '@/data/stories.json';
+import dataWineStories from '@/data/wineStories.json';
 import dataWines from '@/data/wines.json';
 import Spacer from '@/components/Spacer';
 import wineState from '@/stores/wineStore';
@@ -23,7 +23,7 @@ const Story = () => {
   const {id} = router.query;
 
   const item = useMemo(() => {
-    return dataStories.find((item) => {
+    return dataWineStories.find((item) => {
       return item.wineId === Number(id);
     });
   }, [id]);

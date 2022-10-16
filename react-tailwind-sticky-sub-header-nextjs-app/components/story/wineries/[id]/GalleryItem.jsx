@@ -9,7 +9,7 @@ import {
   MdUpdate,
 } from 'react-icons/md';
 import dataWines from '@/data/wines.json';
-import dataStories from '@/data/stories.json';
+import dataWineStories from '@/data/wineStories.json';
 import dataWineries from '@/data/wineries.json';
 import {useRouter} from 'next/router';
 import locationSelectorState from '@/stores/locationSelectorStore';

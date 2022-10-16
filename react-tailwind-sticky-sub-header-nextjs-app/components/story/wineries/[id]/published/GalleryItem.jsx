@@ -16,7 +16,7 @@ import {useMemo} from 'react';
 import {FiEye} from 'react-icons/fi';
 
 import dataWines from '@/data/wines.json';
-import dataStories from '@/data/stories.json';
+import dataWineStories from '@/data/wineStories.json';
 import dataWineries from '@/data/wineries.json';
 import GalleryItemFav from '@/components/story/wineries/[id]/published/GalleryItemFav';
 import locationSelectorState from '@/stores/locationSelectorStore';

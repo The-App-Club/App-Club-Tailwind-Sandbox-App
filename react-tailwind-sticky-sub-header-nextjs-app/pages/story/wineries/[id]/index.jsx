@@ -10,7 +10,7 @@ import {motion} from 'framer-motion';
 import Header from '@/components/story/wineries/[id]/Header';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
-import dataStories from '@/data/stories.json';
+import dataWineStories from '@/data/wineStories.json';
 import dataWineryStories from '@/data/wineryStories.json';
 
 import dataWines from '@/data/wines.json';

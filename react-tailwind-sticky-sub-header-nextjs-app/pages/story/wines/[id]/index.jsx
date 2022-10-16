@@ -6,7 +6,7 @@ import capitalize from 'capitalize-the-first-letter';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
-import dataStories from '@/data/stories.json';
+import dataWineStories from '@/data/wineStories.json';
 import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import Spacer from '@/components/Spacer';
@@ -24,7 +24,7 @@ const Story = () => {
   const {id} = router.query;
 
   const item = useMemo(() => {
-    return dataStories.find((item) => {
+    return dataWineStories.find((item) => {
       return item.wineId === Number(id);
     });
   }, [id]);
