@@ -53,8 +53,8 @@ const routes = [
   },
   {
     pathName: `/story/wines/[id]/published/[pid]`,
-    pageName: `Published Story`,
-    activeMenuName: `Published Story`,
+    pageName: `Published Wine Story`,
+    activeMenuName: `Published Wine Story`,
   },
   {
     pathName: `/story/wines/[id]/create`,
@@ -83,8 +83,8 @@ const routes = [
   },
   {
     pathName: `/story/wineries/[id]/published/[pid]`,
-    pageName: `Published Story`,
-    activeMenuName: `Published Story`,
+    pageName: `Published Winery Story`,
+    activeMenuName: `Published Winery Story`,
   },
   {
     pathName: `/story/wineries/[id]/create`,
