@@ -7,6 +7,7 @@ import {useRecoilState} from 'recoil';
 
 import NavMarkedFav from '@/components/story/wines/[id]/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
+import {BsPencilSquare} from 'react-icons/bs';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
@@ -107,6 +108,13 @@ const Nav = () => {
           menuTitle={'Wine Story'}
           icon={() => {
             return <GiWineBottle size={24} />;
+          }}
+        />
+        <MenuItem
+          path={`/story/wines/${id}/create`}
+          menuTitle={'Create Wine Story'}
+          icon={() => {
+            return <BsPencilSquare size={24} />;
           }}
         />
       </motion.ul>
