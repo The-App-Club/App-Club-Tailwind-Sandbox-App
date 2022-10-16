@@ -71,7 +71,7 @@ const Nav = () => {
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
 
-  const {id} = router.query;
+  const {id, pid} = router.query;
 
   const motionConfig = {
     hidden: {opacity: 0},
@@ -115,7 +115,7 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={`/story/wines/${activeWine.id}/published`}
+          path={`/story/wines/${activeWine.id}/published/${pid}`}
           menuTitle={'Published Wine Story'}
           icon={() => {
             return <MdOutlineHistory size={24} />;

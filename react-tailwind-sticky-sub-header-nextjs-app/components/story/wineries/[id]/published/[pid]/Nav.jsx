@@ -113,7 +113,7 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={`/story/wineries/${activeWinery.wineryId}/published`}
+          path={`/story/wineries/${activeWinery.wineryId}/published/${pid}`}
           menuTitle={'Published Winery Story'}
           icon={() => {
             return <MdOutlineHistory size={24} />;
