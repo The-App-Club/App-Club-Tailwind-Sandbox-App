@@ -8,6 +8,8 @@ import dataWineries from '@/data/wineries.json';
 import ProductFav from '@/components/story/wineries/[id]/published/[pid]/ProductFav';
 import ProductCarted from '@/components/story/wineries/[id]/published/[pid]/ProductCarted';
 import {motion} from 'framer-motion';
+import {useRecoilState} from 'recoil';
+import locationSelectorState from '@/stores/locationSelectorStore';
 
 const motionConfig = {
   initial: {
@@ -29,6 +31,7 @@ const motionConfig = {
 
 const Product = ({item}) => {
   const router = useRouter();
+  const [location, setLocation] = useRecoilState(locationSelectorState);
 
   if (!item) {
     return;

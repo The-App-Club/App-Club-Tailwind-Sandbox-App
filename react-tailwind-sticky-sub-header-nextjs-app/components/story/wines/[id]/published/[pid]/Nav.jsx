@@ -10,7 +10,7 @@ import {useRecoilState, useRecoilValue} from 'recoil';
 import themeState from '@/stores/themeStore';
 import {useRouter} from 'next/router';
 import sidebarState from '@/stores/sidebarStore';
-import {useEffect, useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import {FiSettings} from 'react-icons/fi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 
@@ -21,6 +21,7 @@ import {FaHatCowboySide} from 'react-icons/fa';
 import {MdOutlineContactMail} from 'react-icons/md';
 import {MdRssFeed} from 'react-icons/md';
 import {BsPencilSquare} from 'react-icons/bs';
+import dataWines from '@/data/wines.json';
 import wineState from '@/stores/wineStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
@@ -83,6 +84,11 @@ const MenuItem = ({path, menuTitle, icon}) => {
 };
 
 const Nav = () => {
+  const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+
+  const {id} = router.query;
+
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -92,13 +98,23 @@ const Nav = () => {
       },
     },
   };
-  const {activeWine} = useRecoilValue(wineState);
-  const [isClient, setIsClient] = useState(false);
+
+  const activeWine = useMemo(() => {
+    return dataWines.find((item) => {
+      return item.id === Number(id);
+    });
+  }, [id]);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
+
+  if (!activeWine) {
+    return;
+  }
+
   return (
     <motion.nav className="relative w-full">
       <motion.ul
@@ -115,7 +131,7 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={`/story/${activeWine.id}/published`}
+          path={`/story/wines/${activeWine.id}/published`}
           menuTitle={'Published Story'}
           icon={() => {
             return <MdOutlineHistory size={24} />;

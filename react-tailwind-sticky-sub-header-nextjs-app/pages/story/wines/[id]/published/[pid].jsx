@@ -26,30 +26,22 @@ const PublishedStory = () => {
   }, [id]);
 
   const activeWine = useMemo(() => {
-    if (!item) {
-      return;
-    }
     return dataWines.find((d) => {
-      return d.id === item.wineId;
+      return d.id === Number(id);
     });
-  }, [item]);
+  }, [id]);
 
   const activeStory = useMemo(() => {
-    if (!item) {
+    const data = dataStories.find((d) => {
+      return d.wineId === Number(id);
+    });
+    if (!data) {
       return;
     }
-    return dataStories
-      .find((d) => {
-        return d.wineId === item.wineId;
-      })
-      .stories.find((d) => {
-        return d.storyId === pid;
-      });
-  }, [item, pid]);
-
-  if (!item) {
-    return;
-  }
+    return data.stories.find((d) => {
+      return d.storyId === pid;
+    });
+  }, [id, pid]);
 
   if (!activeWine) {
     return;

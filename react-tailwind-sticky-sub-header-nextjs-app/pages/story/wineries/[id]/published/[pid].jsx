@@ -50,12 +50,6 @@ const PublishedStory = () => {
     return;
   }
 
-  // console.log(activeWinery);
-
-  // console.log(activeStory);
-
-  // return null;
-
   return (
     <>
       <Sidebar />

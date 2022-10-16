@@ -102,13 +102,6 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={'/story'}
-          menuTitle={'Select Story'}
-          icon={() => {
-            return <AiOutlineSelect size={24} />;
-          }}
-        />
-        <MenuItem
           path={'/story/wines'}
           menuTitle={'Wine Story'}
           icon={() => {

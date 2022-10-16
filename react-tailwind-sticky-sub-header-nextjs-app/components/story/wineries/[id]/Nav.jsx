@@ -102,13 +102,6 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={'/story/wineries'}
-          menuTitle={'Winery Story'}
-          icon={() => {
-            return <GiGrapes size={24} />;
-          }}
-        />
-        <MenuItem
           path={'/story/wines'}
           menuTitle={'Wine Story'}
           icon={() => {
@@ -116,8 +109,8 @@ const Nav = () => {
           }}
         />
         <MenuItem
-          path={'/story/favorite'}
-          menuTitle={'Favorite Story'}
+          path={'/story/favorite/wines'}
+          menuTitle={'Favorite Wine Story'}
           icon={() => {
             return <MdFavoriteBorder size={24} />;
           }}
