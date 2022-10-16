@@ -6,7 +6,7 @@ import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 import {MdFavoriteBorder} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import NavMarkedFav from '@/components/story/NavMarkedFav';
+import NavMarkedFav from '@/components/story/wines/[id]/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
@@ -33,7 +33,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
   }, []);
 
   const renderShortHandMetrics = () => {
-    if (menuTitle === `Favorite Story`) {
+    if (menuTitle === `Favorite Wine Story`) {
       return <NavMarkedFav />;
     }
     return null;
