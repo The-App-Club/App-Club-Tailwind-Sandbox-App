@@ -2,8 +2,8 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useMemo} from 'react';
-import {AiFillInstagram,AiOutlineCopyright} from 'react-icons/ai';
-import {BsPinterest,BsTwitter} from 'react-icons/bs';
+import {AiFillInstagram, AiOutlineCopyright} from 'react-icons/ai';
+import {BsPinterest, BsTwitter} from 'react-icons/bs';
 import {FaFacebookF} from 'react-icons/fa';
 
 const Footer = ({pathname}) => {

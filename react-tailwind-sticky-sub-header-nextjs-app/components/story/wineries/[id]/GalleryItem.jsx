@@ -2,14 +2,11 @@ import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {GiGrapes} from 'react-icons/gi';
-import {
-  MdOutlinePublish,
-} from 'react-icons/md';
+import {MdOutlinePublish} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import locationSelectorState from '@/stores/locationSelectorStore';
-
 
 const GalleryItem = ({item, storyItem}) => {
   const router = useRouter();

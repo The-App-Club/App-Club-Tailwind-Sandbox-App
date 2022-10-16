@@ -10,7 +10,6 @@ import Sidebar from '@/components/story/wines/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
-
 const WineStories = () => {
   const {opened} = useRecoilValue(hamburgerState);
 
@@ -45,6 +44,7 @@ const WineStories = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

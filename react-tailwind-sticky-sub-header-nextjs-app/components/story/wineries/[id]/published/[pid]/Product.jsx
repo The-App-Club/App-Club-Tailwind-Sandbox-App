@@ -4,7 +4,6 @@ import {useRouter} from 'next/router';
 import {memo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 
-
 const motionConfig = {
   initial: {
     x: 0,

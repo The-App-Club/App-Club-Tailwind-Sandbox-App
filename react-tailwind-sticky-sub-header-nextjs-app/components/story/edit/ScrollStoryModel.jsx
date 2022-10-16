@@ -1,8 +1,4 @@
-import {
-  motion,
-  motionValue,
-  useTransform,
-} from 'framer-motion';
+import {motion, motionValue, useTransform} from 'framer-motion';
 import {useRecoilValue} from 'recoil';
 
 import {scrollTriggerState} from '@/stores/scrollTriggerStore';

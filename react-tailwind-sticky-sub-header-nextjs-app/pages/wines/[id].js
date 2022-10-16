@@ -1,13 +1,13 @@
 import {css, cx} from '@emotion/css';
 import {Splide, SplideSlide} from '@splidejs/react-splide';
-import { filter, tidy} from '@tidyjs/tidy';
+import {filter, tidy} from '@tidyjs/tidy';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import { useMemo} from 'react';
+import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
-import { MdOutlineLocationOn} from 'react-icons/md';
-import { useRecoilValue} from 'recoil';
+import {MdOutlineLocationOn} from 'react-icons/md';
+import {useRecoilValue} from 'recoil';
 
 import Sidebar from '@/components/Sidebar';
 import Spacer from '@/components/Spacer';
@@ -92,6 +92,7 @@ const Wine = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

@@ -8,8 +8,6 @@ import {useRecoilState, useRecoilValue} from 'recoil';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import themeState from '@/stores/themeStore';
 
-
-
 const motionConfig = {
   initial: {
     x: 0,

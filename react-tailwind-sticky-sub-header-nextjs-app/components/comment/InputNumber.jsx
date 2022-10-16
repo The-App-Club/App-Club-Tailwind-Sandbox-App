@@ -1,5 +1,5 @@
 import {css, cx} from '@emotion/css';
-import { useCallback, useEffect,useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 
 import Spacer from '@/components/Spacer';
 import useCart from '@/hooks/useCart';

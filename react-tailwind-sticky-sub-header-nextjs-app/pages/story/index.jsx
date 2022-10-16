@@ -12,8 +12,6 @@ import Sidebar from '@/components/story/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
-
-
 const Story = () => {
   const {opened} = useRecoilValue(hamburgerState);
   const router = useRouter();
@@ -48,6 +46,7 @@ const Story = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

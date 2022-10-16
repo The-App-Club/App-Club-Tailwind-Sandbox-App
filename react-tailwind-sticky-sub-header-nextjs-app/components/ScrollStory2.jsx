@@ -1,10 +1,9 @@
 import {css, cx} from '@emotion/css';
-import { useRef} from 'react';
+import {useRef} from 'react';
 import {Scrollama, Step} from 'react-scrollama';
 import {MathUtils} from 'three';
 
 import Spacer from '@/components/Spacer';
-
 
 const ScrollStory2 = () => {
   const mapContainer = useRef(null);

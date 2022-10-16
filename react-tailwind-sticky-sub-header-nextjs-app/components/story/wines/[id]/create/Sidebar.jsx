@@ -10,7 +10,6 @@ import Product from '@/components/story/create/Product';
 import hamburgerState from '@/stores/hamburgerStore';
 import wineState from '@/stores/wineStore';
 
-
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);

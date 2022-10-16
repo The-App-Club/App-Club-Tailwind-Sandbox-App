@@ -1,7 +1,5 @@
 import {css, cx} from '@emotion/css';
 
-
-
 const Tracer = ({title = `Tracer`, className, children}) => {
   return (
     <aside

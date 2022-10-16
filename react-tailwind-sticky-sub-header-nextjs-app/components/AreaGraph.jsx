@@ -1,6 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
-import { useMemo, useState} from 'react';
+import {useMemo, useState} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import AverageGraph from '@/components/AverageGraph';

@@ -5,7 +5,6 @@ import {useRecoilState} from 'recoil';
 
 import wineryState from '@/stores/wineryStore';
 
-
 const GalleryItem = ({item}) => {
   const [winery, setWinery] = useRecoilState(wineryState);
 

@@ -2,8 +2,8 @@ import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import { useMemo} from 'react';
-import { useRecoilValue} from 'recoil';
+import {useMemo} from 'react';
+import {useRecoilValue} from 'recoil';
 
 import Footer from '@/components/story/wineries/[id]/create/Footer';
 import Header from '@/components/story/wineries/[id]/create/Header';
@@ -12,8 +12,6 @@ import Sidebar from '@/components/story/wineries/[id]/create/Sidebar';
 import dataWineries from '@/data/wineries.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-
-
 
 const CreateStory = () => {
   const {opened} = useRecoilValue(hamburgerState);
@@ -61,6 +59,7 @@ const CreateStory = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

@@ -1,5 +1,5 @@
 import {css, cx} from '@emotion/css';
-import {useCallback,useEffect,useRef} from 'react';
+import {useCallback, useEffect, useRef} from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
 import mapboxgl from 'mapbox-gl';

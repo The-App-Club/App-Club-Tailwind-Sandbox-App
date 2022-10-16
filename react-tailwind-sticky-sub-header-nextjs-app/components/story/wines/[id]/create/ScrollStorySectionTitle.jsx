@@ -1,6 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {AnimatePresence} from 'framer-motion';
-import { useState} from 'react';
+import {useState} from 'react';
 import {BiPencil} from 'react-icons/bi';
 
 import ScrollStoryTitleForm from '@/components/story/create/ScrollStoryTitleForm';

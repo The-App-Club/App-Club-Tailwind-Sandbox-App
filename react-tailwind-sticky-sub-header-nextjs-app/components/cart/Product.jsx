@@ -3,11 +3,8 @@ import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {memo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
-import {
-  MdOutlineLocationOn,
-} from 'react-icons/md';
+import {MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilState, useRecoilValue} from 'recoil';
-
 
 import InputNumber from '../InputNumber';
 

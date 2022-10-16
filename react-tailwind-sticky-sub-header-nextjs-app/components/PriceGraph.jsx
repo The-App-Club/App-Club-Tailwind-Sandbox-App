@@ -19,7 +19,6 @@ import {useDebouncedCallback} from 'use-debounce';
 import themeState from '../stores/themeStore';
 import {decideAxisTickFillColor, decideBarBackFaceFillColor} from './AreaGraph';
 
-
 const PriceGraph = ({selectedData}) => {
   const router = useRouter();
   const {mode} = useRecoilValue(themeState);

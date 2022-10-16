@@ -1,7 +1,7 @@
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
-import { useEffect, useMemo, useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import {FiSettings} from 'react-icons/fi';
 import {
   MdOutlineLogout,

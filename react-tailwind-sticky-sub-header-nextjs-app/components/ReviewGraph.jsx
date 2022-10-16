@@ -21,7 +21,6 @@ import {
 } from '@/components/AreaGraph';
 import themeState from '@/stores/themeStore';
 
-
 const ReviewGraph = ({selectedData}) => {
   const router = useRouter();
   const {mode} = useRecoilValue(themeState);

@@ -16,10 +16,12 @@ import {useRecoilValue} from 'recoil';
 import useSWR from 'swr';
 import {useDebouncedCallback} from 'use-debounce';
 
-import {default as XFeatureColumnSelector,default as YFeatureColumnSelector} from '@/components/FeatureColumnSelector';
+import {
+  default as XFeatureColumnSelector,
+  default as YFeatureColumnSelector,
+} from '@/components/FeatureColumnSelector';
 import featureColumnSelectorState from '@/stores/featureColumnSelectorStore';
 import themeState from '@/stores/themeStore';
-
 
 const colors = scaleOrdinal(schemeCategory10).range();
 

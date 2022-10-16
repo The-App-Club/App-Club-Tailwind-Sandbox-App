@@ -2,7 +2,7 @@ import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import { useState} from 'react';
+import {useState} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import Category from '@/components/Category';
@@ -68,6 +68,7 @@ const Winery = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

@@ -3,9 +3,7 @@ import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
-import {
-  MdOutlinePublish,
-} from 'react-icons/md';
+import {MdOutlinePublish} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';

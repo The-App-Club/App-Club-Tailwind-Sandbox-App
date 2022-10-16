@@ -10,7 +10,6 @@ import Header from '@/components/favorite/Header';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
-
 const Favorite = () => {
   const {opened} = useRecoilValue(hamburgerState);
   return (
@@ -44,6 +43,7 @@ const Favorite = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

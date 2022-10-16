@@ -7,7 +7,6 @@ import Nav from '@/components/story/Nav';
 import SidebarSp from '@/components/story/SidebarSp';
 import hamburgerState from '@/stores/hamburgerStore';
 
-
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);

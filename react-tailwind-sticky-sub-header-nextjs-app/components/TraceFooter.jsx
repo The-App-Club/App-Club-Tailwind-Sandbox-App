@@ -4,12 +4,11 @@ import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import {BiHome} from 'react-icons/bi';
 import {GiGrapes, GiWineBottle} from 'react-icons/gi';
-import {MdOutlineLocationOn,MdOutlineShoppingCart} from 'react-icons/md';
+import {MdOutlineLocationOn, MdOutlineShoppingCart} from 'react-icons/md';
 import {useRecoilValue} from 'recoil';
 
 import useCart from '@/hooks/useCart';
 import wineState from '@/stores/wineStore';
-
 
 const TraceFooter = () => {
   const [isClient, setIsClient] = useState(false);

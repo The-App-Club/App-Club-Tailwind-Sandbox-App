@@ -6,8 +6,11 @@ import {AiOutlineSelect} from 'react-icons/ai';
 import {BiHome} from 'react-icons/bi';
 import {FaHatCowboySide} from 'react-icons/fa';
 import {FiSettings} from 'react-icons/fi';
-import {GiGrapes, GiPriceTag,GiWineBottle} from 'react-icons/gi';
-import {MdFavoriteBorder,MdOutlineContactMail,MdOutlineLocationOn,
+import {GiGrapes, GiPriceTag, GiWineBottle} from 'react-icons/gi';
+import {
+  MdFavoriteBorder,
+  MdOutlineContactMail,
+  MdOutlineLocationOn,
   MdOutlineNotificationsNone,
   MdOutlineShoppingCart,
   MdRssFeed,

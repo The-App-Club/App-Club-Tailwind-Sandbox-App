@@ -10,8 +10,6 @@ import SidebarSp from '@/components/story/wines/[id]/published/[pid]/SidebarSp';
 import dataWines from '@/data/wines.json';
 import hamburgerState from '@/stores/hamburgerStore';
 
-
-
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);

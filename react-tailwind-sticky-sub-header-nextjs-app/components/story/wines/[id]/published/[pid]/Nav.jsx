@@ -2,9 +2,7 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useMemo, useState} from 'react';
-import {
-  MdOutlineHistory,
-} from 'react-icons/md';
+import {MdOutlineHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import dataWines from '@/data/wines.json';

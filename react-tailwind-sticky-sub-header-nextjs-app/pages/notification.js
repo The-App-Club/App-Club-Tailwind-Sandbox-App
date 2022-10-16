@@ -7,7 +7,6 @@ import Sidebar from '@/components/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
-
 const Notification = () => {
   const {opened} = useRecoilValue(hamburgerState);
   return (
@@ -40,6 +39,7 @@ const Notification = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

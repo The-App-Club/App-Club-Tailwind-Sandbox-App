@@ -2,7 +2,7 @@ import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import { useRecoilValue} from 'recoil';
+import {useRecoilValue} from 'recoil';
 
 import Footer from '@/components/story/create/Footer';
 import Header from '@/components/story/create/Header';
@@ -11,7 +11,6 @@ import Sidebar from '@/components/story/create/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 import wineState from '@/stores/wineStore';
-
 
 const CreateStory = () => {
   const {opened} = useRecoilValue(hamburgerState);
@@ -53,6 +52,7 @@ const CreateStory = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

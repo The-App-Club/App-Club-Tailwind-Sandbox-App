@@ -1,10 +1,5 @@
 import {css, cx} from '@emotion/css';
-import {
-  createRef,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import {createRef, useMemo, useRef, useState} from 'react';
 import {Scrollama, Step} from 'react-scrollama';
 import {useRecoilState} from 'recoil';
 import {MathUtils} from 'three';

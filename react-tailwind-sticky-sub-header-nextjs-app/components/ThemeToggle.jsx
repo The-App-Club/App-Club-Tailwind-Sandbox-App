@@ -1,5 +1,5 @@
 import {css, cx} from '@emotion/css';
-import { useState} from 'react';
+import {useState} from 'react';
 import {useRecoilState} from 'recoil';
 
 import themeState from '@/stores/themeStore';

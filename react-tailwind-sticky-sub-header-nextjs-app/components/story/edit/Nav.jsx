@@ -3,9 +3,7 @@ import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import {BsPencilSquare} from 'react-icons/bs';
-import {
-  MdOutlineHistory,
-} from 'react-icons/md';
+import {MdOutlineHistory} from 'react-icons/md';
 import {useRecoilState, useRecoilValue} from 'recoil';
 
 import sidebarState from '@/stores/sidebarStore';

@@ -12,7 +12,6 @@ import SidebarSp from '@/components/wineries/SidebarSp';
 import hamburgerState from '@/stores/hamburgerStore';
 import multiLocationSelectorState from '@/stores/multiLocationSelectorStore';
 
-
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);

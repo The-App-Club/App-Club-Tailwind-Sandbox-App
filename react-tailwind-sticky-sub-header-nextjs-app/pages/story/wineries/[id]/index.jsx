@@ -5,7 +5,6 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useMemo} from 'react';
 import {useRecoilState, useRecoilValue} from 'recoil';
 
-
 import Spacer from '@/components/Spacer';
 import GalleryItem from '@/components/story/wineries/[id]/GalleryItem';
 import Header from '@/components/story/wineries/[id]/Header';
@@ -72,6 +71,7 @@ const Story = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

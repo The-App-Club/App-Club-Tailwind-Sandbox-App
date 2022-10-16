@@ -9,8 +9,6 @@ import PriceRanking from '@/components/feed/PriceRanking';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
-
-
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);
 
@@ -44,6 +42,7 @@ const Home = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

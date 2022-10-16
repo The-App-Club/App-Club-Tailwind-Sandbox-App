@@ -2,8 +2,8 @@ import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import { useMemo} from 'react';
-import { useRecoilValue} from 'recoil';
+import {useMemo} from 'react';
+import {useRecoilValue} from 'recoil';
 
 import Footer from '@/components/story/wines/[id]/create/Footer';
 import Header from '@/components/story/wines/[id]/create/Header';

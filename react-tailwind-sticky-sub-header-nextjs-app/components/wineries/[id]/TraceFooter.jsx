@@ -8,7 +8,6 @@ import {MdOutlineShoppingCart} from 'react-icons/md';
 
 import useCart from '@/hooks/useCart';
 
-
 const TraceFooter = () => {
   const [isClient, setIsClient] = useState(false);
   const router = useRouter();

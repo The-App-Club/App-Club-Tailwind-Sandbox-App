@@ -1,10 +1,8 @@
 import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import { MdOutlineTimeline} from 'react-icons/md';
+import {MdOutlineTimeline} from 'react-icons/md';
 // https://dev.to/readymadecode/timeline-component-in-react-81c
-
-
 
 import Spacer from '@/components/Spacer';
 import Comment from '@/components/comment/Comment';

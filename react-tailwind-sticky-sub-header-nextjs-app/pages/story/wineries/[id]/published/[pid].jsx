@@ -3,7 +3,7 @@ import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useMemo} from 'react';
-import { useRecoilValue} from 'recoil';
+import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import Footer from '@/components/story/wineries/[id]/published/[pid]/Footer';
@@ -77,6 +77,7 @@ const PublishedStory = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

@@ -8,7 +8,6 @@ import Sidebar from '@/components/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
-
 const Custom404 = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
@@ -42,6 +41,7 @@ const Custom404 = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

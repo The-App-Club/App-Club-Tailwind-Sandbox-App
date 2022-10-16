@@ -1,4 +1,3 @@
-
 import {css} from '@emotion/css';
 
 import LocationRanking from '@/components/feed/LocationRanking';

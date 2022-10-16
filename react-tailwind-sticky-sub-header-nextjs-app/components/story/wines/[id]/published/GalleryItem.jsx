@@ -2,10 +2,8 @@ import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {FiEye} from 'react-icons/fi';
-import { GiPriceTag} from 'react-icons/gi';
-import {
-  MdHistory,
-} from 'react-icons/md';
+import {GiPriceTag} from 'react-icons/gi';
+import {MdHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import dataWines from '@/data/wines.json';

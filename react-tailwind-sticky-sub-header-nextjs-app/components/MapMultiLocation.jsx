@@ -1,4 +1,4 @@
-import React, {createRef, useEffect, useMemo, useRef,useState} from 'react';
+import React, {createRef, useEffect, useMemo, useRef, useState} from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
 import MapboxLanguage from '@mapbox/mapbox-gl-language';

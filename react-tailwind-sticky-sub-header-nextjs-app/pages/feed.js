@@ -1,7 +1,7 @@
 import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import { useRef} from 'react';
+import {useRef} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import Sidebar from '@/components/Sidebar';
@@ -73,6 +73,7 @@ const Feed = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }

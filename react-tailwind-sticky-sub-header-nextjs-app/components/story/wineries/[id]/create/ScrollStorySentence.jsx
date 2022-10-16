@@ -1,12 +1,7 @@
-import { cx} from '@emotion/css';
+import {cx} from '@emotion/css';
 import {AnimatePresence} from 'framer-motion';
 import {gsap} from 'gsap';
-import {
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from 'react';
+import {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import {BiPencil} from 'react-icons/bi';
 import {useInView} from 'react-intersection-observer';
 import {mergeRefs} from 'react-merge-refs';

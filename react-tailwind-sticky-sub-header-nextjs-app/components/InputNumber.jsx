@@ -1,5 +1,5 @@
 import {css, cx} from '@emotion/css';
-import { useCallback, useEffect,useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import {FaTrashAlt} from 'react-icons/fa';
 
 import useCart from '@/hooks/useCart';

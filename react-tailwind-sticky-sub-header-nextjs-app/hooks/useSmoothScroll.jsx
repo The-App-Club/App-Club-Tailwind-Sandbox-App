@@ -3,7 +3,6 @@ import {ScrollToPlugin} from 'gsap/dist/ScrollToPlugin';
 import {useRouter} from 'next/router';
 import {useEffect} from 'react';
 
-
 gsap.registerPlugin(ScrollToPlugin);
 
 const setSmoothScroll = (isSmooth) => {

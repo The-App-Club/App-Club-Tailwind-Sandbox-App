@@ -4,9 +4,7 @@ import {default as numbro} from 'numbro';
 import {useMemo} from 'react';
 import {FiEye} from 'react-icons/fi';
 import {GiGrapes, GiPriceTag} from 'react-icons/gi';
-import {
-  MdHistory,
-} from 'react-icons/md';
+import {MdHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import dataWineries from '@/data/wineries.json';
