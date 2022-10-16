@@ -51,10 +51,8 @@ const ProductGalleryItem = ({item}) => {
       activeWine: item,
     });
 
-    const storyId = chance(item.wine).string({alpha: true});
-
     router.push({
-      pathname: `/story/${storyId}/create`,
+      pathname: `/story/wines/${item.id}/create`,
     });
   };
 

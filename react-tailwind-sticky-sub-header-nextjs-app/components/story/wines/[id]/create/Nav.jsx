@@ -83,10 +83,6 @@ const MenuItem = ({path, menuTitle, icon}) => {
 };
 
 const Nav = () => {
-  const router = useRouter();
-  const [isClient, setIsClient] = useState(false);
-
-  const {id} = router.query;
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -96,12 +92,13 @@ const Nav = () => {
       },
     },
   };
+  const {activeWine} = useRecoilValue(wineState);
+  const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
-
   return (
     <motion.nav className="relative w-full">
       <motion.ul
@@ -117,11 +114,20 @@ const Nav = () => {
           flex-direction: column;
         `}
       >
+        {/* {isClient && (
+          <MenuItem
+            path={`/story/${activeWine.id}/create`}
+            menuTitle={'Create Story'}
+            icon={() => {
+              return <BsPencilSquare size={24} />;
+            }}
+          />
+        )} */}
         <MenuItem
-          path={`/story/wines/${id}/create`}
-          menuTitle={'Create Wine Story'}
+          path={'/story'}
+          menuTitle={'Story'}
           icon={() => {
-            return <BsPencilSquare size={24} />;
+            return <MdOutlineHistory size={24} />;
           }}
         />
       </motion.ul>

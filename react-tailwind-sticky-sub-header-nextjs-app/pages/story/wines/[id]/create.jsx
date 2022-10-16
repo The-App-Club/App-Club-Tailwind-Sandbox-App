@@ -1,25 +1,33 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
-import Sidebar from '@/components/story/create/Sidebar';
-import Layout from '@/layouts/default';
-import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import {motion} from 'framer-motion';
-import Header from '@/components/story/create/Header';
-import wineState from '@/stores/wineStore';
 import {useEffect, useMemo} from 'react';
-import ScrollStory from '@/components/story/create/ScrollStory';
-import Footer from '@/components/story/create/Footer';
-import data from '@/data/wines.json';
 import {useRouter} from 'next/router';
 import {default as chance} from 'chance';
 
+import Sidebar from '@/components/story/wines/[id]/create/Sidebar';
+import Header from '@/components/story/wines/[id]/create/Header';
+import ScrollStory from '@/components/story/wines/[id]/create/ScrollStory';
+import Footer from '@/components/story/wines/[id]/create/Footer';
+import wineState from '@/stores/wineStore';
+import Layout from '@/layouts/default';
+import hamburgerState from '@/stores/hamburgerStore';
+import dataWines from '@/data/wines.json';
+
 const CreateStory = () => {
   const {opened} = useRecoilValue(hamburgerState);
-  const {activeWine} = useRecoilValue(wineState);
   const router = useRouter();
+
+  const {id} = router.query;
+
+  const activeWine = useMemo(() => {
+    return dataWines.find((item) => {
+      return item.id === Number(id);
+    });
+  }, [id]);
 
   if (!activeWine) {
     return;
@@ -56,6 +64,7 @@ const CreateStory = () => {
                   min-height: 3rem;
                   display: flex;
                   align-items: center;
+                  flex-wrap: wrap;
                   gap: 0.5rem;
                 }
               }
@@ -79,7 +88,7 @@ const CreateStory = () => {
             }}
           />
 
-          <Header />
+          <Header item={activeWine} />
           <ScrollStory />
           <Footer item={activeWine} />
         </section>

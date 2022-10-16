@@ -18,29 +18,12 @@ import Category from '@/components/Category';
 import TraceFooter from '@/components/wineries/TraceFooter';
 import SearchModal from '@/components/SearchModal';
 import {count, filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
+import Container from '@/components/wineries/Container';
 
 const Winery = () => {
   const [showModal, setShowModal] = useState(false);
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-
-  // const a = useMemo(() => {
-  //   return tidy(
-  //     dataWines,
-  //     count(['winery', 'location']),
-  //     groupBy(
-  //       ['winery'],
-  //       [mutate({key: (d) => `\${d.winery}`})],
-  //       groupBy.entries()
-  //     ),
-  //     filter((item) => {
-  //       const [a, b] = item;
-  //       return b.length !== 1;
-  //     })
-  //   );
-  // }, []);
-
-  // console.log(a);
 
   const handleModalOpen = (e) => {
     setShowModal(true);
@@ -151,70 +134,7 @@ const Winery = () => {
             `}
           />
           <Spacer />
-          <div
-            className={css`
-              display: grid;
-              gap: 0.5rem;
-              grid-template-columns: repeat(4, 1fr);
-              @media (max-width: 1200px) {
-                grid-template-columns: repeat(2, 1fr);
-              }
-            `}
-          >
-            {data.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className={cx(
-                    `border-2 p-2`,
-                    `hover:cursor-pointer`,
-                    `hover:bg-gray-100 dark:hover:bg-slate-800`,
-                    css`
-                      width: 100%;
-                    `
-                  )}
-                  onClick={(e) => {
-                    router.push({
-                      pathname: `/wineries/${item.wineryId}`,
-                    });
-                  }}
-                >
-                  <div
-                    className={css`
-                      width: 100%;
-                      height: 200px;
-                      position: relative;
-                      ::before {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        content: '';
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background-image: url(https://via.placeholder.com/300x200);
-                        background-size: contain;
-                        background-position: center center;
-                        background-origin: center center;
-                        background-repeat: no-repeat;
-                      }
-                    `}
-                  />
-                  <div className="w-full">
-                    <h2 className="text-xl">{item.wineryName}</h2>
-                    <div className="flex items-center w-full justify-end gap-2">
-                      <span className="text-md font-bold">
-                        {item.wines.length} type
-                      </span>
-                    </div>
-                    <p className="line-clamp-3">{item.description}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <Container />
         </section>
         <TraceFooter />
       </Layout>

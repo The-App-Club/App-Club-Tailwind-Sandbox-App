@@ -20,6 +20,11 @@ const routes = [
     activeMenuName: `Setting`,
   },
   {
+    pathName: `/story`,
+    pageName: `Story`,
+    activeMenuName: `Select Story`,
+  },
+  {
     pathName: `/story/[id]/create`,
     pageName: `Create Story`,
     activeMenuName: `Create Story`,
@@ -29,11 +34,7 @@ const routes = [
     pageName: `Edit Story`,
     activeMenuName: `Edit Story`,
   },
-  {
-    pathName: `/story`,
-    pageName: `Story`,
-    activeMenuName: `Select Story`,
-  },
+
   {
     pathName: `/story/wines`,
     pageName: `Wine Story`,
@@ -43,6 +44,27 @@ const routes = [
     pathName: `/story/wines/[id]`,
     pageName: `Wine Story`,
     activeMenuName: `Wine Story`,
+  },
+
+  {
+    pathName: `/story/wines/[id]/published`,
+    pageName: `Published Wine Story`,
+    activeMenuName: `Published Wine Story`,
+  },
+  {
+    pathName: `/story/wines/[id]/published/[pid]`,
+    pageName: `Published Story`,
+    activeMenuName: `Published Story`,
+  },
+  {
+    pathName: `/story/wines/[id]/create`,
+    pageName: `Create Wine Story`,
+    activeMenuName: `Create Wine Story`,
+  },
+  {
+    pathName: `/story/wines/[id]/edit`,
+    pageName: `Edit Wine Story`,
+    activeMenuName: `Edit Wine Story`,
   },
   {
     pathName: `/story/wineries`,
@@ -55,34 +77,24 @@ const routes = [
     activeMenuName: `Winery Story`,
   },
   {
-    pathName: `/story/wines/[id]`,
-    pageName: `Wine Story`,
-    activeMenuName: `Focused Wine Story`,
-  },
-  {
-    pathName: `/story/wineries/[id]`,
-    pageName: `Winery Story`,
-    activeMenuName: `Focused Winery Story`,
-  },
-  {
-    pathName: `/story/wines/[id]/published`,
-    pageName: `Published Wine Story`,
-    activeMenuName: `Published Wine Story`,
-  },
-  {
     pathName: `/story/wineries/[id]/published`,
     pageName: `Published Winery Story`,
     activeMenuName: `Published Winery Story`,
   },
   {
-    pathName: `/story/wines/[id]/published/[pid]`,
+    pathName: `/story/wineries/[id]/published/[pid]`,
     pageName: `Published Story`,
     activeMenuName: `Published Story`,
   },
   {
-    pathName: `/story/wineries/[id]/published/[pid]`,
-    pageName: `Published Story`,
-    activeMenuName: `Published Story`,
+    pathName: `/story/wineries/[id]/create`,
+    pageName: `Create Winery Story`,
+    activeMenuName: `Create Winery Story`,
+  },
+  {
+    pathName: `/story/wineries/[id]/edit`,
+    pageName: `Edit Winery Story`,
+    activeMenuName: `Edit Winery Story`,
   },
   {
     pathName: `/story/[id]/published/[pid]`,

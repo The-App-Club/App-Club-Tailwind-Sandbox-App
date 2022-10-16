@@ -22,8 +22,6 @@ const GalleryItem = ({item, storyItem}) => {
   const router = useRouter();
   const [location, setLocation] = useRecoilState(locationSelectorState);
 
-  console.log(item);
-
   if (!item) {
     return;
   }

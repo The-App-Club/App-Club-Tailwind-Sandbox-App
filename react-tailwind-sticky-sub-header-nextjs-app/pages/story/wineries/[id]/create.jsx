@@ -1,27 +1,37 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
-import Sidebar from '@/components/story/create/Sidebar';
-import Layout from '@/layouts/default';
-import hamburgerState from '@/stores/hamburgerStore';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import capitalize from 'capitalize-the-first-letter';
 import {motion} from 'framer-motion';
-import Header from '@/components/story/create/Header';
-import wineState from '@/stores/wineStore';
-import {useEffect, useMemo} from 'react';
-import ScrollStory from '@/components/story/create/ScrollStory';
-import Footer from '@/components/story/create/Footer';
-import data from '@/data/wines.json';
 import {useRouter} from 'next/router';
 import {default as chance} from 'chance';
+import {useEffect, useMemo} from 'react';
+
+import Layout from '@/layouts/default';
+import wineState from '@/stores/wineStore';
+import wineryState from '@/stores/wineryStore';
+import hamburgerState from '@/stores/hamburgerStore';
+
+import dataWineries from '@/data/wineries.json';
+
+import Sidebar from '@/components/story/wineries/[id]/create/Sidebar';
+import Header from '@/components/story/wineries/[id]/create/Header';
+import ScrollStory from '@/components/story/wineries/[id]/create/ScrollStory';
+import Footer from '@/components/story/wineries/[id]/create/Footer';
 
 const CreateStory = () => {
   const {opened} = useRecoilValue(hamburgerState);
-  const {activeWine} = useRecoilValue(wineState);
   const router = useRouter();
+  const {id} = router.query;
 
-  if (!activeWine) {
+  const activeWinery = useMemo(() => {
+    return dataWineries.find((item) => {
+      return item.wineryId === id;
+    });
+  }, [id]);
+
+  if (!activeWinery) {
     return;
   }
 
@@ -78,10 +88,9 @@ const CreateStory = () => {
               return `${niceTitle} > `;
             }}
           />
-
-          <Header />
+          <Header item={activeWinery} />
           <ScrollStory />
-          <Footer item={activeWine} />
+          <Footer item={activeWinery} />
         </section>
       </Layout>
     </>

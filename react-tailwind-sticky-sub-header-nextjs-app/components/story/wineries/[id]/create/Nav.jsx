@@ -84,8 +84,6 @@ const MenuItem = ({path, menuTitle, icon}) => {
 
 const Nav = () => {
   const router = useRouter();
-  const [isClient, setIsClient] = useState(false);
-
   const {id} = router.query;
   const motionConfig = {
     hidden: {opacity: 0},
@@ -96,12 +94,12 @@ const Nav = () => {
       },
     },
   };
+  const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
-
   return (
     <motion.nav className="relative w-full">
       <motion.ul
@@ -118,8 +116,8 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={`/story/wines/${id}/create`}
-          menuTitle={'Create Wine Story'}
+          path={`/story/wineries/${id}/create`}
+          menuTitle={'Create Winery Story'}
           icon={() => {
             return <BsPencilSquare size={24} />;
           }}
