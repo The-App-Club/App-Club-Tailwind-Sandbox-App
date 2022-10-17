@@ -5,22 +5,10 @@ import {useEffect, useState} from 'react';
 import {AiOutlineSelect} from 'react-icons/ai';
 import {BiHome} from 'react-icons/bi';
 import {FaHatCowboySide} from 'react-icons/fa';
-import {FiSettings} from 'react-icons/fi';
-import {GiGrapes, GiPriceTag, GiWineBottle} from 'react-icons/gi';
-import {
-  MdFavoriteBorder,
-  MdOutlineContactMail,
-  MdOutlineLocationOn,
-  MdOutlineNotificationsNone,
-  MdOutlineShoppingCart,
-  MdRssFeed,
-} from 'react-icons/md';
-import {SiBuymeacoffee} from 'react-icons/si';
+import {GiPriceTag} from 'react-icons/gi';
+import {MdOutlineContactMail} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import NavMarkedCart from '@/components/NavMarkedCart';
-import {default as NavMarkedWineFav} from '@/components/NavMarkedFav';
-import {default as NavMarkedStoryFav} from '@/components/story/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
@@ -45,19 +33,6 @@ const MenuItem = ({path, menuTitle, icon}) => {
       setIsClient(true);
     }
   }, []);
-
-  const renderShortHandMetrics = () => {
-    if (menuTitle === `Favorite`) {
-      return <NavMarkedWineFav />;
-    }
-    if (menuTitle === `Favorite Story`) {
-      return <NavMarkedStoryFav />;
-    }
-    if (menuTitle === `Cart`) {
-      return <NavMarkedCart />;
-    }
-    return null;
-  };
 
   return (
     <motion.li
@@ -91,7 +66,6 @@ const MenuItem = ({path, menuTitle, icon}) => {
     >
       {icon()}
       <h2>{menuTitle}</h2>
-      {isClient && renderShortHandMetrics()}
     </motion.li>
   );
 };
@@ -122,52 +96,24 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={'/'}
-          menuTitle={'Home'}
+          path={'/contact'}
+          menuTitle={'Contact'}
           icon={() => {
-            return <BiHome size={24} />;
+            return <MdOutlineContactMail size={24} />;
           }}
         />
         <MenuItem
-          path={'/location'}
-          menuTitle={'Location'}
+          path={'/about'}
+          menuTitle={'About'}
           icon={() => {
-            return <MdOutlineLocationOn size={24} />;
+            return <FaHatCowboySide size={24} />;
           }}
         />
         <MenuItem
-          path={'/wines'}
-          menuTitle={'Wines'}
+          path={'/price'}
+          menuTitle={'Price'}
           icon={() => {
-            return <GiWineBottle size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/wineries'}
-          menuTitle={'Winery'}
-          icon={() => {
-            return <GiGrapes size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/favorite'}
-          menuTitle={'Favorite'}
-          icon={() => {
-            return <MdFavoriteBorder size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/feed'}
-          menuTitle={'Feed'}
-          icon={() => {
-            return <MdRssFeed size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/cart'}
-          menuTitle={'Cart'}
-          icon={() => {
-            return <MdOutlineShoppingCart size={24} />;
+            return <GiPriceTag size={24} />;
           }}
         />
       </motion.ul>

@@ -13,6 +13,7 @@ import Hamburger from '@/components/Hamburger';
 import Profile from '@/components/Profile';
 import ThemeToggle from '@/components/ThemeToggle';
 import useCart from '@/hooks/useCart';
+import {FaHatCowboySide} from 'react-icons/fa';
 
 const Header = ({pathname}) => {
   const [isClient, setIsClient] = useState(false);
@@ -155,12 +156,22 @@ const Header = ({pathname}) => {
             className="w-[40px] h-[40px] flex items-center justify-center hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-800"
             onClick={(e) => {
               router.push({
+                pathname: '/about',
+              });
+            }}
+          >
+            <FaHatCowboySide size={24} />
+          </div>
+          {/* <div
+            className="w-[40px] h-[40px] flex items-center justify-center hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-800"
+            onClick={(e) => {
+              router.push({
                 pathname: '/notification',
               });
             }}
           >
             <MdOutlineNotificationsNone size={24} />
-          </div>
+          </div> */}
           <Profile
             menuData={[
               {
