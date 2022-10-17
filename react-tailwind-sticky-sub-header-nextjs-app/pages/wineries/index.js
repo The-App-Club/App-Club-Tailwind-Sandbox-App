@@ -87,7 +87,7 @@ const Winery = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (title === 'winery') {
+              if (niceTitle === 'Wineries') {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
