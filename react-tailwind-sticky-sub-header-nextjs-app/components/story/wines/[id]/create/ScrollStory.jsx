@@ -128,7 +128,7 @@ const ScrollStory = () => {
           `flex items-center justify-center flex-col`
         )}
       >
-        <div className={`absolute top-3 right-3 border-2 p-2 w-[130px]`}>
+        <div className={`absolute top-3 right-3 border-2 p-2 w-[180px]`}>
           <div className="font-bold flex items-center gap-1 text-black dark:text-slate-300">
             chapterId<span>{scrollTrigger.chapterId}</span>
           </div>

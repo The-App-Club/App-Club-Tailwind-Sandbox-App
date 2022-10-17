@@ -1,76 +1,21 @@
 import {css, cx} from '@emotion/css';
-import {createRef, useMemo, useRef, useState} from 'react';
+import {createRef, useEffect, useMemo, useRef, useState} from 'react';
 import {Scrollama, Step} from 'react-scrollama';
 import {useRecoilState} from 'recoil';
 import {MathUtils} from 'three';
 
-import ScrollStoryCaption from '@/components/story/create/ScrollStoryCaption';
-import ScrollStoryModel from '@/components/story/create/ScrollStoryModel';
-import ScrollStorySection from '@/components/story/create/ScrollStorySection';
+import ScrollStoryCaption from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStoryCaption';
+import ScrollStoryModel from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStoryModel';
+import ScrollStorySection from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStorySection';
 import {scrollTriggerState} from '@/stores/scrollTriggerStore';
+import {useRouter} from 'next/router';
 
 const ScrollStory = () => {
+  const router = useRouter();
+  const {id, storyId, chapterId} = router.query;
   const [scrollTrigger, setScrollTrigger] = useRecoilState(scrollTriggerState);
-  const [chapterId, setChapterId] = useState(1);
   const mapContainer = useRef(null);
   const prevProgress = useRef(0);
-
-  const data = useMemo(() => {
-    return [
-      {
-        chapterId: 1,
-        model: () => {
-          return (
-            <ScrollStoryModel
-              chapterId={1}
-              title={`Food-and-Drinks-12`}
-              modelURL={`/assets/Food-and-Drinks-12.png`}
-            />
-          );
-        },
-        caption: () => {
-          return <ScrollStoryCaption a={'This is Cake'} chapterId={1} />;
-        },
-      },
-      {
-        chapterId: 2,
-        model: () => {
-          return (
-            <ScrollStoryModel
-              chapterId={2}
-              title={`Food-and-Drinks-19`}
-              modelURL={`/assets/Food-and-Drinks-19.png`}
-            />
-          );
-        },
-        caption: () => {
-          return <ScrollStoryCaption a={'Cool Beer'} chapterId={2} />;
-        },
-      },
-      {
-        chapterId: 3,
-        model: () => {
-          return (
-            <ScrollStoryModel
-              chapterId={3}
-              title={`Food-and-Drinks-20`}
-              modelURL={`/assets/Food-and-Drinks-20.png`}
-            />
-          );
-        },
-        caption: () => {
-          return <ScrollStoryCaption a={'Nice Coffee'} chapterId={3} />;
-        },
-      },
-    ];
-  }, []);
-
-  const matchedData = useMemo(() => {
-    return data.find((item) => {
-      return item.chapterId === chapterId;
-    });
-  }, [chapterId, data]);
-
   const clampProgress = ({direction, progress}) => {
     if (direction === 'up') {
       if (isNaN(prevProgress.current)) {
@@ -87,12 +32,19 @@ const ScrollStory = () => {
     }
   };
 
+  useEffect(() => {
+    setScrollTrigger({
+      progress: 0,
+      chapterId,
+      direction: 'down',
+    });
+  }, [chapterId, setScrollTrigger]);
+
   const handleStepEnter = (e) => {
     let {data, progress, direction} = e;
     progress = MathUtils.clamp(progress, 0, 1);
-    setChapterId(data);
     setScrollTrigger({
-      chapterId: data,
+      chapterId,
       progress: clampProgress({direction, progress}),
       direction,
     });
@@ -136,8 +88,12 @@ const ScrollStory = () => {
             progress<span>{scrollTrigger.progress?.toFixed(2)}</span>
           </div>
         </div>
-        {matchedData.model()}
-        {matchedData.caption()}
+        <ScrollStoryModel
+          chapterId={chapterId}
+          title={`Food-and-Drinks-12`}
+          modelURL={`/assets/Food-and-Drinks-12.png`}
+        />
+        <ScrollStoryCaption a={'This is Cake'} chapterId={chapterId} />
       </div>
       <div
         className={css`
@@ -154,13 +110,7 @@ const ScrollStory = () => {
           debug={false}
         >
           <Step data={1}>
-            <ScrollStorySection chapterId={`1`} ref={createRef()} />
-          </Step>
-          <Step data={2}>
-            <ScrollStorySection chapterId={`2`} ref={createRef()} />
-          </Step>
-          <Step data={3}>
-            <ScrollStorySection chapterId={`3`} ref={createRef()} />
+            <ScrollStorySection ref={createRef()} />
           </Step>
         </Scrollama>
       </div>

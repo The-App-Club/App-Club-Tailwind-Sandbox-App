@@ -6,6 +6,7 @@ import {useRecoilValue} from 'recoil';
 import Sidebar from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/Sidebar';
 import Header from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/Header';
 import Container from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/Container';
+import ScrollStory from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStory';
 
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
@@ -14,7 +15,6 @@ import dataChapters from '@/data/chapters.json';
 import dataWineryStories from '@/data/wineryStories.json';
 import {useMemo} from 'react';
 import Spacer from '@/components/Spacer';
-import ScrollStory from '@/components/story/create/ScrollStory';
 
 const StoryChapter = () => {
   const router = useRouter();
@@ -112,7 +112,6 @@ const StoryChapter = () => {
           />
           <Header item={myChapter} />
           <Spacer />
-
           <ScrollStory />
         </section>
       </Layout>

@@ -4,7 +4,7 @@ const scrollTriggerState = atom({
   key: 'scroll',
   default: {
     progress: 0,
-    chapterId: 1,
+    chapterId: null,
     direction: 'down',
   },
 });
