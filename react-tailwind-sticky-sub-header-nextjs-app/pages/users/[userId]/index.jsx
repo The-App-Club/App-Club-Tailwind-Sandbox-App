@@ -75,7 +75,7 @@ const User = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === userId) {
+              if (title === userId) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;

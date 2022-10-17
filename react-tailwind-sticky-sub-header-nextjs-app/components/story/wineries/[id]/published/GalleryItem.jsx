@@ -8,7 +8,7 @@ import {MdHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import GalleryItemFav from './GalleryItemFav';
-
+import dataUsers from '@/data/users.json';
 import dataWineries from '@/data/wineries.json';
 import dataWines from '@/data/wines.json';
 import wineState from '@/stores/wineStore';
@@ -26,11 +26,22 @@ const GalleryItem = ({item}) => {
       return d.wineryId === item.wineryId;
     });
   }, [item]);
+  const matchedUser = useMemo(() => {
+    if (!item) {
+      return;
+    }
+    return dataUsers.find((user) => {
+      return user.userId === item.userId;
+    });
+  }, [item]);
 
   if (!activeWinery) {
     return;
   }
 
+  if (!matchedUser) {
+    return;
+  }
   return (
     <div
       className={cx(
@@ -78,6 +89,31 @@ const GalleryItem = ({item}) => {
       />
       <div className="w-full">
         <h2 className={cx('text-xl line-clamp-2')}>{item.storyTitle}</h2>
+      </div>
+
+      <div
+        className="w-full"
+        onClick={(e) => {
+          e.stopPropagation();
+          router.push({
+            pathname: `/users/${matchedUser.userId}`,
+          });
+        }}
+      >
+        <div className="flex items-center gap-1">
+          <picture className={css``}>
+            <source srcSet={`${matchedUser.avatorURL}`} type={`image/png`} />
+            <img
+              src={`${matchedUser.avatorURL}`}
+              alt={matchedUser.userName}
+              width={40}
+              height={40}
+              className={`rounded-full border-2`}
+            />
+          </picture>
+
+          <span className="text-sm font-bold hover:underline">{`${matchedUser.userName}`}</span>
+        </div>
       </div>
 
       <div
