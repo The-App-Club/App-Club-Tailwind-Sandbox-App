@@ -206,20 +206,6 @@ const Nav = () => {
           }}
         />
         <MenuItem
-          path={'/story'}
-          menuTitle={'Select Story'}
-          icon={() => {
-            return <AiOutlineSelect size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/story/favorite'}
-          menuTitle={'Favorite Story'}
-          icon={() => {
-            return <MdFavoriteBorder size={24} />;
-          }}
-        />
-        <MenuItem
           path={'/subscribe'}
           menuTitle={'Subscribe'}
           icon={() => {
