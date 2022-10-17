@@ -42,6 +42,8 @@ const Header = ({pathname}) => {
       pathname === `/wineries/[id]` ||
       pathname === `/wineries/[id]/stories` ||
       pathname === `/wineries/[id]/stories/[storyId]` ||
+      pathname === `/wineries/[id]/stories/[storyId]/chapters` ||
+      pathname === `/wineries/[id]/stories/[storyId]/chapters/[chapterId]` ||
       pathname === `/story` ||
       pathname === `/story/wines` ||
       pathname === `/story/wineries` ||
