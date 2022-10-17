@@ -25,7 +25,7 @@ const Container = () => {
           )}
         >
           <p>Nothing fav wines...</p>
-          <Link href={`/story/wines`}>
+          <Link href={`/wines`}>
             <a className="hover:underline">See Wine</a>
           </Link>
         </div>
