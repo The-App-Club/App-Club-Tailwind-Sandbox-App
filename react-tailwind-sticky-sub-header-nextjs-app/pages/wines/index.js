@@ -7,7 +7,7 @@ import {useRecoilValue} from 'recoil';
 import Category from '@/components/Category';
 import ProductGalleryItem from '@/components/ProductGalleryItem';
 import SearchModal from '@/components/SearchModal';
-import Sidebar from '@/components/Sidebar';
+import Sidebar from '@/components/wines/Sidebar';
 import Spacer from '@/components/Spacer';
 import TraceFooter from '@/components/wines/TraceFooter';
 import data from '@/data/wines.json';

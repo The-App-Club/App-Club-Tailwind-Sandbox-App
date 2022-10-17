@@ -2,15 +2,24 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {GiGrapes} from 'react-icons/gi';
+import {AiOutlineSelect} from 'react-icons/ai';
+import {BiHome} from 'react-icons/bi';
+import {FaHatCowboySide} from 'react-icons/fa';
+import {FiSettings} from 'react-icons/fi';
+import {GiGrapes, GiPriceTag, GiWineBottle} from 'react-icons/gi';
 import {
   MdFavoriteBorder,
+  MdOutlineContactMail,
+  MdOutlineLocationOn,
+  MdOutlineNotificationsNone,
   MdOutlineShoppingCart,
   MdRssFeed,
 } from 'react-icons/md';
+import {SiBuymeacoffee} from 'react-icons/si';
 import {useRecoilState} from 'recoil';
 
-import NavMarkedFav from '@/components/wineries/NavMarkedFav';
+import NavMarkedCart from '@/components/wines/NavMarkedCart';
+import {default as NavMarkedWineFav} from '@/components/wines/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
@@ -37,8 +46,11 @@ const MenuItem = ({path, menuTitle, icon}) => {
   }, []);
 
   const renderShortHandMetrics = () => {
-    if (menuTitle === `Favorite Winery`) {
-      return <NavMarkedFav />;
+    if (menuTitle === `Favorite Wine`) {
+      return <NavMarkedWineFav />;
+    }
+    if (menuTitle === `Cart`) {
+      return <NavMarkedCart />;
     }
     return null;
   };
@@ -106,17 +118,24 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={'/wineries'}
-          menuTitle={'Winery'}
+          path={'/wines'}
+          menuTitle={'Wines'}
           icon={() => {
-            return <GiGrapes size={24} />;
+            return <GiWineBottle size={24} />;
           }}
         />
         <MenuItem
-          path={'/favorite/wineries'}
-          menuTitle={'Favorite Winery'}
+          path={'/favorite/wines'}
+          menuTitle={'Favorite Wine'}
           icon={() => {
             return <MdFavoriteBorder size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/cart'}
+          menuTitle={'Cart'}
+          icon={() => {
+            return <MdOutlineShoppingCart size={24} />;
           }}
         />
       </motion.ul>

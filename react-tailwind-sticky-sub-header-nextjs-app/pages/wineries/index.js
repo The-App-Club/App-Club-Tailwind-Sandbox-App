@@ -7,7 +7,7 @@ import {useRecoilValue} from 'recoil';
 
 import Category from '@/components/Category';
 import SearchModal from '@/components/SearchModal';
-import Sidebar from '@/components/Sidebar';
+import Sidebar from '@/components/wineries/Sidebar';
 import Spacer from '@/components/Spacer';
 import Container from '@/components/wineries/Container';
 import TraceFooter from '@/components/wineries/TraceFooter';

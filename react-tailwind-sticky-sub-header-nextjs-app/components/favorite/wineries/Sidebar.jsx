@@ -1,16 +1,16 @@
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
-import {MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilValue} from 'recoil';
 
-import Nav from '@/components/wineries/Nav';
-import SidebarSp from '@/components/wineries/SidebarSp';
+import Nav from '@/components/favorite/wineries/Nav';
+import SidebarSp from '@/components/favorite/wineries/SidebarSp';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
+
   return (
     <>
       <SidebarSp />
