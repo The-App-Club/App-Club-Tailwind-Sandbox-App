@@ -97,7 +97,7 @@ const StoryChapters = () => {
           />
           <Header />
           <Spacer />
-          <p>aaa</p>
+          <Container chapters={myChapters} />
         </section>
       </Layout>
     </>

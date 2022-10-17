@@ -108,11 +108,6 @@ const Nav = () => {
     return;
   }
 
-  // if (matchedChapters.length===0) {
-  //   // チャプターが未作成
-  //   return;
-  // }
-
   return (
     <motion.nav className="relative w-full">
       <motion.ul
@@ -128,18 +123,13 @@ const Nav = () => {
           flex-direction: column;
         `}
       >
-        {matchedChapters.map((chapter, index) => {
-          return (
-            <MenuItem
-              key={index}
-              path={`/wineries/${id}/stories/${storyId}/chapters/${chapter.chapterId}`}
-              menuTitle={`Chapter ${index + 1}`}
-              icon={() => {
-                return <TbCircleDot size={24} />;
-              }}
-            />
-          );
-        })}
+        <MenuItem
+          path={`/wineries/${id}/stories/${storyId}/chapters`}
+          menuTitle={`Chapters`}
+          icon={() => {
+            return <TbCircleDot size={24} />;
+          }}
+        />
       </motion.ul>
     </motion.nav>
   );

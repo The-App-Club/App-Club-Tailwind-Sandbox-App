@@ -14,6 +14,7 @@ import dataChapters from '@/data/chapters.json';
 import dataWineryStories from '@/data/wineryStories.json';
 import {useMemo} from 'react';
 import Spacer from '@/components/Spacer';
+import ScrollStory from '@/components/ScrollStory';
 
 const StoryChapter = () => {
   const router = useRouter();
@@ -40,7 +41,7 @@ const StoryChapter = () => {
     if (myChapters.length === 0) {
       return;
     }
-    return myChapters.map((chapter) => {
+    return myChapters.find((chapter) => {
       return chapter.chapterId === chapterId;
     });
   }, [myChapters, chapterId]);
@@ -108,9 +109,9 @@ const StoryChapter = () => {
               return `${niceTitle} > `;
             }}
           />
-          <Header />
+          <Header item={myChapter} />
           <Spacer />
-          <p>aaa</p>
+          {/* <ScrollStory /> */}
         </section>
       </Layout>
     </>

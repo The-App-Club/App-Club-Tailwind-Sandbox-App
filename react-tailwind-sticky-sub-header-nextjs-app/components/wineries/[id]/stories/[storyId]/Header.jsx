@@ -1,6 +1,6 @@
 import {css, cx} from '@emotion/css';
 
-const Header = () => {
+const Header = ({item}) => {
   return (
     <div
       className={cx(
@@ -26,8 +26,22 @@ const Header = () => {
       <h2
         className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
       >
-        Winery Story
+        {`${item.storyTitle}`}
       </h2>
+      <div className="flex items-center gap-4">
+        <button
+          className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
+          onClick={(e) => {}}
+        >
+          Publish
+        </button>
+        <button
+          className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
+          onClick={(e) => {}}
+        >
+          Preview
+        </button>
+      </div>
     </div>
   );
 };

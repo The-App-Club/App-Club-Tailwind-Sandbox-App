@@ -20,18 +20,17 @@ import dataWineryStories from '@/data/wineryStories.json';
 import {useMemo} from 'react';
 import {TbCircleDot} from 'react-icons/tb';
 
-const attachActiveMenu = ({activeMenuName, menuTitle}) => {
-  if (activeMenuName === menuTitle) {
+const attachActiveMenu = ({activeChapterId, chapterId}) => {
+  if (activeChapterId === chapterId) {
     return `border-blue-900 dark:border-yellow-300`;
   }
   return `border-transparent`;
 };
 
-const MenuItem = ({path, menuTitle, icon}) => {
+const MenuItem = ({path, menuTitle, activeChapterId, chapterId, icon}) => {
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const [sidebar, setSidebar] = useRecoilState(sidebarState);
-
   const motionConfig = {
     hidden: {opacity: 0, x: 160},
     show: {opacity: 1, x: 0},
@@ -59,8 +58,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
         `relative`,
         `border-r-8`,
         `hover:bg-gray-100 dark:hover:bg-slate-800`,
-        isClient &&
-          attachActiveMenu({activeMenuName: sidebar.activeMenuName, menuTitle})
+        isClient && attachActiveMenu({activeChapterId, chapterId})
       )}
       onClick={(e) => {
         setSidebar((prevState) => {
@@ -81,7 +79,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
 
 const Nav = () => {
   const router = useRouter();
-  const {id, storyId} = router.query;
+  const {id, storyId, chapterId} = router.query;
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -108,11 +106,6 @@ const Nav = () => {
     return;
   }
 
-  // if (matchedChapters.length===0) {
-  //   // チャプターが未作成
-  //   return;
-  // }
-
   return (
     <motion.nav className="relative w-full">
       <motion.ul
@@ -134,6 +127,8 @@ const Nav = () => {
               key={index}
               path={`/wineries/${id}/stories/${storyId}/chapters/${chapter.chapterId}`}
               menuTitle={`Chapter ${index + 1}`}
+              activeChapterId={chapterId}
+              chapterId={chapter.chapterId}
               icon={() => {
                 return <TbCircleDot size={24} />;
               }}

@@ -11,8 +11,12 @@ import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 import {useRouter} from 'next/router';
 import dataWineryStories from '@/data/wineryStories.json';
+import dataWineres from '@/data/wineries.json';
+import dataChapters from '@/data/chapters.json';
 import {useMemo} from 'react';
 import Spacer from '@/components/Spacer';
+import GalleryItem from '@/components/wineries/[id]/stories/[storyId]/GalleryItem';
+import Link from 'next/link';
 
 const WineryStory = () => {
   const router = useRouter();
@@ -37,6 +41,22 @@ const WineryStory = () => {
     });
   }, [storyId, item]);
 
+  const activeWinery = useMemo(() => {
+    if (!myStory) {
+      return;
+    }
+
+    return dataWineres.find((item) => {
+      return item.wineryId === myStory.wineryId;
+    });
+  }, [myStory]);
+
+  const myChapter = useMemo(() => {
+    return dataChapters.find((item) => {
+      return item.storyId === storyId;
+    });
+  }, [storyId]);
+
   if (!item) {
     return;
   }
@@ -45,7 +65,13 @@ const WineryStory = () => {
     return;
   }
 
-  console.log(myStory);
+  if (!activeWinery) {
+    return;
+  }
+
+  if (!myChapter) {
+    return;
+  }
 
   return (
     <>
@@ -102,9 +128,9 @@ const WineryStory = () => {
               return `${niceTitle} > `;
             }}
           />
-          <Header />
+          <Header item={myStory} />
           <Spacer />
-          <p>aaa</p>
+          <Container chapters={myChapter.chapters} />
         </section>
       </Layout>
     </>
