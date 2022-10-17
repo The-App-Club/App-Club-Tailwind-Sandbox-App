@@ -15,9 +15,19 @@ const routes = [
     activeMenuName: `Subscribe`,
   },
   {
-    pathName: `/setting`,
+    pathName: `/dashboard`,
+    pageName: `Dashboard`,
+    activeMenuName: `Dashboard`,
+  },
+  {
+    pathName: `/dashboard/setting`,
     pageName: `Setting`,
     activeMenuName: `Setting`,
+  },
+  {
+    pathName: `/dashboard/notification`,
+    pageName: `Notification`,
+    activeMenuName: `Notification`,
   },
   {
     pathName: `/story`,
@@ -160,11 +170,6 @@ const routes = [
     pathName: `/about`,
     pageName: `About`,
     activeMenuName: `About`,
-  },
-  {
-    pathName: `/notification`,
-    pageName: `Notification`,
-    activeMenuName: `Notification`,
   },
   {
     pathName: `/contact`,

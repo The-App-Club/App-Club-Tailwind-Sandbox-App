@@ -3,12 +3,13 @@ import capitalize from 'capitalize-the-first-letter';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRecoilValue} from 'recoil';
 
-import Sidebar from '@/components/Sidebar';
+import Sidebar from '@/components/dashboard/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
-const Notification = () => {
+const Setting = () => {
   const {opened} = useRecoilValue(hamburgerState);
+
   return (
     <>
       <Sidebar />
@@ -58,7 +59,7 @@ const Notification = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === `Notification`) {
+              if (niceTitle === `Setting`) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
@@ -90,7 +91,7 @@ const Notification = () => {
                 `w-full text-xl flex items-center justify-start gap-2`
               )}
             >
-              Notification
+              Setting
             </h2>
           </div>
         </section>
@@ -99,4 +100,4 @@ const Notification = () => {
   );
 };
 
-export default Notification;
+export default Setting;

@@ -3,11 +3,11 @@ import capitalize from 'capitalize-the-first-letter';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRecoilValue} from 'recoil';
 
-import Sidebar from '@/components/Sidebar';
+import Sidebar from '@/components/dashboard/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
-const Setting = () => {
+const Dashboard = () => {
   const {opened} = useRecoilValue(hamburgerState);
 
   return (
@@ -59,12 +59,13 @@ const Setting = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === `Setting`) {
+              if (niceTitle === `Dashboard`) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
             }}
           />
+
           <div
             className={cx(
               css`
@@ -91,7 +92,7 @@ const Setting = () => {
                 `w-full text-xl flex items-center justify-start gap-2`
               )}
             >
-              Setting
+              Dashboard
             </h2>
           </div>
         </section>
@@ -100,4 +101,4 @@ const Setting = () => {
   );
 };
 
-export default Setting;
+export default Dashboard;
