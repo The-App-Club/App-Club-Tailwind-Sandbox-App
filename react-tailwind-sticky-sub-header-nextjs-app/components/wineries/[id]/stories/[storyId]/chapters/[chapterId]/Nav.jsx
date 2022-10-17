@@ -2,24 +2,23 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {AiOutlineSelect} from 'react-icons/ai';
-import {BiHome} from 'react-icons/bi';
-import {FaHatCowboySide} from 'react-icons/fa';
-import {FiSettings} from 'react-icons/fi';
-import {GiGrapes, GiPriceTag, GiWineBottle} from 'react-icons/gi';
+import {GiGrapes} from 'react-icons/gi';
 import {
   MdFavoriteBorder,
-  MdOutlineContactMail,
-  MdOutlineLocationOn,
-  MdOutlineNotificationsNone,
+  MdHistory,
   MdOutlineShoppingCart,
   MdRssFeed,
 } from 'react-icons/md';
-import {SiBuymeacoffee} from 'react-icons/si';
 import {useRecoilState} from 'recoil';
 
-import {default as NavMarkedWineryFav} from '@/components/favorite/wineries/NavMarkedFav';
+import NavMarkedFav from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
+import {BsPencilSquare} from 'react-icons/bs';
+
+import dataChapters from '@/data/chapters.json';
+import dataWineryStories from '@/data/wineryStories.json';
+import {useMemo} from 'react';
+import {TbCircleDot} from 'react-icons/tb';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
@@ -43,13 +42,6 @@ const MenuItem = ({path, menuTitle, icon}) => {
       setIsClient(true);
     }
   }, []);
-
-  const renderShortHandMetrics = () => {
-    if (menuTitle === `Favorite Winery`) {
-      return <NavMarkedWineryFav />;
-    }
-    return null;
-  };
 
   return (
     <motion.li
@@ -83,12 +75,13 @@ const MenuItem = ({path, menuTitle, icon}) => {
     >
       {icon()}
       <h2>{menuTitle}</h2>
-      {isClient && renderShortHandMetrics()}
     </motion.li>
   );
 };
 
 const Nav = () => {
+  const router = useRouter();
+  const {id, storyId} = router.query;
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -98,6 +91,28 @@ const Nav = () => {
       },
     },
   };
+  const matchedStory = useMemo(() => {
+    return dataChapters.find((item) => {
+      return item.storyId === storyId;
+    });
+  }, [storyId]);
+
+  const matchedChapters = useMemo(() => {
+    if (!matchedStory) {
+      return [];
+    }
+    return matchedStory.chapters;
+  }, [matchedStory]);
+
+  if (!matchedStory) {
+    return;
+  }
+
+  // if (matchedChapters.length===0) {
+  //   // チャプターが未作成
+  //   return;
+  // }
+
   return (
     <motion.nav className="relative w-full">
       <motion.ul
@@ -113,20 +128,18 @@ const Nav = () => {
           flex-direction: column;
         `}
       >
-        <MenuItem
-          path={'/wineries'}
-          menuTitle={'Winery'}
-          icon={() => {
-            return <GiGrapes size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/favorite/wineries'}
-          menuTitle={'Favorite Winery'}
-          icon={() => {
-            return <MdFavoriteBorder size={24} />;
-          }}
-        />
+        {matchedChapters.map((chapter, index) => {
+          return (
+            <MenuItem
+              key={index}
+              path={`/wineries/${id}/stories/${storyId}/chapters/${chapter.chapterId}`}
+              menuTitle={`Chapter ${index + 1}`}
+              icon={() => {
+                return <TbCircleDot size={24} />;
+              }}
+            />
+          );
+        })}
       </motion.ul>
     </motion.nav>
   );

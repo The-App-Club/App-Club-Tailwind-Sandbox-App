@@ -158,13 +158,13 @@ const routes = [
   },
   {
     pathName: `/favorite/wines`,
-    pageName: `Favorite`,
-    activeMenuName: `Favorite`,
+    pageName: `Favorite Wine`,
+    activeMenuName: `Favorite Wine`,
   },
   {
     pathName: `/favorite/wineries`,
-    pageName: `Favorite`,
-    activeMenuName: `Favorite`,
+    pageName: `Favorite Winery`,
+    activeMenuName: `Favorite Winery`,
   },
   {
     pathName: `/feed`,

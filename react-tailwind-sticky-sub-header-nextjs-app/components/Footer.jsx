@@ -20,8 +20,10 @@ const Footer = ({pathname}) => {
       pathname === `/setting` ||
       pathname === `/notification` ||
       pathname === `/cart` ||
-      pathname === `/wineries/[id]` ||
       pathname === `/wineries` ||
+      pathname === `/wineries/[id]` ||
+      pathname === `/wineries/[id]/stories` ||
+      pathname === `/wineries/[id]/stories/[storyId]` ||
       pathname === `/story` ||
       pathname === `/story/wines` ||
       pathname === `/story/wineries` ||

@@ -2,24 +2,18 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {AiOutlineSelect} from 'react-icons/ai';
-import {BiHome} from 'react-icons/bi';
-import {FaHatCowboySide} from 'react-icons/fa';
-import {FiSettings} from 'react-icons/fi';
-import {GiGrapes, GiPriceTag, GiWineBottle} from 'react-icons/gi';
+import {GiGrapes} from 'react-icons/gi';
 import {
   MdFavoriteBorder,
-  MdOutlineContactMail,
-  MdOutlineLocationOn,
-  MdOutlineNotificationsNone,
+  MdHistory,
   MdOutlineShoppingCart,
   MdRssFeed,
 } from 'react-icons/md';
-import {SiBuymeacoffee} from 'react-icons/si';
 import {useRecoilState} from 'recoil';
 
-import {default as NavMarkedWineryFav} from '@/components/favorite/wineries/NavMarkedFav';
+import NavMarkedFav from '@/components/wineries/[id]/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
+import {BsPencilSquare} from 'react-icons/bs';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
@@ -46,7 +40,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
 
   const renderShortHandMetrics = () => {
     if (menuTitle === `Favorite Winery`) {
-      return <NavMarkedWineryFav />;
+      return <NavMarkedFav />;
     }
     return null;
   };
@@ -89,6 +83,8 @@ const MenuItem = ({path, menuTitle, icon}) => {
 };
 
 const Nav = () => {
+  const router = useRouter();
+  const {id} = router.query;
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -114,7 +110,7 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={'/wineries'}
+          path={`/wineries/${id}`}
           menuTitle={'Winery'}
           icon={() => {
             return <GiGrapes size={24} />;
@@ -125,6 +121,13 @@ const Nav = () => {
           menuTitle={'Favorite Winery'}
           icon={() => {
             return <MdFavoriteBorder size={24} />;
+          }}
+        />
+        <MenuItem
+          path={`/wineries/${id}/stories`}
+          menuTitle={'Winery Story'}
+          icon={() => {
+            return <MdHistory size={24} />;
           }}
         />
       </motion.ul>

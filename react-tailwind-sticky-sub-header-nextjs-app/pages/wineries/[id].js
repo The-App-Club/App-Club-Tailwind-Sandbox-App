@@ -10,7 +10,7 @@ import Category from '@/components/Category';
 import ProductGalleryItem from '@/components/ProductGalleryItem';
 import SearchModal from '@/components/SearchModal';
 import Spacer from '@/components/Spacer';
-import Sidebar from '@/components/wineries/Sidebar';
+import Sidebar from '@/components/wineries/[id]/Sidebar';
 import TraceFooter from '@/components/wineries/[id]/TraceFooter';
 import data from '@/data/wineries.json';
 import Layout from '@/layouts/default';
