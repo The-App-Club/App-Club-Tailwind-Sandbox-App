@@ -14,7 +14,7 @@ import dataChapters from '@/data/chapters.json';
 import dataWineryStories from '@/data/wineryStories.json';
 import {useMemo} from 'react';
 import Spacer from '@/components/Spacer';
-import ScrollStory from '@/components/ScrollStory';
+import ScrollStory from '@/components/story/create/ScrollStory';
 
 const StoryChapter = () => {
   const router = useRouter();
@@ -75,6 +75,7 @@ const StoryChapter = () => {
                 max-width: 100%;
               }
               nav {
+                z-index: 3;
                 position: sticky;
                 top: 3rem;
                 width: 100%;
@@ -111,7 +112,8 @@ const StoryChapter = () => {
           />
           <Header item={myChapter} />
           <Spacer />
-          {/* <ScrollStory /> */}
+
+          <ScrollStory />
         </section>
       </Layout>
     </>
