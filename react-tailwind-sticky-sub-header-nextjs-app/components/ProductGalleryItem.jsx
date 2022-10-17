@@ -89,7 +89,7 @@ const ProductGalleryItem = ({item}) => {
           }
         `}
       >
-        <div
+        {/* <div
           className={cx(
             'absolute bottom-2 right-0 flex items-center',
             css`
@@ -102,7 +102,7 @@ const ProductGalleryItem = ({item}) => {
             size={32}
             fill={`rgb(209 213 219)`} // bg-gray-300
           />
-        </div>
+        </div> */}
       </div>
       <div className="w-full">
         <h2

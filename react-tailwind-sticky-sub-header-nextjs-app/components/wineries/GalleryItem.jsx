@@ -73,7 +73,7 @@ const GalleryItem = ({item}) => {
           }
         `}
       >
-        <div
+        {/* <div
           className={cx(
             'absolute bottom-2 right-0 flex items-center',
             css`
@@ -86,7 +86,7 @@ const GalleryItem = ({item}) => {
             size={32}
             fill={`rgb(209 213 219)`} // bg-gray-300
           />
-        </div>
+        </div> */}
       </div>
       <div className="w-full">
         <h2 className="text-xl">{item.wineryName}</h2>

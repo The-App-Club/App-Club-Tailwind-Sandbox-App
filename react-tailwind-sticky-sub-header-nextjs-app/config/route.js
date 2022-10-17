@@ -207,6 +207,26 @@ const routes = [
     activeMenuName: `Wines`,
   },
   {
+    pathName: `/wines/[id]/stories`,
+    pageName: `Wine Story`,
+    activeMenuName: `Wine Story`,
+  },
+  {
+    pathName: `/wines/[id]/stories/[storyId]`,
+    pageName: `Wine Story`,
+    activeMenuName: `Wine Story`,
+  },
+  {
+    pathName: `/wines/[id]/stories/[storyId]/chapters`,
+    pageName: `Chapters`,
+    activeMenuName: `Chapters`,
+  },
+  {
+    pathName: `/wines/[id]/stories/[storyId]/chapters/[chapterId]`,
+    pageName: `Chapter`,
+    activeMenuName: `Chapter`,
+  },
+  {
     pathName: `/wines/[id]/story`,
     pageName: `Wine Story`,
     activeMenuName: `Wines`,
@@ -225,6 +245,26 @@ const routes = [
     pathName: `/wineries/[id]`,
     pageName: `Winery Id`,
     activeMenuName: `Winery`,
+  },
+  {
+    pathName: `/wineries/[id]/stories`,
+    pageName: `Winery Story`,
+    activeMenuName: `Winery Story`,
+  },
+  {
+    pathName: `/wineries/[id]/stories/[storyId]`,
+    pageName: `Winery Story`,
+    activeMenuName: `Winery Story`,
+  },
+  {
+    pathName: `/wineries/[id]/stories/[storyId]/chapters`,
+    pageName: `Chapters`,
+    activeMenuName: `Chapters`,
+  },
+  {
+    pathName: `/wineries/[id]/stories/[storyId]/chapters/[chapterId]`,
+    pageName: `Chapter`,
+    activeMenuName: `Chapter`,
   },
 ];
 
