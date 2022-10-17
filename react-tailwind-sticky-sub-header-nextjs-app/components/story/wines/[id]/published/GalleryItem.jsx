@@ -9,12 +9,28 @@ import {useRecoilState} from 'recoil';
 import GalleryItemFav from './GalleryItemFav';
 
 import dataWines from '@/data/wines.json';
+import dataUsers from '@/data/users.json';
+
 import wineState from '@/stores/wineStore';
 import {formatRelativeTime} from '@/utils/dateUtil';
+import {useMemo} from 'react';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
   const [_, setActiveWine] = useRecoilState(wineState);
+
+  const matchedUser = useMemo(() => {
+    if (!item) {
+      return;
+    }
+    return dataUsers.find((user) => {
+      return user.userId === item.userId;
+    });
+  }, [item]);
+
+  if (!matchedUser) {
+    return;
+  }
 
   return (
     <div
@@ -22,7 +38,7 @@ const GalleryItem = ({item}) => {
         `relative`,
         `w-full border-2 p-2`,
         `hover:cursor-pointer`,
-        `hover:bg-gray-100 dark:hover:bg-slate-800`
+        `hover:bg-gray-100 dark:hover:bg-slate-800 hover:shadow-2xl`
       )}
       onClick={(e) => {
         e.stopPropagation();
@@ -62,18 +78,37 @@ const GalleryItem = ({item}) => {
         `}
       />
       <div className="w-full">
-        <h2
-          className={cx(
-            'text-xl line-clamp-2',
-            css`
-              min-height: 56px;
-            `
-          )}
-        >
-          {item.storyTitle}
-        </h2>
+        <h2 className={cx('text-xl line-clamp-2')}>{item.storyTitle}</h2>
       </div>
-      <div className={cx(`text-sm font-bold flex items-center`)}>
+      <div
+        className="w-full"
+        onClick={(e) => {
+          e.stopPropagation();
+          router.push({
+            pathname: `/users/${matchedUser.userId}`,
+          });
+        }}
+      >
+        <div className="flex items-center gap-1">
+          <picture className={css``}>
+            <source srcSet={`${matchedUser.avatorURL}`} type={`image/png`} />
+            <img
+              src={`${matchedUser.avatorURL}`}
+              alt={matchedUser.userName}
+              width={40}
+              height={40}
+              className={`rounded-full border-2`}
+            />
+          </picture>
+
+          <span className="text-sm font-bold hover:underline">{`${matchedUser.userName}`}</span>
+        </div>
+      </div>
+      <div
+        className={cx(
+          `text-sm text-gray-600 dark:text-gray-400 font-bold flex items-center gap-1`
+        )}
+      >
         <MdHistory
           size={24}
           className={css`
@@ -82,7 +117,11 @@ const GalleryItem = ({item}) => {
         />
         <span className="text-sm">{formatRelativeTime(item.createdAt)}</span>
       </div>
-      <div className={cx(`text-sm font-bold flex items-center`)}>
+      <div
+        className={cx(
+          `text-sm text-gray-600 dark:text-gray-400 font-bold flex items-center gap-1`
+        )}
+      >
         <FiEye
           size={24}
           className={css`
@@ -93,7 +132,11 @@ const GalleryItem = ({item}) => {
           average: true,
         })} views`}</span>
       </div>
-      <div className={cx(`text-sm font-bold flex items-center`)}>
+      <div
+        className={cx(
+          `text-sm text-gray-600 dark:text-gray-400 font-bold flex items-center gap-1`
+        )}
+      >
         <GiPriceTag
           size={24}
           className={css`

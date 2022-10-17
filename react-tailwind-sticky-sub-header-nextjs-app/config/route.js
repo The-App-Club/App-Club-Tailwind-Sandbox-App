@@ -10,6 +10,16 @@ const routes = [
     activeMenuName: `Not Found`,
   },
   {
+    pathName: `/users`,
+    pageName: `Users`,
+    activeMenuName: `Users`,
+  },
+  {
+    pathName: `/users/[userId]`,
+    pageName: `Users`,
+    activeMenuName: `Users`,
+  },
+  {
     pathName: `/subscribe`,
     pageName: `Subscribe`,
     activeMenuName: `Subscribe`,
