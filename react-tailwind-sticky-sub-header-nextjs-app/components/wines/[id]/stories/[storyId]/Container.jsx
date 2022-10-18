@@ -2,9 +2,13 @@ import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
 
-import GalleryItem from '@/components/wineries/[id]/stories/GalleryItem';
+import GalleryItem from '@/components/wines/[id]/stories/[storyId]/GalleryItem';
+import {useRouter} from 'next/router';
 
-const Container = ({stories}) => {
+const Container = ({chapters}) => {
+  const router = useRouter();
+  const {id, storyId} = router.query;
+
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -13,8 +17,12 @@ const Container = ({stories}) => {
     }
   }, []);
 
+  if (!chapters || chapters.length === 0) {
+    return;
+  }
+
   const renderContainer = () => {
-    if (stories.length === 0) {
+    if (chapters.length === 0) {
       return (
         <div
           className={cx(
@@ -22,8 +30,8 @@ const Container = ({stories}) => {
             `border-2  rounded-lg shadow-lg p-2`
           )}
         >
-          <p>Nothing stories...</p>
-          <Link href={`/story`}>
+          <p>Nothing chapters...</p>
+          <Link href={`/wines/${id}/stories/${storyId}`}>
             <a className="hover:underline">See Story</a>
           </Link>
         </div>
@@ -41,8 +49,8 @@ const Container = ({stories}) => {
             }
           `}
         >
-          {stories.map((item, index) => {
-            return <GalleryItem key={index} item={item} />;
+          {chapters.map((item, index) => {
+            return <GalleryItem key={index} item={item} chapterIndex={index} />;
           })}
         </div>
       );

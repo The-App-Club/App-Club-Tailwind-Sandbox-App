@@ -20,7 +20,7 @@ const motionConfig = {
   },
 };
 
-const StoryTitleForm = ({chapterId, setIsShow}) => {
+const StoryTitleForm = ({storyId, setIsShow}) => {
   const messageRef = useRef();
   const [message, setMessage] = useState('');
   const [disabled, setDisabled] = useState(true);
@@ -39,7 +39,7 @@ const StoryTitleForm = ({chapterId, setIsShow}) => {
     e.stopPropagation();
     try {
       console.log({
-        chapterId: chapterId,
+        storyId: storyId,
         comment: messageRef.current.value,
       });
       setIsShow(false);
@@ -61,15 +61,15 @@ const StoryTitleForm = ({chapterId, setIsShow}) => {
       variants={motionConfig}
     >
       <label
-        htmlFor={`message-${chapterId}`}
+        htmlFor={`message-${storyId}`}
         className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
       >
         Your Desription
       </label>
       <textarea
-        id={`message-${chapterId}`}
+        id={`message-${storyId}`}
         rows="1"
-        name={`message-${chapterId}`}
+        name={`message-${storyId}`}
         className="focus:outline-none block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         placeholder="Leave a comment..."
         ref={messageRef}

@@ -60,9 +60,13 @@ const Header = ({pathname}) => {
       pathname === `/story/wines/[id]/edit` ||
       pathname === `/story/wines/[id]/published` ||
       pathname === `/story/wines/[id]/published/[pid]` ||
+      pathname === `/wines` ||
       pathname === `/wines/[id]` ||
       pathname === `/wines/[id]/story` ||
-      pathname === `/wines`
+      pathname === `/wines/[id]/stories` ||
+      pathname === `/wines/[id]/stories/[storyId]` ||
+      pathname === `/wines/[id]/stories/[storyId]/chapters` ||
+      pathname === `/wines/[id]/stories/[storyId]/chapters/[chapterId]`
     ) {
       return css`
         left: 18rem;

@@ -41,16 +41,6 @@ const WineryStory = () => {
     });
   }, [storyId, item]);
 
-  const activeWinery = useMemo(() => {
-    if (!myStory) {
-      return;
-    }
-
-    return dataWineres.find((item) => {
-      return item.wineryId === myStory.wineryId;
-    });
-  }, [myStory]);
-
   const myChapter = useMemo(() => {
     return dataChapters.find((item) => {
       return item.storyId === storyId;
@@ -62,10 +52,6 @@ const WineryStory = () => {
   }
 
   if (!myStory) {
-    return;
-  }
-
-  if (!activeWinery) {
     return;
   }
 

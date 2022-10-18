@@ -1,0 +1,185 @@
+import {css, cx} from '@emotion/css';
+import {useRouter} from 'next/router';
+import {default as numbro} from 'numbro';
+import {useMemo, useState} from 'react';
+import {FiEye} from 'react-icons/fi';
+import {GiGrapes, GiPriceTag} from 'react-icons/gi';
+import {MdHistory} from 'react-icons/md';
+import {useRecoilState} from 'recoil';
+
+import dataUsers from '@/data/users.json';
+import dataWineries from '@/data/wineries.json';
+import dataWines from '@/data/wines.json';
+import wineState from '@/stores/wineStore';
+import {formatRelativeTime} from '@/utils/dateUtil';
+import {BiPencil} from 'react-icons/bi';
+import {AnimatePresence} from 'framer-motion';
+import ShortHandMenu from '@/components/wines/[id]/stories/ShortHandMenu';
+import StoryTitleForm from '@/components/wines/[id]/stories/StoryTitleForm';
+
+const GalleryItem = ({item}) => {
+  const router = useRouter();
+  const [_, setActiveWine] = useRecoilState(wineState);
+
+  const [isShow, setIsShow] = useState(false);
+
+  const handleEdit = (e) => {
+    e.stopPropagation();
+    setIsShow((prev) => {
+      return !prev;
+    });
+  };
+
+  const activeWine = useMemo(() => {
+    if (!item) {
+      return;
+    }
+    return dataWines.find((d) => {
+      return d.id === Number(item.wineId);
+    });
+  }, [item]);
+
+  const matchedUser = useMemo(() => {
+    if (!item) {
+      return;
+    }
+    return dataUsers.find((user) => {
+      return user.userId === item.userId;
+    });
+  }, [item]);
+
+  if (!activeWine) {
+    return;
+  }
+
+  if (!matchedUser) {
+    return;
+  }
+
+  return (
+    <div
+      className={cx(
+        `relative`,
+        `w-full border-2 p-2`,
+        `hover:cursor-pointer`,
+        `hover:bg-gray-100 dark:hover:bg-slate-800`
+      )}
+      onClick={(e) => {
+        if (isShow) {
+          return;
+        }
+        e.stopPropagation();
+        const activeWine = dataWines.find((d) => {
+          return d.id === Number(item.wineId);
+        });
+        setActiveWine({
+          activeWine,
+        });
+        router.push({
+          pathname: `/wines/${item.wineId}/stories/${item.storyId}`,
+        });
+      }}
+    >
+      <ShortHandMenu storyId={item.storyId} />
+      <div
+        className={css`
+          width: 100%;
+          height: 200px;
+          position: relative;
+          ::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url(${item.thumbnail});
+            background-size: contain;
+            background-position: center center;
+            background-origin: center center;
+            background-repeat: no-repeat;
+          }
+        `}
+      />
+      <div className="w-full">
+        <h2 className={cx('text-xl line-clamp-2')}>{item.storyTitle}</h2>
+        <div
+          className="flex justify-end items-center gap-1 hover:cursor-pointer"
+          onClick={handleEdit}
+        >
+          <BiPencil size={20} fill={`rgb(156 163 175)`} />
+          <span className="text-sm text-gray-400 hover:text-gray-500 dark:hover:text-gray-50">
+            {isShow ? `Cancel` : `Edit`}
+          </span>
+        </div>
+        <AnimatePresence>
+          {isShow && (
+            <StoryTitleForm storyId={item.storyId} setIsShow={setIsShow} />
+          )}
+        </AnimatePresence>
+      </div>
+
+      <div
+        className="w-full"
+        onClick={(e) => {
+          e.stopPropagation();
+          router.push({
+            pathname: `/users/${matchedUser.userId}`,
+          });
+        }}
+      >
+        <div className="flex items-center gap-1">
+          <picture className={css``}>
+            <source srcSet={`${matchedUser.avatorURL}`} type={`image/png`} />
+            <img
+              src={`${matchedUser.avatorURL}`}
+              alt={matchedUser.userName}
+              width={40}
+              height={40}
+              className={`rounded-full border-2`}
+            />
+          </picture>
+
+          <span className="text-sm font-bold hover:underline">{`${matchedUser.userName}`}</span>
+        </div>
+      </div>
+
+      <div className={cx(`text-sm font-bold flex items-center`)}>
+        <MdHistory
+          size={24}
+          className={css`
+            min-width: 24px;
+          `}
+        />
+        <span className="text-sm">{formatRelativeTime(item.createdAt)}</span>
+      </div>
+      <div className={cx(`text-sm font-bold flex items-center`)}>
+        <FiEye
+          size={24}
+          className={css`
+            min-width: 24px;
+          `}
+        />
+        <span className="text-sm">{`${numbro(item.pageViews).format({
+          average: true,
+        })} views`}</span>
+      </div>
+      <div className={cx(`text-sm font-bold flex items-center`)}>
+        <GiPriceTag
+          size={24}
+          className={css`
+            min-width: 24px;
+          `}
+        />
+        <span className="text-sm">{`$${numbro(item.awardsPrice).format({
+          average: true,
+        })} sales amount`}</span>
+      </div>
+    </div>
+  );
+};
+
+export default GalleryItem;

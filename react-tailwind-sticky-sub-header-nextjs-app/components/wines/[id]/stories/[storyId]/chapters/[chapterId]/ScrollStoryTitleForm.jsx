@@ -1,6 +1,8 @@
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 import {cx} from '@emotion/css';
 import {motion} from 'framer-motion';
-import {useRef, useState} from 'react';
+import {useCallback, useRef, useState} from 'react';
+import {useRecoilValue} from 'recoil';
 
 const motionConfig = {
   initial: {
@@ -20,13 +22,13 @@ const motionConfig = {
   },
 };
 
-const StoryTitleForm = ({chapterId, setIsShow}) => {
+const ScrollStoryTitleForm = ({setIsShow}) => {
   const messageRef = useRef();
   const [message, setMessage] = useState('');
   const [disabled, setDisabled] = useState(true);
+  const {chapterId} = useRecoilValue(scrollTriggerState);
 
   const handleChange = (e) => {
-    e.stopPropagation();
     setMessage(e.target.value);
     if (messageRef.current.value === '') {
       setDisabled(true);
@@ -35,18 +37,20 @@ const StoryTitleForm = ({chapterId, setIsShow}) => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.stopPropagation();
-    try {
-      console.log({
-        chapterId: chapterId,
-        comment: messageRef.current.value,
-      });
-      setIsShow(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const handleSubmit = useCallback(
+    (e) => {
+      try {
+        console.log({
+          chapterId,
+          comment: messageRef.current.value,
+        });
+        setIsShow(false);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    [chapterId, setIsShow]
+  );
 
   return (
     <motion.form
@@ -93,4 +97,4 @@ const StoryTitleForm = ({chapterId, setIsShow}) => {
   );
 };
 
-export default StoryTitleForm;
+export default ScrollStoryTitleForm;

@@ -1,6 +1,9 @@
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 import {cx} from '@emotion/css';
 import {motion} from 'framer-motion';
-import {useRef, useState} from 'react';
+import {useRouter} from 'next/router';
+import {useCallback, useRef, useState} from 'react';
+import {useRecoilValue} from 'recoil';
 
 const motionConfig = {
   initial: {
@@ -20,13 +23,13 @@ const motionConfig = {
   },
 };
 
-const StoryTitleForm = ({chapterId, setIsShow}) => {
+const ScrollStorySentenceForm = ({setIsShow}) => {
   const messageRef = useRef();
   const [message, setMessage] = useState('');
   const [disabled, setDisabled] = useState(true);
+  const {chapterId} = useRecoilValue(scrollTriggerState);
 
   const handleChange = (e) => {
-    e.stopPropagation();
     setMessage(e.target.value);
     if (messageRef.current.value === '') {
       setDisabled(true);
@@ -35,18 +38,20 @@ const StoryTitleForm = ({chapterId, setIsShow}) => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.stopPropagation();
-    try {
-      console.log({
-        chapterId: chapterId,
-        comment: messageRef.current.value,
-      });
-      setIsShow(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const handleSubmit = useCallback(
+    (e) => {
+      try {
+        console.log({
+          chapterId,
+          comment: messageRef.current.value,
+        });
+        setIsShow(false);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    [chapterId, setIsShow]
+  );
 
   return (
     <motion.form
@@ -68,7 +73,7 @@ const StoryTitleForm = ({chapterId, setIsShow}) => {
       </label>
       <textarea
         id={`message-${chapterId}`}
-        rows="1"
+        rows="4"
         name={`message-${chapterId}`}
         className="focus:outline-none block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         placeholder="Leave a comment..."
@@ -93,4 +98,4 @@ const StoryTitleForm = ({chapterId, setIsShow}) => {
   );
 };
 
-export default StoryTitleForm;
+export default ScrollStorySentenceForm;

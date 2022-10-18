@@ -2,7 +2,7 @@ import {css, cx} from '@emotion/css';
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
 
-import GalleryItem from '@/components/wineries/[id]/stories/GalleryItem';
+import GalleryItem from '@/components/wines/[id]/stories/GalleryItem';
 
 const Container = ({stories}) => {
   const [isClient, setIsClient] = useState(false);
