@@ -3,8 +3,7 @@ import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import {useRecoilState} from 'recoil';
 
-import GalleryItemFav from './GalleryItemFav';
-
+import GalleryItemFav from '@/components/wineries/GalleryItemFav';
 import wineryState from '@/stores/wineryStore';
 
 const GalleryItem = ({item}) => {

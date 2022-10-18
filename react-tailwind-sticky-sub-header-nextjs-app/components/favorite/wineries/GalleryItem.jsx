@@ -4,9 +4,8 @@ import {memo, useEffect, useState} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {useRecoilState} from 'recoil';
 
-import GalleryItemFav from './GalleryItemFav';
-
 import Spacer from '@/components/Spacer';
+import GalleryItemFav from '@/components/favorite/wineries/GalleryItemFav';
 import wineryState from '@/stores/wineryStore';
 
 const GalleryItem = ({item}) => {

@@ -16,8 +16,11 @@ import {
 import {useRecoilValue} from 'recoil';
 import {useDebouncedCallback} from 'use-debounce';
 
-import themeState from '../stores/themeStore';
-import {decideAxisTickFillColor, decideBarBackFaceFillColor} from './AreaGraph';
+import {
+  decideAxisTickFillColor,
+  decideBarBackFaceFillColor,
+} from '@/components/AreaGraph';
+import themeState from '@/stores/themeStore';
 
 const PriceGraph = ({selectedData}) => {
   const router = useRouter();

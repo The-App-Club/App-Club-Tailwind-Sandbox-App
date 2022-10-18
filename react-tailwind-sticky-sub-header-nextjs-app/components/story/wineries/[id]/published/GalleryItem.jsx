@@ -7,8 +7,7 @@ import {GiGrapes, GiPriceTag} from 'react-icons/gi';
 import {MdHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import GalleryItemFav from './GalleryItemFav';
-
+import GalleryItemFav from '@/components/story/wineries/[id]/published/GalleryItemFav';
 import dataUsers from '@/data/users.json';
 import dataWineries from '@/data/wineries.json';
 import dataWines from '@/data/wines.json';

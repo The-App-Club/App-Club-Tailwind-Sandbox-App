@@ -6,8 +6,7 @@ import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilState, useRecoilValue} from 'recoil';
 
-import InputNumber from '../InputNumber';
-
+import InputNumber from '@/components/InputNumber';
 import ProductCarted from '@/components/cart/ProductCarted';
 import ProductFav from '@/components/cart/ProductFav';
 import dataWineries from '@/data/wineries.json';

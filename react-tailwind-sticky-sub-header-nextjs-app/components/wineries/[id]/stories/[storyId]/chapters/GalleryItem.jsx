@@ -2,8 +2,7 @@ import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {useRecoilState} from 'recoil';
 
-import ShortHandMenu from './ShortHandMenu';
-
+import ShortHandMenu from '@/components/wineries/[id]/stories/[storyId]/chapters/ShortHandMenu';
 import wineryState from '@/stores/wineryStore';
 
 const GalleryItem = ({item, chapterIndex}) => {

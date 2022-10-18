@@ -7,8 +7,7 @@ import {GiPriceTag} from 'react-icons/gi';
 import {MdHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import GalleryItemFav from './GalleryItemFav';
-
+import GalleryItemFav from '@/components/story/wines/[id]/published/GalleryItemFav';
 import dataUsers from '@/data/users.json';
 import dataWines from '@/data/wines.json';
 import wineState from '@/stores/wineStore';
