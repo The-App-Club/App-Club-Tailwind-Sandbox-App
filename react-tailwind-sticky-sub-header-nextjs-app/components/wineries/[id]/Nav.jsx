@@ -11,7 +11,8 @@ import {
 } from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import NavMarkedFav from '@/components/wineries/[id]/NavMarkedFav';
+import NavMarkedFavWinery from '@/components/wineries/[id]/NavMarkedFavWinery';
+import NavMarkedFavWine from '@/components/wineries/[id]/NavMarkedFavWine';
 import sidebarState from '@/stores/sidebarStore';
 import {BsPencilSquare} from 'react-icons/bs';
 
@@ -40,7 +41,10 @@ const MenuItem = ({path, menuTitle, icon}) => {
 
   const renderShortHandMetrics = () => {
     if (menuTitle === `Favorite Winery`) {
-      return <NavMarkedFav />;
+      return <NavMarkedFavWinery />;
+    }
+    if (menuTitle === `Favorite Wine`) {
+      return <NavMarkedFavWine />;
     }
     return null;
   };
@@ -119,6 +123,13 @@ const Nav = () => {
         <MenuItem
           path={'/favorite/wineries'}
           menuTitle={'Favorite Winery'}
+          icon={() => {
+            return <MdFavoriteBorder size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/favorite/wines'}
+          menuTitle={'Favorite Wine'}
           icon={() => {
             return <MdFavoriteBorder size={24} />;
           }}
