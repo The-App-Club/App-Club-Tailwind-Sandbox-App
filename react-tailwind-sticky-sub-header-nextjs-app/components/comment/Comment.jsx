@@ -21,7 +21,7 @@ const Comment = ({item, className = css``}) => {
     if (!item) {
       return 0;
     }
-    return data.filter((d) => {
+    return dataComments.filter((d) => {
       return d.parentCommentId === item.commentId;
     }).length;
   }, [item]);
