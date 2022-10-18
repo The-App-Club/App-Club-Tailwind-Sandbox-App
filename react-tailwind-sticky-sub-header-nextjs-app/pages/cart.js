@@ -3,7 +3,7 @@ import capitalize from 'capitalize-the-first-letter';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRecoilValue} from 'recoil';
 
-import Sidebar from '@/components/Sidebar';
+import Sidebar from '@/components/cart/Sidebar';
 import Spacer from '@/components/Spacer';
 import Container from '@/components/cart/Container';
 import Header from '@/components/cart/Header';
