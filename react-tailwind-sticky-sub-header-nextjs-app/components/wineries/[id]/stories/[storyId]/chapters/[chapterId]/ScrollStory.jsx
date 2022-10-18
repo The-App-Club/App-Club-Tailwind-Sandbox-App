@@ -56,7 +56,7 @@ const ScrollStory = () => {
   const handleStepProgress = (e) => {};
 
   return (
-    <div className="relative">
+    <div key={chapterId} className="relative">
       <div
         ref={mapContainer}
         className={cx(
@@ -89,7 +89,7 @@ const ScrollStory = () => {
           </div>
         </div>
         <ScrollStoryModel />
-        <ScrollStoryCaption a={'This is Cake'} chapterId={chapterId} />
+        <ScrollStoryCaption />
       </div>
       <div
         className={css`

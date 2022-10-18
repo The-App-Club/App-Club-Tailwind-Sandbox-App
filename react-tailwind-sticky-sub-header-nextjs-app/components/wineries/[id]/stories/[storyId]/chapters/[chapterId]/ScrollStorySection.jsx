@@ -23,8 +23,8 @@ const _ScrollStorySection = ({}, ref) => {
       <ScrollStorySectionTitle />
       <Spacer height="90vh" />
       <ScrollStorySentence />
-      <Spacer height="10vh" />
-      <ScrollStorySentence />
+      {/* <Spacer height="10vh" />
+      <ScrollStorySentence /> */}
     </section>
   );
 };
