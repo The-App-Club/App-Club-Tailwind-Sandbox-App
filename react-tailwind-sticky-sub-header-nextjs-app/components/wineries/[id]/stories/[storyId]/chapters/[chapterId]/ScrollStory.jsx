@@ -88,11 +88,7 @@ const ScrollStory = () => {
             progress<span>{scrollTrigger.progress?.toFixed(2)}</span>
           </div>
         </div>
-        <ScrollStoryModel
-          chapterId={chapterId}
-          title={`Food-and-Drinks-12`}
-          modelURL={`/assets/Food-and-Drinks-12.png`}
-        />
+        <ScrollStoryModel />
         <ScrollStoryCaption a={'This is Cake'} chapterId={chapterId} />
       </div>
       <div

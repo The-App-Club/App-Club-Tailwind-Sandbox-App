@@ -2,6 +2,7 @@ import {motion, motionValue, useTransform} from 'framer-motion';
 import {useRecoilValue} from 'recoil';
 
 import {scrollTriggerState} from '@/stores/scrollTriggerStore';
+import ModelUploader from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ModelUploader';
 
 const motionConfig = {
   initial: {
@@ -21,12 +22,8 @@ const motionConfig = {
   },
 };
 
-const ScrollStoryModel = ({chapterId, modelURL, title}) => {
-  const {
-    direction,
-    progress,
-    chapterId: activeChapterId,
-  } = useRecoilValue(scrollTriggerState);
+const ScrollStoryModel = () => {
+  const {progress} = useRecoilValue(scrollTriggerState);
 
   // TODO ベジェとかでもうちょいカスタマイズしたい
 
@@ -47,15 +44,8 @@ const ScrollStoryModel = ({chapterId, modelURL, title}) => {
         y,
       }}
     >
-      <picture>
-        <source srcSet={modelURL || `/assets/logo.png`} type={`image/png`} />
-        <img
-          src={modelURL || `/assets/logo.png`}
-          alt={title}
-          width={320}
-          height={320}
-        />
-      </picture>
+      <p className="text-sm">画像サイズは 320w x 320h 以上の正方形</p>
+      <ModelUploader />
     </motion.div>
   );
 };
