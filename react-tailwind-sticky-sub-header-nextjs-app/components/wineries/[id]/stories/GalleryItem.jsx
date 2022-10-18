@@ -1,7 +1,7 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
-import {useMemo} from 'react';
+import {useMemo, useState} from 'react';
 import {FiEye} from 'react-icons/fi';
 import {GiGrapes, GiPriceTag} from 'react-icons/gi';
 import {MdHistory} from 'react-icons/md';
@@ -12,11 +12,23 @@ import dataWineries from '@/data/wineries.json';
 import dataWines from '@/data/wines.json';
 import wineState from '@/stores/wineStore';
 import {formatRelativeTime} from '@/utils/dateUtil';
+import {BiPencil} from 'react-icons/bi';
+import {AnimatePresence} from 'framer-motion';
 import ShortHandMenu from '@/components/wineries/[id]/stories/ShortHandMenu';
+import StoryTitleForm from '@/components/wineries/[id]/stories/StoryTitleForm';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
   const [_, setActiveWine] = useRecoilState(wineState);
+
+  const [isShow, setIsShow] = useState(false);
+
+  const handleEdit = (e) => {
+    e.stopPropagation();
+    setIsShow((prev) => {
+      return !prev;
+    });
+  };
 
   const activeWinery = useMemo(() => {
     if (!item) {
@@ -51,6 +63,9 @@ const GalleryItem = ({item}) => {
         `hover:bg-gray-100 dark:hover:bg-slate-800`
       )}
       onClick={(e) => {
+        if (isShow) {
+          return;
+        }
         e.stopPropagation();
         const activeWine = dataWines.find((d) => {
           return d.id === Number(item.wineId);
@@ -89,6 +104,20 @@ const GalleryItem = ({item}) => {
       />
       <div className="w-full">
         <h2 className={cx('text-xl line-clamp-2')}>{item.storyTitle}</h2>
+        <div
+          className="flex justify-end items-center gap-1 hover:cursor-pointer"
+          onClick={handleEdit}
+        >
+          <BiPencil size={20} fill={`rgb(156 163 175)`} />
+          <span className="text-sm text-gray-400 hover:text-gray-500 dark:hover:text-gray-50">
+            {isShow ? `Cancel` : `Edit`}
+          </span>
+        </div>
+        <AnimatePresence>
+          {isShow && (
+            <StoryTitleForm storyId={item.storyId} setIsShow={setIsShow} />
+          )}
+        </AnimatePresence>
       </div>
 
       <div
