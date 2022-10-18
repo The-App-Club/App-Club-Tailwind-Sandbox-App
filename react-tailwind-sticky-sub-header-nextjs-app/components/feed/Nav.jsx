@@ -2,12 +2,10 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {GiGrapes} from 'react-icons/gi';
-import {MdFavoriteBorder, MdHistory} from 'react-icons/md';
+import {MdFavoriteBorder, MdOutlineLocationOn, MdRssFeed} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import NavMarkedFavWine from '@/components/wineries/[id]/NavMarkedFavWine';
-import NavMarkedFavWinery from '@/components/wineries/[id]/NavMarkedFavWinery';
+import {default as NavMarkedFavAll} from '@/components/feed/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
@@ -34,11 +32,8 @@ const MenuItem = ({path, menuTitle, icon}) => {
   }, []);
 
   const renderShortHandMetrics = () => {
-    if (menuTitle === `Favorite Winery`) {
-      return <NavMarkedFavWinery />;
-    }
-    if (menuTitle === `Favorite Wine`) {
-      return <NavMarkedFavWine />;
+    if (menuTitle === `Favorite`) {
+      return <NavMarkedFavAll />;
     }
     return null;
   };
@@ -81,8 +76,6 @@ const MenuItem = ({path, menuTitle, icon}) => {
 };
 
 const Nav = () => {
-  const router = useRouter();
-  const {id} = router.query;
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -108,31 +101,24 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={`/wineries/${id}`}
-          menuTitle={'Winery'}
+          path={'/feed'}
+          menuTitle={'Feed'}
           icon={() => {
-            return <GiGrapes size={24} />;
+            return <MdRssFeed size={24} />;
           }}
         />
         <MenuItem
-          path={'/favorite/wineries'}
-          menuTitle={'Favorite Winery'}
+          path={'/location'}
+          menuTitle={'Location'}
+          icon={() => {
+            return <MdOutlineLocationOn size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/favorite'}
+          menuTitle={'Favorite'}
           icon={() => {
             return <MdFavoriteBorder size={24} />;
-          }}
-        />
-        <MenuItem
-          path={'/favorite/wines'}
-          menuTitle={'Favorite Wine'}
-          icon={() => {
-            return <MdFavoriteBorder size={24} />;
-          }}
-        />
-        <MenuItem
-          path={`/wineries/${id}/stories`}
-          menuTitle={'Winery Story'}
-          icon={() => {
-            return <MdHistory size={24} />;
           }}
         />
       </motion.ul>

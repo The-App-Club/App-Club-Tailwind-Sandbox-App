@@ -1,8 +1,8 @@
-import {scrollTriggerState} from '@/stores/scrollTriggerStore';
-import {AnimatePresence} from 'framer-motion';
 import {useEffect, useState} from 'react';
 import {FileUploader} from 'react-drag-drop-files';
 import {useRecoilValue} from 'recoil';
+
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 
 const fileTypes = ['JPG', 'PNG', 'GIF'];
 

@@ -2,20 +2,8 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {AiOutlineSelect} from 'react-icons/ai';
-import {BiHome} from 'react-icons/bi';
-import {FaHatCowboySide} from 'react-icons/fa';
-import {FiSettings} from 'react-icons/fi';
-import {GiGrapes, GiPriceTag, GiWineBottle} from 'react-icons/gi';
-import {
-  MdFavoriteBorder,
-  MdOutlineContactMail,
-  MdOutlineLocationOn,
-  MdOutlineNotificationsNone,
-  MdOutlineShoppingCart,
-  MdRssFeed,
-} from 'react-icons/md';
-import {SiBuymeacoffee} from 'react-icons/si';
+import {GiGrapes, GiWineBottle} from 'react-icons/gi';
+import {MdFavoriteBorder, MdOutlineShoppingCart} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import NavMarkedCart from '@/components/cart/NavMarkedCart';

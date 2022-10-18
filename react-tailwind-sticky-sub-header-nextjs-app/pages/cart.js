@@ -3,10 +3,10 @@ import capitalize from 'capitalize-the-first-letter';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRecoilValue} from 'recoil';
 
-import Sidebar from '@/components/cart/Sidebar';
 import Spacer from '@/components/Spacer';
 import Container from '@/components/cart/Container';
 import Header from '@/components/cart/Header';
+import Sidebar from '@/components/cart/Sidebar';
 import ReviewRanking from '@/components/feed/ReviewRanking';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';

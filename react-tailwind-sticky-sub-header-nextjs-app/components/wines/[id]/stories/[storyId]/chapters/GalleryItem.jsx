@@ -1,19 +1,9 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
-import {default as numbro} from 'numbro';
-import {useMemo} from 'react';
-import {FiEye} from 'react-icons/fi';
-import {GiGrapes, GiPriceTag} from 'react-icons/gi';
-import {MdHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import dataUsers from '@/data/users.json';
-import dataWineries from '@/data/wineries.json';
-import dataWines from '@/data/wines.json';
-import wineState from '@/stores/wineStore';
-import {formatRelativeTime} from '@/utils/dateUtil';
-import wineryState from '@/stores/wineryStore';
 import ShortHandMenu from '@/components/wines/[id]/stories/[storyId]/chapters/ShortHandMenu';
+import wineryState from '@/stores/wineryStore';
 
 const GalleryItem = ({item, chapterIndex}) => {
   const router = useRouter();

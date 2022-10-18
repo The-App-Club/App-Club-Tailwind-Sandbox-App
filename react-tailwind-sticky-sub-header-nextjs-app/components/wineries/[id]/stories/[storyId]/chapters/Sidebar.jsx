@@ -1,7 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
-import {MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilValue} from 'recoil';
 
 import Nav from '@/components/wineries/[id]/stories/[storyId]/chapters/Nav';

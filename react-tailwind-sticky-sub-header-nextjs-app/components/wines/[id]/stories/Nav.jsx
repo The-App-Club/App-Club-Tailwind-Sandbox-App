@@ -2,18 +2,12 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {GiGrapes, GiWineBottle} from 'react-icons/gi';
-import {
-  MdFavoriteBorder,
-  MdHistory,
-  MdOutlineShoppingCart,
-  MdRssFeed,
-} from 'react-icons/md';
+import {GiWineBottle} from 'react-icons/gi';
+import {MdFavoriteBorder, MdHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import NavMarkedFav from '@/components/wines/[id]/stories/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
-import {BsPencilSquare} from 'react-icons/bs';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {

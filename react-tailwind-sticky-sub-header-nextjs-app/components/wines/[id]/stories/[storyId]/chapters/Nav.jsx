@@ -2,22 +2,10 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {GiGrapes} from 'react-icons/gi';
-import {
-  MdFavoriteBorder,
-  MdHistory,
-  MdOutlineShoppingCart,
-  MdRssFeed,
-} from 'react-icons/md';
+import {TbCircleDot} from 'react-icons/tb';
 import {useRecoilState} from 'recoil';
 
-import NavMarkedFav from '@/components/wines/[id]/stories/[storyId]/chapters/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
-import {BsPencilSquare} from 'react-icons/bs';
-
-import dataWineryStories from '@/data/wineryStories.json';
-import {useMemo} from 'react';
-import {TbCircleDot} from 'react-icons/tb';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {

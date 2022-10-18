@@ -2,27 +2,15 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {AiOutlineSelect} from 'react-icons/ai';
-import {BiHome} from 'react-icons/bi';
-import {FaHatCowboySide} from 'react-icons/fa';
 import {FiSettings} from 'react-icons/fi';
-import {GiGrapes, GiPriceTag, GiWineBottle} from 'react-icons/gi';
-import {
-  MdFavoriteBorder,
-  MdOutlineContactMail,
-  MdOutlineLocationOn,
-  MdOutlineNotificationsNone,
-  MdOutlineShoppingCart,
-  MdRssFeed,
-} from 'react-icons/md';
-import {SiBuymeacoffee} from 'react-icons/si';
+import {MdOutlineNotificationsNone} from 'react-icons/md';
+import {RiDashboardLine} from 'react-icons/ri';
 import {useRecoilState} from 'recoil';
 
 import NavMarkedCart from '@/components/dashboard/NavMarkedCart';
 import {default as NavMarkedWineFav} from '@/components/dashboard/NavMarkedFav';
 import {default as NavMarkedStoryFav} from '@/components/story/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
-import {RiDashboardLine} from 'react-icons/ri';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {

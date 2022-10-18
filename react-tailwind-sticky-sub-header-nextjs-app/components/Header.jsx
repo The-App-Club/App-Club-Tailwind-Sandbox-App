@@ -2,18 +2,14 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useMemo, useState} from 'react';
+import {FaHatCowboySide} from 'react-icons/fa';
 import {FiSettings} from 'react-icons/fi';
-import {
-  MdOutlineLogout,
-  MdOutlineNotificationsNone,
-  MdOutlineShoppingCart,
-} from 'react-icons/md';
+import {MdOutlineLogout, MdOutlineShoppingCart} from 'react-icons/md';
 
 import Hamburger from '@/components/Hamburger';
 import Profile from '@/components/Profile';
 import ThemeToggle from '@/components/ThemeToggle';
 import useCart from '@/hooks/useCart';
-import {FaHatCowboySide} from 'react-icons/fa';
 
 const Header = ({pathname}) => {
   const [isClient, setIsClient] = useState(false);

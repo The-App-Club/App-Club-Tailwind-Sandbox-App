@@ -1,5 +1,6 @@
 import {css, cx} from '@emotion/css';
-import {createRef, useEffect, useMemo, useRef, useState} from 'react';
+import {useRouter} from 'next/router';
+import {createRef, useEffect, useRef} from 'react';
 import {Scrollama, Step} from 'react-scrollama';
 import {useRecoilState} from 'recoil';
 import {MathUtils} from 'three';
@@ -8,7 +9,6 @@ import ScrollStoryCaption from '@/components/wineries/[id]/stories/[storyId]/cha
 import ScrollStoryModel from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStoryModel';
 import ScrollStorySection from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStorySection';
 import {scrollTriggerState} from '@/stores/scrollTriggerStore';
-import {useRouter} from 'next/router';
 
 const ScrollStory = () => {
   const router = useRouter();

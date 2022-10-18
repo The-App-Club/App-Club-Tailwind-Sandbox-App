@@ -1,22 +1,18 @@
 import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
+import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
+import {useMemo} from 'react';
 import {useRecoilValue} from 'recoil';
 
-import Sidebar from '@/components/wineries/[id]/stories/[storyId]/Sidebar';
-import Header from '@/components/wineries/[id]/stories/[storyId]/Header';
+import Spacer from '@/components/Spacer';
 import Container from '@/components/wineries/[id]/stories/[storyId]/Container';
-
+import Header from '@/components/wineries/[id]/stories/[storyId]/Header';
+import Sidebar from '@/components/wineries/[id]/stories/[storyId]/Sidebar';
+import dataWineryChapters from '@/data/wineryChapters.json';
+import dataWineryStories from '@/data/wineryStories.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import {useRouter} from 'next/router';
-import dataWineryStories from '@/data/wineryStories.json';
-import dataWineres from '@/data/wineries.json';
-import dataWineryChapters from '@/data/wineryChapters.json';
-import {useMemo} from 'react';
-import Spacer from '@/components/Spacer';
-import GalleryItem from '@/components/wineries/[id]/stories/[storyId]/GalleryItem';
-import Link from 'next/link';
 
 const WineryStory = () => {
   const router = useRouter();

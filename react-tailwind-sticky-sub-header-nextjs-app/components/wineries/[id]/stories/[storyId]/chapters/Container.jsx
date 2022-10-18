@@ -1,9 +1,9 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
+import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 
 import GalleryItem from '@/components/wineries/[id]/stories/[storyId]/chapters/GalleryItem';
-import {useRouter} from 'next/router';
 
 const Container = ({chapters}) => {
   const router = useRouter();

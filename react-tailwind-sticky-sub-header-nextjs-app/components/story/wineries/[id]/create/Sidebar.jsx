@@ -5,8 +5,8 @@ import {useEffect, useMemo, useState} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import SidebarSp from '@/components/story/wineries/[id]/SidebarSp';
-import Nav from '@/components/story/wineries/[id]/create/Nav';
 import GalleryItem from '@/components/story/wineries/[id]/create/GalleryItem';
+import Nav from '@/components/story/wineries/[id]/create/Nav';
 import dataWineries from '@/data/wineries.json';
 import hamburgerState from '@/stores/hamburgerStore';
 

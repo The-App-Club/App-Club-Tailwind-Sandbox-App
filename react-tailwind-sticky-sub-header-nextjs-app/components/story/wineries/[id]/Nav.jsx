@@ -4,7 +4,6 @@ import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import {BsPencilSquare} from 'react-icons/bs';
 import {GiGrapes} from 'react-icons/gi';
-import {RiDraftLine} from 'react-icons/ri';
 import {useRecoilState} from 'recoil';
 
 import NavMarkedFav from '@/components/story/NavMarkedFav';

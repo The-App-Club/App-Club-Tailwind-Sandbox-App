@@ -7,7 +7,6 @@ import {useInView} from 'react-intersection-observer';
 import {mergeRefs} from 'react-merge-refs';
 
 import ScrollStorySentenceForm from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStorySentenceForm';
-import {useRouter} from 'next/router';
 
 const ScrollStorySentence = () => {
   const itemRef = useRef(null);

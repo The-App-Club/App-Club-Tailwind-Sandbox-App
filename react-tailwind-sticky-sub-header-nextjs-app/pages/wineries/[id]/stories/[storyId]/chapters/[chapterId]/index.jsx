@@ -1,20 +1,17 @@
 import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
+import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
+import {useMemo} from 'react';
 import {useRecoilValue} from 'recoil';
 
-import Sidebar from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/Sidebar';
+import Spacer from '@/components/Spacer';
 import Header from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/Header';
-import Container from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/Container';
 import ScrollStory from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStory';
-
+import Sidebar from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/Sidebar';
+import dataWineryChapters from '@/data/wineryChapters.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import {useRouter} from 'next/router';
-import dataWineryChapters from '@/data/wineryChapters.json';
-import dataWineryStories from '@/data/wineryStories.json';
-import {useMemo} from 'react';
-import Spacer from '@/components/Spacer';
 
 const StoryChapter = () => {
   const router = useRouter();

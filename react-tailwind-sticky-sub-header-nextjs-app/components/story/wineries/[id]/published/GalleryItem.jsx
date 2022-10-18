@@ -8,6 +8,7 @@ import {MdHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import GalleryItemFav from './GalleryItemFav';
+
 import dataUsers from '@/data/users.json';
 import dataWineries from '@/data/wineries.json';
 import dataWines from '@/data/wines.json';

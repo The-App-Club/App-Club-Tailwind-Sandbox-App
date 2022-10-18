@@ -4,12 +4,12 @@ import {
   motionValue,
   useTransform,
 } from 'framer-motion';
-import {useRecoilValue} from 'recoil';
-
-import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 import {useState} from 'react';
 import {BiPencil} from 'react-icons/bi';
+import {useRecoilValue} from 'recoil';
+
 import ScrollStorySentenceForm from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStorySentenceForm';
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 
 const motionConfig = {
   initial: {

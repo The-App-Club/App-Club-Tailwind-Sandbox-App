@@ -5,8 +5,8 @@ import {useEffect, useState} from 'react';
 import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 
 import useFavoriteWine from '@/hooks/useFavoriteWine';
-import useFavoriteWinery from '@/hooks/useFavoriteWinery';
 import useFavoriteWineStory from '@/hooks/useFavoriteWineStory';
+import useFavoriteWinery from '@/hooks/useFavoriteWinery';
 import useFavoriteWineryStory from '@/hooks/useFavoriteWineryStory';
 
 const Container = () => {

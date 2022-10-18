@@ -1,8 +1,8 @@
 import {motion, motionValue, useTransform} from 'framer-motion';
 import {useRecoilValue} from 'recoil';
 
-import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 import ModelUploader from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ModelUploader';
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 
 const motionConfig = {
   initial: {

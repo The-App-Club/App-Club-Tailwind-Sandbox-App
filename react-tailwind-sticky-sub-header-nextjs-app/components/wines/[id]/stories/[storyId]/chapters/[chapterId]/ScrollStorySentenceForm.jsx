@@ -1,9 +1,9 @@
-import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 import {cx} from '@emotion/css';
 import {motion} from 'framer-motion';
-import {useRouter} from 'next/router';
 import {useCallback, useRef, useState} from 'react';
 import {useRecoilValue} from 'recoil';
+
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 
 const motionConfig = {
   initial: {

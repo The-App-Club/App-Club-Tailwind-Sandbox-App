@@ -1,22 +1,13 @@
 import {css, cx} from '@emotion/css';
+import {AnimatePresence} from 'framer-motion';
 import {useRouter} from 'next/router';
-import {default as numbro} from 'numbro';
-import {useMemo, useState} from 'react';
-import {FiEye} from 'react-icons/fi';
-import {GiGrapes, GiPriceTag} from 'react-icons/gi';
-import {MdHistory} from 'react-icons/md';
+import {useState} from 'react';
+import {BiPencil} from 'react-icons/bi';
 import {useRecoilState} from 'recoil';
 
-import dataUsers from '@/data/users.json';
-import dataWineries from '@/data/wineries.json';
-import dataWines from '@/data/wines.json';
-import wineState from '@/stores/wineStore';
-import {formatRelativeTime} from '@/utils/dateUtil';
-import wineryState from '@/stores/wineryStore';
-import ShortHandMenu from '@/components/wineries/[id]/stories/[storyId]/ShortHandMenu';
 import ChapterTitleForm from '@/components/wineries/[id]/stories/[storyId]/ChapterTitleForm';
-import {BiPencil} from 'react-icons/bi';
-import {AnimatePresence} from 'framer-motion';
+import ShortHandMenu from '@/components/wineries/[id]/stories/[storyId]/ShortHandMenu';
+import wineryState from '@/stores/wineryStore';
 
 const GalleryItem = ({item, chapterIndex}) => {
   const router = useRouter();

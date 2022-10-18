@@ -2,12 +2,12 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {memo} from 'react';
-import {GiGrapes, GiWineBottle} from 'react-icons/gi';
+import {GiGrapes} from 'react-icons/gi';
 import {useRecoilState, useRecoilValue} from 'recoil';
 
+import GalleryItemFav from '@/components/story/wineries/[id]/create/GalleryItemFav';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import themeState from '@/stores/themeStore';
-import GalleryItemFav from '@/components/story/wineries/[id]/create/GalleryItemFav';
 
 const motionConfig = {
   initial: {

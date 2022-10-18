@@ -2,12 +2,12 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
+import {BsPencilSquare} from 'react-icons/bs';
 import {GiWineBottle} from 'react-icons/gi';
 import {useRecoilState} from 'recoil';
 
 import NavMarkedFav from '@/components/story/wines/[id]/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
-import {BsPencilSquare} from 'react-icons/bs';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {

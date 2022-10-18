@@ -1,7 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {memo, useEffect, useState} from 'react';
-import {BsPencilSquare} from 'react-icons/bs';
 import {GiGrapes} from 'react-icons/gi';
 import {useRecoilState} from 'recoil';
 

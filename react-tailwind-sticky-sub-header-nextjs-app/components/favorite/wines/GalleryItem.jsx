@@ -2,7 +2,6 @@ import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {memo, useEffect, useState} from 'react';
-import {BsPencilSquare} from 'react-icons/bs';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilState, useRecoilValue} from 'recoil';

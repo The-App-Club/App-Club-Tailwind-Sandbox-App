@@ -3,9 +3,6 @@ import {motion} from 'framer-motion';
 import {memo, useEffect, useState} from 'react';
 
 import useFavoriteWine from '@/hooks/useFavoriteWine';
-import useFavoriteWineStory from '@/hooks/useFavoriteWineStory';
-import useFavoriteWinery from '@/hooks/useFavoriteWinery';
-import useFavoriteWineryStory from '@/hooks/useFavoriteWineryStory';
 
 const NavMarkedFav = () => {
   const {favoriteWines} = useFavoriteWine();

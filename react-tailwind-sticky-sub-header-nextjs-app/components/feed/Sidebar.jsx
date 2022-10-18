@@ -3,13 +3,14 @@ import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useRecoilValue} from 'recoil';
 
-import Nav from '@/components/wineries/[id]/Nav';
-import SidebarSp from '@/components/wineries/[id]/SidebarSp';
+import Nav from '@/components/feed/Nav';
+import SidebarSp from '@/components/feed/SidebarSp';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
+
   return (
     <>
       <SidebarSp />

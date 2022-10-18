@@ -1,7 +1,6 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {BsPencilSquare} from 'react-icons/bs';
 import {useRecoilState} from 'recoil';
 
 import GalleryItemFav from './GalleryItemFav';

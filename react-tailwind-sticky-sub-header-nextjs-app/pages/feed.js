@@ -4,39 +4,12 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRef} from 'react';
 import {useRecoilValue} from 'recoil';
 
-import Sidebar from '@/components/Sidebar';
 import Spacer from '@/components/Spacer';
 import Feeder from '@/components/feed/Feeder';
 import Header from '@/components/feed/Header';
+import Sidebar from '@/components/feed/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-
-// import {default as chance} from 'chance';
-
-// const a = data.map((item) => {
-//   const s = chance(item.wine + chance().country({full: true})).floating({
-//     min: 0,
-//     max: 5,
-//   });
-//   const l = chance(item.wine + chance().country({full: true})).floating({
-//     min: 0,
-//     max: 5,
-//   });
-//   return {
-//     ...item,
-//     taste: {
-//       sweet: s,
-//       dry: Number((5 - s).toFixed(4)),
-//     },
-//     dense: {
-//       light: l,
-//       full: Number((5 - l).toFixed(4)),
-//     },
-//     tannin: chance(item.wine).floating({min: 0, max: 5}),
-//   };
-// });
-
-// console.log(JSON.stringify(a));
 
 const Feed = () => {
   // https://winefolly.com/tips/what-is-wine-body-and-how-to-taste-it/

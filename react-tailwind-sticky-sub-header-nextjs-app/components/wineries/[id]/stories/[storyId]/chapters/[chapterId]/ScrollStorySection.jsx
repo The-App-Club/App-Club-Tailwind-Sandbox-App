@@ -1,12 +1,9 @@
 import {css, cx} from '@emotion/css';
-import {forwardRef, useEffect} from 'react';
-import {useRecoilValue} from 'recoil';
+import {forwardRef} from 'react';
 
 import Spacer from '@/components/Spacer';
 import ScrollStorySectionTitle from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStorySectionTitle';
 import ScrollStorySentence from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStorySentence';
-import {scrollTriggerState} from '@/stores/scrollTriggerStore';
-import {useRouter} from 'next/router';
 
 const _ScrollStorySection = ({}, ref) => {
   return (
