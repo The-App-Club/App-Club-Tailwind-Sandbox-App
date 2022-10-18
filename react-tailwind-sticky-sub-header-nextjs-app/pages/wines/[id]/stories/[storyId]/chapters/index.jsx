@@ -29,6 +29,10 @@ const StoryChapters = () => {
   }, [storyId]);
 
   const myChapters = useMemo(() => {
+    if (!item) {
+      return [];
+    }
+
     return item.chapters;
   }, [item]);
 
