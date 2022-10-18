@@ -6,7 +6,7 @@ import {useRecoilValue} from 'recoil';
 
 import AreaGraph from '@/components/AreaGraph';
 import Map from '@/components/Map';
-import Sidebar from '@/components/Sidebar';
+import Sidebar from '@/components/location/Sidebar';
 import Spacer from '@/components/Spacer';
 import Weather from '@/components/Weather';
 import Header from '@/components/location/Header';
