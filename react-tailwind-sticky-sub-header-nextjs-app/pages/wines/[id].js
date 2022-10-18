@@ -9,7 +9,7 @@ import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilValue} from 'recoil';
 
-import Sidebar from '@/components/Sidebar';
+import Sidebar from '@/components/wines/[id]/Sidebar';
 import Spacer from '@/components/Spacer';
 import ReviewRanking from '@/components/feed/ReviewRanking';
 import '@splidejs/react-splide/css';
