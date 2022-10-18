@@ -15,7 +15,7 @@ import NavMarkedFav from '@/components/wineries/[id]/stories/[storyId]/chapters/
 import sidebarState from '@/stores/sidebarStore';
 import {BsPencilSquare} from 'react-icons/bs';
 
-import dataChapters from '@/data/chapters.json';
+import dataWineryChapters from '@/data/wineryChapters.json';
 import dataWineryStories from '@/data/wineryStories.json';
 import {useMemo} from 'react';
 import {TbCircleDot} from 'react-icons/tb';
@@ -90,7 +90,7 @@ const Nav = () => {
     },
   };
   const matchedStory = useMemo(() => {
-    return dataChapters.find((item) => {
+    return dataWineryChapters.find((item) => {
       return item.storyId === storyId;
     });
   }, [storyId]);

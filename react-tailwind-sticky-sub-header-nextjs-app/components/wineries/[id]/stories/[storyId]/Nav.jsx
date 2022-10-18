@@ -15,45 +15,10 @@ import NavMarkedFav from '@/components/wineries/[id]/stories/[storyId]/NavMarked
 import sidebarState from '@/stores/sidebarStore';
 import {BsPencilSquare} from 'react-icons/bs';
 
-import dataChapters from '@/data/chapters.json';
+import dataWineryChapters from '@/data/wineryChapters.json';
 import dataWineryStories from '@/data/wineryStories.json';
 import {useMemo} from 'react';
 import {TbCircleDot} from 'react-icons/tb';
-
-// import {default as chance} from 'chance';
-
-// console.log(
-//   JSON.stringify(
-//     dataWineryStories
-//       .map((item) => {
-//         return item.stories;
-//       })
-//       .flat()
-//       .map((item) => {
-//         return {
-//           ...item,
-//           chapters: [...Array(chance().integer({min: 3, max: 8}))].map(
-//             (_, n) => {
-//               return {
-//                 chapterId: chance().string({alpha: true, length: 7}),
-//                 chapterTitle: chance().name(),
-//                 paragraphs: [...Array(chance().integer({min: 1, max: 2}))].map(
-//                   (_, n) => {
-//                     return {
-//                       paragraphId: chance().string({alpha: true, length: 7}),
-//                       paragraph: chance().sentence({words: 30}),
-//                     };
-//                   }
-//                 ),
-//               };
-//             }
-//           ),
-//         };
-//       })
-//   )
-// );
-
-// console.log('aaaa');
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
@@ -127,7 +92,7 @@ const Nav = () => {
     },
   };
   const matchedStory = useMemo(() => {
-    return dataChapters.find((item) => {
+    return dataWineryChapters.find((item) => {
       return item.storyId === storyId;
     });
   }, [storyId]);

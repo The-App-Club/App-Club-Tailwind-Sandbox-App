@@ -15,7 +15,6 @@ import NavMarkedFav from '@/components/wines/[id]/stories/[storyId]/chapters/Nav
 import sidebarState from '@/stores/sidebarStore';
 import {BsPencilSquare} from 'react-icons/bs';
 
-import dataChapters from '@/data/chapters.json';
 import dataWineryStories from '@/data/wineryStories.json';
 import {useMemo} from 'react';
 import {TbCircleDot} from 'react-icons/tb';

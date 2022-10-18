@@ -12,7 +12,7 @@ import hamburgerState from '@/stores/hamburgerStore';
 import {useRouter} from 'next/router';
 import dataWineryStories from '@/data/wineryStories.json';
 import dataWineres from '@/data/wineries.json';
-import dataChapters from '@/data/chapters.json';
+import dataWineryChapters from '@/data/wineryChapters.json';
 import {useMemo} from 'react';
 import Spacer from '@/components/Spacer';
 import GalleryItem from '@/components/wineries/[id]/stories/[storyId]/GalleryItem';
@@ -42,7 +42,7 @@ const WineryStory = () => {
   }, [storyId, item]);
 
   const myChapter = useMemo(() => {
-    return dataChapters.find((item) => {
+    return dataWineryChapters.find((item) => {
       return item.storyId === storyId;
     });
   }, [storyId]);

@@ -13,7 +13,6 @@ import {useRouter} from 'next/router';
 import dataWineChapters from '@/data/wineChapters.json';
 import dataWineStories from '@/data/wineStories.json';
 import dataWineres from '@/data/wineries.json';
-import dataChapters from '@/data/chapters.json';
 import {useMemo} from 'react';
 import Spacer from '@/components/Spacer';
 import GalleryItem from '@/components/wines/[id]/stories/[storyId]/GalleryItem';
@@ -42,7 +41,7 @@ const WineStory = () => {
   }, [storyId, item]);
 
   const myChapter = useMemo(() => {
-    return dataChapters.find((item) => {
+    return dataWineChapters.find((item) => {
       return item.userId === userId;
     });
   }, [userId]);

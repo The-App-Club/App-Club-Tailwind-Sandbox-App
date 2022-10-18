@@ -11,7 +11,7 @@ import ScrollStory from '@/components/wineries/[id]/stories/[storyId]/chapters/[
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 import {useRouter} from 'next/router';
-import dataChapters from '@/data/chapters.json';
+import dataWineryChapters from '@/data/wineryChapters.json';
 import dataWineryStories from '@/data/wineryStories.json';
 import {useMemo} from 'react';
 import Spacer from '@/components/Spacer';
@@ -24,7 +24,7 @@ const StoryChapter = () => {
   const {id, storyId, chapterId} = router.query;
 
   const item = useMemo(() => {
-    return dataChapters.find((item) => {
+    return dataWineryChapters.find((item) => {
       return item.storyId === storyId && item.userId === userId;
     });
   }, [storyId, userId]);
