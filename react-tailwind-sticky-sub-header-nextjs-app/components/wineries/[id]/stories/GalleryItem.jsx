@@ -12,6 +12,7 @@ import dataWineries from '@/data/wineries.json';
 import dataWines from '@/data/wines.json';
 import wineState from '@/stores/wineStore';
 import {formatRelativeTime} from '@/utils/dateUtil';
+import ShortHandMenu from '@/components/wineries/[id]/stories/ShortHandMenu';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
@@ -62,6 +63,7 @@ const GalleryItem = ({item}) => {
         });
       }}
     >
+      <ShortHandMenu storyId={item.storyId} />
       <div
         className={css`
           width: 100%;

@@ -80,11 +80,11 @@ const ScrollStory = () => {
           `flex items-center justify-center flex-col`
         )}
       >
-        <div className={`absolute top-3 right-3 border-2 p-2 w-[180px]`}>
-          <div className="font-bold flex items-center gap-1 text-black dark:text-slate-300">
-            chapterId<span>{scrollTrigger.chapterId}</span>
+        <div className={`absolute top-3 right-3 border-2 p-2 w-[120px]`}>
+          <div className="text-sm font-bold flex items-center gap-1 text-black dark:text-slate-300">
+            id<span>{scrollTrigger.chapterId}</span>
           </div>
-          <div className="font-bold flex items-center gap-1 text-black dark:text-slate-300">
+          <div className="text-sm font-bold flex items-center gap-1 text-black dark:text-slate-300">
             progress<span>{scrollTrigger.progress?.toFixed(2)}</span>
           </div>
         </div>
