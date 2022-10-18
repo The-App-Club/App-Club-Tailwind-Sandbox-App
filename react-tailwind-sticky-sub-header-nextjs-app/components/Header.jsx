@@ -23,6 +23,8 @@ const Header = ({pathname}) => {
     }
     if (
       pathname === `/` ||
+      pathname === `/users` ||
+      pathname === `/users/[userId]` ||
       pathname === `/subscribe` ||
       pathname === `/contact` ||
       pathname === `/feed` ||

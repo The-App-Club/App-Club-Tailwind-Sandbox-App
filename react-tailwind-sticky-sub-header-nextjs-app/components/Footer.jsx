@@ -11,6 +11,8 @@ const Footer = ({pathname}) => {
   const nicePosition = useMemo(() => {
     if (
       pathname === `/` ||
+      pathname === `/users` ||
+      pathname === `/users/[userId]` ||
       pathname === `/feed` ||
       pathname === `/subscribe` ||
       pathname === `/favorite` ||

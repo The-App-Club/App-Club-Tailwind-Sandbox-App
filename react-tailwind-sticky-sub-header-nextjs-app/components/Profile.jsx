@@ -56,9 +56,14 @@ const Profile = ({menuData}) => {
       }}
     >
       <picture className={css``}>
-        <source srcSet={`/assets/profile.png`} type={`image/png`} />
+        <source
+          srcSet={`https://robohash.org/dbf63edd38f5f80c734b44e459098793?set=set4&bgset=&size=200x200`}
+          type={`image/png`}
+        />
         <img
-          src={'/assets/profile.png'}
+          src={
+            'https://robohash.org/dbf63edd38f5f80c734b44e459098793?set=set4&bgset=&size=200x200'
+          }
           alt={'profile'}
           width={40}
           height={40}
