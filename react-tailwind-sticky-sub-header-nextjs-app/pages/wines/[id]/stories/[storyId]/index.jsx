@@ -42,9 +42,9 @@ const WineStory = () => {
 
   const myChapter = useMemo(() => {
     return dataWineChapters.find((item) => {
-      return item.userId === userId;
+      return item.storyId === storyId;
     });
-  }, [userId]);
+  }, [storyId]);
 
   if (!item) {
     return;
