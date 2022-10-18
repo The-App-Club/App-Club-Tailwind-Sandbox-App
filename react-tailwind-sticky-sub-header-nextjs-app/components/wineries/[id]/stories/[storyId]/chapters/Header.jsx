@@ -28,6 +28,20 @@ const Header = () => {
       >
         Chapters
       </h2>
+      <div className="flex items-center gap-4">
+        <button
+          className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+          onClick={(e) => {}}
+        >
+          Add Chapter
+        </button>
+        <button
+          className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+          onClick={(e) => {}}
+        >
+          Delete All
+        </button>
+      </div>
     </div>
   );
 };

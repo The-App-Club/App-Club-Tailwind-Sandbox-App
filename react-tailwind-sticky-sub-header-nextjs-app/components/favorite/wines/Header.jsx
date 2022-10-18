@@ -49,7 +49,7 @@ const Header = () => {
           className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
           onClick={handleRemoveAllFromFav}
         >
-          Remove All
+          Delete All
         </button>
       </div>
     </div>
