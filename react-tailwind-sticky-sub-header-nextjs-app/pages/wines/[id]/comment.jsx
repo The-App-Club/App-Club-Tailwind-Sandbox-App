@@ -9,7 +9,7 @@ import CommentTimeline from '@/components/comment/CommentTimeline';
 import FocusedComment from '@/components/comment/FocusedComment';
 import Product from '@/components/comment/Product';
 import TraceFooter from '@/components/wines/[id]/comment/TraceFooter';
-import commentData from '@/data/comment.json';
+import dataComments from '@/data/comments.json';
 import data from '@/data/wines.json';
 import useCart from '@/hooks/useCart';
 import Layout from '@/layouts/default';
@@ -126,7 +126,7 @@ const Comment = () => {
               )}
             >
               <Product item={item} />
-              <FocusedComment item={commentData[4]} />
+              <FocusedComment item={dataComments[4]} />
             </aside>
           </div>
         </section>

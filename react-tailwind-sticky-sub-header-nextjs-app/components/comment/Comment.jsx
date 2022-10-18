@@ -11,7 +11,7 @@ import {
 } from 'react-icons/md';
 
 import CommentForm from '@/components/comment/CommentForm';
-import data from '@/data/comment.json';
+import dataComments from '@/data/comments.json';
 import {formatRelativeTime} from '@/utils/dateUtil';
 
 const Comment = ({item, className = css``}) => {

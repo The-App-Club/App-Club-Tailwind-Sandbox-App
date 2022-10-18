@@ -6,7 +6,7 @@ import {MdOutlineTimeline} from 'react-icons/md';
 
 import Spacer from '@/components/Spacer';
 import Comment from '@/components/comment/Comment';
-import data from '@/data/comment.json';
+import dataComments from '@/data/comments.json';
 
 const CommentTimeline = () => {
   return (
@@ -49,7 +49,7 @@ const CommentTimeline = () => {
         />
       </h2>
       <div className={`w-full p-2`}>
-        {data.map((item, index) => {
+        {dataComments.map((item, index) => {
           return <Comment item={item} key={index} />;
         })}
       </div>
