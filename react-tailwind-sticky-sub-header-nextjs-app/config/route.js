@@ -1,7 +1,12 @@
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import WinerySignInHeader from '@/components/winery/signin/Header';
 import WinerySignUpHeader from '@/components/winery/signup/Header';
 import WinesIdCommentHeader from '@/components/wines/[id]/comment/Header';
+
+import AboutFooter from '@/components/about/Footer';
+import ContactFooter from '@/components/contact/Footer';
+import PriceFooter from '@/components/price/Footer';
 
 const routes = [
   {
@@ -11,6 +16,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/404`,
@@ -18,6 +26,9 @@ const routes = [
     activeMenuName: `Not Found`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -27,6 +38,9 @@ const routes = [
     header: () => {
       return <WinerySignUpHeader />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/winery/signin`,
@@ -34,6 +48,9 @@ const routes = [
     activeMenuName: `Winery SignIn`,
     header: () => {
       return <WinerySignInHeader />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -43,6 +60,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/users/[userId]`,
@@ -50,6 +70,9 @@ const routes = [
     activeMenuName: `Users`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -59,6 +82,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/dashboard`,
@@ -66,6 +92,9 @@ const routes = [
     activeMenuName: `Dashboard`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -75,6 +104,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/dashboard/notification`,
@@ -82,6 +114,9 @@ const routes = [
     activeMenuName: `Notification`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -91,6 +126,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/story/[id]/create`,
@@ -99,6 +137,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/story/[id]/edit`,
@@ -106,6 +147,9 @@ const routes = [
     activeMenuName: `Edit Story`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
 
@@ -116,6 +160,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/story/wines/[id]`,
@@ -123,6 +170,9 @@ const routes = [
     activeMenuName: `Wine Story`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
 
@@ -133,6 +183,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/story/wines/[id]/published/[pid]`,
@@ -140,6 +193,9 @@ const routes = [
     activeMenuName: `Published Wine Story`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -149,6 +205,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/story/wines/[id]/edit`,
@@ -156,6 +215,9 @@ const routes = [
     activeMenuName: `Edit Wine Story`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -165,6 +227,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/story/wineries/[id]`,
@@ -172,6 +237,9 @@ const routes = [
     activeMenuName: `Winery Story`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -181,6 +249,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/story/wineries/[id]/published/[pid]`,
@@ -188,6 +259,9 @@ const routes = [
     activeMenuName: `Published Winery Story`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -197,6 +271,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/story/wineries/[id]/edit`,
@@ -204,6 +281,9 @@ const routes = [
     activeMenuName: `Edit Winery Story`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -213,6 +293,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/story/favorite`,
@@ -220,6 +303,9 @@ const routes = [
     activeMenuName: `Favorite Story`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -229,6 +315,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/story/favorite/wines/[wineId]`,
@@ -236,6 +325,9 @@ const routes = [
     activeMenuName: `Favorite Wine Story`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -245,6 +337,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/story/favorite/wineries/[wineryId]`,
@@ -252,6 +347,9 @@ const routes = [
     activeMenuName: `Favorite Winery Story`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -261,6 +359,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/favorite`,
@@ -268,6 +369,9 @@ const routes = [
     activeMenuName: `Favorite`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -277,6 +381,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/favorite/wineries`,
@@ -284,6 +391,9 @@ const routes = [
     activeMenuName: `Favorite Winery`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -293,6 +403,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/logout`,
@@ -300,6 +413,9 @@ const routes = [
     activeMenuName: `Logout`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -309,6 +425,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <AboutFooter />;
+    },
   },
   {
     pathName: `/contact`,
@@ -316,6 +435,9 @@ const routes = [
     activeMenuName: `Contact`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <ContactFooter />;
     },
   },
   {
@@ -325,6 +447,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/price`,
@@ -332,6 +457,9 @@ const routes = [
     activeMenuName: `Price`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <PriceFooter />;
     },
   },
   {
@@ -341,6 +469,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/wines/[id]`,
@@ -348,6 +479,9 @@ const routes = [
     activeMenuName: `Wines`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -357,6 +491,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/wines/[id]/stories/[storyId]`,
@@ -364,6 +501,9 @@ const routes = [
     activeMenuName: `Wine Story`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -373,6 +513,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/wines/[id]/stories/[storyId]/chapters/[chapterId]`,
@@ -380,6 +523,9 @@ const routes = [
     activeMenuName: `Chapter`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -389,6 +535,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/wines/[id]/comment`,
@@ -396,6 +545,9 @@ const routes = [
     activeMenuName: `Comment`,
     header: () => {
       return <WinesIdCommentHeader />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -405,6 +557,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/wineries/[id]`,
@@ -412,6 +567,9 @@ const routes = [
     activeMenuName: `Winery`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -421,6 +579,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/wineries/[id]/stories/[storyId]`,
@@ -428,6 +589,9 @@ const routes = [
     activeMenuName: `Winery Story`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
   {
@@ -437,6 +601,9 @@ const routes = [
     header: () => {
       return <Header />;
     },
+    footer: () => {
+      return <Footer />;
+    },
   },
   {
     pathName: `/wineries/[id]/stories/[storyId]/chapters/[chapterId]`,
@@ -444,6 +611,9 @@ const routes = [
     activeMenuName: `Chapter`,
     header: () => {
       return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
     },
   },
 ];

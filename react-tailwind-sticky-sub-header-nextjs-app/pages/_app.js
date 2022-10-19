@@ -77,6 +77,11 @@ const renderHeader = ({router}) => {
   return header();
 };
 
+const renderFooter = ({router}) => {
+  const {footer} = getMatchedRoute({pathName: router.pathname});
+  return footer();
+};
+
 const CowboyBebop = ({Component, pageProps}) => {
   const router = useRouter();
   return (
@@ -102,7 +107,7 @@ const CowboyBebop = ({Component, pageProps}) => {
               <Component {...pageProps} />
             </article>
           </main>
-          <Footer {...router} />
+          {renderFooter({router})}
         </CowboyBebopInit>
       </CacheProvider>
     </RecoilRoot>
