@@ -40,6 +40,17 @@ const routes = [
     },
   },
   {
+    pathName: `/500`,
+    pageName: `System Error`,
+    activeMenuName: `System Error`,
+    header: () => {
+      return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
+    },
+  },
+  {
     pathName: `/winery/signup`,
     pageName: `Winery SignUp`,
     activeMenuName: `Winery SignUp`,
@@ -153,6 +164,17 @@ const routes = [
     pathName: `/story`,
     pageName: `Story`,
     activeMenuName: `Select Story`,
+    header: () => {
+      return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
+    },
+  },
+  {
+    pathName: `/story/[id]`,
+    pageName: `Story`,
+    activeMenuName: `Story`,
     header: () => {
       return <Header />;
     },
@@ -309,6 +331,17 @@ const routes = [
     pathName: `/story/wineries/[id]/edit`,
     pageName: `Edit Winery Story`,
     activeMenuName: `Edit Winery Story`,
+    header: () => {
+      return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
+    },
+  },
+  {
+    pathName: `/story/[id]/published`,
+    pageName: `Published Story`,
+    activeMenuName: `Published Story`,
     header: () => {
       return <Header />;
     },
@@ -595,6 +628,28 @@ const routes = [
     pathName: `/wineries/[id]`,
     pageName: `Winery Id`,
     activeMenuName: `Winery`,
+    header: () => {
+      return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
+    },
+  },
+  {
+    pathName: `/wineries/[id]/comment`,
+    pageName: `Winery Comment`,
+    activeMenuName: `Winery Comment`,
+    header: () => {
+      return <Header />;
+    },
+    footer: () => {
+      return <Footer />;
+    },
+  },
+  {
+    pathName: `/wineries/[id]/story`,
+    pageName: `Winery Story`,
+    activeMenuName: `Winery Story`,
     header: () => {
       return <Header />;
     },
