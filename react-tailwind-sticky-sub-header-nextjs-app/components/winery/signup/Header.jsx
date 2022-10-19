@@ -49,17 +49,17 @@ const Header = () => {
             className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
             onClick={(e) => {
               router.push({
-                pathname: `/winery/signin`,
+                pathname: `/sommelier/signup`,
               });
             }}
           >
-            Login
+            For Sommelier
           </button>
           <button
             className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
             onClick={(e) => {
               router.push({
-                pathname: `/user/signin`,
+                pathname: `/user/signup`,
               });
             }}
           >

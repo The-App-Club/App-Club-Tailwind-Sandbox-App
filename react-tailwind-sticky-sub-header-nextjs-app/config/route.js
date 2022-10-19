@@ -10,6 +10,11 @@ import UserSignUpHeader from '@/components/user/signup/Header';
 import UserSignInFooter from '@/components/user/signin/Footer';
 import UserSignUpFooter from '@/components/user/signup/Footer';
 
+import SommelierSignInHeader from '@/components/sommelier/signin/Header';
+import SommelierSignUpHeader from '@/components/sommelier/signup/Header';
+import SommelierSignInFooter from '@/components/sommelier/signin/Footer';
+import SommelierSignUpFooter from '@/components/sommelier/signup/Footer';
+
 import WinesIdCommentHeader from '@/components/wines/[id]/comment/Header';
 
 import AboutFooter from '@/components/about/Footer';
@@ -103,6 +108,28 @@ const routes = [
     },
     footer: () => {
       return <UserSignInFooter />;
+    },
+  },
+  {
+    pathName: `/sommelier/signup`,
+    pageName: `Sommelier SignUp`,
+    activeMenuName: `Sommelier SignUp`,
+    header: () => {
+      return <SommelierSignUpHeader />;
+    },
+    footer: () => {
+      return <SommelierSignUpFooter />;
+    },
+  },
+  {
+    pathName: `/sommelier/signin`,
+    pageName: `Sommelier SignIn`,
+    activeMenuName: `Sommelier SignIn`,
+    header: () => {
+      return <SommelierSignInHeader />;
+    },
+    footer: () => {
+      return <SommelierSignInFooter />;
     },
   },
   {
