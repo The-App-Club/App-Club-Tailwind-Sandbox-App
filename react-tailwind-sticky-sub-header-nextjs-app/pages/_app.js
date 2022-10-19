@@ -19,6 +19,12 @@ import hamburgerState from '@/stores/hamburgerStore';
 import sidebarState from '@/stores/sidebarStore';
 import themeState from '@/stores/themeStore';
 
+const getMatchedRoute = ({pathName}) => {
+  return routes.find((route) => {
+    return route.pathName === pathName;
+  });
+};
+
 const CowboyBebopInit = ({children, router: r}) => {
   useSmoothScroll();
   const [sidebar, setSidebar] = useRecoilState(sidebarState);
@@ -27,11 +33,6 @@ const CowboyBebopInit = ({children, router: r}) => {
   const router = useRouter();
 
   useEffect(() => {
-    const getMatchedRoute = ({pathName}) => {
-      return routes.find((route) => {
-        return route.pathName === pathName;
-      });
-    };
     const {activeMenuName} = getMatchedRoute({pathName: r.pathname});
     setSidebar((prevState) => {
       return {
@@ -71,6 +72,11 @@ const CowboyBebopInit = ({children, router: r}) => {
   return <div className={`relative w-full`}>{children}</div>;
 };
 
+const renderHeader = ({router}) => {
+  const {header} = getMatchedRoute({pathName: router.pathname});
+  return header();
+};
+
 const CowboyBebop = ({Component, pageProps}) => {
   const router = useRouter();
   return (
@@ -78,7 +84,7 @@ const CowboyBebop = ({Component, pageProps}) => {
       <CacheProvider value={cache}>
         <CowboyBebopInit router={router}>
           <Meta />
-          <Header {...router} />
+          {renderHeader({router})}
           <main
             className={css`
               position: relative;
