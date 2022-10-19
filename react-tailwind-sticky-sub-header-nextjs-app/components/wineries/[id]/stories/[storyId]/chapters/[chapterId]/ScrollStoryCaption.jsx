@@ -3,6 +3,7 @@ import {
   motion,
   motionValue,
   useTransform,
+  useViewportScroll,
 } from 'framer-motion';
 import {useState} from 'react';
 import {BiPencil} from 'react-icons/bi';
@@ -10,6 +11,7 @@ import {useRecoilValue} from 'recoil';
 
 import ScrollStorySentenceForm from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStorySentenceForm';
 import {scrollTriggerState} from '@/stores/scrollTriggerStore';
+import {doEaseOutQuart} from '@/config/easing';
 
 const motionConfig = {
   initial: {
@@ -37,11 +39,43 @@ const ScrollStoryCaption = () => {
       return !prev;
     });
   };
+
+  // https://github.com/LeoAso/full-glass/blob/main/pages/index.js#L12-L15
+  // const {scrollYProgress} = useViewportScroll();
+  // const scale = useTransform(
+  //   scrollYProgress,
+  //   [0, 0.3, 0.7, 1],
+  //   [1, 0.1, 0.7, 1.0],
+  //   {ease}
+  // );
   const {progress} = useRecoilValue(scrollTriggerState);
 
-  const opacity = useTransform(motionValue(progress), [0, 0.5, 1], [0, 1, 0]);
-  const x = useTransform(motionValue(progress), [0, 0.5, 1], [-70, 0, -70]);
-  const y = useTransform(motionValue(progress), [0, 0.5, 1], [70, 0, 70]);
+  // console.log(progress, scrollYProgress.get());
+
+  const opacity = useTransform(
+    motionValue(progress),
+    [0, 0.3, 0.9, 1],
+    [0, 1, 1, 0],
+    {
+      ease: doEaseOutQuart,
+    }
+  );
+  const x = useTransform(
+    motionValue(progress),
+    [0, 0.3, 0.9, 1],
+    [-70, 0, 0, -70],
+    {
+      ease: doEaseOutQuart,
+    }
+  );
+  const y = useTransform(
+    motionValue(progress),
+    [0, 0.3, 0.9, 1],
+    [70, 0, 0, 70],
+    {
+      ease: doEaseOutQuart,
+    }
+  );
 
   if (isNaN(opacity.get())) {
     return;
@@ -52,6 +86,7 @@ const ScrollStoryCaption = () => {
   if (isNaN(y.get())) {
     return;
   }
+
   return (
     <motion.div
       className="text-lg font-bold"
