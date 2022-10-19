@@ -7,8 +7,8 @@ const SignUp = () => {
     <Layout>
       <section className={cx(`mt-12 px-2 pb-2`)}>
         <h2>Sign Up</h2>
-        <Link href={`/winery/signin`}>
-          <a className="hover:underline">Winery Sign In</a>
+        <Link href={`/user/signin`}>
+          <a className="hover:underline">User Sign In</a>
         </Link>
       </section>
     </Layout>

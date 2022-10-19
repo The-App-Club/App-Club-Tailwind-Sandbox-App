@@ -18,19 +18,6 @@ const Header = () => {
 
   return (
     <motion.header
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-      }}
-      transition={{
-        duration: 0.7,
-        ease: 'linear',
-      }}
       className={cx(
         css`
           position: fixed;
@@ -53,28 +40,31 @@ const Header = () => {
       )}
     >
       <div className="relative w-full flex items-center gap-2">
-        <Hamburger
-          className={css`
-            display: none;
-            opacity: 0;
-            @media (max-width: 768px) {
-              display: block;
-              opacity: 1;
-            }
-          `}
-        />
+        <picture>
+          <source srcSet={`/assets/logo.png`} type={`image/png`} />
+          <img src={'/assets/logo.png'} alt={'logo'} width={40} height={40} />
+        </picture>
         <div className="absolute right-2 flex items-center gap-2">
-          <ThemeToggle />
-          <div
-            className="w-[40px] h-[40px] flex items-center justify-center hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-800"
+          <button
+            className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
             onClick={(e) => {
               router.push({
-                pathname: '/about',
+                pathname: `/winery/signup`,
               });
             }}
           >
-            <FaHatCowboySide size={24} />
-          </div>
+            Sign Up
+          </button>
+          <button
+            className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+            onClick={(e) => {
+              router.push({
+                pathname: `/user/signup`,
+              });
+            }}
+          >
+            For User
+          </button>
         </div>
       </div>
     </motion.header>

@@ -2,6 +2,14 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WinerySignInHeader from '@/components/winery/signin/Header';
 import WinerySignUpHeader from '@/components/winery/signup/Header';
+import WinerySignInFooter from '@/components/winery/signin/Footer';
+import WinerySignUpFooter from '@/components/winery/signup/Footer';
+
+import UserSignInHeader from '@/components/user/signin/Header';
+import UserSignUpHeader from '@/components/user/signup/Header';
+import UserSignInFooter from '@/components/user/signin/Footer';
+import UserSignUpFooter from '@/components/user/signup/Footer';
+
 import WinesIdCommentHeader from '@/components/wines/[id]/comment/Header';
 
 import AboutFooter from '@/components/about/Footer';
@@ -39,7 +47,7 @@ const routes = [
       return <WinerySignUpHeader />;
     },
     footer: () => {
-      return <Footer />;
+      return <WinerySignUpFooter />;
     },
   },
   {
@@ -50,7 +58,7 @@ const routes = [
       return <WinerySignInHeader />;
     },
     footer: () => {
-      return <Footer />;
+      return <WinerySignInFooter />;
     },
   },
   {
@@ -62,6 +70,28 @@ const routes = [
     },
     footer: () => {
       return <Footer />;
+    },
+  },
+  {
+    pathName: `/user/signup`,
+    pageName: `User SignUp`,
+    activeMenuName: `User SignUp`,
+    header: () => {
+      return <UserSignUpHeader />;
+    },
+    footer: () => {
+      return <UserSignUpFooter />;
+    },
+  },
+  {
+    pathName: `/user/signin`,
+    pageName: `User SignIn`,
+    activeMenuName: `User SignIn`,
+    header: () => {
+      return <UserSignInHeader />;
+    },
+    footer: () => {
+      return <UserSignInFooter />;
     },
   },
   {
