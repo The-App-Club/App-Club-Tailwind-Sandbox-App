@@ -6,9 +6,8 @@ import {useMemo} from 'react';
 import {useRecoilState, useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
-import GalleryItem from '@/components/story/wineries/[id]/GalleryItem';
-import Header from '@/components/story/wineries/[id]/Header';
-import Sidebar from '@/components/story/wineries/[id]/Sidebar';
+import Header from '@/components/story/[id]/Header';
+import Sidebar from '@/components/story/[id]/Sidebar';
 import dataWineStories from '@/data/wineStories.json';
 import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
@@ -100,53 +99,6 @@ const Story = () => {
           <Header item={activeWine} />
           <Spacer />
           <h2>My Stories</h2>
-
-          <GalleryItem item={item} />
-
-          {item.stories.length === 0 ? (
-            <div
-              className={cx(
-                `w-full flex justify-center flex-col items-center`,
-                `border-2  rounded-lg shadow-lg p-2`
-              )}
-            >
-              <p>Not yet published? Here create new.</p>
-
-              <button
-                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-                onClick={(e) => {
-                  setActiveWine({
-                    activeWine,
-                  });
-                  router.push({
-                    pathname: `/story/${id}/create`,
-                  });
-                }}
-              >
-                Create story
-              </button>
-            </div>
-          ) : (
-            <div
-              className={cx(
-                `w-full flex justify-center flex-col items-center`,
-                `border-2  rounded-lg shadow-lg p-2`
-              )}
-            >
-              <p>You already published some stories. See stories.</p>
-
-              <button
-                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-                onClick={(e) => {
-                  router.push({
-                    pathname: `/story/${id}/published`,
-                  });
-                }}
-              >
-                See story
-              </button>
-            </div>
-          )}
         </section>
       </Layout>
     </>

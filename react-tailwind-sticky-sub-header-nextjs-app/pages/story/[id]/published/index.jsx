@@ -6,9 +6,8 @@ import {useMemo} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
-import Container from '@/components/story/wineries/[id]/published/Container';
-import Header from '@/components/story/wineries/[id]/published/Header';
-import Sidebar from '@/components/story/wineries/[id]/published/Sidebar';
+import Header from '@/components/story/[id]/published/Header';
+import Sidebar from '@/components/story/[id]/published/Sidebar';
 import dataWineStories from '@/data/wineStories.json';
 import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
@@ -101,7 +100,6 @@ const PublishedStories = () => {
 
           <Header item={activeWine} />
           <Spacer />
-          <Container stories={item.stories} />
         </section>
       </Layout>
     </>

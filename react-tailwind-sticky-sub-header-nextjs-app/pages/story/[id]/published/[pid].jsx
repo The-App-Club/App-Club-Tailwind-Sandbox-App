@@ -6,46 +6,17 @@ import {useMemo} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
-import Footer from '@/components/story/wineries/[id]/published/[pid]/Footer';
-import Header from '@/components/story/wineries/[id]/published/[pid]/Header';
-import Sidebar from '@/components/story/wineries/[id]/published/[pid]/Sidebar';
-import dataWineStories from '@/data/wineStories.json';
-import dataWines from '@/data/wines.json';
+import Header from '@/components/story/[id]/published/[pid]/Header';
+import Sidebar from '@/components/story/[id]/published/[pid]/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
+import usePublishedStory from '@/hooks/usePublishedStory';
 
 const PublishedStory = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
   const {id, pid} = router.query;
-
-  const item = useMemo(() => {
-    return dataWineStories.find((d) => {
-      return d.wineId === Number(id);
-    });
-  }, [id]);
-
-  const activeWine = useMemo(() => {
-    if (!item) {
-      return;
-    }
-    return dataWines.find((d) => {
-      return d.id === item.wineId;
-    });
-  }, [item]);
-
-  const activeStory = useMemo(() => {
-    if (!item) {
-      return;
-    }
-    return dataWineStories
-      .find((d) => {
-        return d.wineId === item.wineId;
-      })
-      .stories.find((d) => {
-        return d.storyId === pid;
-      });
-  }, [item, pid]);
+  const {item, activeStory, activeWine} = usePublishedStory({id, pid});
 
   if (!item) {
     return;
@@ -116,10 +87,8 @@ const PublishedStory = () => {
             }}
           />
 
-          <Header item={activeWine} storyItem={activeStory} />
+          <Header />
           <Spacer />
-          <p>At here published scroll story.</p>
-          <Footer />
         </section>
       </Layout>
     </>
