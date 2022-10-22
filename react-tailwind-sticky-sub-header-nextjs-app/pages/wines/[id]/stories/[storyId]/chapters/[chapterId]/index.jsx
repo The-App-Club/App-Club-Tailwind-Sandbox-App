@@ -12,6 +12,7 @@ import Sidebar from '@/components/wines/[id]/stories/[storyId]/chapters/[chapter
 import dataWineChapters from '@/data/wineChapters.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
+import useWineStoryChapter from '@/hooks/useWineStoryChapter';
 
 const StoryChapter = () => {
   const router = useRouter();
@@ -19,33 +20,7 @@ const StoryChapter = () => {
 
   const userId = 'avDLMsS';
   const {id, storyId, chapterId} = router.query;
-
-  const item = useMemo(() => {
-    return dataWineChapters.find((item) => {
-      return item.storyId === storyId && item.userId === userId;
-    });
-  }, [storyId, userId]);
-
-  const myChapters = useMemo(() => {
-    if (!item) {
-      return [];
-    }
-
-    return item.chapters;
-  }, [item]);
-
-  const myChapter = useMemo(() => {
-    if (myChapters.length === 0) {
-      return;
-    }
-    return myChapters.find((chapter) => {
-      return chapter.chapterId === chapterId;
-    });
-  }, [myChapters, chapterId]);
-
-  if (!item) {
-    return;
-  }
+  const {myChapter} = useWineStoryChapter({userId, id, storyId, chapterId});
 
   if (!myChapter) {
     return;

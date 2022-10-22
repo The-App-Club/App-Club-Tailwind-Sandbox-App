@@ -14,6 +14,8 @@ import dataWineChapters from '@/data/wineChapters.json';
 import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
+import useWineStoryChapter from '@/hooks/useWineStoryChapter';
+import useWine from '@/hooks/useWine';
 
 const StoryChapters = () => {
   const router = useRouter();
@@ -21,30 +23,8 @@ const StoryChapters = () => {
 
   const userId = 'avDLMsS';
   const {id, storyId} = router.query;
-
-  const item = useMemo(() => {
-    return dataWineChapters.find((item) => {
-      return item.storyId === storyId && item.userId === userId;
-    });
-  }, [storyId]);
-
-  const myChapters = useMemo(() => {
-    if (!item) {
-      return [];
-    }
-
-    return item.chapters;
-  }, [item]);
-
-  const activeWine = useMemo(() => {
-    return dataWines.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
-
-  if (!item) {
-    return;
-  }
+  const {myChapters} = useWineStoryChapter({userId, id, storyId});
+  const {activeWine} = useWine({id});
 
   if (!activeWine) {
     return;

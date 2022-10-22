@@ -15,6 +15,8 @@ import dataWineStories from '@/data/wineStories.json';
 import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
+import useWine from '@/hooks/useWine';
+import useWineStoryChapter from '@/hooks/useWineStoryChapter';
 
 const WineStory = () => {
   const router = useRouter();
@@ -22,6 +24,8 @@ const WineStory = () => {
 
   const userId = 'avDLMsS';
   const {id, storyId} = router.query;
+  // const {myChapter} = useWineStoryChapter({userId, id, storyId});
+  // const {activeWine} = useWine({id});
 
   const item = useMemo(() => {
     return dataWineStories.find((item) => {
