@@ -1,14 +1,9 @@
-import {
-  motion,
-  motionValue,
-  useTransform,
-  useViewportScroll,
-} from 'framer-motion';
+import {motion, motionValue, useTransform} from 'framer-motion';
 import {useRecoilValue} from 'recoil';
 
 import ModelUploader from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ModelUploader';
-import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 import {doEaseOutQuart} from '@/config/easing';
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 
 const motionConfig = {
   initial: {

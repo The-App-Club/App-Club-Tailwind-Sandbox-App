@@ -6,10 +6,10 @@ import {useRecoilValue} from 'recoil';
 
 import AreaGraph from '@/components/AreaGraph';
 import Map from '@/components/Map';
-import Sidebar from '@/components/location/Sidebar';
 import Spacer from '@/components/Spacer';
 import Weather from '@/components/Weather';
 import Header from '@/components/location/Header';
+import Sidebar from '@/components/location/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 

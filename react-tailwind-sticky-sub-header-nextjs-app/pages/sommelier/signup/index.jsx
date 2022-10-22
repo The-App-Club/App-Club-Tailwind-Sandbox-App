@@ -1,6 +1,7 @@
-import {css, cx} from '@emotion/css';
-import Layout from '@/layouts/default';
+import {cx} from '@emotion/css';
 import Link from 'next/link';
+
+import Layout from '@/layouts/default';
 
 const SignUp = () => {
   return (

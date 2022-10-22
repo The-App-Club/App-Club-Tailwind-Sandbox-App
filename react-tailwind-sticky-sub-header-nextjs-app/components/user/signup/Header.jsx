@@ -2,10 +2,6 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {FaHatCowboySide} from 'react-icons/fa';
-
-import Hamburger from '@/components/Hamburger';
-import ThemeToggle from '@/components/ThemeToggle';
 
 const Header = () => {
   const [isClient, setIsClient] = useState(false);

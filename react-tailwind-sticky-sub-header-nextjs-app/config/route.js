@@ -1,25 +1,22 @@
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import WinerySignInHeader from '@/components/winery/signin/Header';
-import WinerySignUpHeader from '@/components/winery/signup/Header';
-import WinerySignInFooter from '@/components/winery/signin/Footer';
-import WinerySignUpFooter from '@/components/winery/signup/Footer';
-
-import UserSignInHeader from '@/components/user/signin/Header';
-import UserSignUpHeader from '@/components/user/signup/Header';
-import UserSignInFooter from '@/components/user/signin/Footer';
-import UserSignUpFooter from '@/components/user/signup/Footer';
-
-import SommelierSignInHeader from '@/components/sommelier/signin/Header';
-import SommelierSignUpHeader from '@/components/sommelier/signup/Header';
-import SommelierSignInFooter from '@/components/sommelier/signin/Footer';
-import SommelierSignUpFooter from '@/components/sommelier/signup/Footer';
-
-import WinesIdCommentHeader from '@/components/wines/[id]/comment/Header';
-
+import Header from '@/components/Header';
 import AboutFooter from '@/components/about/Footer';
 import ContactFooter from '@/components/contact/Footer';
 import PriceFooter from '@/components/price/Footer';
+import SommelierSignInFooter from '@/components/sommelier/signin/Footer';
+import SommelierSignInHeader from '@/components/sommelier/signin/Header';
+import SommelierSignUpHeader from '@/components/sommelier/signup/Header';
+import UserSignInFooter from '@/components/user/signin/Footer';
+import UserSignInHeader from '@/components/user/signin/Header';
+import WinerySignInFooter from '@/components/winery/signin/Footer';
+import WinerySignInHeader from '@/components/winery/signin/Header';
+import WinerySignUpFooter from '@/components/winery/signup/Footer';
+import WinerySignUpHeader from '@/components/winery/signup/Header';
+
+import UserSignUpHeader from '@/components/user/signup/Header';
+import UserSignUpFooter from '@/components/user/signup/Footer';
+import SommelierSignUpFooter from '@/components/sommelier/signup/Footer';
+import WinesIdCommentHeader from '@/components/wines/[id]/comment/Header';
 
 const routes = [
   {

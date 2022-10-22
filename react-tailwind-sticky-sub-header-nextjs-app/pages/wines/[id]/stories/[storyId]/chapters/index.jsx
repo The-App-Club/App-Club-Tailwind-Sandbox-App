@@ -8,13 +8,12 @@ import {useRecoilValue} from 'recoil';
 import Spacer from '@/components/Spacer';
 import Container from '@/components/wines/[id]/stories/[storyId]/chapters/Container';
 import Header from '@/components/wines/[id]/stories/[storyId]/chapters/Header';
+import Product from '@/components/wines/[id]/stories/[storyId]/chapters/Product';
 import Sidebar from '@/components/wines/[id]/stories/[storyId]/chapters/Sidebar';
-import dataWines from '@/data/wines.json';
 import dataWineChapters from '@/data/wineChapters.json';
+import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import PriceRanking from '@/components/feed/PriceRanking';
-import Product from '@/components/wines/[id]/stories/[storyId]/chapters/Product';
 
 const StoryChapters = () => {
   const router = useRouter();

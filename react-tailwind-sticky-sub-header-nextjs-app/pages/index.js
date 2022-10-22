@@ -3,9 +3,9 @@ import capitalize from 'capitalize-the-first-letter';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRecoilValue} from 'recoil';
 
-import Sidebar from '@/components/home/Sidebar';
 import Spacer from '@/components/Spacer';
 import PriceRanking from '@/components/feed/PriceRanking';
+import Sidebar from '@/components/home/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 

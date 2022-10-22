@@ -3,15 +3,14 @@ import {
   motion,
   motionValue,
   useTransform,
-  useViewportScroll,
 } from 'framer-motion';
 import {useState} from 'react';
 import {BiPencil} from 'react-icons/bi';
 import {useRecoilValue} from 'recoil';
 
 import ScrollStorySentenceForm from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStorySentenceForm';
-import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 import {doEaseOutQuart} from '@/config/easing';
+import {scrollTriggerState} from '@/stores/scrollTriggerStore';
 
 const motionConfig = {
   initial: {

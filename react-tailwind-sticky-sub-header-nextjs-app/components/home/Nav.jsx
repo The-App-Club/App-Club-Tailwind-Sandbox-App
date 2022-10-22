@@ -3,13 +3,7 @@ import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import {BiHome} from 'react-icons/bi';
-import {GiGrapes, GiWineBottle} from 'react-icons/gi';
-import {
-  MdFavoriteBorder,
-  MdOutlineLocationOn,
-  MdOutlineShoppingCart,
-  MdRssFeed,
-} from 'react-icons/md';
+import {MdRssFeed} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import NavMarkedCart from '@/components/home/NavMarkedCart';
