@@ -13,11 +13,7 @@ const Header = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 0 0.5rem;
           @media (max-width: 768px) {
-            justify-content: flex-start;
-            align-items: flex-start;
-            flex-direction: column;
           }
         `,
         `bg-white dark:bg-slate-700 shadow-md px-2`
@@ -26,7 +22,7 @@ const Header = () => {
       <h2
         className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
       >
-        Your write up stories
+        Stories
       </h2>
       <div className="flex items-center gap-4">
         <button

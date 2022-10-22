@@ -40,10 +40,6 @@ const WineryStories = () => {
     return;
   }
 
-  if (myStories.length === 0) {
-    return;
-  }
-
   return (
     <>
       <Sidebar />
