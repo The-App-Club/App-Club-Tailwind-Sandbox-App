@@ -3,8 +3,8 @@ import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useRecoilValue} from 'recoil';
 
-import Nav from '@/components/story/Nav';
-import SidebarSp from '@/components/story/SidebarSp';
+import Nav from '@/components/story/[id]/published/Nav';
+import SidebarSp from '@/components/story/[id]/published/SidebarSp';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const Sidebar = () => {

@@ -98,7 +98,7 @@ const PublishedStories = () => {
             }}
           />
 
-          <Header item={activeWine} />
+          <Header />
           <Spacer />
         </section>
       </Layout>

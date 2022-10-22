@@ -3,7 +3,7 @@ import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import {AiOutlineSelect} from 'react-icons/ai';
-import {MdFavoriteBorder} from 'react-icons/md';
+import {MdFavoriteBorder, MdOutlinePublish} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import NavMarkedFav from '@/components/story/[id]/published/[pid]/NavMarkedFav';
@@ -77,6 +77,8 @@ const MenuItem = ({path, menuTitle, icon}) => {
 };
 
 const Nav = () => {
+  const router = useRouter();
+  const {id, pid} = router.query;
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -102,10 +104,10 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={'/story'}
-          menuTitle={'Select Story'}
+          path={`/story/${id}/published/${pid}`}
+          menuTitle={'Published Story'}
           icon={() => {
-            return <AiOutlineSelect size={24} />;
+            return <MdOutlinePublish size={24} />;
           }}
         />
         <MenuItem

@@ -16,28 +16,8 @@ import wineState from '@/stores/wineStore';
 
 const Story = () => {
   const router = useRouter();
-  const [_, setActiveWine] = useRecoilState(wineState);
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
-
-  const item = useMemo(() => {
-    return dataWineStories.find((item) => {
-      return item.wineId === Number(id);
-    });
-  }, [id]);
-
-  const activeWine = useMemo(() => {
-    if (!item) {
-      return;
-    }
-    return dataWines.find((d) => {
-      return d.id === item.wineId;
-    });
-  }, [item]);
-
-  if (!activeWine) {
-    return;
-  }
 
   return (
     <>
@@ -96,9 +76,13 @@ const Story = () => {
             }}
           />
 
-          <Header item={activeWine} />
+          <Header />
           <Spacer />
-          <h2>My Stories</h2>
+          <h2>Focused Story Title</h2>
+          <p>Focused Story Description</p>
+          <p className="font-bold">
+            StoryId is userId, wineId, wineryId, sommelierId
+          </p>
         </section>
       </Layout>
     </>
