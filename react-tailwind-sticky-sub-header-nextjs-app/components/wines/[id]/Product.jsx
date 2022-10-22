@@ -10,10 +10,23 @@ import ProductCarted from '@/components/wines/[id]/ProductCarted';
 import ProductFav from '@/components/wines/[id]/ProductFav';
 import dataWineries from '@/data/wineries.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
+import {useMemo} from 'react';
+import dataWines from '@/data/wines.json';
 
-const Product = ({item, className = css``}) => {
+const Product = ({className = css``}) => {
   const router = useRouter();
+  const {id} = router.query;
   const [location, setLocation] = useRecoilState(locationSelectorState);
+
+  const item = useMemo(() => {
+    return dataWines.find((item) => {
+      return item.id === Number(id);
+    });
+  }, [id]);
+
+  if (!item) {
+    return;
+  }
 
   return (
     <div
