@@ -135,8 +135,12 @@ const StoryChapters = () => {
                   top: calc(9rem + 16px);
                   z-index: 1;
                   min-height: 20rem; // mock attach
+                  display: none;
                   @media (max-width: 1000px) {
                     max-width: 100%;
+                  }
+                  @media (max-width: 768px) {
+                    display: block;
                   }
                 `,
                 `bg-white dark:bg-slate-700 shadow-2xl rounded-xl`,
