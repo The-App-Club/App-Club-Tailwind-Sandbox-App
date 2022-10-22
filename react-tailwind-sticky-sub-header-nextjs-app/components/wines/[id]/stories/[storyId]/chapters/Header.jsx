@@ -15,9 +15,6 @@ const Header = () => {
           align-items: center;
           padding: 0 0.5rem;
           @media (max-width: 768px) {
-            justify-content: flex-start;
-            align-items: flex-start;
-            flex-direction: column;
           }
         `,
         `bg-white dark:bg-slate-700 shadow-md px-2`

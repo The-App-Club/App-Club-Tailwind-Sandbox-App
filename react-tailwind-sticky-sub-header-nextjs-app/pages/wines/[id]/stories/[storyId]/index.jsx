@@ -11,8 +11,10 @@ import Header from '@/components/wines/[id]/stories/[storyId]/Header';
 import Sidebar from '@/components/wines/[id]/stories/[storyId]/Sidebar';
 import dataWineChapters from '@/data/wineChapters.json';
 import dataWineStories from '@/data/wineStories.json';
+import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
+import Product from '@/components/wines/[id]/stories/[storyId]/Product';
 
 const WineStory = () => {
   const router = useRouter();
@@ -42,6 +44,12 @@ const WineStory = () => {
     });
   }, [storyId]);
 
+  const activeWine = useMemo(() => {
+    return dataWines.find((item) => {
+      return item.id === Number(id);
+    });
+  }, [id]);
+
   if (!item) {
     return;
   }
@@ -51,6 +59,10 @@ const WineStory = () => {
   }
 
   if (!myChapter) {
+    return;
+  }
+
+  if (!activeWine) {
     return;
   }
 
@@ -112,7 +124,44 @@ const WineStory = () => {
           />
           <Header item={myStory} />
           <Spacer />
-          <Container chapters={myChapter.chapters} />
+          <div
+            className={cx(
+              css`
+                width: 100%;
+                max-width: 100%;
+                min-height: 100vh;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 3rem;
+                @media (max-width: 1000px) {
+                  min-height: initial;
+                  flex-direction: column;
+                }
+              `
+            )}
+          >
+            <Container chapters={myChapter.chapters} />
+            <aside
+              className={cx(
+                css`
+                  max-width: 34rem;
+                  width: 100%;
+                  position: sticky;
+                  top: calc(9rem + 16px);
+                  z-index: 1;
+                  min-height: 20rem; // mock attach
+                  @media (max-width: 1000px) {
+                    max-width: 100%;
+                  }
+                `,
+                `bg-white dark:bg-slate-700 shadow-2xl rounded-xl`,
+                `border-2 border-gray-200 dark:border-slate-500`
+              )}
+            >
+              <Product item={activeWine} />
+            </aside>
+          </div>
         </section>
       </Layout>
     </>

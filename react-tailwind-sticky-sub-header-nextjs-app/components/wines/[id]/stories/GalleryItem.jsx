@@ -61,7 +61,7 @@ const GalleryItem = ({item}) => {
         `relative`,
         `w-full border-2 p-2`,
         `hover:cursor-pointer`,
-        `hover:bg-gray-100 dark:hover:bg-slate-800`
+        `hover:bg-gray-100 dark:hover:bg-slate-800 shadow-lg hover:shadow-2xl`
       )}
       onClick={(e) => {
         if (isShow) {

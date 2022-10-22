@@ -13,14 +13,13 @@ const Header = ({item}) => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 0 0.5rem;
           @media (max-width: 768px) {
             justify-content: flex-start;
             align-items: flex-start;
             flex-direction: column;
           }
         `,
-        `bg-white dark:bg-slate-700 shadow-md px-2`
+        `bg-white dark:bg-slate-700 shadow-md p-2`
       )}
     >
       <h2
