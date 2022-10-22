@@ -6,10 +6,31 @@ import {useRecoilValue} from 'recoil';
 import Nav from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/Nav';
 import SidebarSp from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/SidebarSp';
 import hamburgerState from '@/stores/hamburgerStore';
+import SidebarProduct from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/SidebarProduct';
+import dataWineries from '@/data/wineries.json';
+import {useEffect, useMemo, useState} from 'react';
 
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
+  const {id} = router.query;
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
+
+  const activeWinery = useMemo(() => {
+    return dataWineries.find((d) => {
+      return d.wineryId === id;
+    });
+  }, [id]);
+
+  if (!activeWinery) {
+    return;
+  }
+
   return (
     <>
       <SidebarSp />
@@ -88,6 +109,7 @@ const Sidebar = () => {
             <h2 className="text-xl">Make YourSelf</h2>
           </div>
         </motion.div>
+        {isClient && <SidebarProduct item={activeWinery} />}
         <Nav />
       </motion.aside>
     </>

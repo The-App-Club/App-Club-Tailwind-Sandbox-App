@@ -98,7 +98,48 @@ const WineryStories = () => {
           />
           <Header />
           <Spacer />
-          <Container stories={myStories} />
+          <div
+            className={cx(
+              css`
+                width: 100%;
+                max-width: 100%;
+                min-height: 100vh;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 3rem;
+                @media (max-width: 1000px) {
+                  min-height: initial;
+                  flex-direction: column;
+                }
+              `
+            )}
+          >
+            <Container stories={myStories} />
+            <aside
+              className={cx(
+                css`
+                  max-width: 34rem;
+                  width: 100%;
+                  position: sticky;
+                  top: calc(9rem + 16px);
+                  z-index: 1;
+                  min-height: 20rem; // mock attach
+                  display: none;
+                  @media (max-width: 1000px) {
+                    max-width: 100%;
+                  }
+                  @media (max-width: 768px) {
+                    display: block;
+                  }
+                `,
+                `bg-white dark:bg-slate-700 shadow-2xl rounded-xl`,
+                `border-2 border-gray-200 dark:border-slate-500`
+              )}
+            >
+              {/* <Product item={activeWine} /> */}
+            </aside>
+          </div>{' '}
         </section>
       </Layout>
     </>
