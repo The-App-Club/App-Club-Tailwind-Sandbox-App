@@ -11,6 +11,7 @@ import ProductCarted from '@/components/story/wineries/[id]/published/[pid]/Prod
 import ProductFav from '@/components/story/wineries/[id]/published/[pid]/ProductFav';
 import dataWineries from '@/data/wineries.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
+import useWine from '@/hooks/useWine';
 
 const motionConfig = {
   initial: {
@@ -30,11 +31,12 @@ const motionConfig = {
   },
 };
 
-const SidebarProduct = ({item}) => {
+const SidebarProduct = () => {
   const router = useRouter();
+  const {id} = router.query;
   const [location, setLocation] = useRecoilState(locationSelectorState);
-
-  if (!item) {
+  const {activeWine} = useWine({id});
+  if (!activeWine) {
     return;
   }
 
@@ -65,8 +67,8 @@ const SidebarProduct = ({item}) => {
       </h2>
 
       <div className={cx(`relative`, `w-full h-full px-12 border-b-2`)}>
-        <ProductCarted item={item} />
-        <ProductFav item={item} />
+        <ProductCarted item={activeWine} />
+        <ProductFav item={activeWine} />
         <div className="w-full flex gap-2">
           <div
             className={cx(
@@ -84,7 +86,7 @@ const SidebarProduct = ({item}) => {
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  background-image: url(${item.image});
+                  background-image: url(${activeWine.image});
                   background-size: contain;
                   background-position: center center;
                   background-origin: center center;
@@ -99,11 +101,11 @@ const SidebarProduct = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 router.push({
-                  pathname: `/wines/${item.id}`,
+                  pathname: `/wines/${activeWine.id}`,
                 });
               }}
             >
-              {item.wine}
+              {activeWine.wine}
             </h2>
             <div
               className={cx(
@@ -113,7 +115,7 @@ const SidebarProduct = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 const activeWineryItem = dataWineries.find((d) => {
-                  return d.wineryName === item.winery;
+                  return d.wineryName === activeWine.winery;
                 });
                 router.push({
                   pathname: `/wineries/${activeWineryItem.wineryId}`,
@@ -126,7 +128,7 @@ const SidebarProduct = ({item}) => {
                   min-width: 24px;
                 `}
               />
-              <span className="break-words">{`${item.winery}`}</span>
+              <span className="break-words">{`${activeWine.winery}`}</span>
             </div>
             <div
               className={cx(
@@ -136,7 +138,7 @@ const SidebarProduct = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 setLocation({
-                  activeLocationName: item.location,
+                  activeLocationName: activeWine.location,
                 });
                 router.push({
                   pathname: `/location`,
@@ -149,7 +151,7 @@ const SidebarProduct = ({item}) => {
                   min-width: 24px;
                 `}
               />
-              <span className="break-words">{`${item.location}`}</span>
+              <span className="break-words">{`${activeWine.location}`}</span>
             </div>
             <div
               className={css`
@@ -162,14 +164,14 @@ const SidebarProduct = ({item}) => {
             >
               <div className="flex items-start flex-col gap-2 sm:flex-row sm:items-center sm:justify-center">
                 <span className="text-xl text-rose-400 dark:text-amber-400">
-                  {item.rating.average}
+                  {activeWine.rating.average}
                 </span>
                 <span className="text-sm text-rose-400 dark:text-amber-400 line-clamp-1">
-                  {item.rating.reviews}
+                  {activeWine.rating.reviews}
                 </span>
               </div>
               <div className="flex items-end justify-center">
-                <span className="text-lg">{`$${numbro(item.price).format({
+                <span className="text-lg">{`$${numbro(activeWine.price).format({
                   thousandSeparated: true,
                 })}`}</span>
               </div>

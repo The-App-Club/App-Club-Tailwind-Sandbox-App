@@ -13,25 +13,12 @@ import SidebarProduct from '@/components/wines/[id]/stories/[storyId]/SidebarPro
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-
   const [isClient, setIsClient] = useState(false);
-  const {id} = router.query;
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
-
-  const activeWine = useMemo(() => {
-    return dataWines.find((d) => {
-      return d.id === Number(id);
-    });
-  }, [id]);
-
-  if (!activeWine) {
-    return;
-  }
 
   return (
     <>
@@ -111,7 +98,7 @@ const Sidebar = () => {
             <h2 className="text-xl">Make YourSelf</h2>
           </div>
         </motion.div>
-        {isClient && <SidebarProduct item={activeWine} />}
+        {isClient && <SidebarProduct />}
         <Nav />
       </motion.aside>
     </>

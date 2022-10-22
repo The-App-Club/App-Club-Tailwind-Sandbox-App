@@ -1,3 +1,4 @@
+import useWinery from '@/hooks/useWinery';
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
@@ -22,10 +23,12 @@ const motionConfig = {
   },
 };
 
-const SidebarProduct = ({item}) => {
+const SidebarWinery = () => {
   const router = useRouter();
+  const {id} = router.query;
+  const {activeWinery} = useWinery({id});
 
-  if (!item) {
+  if (!activeWinery) {
     return;
   }
 
@@ -73,7 +76,7 @@ const SidebarProduct = ({item}) => {
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  background-image: url(${item.thumbnail});
+                  background-image: url(${activeWinery.thumbnail});
                   background-size: contain;
                   background-position: center center;
                   background-origin: center center;
@@ -88,11 +91,11 @@ const SidebarProduct = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 router.push({
-                  pathname: `/wineries/${item.wineryId}`,
+                  pathname: `/wineries/${activeWinery.wineryId}`,
                 });
               }}
             >
-              {item.wineryName}
+              {activeWinery.wineryName}
             </h2>
             <div
               className={cx(
@@ -102,7 +105,7 @@ const SidebarProduct = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 router.push({
-                  pathname: `/wineries/${item.wineryId}`,
+                  pathname: `/wineries/${activeWinery.wineryId}`,
                 });
               }}
             >
@@ -112,7 +115,7 @@ const SidebarProduct = ({item}) => {
                   min-width: 24px;
                 `}
               />
-              <span className="break-words">{`${item.wineryName}`}</span>
+              <span className="break-words">{`${activeWinery.wineryName}`}</span>
             </div>
           </div>
         </div>
@@ -121,4 +124,4 @@ const SidebarProduct = ({item}) => {
   );
 };
 
-export default memo(SidebarProduct);
+export default memo(SidebarWinery);
