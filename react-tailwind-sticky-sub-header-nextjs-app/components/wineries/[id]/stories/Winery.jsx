@@ -3,7 +3,6 @@ import {useRouter} from 'next/router';
 import {memo} from 'react';
 import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 
-
 const Winery = ({item}) => {
   const router = useRouter();
   return (

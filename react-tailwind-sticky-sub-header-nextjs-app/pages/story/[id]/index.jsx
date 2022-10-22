@@ -2,7 +2,7 @@ import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import { useRecoilValue} from 'recoil';
+import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import Header from '@/components/story/[id]/Header';
