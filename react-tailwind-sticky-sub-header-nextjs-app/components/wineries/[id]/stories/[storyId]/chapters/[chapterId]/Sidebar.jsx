@@ -1,14 +1,13 @@
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
+import {useEffect, useState} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import Nav from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/Nav';
 import SidebarSp from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/SidebarSp';
-import hamburgerState from '@/stores/hamburgerStore';
 import SidebarWinery from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/SidebarWinery';
-import dataWineries from '@/data/wineries.json';
-import {useEffect, useMemo, useState} from 'react';
+import hamburgerState from '@/stores/hamburgerStore';
 
 const Sidebar = () => {
   const router = useRouter();

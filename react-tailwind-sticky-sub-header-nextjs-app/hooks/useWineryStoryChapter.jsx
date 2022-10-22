@@ -1,4 +1,5 @@
 import {useMemo} from 'react';
+
 import dataWineryChapters from '@/data/wineryChapters.json';
 import dataWineryStories from '@/data/wineryStories.json';
 

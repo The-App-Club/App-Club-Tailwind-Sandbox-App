@@ -2,15 +2,14 @@ import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import {useMemo} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import Header from '@/components/story/[id]/published/[pid]/Header';
 import Sidebar from '@/components/story/[id]/published/[pid]/Sidebar';
+import usePublishedStory from '@/hooks/usePublishedStory';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import usePublishedStory from '@/hooks/usePublishedStory';
 
 const PublishedStory = () => {
   const router = useRouter();

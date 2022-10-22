@@ -15,8 +15,6 @@ import dataWineStories from '@/data/wineStories.json';
 import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import useWine from '@/hooks/useWine';
-import useWineStoryChapter from '@/hooks/useWineStoryChapter';
 
 const WineStory = () => {
   const router = useRouter();

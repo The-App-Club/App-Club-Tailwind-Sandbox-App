@@ -1,5 +1,6 @@
-import dataWineries from '@/data/wineries.json';
 import {useMemo} from 'react';
+
+import dataWineries from '@/data/wineries.json';
 
 const useWinery = ({id}) => {
   const activeWinery = useMemo(() => {

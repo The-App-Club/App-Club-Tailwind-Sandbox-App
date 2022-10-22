@@ -2,7 +2,6 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {AiOutlineSelect} from 'react-icons/ai';
 import {MdFavoriteBorder, MdHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 

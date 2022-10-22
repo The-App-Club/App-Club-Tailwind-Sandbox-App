@@ -10,8 +10,8 @@ import {useRecoilState} from 'recoil';
 import ProductCarted from '@/components/story/wineries/[id]/published/[pid]/ProductCarted';
 import ProductFav from '@/components/story/wineries/[id]/published/[pid]/ProductFav';
 import dataWineries from '@/data/wineries.json';
-import locationSelectorState from '@/stores/locationSelectorStore';
 import useWine from '@/hooks/useWine';
+import locationSelectorState from '@/stores/locationSelectorStore';
 
 const motionConfig = {
   initial: {

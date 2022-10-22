@@ -9,12 +9,11 @@ import Spacer from '@/components/Spacer';
 import Container from '@/components/wineries/[id]/stories/Container';
 import Header from '@/components/wineries/[id]/stories/Header';
 import Sidebar from '@/components/wineries/[id]/stories/Sidebar';
+import Winery from '@/components/wineries/[id]/stories/Winery';
 import dataWineryStories from '@/data/wineryStories.json';
+import useWinery from '@/hooks/useWinery';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
-import useWinery from '@/hooks/useWinery';
-import Winery from '@/components/wineries/[id]/stories/Winery';
 
 const WineryStories = () => {
   const router = useRouter();
