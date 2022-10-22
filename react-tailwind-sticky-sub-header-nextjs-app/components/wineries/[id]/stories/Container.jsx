@@ -37,7 +37,7 @@ const Container = ({stories}) => {
             gap: 0.5rem;
             grid-template-columns: repeat(4, 1fr);
             @media (max-width: 1200px) {
-              grid-template-columns: repeat(2, 1fr);
+              grid-template-columns: repeat(1, 1fr);
             }
           `}
         >

@@ -14,6 +14,8 @@ import dataWineryStories from '@/data/wineryStories.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
+import useWinery from '@/hooks/useWinery';
+import Winery from '@/components/wineries/[id]/stories/[storyId]/Winery';
 
 const WineryStory = () => {
   const router = useRouter();
@@ -22,6 +24,8 @@ const WineryStory = () => {
   const userId = 'avDLMsS';
   const {id, storyId} = router.query;
   // const {myChapter} = useWineryStoryChapter({userId, id, storyId});
+  const {activeWinery} = useWinery({id});
+
   const item = useMemo(() => {
     return dataWineryStories.find((item) => {
       return item.wineryId === id;
@@ -53,6 +57,9 @@ const WineryStory = () => {
   }
 
   if (!myChapter) {
+    return;
+  }
+  if (!activeWinery) {
     return;
   }
 
@@ -114,7 +121,48 @@ const WineryStory = () => {
           />
           <Header item={myStory} />
           <Spacer />
-          <Container chapters={myChapter.chapters} />
+          <div
+            className={cx(
+              css`
+                width: 100%;
+                max-width: 100%;
+                min-height: 100vh;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 3rem;
+                @media (max-width: 1000px) {
+                  min-height: initial;
+                  flex-direction: column;
+                }
+              `
+            )}
+          >
+            <Container chapters={myChapter.chapters} />
+            <aside
+              className={cx(
+                css`
+                  max-width: 34rem;
+                  width: 100%;
+                  position: sticky;
+                  top: calc(9rem + 16px);
+                  z-index: 1;
+                  min-height: 20rem; // mock attach
+                  display: none;
+                  @media (max-width: 1000px) {
+                    max-width: 100%;
+                  }
+                  @media (max-width: 768px) {
+                    display: block;
+                  }
+                `,
+                `bg-white dark:bg-slate-700 shadow-2xl rounded-xl`,
+                `border-2 border-gray-200 dark:border-slate-500`
+              )}
+            >
+              <Winery item={activeWinery} />
+            </aside>
+          </div>
         </section>
       </Layout>
     </>

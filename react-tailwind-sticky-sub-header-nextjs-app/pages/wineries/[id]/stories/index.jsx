@@ -13,6 +13,8 @@ import dataWineryStories from '@/data/wineryStories.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
+import useWinery from '@/hooks/useWinery';
+import Winery from '@/components/wineries/[id]/stories/Winery';
 
 const WineryStories = () => {
   const router = useRouter();
@@ -21,6 +23,7 @@ const WineryStories = () => {
   const userId = 'avDLMsS';
   const {id} = router.query;
   // const {myStories} = useWineryStoryChapter({userId, id});
+  const {activeWinery} = useWinery({id});
 
   const item = useMemo(() => {
     return dataWineryStories.find((item) => {
@@ -39,6 +42,9 @@ const WineryStories = () => {
   }, [userId, item]);
 
   if (!item) {
+    return;
+  }
+  if (!activeWinery) {
     return;
   }
 
@@ -139,9 +145,9 @@ const WineryStories = () => {
                 `border-2 border-gray-200 dark:border-slate-500`
               )}
             >
-              {/* <Product item={activeWine} /> */}
+              <Winery item={activeWinery} />
             </aside>
-          </div>{' '}
+          </div>
         </section>
       </Layout>
     </>
