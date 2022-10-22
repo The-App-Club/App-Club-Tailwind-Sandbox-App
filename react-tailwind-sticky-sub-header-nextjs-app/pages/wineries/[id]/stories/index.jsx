@@ -12,6 +12,7 @@ import Sidebar from '@/components/wineries/[id]/stories/Sidebar';
 import dataWineryStories from '@/data/wineryStories.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
+import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
 
 const WineryStories = () => {
   const router = useRouter();
@@ -19,6 +20,7 @@ const WineryStories = () => {
 
   const userId = 'avDLMsS';
   const {id} = router.query;
+  // const {myStories} = useWineryStoryChapter({userId, id});
 
   const item = useMemo(() => {
     return dataWineryStories.find((item) => {

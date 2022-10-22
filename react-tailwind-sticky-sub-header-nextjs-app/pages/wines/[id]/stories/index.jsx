@@ -23,7 +23,7 @@ const WineStories = () => {
 
   const userId = 'avDLMsS';
   const {id} = router.query;
-  // const {myStories} = useWineStoryChapter({userId, id, storyId});
+  // const {myStories} = useWineStoryChapter({userId, id});
   // const {activeWine} = useWine({id});
 
   const item = useMemo(() => {

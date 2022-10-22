@@ -13,6 +13,7 @@ import dataWineryChapters from '@/data/wineryChapters.json';
 import dataWineryStories from '@/data/wineryStories.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
+import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
 
 const WineryStory = () => {
   const router = useRouter();
@@ -20,7 +21,7 @@ const WineryStory = () => {
 
   const userId = 'avDLMsS';
   const {id, storyId} = router.query;
-
+  // const {myChapter} = useWineryStoryChapter({userId, id, storyId});
   const item = useMemo(() => {
     return dataWineryStories.find((item) => {
       return item.wineryId === id;

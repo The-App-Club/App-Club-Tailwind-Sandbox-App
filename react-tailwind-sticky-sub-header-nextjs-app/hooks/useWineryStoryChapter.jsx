@@ -1,20 +1,20 @@
 import {useMemo} from 'react';
-import dataWineChapters from '@/data/wineChapters.json';
-import dataWineStories from '@/data/wineStories.json';
+import dataWineryChapters from '@/data/wineryChapters.json';
+import dataWineryStories from '@/data/wineryStories.json';
 
-const useWineStoryChapter = ({userId, id, storyId, chapterId}) => {
+const useWineryStoryChapter = ({userId, id, storyId, chapterId}) => {
   const item = useMemo(() => {
     if (!storyId) {
       return;
     }
-    return dataWineChapters.find((item) => {
+    return dataWineryChapters.find((item) => {
       return item.storyId === storyId && item.userId === userId;
     });
   }, [storyId, userId]);
 
   const item2 = useMemo(() => {
-    return dataWineStories.find((item) => {
-      return item.wineId === Number(id);
+    return dataWineryStories.find((item) => {
+      return item.wineryId === id;
     });
   }, [id]);
 
@@ -32,6 +32,7 @@ const useWineStoryChapter = ({userId, id, storyId, chapterId}) => {
     if (!item) {
       return [];
     }
+
     return item.chapters;
   }, [item]);
 
@@ -56,4 +57,4 @@ const useWineStoryChapter = ({userId, id, storyId, chapterId}) => {
   };
 };
 
-export default useWineStoryChapter;
+export default useWineryStoryChapter;
