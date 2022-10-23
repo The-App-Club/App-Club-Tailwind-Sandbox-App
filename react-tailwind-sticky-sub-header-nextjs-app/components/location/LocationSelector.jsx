@@ -5,48 +5,24 @@ import {filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
 import {Fragment, useEffect, useMemo, useState} from 'react';
 import {useRecoilState, useSetRecoilState} from 'recoil';
 
-import data from '@/data/wines.json';
+import dataLocations from '@/data/locations.json';
+
 import locationSelectorState from '@/stores/locationSelectorStore';
 
 const LocationSelector = ({className}) => {
   const [location, setLocation] = useRecoilState(locationSelectorState);
   const [selected, setSelected] = useState({name: location.activeLocationName});
 
-  const niceData = useMemo(() => {
+  const locationNames = useMemo(() => {
     return tidy(
-      data,
+      dataLocations,
       map((item) => {
         return {
-          winery: item.winery,
-          location: item.location,
-          wine: item.wine,
-          id: item.id,
-          price: item.price,
-          average: Number(item.rating.average),
-          reviews: Number(item.rating.reviews.replace('ratings', '').trim()),
+          name: item.locationName,
         };
-      }),
-      groupBy(
-        ['location'],
-        [mutate({key: (d) => `\${d.location}`})],
-        groupBy.entries()
-      ),
-      filter(([key, value]) => {
-        return key !== '';
       })
     );
   }, []);
-
-  const locationNames = useMemo(() => {
-    return tidy(
-      niceData,
-      map(([key, value]) => {
-        return {
-          name: key,
-        };
-      })
-    );
-  }, [niceData]);
 
   useEffect(() => {
     const activeWineryItem = locationNames.find((item) => {

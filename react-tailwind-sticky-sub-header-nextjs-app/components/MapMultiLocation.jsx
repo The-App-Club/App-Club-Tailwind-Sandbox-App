@@ -6,7 +6,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import {useRecoilValue} from 'recoil';
 import {useDebouncedCallback} from 'use-debounce';
 
-import data from '@/data/location.json';
+import dataLocations from '@/data/locations.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import multiLocationSelectorState from '@/stores/multiLocationSelectorStore';
 
@@ -23,9 +23,9 @@ const MapMultiLocation = ({defaultZoom = 11, className = css``}) => {
   const [zoom, setZoom] = useState(defaultZoom);
 
   const multiLocation = useMemo(() => {
-    return data.filter((item) => {
+    return dataLocations.filter((item) => {
       return activeLocationNameList.some((activeLocationName) => {
-        return activeLocationName === item.location;
+        return activeLocationName === item.locationName;
       });
     });
   }, [activeLocationNameList]);

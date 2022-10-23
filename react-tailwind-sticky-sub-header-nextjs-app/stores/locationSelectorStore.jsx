@@ -1,9 +1,10 @@
 import {atom} from 'recoil';
+import dataLocations from '@/data/locations.json';
 
 const locationSelectorState = atom({
   key: 'locationSelectorState',
   default: {
-    activeLocationName: 'Spain\n·\nEmpordà',
+    activeLocationName: dataLocations[0].locationName,
   },
 });
 

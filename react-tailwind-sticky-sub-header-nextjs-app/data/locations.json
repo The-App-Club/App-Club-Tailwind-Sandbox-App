@@ -1,227 +1,227 @@
 [
   {
     "locationId": "pJkaYMO",
-    "location": "Spain\n·\nEmpordà",
+    "locationName": "Spain\n·\nEmpordà",
     "latLng": [41.99267061423483, 2.8226281691249473]
   },
   {
     "locationId": "BOdHtNt",
-    "location": "Portugal\n·\nAlentejo",
+    "locationName": "Portugal\n·\nAlentejo",
     "latLng": [38.36553940377808, -7.787717370327855]
   },
   {
     "locationId": "RBkOWbH",
-    "location": "United States\n·\nOakville",
+    "locationName": "United States\n·\nOakville",
     "latLng": [46.84086121766615, -123.23241693510998]
   },
   {
     "locationId": "fKdqyWW",
-    "location": "United States\n·\nNapa Valley",
+    "locationName": "United States\n·\nNapa Valley",
     "latLng": [38.44264487175154, -122.39543189476561]
   },
   {
     "locationId": "lAFMVEH",
-    "location": "United States\n·\nHowell Mountain",
+    "locationName": "United States\n·\nHowell Mountain",
     "latLng": [38.58215967886866, -122.45004314112288]
   },
   {
     "locationId": "TIKNxrD",
-    "location": "United States\n·\nCalifornia",
+    "locationName": "United States\n·\nCalifornia",
     "latLng": [37.306819661836165, -119.42299883834926]
   },
   {
     "locationId": "euVbJkv",
-    "location": "United States\n·\nSta. Rita Hills",
+    "locationName": "United States\n·\nSta. Rita Hills",
     "latLng": [35.31914349638048, -120.2713332202781]
   },
   {
     "locationId": "PArxjAs",
-    "location": "United States\n·\nYamhill County",
+    "locationName": "United States\n·\nYamhill County",
     "latLng": [45.188590877413326, -123.24037270922634]
   },
   {
     "locationId": "HyePEmc",
-    "location": "United States\n·\nRutherford",
+    "locationName": "United States\n·\nRutherford",
     "latLng": [40.828374962028825, -74.10693326375578]
   },
   {
     "locationId": "XDFMvPo",
-    "location": "Italy\n·\nVeneto",
+    "locationName": "Italy\n·\nVeneto",
     "latLng": [45.53831507337642, 12.323052677740003]
   },
   {
     "locationId": "QhcaJMs",
-    "location": "France\n·\nCôte-Rôtie",
+    "locationName": "France\n·\nCôte-Rôtie",
     "latLng": [45.51303959255917, 4.7963785356014395]
   },
   {
     "locationId": "nFKsQNk",
-    "location": "France\n·\nChambertin Grand Cru",
+    "locationName": "France\n·\nChambertin Grand Cru",
     "latLng": [47.233741460371675, 4.972814306214609]
   },
   {
     "locationId": "LfgahOI",
-    "location": "Argentina\n·\nAgrelo",
+    "locationName": "Argentina\n·\nAgrelo",
     "latLng": [-33.11812497070826, -68.88666826909824]
   },
   {
     "locationId": "cYrccVZ",
-    "location": "Spain\n·\nRibera del Duero",
+    "locationName": "Spain\n·\nRibera del Duero",
     "latLng": [41.81059862417334, -3.6678192570962516]
   },
   {
     "locationId": "SejSdGC",
-    "location": "United States\n·\nMoon Mountain District",
+    "locationName": "United States\n·\nMoon Mountain District",
     "latLng": [43.20598654440291, -113.50014874405053]
   },
   {
     "locationId": "XHKeMIx",
-    "location": "Italy\n·\nBarolo",
+    "locationName": "Italy\n·\nBarolo",
     "latLng": [44.60916785408298, 7.9402669246897055]
   },
   {
     "locationId": "yEcvgKM",
-    "location": "South Africa\n·\nStellenbosch",
+    "locationName": "South Africa\n·\nStellenbosch",
     "latLng": [-33.92445380049881, 18.859346999629693]
   },
   {
     "locationId": "PLeHNze",
-    "location": "United States\n·\nDiamond Mountain District",
+    "locationName": "United States\n·\nDiamond Mountain District",
     "latLng": [40.26252966770038, -120.55718803419622]
   },
   {
     "locationId": "QCZUuyn",
-    "location": "South Africa\n·\nWestern Cape",
+    "locationName": "South Africa\n·\nWestern Cape",
     "latLng": [-32.09124487319709, 21.816106914088397]
   },
   {
     "locationId": "zrtUAzF",
-    "location": "Hungary\n·\nSzekszárd",
+    "locationName": "Hungary\n·\nSzekszárd",
     "latLng": [46.35120451878805, 18.706686105222275]
   },
   {
     "locationId": "bNVdQMC",
-    "location": "France\n·\nMusigny Grand Cru",
+    "locationName": "France\n·\nMusigny Grand Cru",
     "latLng": [47.17860311241133, 4.954529986302879]
   },
   {
     "locationId": "PCFVrSF",
-    "location": "Spain\n·\nToro",
+    "locationName": "Spain\n·\nToro",
     "latLng": [41.528733444063235, -5.391063846226593]
   },
   {
     "locationId": "bbPubpb",
-    "location": "United States\n·\nSt. Helena",
+    "locationName": "United States\n·\nSt. Helena",
     "latLng": [38.5073155607089, -122.47000547062463]
   },
   {
     "locationId": "VMbmYFf",
-    "location": "United States\n·\nRussian River Valley",
+    "locationName": "United States\n·\nRussian River Valley",
     "latLng": [38.571430702128794, -122.82432741559757]
   },
   {
     "locationId": "YqwfKEv",
-    "location": "France\n·\nRomanée-Saint-Vivant Grand Cru",
+    "locationName": "France\n·\nRomanée-Saint-Vivant Grand Cru",
     "latLng": [47.16256597019351, 4.953990227216559]
   },
   {
     "locationId": "RRDVtYP",
-    "location": "France\n·\nÉchezeaux Grand Cru",
+    "locationName": "France\n·\nÉchezeaux Grand Cru",
     "latLng": [47.17052804535681, 4.954191084886887]
   },
   {
     "locationId": "WCOUXPW",
-    "location": "France\n·\nLa Tâche Grand Cru",
+    "locationName": "France\n·\nLa Tâche Grand Cru",
     "latLng": [47.16068762886257, 4.9515410408005405]
   },
   {
     "locationId": "HdYbBDc",
-    "location": "Australia\n·\nHeathcote",
+    "locationName": "Australia\n·\nHeathcote",
     "latLng": [-36.910174910942885, 144.70179559119092]
   },
   {
     "locationId": "CYtDURG",
-    "location": "France\n·\nHaut-Médoc",
+    "locationName": "France\n·\nHaut-Médoc",
     "latLng": [44.55780800350205, -0.03850403653649749]
   },
   {
     "locationId": "eAAGtdw",
-    "location": "Italy\n·\nAmarone della Valpolicella Classico",
+    "locationName": "Italy\n·\nAmarone della Valpolicella Classico",
     "latLng": [45.54510634278141, 10.948448663724673]
   },
   {
     "locationId": "lzGhhnG",
-    "location": "Australia\n·\nMcLaren Vale",
+    "locationName": "Australia\n·\nMcLaren Vale",
     "latLng": [-35.20294286457551, 138.54375403603441]
   },
   {
     "locationId": "yhYhVYn",
-    "location": "France\n·\nVosne-Romanée Premier Cru",
+    "locationName": "France\n·\nVosne-Romanée Premier Cru",
     "latLng": [47.1618863203349, 4.948541041925218]
   },
   {
     "locationId": "OjWtsCZ",
-    "location": "Australia\n·\nFleurieu",
+    "locationName": "Australia\n·\nFleurieu",
     "latLng": [-35.49867152701712, 138.5002574640952]
   },
   {
     "locationId": "kzXnPPR",
-    "location": "France\n·\nPomerol",
+    "locationName": "France\n·\nPomerol",
     "latLng": [44.932089166208016, -0.20070101635243903]
   },
   {
     "locationId": "GqYoqTy",
-    "location": "United States\n·\nSonoma Mountain",
+    "locationName": "United States\n·\nSonoma Mountain",
     "latLng": [38.2938540089754, -122.45879847313007]
   },
   {
     "locationId": "vyvIDcG",
-    "location": "Italy\n·\nAmarone della Valpolicella",
+    "locationName": "Italy\n·\nAmarone della Valpolicella",
     "latLng": [45.57245417300914, 10.948139139093941]
   },
   {
     "locationId": "eKjtQgo",
-    "location": "Portugal\n·\nMadeira",
+    "locationName": "Portugal\n·\nMadeira",
     "latLng": [32.903146190182376, -16.967989476261316]
   },
   {
     "locationId": "nqyyPCt",
-    "location": "Australia\n·\nBarossa Valley",
+    "locationName": "Australia\n·\nBarossa Valley",
     "latLng": [-34.52264647883536, 138.9490025817849]
   },
   {
     "locationId": "rhfFZaw",
-    "location": "Portugal\n·\nDouro",
+    "locationName": "Portugal\n·\nDouro",
     "latLng": [41.61526100626732, -5.487148356708386]
   },
   {
     "locationId": "oGNUOgS",
-    "location": "France\n·\nPauillac",
+    "locationName": "France\n·\nPauillac",
     "latLng": [45.203092980911315, -0.7467630326192799]
   },
   {
     "locationId": "LBAWemm",
-    "location": "France\n·\nMargaux",
+    "locationName": "France\n·\nMargaux",
     "latLng": [45.048896760512946, -0.679173878676676]
   },
   {
     "locationId": "cPnZqLj",
-    "location": "Italy\n·\nToscana",
+    "locationName": "Italy\n·\nToscana",
     "latLng": [43.882607825251135, 11.248397031100026]
   },
   {
     "locationId": "hlTJZuF",
-    "location": "Argentina\n·\nPerdriel",
+    "locationName": "Argentina\n·\nPerdriel",
     "latLng": [-33.075855354366254, -68.88690350998215]
   },
   {
     "locationId": "mYuefLu",
-    "location": "France\n·\nSaint-Émilion Grand Cru",
+    "locationName": "France\n·\nSaint-Émilion Grand Cru",
     "latLng": [44.90004306459386, -0.12233353734112504]
   },
   {
     "locationId": "hIRBxsb",
-    "location": "Italy\n·\nBolgheri Sassicaia",
+    "locationName": "Italy\n·\nBolgheri Sassicaia",
     "latLng": [43.232773805744756, 10.600175543770693]
   }
 ]

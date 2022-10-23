@@ -7,7 +7,7 @@ import {TbWorldLatitude, TbWorldLongitude, TbZoomPan} from 'react-icons/tb';
 import {useRecoilValue} from 'recoil';
 import {useDebouncedCallback} from 'use-debounce';
 
-import data from '@/data/location.json';
+import dataLocations from '@/data/locations.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
 
 const Map = ({defaultZoom = 11, className = css``}) => {
@@ -23,8 +23,8 @@ const Map = ({defaultZoom = 11, className = css``}) => {
     if (!activeLocationName) {
       return;
     }
-    return data.find((item) => {
-      return item.location === activeLocationName;
+    return dataLocations.find((item) => {
+      return item.locationName === activeLocationName;
     });
   }, [activeLocationName]);
 
