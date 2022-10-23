@@ -1,23 +1,26 @@
 import {css, cx} from '@emotion/css';
 import {Listbox, Transition} from '@headlessui/react';
 import {CheckIcon, ChevronUpDownIcon} from '@heroicons/react/24/solid';
-import {filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
+import {map, tidy} from '@tidyjs/tidy';
 import {Fragment, useEffect, useMemo, useState} from 'react';
-import {useRecoilState, useSetRecoilState} from 'recoil';
+import {useRecoilState} from 'recoil';
 
 import dataLocations from '@/data/locations.json';
-
 import locationSelectorState from '@/stores/locationSelectorStore';
 
 const LocationSelector = ({className}) => {
   const [location, setLocation] = useRecoilState(locationSelectorState);
-  const [selected, setSelected] = useState({name: location.activeLocationName});
+  const [selected, setSelected] = useState({
+    id: location.activeLocationId,
+    name: location.activeLocationName,
+  });
 
-  const locationNames = useMemo(() => {
+  const locations = useMemo(() => {
     return tidy(
       dataLocations,
       map((item) => {
         return {
+          id: item.locationId,
           name: item.locationName,
         };
       })
@@ -25,14 +28,15 @@ const LocationSelector = ({className}) => {
   }, []);
 
   useEffect(() => {
-    const activeWineryItem = locationNames.find((item) => {
-      return item.name === location.activeLocationName;
+    const matchedItem = locations.find((item) => {
+      return item.id === location.activeLocationId;
     });
-    setSelected(activeWineryItem);
-  }, [locationNames, location]);
+    setSelected(matchedItem);
+  }, [locations, location]);
 
   const handleChange = (e) => {
     setLocation({
+      activeLocationId: e.id,
       activeLocationName: e.name,
     });
     setSelected(e);
@@ -57,7 +61,7 @@ const LocationSelector = ({className}) => {
             `text-sm`
           )}
         >
-          <span className="block truncate">{selected?.name}</span>
+          <span className="block truncate">{selected.name}</span>
           <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
             <ChevronUpDownIcon
               className="h-5 w-5 text-gray-400"
@@ -79,7 +83,7 @@ const LocationSelector = ({className}) => {
               `text-sm`
             )}
           >
-            {locationNames.map((item, index) => {
+            {locations.map((item, index) => {
               return (
                 <Listbox.Option
                   key={index}
@@ -101,7 +105,7 @@ const LocationSelector = ({className}) => {
                             selected ? 'font-medium' : 'font-normal'
                           }`}
                         >
-                          {item?.name}
+                          {item.name}
                         </span>
                         {selected ? (
                           <span

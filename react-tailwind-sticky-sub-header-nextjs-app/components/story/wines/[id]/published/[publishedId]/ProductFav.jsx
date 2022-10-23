@@ -1,18 +1,28 @@
 import {css, cx} from '@emotion/css';
+import {useRouter} from 'next/router';
 import {memo, useCallback} from 'react';
 import {MdFavoriteBorder, MdOutlineFavorite} from 'react-icons/md';
 
 import useFavoriteWine from '@/hooks/useFavoriteWine';
+import useWine from '@/hooks/useWine';
 
-const ProductFav = ({item}) => {
-  const {isFavorited, toggleFavorite} = useFavoriteWine(item);
+const ProductFav = () => {
+  const router = useRouter();
+  const {id} = router.query;
+  const {activeWine} = useWine({id});
+  const {isFavorited, toggleFavorite} = useFavoriteWine(activeWine);
   const handleFav = useCallback(
     (e) => {
       e.stopPropagation();
-      toggleFavorite({focusedItem: item});
+      toggleFavorite({focusedItem: activeWine});
     },
-    [item] /* eslint-disable-line */
+    [activeWine] /* eslint-disable-line */
   );
+
+  if (!activeWine) {
+    return;
+  }
+
   return (
     <div
       className={cx(
@@ -24,7 +34,7 @@ const ProductFav = ({item}) => {
       )}
       onClick={handleFav}
     >
-      {isFavorited({focusedItem: item}) ? (
+      {isFavorited({focusedItem: activeWine}) ? (
         <MdOutlineFavorite
           size={32}
           fill={`rgb(244 114 182)`} // bg-pink-400

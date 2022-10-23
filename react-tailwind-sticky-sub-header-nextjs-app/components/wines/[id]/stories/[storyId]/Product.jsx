@@ -111,6 +111,7 @@ const Product = () => {
               onClick={(e) => {
                 e.stopPropagation();
                 setLocation({
+                  activeLocationId: activeWine.locationId,
                   activeLocationName: activeWine.location,
                 });
                 router.push({

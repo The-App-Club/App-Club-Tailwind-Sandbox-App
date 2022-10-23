@@ -126,6 +126,7 @@ const ProductGalleryItem = ({item}) => {
           onClick={(e) => {
             e.stopPropagation();
             setLocation({
+              activeLocationId: item.locationId,
               activeLocationName: item.location,
             });
             router.push({

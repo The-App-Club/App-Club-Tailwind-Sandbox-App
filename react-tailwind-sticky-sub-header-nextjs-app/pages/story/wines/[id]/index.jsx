@@ -8,25 +8,13 @@ import Spacer from '@/components/Spacer';
 import GalleryItem from '@/components/story/wines/[id]/GalleryItem';
 import Header from '@/components/story/wines/[id]/Header';
 import Sidebar from '@/components/story/wines/[id]/Sidebar';
-import usePublishedStory from '@/hooks/usePublishedStory';
-import useWine from '@/hooks/useWine';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const Story = () => {
-  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
+  const router = useRouter();
   const {id} = router.query;
-  const {activeWine} = useWine({id});
-  const {activeWineStories} = usePublishedStory({id});
-
-  if (!activeWine) {
-    return;
-  }
-
-  if (!activeWineStories) {
-    return;
-  }
 
   return (
     <>
@@ -85,9 +73,9 @@ const Story = () => {
             }}
           />
 
-          <Header item={activeWine} />
+          <Header />
           <Spacer />
-          <GalleryItem item={activeWine} storyItem={activeWineStories} />
+          <GalleryItem />
         </section>
       </Layout>
     </>

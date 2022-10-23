@@ -1,4 +1,4 @@
-import {useRecoilState, useSetRecoilState} from 'recoil';
+import {useRecoilState} from 'recoil';
 
 import locationSelectorState from '@/stores/locationSelectorStore';
 

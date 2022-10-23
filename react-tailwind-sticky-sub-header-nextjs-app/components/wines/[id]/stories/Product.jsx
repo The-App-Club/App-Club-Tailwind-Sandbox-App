@@ -11,11 +11,11 @@ import useWine from '@/hooks/useWine';
 import locationSelectorState from '@/stores/locationSelectorStore';
 
 const Product = () => {
+  const setLocation = useSetRecoilState(locationSelectorState);
   const router = useRouter();
   const userId = 'avDLMsS';
   const {id} = router.query;
   const {activeWine} = useWine({id});
-  const setLocation = useSetRecoilState(locationSelectorState);
 
   if (!activeWine) {
     return;
@@ -112,6 +112,7 @@ const Product = () => {
               onClick={(e) => {
                 e.stopPropagation();
                 setLocation({
+                  activeLocationId: activeWine.locationId,
                   activeLocationName: activeWine.location,
                 });
                 router.push({

@@ -3,7 +3,7 @@ import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn, MdOutlinePublish} from 'react-icons/md';
-import {useRecoilState, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import GalleryItemFav from '@/components/story/favorite/GalleryItemFav';
@@ -108,6 +108,7 @@ const GalleryItem = ({item}) => {
           onClick={(e) => {
             e.stopPropagation();
             setLocation({
+              activeLocationId: item.locationId,
               activeLocationName: activeWine.location,
             });
             router.push({

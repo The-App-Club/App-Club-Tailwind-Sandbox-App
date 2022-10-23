@@ -4,7 +4,7 @@ import {default as numbro} from 'numbro';
 import {memo, useCallback, useEffect, useState} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useRecoilValue, useSetRecoilState} from 'recoil';
+import {useRecoilState, useSetRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import GalleryItemCarted from '@/components/favorite/wines/GalleryItemCarted';
@@ -12,14 +12,12 @@ import GalleryItemFav from '@/components/favorite/wines/GalleryItemFav';
 import dataWineries from '@/data/wineries.json';
 import useCart from '@/hooks/useCart';
 import locationSelectorState from '@/stores/locationSelectorStore';
-import themeState from '@/stores/themeStore';
 import wineState from '@/stores/wineStore';
 
 const ProductGalleryItem = ({item}) => {
   const router = useRouter();
   const {addCart, removeCart, isCarted} = useCart();
   const [isClient, setIsClient] = useState(false);
-  const theme = useRecoilValue(themeState);
   const setLocation = useSetRecoilState(locationSelectorState);
   const [activeWine, setActiveWine] = useRecoilState(wineState);
   useEffect(() => {
@@ -126,6 +124,7 @@ const ProductGalleryItem = ({item}) => {
           onClick={(e) => {
             e.stopPropagation();
             setLocation({
+              activeLocationId: item.locationId,
               activeLocationName: item.location,
             });
             router.push({

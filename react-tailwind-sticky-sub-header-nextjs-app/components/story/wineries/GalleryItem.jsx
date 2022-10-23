@@ -4,15 +4,12 @@ import {default as numbro} from 'numbro';
 import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlinePublish} from 'react-icons/md';
-import {useRecoilState, useSetRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import dataWineries from '@/data/wineries.json';
-import locationSelectorState from '@/stores/locationSelectorStore';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
-  const setLocation = useSetRecoilState(locationSelectorState);
   const activeWinery = useMemo(() => {
     if (!item) {
       return;

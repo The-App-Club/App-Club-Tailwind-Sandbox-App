@@ -5,7 +5,7 @@ import {default as numbro} from 'numbro';
 import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
 import Tracer from '@/components/Tracer';
 import dataWineries from '@/data/wineries.json';
@@ -118,6 +118,7 @@ const PriceRanking = ({className}) => {
                   onClick={(e) => {
                     e.stopPropagation();
                     setLocation({
+                      activeLocationId: item.locationId,
                       activeLocationName: item.location,
                     });
                     router.push({

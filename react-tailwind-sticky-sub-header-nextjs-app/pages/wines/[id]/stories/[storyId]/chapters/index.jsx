@@ -124,7 +124,7 @@ const StoryChapters = () => {
                 `border-2 border-gray-200 dark:border-slate-500`
               )}
             >
-              <Product item={activeWine} />
+              <Product />
             </aside>
           </div>
         </section>

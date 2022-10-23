@@ -5,11 +5,12 @@ import {default as numbro} from 'numbro';
 import {memo} from 'react';
 import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
-import ProductCarted from '@/components/story/wineries/[id]/published/[publishedId]/ProductCarted';
-import ProductFav from '@/components/story/wineries/[id]/published/[publishedId]/ProductFav';
+import ProductCarted from '@/components/story/wines/[id]/published/[publishedId]/ProductCarted';
+import ProductFav from '@/components/story/wines/[id]/published/[publishedId]/ProductFav';
 import dataWineries from '@/data/wineries.json';
+import useWine from '@/hooks/useWine';
 import locationSelectorState from '@/stores/locationSelectorStore';
 
 const motionConfig = {
@@ -30,11 +31,13 @@ const motionConfig = {
   },
 };
 
-const Product = ({item}) => {
-  const router = useRouter();
+const Product = () => {
   const setLocation = useSetRecoilState(locationSelectorState);
+  const router = useRouter();
+  const {id} = router.query;
+  const {activeWine} = useWine({id});
 
-  if (!item) {
+  if (!activeWine) {
     return;
   }
 
@@ -65,8 +68,8 @@ const Product = ({item}) => {
       </h2>
 
       <div className={cx(`relative`, `w-full h-full px-12 border-b-2`)}>
-        <ProductCarted item={item} />
-        <ProductFav item={item} />
+        <ProductCarted />
+        <ProductFav />
         <div className="w-full flex gap-2">
           <div
             className={cx(
@@ -84,7 +87,7 @@ const Product = ({item}) => {
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  background-image: url(${item.image});
+                  background-image: url(${activeWine.image});
                   background-size: contain;
                   background-position: center center;
                   background-origin: center center;
@@ -99,11 +102,11 @@ const Product = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 router.push({
-                  pathname: `/wines/${item.id}`,
+                  pathname: `/wines/${activeWine.id}`,
                 });
               }}
             >
-              {item.wine}
+              {activeWine.wine}
             </h2>
             <div
               className={cx(
@@ -113,7 +116,7 @@ const Product = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 const activeWineryItem = dataWineries.find((d) => {
-                  return d.wineryName === item.winery;
+                  return d.wineryName === activeWine.winery;
                 });
                 router.push({
                   pathname: `/wineries/${activeWineryItem.wineryId}`,
@@ -126,7 +129,7 @@ const Product = ({item}) => {
                   min-width: 24px;
                 `}
               />
-              <span className="break-words">{`${item.winery}`}</span>
+              <span className="break-words">{`${activeWine.winery}`}</span>
             </div>
             <div
               className={cx(
@@ -136,7 +139,8 @@ const Product = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 setLocation({
-                  activeLocationName: item.location,
+                  activeLocationId: activeWine.locationId,
+                  activeLocationName: activeWine.location,
                 });
                 router.push({
                   pathname: `/location`,
@@ -149,7 +153,7 @@ const Product = ({item}) => {
                   min-width: 24px;
                 `}
               />
-              <span className="break-words">{`${item.location}`}</span>
+              <span className="break-words">{`${activeWine.location}`}</span>
             </div>
             <div
               className={css`
@@ -162,14 +166,14 @@ const Product = ({item}) => {
             >
               <div className="flex items-start flex-col gap-2 sm:flex-row sm:items-center sm:justify-center">
                 <span className="text-xl text-rose-400 dark:text-amber-400">
-                  {item.rating.average}
+                  {activeWine.rating.average}
                 </span>
                 <span className="text-sm text-rose-400 dark:text-amber-400 line-clamp-1">
-                  {item.rating.reviews}
+                  {activeWine.rating.reviews}
                 </span>
               </div>
               <div className="flex items-end justify-center">
-                <span className="text-lg">{`$${numbro(item.price).format({
+                <span className="text-lg">{`$${numbro(activeWine.price).format({
                   thousandSeparated: true,
                 })}`}</span>
               </div>

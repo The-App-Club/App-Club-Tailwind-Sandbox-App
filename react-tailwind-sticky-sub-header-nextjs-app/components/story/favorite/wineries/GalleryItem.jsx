@@ -1,26 +1,23 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
-import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdFavoriteBorder} from 'react-icons/md';
-import {useRecoilState, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
-import dataWineries from '@/data/wineries.json';
-import locationSelectorState from '@/stores/locationSelectorStore';
+import useWinery from '@/hooks/useWinery';
 import wineryState from '@/stores/wineryStore';
 
 const GalleryItem = ({wineryId, stories}) => {
   const router = useRouter();
-  const setLocation = useSetRecoilState(locationSelectorState);
-  const [_, setWinery] = useRecoilState(wineryState);
+  const setWinery = useSetRecoilState(wineryState);
 
-  const activeWinery = useMemo(() => {
-    return dataWineries.find((d) => {
-      return d.wineryId === wineryId;
-    });
-  }, [wineryId]);
+  const {activeWinery} = useWinery({id: wineryId});
+
+  if (!activeWinery) {
+    return;
+  }
 
   return (
     <div

@@ -1,73 +1,15 @@
 import {css, cx} from '@emotion/css';
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import {count, groupBy, mutate, tidy} from '@tidyjs/tidy';
 import {useRouter} from 'next/router';
-import {useEffect, useMemo} from 'react';
-import {useRecoilState, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
-import data from '@/data/wineries.json';
+import dataWineries from '@/data/wineries.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
-import multiLocationSelectorState from '@/stores/multiLocationSelectorStore';
 
 const Category = ({className = css``}) => {
-  const router = useRouter();
-  const {id} = router.query;
   const setLocation = useSetRecoilState(locationSelectorState);
-  const [multiLocation, setMultiLocation] = useRecoilState(
-    multiLocationSelectorState
-  );
-
-  const matchedData = useMemo(() => {
-    return data.find((item) => {
-      return item.wineryId === id;
-    });
-  }, [id]);
-
-  const niceData = useMemo(() => {
-    if (!matchedData) {
-      return [null, null];
-    }
-    // "Hundred Acre", "Sine Qua Non", "Domaine de La Romanée-Conti"
-    return tidy(
-      matchedData.wines,
-      count(['winery', 'location']),
-      groupBy(
-        ['winery'],
-        [mutate({key: (d) => `\${d.winery}`})],
-        groupBy.entries()
-      )
-    ).flat();
-  }, [matchedData]);
-
-  useEffect(() => {
-    const [winery, wines] = niceData;
-    if (!winery || !wines) {
-      return;
-    }
-    if (wines.length === 1) {
-      setLocation({
-        activeLocationName: wines[0].location,
-      });
-    } else {
-      setMultiLocation({
-        activeWineryName: winery,
-        activeLocationNameList: wines.map((wine) => {
-          return wine.location;
-        }),
-      });
-    }
-    return () => {
-      setLocation({
-        activeLocationName: '',
-      });
-      setMultiLocation({
-        activeWineryName: '',
-        activeLocationNameList: [],
-      });
-    };
-  }, [niceData, setLocation, setMultiLocation]);
-
+  const router = useRouter();
   return (
     <div
       className={cx(
@@ -120,7 +62,7 @@ const Category = ({className = css``}) => {
           `
         )}
       >
-        {data.map((item, index) => {
+        {dataWineries.map((item, index) => {
           return (
             <SplideSlide
               key={index}
@@ -136,6 +78,7 @@ const Category = ({className = css``}) => {
               )}
               onClick={(e) => {
                 setLocation({
+                  activeLocationId: item.locationId,
                   activeLocationName: item.location,
                 });
                 router.push({

@@ -3,18 +3,20 @@ import {useRouter} from 'next/router';
 import {useCallback} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useRecoilValue, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
 import dataWineries from '@/data/wineries.json';
 import useCart from '@/hooks/useCart';
+import useWine from '@/hooks/useWine';
 import locationSelectorState from '@/stores/locationSelectorStore';
-import wineState from '@/stores/wineStore';
 
 const TraceFooter = () => {
-  const router = useRouter();
-  const {activeWine} = useRecoilValue(wineState);
   const setLocation = useSetRecoilState(locationSelectorState);
   const {addCart, removeCart, isCarted} = useCart();
+  const router = useRouter();
+  const {id} = router.query;
+  const {activeWine} = useWine({id});
+
   const handleAddCart = useCallback(
     (e) => {
       e.stopPropagation();
@@ -89,6 +91,7 @@ const TraceFooter = () => {
             onClick={(e) => {
               e.stopPropagation();
               setLocation({
+                activeLocationId: activeWine.locationId,
                 activeLocationName: activeWine.location,
               });
               router.push({

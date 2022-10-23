@@ -3,15 +3,28 @@ import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn, MdOutlinePublish} from 'react-icons/md';
-import {useRecoilState, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import dataWineries from '@/data/wineries.json';
+import usePublishedStory from '@/hooks/usePublishedStory';
+import useWine from '@/hooks/useWine';
 import locationSelectorState from '@/stores/locationSelectorStore';
 
-const GalleryItem = ({item, storyItem}) => {
-  const router = useRouter();
+const GalleryItem = () => {
   const setLocation = useSetRecoilState(locationSelectorState);
+  const router = useRouter();
+  const {id} = router.query;
+  const {activeWine} = useWine({id});
+  const {activeWineStories} = usePublishedStory({id});
+
+  if (!activeWine) {
+    return;
+  }
+
+  if (!activeWineStories) {
+    return;
+  }
 
   return (
     <div
@@ -24,7 +37,7 @@ const GalleryItem = ({item, storyItem}) => {
       onClick={(e) => {
         e.stopPropagation();
         router.push({
-          pathname: `/story/wines/${item.id}/published`,
+          pathname: `/story/wines/${activeWine.id}/published`,
         });
       }}
     >
@@ -43,7 +56,7 @@ const GalleryItem = ({item, storyItem}) => {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url(${item.image});
+            background-image: url(${activeWine.image});
             background-size: contain;
             background-position: center center;
             background-origin: center center;
@@ -60,7 +73,7 @@ const GalleryItem = ({item, storyItem}) => {
             `
           )}
         >
-          {`${item.wine}`}
+          {`${activeWine.wine}`}
         </h2>
         <Spacer height="0.5rem" />
         <div
@@ -71,7 +84,7 @@ const GalleryItem = ({item, storyItem}) => {
           onClick={(e) => {
             e.stopPropagation();
             const activeWineryItem = dataWineries.find((d) => {
-              return d.wineryName === item.winery;
+              return d.wineryName === activeWine.winery;
             });
             router.push({
               pathname: `/wineries/${activeWineryItem.wineryId}`,
@@ -84,7 +97,7 @@ const GalleryItem = ({item, storyItem}) => {
               min-width: 24px;
             `}
           />
-          <span className="break-words">{`${item.winery}`}</span>
+          <span className="break-words">{`${activeWine.winery}`}</span>
         </div>
         <div
           className={cx(
@@ -94,7 +107,8 @@ const GalleryItem = ({item, storyItem}) => {
           onClick={(e) => {
             e.stopPropagation();
             setLocation({
-              activeLocationName: item.location,
+              activeLocationId: activeWine.locationId,
+              activeLocationName: activeWine.location,
             });
             router.push({
               pathname: `/location`,
@@ -107,7 +121,7 @@ const GalleryItem = ({item, storyItem}) => {
               min-width: 24px;
             `}
           />
-          <span className="break-words">{`${item.location}`}</span>
+          <span className="break-words">{`${activeWine.location}`}</span>
         </div>
         <div className={cx(`text-sm font-bold flex items-center`)}>
           <MdOutlinePublish
@@ -116,11 +130,11 @@ const GalleryItem = ({item, storyItem}) => {
               min-width: 24px;
             `}
           />
-          <span className="text-sm">{`${numbro(storyItem.stories.length).format(
-            {
-              thousandSeparated: true,
-            }
-          )} stories published`}</span>
+          <span className="text-sm">{`${numbro(
+            activeWineStories.stories.length
+          ).format({
+            thousandSeparated: true,
+          })} stories published`}</span>
         </div>
       </div>
     </div>

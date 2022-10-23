@@ -3,7 +3,7 @@ import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import ProductCarted from '@/components/wines/[id]/ProductCarted';
@@ -13,10 +13,8 @@ import useWine from '@/hooks/useWine';
 import locationSelectorState from '@/stores/locationSelectorStore';
 
 const Product = ({className = css``}) => {
-  const router = useRouter();
-
   const setLocation = useSetRecoilState(locationSelectorState);
-
+  const router = useRouter();
   const {id} = router.query;
   const {activeWine} = useWine({id});
 
@@ -86,6 +84,7 @@ const Product = ({className = css``}) => {
             onClick={(e) => {
               e.stopPropagation();
               setLocation({
+                activeLocationId: activeWine.locationId,
                 activeLocationName: activeWine.location,
               });
               router.push({

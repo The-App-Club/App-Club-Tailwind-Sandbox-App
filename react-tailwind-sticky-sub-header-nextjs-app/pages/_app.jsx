@@ -4,7 +4,7 @@ import {useRouter} from 'next/router';
 import {useCallback, useEffect} from 'react';
 import {RecoilRoot, useRecoilState, useRecoilValue} from 'recoil';
 
-import Meta from '@/components/Meta';
+import Meta from '@/components/Meta'; // eslint-disable-line
 
 import '@fontsource/inter';
 import '@/styles/index.css';

@@ -1,14 +1,13 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
-import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdFavoriteBorder, MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import dataWineries from '@/data/wineries.json';
-import dataWines from '@/data/wines.json';
+import useWine from '@/hooks/useWine';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import wineState from '@/stores/wineStore';
 
@@ -16,12 +15,7 @@ const GalleryItem = ({wineId, stories}) => {
   const router = useRouter();
   const setLocation = useSetRecoilState(locationSelectorState);
   const setActiveWine = useSetRecoilState(wineState);
-
-  const activeWine = useMemo(() => {
-    return dataWines.find((d) => {
-      return d.id === wineId;
-    });
-  }, [wineId]);
+  const {activeWine} = useWine({id: wineId});
 
   if (!activeWine) {
     return;
@@ -112,6 +106,7 @@ const GalleryItem = ({wineId, stories}) => {
           onClick={(e) => {
             e.stopPropagation();
             setLocation({
+              activeLocationId: activeWine.locationId,
               activeLocationName: activeWine.location,
             });
             router.push({

@@ -4,7 +4,7 @@ import {default as numbro} from 'numbro';
 import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn, MdOutlinePublish} from 'react-icons/md';
-import {useRecoilState, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import dataWineries from '@/data/wineries.json';
@@ -109,6 +109,7 @@ const GalleryItem = ({item}) => {
           onClick={(e) => {
             e.stopPropagation();
             setLocation({
+              activeLocationId: activeWine.locationId,
               activeLocationName: activeWine.location,
             });
             router.push({

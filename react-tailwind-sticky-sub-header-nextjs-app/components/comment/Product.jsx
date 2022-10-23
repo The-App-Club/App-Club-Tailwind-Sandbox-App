@@ -4,19 +4,17 @@ import {default as numbro} from 'numbro';
 import {memo} from 'react';
 import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useRecoilValue, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
 import InputNumber from '@/components/comment/InputNumber';
 import ProductCarted from '@/components/comment/ProductCarted';
 import ProductFav from '@/components/comment/ProductFav';
 import dataWineries from '@/data/wineries.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
-import themeState from '@/stores/themeStore';
 
 const Product = ({item}) => {
   const router = useRouter();
   const setLocation = useSetRecoilState(locationSelectorState);
-  const theme = useRecoilValue(themeState);
   return (
     <div>
       <h2
@@ -110,6 +108,7 @@ const Product = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 setLocation({
+                  activeLocationId: item.locationId,
                   activeLocationName: item.location,
                 });
                 router.push({
