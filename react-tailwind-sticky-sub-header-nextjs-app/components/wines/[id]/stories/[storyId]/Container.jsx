@@ -4,25 +4,27 @@ import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 
 import GalleryItem from '@/components/wines/[id]/stories/[storyId]/GalleryItem';
+import useWineStoryChapter from '@/hooks/useWineStoryChapter';
 
-const Container = ({chapters}) => {
+const Container = () => {
   const router = useRouter();
+  const userId = 'avDLMsS';
   const {id, storyId} = router.query;
+  const {myChapter} = useWineStoryChapter({userId, id, storyId});
 
   const [isClient, setIsClient] = useState(false);
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
 
-  if (!chapters || chapters.length === 0) {
+  if (!myChapter) {
     return;
   }
 
   const renderContainer = () => {
-    if (chapters.length === 0) {
+    if (myChapter.chapters.length === 0) {
       return (
         <div
           className={cx(
@@ -49,7 +51,7 @@ const Container = ({chapters}) => {
             }
           `}
         >
-          {chapters.map((item, index) => {
+          {myChapter.chapters.map((item, index) => {
             return <GalleryItem key={index} item={item} chapterIndex={index} />;
           })}
         </div>

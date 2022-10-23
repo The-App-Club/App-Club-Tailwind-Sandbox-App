@@ -15,21 +15,20 @@ import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 import wineState from '@/stores/wineStore';
 import useWine from '@/hooks/useWine';
+import usePublishedStory from '@/hooks/usePublishedStory';
 
 const Story = () => {
   const router = useRouter();
-  const [_, setActiveWine] = useRecoilState(wineState);
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
   const {activeWine} = useWine({id});
-
-  const item = useMemo(() => {
-    return dataWineStories.find((item) => {
-      return item.wineId === Number(id);
-    });
-  }, [id]);
+  const {activeWineStories} = usePublishedStory({id});
 
   if (!activeWine) {
+    return;
+  }
+
+  if (!activeWineStories) {
     return;
   }
 
@@ -92,54 +91,7 @@ const Story = () => {
 
           <Header item={activeWine} />
           <Spacer />
-          <h2>My Stories</h2>
-
-          <GalleryItem item={activeWine} storyItem={item} />
-
-          {item.stories.length === 0 ? (
-            <div
-              className={cx(
-                `w-full flex justify-center flex-col items-center`,
-                `border-2  rounded-lg shadow-lg p-2`
-              )}
-            >
-              <p>Not yet published? Here create new.</p>
-
-              <button
-                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-                onClick={(e) => {
-                  setActiveWine({
-                    activeWine,
-                  });
-                  router.push({
-                    pathname: `/story/wines/${id}/create`,
-                  });
-                }}
-              >
-                Create story
-              </button>
-            </div>
-          ) : (
-            <div
-              className={cx(
-                `w-full flex justify-center flex-col items-center`,
-                `border-2  rounded-lg shadow-lg p-2`
-              )}
-            >
-              <p>You already published some stories. See stories.</p>
-
-              <button
-                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-                onClick={(e) => {
-                  router.push({
-                    pathname: `/story/wines/${id}/published`,
-                  });
-                }}
-              >
-                See story
-              </button>
-            </div>
-          )}
+          <GalleryItem item={activeWine} storyItem={activeWineStories} />
         </section>
       </Layout>
     </>

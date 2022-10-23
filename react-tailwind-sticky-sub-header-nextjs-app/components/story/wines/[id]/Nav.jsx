@@ -110,13 +110,6 @@ const Nav = () => {
             return <GiWineBottle size={24} />;
           }}
         />
-        <MenuItem
-          path={`/story/wines/${id}/create`}
-          menuTitle={'Create Wine Story'}
-          icon={() => {
-            return <BsPencilSquare size={24} />;
-          }}
-        />
       </motion.ul>
     </motion.nav>
   );

@@ -14,40 +14,11 @@ import dataWineStories from '@/data/wineStories.json';
 import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
+import useWine from '@/hooks/useWine';
+import useWineStoryChapter from '@/hooks/useWineStoryChapter';
 
 const WineStories = () => {
-  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-
-  const userId = 'avDLMsS';
-  const {id} = router.query;
-  // const {myStories} = useWineStoryChapter({userId, id});
-  const {activeWine} = useWine({id});
-
-  const item = useMemo(() => {
-    return dataWineStories.find((item) => {
-      return item.wineId === Number(id);
-    });
-  }, [id]);
-
-  const myStories = useMemo(() => {
-    if (!item) {
-      return [];
-    }
-
-    return item.stories.filter((story) => {
-      return story.userId === userId;
-    });
-  }, [userId, item]);
-
-  if (!item) {
-    return;
-  }
-
-  if (!activeWine) {
-    return;
-  }
-
   return (
     <>
       <Sidebar />
@@ -123,7 +94,7 @@ const WineStories = () => {
               `
             )}
           >
-            <Container stories={myStories} />
+            <Container />
             <aside
               className={cx(
                 css`
@@ -145,7 +116,7 @@ const WineStories = () => {
                 `border-2 border-gray-200 dark:border-slate-500`
               )}
             >
-              <Product item={activeWine} />
+              <Product />
             </aside>
           </div>
         </section>

@@ -12,34 +12,20 @@ import dataWineStories from '@/data/wineStories.json';
 import dataWineries from '@/data/wineries.json';
 import dataWines from '@/data/wines.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
+import usePublishedStory from '@/hooks/usePublishedStory';
+import useWine from '@/hooks/useWine';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
   const [location, setLocation] = useRecoilState(locationSelectorState);
-
-  const activeWine = useMemo(() => {
-    if (!item) {
-      return;
-    }
-    return dataWines.find((d) => {
-      return d.id === item.id;
-    });
-  }, [item]);
-
-  const activeStory = useMemo(() => {
-    if (!item) {
-      return;
-    }
-    return dataWineStories.find((d) => {
-      return d.wineId === item.id;
-    });
-  }, [item]);
+  const {activeWine} = useWine({id: item.id});
+  const {activeWineStories} = usePublishedStory({id: item.id});
 
   if (!activeWine) {
     return;
   }
 
-  if (!activeStory) {
+  if (!activeWineStories) {
     return;
   }
 
@@ -148,7 +134,7 @@ const GalleryItem = ({item}) => {
             `}
           />
           <span className="text-sm">{`${numbro(
-            activeStory.stories.length
+            activeWineStories.stories.length
           ).format({
             thousandSeparated: true,
           })} stories published`}</span>

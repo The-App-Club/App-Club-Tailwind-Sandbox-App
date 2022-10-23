@@ -3,22 +3,27 @@ import Link from 'next/link';
 import {useEffect, useState} from 'react';
 
 import GalleryItem from '@/components/story/wines/[id]/published/GalleryItem';
+import {useRouter} from 'next/router';
+import usePublishedStory from '@/hooks/usePublishedStory';
 
-const Container = ({stories}) => {
+const Container = () => {
+  const router = useRouter();
+  const {id} = router.query;
+  const {activeStory} = usePublishedStory({id});
+
   const [isClient, setIsClient] = useState(false);
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
 
-  if (!stories || stories.length === 0) {
+  if (!activeStory) {
     return;
   }
 
   const renderContainer = () => {
-    if (stories.length === 0) {
+    if (activeStory.stories.length === 0) {
       return (
         <div
           className={cx(
@@ -26,7 +31,7 @@ const Container = ({stories}) => {
             `border-2  rounded-lg shadow-lg p-2`
           )}
         >
-          <p>Nothing fav stories...</p>
+          <p>Nothing stories...</p>
           <Link href={`/story`}>
             <a className="hover:underline">See Story</a>
           </Link>
@@ -45,7 +50,7 @@ const Container = ({stories}) => {
             }
           `}
         >
-          {stories.map((item, index) => {
+          {activeStory.stories.map((item, index) => {
             return <GalleryItem key={index} item={item} />;
           })}
         </div>

@@ -16,25 +16,7 @@ import hamburgerState from '@/stores/hamburgerStore';
 import useWine from '@/hooks/useWine';
 
 const PublishedStories = () => {
-  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-  const {id} = router.query;
-
-  const item = useMemo(() => {
-    return dataWineStories.find((d) => {
-      return d.wineId === Number(id);
-    });
-  }, [id]);
-
-  const {activeWine} = useWine({id});
-
-  if (!item) {
-    return;
-  }
-
-  if (!activeWine) {
-    return;
-  }
 
   return (
     <>
@@ -93,9 +75,9 @@ const PublishedStories = () => {
             }}
           />
 
-          <Header item={activeWine} />
+          <Header />
           <Spacer />
-          <Container stories={item.stories} />
+          <Container />
         </section>
       </Layout>
     </>

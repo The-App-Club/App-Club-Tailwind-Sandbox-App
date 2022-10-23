@@ -4,16 +4,23 @@ import {default as numbro} from 'numbro';
 import {memo} from 'react';
 import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useRecoilValue} from 'recoil';
+import {useRecoilState, useRecoilValue, useSetRecoilState} from 'recoil';
 
 import dataWineries from '@/data/wineries.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import themeState from '@/stores/themeStore';
+import useWine from '@/hooks/useWine';
 
-const Product = ({item}) => {
+const Product = () => {
+  const setLocation = useSetRecoilState(locationSelectorState);
   const router = useRouter();
-  const [location, setLocation] = useRecoilState(locationSelectorState);
-  const theme = useRecoilValue(themeState);
+  const {id} = router.query;
+  const {activeWine} = useWine({id});
+
+  if (!activeWine) {
+    return;
+  }
+
   return (
     <div>
       <h2
@@ -50,7 +57,7 @@ const Product = ({item}) => {
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  background-image: url(${item.image});
+                  background-image: url(${activeWine.image});
                   background-size: contain;
                   background-position: center center;
                   background-origin: center center;
@@ -68,11 +75,11 @@ const Product = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 router.push({
-                  pathname: `/wines/${item.id}`,
+                  pathname: `/wines/${activeWine.id}`,
                 });
               }}
             >
-              {item.wine}
+              {activeWine.wine}
             </h2>
             <div
               className={cx(
@@ -82,7 +89,7 @@ const Product = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 const activeWineryItem = dataWineries.find((d) => {
-                  return d.wineryName === item.winery;
+                  return d.wineryName === activeWine.winery;
                 });
                 router.push({
                   pathname: `/wineries/${activeWineryItem.wineryId}`,
@@ -95,7 +102,7 @@ const Product = ({item}) => {
                   min-width: 24px;
                 `}
               />
-              <span className="break-words">{`${item.winery}`}</span>
+              <span className="break-words">{`${activeWine.winery}`}</span>
             </div>
             <div
               className={cx(
@@ -105,7 +112,7 @@ const Product = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 setLocation({
-                  activeLocationName: item.location,
+                  activeLocationName: activeWine.location,
                 });
                 router.push({
                   pathname: `/location`,
@@ -118,7 +125,7 @@ const Product = ({item}) => {
                   min-width: 24px;
                 `}
               />
-              <span className="break-words">{`${item.location}`}</span>
+              <span className="break-words">{`${activeWine.location}`}</span>
             </div>
             <div
               className={css`
@@ -136,13 +143,13 @@ const Product = ({item}) => {
             >
               <div className="flex items-start flex-col gap-2 sm:flex-row sm:items-center sm:justify-center">
                 <span className="text-xl text-rose-400 dark:text-amber-400">
-                  {item.rating.average}
+                  {activeWine.rating.average}
                 </span>
                 <span className="text-sm text-rose-400 dark:text-amber-400 line-clamp-1">
-                  {item.rating.reviews}
+                  {activeWine.rating.reviews}
                 </span>
                 <span className="text-lg sm:text-xl">{`$${numbro(
-                  item.price
+                  activeWine.price
                 ).format({
                   thousandSeparated: true,
                 })}`}</span>

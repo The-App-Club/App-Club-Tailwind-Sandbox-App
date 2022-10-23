@@ -7,7 +7,6 @@ import {useRecoilValue} from 'recoil';
 import Spacer from '@/components/Spacer';
 import Header from '@/components/story/[id]/published/[pid]/Header';
 import Sidebar from '@/components/story/[id]/published/[pid]/Sidebar';
-import usePublishedStory from '@/hooks/usePublishedStory';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
@@ -15,20 +14,6 @@ const PublishedStory = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
   const {id, pid} = router.query;
-  const {item, activeStory, activeWine} = usePublishedStory({id, pid});
-
-  if (!item) {
-    return;
-  }
-
-  if (!activeWine) {
-    return;
-  }
-
-  if (!activeStory) {
-    return;
-  }
-
   return (
     <>
       <Sidebar />

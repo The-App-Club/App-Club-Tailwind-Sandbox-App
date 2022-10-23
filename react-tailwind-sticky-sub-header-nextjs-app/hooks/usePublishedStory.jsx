@@ -5,36 +5,39 @@ import dataWines from '@/data/wines.json';
 
 const usePublishedStory = ({id, pid}) => {
   // storyId is categoryId ex.) wineId, wineryId, somulierId, userId
-  const item = useMemo(() => {
+  const activeWineStories = useMemo(() => {
     return dataWineStories.find((d) => {
       return d.wineId === Number(id);
     });
   }, [id]);
 
   const activeWine = useMemo(() => {
-    if (!item) {
+    if (!activeWineStories) {
       return;
     }
     return dataWines.find((d) => {
-      return d.id === item.wineId;
+      return d.id === activeWineStories.wineId;
     });
-  }, [item]);
+  }, [activeWineStories]);
 
   const activeStory = useMemo(() => {
-    if (!item) {
+    if (!activeWineStories) {
+      return;
+    }
+    if (!pid) {
       return;
     }
     return dataWineStories
       .find((d) => {
-        return d.wineId === item.wineId;
+        return d.wineId === activeWineStories.wineId;
       })
       .stories.find((d) => {
         return d.storyId === pid;
       });
-  }, [item, pid]);
+  }, [activeWineStories, pid]);
 
   return {
-    item,
+    activeWineStories,
     activeWine,
     activeStory,
   };

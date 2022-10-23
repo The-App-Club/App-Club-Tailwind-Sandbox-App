@@ -1,6 +1,17 @@
+import useWineStoryChapter from '@/hooks/useWineStoryChapter';
 import {css, cx} from '@emotion/css';
+import {useRouter} from 'next/router';
 
-const Header = ({item}) => {
+const Header = () => {
+  const router = useRouter();
+  const userId = 'avDLMsS';
+  const {id, storyId} = router.query;
+  const {myStory} = useWineStoryChapter({userId, id, storyId});
+
+  if (!myStory) {
+    return;
+  }
+
   return (
     <div
       className={cx(
@@ -26,7 +37,7 @@ const Header = ({item}) => {
       <h2
         className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
       >
-        {`${item.storyTitle}`}
+        {`${myStory.storyTitle}`}
       </h2>
       <div className="flex items-center gap-4">
         <button

@@ -1,7 +1,12 @@
+import useWine from '@/hooks/useWine';
 import {css, cx} from '@emotion/css';
+import {useRouter} from 'next/router';
 
-const Header = ({item}) => {
-  if (!item) {
+const Header = () => {
+  const router = useRouter();
+  const {id} = router.query;
+  const {activeWine} = useWine({id});
+  if (!activeWine) {
     return;
   }
   return (
@@ -29,7 +34,7 @@ const Header = ({item}) => {
       <h2
         className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
       >
-        {`Published Stories@${item.wine}`}
+        {`Published Stories@${activeWine.wine}`}
       </h2>
     </div>
   );

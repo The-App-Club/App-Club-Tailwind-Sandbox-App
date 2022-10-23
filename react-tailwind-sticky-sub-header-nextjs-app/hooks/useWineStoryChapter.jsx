@@ -19,6 +19,15 @@ const useWineStoryChapter = ({userId, id, storyId, chapterId}) => {
     });
   }, [id]);
 
+  const myStory = useMemo(() => {
+    if (!item2) {
+      return;
+    }
+    return item2.stories.find((story) => {
+      return story.storyId === storyId && story.userId === userId;
+    });
+  }, [storyId, item2, userId]);
+
   const myStories = useMemo(() => {
     if (!item2) {
       return [];
@@ -37,6 +46,12 @@ const useWineStoryChapter = ({userId, id, storyId, chapterId}) => {
   }, [item]);
 
   const myChapter = useMemo(() => {
+    return dataWineChapters.find((item) => {
+      return item.storyId === storyId && item.userId === userId;
+    });
+  }, [storyId, userId]);
+
+  const focusedMyChapter = useMemo(() => {
     if (myChapters.length === 0) {
       return;
     }
@@ -52,8 +67,10 @@ const useWineStoryChapter = ({userId, id, storyId, chapterId}) => {
     item,
     item2,
     myStories,
+    myStory,
     myChapters,
     myChapter,
+    focusedMyChapter,
   };
 };
 
