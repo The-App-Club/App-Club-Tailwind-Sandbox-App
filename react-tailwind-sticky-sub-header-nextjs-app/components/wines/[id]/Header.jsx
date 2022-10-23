@@ -6,45 +6,40 @@ import {memo, useCallback, useMemo} from 'react';
 import {FaRegComments} from 'react-icons/fa';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineHistory, MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useResetRecoilState, useSetRecoilState} from 'recoil';
 
 import dataWineries from '@/data/wineries.json';
 import dataWines from '@/data/wines.json';
 import useCart from '@/hooks/useCart';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import wineState from '@/stores/wineStore';
+import useWine from '@/hooks/useWine';
 
 const Header = () => {
   const router = useRouter();
   const [location, setLocation] = useRecoilState(locationSelectorState);
   const {addCart, removeCart, isCarted} = useCart();
-  const [activeWine, setActiveWine] = useRecoilState(wineState);
-
+  const setActiveWine = useResetRecoilState(wineState);
   const {id} = router.query;
-
-  const item = useMemo(() => {
-    return dataWines.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
+  const {activeWine} = useWine({id});
 
   const handleAddCart = useCallback(
     (e) => {
       e.stopPropagation();
-      addCart({focusedItem: item});
+      addCart({focusedItem: activeWine});
     },
-    [item, addCart]
+    [activeWine, addCart]
   );
 
   const handleRemoveCart = useCallback(
     (e) => {
       e.stopPropagation();
-      removeCart({focusedItem: item});
+      removeCart({focusedItem: activeWine});
     },
-    [item, removeCart]
+    [activeWine, removeCart]
   );
 
-  if (!item) {
+  if (!activeWine) {
     return;
   }
 
@@ -76,7 +71,7 @@ const Header = () => {
           `
         )}
       >
-        {item.wine}
+        {activeWine.wine}
         <span
           className={cx(
             `text-sm font-bold flex items-center gap-1`,
@@ -84,7 +79,7 @@ const Header = () => {
           )}
           onClick={(e) => {
             const activeWineryItem = dataWineries.find((d) => {
-              return d.wineryName === item.winery;
+              return d.wineryName === activeWine.winery;
             });
             router.push({
               pathname: `/wineries/${activeWineryItem.wineryId}`,
@@ -97,7 +92,7 @@ const Header = () => {
               min-width: 24px;
             `}
           />
-          {`${item.winery}`}
+          {`${activeWine.winery}`}
         </span>
         <span
           className={cx(
@@ -106,7 +101,7 @@ const Header = () => {
           )}
           onClick={(e) => {
             setLocation({
-              activeLocationName: item.location,
+              activeLocationName: activeWine.location,
             });
             router.push({
               pathname: `/location`,
@@ -119,7 +114,7 @@ const Header = () => {
               min-width: 24px;
             `}
           />
-          {`${item.location}`}
+          {`${activeWine.location}`}
         </span>
         <div className="w-full flex items-center gap-2">
           <span
@@ -129,7 +124,7 @@ const Header = () => {
             )}
             onClick={(e) => {
               setActiveWine({
-                activeWine: item,
+                activeWine: activeWine,
               });
               router.push({
                 pathname: `/wines/${id}/story`,
@@ -151,7 +146,7 @@ const Header = () => {
             )}
             onClick={(e) => {
               setActiveWine({
-                activeWine: item,
+                activeWine: activeWine,
               });
               router.push({
                 pathname: `/wines/${id}/comment`,
@@ -169,7 +164,7 @@ const Header = () => {
         </div>
       </h2>
       <motion.div className="flex items-start gap-2 flex-col">
-        {isCarted({focusedItem: item}) ? (
+        {isCarted({focusedItem: activeWine}) ? (
           <button
             className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
             onClick={handleRemoveCart}
@@ -185,13 +180,13 @@ const Header = () => {
           </button>
         )}
         <div className="w-full">
-          <div className="text-xl w-full">{`$${numbro(item.price).format({
+          <div className="text-xl w-full">{`$${numbro(activeWine.price).format({
             thousandSeparated: true,
           })}`}</div>
           <div className="text-xl text-rose-400 dark:text-amber-400">
-            {item.rating.average}
+            {activeWine.rating.average}
           </div>
-          <div className="text-sm">{item.rating.reviews}</div>
+          <div className="text-sm">{activeWine.rating.reviews}</div>
         </div>
       </motion.div>
     </div>

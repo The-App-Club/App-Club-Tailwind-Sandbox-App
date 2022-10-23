@@ -8,10 +8,13 @@ import {MdOutlineLocationOn} from 'react-icons/md';
 
 import Product from '@/components/wines/[id]/Product';
 import dataWines from '@/data/wines.json';
+import useWine from '@/hooks/useWine';
 
 const RelativedLocationWineSlider = () => {
   const router = useRouter();
   const {id} = router.query;
+  const {activeWine} = useWine({id});
+
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -19,23 +22,19 @@ const RelativedLocationWineSlider = () => {
     }
   }, []);
 
-  const item = useMemo(() => {
-    return dataWines.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
-
   const relativedLocationData = useMemo(() => {
-    if (!item) {
+    if (!activeWine) {
       return [];
     }
     return tidy(
       dataWines,
       filter((d) => {
-        return d.location === item.location && d.id !== Number(item.id);
+        return (
+          d.location === activeWine.location && d.id !== Number(activeWine.id)
+        );
       })
     );
-  }, [item]);
+  }, [activeWine]);
 
   const renderContent = () => {
     if (relativedLocationData.length === 0) {

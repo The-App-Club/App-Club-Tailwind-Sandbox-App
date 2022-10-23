@@ -8,10 +8,13 @@ import {GiGrapes} from 'react-icons/gi';
 
 import Product from '@/components/wines/[id]/Product';
 import dataWines from '@/data/wines.json';
+import useWine from '@/hooks/useWine';
 
 const RelativedWineryWineSlider = () => {
   const router = useRouter();
   const {id} = router.query;
+  const {activeWine} = useWine({id});
+
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -19,23 +22,17 @@ const RelativedWineryWineSlider = () => {
     }
   }, []);
 
-  const item = useMemo(() => {
-    return dataWines.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
-
   const relativedWineryData = useMemo(() => {
-    if (!item) {
+    if (!activeWine) {
       return [];
     }
     return tidy(
       dataWines,
       filter((d) => {
-        return d.winery === item.winery && d.id !== Number(item.id);
+        return d.winery === activeWine.winery && d.id !== Number(activeWine.id);
       })
     );
-  }, [item]);
+  }, [activeWine]);
 
   const renderContent = () => {
     if (relativedWineryData.length === 0) {

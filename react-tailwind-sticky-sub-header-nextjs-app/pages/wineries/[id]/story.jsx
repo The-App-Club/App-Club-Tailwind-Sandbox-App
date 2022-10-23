@@ -17,25 +17,15 @@ import data from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 import wineState from '@/stores/wineStore';
+import useWine from '@/hooks/useWine';
 
 const Story = () => {
-  const [activeWine, setActiveWine] = useRecoilState(wineState);
   const {opened} = useRecoilValue(hamburgerState);
   const router = useRouter();
   const {id} = router.query;
-  const item = useMemo(() => {
-    return data.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
+  const {activeWine} = useWine({id});
 
-  useEffect(() => {
-    setActiveWine({
-      activeWine: item,
-    });
-  }, [item, setActiveWine]);
-
-  if (!item) {
+  if (!activeWine) {
     return;
   }
 

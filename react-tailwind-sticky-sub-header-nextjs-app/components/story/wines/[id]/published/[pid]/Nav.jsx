@@ -69,10 +69,7 @@ const MenuItem = ({path, menuTitle, icon}) => {
 
 const Nav = () => {
   const router = useRouter();
-  const [isClient, setIsClient] = useState(false);
-
   const {id, pid} = router.query;
-
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -82,22 +79,6 @@ const Nav = () => {
       },
     },
   };
-
-  const activeWine = useMemo(() => {
-    return dataWines.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsClient(true);
-    }
-  }, []);
-
-  if (!activeWine) {
-    return;
-  }
 
   return (
     <motion.nav className="relative w-full">
@@ -115,7 +96,7 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={`/story/wines/${activeWine.id}/published/${pid}`}
+          path={`/story/wines/${id}/published/${pid}`}
           menuTitle={'Published Wine Story'}
           icon={() => {
             return <MdOutlineHistory size={24} />;

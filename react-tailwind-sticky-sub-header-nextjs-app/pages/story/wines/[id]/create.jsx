@@ -12,18 +12,13 @@ import Sidebar from '@/components/story/wines/[id]/create/Sidebar';
 import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
+import useWine from '@/hooks/useWine';
 
 const CreateStory = () => {
   const {opened} = useRecoilValue(hamburgerState);
   const router = useRouter();
-
   const {id} = router.query;
-
-  const activeWine = useMemo(() => {
-    return dataWines.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
+  const {activeWine} = useWine({id});
 
   if (!activeWine) {
     return;

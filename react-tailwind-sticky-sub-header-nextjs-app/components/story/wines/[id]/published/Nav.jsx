@@ -8,6 +8,7 @@ import {useRecoilState} from 'recoil';
 import NavMarkedFav from '@/components/story/wines/[id]/published/NavMarkedFav';
 import dataWines from '@/data/wines.json';
 import sidebarState from '@/stores/sidebarStore';
+import useWine from '@/hooks/useWine';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {
@@ -77,11 +78,6 @@ const MenuItem = ({path, menuTitle, icon}) => {
 };
 
 const Nav = () => {
-  const router = useRouter();
-  const [isClient, setIsClient] = useState(false);
-
-  const {id} = router.query;
-
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -91,13 +87,11 @@ const Nav = () => {
       },
     },
   };
+  const router = useRouter();
+  const {id} = router.query;
+  const {activeWine} = useWine({id});
 
-  const activeWine = useMemo(() => {
-    return dataWines.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
-
+  const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);

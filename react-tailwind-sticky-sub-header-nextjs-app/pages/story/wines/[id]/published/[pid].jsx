@@ -13,6 +13,7 @@ import dataWineStories from '@/data/wineStories.json';
 import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
+import useWine from '@/hooks/useWine';
 
 const PublishedStory = () => {
   const router = useRouter();
@@ -25,11 +26,7 @@ const PublishedStory = () => {
     });
   }, [id]);
 
-  const activeWine = useMemo(() => {
-    return dataWines.find((d) => {
-      return d.id === Number(id);
-    });
-  }, [id]);
+  const {activeWine} = useWine({id});
 
   const activeStory = useMemo(() => {
     const data = dataWineStories.find((d) => {
