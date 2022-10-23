@@ -19,26 +19,7 @@ import hamburgerState from '@/stores/hamburgerStore';
 import wineState from '@/stores/wineStore';
 
 const Story = () => {
-  const [activeWine, setActiveWine] = useRecoilState(wineState);
   const {opened} = useRecoilValue(hamburgerState);
-  const router = useRouter();
-  const {id} = router.query;
-  const item = useMemo(() => {
-    return data.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
-
-  useEffect(() => {
-    setActiveWine({
-      activeWine: item,
-    });
-  }, [item, setActiveWine]);
-
-  if (!item) {
-    return;
-  }
-
   return (
     <>
       <Sidebar />
@@ -108,7 +89,7 @@ const Story = () => {
 
           <ScrollStory2 />
 
-          <Footer item={item} />
+          <Footer />
         </section>
         <TraceFooter />
       </Layout>

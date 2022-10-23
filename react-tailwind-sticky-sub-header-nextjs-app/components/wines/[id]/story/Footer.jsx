@@ -1,9 +1,15 @@
 import {useCallback, useEffect, useState} from 'react';
 
 import useCart from '@/hooks/useCart';
+import {useRouter} from 'next/router';
+import useWine from '@/hooks/useWine';
 
-const Footer = ({item}) => {
+const Footer = () => {
+  const router = useRouter();
+  const {id} = router.query;
   const {addCart, removeCart, isCarted} = useCart();
+  const activeWine = useWine({id});
+
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -14,20 +20,20 @@ const Footer = ({item}) => {
   const handleAddCart = useCallback(
     (e) => {
       e.stopPropagation();
-      addCart({focusedItem: item});
+      addCart({focusedItem: activeWine});
     },
-    [item] // eslint-disable-line
+    [activeWine, addCart]
   );
 
   const handleRemoveCart = useCallback(
     (e) => {
       e.stopPropagation();
-      removeCart({focusedItem: item});
+      removeCart({focusedItem: activeWine});
     },
-    [item] // eslint-disable-line
+    [activeWine, removeCart]
   );
 
-  if (!item) {
+  if (!activeWine) {
     return;
   }
 
@@ -36,7 +42,7 @@ const Footer = ({item}) => {
       <p className="text-2xl">Let&apos;s Now Buy!</p>
       {isClient && (
         <div className="flex items-center justify-end gap-2">
-          {isCarted({focusedItem: item}) ? (
+          {isCarted({focusedItem: activeWine}) ? (
             <button
               className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
               onClick={handleRemoveCart}
