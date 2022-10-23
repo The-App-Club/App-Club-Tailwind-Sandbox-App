@@ -14,38 +14,10 @@ import dataWineryStories from '@/data/wineryStories.json';
 import useWinery from '@/hooks/useWinery';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
+import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
 
 const WineryStories = () => {
-  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-
-  const userId = 'avDLMsS';
-  const {id} = router.query;
-  // const {myStories} = useWineryStoryChapter({userId, id});
-  const {activeWinery} = useWinery({id});
-
-  const item = useMemo(() => {
-    return dataWineryStories.find((item) => {
-      return item.wineryId === id;
-    });
-  }, [id]);
-
-  const myStories = useMemo(() => {
-    if (!item) {
-      return [];
-    }
-
-    return item.stories.filter((story) => {
-      return story.userId === userId;
-    });
-  }, [userId, item]);
-
-  if (!item) {
-    return;
-  }
-  if (!activeWinery) {
-    return;
-  }
 
   return (
     <>
@@ -122,7 +94,7 @@ const WineryStories = () => {
               `
             )}
           >
-            <Container stories={myStories} />
+            <Container />
             <aside
               className={cx(
                 css`
@@ -144,7 +116,7 @@ const WineryStories = () => {
                 `border-2 border-gray-200 dark:border-slate-500`
               )}
             >
-              <Winery item={activeWinery} />
+              <Winery />
             </aside>
           </div>
         </section>

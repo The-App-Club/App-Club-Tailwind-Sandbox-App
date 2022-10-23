@@ -15,17 +15,7 @@ import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const StoryChapters = () => {
-  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-
-  const userId = 'avDLMsS';
-  const {id, storyId} = router.query;
-  const {myChapters} = useWineryStoryChapter({userId, id, storyId});
-  const {activeWinery} = useWinery({id});
-
-  if (!activeWinery) {
-    return;
-  }
 
   return (
     <>
@@ -102,7 +92,7 @@ const StoryChapters = () => {
               `
             )}
           >
-            <Container chapters={myChapters} />
+            <Container />
             <aside
               className={cx(
                 css`
@@ -124,7 +114,7 @@ const StoryChapters = () => {
                 `border-2 border-gray-200 dark:border-slate-500`
               )}
             >
-              <Winery item={activeWinery} />
+              <Winery />
             </aside>
           </div>
         </section>

@@ -1,10 +1,19 @@
+import useWinery from '@/hooks/useWinery';
+import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {memo} from 'react';
 import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 
-const Winery = ({item}) => {
+const Winery = () => {
   const router = useRouter();
+  const {id} = router.query;
+  const {activeWinery} = useWinery({id});
+
+  if (!activeWinery) {
+    return;
+  }
+
   return (
     <div>
       <h2
@@ -41,7 +50,7 @@ const Winery = ({item}) => {
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  background-image: url(${item.thumbnail});
+                  background-image: url(${activeWinery.thumbnail});
                   background-size: contain;
                   background-position: center center;
                   background-origin: center center;
@@ -59,11 +68,11 @@ const Winery = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 router.push({
-                  pathname: `/wines/${item.id}`,
+                  pathname: `/wines/${activeWinery.id}`,
                 });
               }}
             >
-              {item.wineryName}
+              {activeWinery.wineryName}
             </h2>
             <div
               className={cx(
@@ -73,7 +82,7 @@ const Winery = ({item}) => {
               onClick={(e) => {
                 e.stopPropagation();
                 router.push({
-                  pathname: `/wineries/${item.wineryId}`,
+                  pathname: `/wineries/${activeWinery.wineryId}`,
                 });
               }}
             >
@@ -83,9 +92,9 @@ const Winery = ({item}) => {
                   min-width: 24px;
                 `}
               />
-              <span className="break-words">{`${item.wineryName}`}</span>
+              <span className="break-words">{`${activeWinery.wineryName}`}</span>
             </div>
-            <p>{item.description}</p>
+            <p>{activeWinery.description}</p>
           </div>
         </div>
       </div>

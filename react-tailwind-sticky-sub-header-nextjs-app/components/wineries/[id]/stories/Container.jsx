@@ -3,10 +3,16 @@ import Link from 'next/link';
 import {useEffect, useState} from 'react';
 
 import GalleryItem from '@/components/wineries/[id]/stories/GalleryItem';
+import {useRouter} from 'next/router';
+import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
 
-const Container = ({stories}) => {
+const Container = () => {
+  const router = useRouter();
+  const userId = 'avDLMsS';
+  const {id} = router.query;
+  const {myStories: stories} = useWineryStoryChapter({userId, id});
+
   const [isClient, setIsClient] = useState(false);
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);

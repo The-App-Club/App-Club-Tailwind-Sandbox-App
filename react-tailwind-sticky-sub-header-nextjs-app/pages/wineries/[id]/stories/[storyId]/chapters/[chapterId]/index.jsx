@@ -13,16 +13,9 @@ import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const StoryChapter = () => {
-  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-
-  const userId = 'avDLMsS';
-  const {id, storyId, chapterId} = router.query;
-  const {myChapter} = useWineryStoryChapter({userId, id, storyId, chapterId});
-
-  if (!myChapter) {
-    return;
-  }
+  const router = useRouter();
+  const {chapterId} = router.query;
 
   return (
     <>
@@ -80,7 +73,7 @@ const StoryChapter = () => {
               return `${niceTitle} > `;
             }}
           />
-          <Header item={myChapter} />
+          <Header />
           <Spacer />
           <ScrollStory />
         </section>

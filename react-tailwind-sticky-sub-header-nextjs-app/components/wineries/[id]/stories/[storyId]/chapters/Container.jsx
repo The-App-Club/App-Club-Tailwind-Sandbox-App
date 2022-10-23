@@ -4,21 +4,20 @@ import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 
 import GalleryItem from '@/components/wineries/[id]/stories/[storyId]/chapters/GalleryItem';
+import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
 
-const Container = ({chapters}) => {
+const Container = () => {
   const router = useRouter();
+  const userId = 'avDLMsS';
   const {id, storyId} = router.query;
-  const [isClient, setIsClient] = useState(false);
+  const {myChapters: chapters} = useWineryStoryChapter({userId, id, storyId});
 
+  const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
-
-  if (!chapters || chapters.length === 0) {
-    return;
-  }
 
   const renderContainer = () => {
     if (chapters.length === 0) {

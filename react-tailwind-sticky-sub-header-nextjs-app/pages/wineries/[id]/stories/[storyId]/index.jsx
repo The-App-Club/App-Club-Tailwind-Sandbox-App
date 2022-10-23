@@ -15,52 +15,12 @@ import dataWineryStories from '@/data/wineryStories.json';
 import useWinery from '@/hooks/useWinery';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
+import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
 
 const WineryStory = () => {
-  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-
-  const userId = 'avDLMsS';
+  const router = useRouter();
   const {id, storyId} = router.query;
-  // const {myChapter} = useWineryStoryChapter({userId, id, storyId});
-  const {activeWinery} = useWinery({id});
-
-  const item = useMemo(() => {
-    return dataWineryStories.find((item) => {
-      return item.wineryId === id;
-    });
-  }, [id]);
-
-  const myStory = useMemo(() => {
-    if (!item) {
-      return [];
-    }
-
-    return item.stories.find((story) => {
-      return story.storyId === storyId;
-    });
-  }, [storyId, item]);
-
-  const myChapter = useMemo(() => {
-    return dataWineryChapters.find((item) => {
-      return item.storyId === storyId;
-    });
-  }, [storyId]);
-
-  if (!item) {
-    return;
-  }
-
-  if (!myStory) {
-    return;
-  }
-
-  if (!myChapter) {
-    return;
-  }
-  if (!activeWinery) {
-    return;
-  }
 
   return (
     <>
@@ -118,7 +78,7 @@ const WineryStory = () => {
               return `${niceTitle} > `;
             }}
           />
-          <Header item={myStory} />
+          <Header />
           <Spacer />
           <div
             className={cx(
@@ -137,7 +97,7 @@ const WineryStory = () => {
               `
             )}
           >
-            <Container chapters={myChapter.chapters} />
+            <Container />
             <aside
               className={cx(
                 css`
@@ -159,7 +119,7 @@ const WineryStory = () => {
                 `border-2 border-gray-200 dark:border-slate-500`
               )}
             >
-              <Winery item={activeWinery} />
+              <Winery />
             </aside>
           </div>
         </section>
