@@ -9,6 +9,20 @@ import Sidebar from '@/components/home/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
+// import {default as chance} from 'chance';
+// import dataLocation from '@/data/location.json';
+
+// console.log(
+//   JSON.stringify(
+//     dataLocation.map((item) => {
+//       return {
+//         locationId: chance(item.location).string({alpha: true, length: 7}),
+//         ...item,
+//       };
+//     })
+//   )
+// );
+
 const Home = () => {
   const {opened} = useRecoilValue(hamburgerState);
 
