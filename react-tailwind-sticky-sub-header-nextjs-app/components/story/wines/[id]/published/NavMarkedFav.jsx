@@ -7,22 +7,18 @@ import useFavoriteWineStory from '@/hooks/useFavoriteWineStory';
 
 const NavMarkedFav = () => {
   const router = useRouter();
-  const {favoriteWineStories} = useFavoriteWineStory();
-  const [isClient, setIsClient] = useState(false);
+  const {favoriteWineStories, getFavoriteWineStoriesById} =
+    useFavoriteWineStory();
 
   const {id} = router.query;
+  const matchedFavoriteWineStories = getFavoriteWineStoriesById({id});
 
+  const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
-
-  const matchedFavoriteWineStories = useMemo(() => {
-    return favoriteWineStories.filter((item) => {
-      return item.wineId === Number(id);
-    });
-  }, [favoriteWineStories, id]);
 
   return (
     <motion.span

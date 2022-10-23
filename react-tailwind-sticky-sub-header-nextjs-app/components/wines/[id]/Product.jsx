@@ -12,19 +12,17 @@ import ProductFav from '@/components/wines/[id]/ProductFav';
 import dataWineries from '@/data/wineries.json';
 import dataWines from '@/data/wines.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
+import useWine from '@/hooks/useWine';
 
 const Product = ({className = css``}) => {
   const router = useRouter();
-  const {id} = router.query;
+
   const [location, setLocation] = useRecoilState(locationSelectorState);
 
-  const item = useMemo(() => {
-    return dataWines.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
+  const {id} = router.query;
+  const {activeWine} = useWine({id});
 
-  if (!item) {
+  if (!activeWine) {
     return;
   }
 
@@ -36,22 +34,27 @@ const Product = ({className = css``}) => {
         className
       )}
     >
-      <ProductCarted item={item} />
-      <ProductFav item={item} />
+      <ProductCarted item={activeWine} />
+      <ProductFav item={activeWine} />
       <picture>
-        <source srcSet={item.image} type={`image/png`} />
-        <img src={item.image} alt={item.wine} width={130} height={'auto'} />
+        <source srcSet={activeWine.image} type={`image/png`} />
+        <img
+          src={activeWine.image}
+          alt={activeWine.wine}
+          width={130}
+          height={'auto'}
+        />
       </picture>
       <div className="w-full">
-        <h2 className={`text-xl flex items-start`}>{item.wine}</h2>
+        <h2 className={`text-xl flex items-start`}>{activeWine.wine}</h2>
         <div className="flex items-center w-full justify-end gap-2">
-          <span className="text-2xl">{`$${numbro(item.price).format({
+          <span className="text-2xl">{`$${numbro(activeWine.price).format({
             thousandSeparated: true,
           })}`}</span>
           <span className="text-4xl text-rose-400 dark:text-amber-400">
-            {item.rating.average}
+            {activeWine.rating.average}
           </span>
-          <span className="text-sm">{item.rating.reviews}</span>
+          <span className="text-sm">{activeWine.rating.reviews}</span>
         </div>
         <div className="flex items-start gap-2 flex-col">
           <div
@@ -62,7 +65,7 @@ const Product = ({className = css``}) => {
             onClick={(e) => {
               e.stopPropagation();
               const activeWineryItem = dataWineries.find((d) => {
-                return d.wineryName === item.winery;
+                return d.wineryName === activeWine.winery;
               });
               router.push({
                 pathname: `/wineries/${activeWineryItem.wineryId}`,
@@ -75,7 +78,7 @@ const Product = ({className = css``}) => {
                 min-width: 24px;
               `}
             />
-            <span className="break-words">{`${item.winery}`}</span>
+            <span className="break-words">{`${activeWine.winery}`}</span>
           </div>
           <div
             className={cx(
@@ -85,7 +88,7 @@ const Product = ({className = css``}) => {
             onClick={(e) => {
               e.stopPropagation();
               setLocation({
-                activeLocationName: item.location,
+                activeLocationName: activeWine.location,
               });
               router.push({
                 pathname: `/location`,
@@ -98,11 +101,11 @@ const Product = ({className = css``}) => {
                 min-width: 24px;
               `}
             />
-            <span className="break-words">{`${item.location}`}</span>
+            <span className="break-words">{`${activeWine.location}`}</span>
           </div>
         </div>
         <Spacer />
-        <p>{item.description}</p>
+        <p>{activeWine.description}</p>
       </div>
     </div>
   );

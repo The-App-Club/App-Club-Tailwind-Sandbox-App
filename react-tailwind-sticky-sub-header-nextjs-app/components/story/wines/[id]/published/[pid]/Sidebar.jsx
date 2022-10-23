@@ -9,18 +9,15 @@ import Product from '@/components/story/wines/[id]/published/[pid]/Product';
 import SidebarSp from '@/components/story/wines/[id]/published/[pid]/SidebarSp';
 import dataWines from '@/data/wines.json';
 import hamburgerState from '@/stores/hamburgerStore';
+import useWine from '@/hooks/useWine';
 
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-  const [isClient, setIsClient] = useState(false);
   const {id} = router.query;
-  const activeWine = useMemo(() => {
-    return dataWines.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
+  const {activeWine} = useWine({id});
 
+  const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);

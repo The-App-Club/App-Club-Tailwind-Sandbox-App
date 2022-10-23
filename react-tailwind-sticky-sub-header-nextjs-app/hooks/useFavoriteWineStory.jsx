@@ -1,4 +1,4 @@
-import {useMemo} from 'react';
+import {useCallback, useMemo} from 'react';
 import {useRecoilState} from 'recoil';
 
 import favoriteWineStoryState from '@/stores/favoriteWineStoryStore';
@@ -51,9 +51,19 @@ const useFavoriteWineStory = () => {
     return favorite.favoriteWineStories;
   }, [favorite]);
 
+  const getFavoriteWineStoriesById = useCallback(
+    ({id}) => {
+      return favorite.favoriteWineStories.filter((item) => {
+        return item.wineId === Number(id);
+      });
+    },
+    [favorite]
+  );
+
   return {
     favorite,
     favoriteWineStories,
+    getFavoriteWineStoriesById,
     isFavorited,
     removeAllFromFav,
     toggleFavorite,

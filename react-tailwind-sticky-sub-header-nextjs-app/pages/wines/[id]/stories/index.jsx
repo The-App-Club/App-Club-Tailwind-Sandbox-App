@@ -22,7 +22,7 @@ const WineStories = () => {
   const userId = 'avDLMsS';
   const {id} = router.query;
   // const {myStories} = useWineStoryChapter({userId, id});
-  // const {activeWine} = useWine({id});
+  const {activeWine} = useWine({id});
 
   const item = useMemo(() => {
     return dataWineStories.find((item) => {
@@ -39,12 +39,6 @@ const WineStories = () => {
       return story.userId === userId;
     });
   }, [userId, item]);
-
-  const activeWine = useMemo(() => {
-    return dataWines.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
 
   if (!item) {
     return;

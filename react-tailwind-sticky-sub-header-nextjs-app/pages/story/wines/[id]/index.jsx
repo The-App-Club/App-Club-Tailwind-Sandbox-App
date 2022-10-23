@@ -14,27 +14,20 @@ import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 import wineState from '@/stores/wineStore';
+import useWine from '@/hooks/useWine';
 
 const Story = () => {
   const router = useRouter();
   const [_, setActiveWine] = useRecoilState(wineState);
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
+  const {activeWine} = useWine({id});
 
   const item = useMemo(() => {
     return dataWineStories.find((item) => {
       return item.wineId === Number(id);
     });
   }, [id]);
-
-  const activeWine = useMemo(() => {
-    if (!item) {
-      return;
-    }
-    return dataWines.find((d) => {
-      return d.id === item.wineId;
-    });
-  }, [item]);
 
   if (!activeWine) {
     return;
