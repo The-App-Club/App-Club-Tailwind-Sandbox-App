@@ -1,6 +1,5 @@
 import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
-import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRecoilValue} from 'recoil';
 
@@ -9,8 +8,6 @@ import Container from '@/components/wineries/[id]/stories/[storyId]/chapters/Con
 import Header from '@/components/wineries/[id]/stories/[storyId]/chapters/Header';
 import Sidebar from '@/components/wineries/[id]/stories/[storyId]/chapters/Sidebar';
 import Winery from '@/components/wineries/[id]/stories/[storyId]/chapters/Winery';
-import useWinery from '@/hooks/useWinery';
-import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 

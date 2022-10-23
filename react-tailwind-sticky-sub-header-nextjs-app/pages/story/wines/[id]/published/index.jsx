@@ -1,19 +1,14 @@
 import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
-import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import {useMemo} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import Container from '@/components/story/wines/[id]/published/Container';
 import Header from '@/components/story/wines/[id]/published/Header';
 import Sidebar from '@/components/story/wines/[id]/published/Sidebar';
-import dataWineStories from '@/data/wineStories.json';
-import dataWines from '@/data/wines.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import useWine from '@/hooks/useWine';
 
 const PublishedStories = () => {
   const {opened} = useRecoilValue(hamburgerState);

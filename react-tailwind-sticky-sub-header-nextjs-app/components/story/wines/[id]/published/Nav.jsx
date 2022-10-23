@@ -1,14 +1,13 @@
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
-import {useEffect, useMemo, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {MdFavoriteBorder, MdOutlineHistory} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import NavMarkedFav from '@/components/story/wines/[id]/published/NavMarkedFav';
-import dataWines from '@/data/wines.json';
-import sidebarState from '@/stores/sidebarStore';
 import useWine from '@/hooks/useWine';
+import sidebarState from '@/stores/sidebarStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
   if (activeMenuName === menuTitle) {

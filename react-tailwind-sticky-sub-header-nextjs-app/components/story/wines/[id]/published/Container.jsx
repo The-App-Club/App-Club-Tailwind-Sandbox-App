@@ -1,9 +1,9 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
+import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 
 import GalleryItem from '@/components/story/wines/[id]/published/GalleryItem';
-import {useRouter} from 'next/router';
 import usePublishedStory from '@/hooks/usePublishedStory';
 
 const Container = () => {

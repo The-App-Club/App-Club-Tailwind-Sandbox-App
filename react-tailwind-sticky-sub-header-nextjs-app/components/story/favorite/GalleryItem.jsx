@@ -1,19 +1,16 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
-import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn, MdOutlinePublish} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import GalleryItemFav from '@/components/story/favorite/GalleryItemFav';
-import dataWineStories from '@/data/wineStories.json';
 import dataWineries from '@/data/wineries.json';
-import dataWines from '@/data/wines.json';
-import locationSelectorState from '@/stores/locationSelectorStore';
 import usePublishedStory from '@/hooks/usePublishedStory';
 import useWine from '@/hooks/useWine';
+import locationSelectorState from '@/stores/locationSelectorStore';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();

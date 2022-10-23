@@ -1,7 +1,7 @@
 import {cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
-import {memo, useEffect, useMemo, useState} from 'react';
+import {memo, useEffect, useState} from 'react';
 
 import useFavoriteWineStory from '@/hooks/useFavoriteWineStory';
 

@@ -8,7 +8,6 @@ import Spacer from '@/components/Spacer';
 import Header from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/Header';
 import ScrollStory from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStory';
 import Sidebar from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/Sidebar';
-import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 

@@ -2,18 +2,17 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
-import {memo, useCallback, useMemo} from 'react';
+import {memo, useCallback} from 'react';
 import {FaRegComments} from 'react-icons/fa';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineHistory, MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useResetRecoilState, useSetRecoilState} from 'recoil';
+import {useRecoilState, useResetRecoilState} from 'recoil';
 
 import dataWineries from '@/data/wineries.json';
-import dataWines from '@/data/wines.json';
 import useCart from '@/hooks/useCart';
+import useWine from '@/hooks/useWine';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import wineState from '@/stores/wineStore';
-import useWine from '@/hooks/useWine';
 
 const Header = () => {
   const router = useRouter();

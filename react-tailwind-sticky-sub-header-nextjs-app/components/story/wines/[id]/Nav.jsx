@@ -2,7 +2,6 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {BsPencilSquare} from 'react-icons/bs';
 import {GiWineBottle} from 'react-icons/gi';
 import {useRecoilState} from 'recoil';
 

@@ -4,12 +4,11 @@ import {default as numbro} from 'numbro';
 import {memo} from 'react';
 import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useRecoilValue, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
 import dataWineries from '@/data/wineries.json';
-import locationSelectorState from '@/stores/locationSelectorStore';
-import themeState from '@/stores/themeStore';
 import useWine from '@/hooks/useWine';
+import locationSelectorState from '@/stores/locationSelectorStore';
 
 const Product = () => {
   const router = useRouter();
