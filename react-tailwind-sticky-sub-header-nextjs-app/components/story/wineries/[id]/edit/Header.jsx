@@ -51,7 +51,7 @@ const Header = () => {
         <h2
           className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
         >
-          {`Create Winery Story@${activeWinery.wineryName}`}
+          {`Edit Winery Story@${activeWinery.wineryName}`}
         </h2>
         <div className="flex items-center gap-2">
           <button

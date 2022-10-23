@@ -13,31 +13,41 @@ const useWineryStoryChapter = ({userId, id, storyId, chapterId}) => {
     });
   }, [storyId, userId]);
 
-  const item2 = useMemo(() => {
+  const activeWineryStory = useMemo(() => {
     return dataWineryStories.find((item) => {
       return item.wineryId === id;
     });
   }, [id]);
 
-  const myStory = useMemo(() => {
-    if (!item2) {
+  const activeStory = useMemo(() => {
+    if (!activeWineryStory) {
       return [];
     }
 
-    return item2.stories.find((story) => {
+    return activeWineryStory.stories.find((story) => {
+      return story.storyId === storyId;
+    });
+  }, [storyId, activeWineryStory]);
+
+  const myStory = useMemo(() => {
+    if (!activeWineryStory) {
+      return [];
+    }
+
+    return activeWineryStory.stories.find((story) => {
       return story.storyId === storyId && story.userId === userId;
     });
-  }, [storyId, item2, userId]);
+  }, [storyId, activeWineryStory, userId]);
 
   const myStories = useMemo(() => {
-    if (!item2) {
+    if (!activeWineryStory) {
       return [];
     }
 
-    return item2.stories.filter((story) => {
+    return activeWineryStory.stories.filter((story) => {
       return story.userId === userId;
     });
-  }, [userId, item2]);
+  }, [userId, activeWineryStory]);
 
   const myChapters = useMemo(() => {
     if (!item) {
@@ -67,9 +77,10 @@ const useWineryStoryChapter = ({userId, id, storyId, chapterId}) => {
 
   return {
     item,
-    item2,
+    activeWineryStory,
     myStories,
     myStory,
+    activeStory,
     myChapter,
     myChapters,
     focusedMyChapter,

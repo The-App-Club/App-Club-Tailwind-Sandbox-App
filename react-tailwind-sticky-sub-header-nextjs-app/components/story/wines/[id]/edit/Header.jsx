@@ -1,14 +1,14 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
 
-import useWinery from '@/hooks/useWinery';
+import useWine from '@/hooks/useWine';
 
 const Header = () => {
   const router = useRouter();
   const {id} = router.query;
-  const {activeWinery} = useWinery({id});
+  const {activeWine} = useWine({id});
 
-  if (!activeWinery) {
+  if (!activeWine) {
     return;
   }
 
@@ -51,7 +51,7 @@ const Header = () => {
         <h2
           className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
         >
-          {`Create Winery Story@${activeWinery.wineryName}`}
+          {`Edit Wine Story@${activeWine.wine}`}
         </h2>
         <div className="flex items-center gap-2">
           <button

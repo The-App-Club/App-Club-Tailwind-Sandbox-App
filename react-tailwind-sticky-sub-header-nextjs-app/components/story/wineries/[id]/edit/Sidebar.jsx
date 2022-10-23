@@ -4,9 +4,9 @@ import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import {useRecoilValue} from 'recoil';
 
-import Nav from '@/components/story/wineries/[id]/create/Nav';
-import SidebarSp from '@/components/story/wineries/[id]/create/SidebarSp';
-import SidebarWinery from '@/components/story/wineries/[id]/create/SidebarWinery';
+import Nav from '@/components/story/wineries/[id]/edit/Nav';
+import SidebarSp from '@/components/story/wineries/[id]/edit/SidebarSp';
+import SidebarWinery from '@/components/story/wineries/[id]/edit/SidebarWinery';
 import useWinery from '@/hooks/useWinery';
 import hamburgerState from '@/stores/hamburgerStore';
 

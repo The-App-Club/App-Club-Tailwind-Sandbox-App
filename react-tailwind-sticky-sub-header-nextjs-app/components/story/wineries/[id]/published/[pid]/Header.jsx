@@ -1,12 +1,23 @@
 import {css, cx} from '@emotion/css';
+import {useRouter} from 'next/router';
 
-const Header = ({item, storyItem}) => {
-  if (!item) {
+import useWinery from '@/hooks/useWinery';
+import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
+
+const Header = () => {
+  const router = useRouter();
+  const {id, pid} = router.query;
+  const {activeWinery} = useWinery({id});
+  const {activeStory} = useWineryStoryChapter({id, storyId: pid});
+
+  if (!activeWinery) {
     return;
   }
-  if (!storyItem) {
+
+  if (!activeStory) {
     return;
   }
+
   return (
     <div
       className={cx(
@@ -32,7 +43,7 @@ const Header = ({item, storyItem}) => {
       <h2
         className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
       >
-        {`${storyItem.storyTitle}@${item.wineryName}`}
+        {`${activeStory.storyTitle}@${activeWinery.wineryName}`}
       </h2>
     </div>
   );

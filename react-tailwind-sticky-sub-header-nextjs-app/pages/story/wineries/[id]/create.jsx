@@ -1,32 +1,17 @@
 import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
-import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import {useMemo} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import Footer from '@/components/story/wineries/[id]/create/Footer';
 import Header from '@/components/story/wineries/[id]/create/Header';
 import ScrollStory from '@/components/story/wineries/[id]/create/ScrollStory';
 import Sidebar from '@/components/story/wineries/[id]/create/Sidebar';
-import dataWineries from '@/data/wineries.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const CreateStory = () => {
   const {opened} = useRecoilValue(hamburgerState);
-  const router = useRouter();
-  const {id} = router.query;
-
-  const activeWinery = useMemo(() => {
-    return dataWineries.find((item) => {
-      return item.wineryId === id;
-    });
-  }, [id]);
-
-  if (!activeWinery) {
-    return;
-  }
 
   return (
     <>
@@ -84,9 +69,9 @@ const CreateStory = () => {
               return `${niceTitle} > `;
             }}
           />
-          <Header item={activeWinery} />
+          <Header />
           <ScrollStory />
-          <Footer item={activeWinery} />
+          <Footer />
         </section>
       </Layout>
     </>

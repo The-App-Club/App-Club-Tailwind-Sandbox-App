@@ -4,17 +4,17 @@ import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import {useRecoilValue} from 'recoil';
 
-import Nav from '@/components/story/wineries/[id]/create/Nav';
-import SidebarSp from '@/components/story/wineries/[id]/create/SidebarSp';
-import SidebarWinery from '@/components/story/wineries/[id]/create/SidebarWinery';
-import useWinery from '@/hooks/useWinery';
+import Nav from '@/components/story/wines/[id]/edit/Nav';
+import SidebarProduct from '@/components/story/wines/[id]/edit/SidebarProduct';
+import SidebarSp from '@/components/story/wines/[id]/edit/SidebarSp';
+import useWine from '@/hooks/useWine';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
   const {id} = router.query;
-  const {activeWinery} = useWinery({id});
+  const {activeWine} = useWine({id});
 
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
@@ -23,7 +23,7 @@ const Sidebar = () => {
     }
   }, []);
 
-  if (!activeWinery) {
+  if (!activeWine) {
     return;
   }
 
@@ -105,7 +105,7 @@ const Sidebar = () => {
             <h2 className="text-xl">Make YourSelf</h2>
           </div>
         </motion.div>
-        {isClient && <SidebarWinery item={activeWinery} />}
+        {isClient && <SidebarProduct item={activeWine} />}
         <Nav />
       </motion.aside>
     </>

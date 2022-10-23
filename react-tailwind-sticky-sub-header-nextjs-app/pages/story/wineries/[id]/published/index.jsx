@@ -1,47 +1,17 @@
 import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
-import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import {useMemo} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import Container from '@/components/story/wineries/[id]/published/Container';
 import Header from '@/components/story/wineries/[id]/published/Header';
 import Sidebar from '@/components/story/wineries/[id]/published/Sidebar';
-import dataWineries from '@/data/wineries.json';
-import dataWineryStories from '@/data/wineryStories.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const PublishedWineryStories = () => {
-  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-  const {id} = router.query;
-
-  const item = useMemo(() => {
-    return dataWineryStories.find((d) => {
-      return d.wineryId === id;
-    });
-  }, [id]);
-
-  const activeWinery = useMemo(() => {
-    if (!item) {
-      return;
-    }
-    return dataWineries.find((d) => {
-      return d.wineryId === item.wineryId;
-    });
-  }, [item]);
-
-  if (!item) {
-    return;
-  }
-
-  if (!activeWinery) {
-    return;
-  }
-
   return (
     <>
       <Sidebar />
@@ -99,9 +69,9 @@ const PublishedWineryStories = () => {
             }}
           />
 
-          <Header item={activeWinery} />
+          <Header />
           <Spacer />
-          <Container stories={item.stories} />
+          <Container />
         </section>
       </Layout>
     </>

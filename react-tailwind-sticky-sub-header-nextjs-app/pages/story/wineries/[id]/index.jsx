@@ -2,43 +2,19 @@ import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import {useMemo} from 'react';
-import {useRecoilState, useRecoilValue} from 'recoil';
+import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import GalleryItem from '@/components/story/wineries/[id]/GalleryItem';
 import Header from '@/components/story/wineries/[id]/Header';
 import Sidebar from '@/components/story/wineries/[id]/Sidebar';
-import dataWineries from '@/data/wineries.json';
-import dataWineryStories from '@/data/wineryStories.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import wineryState from '@/stores/wineryStore';
 
 const Story = () => {
-  const router = useRouter();
-  const [winery, setWinery] = useRecoilState(wineryState);
   const {opened} = useRecoilValue(hamburgerState);
+  const router = useRouter();
   const {id} = router.query;
-
-  const item = useMemo(() => {
-    return dataWineryStories.find((item) => {
-      return item.wineryId === id;
-    });
-  }, [id]);
-
-  const activeWinery = useMemo(() => {
-    if (!item) {
-      return;
-    }
-    return dataWineries.find((d) => {
-      return d.wineryId === item.wineryId;
-    });
-  }, [item]);
-
-  if (!activeWinery) {
-    return;
-  }
 
   return (
     <>
@@ -97,58 +73,9 @@ const Story = () => {
             }}
           />
 
-          <Header item={activeWinery} />
+          <Header />
           <Spacer />
-          <h2>My Stories</h2>
-
-          <div>HERE MY PUBLISHED Stories Gallery</div>
-
-          <GalleryItem item={activeWinery} storyItem={item} />
-
-          {item.stories.length === 0 ? (
-            <div
-              className={cx(
-                `w-full flex justify-center flex-col items-center`,
-                `border-2  rounded-lg shadow-lg p-2`
-              )}
-            >
-              <p>Not yet published? Here create new.</p>
-
-              <button
-                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-                onClick={(e) => {
-                  setWinery({
-                    activeWinery,
-                  });
-                  router.push({
-                    pathname: `/story/wineries/${id}/create`,
-                  });
-                }}
-              >
-                Create story
-              </button>
-            </div>
-          ) : (
-            <div
-              className={cx(
-                `w-full flex justify-center flex-col items-center`,
-                `border-2  rounded-lg shadow-lg p-2`
-              )}
-            >
-              <p>Someone already published some stories. See stories.</p>
-
-              <button
-                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-                onClick={(e) => {
-                  router.push({
-                    pathname: `/story/wineries/${id}/published`,
-                  });
-                }}
-              >
-                See story
-              </button>
-            </div>
-          )}
+          <GalleryItem />
         </section>
       </Layout>
     </>

@@ -2,50 +2,19 @@ import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
 import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import {useMemo} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import Footer from '@/components/story/wineries/[id]/published/[pid]/Footer';
 import Header from '@/components/story/wineries/[id]/published/[pid]/Header';
 import Sidebar from '@/components/story/wineries/[id]/published/[pid]/Sidebar';
-import dataWineries from '@/data/wineries.json';
-import dataWineryStories from '@/data/wineryStories.json';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const PublishedStory = () => {
-  const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-  const {id, pid} = router.query;
-
-  const activeWinery = useMemo(() => {
-    return dataWineries.find((d) => {
-      return d.wineryId === id;
-    });
-  }, [id]);
-
-  const activeStory = useMemo(() => {
-    const data = dataWineryStories.find((d) => {
-      return d.wineryId === id;
-    });
-    if (!data) {
-      return;
-    }
-
-    return data.stories.find((d) => {
-      return d.storyId === pid;
-    });
-  }, [id, pid]);
-
-  if (!activeWinery) {
-    return;
-  }
-
-  if (!activeStory) {
-    return;
-  }
-
+  const router = useRouter();
+  const {pid} = router.query;
   return (
     <>
       <Sidebar />
@@ -103,7 +72,7 @@ const PublishedStory = () => {
             }}
           />
 
-          <Header item={activeWinery} storyItem={activeStory} />
+          <Header />
           <Spacer />
           <p>At here published scroll story.</p>
           <Footer />

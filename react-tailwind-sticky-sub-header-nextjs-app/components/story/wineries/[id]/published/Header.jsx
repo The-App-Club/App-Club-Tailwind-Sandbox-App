@@ -1,9 +1,17 @@
 import {css, cx} from '@emotion/css';
+import {useRouter} from 'next/router';
 
-const Header = ({item}) => {
-  if (!item) {
+import useWinery from '@/hooks/useWinery';
+
+const Header = () => {
+  const router = useRouter();
+  const {id} = router.query;
+  const {activeWinery} = useWinery({id});
+
+  if (!activeWinery) {
     return;
   }
+
   return (
     <div
       className={cx(
@@ -29,7 +37,7 @@ const Header = ({item}) => {
       <h2
         className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
       >
-        {`Published Winery Stories@${item.wineryName}`}
+        {`Published Winery Stories@${activeWinery.wineryName}`}
       </h2>
     </div>
   );

@@ -3,16 +3,21 @@ import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlinePublish} from 'react-icons/md';
-import {useRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
-import locationSelectorState from '@/stores/locationSelectorStore';
+import useWinery from '@/hooks/useWinery';
+import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
 
-const GalleryItem = ({item, storyItem}) => {
+const GalleryItem = () => {
   const router = useRouter();
-  const [location, setLocation] = useRecoilState(locationSelectorState);
+  const {id} = router.query;
+  const {activeWinery} = useWinery({id});
+  const {activeWineryStory} = useWineryStoryChapter({id});
 
-  if (!item) {
+  if (!activeWinery) {
+    return;
+  }
+  if (!activeWineryStory) {
     return;
   }
 
@@ -27,7 +32,7 @@ const GalleryItem = ({item, storyItem}) => {
       onClick={(e) => {
         e.stopPropagation();
         router.push({
-          pathname: `/story/wineries/${item.wineryId}/published`,
+          pathname: `/story/wineries/${activeWinery.wineryId}/published`,
         });
       }}
     >
@@ -46,7 +51,7 @@ const GalleryItem = ({item, storyItem}) => {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url(${item.thumbnail});
+            background-image: url(${activeWinery.thumbnail});
             background-size: contain;
             background-position: center center;
             background-origin: center center;
@@ -63,7 +68,7 @@ const GalleryItem = ({item, storyItem}) => {
             `
           )}
         >
-          {`${item.wineryName}`}
+          {`${activeWinery.wineryName}`}
         </h2>
         <Spacer height="0.5rem" />
         <div
@@ -74,7 +79,7 @@ const GalleryItem = ({item, storyItem}) => {
           onClick={(e) => {
             e.stopPropagation();
             router.push({
-              pathname: `/wineries/${item.wineryId}`,
+              pathname: `/wineries/${activeWinery.wineryId}`,
             });
           }}
         >
@@ -84,7 +89,7 @@ const GalleryItem = ({item, storyItem}) => {
               min-width: 24px;
             `}
           />
-          <span className="break-words">{`${item.wineryName}`}</span>
+          <span className="break-words">{`${activeWinery.wineryName}`}</span>
         </div>
         <div className={cx(`text-sm font-bold flex items-center`)}>
           <MdOutlinePublish
@@ -93,11 +98,11 @@ const GalleryItem = ({item, storyItem}) => {
               min-width: 24px;
             `}
           />
-          <span className="text-sm">{`${numbro(storyItem.stories.length).format(
-            {
-              thousandSeparated: true,
-            }
-          )} stories published`}</span>
+          <span className="text-sm">{`${numbro(
+            activeWineryStory.stories.length
+          ).format({
+            thousandSeparated: true,
+          })} stories published`}</span>
         </div>
       </div>
     </div>

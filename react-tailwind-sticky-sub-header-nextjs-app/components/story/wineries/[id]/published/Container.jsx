@@ -1,24 +1,29 @@
 import {css, cx} from '@emotion/css';
 import Link from 'next/link';
+import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 
 import GalleryItem from '@/components/story/wineries/[id]/published/GalleryItem';
+import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
 
-const Container = ({stories}) => {
+const Container = () => {
+  const router = useRouter();
+  const {id} = router.query;
+  const {activeWineryStory} = useWineryStoryChapter({id});
+
   const [isClient, setIsClient] = useState(false);
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
 
-  if (!stories || stories.length === 0) {
+  if (!activeWineryStory) {
     return;
   }
 
   const renderContainer = () => {
-    if (stories.length === 0) {
+    if (activeWineryStory.stories.length === 0) {
       return (
         <div
           className={cx(
@@ -45,7 +50,7 @@ const Container = ({stories}) => {
             }
           `}
         >
-          {stories.map((item, index) => {
+          {activeWineryStory.stories.map((item, index) => {
             return <GalleryItem key={index} item={item} />;
           })}
         </div>

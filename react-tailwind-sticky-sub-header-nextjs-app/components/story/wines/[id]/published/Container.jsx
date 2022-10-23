@@ -9,7 +9,7 @@ import usePublishedStory from '@/hooks/usePublishedStory';
 const Container = () => {
   const router = useRouter();
   const {id} = router.query;
-  const {activeStory} = usePublishedStory({id});
+  const {activeWineStories} = usePublishedStory({id});
 
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
@@ -18,12 +18,12 @@ const Container = () => {
     }
   }, []);
 
-  if (!activeStory) {
+  if (!activeWineStories) {
     return;
   }
 
   const renderContainer = () => {
-    if (activeStory.stories.length === 0) {
+    if (activeWineStories.stories.length === 0) {
       return (
         <div
           className={cx(
@@ -50,7 +50,7 @@ const Container = () => {
             }
           `}
         >
-          {activeStory.stories.map((item, index) => {
+          {activeWineStories.stories.map((item, index) => {
             return <GalleryItem key={index} item={item} />;
           })}
         </div>

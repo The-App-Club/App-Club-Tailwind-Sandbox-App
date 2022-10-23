@@ -5,7 +5,7 @@ import {memo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {useRecoilState, useRecoilValue} from 'recoil';
 
-import GalleryItemFav from '@/components/story/wineries/[id]/create/GalleryItemFav';
+import SidebarWineryFav from '@/components/story/wineries/[id]/create/SidebarWineryFav';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import themeState from '@/stores/themeStore';
 
@@ -27,7 +27,7 @@ const motionConfig = {
   },
 };
 
-const GalleryItem = ({item}) => {
+const SidebarWinery = ({item}) => {
   const router = useRouter();
   const [location, setLocation] = useRecoilState(locationSelectorState);
   const theme = useRecoilValue(themeState);
@@ -63,7 +63,7 @@ const GalleryItem = ({item}) => {
       </h2>
 
       <div className={cx(`relative`, `w-full h-full px-12 border-b-2`)}>
-        <GalleryItemFav item={item} />
+        <SidebarWineryFav item={item} />
         <div className="w-full flex gap-2">
           <div
             className={cx(
@@ -130,4 +130,4 @@ const GalleryItem = ({item}) => {
   );
 };
 
-export default memo(GalleryItem);
+export default memo(SidebarWinery);

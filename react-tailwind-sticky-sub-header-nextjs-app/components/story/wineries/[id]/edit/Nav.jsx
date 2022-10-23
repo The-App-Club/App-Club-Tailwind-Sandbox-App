@@ -2,10 +2,9 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {MdOutlineHistory} from 'react-icons/md';
+import {BsPencilSquare} from 'react-icons/bs';
 import {useRecoilState} from 'recoil';
 
-import useWinery from '@/hooks/useWinery';
 import sidebarState from '@/stores/sidebarStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
@@ -68,6 +67,8 @@ const MenuItem = ({path, menuTitle, icon}) => {
 };
 
 const Nav = () => {
+  const router = useRouter();
+  const {id} = router.query;
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -77,21 +78,12 @@ const Nav = () => {
       },
     },
   };
-  const router = useRouter();
-  const {id, pid} = router.query;
-  const {activeWinery} = useWinery({id});
-
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsClient(true);
     }
   }, []);
-
-  if (!activeWinery) {
-    return;
-  }
-
   return (
     <motion.nav className="relative w-full">
       <motion.ul
@@ -108,10 +100,10 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={`/story/wineries/${activeWinery.wineryId}/published/${pid}`}
-          menuTitle={'Published Winery Story'}
+          path={`/story/wineries/${id}/edit`}
+          menuTitle={'Edit Winery Story'}
           icon={() => {
-            return <MdOutlineHistory size={24} />;
+            return <BsPencilSquare size={24} />;
           }}
         />
       </motion.ul>
