@@ -274,28 +274,6 @@ const routes = [
     },
   },
   {
-    pathName: `/story/wines/[id]/create`,
-    pageName: `Create Wine Story`,
-    activeMenuName: `Create Wine Story`,
-    header: () => {
-      return <Header />;
-    },
-    footer: () => {
-      return <Footer />;
-    },
-  },
-  {
-    pathName: `/story/wines/[id]/edit`,
-    pageName: `Edit Wine Story`,
-    activeMenuName: `Edit Wine Story`,
-    header: () => {
-      return <Header />;
-    },
-    footer: () => {
-      return <Footer />;
-    },
-  },
-  {
     pathName: `/story/wineries`,
     pageName: `Winery Story`,
     activeMenuName: `Winery Story`,
@@ -332,28 +310,6 @@ const routes = [
     pathName: `/story/wineries/[id]/published/[pid]`,
     pageName: `Published Winery Story`,
     activeMenuName: `Published Winery Story`,
-    header: () => {
-      return <Header />;
-    },
-    footer: () => {
-      return <Footer />;
-    },
-  },
-  {
-    pathName: `/story/wineries/[id]/create`,
-    pageName: `Create Winery Story`,
-    activeMenuName: `Create Winery Story`,
-    header: () => {
-      return <Header />;
-    },
-    footer: () => {
-      return <Footer />;
-    },
-  },
-  {
-    pathName: `/story/wineries/[id]/edit`,
-    pageName: `Edit Winery Story`,
-    activeMenuName: `Edit Winery Story`,
     header: () => {
       return <Header />;
     },
