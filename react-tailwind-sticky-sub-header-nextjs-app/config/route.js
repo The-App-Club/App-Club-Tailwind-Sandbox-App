@@ -263,7 +263,7 @@ const routes = [
     },
   },
   {
-    pathName: `/story/wines/[id]/published/[pid]`,
+    pathName: `/story/wines/[id]/published/[publishedId]`,
     pageName: `Published Wine Story`,
     activeMenuName: `Published Wine Story`,
     header: () => {
@@ -307,7 +307,7 @@ const routes = [
     },
   },
   {
-    pathName: `/story/wineries/[id]/published/[pid]`,
+    pathName: `/story/wineries/[id]/published/[publishedId]`,
     pageName: `Published Winery Story`,
     activeMenuName: `Published Winery Story`,
     header: () => {
@@ -329,7 +329,7 @@ const routes = [
     },
   },
   {
-    pathName: `/story/[id]/published/[pid]`,
+    pathName: `/story/[id]/published/[publishedId]`,
     pageName: `Published Story`,
     activeMenuName: `Published Story`,
     header: () => {

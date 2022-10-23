@@ -3,7 +3,7 @@ import {useMemo} from 'react';
 import dataWineStories from '@/data/wineStories.json';
 import dataWines from '@/data/wines.json';
 
-const usePublishedStory = ({id, pid}) => {
+const usePublishedStory = ({id, publishedId}) => {
   // storyId is categoryId ex.) wineId, wineryId, somulierId, userId
   const activeWineStories = useMemo(() => {
     return dataWineStories.find((d) => {
@@ -24,7 +24,7 @@ const usePublishedStory = ({id, pid}) => {
     if (!activeWineStories) {
       return;
     }
-    if (!pid) {
+    if (!publishedId) {
       return;
     }
     return dataWineStories
@@ -32,9 +32,9 @@ const usePublishedStory = ({id, pid}) => {
         return d.wineId === activeWineStories.wineId;
       })
       .stories.find((d) => {
-        return d.storyId === pid;
+        return d.storyId === publishedId;
       });
-  }, [activeWineStories, pid]);
+  }, [activeWineStories, publishedId]);
 
   return {
     activeWineStories,

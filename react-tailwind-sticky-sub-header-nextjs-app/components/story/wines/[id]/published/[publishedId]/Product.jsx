@@ -7,8 +7,8 @@ import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import ProductCarted from '@/components/story/wineries/[id]/published/[pid]/ProductCarted';
-import ProductFav from '@/components/story/wineries/[id]/published/[pid]/ProductFav';
+import ProductCarted from '@/components/story/wineries/[id]/published/[publishedId]/ProductCarted';
+import ProductFav from '@/components/story/wineries/[id]/published/[publishedId]/ProductFav';
 import dataWineries from '@/data/wineries.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
 

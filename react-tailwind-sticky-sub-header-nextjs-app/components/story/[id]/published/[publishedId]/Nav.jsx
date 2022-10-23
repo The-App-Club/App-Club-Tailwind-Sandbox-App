@@ -2,10 +2,10 @@ import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {MdOutlineHistory} from 'react-icons/md';
+import {MdFavoriteBorder, MdOutlinePublish} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
 
-import useWinery from '@/hooks/useWinery';
+import NavMarkedFav from '@/components/story/[id]/published/[publishedId]/NavMarkedFav';
 import sidebarState from '@/stores/sidebarStore';
 
 const attachActiveMenu = ({activeMenuName, menuTitle}) => {
@@ -30,6 +30,13 @@ const MenuItem = ({path, menuTitle, icon}) => {
       setIsClient(true);
     }
   }, []);
+
+  const renderShortHandMetrics = () => {
+    if (menuTitle === `Favorite Story`) {
+      return <NavMarkedFav />;
+    }
+    return null;
+  };
 
   return (
     <motion.li
@@ -63,11 +70,14 @@ const MenuItem = ({path, menuTitle, icon}) => {
     >
       {icon()}
       <h2>{menuTitle}</h2>
+      {isClient && renderShortHandMetrics()}
     </motion.li>
   );
 };
 
 const Nav = () => {
+  const router = useRouter();
+  const {id, publishedId} = router.query;
   const motionConfig = {
     hidden: {opacity: 0},
     show: {
@@ -77,21 +87,6 @@ const Nav = () => {
       },
     },
   };
-  const router = useRouter();
-  const {id, pid} = router.query;
-  const {activeWinery} = useWinery({id});
-
-  const [isClient, setIsClient] = useState(false);
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsClient(true);
-    }
-  }, []);
-
-  if (!activeWinery) {
-    return;
-  }
-
   return (
     <motion.nav className="relative w-full">
       <motion.ul
@@ -108,10 +103,17 @@ const Nav = () => {
         `}
       >
         <MenuItem
-          path={`/story/wineries/${activeWinery.wineryId}/published/${pid}`}
-          menuTitle={'Published Winery Story'}
+          path={`/story/${id}/published/${publishedId}`}
+          menuTitle={'Published Story'}
           icon={() => {
-            return <MdOutlineHistory size={24} />;
+            return <MdOutlinePublish size={24} />;
+          }}
+        />
+        <MenuItem
+          path={'/story/favorite'}
+          menuTitle={'Favorite Story'}
+          icon={() => {
+            return <MdFavoriteBorder size={24} />;
           }}
         />
       </motion.ul>

@@ -5,29 +5,15 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
-import Footer from '@/components/story/wines/[id]/published/[pid]/Footer';
-import Header from '@/components/story/wines/[id]/published/[pid]/Header';
-import Sidebar from '@/components/story/wines/[id]/published/[pid]/Sidebar';
-import usePublishedStory from '@/hooks/usePublishedStory';
-import useWine from '@/hooks/useWine';
+import Header from '@/components/story/[id]/published/[publishedId]/Header';
+import Sidebar from '@/components/story/[id]/published/[publishedId]/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const PublishedStory = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-  const {id, pid} = router.query;
-  const {activeWine} = useWine({id});
-  const {activeStory} = usePublishedStory({id, pid});
-
-  if (!activeWine) {
-    return;
-  }
-
-  if (!activeStory) {
-    return;
-  }
-
+  const {id, publishedId} = router.query;
   return (
     <>
       <Sidebar />
@@ -78,17 +64,15 @@ const PublishedStory = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (title === pid) {
+              if (title === publishedId) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
             }}
           />
 
-          <Header item={activeWine} storyItem={activeStory} />
+          <Header />
           <Spacer />
-          <p>At here published scroll story.</p>
-          <Footer />
         </section>
       </Layout>
     </>

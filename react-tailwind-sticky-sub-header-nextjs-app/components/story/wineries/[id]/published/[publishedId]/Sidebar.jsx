@@ -4,16 +4,16 @@ import {useRouter} from 'next/router';
 import {useEffect, useMemo, useState} from 'react';
 import {useRecoilValue} from 'recoil';
 
-import Nav from '@/components/story/wineries/[id]/published/[pid]/Nav';
-import Product from '@/components/story/wineries/[id]/published/[pid]/Product';
-import SidebarSp from '@/components/story/wineries/[id]/published/[pid]/SidebarSp';
+import Nav from '@/components/story/wineries/[id]/published/[publishedId]/Nav';
+import Product from '@/components/story/wineries/[id]/published/[publishedId]/Product';
+import SidebarSp from '@/components/story/wineries/[id]/published/[publishedId]/SidebarSp';
 import dataWineries from '@/data/wineries.json';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
-  const {id, pid} = router.query;
+  const {id, publishedId} = router.query;
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {

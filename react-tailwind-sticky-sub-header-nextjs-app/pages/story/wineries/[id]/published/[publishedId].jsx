@@ -5,16 +5,16 @@ import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
-import Footer from '@/components/story/wineries/[id]/published/[pid]/Footer';
-import Header from '@/components/story/wineries/[id]/published/[pid]/Header';
-import Sidebar from '@/components/story/wineries/[id]/published/[pid]/Sidebar';
+import Footer from '@/components/story/wineries/[id]/published/[publishedId]/Footer';
+import Header from '@/components/story/wineries/[id]/published/[publishedId]/Header';
+import Sidebar from '@/components/story/wineries/[id]/published/[publishedId]/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const PublishedStory = () => {
   const {opened} = useRecoilValue(hamburgerState);
   const router = useRouter();
-  const {pid} = router.query;
+  const {publishedId} = router.query;
   return (
     <>
       <Sidebar />
@@ -65,7 +65,7 @@ const PublishedStory = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (title === pid) {
+              if (title === publishedId) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;

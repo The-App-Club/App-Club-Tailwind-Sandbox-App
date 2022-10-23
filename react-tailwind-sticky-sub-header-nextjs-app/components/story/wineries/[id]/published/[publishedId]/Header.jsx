@@ -6,9 +6,9 @@ import useWineryStoryChapter from '@/hooks/useWineryStoryChapter';
 
 const Header = () => {
   const router = useRouter();
-  const {id, pid} = router.query;
+  const {id, publishedId} = router.query;
   const {activeWinery} = useWinery({id});
-  const {activeStory} = useWineryStoryChapter({id, storyId: pid});
+  const {activeStory} = useWineryStoryChapter({id, storyId: publishedId});
 
   if (!activeWinery) {
     return;

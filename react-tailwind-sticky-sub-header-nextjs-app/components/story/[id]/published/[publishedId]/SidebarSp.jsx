@@ -6,7 +6,7 @@ import {useRecoilState, useRecoilValue} from 'recoil';
 import {useDebouncedCallback} from 'use-debounce';
 
 import Hamburger from '@/components/Hamburger';
-import Nav from '@/components/story/wineries/[id]/published/[pid]/Nav';
+import Nav from '@/components/story/[id]/published/[publishedId]/Nav';
 import {useClickOutside} from '@/hooks/useClickOutside';
 import hamburgerState from '@/stores/hamburgerStore';
 

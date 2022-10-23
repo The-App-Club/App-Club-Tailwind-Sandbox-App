@@ -1,15 +1,32 @@
 import {css, cx} from '@emotion/css';
 import {motion} from 'framer-motion';
 import {useRouter} from 'next/router';
+import {useEffect, useState} from 'react';
 import {useRecoilValue} from 'recoil';
 
-import Nav from '@/components/story/[id]/published/[pid]/Nav';
-import SidebarSp from '@/components/story/[id]/published/[pid]/SidebarSp';
+import Nav from '@/components/story/wines/[id]/published/[publishedId]/Nav';
+import Product from '@/components/story/wines/[id]/published/[publishedId]/Product';
+import SidebarSp from '@/components/story/wines/[id]/published/[publishedId]/SidebarSp';
+import useWine from '@/hooks/useWine';
 import hamburgerState from '@/stores/hamburgerStore';
 
 const Sidebar = () => {
   const router = useRouter();
   const {opened} = useRecoilValue(hamburgerState);
+  const {id} = router.query;
+  const {activeWine} = useWine({id});
+
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
+
+  if (!activeWine) {
+    return;
+  }
+
   return (
     <>
       <SidebarSp />
@@ -88,6 +105,7 @@ const Sidebar = () => {
             <h2 className="text-xl">Make YourSelf</h2>
           </div>
         </motion.div>
+        {isClient && <Product item={activeWine} />}
         <Nav />
       </motion.aside>
     </>
