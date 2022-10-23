@@ -17,7 +17,7 @@ const Footer = ({item}) => {
       e.stopPropagation();
       addCart({focusedItem: item});
     },
-    [item] // eslint-disable-line
+    [item, addCart]
   );
 
   const handleRemoveCart = useCallback(
@@ -25,7 +25,7 @@ const Footer = ({item}) => {
       e.stopPropagation();
       removeCart({focusedItem: item});
     },
-    [item] // eslint-disable-line
+    [item, removeCart]
   );
 
   if (!item) {

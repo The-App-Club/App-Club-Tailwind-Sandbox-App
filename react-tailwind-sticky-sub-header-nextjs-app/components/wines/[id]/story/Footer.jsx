@@ -8,7 +8,7 @@ const Footer = () => {
   const router = useRouter();
   const {id} = router.query;
   const {addCart, removeCart, isCarted} = useCart();
-  const activeWine = useWine({id});
+  const {activeWine} = useWine({id});
 
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {

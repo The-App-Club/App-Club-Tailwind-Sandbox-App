@@ -30,16 +30,18 @@ const Header = () => {
 
   const handleAddCart = useCallback(
     (e) => {
+      e.stopPropagation();
       addCart({focusedItem: item});
     },
-    [item] // eslint-disable-line
+    [item, addCart]
   );
 
   const handleRemoveCart = useCallback(
     (e) => {
+      e.stopPropagation();
       removeCart({focusedItem: item});
     },
-    [item] // eslint-disable-line
+    [item, removeCart]
   );
 
   if (!item) {

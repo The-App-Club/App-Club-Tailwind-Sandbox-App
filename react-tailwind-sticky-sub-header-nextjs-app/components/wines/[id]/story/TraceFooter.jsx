@@ -16,7 +16,7 @@ const TraceFooter = () => {
   const {id} = router.query;
   const [location, setLocation] = useRecoilState(locationSelectorState);
   const {addCart, removeCart, isCarted} = useCart();
-  const activeWine = useWine({id});
+  const {activeWine} = useWine({id});
 
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {

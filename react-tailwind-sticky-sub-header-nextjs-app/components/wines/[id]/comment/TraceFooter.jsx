@@ -15,13 +15,12 @@ const TraceFooter = () => {
   const {activeWine} = useRecoilValue(wineState);
   const [location, setLocation] = useRecoilState(locationSelectorState);
   const {addCart, removeCart, isCarted} = useCart();
-
   const handleAddCart = useCallback(
     (e) => {
       e.stopPropagation();
       addCart({focusedItem: activeWine});
     },
-    [activeWine] // eslint-disable-line
+    [activeWine, addCart]
   );
 
   const handleRemoveCart = useCallback(
@@ -29,7 +28,7 @@ const TraceFooter = () => {
       e.stopPropagation();
       removeCart({focusedItem: activeWine});
     },
-    [activeWine] // eslint-disable-line
+    [activeWine, removeCart]
   );
 
   if (!activeWine) {

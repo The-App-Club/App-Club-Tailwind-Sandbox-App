@@ -1,39 +1,43 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
-import {useCallback, useMemo} from 'react';
+import {useCallback, useEffect, useMemo, useState} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 
 import data from '@/data/wines.json';
 import useCart from '@/hooks/useCart';
+import useWine from '@/hooks/useWine';
 
 const Header = () => {
   const {addCart, removeCart, isCarted} = useCart();
   const router = useRouter();
   const {id} = router.query;
-  const item = useMemo(() => {
-    return data.find((item) => {
-      return item.id === Number(id);
-    });
-  }, [id]);
+  const {activeWine} = useWine({id});
+
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
 
   const handleAddCart = useCallback(
     (e) => {
       e.stopPropagation();
-      addCart({focusedItem: item});
+      addCart({focusedItem: activeWine});
     },
-    [item] // eslint-disable-line
+    [activeWine, addCart]
   );
 
   const handleRemoveCart = useCallback(
     (e) => {
       e.stopPropagation();
-      removeCart({focusedItem: item});
+      removeCart({focusedItem: activeWine});
     },
-    [item] // eslint-disable-line
+    [activeWine, removeCart]
   );
 
-  if (!item) {
+  if (!activeWine) {
     return;
   }
 
@@ -68,33 +72,35 @@ const Header = () => {
           `
         )}
       >
-        Scroll Story@{item.wine}
+        Scroll Story@{activeWine.wine}
         <span className="text-sm font-bold flex items-center gap-1">
           <GiGrapes size={28} />
-          {`${item.winery}`}
+          {`${activeWine.winery}`}
         </span>
         <span className="text-sm font-bold flex items-center gap-1">
           <MdOutlineLocationOn size={28} />
-          {`${item.location}`}
+          {`${activeWine.location}`}
         </span>
       </h2>
-      <div className="flex items-center gap-2">
-        {isCarted({focusedItem: item}) ? (
-          <button
-            className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-            onClick={handleRemoveCart}
-          >
-            Remove Cart
-          </button>
-        ) : (
-          <button
-            className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
-            onClick={handleAddCart}
-          >
-            Add Cart
-          </button>
-        )}
-      </div>
+      {isClient && (
+        <div className="flex items-center gap-2">
+          {isCarted({focusedItem: activeWine}) ? (
+            <button
+              className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+              onClick={handleRemoveCart}
+            >
+              Remove Cart
+            </button>
+          ) : (
+            <button
+              className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-28 text-sm text-center"
+              onClick={handleAddCart}
+            >
+              Add Cart
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 };
