@@ -27,6 +27,10 @@ const Header = () => {
     body.classList.remove('loading');
   };
 
+  if (!activeWinery) {
+    return;
+  }
+
   return (
     <>
       <SearchModal show={showModal} handleClose={handleModalClose} />

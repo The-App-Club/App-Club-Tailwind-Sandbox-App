@@ -8,6 +8,11 @@ const Container = () => {
   const router = useRouter();
   const {id} = router.query;
   const {activeWinery} = useWinery({id});
+
+  if (!activeWinery) {
+    return;
+  }
+
   return (
     <div
       className={css`
