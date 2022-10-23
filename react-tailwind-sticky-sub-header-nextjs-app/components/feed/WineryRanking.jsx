@@ -1,58 +1,19 @@
 import {css, cx} from '@emotion/css';
-import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
 import {useRouter} from 'next/router';
-import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
-import {MdOutlineLocationOn} from 'react-icons/md';
 import {useSetRecoilState} from 'recoil';
 
 import Tracer from '@/components/Tracer';
-import dataWineries from '@/data/wineries.json';
-import data from '@/data/wines.json';
+import useWineryRanking from '@/hooks/useWineryRanking';
 import locationSelectorState from '@/stores/locationSelectorStore';
 
 const WineryRanking = ({className}) => {
   const router = useRouter();
   const setLocation = useSetRecoilState(locationSelectorState);
-
-  const rankingData = useMemo(() => {
-    // https://stackoverflow.com/a/48218209
-    return tidy(
-      data,
-      map((item) => {
-        // return mergician(item, {
-        //   rating: {
-        //     average: Number(item.rating.average),
-        //     reviews: Number(item.rating.reviews.replace('ratings', '').trim()),
-        //   },
-        // });
-        return {
-          ...item,
-          average: Number(item.rating.average),
-          reviews: Number(item.rating.reviews.replace('ratings', '').trim()),
-          // rating: {
-          //   average: Number(item.rating.average),
-          //   reviews: Number(item.rating.reviews.replace('ratings', '').trim()),
-          // },
-        };
-      }),
-      arrange([desc('reviews')]),
-      map((item) => {
-        return {
-          id: item.id,
-          wine: item.wine,
-          winery: item.winery,
-          location: item.location,
-          image: item.image,
-          reviews: item.rating.reviews,
-        };
-      }),
-      sliceHead(5)
-    );
-  }, []);
+  const {wineryShipWinesRankingData: rankingData} = useWineryRanking();
 
   return (
-    <Tracer title="Top5 Winery Order" className={className}>
+    <Tracer title="Top5 Winery Shipped Wines" className={className}>
       <ul className="flex flex-col items-start gap-2">
         {rankingData.map((item, index) => {
           return (
@@ -65,13 +26,14 @@ const WineryRanking = ({className}) => {
               )}
               onClick={(e) => {
                 router.push({
-                  pathname: `/wines/${item.id}`,
+                  pathname: `/wineries/${item.wineryId}`,
                 });
               }}
             >
               <div
                 className={cx(
-                  'w-8 h-8 bg-white dark:bg-slate-800 absolute top-2 left-2 rounded-full flex items-center justify-center border-2 border-gray-300'
+                  'w-8 h-8 bg-white dark:bg-slate-800 absolute top-2 left-2 rounded-full flex items-center justify-center border-2 border-gray-300',
+                  `z-10`
                 )}
               >
                 {index + 1}
@@ -91,7 +53,7 @@ const WineryRanking = ({className}) => {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    background-image: url(${item.image});
+                    background-image: url(${item.thumbnail});
                     background-size: contain;
                     background-position: center center;
                     background-origin: center center;
@@ -100,7 +62,7 @@ const WineryRanking = ({className}) => {
                 `}
               />
               <div className="flex items-start justify-start flex-col">
-                <h2 className="line-clamp-1 font-bold">{item.wine}</h2>
+                <h2 className="line-clamp-1 font-bold">{item.wineryName}</h2>
                 <div
                   className={cx(
                     'text-sm font-bold flex items-center text-gray-700 dark:text-slate-300',
@@ -108,11 +70,8 @@ const WineryRanking = ({className}) => {
                   )}
                   onClick={(e) => {
                     e.stopPropagation();
-                    const activeWineryItem = dataWineries.find((d) => {
-                      return d.wineryName === item.winery;
-                    });
                     router.push({
-                      pathname: `/wineries/${activeWineryItem.wineryId}`,
+                      pathname: `/wineries/${item.wineryId}`,
                     });
                   }}
                 >
@@ -122,34 +81,10 @@ const WineryRanking = ({className}) => {
                       min-width: 24px;
                     `}
                   />
-                  <span className="line-clamp-1">{`${item.winery}`}</span>
-                </div>
-                <div
-                  className={cx(
-                    'text-sm font-bold flex items-center text-gray-700 dark:text-slate-300',
-                    `hover:cursor-pointer hover:underline`
-                  )}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setLocation({
-                      activeLocationId: item.locationId,
-                      activeLocationName: item.location,
-                    });
-                    router.push({
-                      pathname: `/location`,
-                    });
-                  }}
-                >
-                  <MdOutlineLocationOn
-                    size={24}
-                    className={css`
-                      min-width: 24px;
-                    `}
-                  />
-                  <span className="line-clamp-1">{`${item.location}`}</span>
+                  <span className="line-clamp-1">{`${item.wineryName}`}</span>
                 </div>
                 <span className="line-clamp-1 text-sm font-bold">
-                  {item.reviews}
+                  {item.winesCount} shipped wines
                 </span>
               </div>
             </li>

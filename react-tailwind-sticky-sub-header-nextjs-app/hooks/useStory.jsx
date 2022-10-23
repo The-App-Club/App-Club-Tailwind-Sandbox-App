@@ -1,5 +1,6 @@
-import useUser from '@/hooks/useUser';
 import {distinct, sliceHead, tidy} from '@tidyjs/tidy';
+
+import useUser from '@/hooks/useUser';
 
 const useStory = () => {
   const {getMatchedUser} = useUser();

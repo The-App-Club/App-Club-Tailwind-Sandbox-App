@@ -1,38 +1,19 @@
 import {css, cx} from '@emotion/css';
-import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
 import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
-import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {useSetRecoilState} from 'recoil';
 
 import Tracer from '@/components/Tracer';
 import dataWineries from '@/data/wineries.json';
-import data from '@/data/wines.json';
+import useWineRanking from '@/hooks/useWineRanking';
 import locationSelectorState from '@/stores/locationSelectorStore';
 
 const PriceRanking = ({className}) => {
   const router = useRouter();
   const setLocation = useSetRecoilState(locationSelectorState);
-  const rankingData = useMemo(() => {
-    // https://stackoverflow.com/a/48218209
-    return tidy(
-      data,
-      arrange([desc('price')]),
-      map((item) => {
-        return {
-          id: item.id,
-          price: item.price,
-          wine: item.wine,
-          winery: item.winery,
-          location: item.location,
-          image: item.image,
-        };
-      }),
-      sliceHead(5)
-    );
-  }, []);
+  const {winePriceRankingData: rankingData} = useWineRanking();
 
   return (
     <Tracer title="Top5 Price" className={className}>

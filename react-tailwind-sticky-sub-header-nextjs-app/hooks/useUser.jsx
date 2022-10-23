@@ -1,5 +1,6 @@
-import dataUsers from '@/data/users.json';
 import {useCallback} from 'react';
+
+import dataUsers from '@/data/users.json';
 
 const useUser = () => {
   const getMatchedUser = useCallback(({userId}) => {

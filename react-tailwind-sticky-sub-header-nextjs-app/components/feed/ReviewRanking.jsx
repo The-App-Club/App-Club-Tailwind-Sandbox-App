@@ -1,54 +1,18 @@
 import {css, cx} from '@emotion/css';
-import {arrange, desc, map, sliceHead, tidy} from '@tidyjs/tidy';
 import {useRouter} from 'next/router';
-import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {useSetRecoilState} from 'recoil';
 
 import Tracer from '@/components/Tracer';
 import dataWineries from '@/data/wineries.json';
-import data from '@/data/wines.json';
+import useWineRanking from '@/hooks/useWineRanking';
 import locationSelectorState from '@/stores/locationSelectorStore';
 
 const ReviewRanking = ({className}) => {
   const router = useRouter();
   const setLocation = useSetRecoilState(locationSelectorState);
-  const rankingData = useMemo(() => {
-    // https://stackoverflow.com/a/48218209
-    return tidy(
-      data,
-      map((item) => {
-        // return mergician(item, {
-        //   rating: {
-        //     average: Number(item.rating.average),
-        //     reviews: Number(item.rating.reviews.replace('ratings', '').trim()),
-        //   },
-        // });
-        return {
-          ...item,
-          average: Number(item.rating.average),
-          reviews: Number(item.rating.reviews.replace('ratings', '').trim()),
-          // rating: {
-          //   average: Number(item.rating.average),
-          //   reviews: Number(item.rating.reviews.replace('ratings', '').trim()),
-          // },
-        };
-      }),
-      arrange([desc('reviews')]),
-      map((item) => {
-        return {
-          id: item.id,
-          wine: item.wine,
-          winery: item.winery,
-          location: item.location,
-          image: item.image,
-          reviews: item.rating.reviews,
-        };
-      }),
-      sliceHead(5)
-    );
-  }, []);
+  const {wineReviewRankingData: rankingData} = useWineRanking();
 
   return (
     <Tracer title="Top5 Reviews" className={className}>

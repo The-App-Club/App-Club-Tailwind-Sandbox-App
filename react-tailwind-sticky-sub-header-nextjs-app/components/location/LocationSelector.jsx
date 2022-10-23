@@ -61,7 +61,7 @@ const LocationSelector = ({className}) => {
             `text-sm`
           )}
         >
-          <span className="block truncate">{selected.name}</span>
+          <span className="block truncate">{selected?.name}</span>
           <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
             <ChevronUpDownIcon
               className="h-5 w-5 text-gray-400"
@@ -105,7 +105,7 @@ const LocationSelector = ({className}) => {
                             selected ? 'font-medium' : 'font-normal'
                           }`}
                         >
-                          {item.name}
+                          {item?.name}
                         </span>
                         {selected ? (
                           <span

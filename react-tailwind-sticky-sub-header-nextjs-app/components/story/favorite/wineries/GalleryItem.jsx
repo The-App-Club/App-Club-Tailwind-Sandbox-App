@@ -5,10 +5,9 @@ import {GiGrapes} from 'react-icons/gi';
 import {MdFavoriteBorder} from 'react-icons/md';
 import {useSetRecoilState} from 'recoil';
 
-import Spacer from '@/components/Spacer';
+import useStory from '@/hooks/useStory';
 import useWinery from '@/hooks/useWinery';
 import wineryState from '@/stores/wineryStore';
-import useStory from '@/hooks/useStory';
 
 const GalleryItem = ({wineryId, stories}) => {
   const router = useRouter();

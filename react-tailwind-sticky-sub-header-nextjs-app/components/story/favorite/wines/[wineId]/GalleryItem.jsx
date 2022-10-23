@@ -4,13 +4,13 @@ import {default as numbro} from 'numbro';
 import {FiEye} from 'react-icons/fi';
 import {GiPriceTag} from 'react-icons/gi';
 import {MdHistory} from 'react-icons/md';
-import {useRecoilState, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
 import GalleryItemFav from '@/components/story/favorite/wines/[wineId]/GalleryItemFav';
 import dataWines from '@/data/wines.json';
+import useUser from '@/hooks/useUser';
 import wineState from '@/stores/wineStore';
 import {formatRelativeTime} from '@/utils/dateUtil';
-import useUser from '@/hooks/useUser';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
