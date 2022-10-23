@@ -1,10 +1,9 @@
 import {css, cx} from '@emotion/css';
 import {useRouter} from 'next/router';
-import {useCallback, useEffect, useMemo, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 
-import data from '@/data/wines.json';
 import useCart from '@/hooks/useCart';
 import useWine from '@/hooks/useWine';
 

@@ -3,13 +3,12 @@ import {useRouter} from 'next/router';
 import {useCallback, useEffect, useState} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useRecoilValue} from 'recoil';
+import {useRecoilState} from 'recoil';
 
 import dataWineries from '@/data/wineries.json';
 import useCart from '@/hooks/useCart';
-import locationSelectorState from '@/stores/locationSelectorStore';
-import wineState from '@/stores/wineStore';
 import useWine from '@/hooks/useWine';
+import locationSelectorState from '@/stores/locationSelectorStore';
 
 const TraceFooter = () => {
   const router = useRouter();

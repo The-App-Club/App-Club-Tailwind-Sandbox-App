@@ -10,28 +10,37 @@ const InputNumber = ({item}) => {
   // https://tailwindcomponents.com/component/number-input-counter
   const [amount, setAmount] = useState(item.amount);
 
-  const handleAddCart = (e) => {
-    e.stopPropagation();
-    addCart({focusedItem: item, amount});
-  };
+  const handleAddCart = useCallback(
+    (e) => {
+      e.stopPropagation();
+      addCart({focusedItem: item, amount});
+    },
+    [item, addCart, amount]
+  );
 
-  const handleRemoveCart = (e) => {
-    e.stopPropagation();
-    removeCart({focusedItem: item});
-  };
+  const handleRemoveCart = useCallback(
+    (e) => {
+      e.stopPropagation();
+      removeCart({focusedItem: item});
+    },
+    [item, removeCart]
+  );
 
-  const handleChange = (e) => {
-    e.stopPropagation();
-    const willPurchasedAmount = Number(e.target.value);
-    if (willPurchasedAmount < 1) {
-      return;
-    }
-    setAmount(willPurchasedAmount);
-    updateCart({
-      focusedItem: item,
-      willPurchasedAmount,
-    });
-  };
+  const handleChange = useCallback(
+    (e) => {
+      e.stopPropagation();
+      const willPurchasedAmount = Number(e.target.value);
+      if (willPurchasedAmount < 1) {
+        return;
+      }
+      setAmount(willPurchasedAmount);
+      updateCart({
+        focusedItem: item,
+        willPurchasedAmount,
+      });
+    },
+    [item, updateCart]
+  );
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -41,7 +50,7 @@ const InputNumber = ({item}) => {
 
   useEffect(() => {
     setAmount(item.amount);
-  }, [item, carts]); // eslint-disable-line
+  }, [item, carts]);
 
   const handleDecrement = (e) => {
     e.stopPropagation();
@@ -64,7 +73,7 @@ const InputNumber = ({item}) => {
     (e) => {
       removeCart({focusedItem: item});
     },
-    [item] /* eslint-disable-line */
+    [item, removeCart]
   );
 
   useEffect(() => {
@@ -72,7 +81,7 @@ const InputNumber = ({item}) => {
       focusedItem: item,
       willPurchasedAmount: amount,
     });
-  }, [amount]); /* eslint-disable-line */
+  }, [amount]); // eslint-disable-line
 
   return (
     <div

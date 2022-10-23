@@ -1,7 +1,7 @@
+import {useRouter} from 'next/router';
 import {useCallback, useEffect, useState} from 'react';
 
 import useCart from '@/hooks/useCart';
-import {useRouter} from 'next/router';
 import useWine from '@/hooks/useWine';
 
 const Footer = () => {
