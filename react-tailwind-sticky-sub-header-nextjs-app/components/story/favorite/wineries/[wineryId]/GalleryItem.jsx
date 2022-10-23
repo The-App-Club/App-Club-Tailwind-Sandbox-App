@@ -4,16 +4,22 @@ import {default as numbro} from 'numbro';
 import {FiEye} from 'react-icons/fi';
 import {GiPriceTag} from 'react-icons/gi';
 import {MdHistory} from 'react-icons/md';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useSetRecoilState} from 'recoil';
 
 import GalleryItemFav from '@/components/story/favorite/wineries/[wineryId]/GalleryItemFav';
 import wineryState from '@/stores/wineryStore';
 import {formatRelativeTime} from '@/utils/dateUtil';
+import useUser from '@/hooks/useUser';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
-  const [_, setWinery] = useRecoilState(wineryState);
+  const setWinery = useSetRecoilState(wineryState);
+  const {getMatchedUser} = useUser();
+  const matchedUser = getMatchedUser({userId: item.userId});
 
+  if (!matchedUser) {
+    return;
+  }
   return (
     <div
       className={cx(
@@ -57,16 +63,31 @@ const GalleryItem = ({item}) => {
         `}
       />
       <div className="w-full">
-        <h2
-          className={cx(
-            'text-xl line-clamp-2',
-            css`
-              min-height: 56px;
-            `
-          )}
-        >
-          {item.storyTitle}
-        </h2>
+        <h2 className={cx('text-xl line-clamp-2')}>{item.storyTitle}</h2>
+      </div>
+      <div
+        className="w-full"
+        onClick={(e) => {
+          e.stopPropagation();
+          router.push({
+            pathname: `/users/${matchedUser.userId}`,
+          });
+        }}
+      >
+        <div className="flex items-center gap-1">
+          <picture className={css``}>
+            <source srcSet={`${matchedUser.avatorURL}`} type={`image/png`} />
+            <img
+              src={`${matchedUser.avatorURL}`}
+              alt={matchedUser.userName}
+              width={40}
+              height={40}
+              className={`rounded-full border-2`}
+            />
+          </picture>
+
+          <span className="text-sm font-bold hover:underline">{`${matchedUser.userName}`}</span>
+        </div>
       </div>
       <div className={cx(`text-sm font-bold flex items-center`)}>
         <MdHistory

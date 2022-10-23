@@ -5,26 +5,20 @@ import {useMemo} from 'react';
 import {FiEye} from 'react-icons/fi';
 import {GiPriceTag} from 'react-icons/gi';
 import {MdHistory} from 'react-icons/md';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useSetRecoilState} from 'recoil';
 
 import GalleryItemFav from '@/components/story/wines/[id]/published/GalleryItemFav';
 import dataUsers from '@/data/users.json';
 import dataWines from '@/data/wines.json';
 import wineState from '@/stores/wineStore';
 import {formatRelativeTime} from '@/utils/dateUtil';
+import useUser from '@/hooks/useUser';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
-  const [_, setActiveWine] = useRecoilState(wineState);
-
-  const matchedUser = useMemo(() => {
-    if (!item) {
-      return;
-    }
-    return dataUsers.find((user) => {
-      return user.userId === item.userId;
-    });
-  }, [item]);
+  const setActiveWine = useSetRecoilState(wineState);
+  const {getMatchedUser} = useUser();
+  const matchedUser = getMatchedUser({userId: item.userId});
 
   if (!matchedUser) {
     return;
