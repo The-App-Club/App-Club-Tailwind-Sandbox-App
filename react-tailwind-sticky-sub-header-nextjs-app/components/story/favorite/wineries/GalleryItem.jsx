@@ -8,11 +8,13 @@ import {useSetRecoilState} from 'recoil';
 import Spacer from '@/components/Spacer';
 import useWinery from '@/hooks/useWinery';
 import wineryState from '@/stores/wineryStore';
+import useStory from '@/hooks/useStory';
 
 const GalleryItem = ({wineryId, stories}) => {
   const router = useRouter();
   const setWinery = useSetRecoilState(wineryState);
-
+  const {getWriteUpUsers} = useStory();
+  const {writeUpUsers} = getWriteUpUsers({stories});
   const {activeWinery} = useWinery({id: wineryId});
 
   if (!activeWinery) {
@@ -62,17 +64,25 @@ const GalleryItem = ({wineryId, stories}) => {
       />
 
       <div className="w-full">
-        <h2
-          className={cx(
-            'text-xl line-clamp-2',
-            css`
-              min-height: 56px;
-            `
-          )}
-        >
+        <h2 className={cx('text-xl line-clamp-2')}>
           {`${activeWinery.wineryName}`}
         </h2>
-        <Spacer height="0.5rem" />
+        <div className="relative flex gap-1 items-center justify-end">
+          {writeUpUsers.map((user, index) => {
+            return (
+              <picture key={index}>
+                <source srcSet={`${user.avatorURL}`} type={`image/png`} />
+                <img
+                  src={`${user.avatorURL}`}
+                  alt={user.userName}
+                  width={40}
+                  height={40}
+                  className={`rounded-full border-2`}
+                />
+              </picture>
+            );
+          })}
+        </div>
         <div
           className={cx(
             `text-sm font-bold flex items-center`,

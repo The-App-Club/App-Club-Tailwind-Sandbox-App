@@ -10,11 +10,14 @@ import dataWineries from '@/data/wineries.json';
 import useWine from '@/hooks/useWine';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import wineState from '@/stores/wineStore';
+import useStory from '@/hooks/useStory';
 
 const GalleryItem = ({wineId, stories}) => {
   const router = useRouter();
   const setLocation = useSetRecoilState(locationSelectorState);
   const setActiveWine = useSetRecoilState(wineState);
+  const {getWriteUpUsers} = useStory();
+  const {writeUpUsers} = getWriteUpUsers({stories});
   const {activeWine} = useWine({id: wineId});
 
   if (!activeWine) {
@@ -74,7 +77,22 @@ const GalleryItem = ({wineId, stories}) => {
         >
           {`${activeWine.wine}`}
         </h2>
-        <Spacer height="0.5rem" />
+        <div className="relative flex gap-1 items-center justify-end">
+          {writeUpUsers.map((user, index) => {
+            return (
+              <picture key={index}>
+                <source srcSet={`${user.avatorURL}`} type={`image/png`} />
+                <img
+                  src={`${user.avatorURL}`}
+                  alt={user.userName}
+                  width={40}
+                  height={40}
+                  className={`rounded-full border-2`}
+                />
+              </picture>
+            );
+          })}
+        </div>
         <div
           className={cx(
             `text-sm font-bold flex items-center`,
