@@ -3,7 +3,7 @@ import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useSetRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import ProductCarted from '@/components/wines/[id]/ProductCarted';
@@ -15,7 +15,7 @@ import locationSelectorState from '@/stores/locationSelectorStore';
 const Product = ({className = css``}) => {
   const router = useRouter();
 
-  const [location, setLocation] = useRecoilState(locationSelectorState);
+  const setLocation = useSetRecoilState(locationSelectorState);
 
   const {id} = router.query;
   const {activeWine} = useWine({id});

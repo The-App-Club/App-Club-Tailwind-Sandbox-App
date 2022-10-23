@@ -3,7 +3,7 @@ import {useRouter} from 'next/router';
 import {default as numbro} from 'numbro';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn, MdOutlinePublish} from 'react-icons/md';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useSetRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import GalleryItemFav from '@/components/story/favorite/GalleryItemFav';
@@ -14,7 +14,7 @@ import locationSelectorState from '@/stores/locationSelectorStore';
 
 const GalleryItem = ({item}) => {
   const router = useRouter();
-  const [location, setLocation] = useRecoilState(locationSelectorState);
+  const setLocation = useSetRecoilState(locationSelectorState);
   const {activeWine} = useWine({id: item.id});
   const {activeWineStories} = usePublishedStory({id: item.id});
 

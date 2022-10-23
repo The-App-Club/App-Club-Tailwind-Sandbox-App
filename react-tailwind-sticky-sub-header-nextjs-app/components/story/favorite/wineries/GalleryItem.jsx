@@ -4,7 +4,7 @@ import {default as numbro} from 'numbro';
 import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdFavoriteBorder} from 'react-icons/md';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useSetRecoilState} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import dataWineries from '@/data/wineries.json';
@@ -13,7 +13,7 @@ import wineryState from '@/stores/wineryStore';
 
 const GalleryItem = ({wineryId, stories}) => {
   const router = useRouter();
-  const [location, setLocation] = useRecoilState(locationSelectorState);
+  const setLocation = useSetRecoilState(locationSelectorState);
   const [_, setWinery] = useRecoilState(wineryState);
 
   const activeWinery = useMemo(() => {

@@ -5,7 +5,7 @@ import {default as numbro} from 'numbro';
 import {memo} from 'react';
 import {GiGrapes, GiWineBottle} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useSetRecoilState} from 'recoil';
 
 import ProductCarted from '@/components/story/wineries/[id]/published/[publishedId]/ProductCarted';
 import ProductFav from '@/components/story/wineries/[id]/published/[publishedId]/ProductFav';
@@ -32,7 +32,7 @@ const motionConfig = {
 
 const Product = ({item}) => {
   const router = useRouter();
-  const [location, setLocation] = useRecoilState(locationSelectorState);
+  const setLocation = useSetRecoilState(locationSelectorState);
 
   if (!item) {
     return;

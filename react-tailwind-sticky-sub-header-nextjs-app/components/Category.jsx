@@ -4,7 +4,7 @@ import '@splidejs/react-splide/css';
 import {count, groupBy, mutate, tidy} from '@tidyjs/tidy';
 import {useRouter} from 'next/router';
 import {useEffect, useMemo} from 'react';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useSetRecoilState} from 'recoil';
 
 import data from '@/data/wineries.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
@@ -13,7 +13,7 @@ import multiLocationSelectorState from '@/stores/multiLocationSelectorStore';
 const Category = ({className = css``}) => {
   const router = useRouter();
   const {id} = router.query;
-  const [location, setLocation] = useRecoilState(locationSelectorState);
+  const setLocation = useSetRecoilState(locationSelectorState);
   const [multiLocation, setMultiLocation] = useRecoilState(
     multiLocationSelectorState
   );

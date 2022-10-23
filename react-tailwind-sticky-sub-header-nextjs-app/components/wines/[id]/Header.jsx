@@ -6,7 +6,7 @@ import {memo, useCallback} from 'react';
 import {FaRegComments} from 'react-icons/fa';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineHistory, MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useResetRecoilState} from 'recoil';
+import {useRecoilState, useResetRecoilState, useSetRecoilState} from 'recoil';
 
 import dataWineries from '@/data/wineries.json';
 import useCart from '@/hooks/useCart';
@@ -16,7 +16,7 @@ import wineState from '@/stores/wineStore';
 
 const Header = () => {
   const router = useRouter();
-  const [location, setLocation] = useRecoilState(locationSelectorState);
+  const setLocation = useSetRecoilState(locationSelectorState);
   const {addCart, removeCart, isCarted} = useCart();
   const setActiveWine = useResetRecoilState(wineState);
   const {id} = router.query;

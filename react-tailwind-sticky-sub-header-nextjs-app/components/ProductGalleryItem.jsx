@@ -4,7 +4,7 @@ import {default as numbro} from 'numbro';
 import {memo, useCallback, useEffect, useState} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState, useRecoilValue} from 'recoil';
+import {useRecoilState, useRecoilValue, useSetRecoilState} from 'recoil';
 
 import ProductGalleryItemCarted from '@/components/ProductGalleryItemCarted';
 import ProductGalleryItemFav from '@/components/ProductGalleryItemFav';
@@ -20,7 +20,7 @@ const ProductGalleryItem = ({item}) => {
   const {addCart, removeCart, isCarted} = useCart();
   const [isClient, setIsClient] = useState(false);
   const theme = useRecoilValue(themeState);
-  const [location, setLocation] = useRecoilState(locationSelectorState);
+  const setLocation = useSetRecoilState(locationSelectorState);
   const [activeWine, setActiveWine] = useRecoilState(wineState);
   useEffect(() => {
     if (typeof window !== 'undefined') {

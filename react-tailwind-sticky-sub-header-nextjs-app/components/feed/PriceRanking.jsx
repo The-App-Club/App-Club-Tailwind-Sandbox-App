@@ -5,7 +5,7 @@ import {default as numbro} from 'numbro';
 import {useMemo} from 'react';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useSetRecoilState} from 'recoil';
 
 import Tracer from '@/components/Tracer';
 import dataWineries from '@/data/wineries.json';
@@ -14,7 +14,7 @@ import locationSelectorState from '@/stores/locationSelectorStore';
 
 const PriceRanking = ({className}) => {
   const router = useRouter();
-  const [location, setLocation] = useRecoilState(locationSelectorState);
+  const setLocation = useSetRecoilState(locationSelectorState);
   const rankingData = useMemo(() => {
     // https://stackoverflow.com/a/48218209
     return tidy(

@@ -3,7 +3,7 @@ import {Listbox, Transition} from '@headlessui/react';
 import {CheckIcon, ChevronUpDownIcon} from '@heroicons/react/24/solid';
 import {filter, groupBy, map, mutate, tidy} from '@tidyjs/tidy';
 import {Fragment, useEffect, useMemo, useState} from 'react';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useSetRecoilState} from 'recoil';
 
 import data from '@/data/wines.json';
 import locationSelectorState from '@/stores/locationSelectorStore';
