@@ -6,6 +6,7 @@ import ScrollStorySectionTitle from '@/components/wineries/[id]/stories/[storyId
 import ScrollStorySentence from '@/components/wineries/[id]/stories/[storyId]/chapters/[chapterId]/ScrollStorySentence';
 
 const _ScrollStorySection = ({}, ref) => {
+  // eslint-disable-line no-empty-pattern
   return (
     <section
       ref={ref}

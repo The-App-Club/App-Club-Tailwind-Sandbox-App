@@ -25,7 +25,6 @@ const Header = () => {
   return (
     <>
       <SearchModal show={showModal} handleClose={handleModalClose} />
-
       <div
         className={cx(
           css`
@@ -38,13 +37,13 @@ const Header = () => {
             justify-content: space-between;
             align-items: center;
           `,
-          `bg-white dark:bg-slate-700 px-2`
+          `bg-white dark:bg-slate-700`
         )}
       >
         <h2
           className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
         >
-          Wines
+          Winery
         </h2>
         <div className="flex items-center gap-2">
           <button

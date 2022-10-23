@@ -7,8 +7,9 @@ import {FaRegComments} from 'react-icons/fa';
 import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineHistory, MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilState} from 'recoil';
-import dataWines from '@/data/wines.json';
+
 import dataWineries from '@/data/wineries.json';
+import dataWines from '@/data/wines.json';
 import useCart from '@/hooks/useCart';
 import locationSelectorState from '@/stores/locationSelectorStore';
 import wineState from '@/stores/wineStore';

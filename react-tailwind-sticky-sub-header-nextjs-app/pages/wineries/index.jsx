@@ -1,24 +1,20 @@
 import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
-import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import {useRecoilValue} from 'recoil';
 
+import Category from '@/components/Category';
 import Spacer from '@/components/Spacer';
-import ReviewRanking from '@/components/feed/ReviewRanking';
-import Header from '@/components/wines/[id]/Header';
-import Product from '@/components/wines/[id]/Product';
-import RelativedLocationWineSlider from '@/components/wines/[id]/RelativedLocationWineSlider';
-import RelativedWineryWineSlider from '@/components/wines/[id]/RelativedWineryWineSlider';
-import Sidebar from '@/components/wines/[id]/Sidebar';
-import TraceFooter from '@/components/wines/[id]/TraceFooter';
+import Container from '@/components/wineries/Container';
+import Header from '@/components/wineries/Header';
+import Sidebar from '@/components/wineries/Sidebar';
+import TraceFooter from '@/components/wineries/TraceFooter';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
-const Wine = () => {
-  const router = useRouter();
-  const {id} = router.query;
+const Winery = () => {
   const {opened} = useRecoilValue(hamburgerState);
+
   return (
     <>
       <Sidebar />
@@ -70,45 +66,21 @@ const Wine = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === id) {
+              if (niceTitle === 'Wineries') {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
             }}
           />
           <Header />
+          <Category
+            className={css`
+              position: sticky;
+              top: calc(9rem);
+            `}
+          />
           <Spacer />
-          <div
-            className={cx(
-              css`
-                width: 100%;
-                max-width: 100%;
-                min-height: 100vh;
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                gap: 2rem;
-                @media (max-width: 1000px) {
-                  min-height: initial;
-                  flex-direction: column;
-                }
-              `
-            )}
-          >
-            <div className="w-full max-w-2xl">
-              <Product className={`shadow-2xl rounded-2xl`} />
-              <Spacer height="3rem" />
-              <RelativedLocationWineSlider />
-              <RelativedWineryWineSlider />
-            </div>
-            <ReviewRanking
-              className={css`
-                position: sticky;
-                top: calc(3rem + 3rem + 136px + 16px);
-                z-index: 1;
-              `}
-            />
-          </div>
+          <Container />
         </section>
         <TraceFooter />
       </Layout>
@@ -116,4 +88,4 @@ const Wine = () => {
   );
 };
 
-export default Wine;
+export default Winery;

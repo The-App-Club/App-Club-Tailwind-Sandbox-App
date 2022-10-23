@@ -6,9 +6,9 @@ import {GiGrapes} from 'react-icons/gi';
 import {MdOutlineLocationOn} from 'react-icons/md';
 import {useRecoilState, useRecoilValue} from 'recoil';
 
+import ProductGalleryItemCarted from '@/components/ProductGalleryItemCarted';
+import ProductGalleryItemFav from '@/components/ProductGalleryItemFav';
 import Spacer from '@/components/Spacer';
-import ProductGalleryItemCarted from '@/components/wines/ProductGalleryItemCarted';
-import ProductGalleryItemFav from '@/components/wines/ProductGalleryItemFav';
 import dataWineries from '@/data/wineries.json';
 import useCart from '@/hooks/useCart';
 import locationSelectorState from '@/stores/locationSelectorStore';
@@ -87,7 +87,22 @@ const ProductGalleryItem = ({item}) => {
             background-repeat: no-repeat;
           }
         `}
-      />
+      >
+        {/* <div
+          className={cx(
+            'absolute bottom-2 right-0 flex items-center',
+            css`
+              z-index: 1;
+            `
+          )}
+          onClick={handleNewStory}
+        >
+          <BsPencilSquare
+            size={32}
+            fill={`rgb(209 213 219)`} // bg-gray-300
+          />
+        </div> */}
+      </div>
       <div className="w-full">
         <h2
           className={cx(

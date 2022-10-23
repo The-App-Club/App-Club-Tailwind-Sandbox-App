@@ -1,24 +1,22 @@
 import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
+import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import {useState} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import Category from '@/components/Category';
-import ProductGalleryItem from '@/components/wines/ProductGalleryItem';
-import SearchModal from '@/components/SearchModal';
 import Spacer from '@/components/Spacer';
-import Sidebar from '@/components/wines/Sidebar';
-import TraceFooter from '@/components/wines/TraceFooter';
-import data from '@/data/wines.json';
+import Container from '@/components/wineries/[id]/Container';
+import Header from '@/components/wineries/[id]/Header';
+import Sidebar from '@/components/wineries/[id]/Sidebar';
+import TraceFooter from '@/components/wineries/[id]/TraceFooter';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
-import Header from '@/components/wines/Header';
-import Container from '@/components/wines/Container';
 
-const Wines = () => {
+const Winery = () => {
+  const router = useRouter();
+  const {id} = router.query;
   const {opened} = useRecoilValue(hamburgerState);
-
   return (
     <>
       <Sidebar />
@@ -70,7 +68,7 @@ const Wines = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === `Wines`) {
+              if (title === id) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
@@ -92,4 +90,4 @@ const Wines = () => {
   );
 };
 
-export default Wines;
+export default Winery;

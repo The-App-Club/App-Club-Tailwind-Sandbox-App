@@ -1,12 +1,13 @@
-import dataWines from '@/data/wines.json';
+import {css, cx} from '@emotion/css';
+import '@splidejs/react-splide/css';
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import {filter, tidy} from '@tidyjs/tidy';
-import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {useEffect, useMemo, useState} from 'react';
 import {MdOutlineLocationOn} from 'react-icons/md';
+
 import Product from '@/components/wines/[id]/Product';
-import {css, cx} from '@emotion/css';
+import dataWines from '@/data/wines.json';
 
 const RelativedLocationWineSlider = () => {
   const router = useRouter();

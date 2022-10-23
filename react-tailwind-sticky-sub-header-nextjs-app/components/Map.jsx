@@ -1,8 +1,8 @@
+import {css, cx} from '@emotion/css';
+import MapboxLanguage from '@mapbox/mapbox-gl-language';
+import mapboxgl from 'mapbox-gl';
 import React, {useEffect, useMemo, useRef, useState} from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import mapboxgl from 'mapbox-gl';
-import MapboxLanguage from '@mapbox/mapbox-gl-language';
-import {css, cx} from '@emotion/css';
 import {TbWorldLatitude, TbWorldLongitude, TbZoomPan} from 'react-icons/tb';
 import {useRecoilValue} from 'recoil';
 import {useDebouncedCallback} from 'use-debounce';
@@ -33,7 +33,7 @@ const Map = ({defaultZoom = 11, className = css``}) => {
       return;
     }
     if (mapInstance.current) return; // only once initialize
-    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
+    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN; // eslint-disable-line no-undef
     const {
       latLng: [lat, lng],
     } = matchedLocation;

@@ -1,8 +1,8 @@
 import {css, cx} from '@emotion/css';
+import MapboxLanguage from '@mapbox/mapbox-gl-language';
+import mapboxgl from 'mapbox-gl';
 import {useCallback, useEffect, useRef} from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import mapboxgl from 'mapbox-gl';
-import MapboxLanguage from '@mapbox/mapbox-gl-language';
 
 import ScrollStorySection from '@/components/ScrollStorySection';
 import Spacer from '@/components/Spacer';
@@ -66,7 +66,7 @@ const ScrollStory = () => {
 
   useEffect(() => {
     if (mapInstance.current) return; // only once initialize
-    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
+    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN; // eslint-disable-line no-undef
 
     const mapboxglInstance = new mapboxgl.Map({
       container: mapContainer.current,

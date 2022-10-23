@@ -1,44 +1,23 @@
 import {css, cx} from '@emotion/css';
 import capitalize from 'capitalize-the-first-letter';
-import {useRouter} from 'next/router';
 import Breadcrumbs from 'nextjs-breadcrumbs';
-import {useState} from 'react';
 import {useRecoilValue} from 'recoil';
 
 import Category from '@/components/Category';
-import SearchModal from '@/components/SearchModal';
 import Spacer from '@/components/Spacer';
-import Container from '@/components/wineries/Container';
-import Sidebar from '@/components/wineries/Sidebar';
-import TraceFooter from '@/components/wineries/TraceFooter';
+import Container from '@/components/wines/Container';
+import Header from '@/components/wines/Header';
+import Sidebar from '@/components/wines/Sidebar';
+import TraceFooter from '@/components/wines/TraceFooter';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
 
-const Winery = () => {
-  const [showModal, setShowModal] = useState(false);
-  const router = useRouter();
+const Wines = () => {
   const {opened} = useRecoilValue(hamburgerState);
-
-  const handleModalOpen = (e) => {
-    setShowModal(true);
-    const html = document.documentElement;
-    const body = document.body;
-    html.classList.add('loading');
-    body.classList.add('loading');
-  };
-
-  const handleModalClose = (e) => {
-    setShowModal(false);
-    const html = document.documentElement;
-    const body = document.body;
-    html.classList.remove('loading');
-    body.classList.remove('loading');
-  };
 
   return (
     <>
       <Sidebar />
-      <SearchModal show={showModal} handleClose={handleModalClose} />
       <Layout>
         <section
           className={cx(
@@ -87,43 +66,13 @@ const Winery = () => {
             }
             transformLabel={(title) => {
               const niceTitle = capitalize(title);
-              if (niceTitle === 'Wineries') {
+              if (niceTitle === `Wines`) {
                 return `${niceTitle}`;
               }
               return `${niceTitle} > `;
             }}
           />
-          <div
-            className={cx(
-              css`
-                z-index: 3;
-                position: sticky;
-                top: 6rem;
-                min-height: 3rem;
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-              `,
-              `bg-white dark:bg-slate-700`
-            )}
-          >
-            <h2
-              className={cx(
-                `w-full text-xl flex items-center justify-start gap-2`
-              )}
-            >
-              Winery
-            </h2>
-            <div className="flex items-center gap-2">
-              <button
-                className="px-2 py-2 bg-blue-500 hover:bg-blue-800 text-white rounded-lg w-24 text-sm text-center"
-                onClick={handleModalOpen}
-              >
-                Filter
-              </button>
-            </div>
-          </div>
+          <Header />
           <Category
             className={css`
               position: sticky;
@@ -139,4 +88,4 @@ const Winery = () => {
   );
 };
 
-export default Winery;
+export default Wines;

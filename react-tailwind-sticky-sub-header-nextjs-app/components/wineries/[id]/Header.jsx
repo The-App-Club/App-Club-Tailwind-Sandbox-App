@@ -1,10 +1,15 @@
 import {css, cx} from '@emotion/css';
+import {useRouter} from 'next/router';
 import {useState} from 'react';
 
 import SearchModal from '@/components/SearchModal';
+import useWinery from '@/hooks/useWinery';
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
+  const {id} = router.query;
+  const {activeWinery} = useWinery({id});
 
   const handleModalOpen = (e) => {
     setShowModal(true);
@@ -25,7 +30,6 @@ const Header = () => {
   return (
     <>
       <SearchModal show={showModal} handleClose={handleModalClose} />
-
       <div
         className={cx(
           css`
@@ -38,13 +42,15 @@ const Header = () => {
             justify-content: space-between;
             align-items: center;
           `,
-          `bg-white dark:bg-slate-700 px-2`
+          `bg-white dark:bg-slate-700`
         )}
       >
         <h2
-          className={cx(`w-full text-xl flex items-center justify-start gap-2`)}
+          className={cx(
+            `w-full text-xl flex items-center justify-start gap-2 line-clamp-1`
+          )}
         >
-          Wines
+          Winery<span>@{activeWinery.wineryName}</span>
         </h2>
         <div className="flex items-center gap-2">
           <button

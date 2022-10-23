@@ -1,8 +1,8 @@
+import {css, cx} from '@emotion/css';
+import MapboxLanguage from '@mapbox/mapbox-gl-language';
+import mapboxgl from 'mapbox-gl';
 import React, {createRef, useEffect, useMemo, useRef, useState} from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import mapboxgl from 'mapbox-gl';
-import MapboxLanguage from '@mapbox/mapbox-gl-language';
-import {css, cx} from '@emotion/css';
 import {useRecoilValue} from 'recoil';
 import {useDebouncedCallback} from 'use-debounce';
 
@@ -45,7 +45,7 @@ const MapMultiLocation = ({defaultZoom = 11, className = css``}) => {
       latLng: [lat, lng],
     } = multiLocation[0];
 
-    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
+    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN; // eslint-disable-line no-undef
     const mapboxglInstance = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
