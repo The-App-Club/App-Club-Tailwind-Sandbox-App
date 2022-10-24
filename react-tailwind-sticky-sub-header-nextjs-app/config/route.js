@@ -3,6 +3,8 @@ import Header from '@/components/Header';
 import AboutFooter from '@/components/about/Footer';
 import ContactFooter from '@/components/contact/Footer';
 import PriceFooter from '@/components/price/Footer';
+import FeedHeader from '@/components/feed/Header';
+import FeedFooter from '@/components/feed/Footer';
 import SommelierSignInFooter from '@/components/sommelier/signin/Footer';
 import SommelierSignInHeader from '@/components/sommelier/signin/Header';
 import SommelierSignUpFooter from '@/components/sommelier/signup/Footer';
@@ -443,10 +445,10 @@ const routes = [
     pageName: `Feed`,
     activeMenuName: `Feed`,
     header: () => {
-      return <Header />;
+      return <FeedHeader />;
     },
     footer: () => {
-      return <Footer />;
+      return <FeedFooter />;
     },
   },
   {

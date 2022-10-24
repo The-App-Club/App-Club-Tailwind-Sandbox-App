@@ -6,7 +6,7 @@ import {useRecoilValue} from 'recoil';
 
 import Spacer from '@/components/Spacer';
 import Feeder from '@/components/feed/Feeder';
-import Header from '@/components/feed/Header';
+import Header from '@/components/feed/SectionHeader';
 import Sidebar from '@/components/feed/Sidebar';
 import Layout from '@/layouts/default';
 import hamburgerState from '@/stores/hamburgerStore';
@@ -32,13 +32,20 @@ const Feed = () => {
               transition: left 0.2s ease ${opened ? 0 : 250}ms,
                 max-width 0.2s ease ${opened ? 0 : 250}ms;
               @media (max-width: 768px) {
-                left: 0;
+                position: initial;
+                top: initial;
+                left: initial;
                 max-width: 100%;
               }
               nav {
                 z-index: 3;
                 position: sticky;
                 top: 3rem;
+                @media (max-width: 768px) {
+                  z-index: 3;
+                  position: initial;
+                  top: initial;
+                }
                 width: 100%;
                 padding: 0 0.5rem;
                 ol {
