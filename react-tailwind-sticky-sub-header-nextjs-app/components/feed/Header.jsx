@@ -95,7 +95,7 @@ const Header = () => {
         `,
         `px-2`,
         `flex items-center bg-white`,
-        `dark:bg-slate-700 dark:text-white`,
+        `dark:bg-slate-700 dark:text-white shadow-md`,
         `border-b-2`
       )}
     >
