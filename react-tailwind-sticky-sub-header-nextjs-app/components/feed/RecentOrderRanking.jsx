@@ -33,7 +33,10 @@ const RecentOrderRanking = ({className}) => {
             >
               <div
                 className={cx(
-                  'w-8 h-8 bg-white dark:bg-slate-800 absolute top-2 left-2 rounded-full flex items-center justify-center border-2 border-gray-300'
+                  'w-8 h-8 bg-white dark:bg-slate-800 absolute top-2 left-2 rounded-full flex items-center justify-center border-2 border-gray-300',
+                  css`
+                    z-index: 1;
+                  `
                 )}
               >
                 {index + 1}

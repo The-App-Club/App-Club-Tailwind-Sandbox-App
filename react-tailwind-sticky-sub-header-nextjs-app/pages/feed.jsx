@@ -23,7 +23,8 @@ const Feed = () => {
           className={cx(
             `mt-12 px-2 pb-2`,
             css`
-              position: absolute;
+              /* position: absolute; */
+              position: relative;
               top: 0;
               left: 18rem;
               max-width: calc(100% - 18rem);

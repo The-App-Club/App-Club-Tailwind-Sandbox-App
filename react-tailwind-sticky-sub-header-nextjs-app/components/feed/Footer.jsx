@@ -26,13 +26,11 @@ const Footer = () => {
         css`
           opacity: 0;
           position: absolute;
-          left: 0;
-          max-width: 100%;
+          left: 18rem;
+          max-width: calc(100% - 18rem);
           width: 100%;
           transition: left 0.2s ease 250ms, max-width 0.2s ease 250ms;
-          display: none;
           @media (max-width: 768px) {
-            display: flex;
             left: 0;
             max-width: 100%;
           }
