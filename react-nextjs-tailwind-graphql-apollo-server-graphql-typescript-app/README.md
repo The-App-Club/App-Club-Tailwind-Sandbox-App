@@ -1,0 +1,14 @@
+- Memo
+
+  - [prisma でセグフォったら node バージョン 16 にすると動く](https://github.com/prisma/prisma/issues/10649#issuecomment-1133464166)
+
+- Reference
+  - [uploading-files-to-graphql-server-with-urql](https://estebanborai.com/notes/uploading-files-to-graphql-server-with-urql)
+  - [urql file-uploads](https://formidable.com/open-source/urql/docs/advanced/persistence-and-uploads/#file-uploads)
+  - [building-file-upload-downloads-for-your-hasura-app](https://hasura.io/blog/building-file-upload-downloads-for-your-hasura-app/)
+  - [graphql-multipart-request](https://zenn.dev/msorz/articles/47b47acedb3c5e#3.graphql-multipart-request)
+  - [with-apollo-server-2-0](https://www.apollographql.com/blog/graphql/file-uploads/with-apollo-server-2-0/)
+  - [next-js-graphql](https://reffect.co.jp/react/next-js-graphql)
+  - [API Route に Apollo Server をたて，データを取得する](https://zenn.dev/fujiyama/articles/83c99674444909#api-route%E3%81%ABapollo-server%E3%82%92%E3%81%9F%E3%81%A6%EF%BC%8C%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
+  - [Next.js の API Routes に Apollo Server を立てる](https://zenn.dev/ryo_kawamata/articles/how-to-create-apollo-server-on-nextjs-api-routes)
+  - [api-routes-graphql](https://github.com/vercel/next.js/blob/deprecated-main/examples/api-routes-graphql/pages/api/graphql.js)
