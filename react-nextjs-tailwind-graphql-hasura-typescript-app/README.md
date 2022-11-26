@@ -2,3 +2,4 @@
   - [uploading-files-to-graphql-server-with-urql](https://estebanborai.com/notes/uploading-files-to-graphql-server-with-urql)
   - [urql file-uploads](https://formidable.com/open-source/urql/docs/advanced/persistence-and-uploads/#file-uploads)
   - [building-file-upload-downloads-for-your-hasura-app](https://hasura.io/blog/building-file-upload-downloads-for-your-hasura-app/)
+  - [graphql-multipart-request](https://zenn.dev/msorz/articles/47b47acedb3c5e#3.graphql-multipart-request)
