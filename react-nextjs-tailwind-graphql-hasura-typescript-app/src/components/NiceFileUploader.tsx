@@ -33,7 +33,9 @@ const NiceFileUploader = () => {
     setFile(file);
 
     try {
-      await createBrand(file.name, file);
+      const {id, logo, name} = await createBrand(file.name, file);
+
+      console.log(`id, logo, name`, id, logo, name);
     } catch (error) {
       // CombinedError: [Network] No Content
       // at makeErrorResult (ddbb86ae.mjs?0bc5:232:1)

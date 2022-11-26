@@ -1,5 +1,11 @@
 import useGraphQLClient from '@/hooks/useGraphQLClient';
 
+type Brand = {
+  id: string;
+  name: string;
+  logo: File;
+};
+
 const useFileUpload = () => {
   const {
     graphQLClient: {client},
@@ -27,7 +33,7 @@ const useFileUpload = () => {
     }
   }`;
 
-  const createBrand = async (name: string, logo: File) => {
+  const createBrand = async (name: string, logo: File): Promise<Brand> => {
     const {data = {}, error} = await client
       .mutation(CreateBrandMutation, {
         input: {
