@@ -1,0 +1,12 @@
+input BrandCreateInput {
+  name: String!
+  logo: Upload!
+}
+
+mutation ($input: BrandCreateInput!) {
+  brandCreate(input: $input) {
+    id
+    name
+    logo
+  }
+}

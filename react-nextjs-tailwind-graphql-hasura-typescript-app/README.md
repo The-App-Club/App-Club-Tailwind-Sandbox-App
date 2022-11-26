@@ -1,0 +1,3 @@
+- Reference
+  - [uploading-files-to-graphql-server-with-urql](https://estebanborai.com/notes/uploading-files-to-graphql-server-with-urql)
+  - [urql file-uploads](https://formidable.com/open-source/urql/docs/advanced/persistence-and-uploads/#file-uploads)
