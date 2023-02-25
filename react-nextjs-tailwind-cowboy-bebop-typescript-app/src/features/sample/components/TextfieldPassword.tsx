@@ -13,9 +13,9 @@ const TextfieldPassword = (props: UseControllerProps<SignInForm>) => {
     <div className='mb-6'>
       <label
         htmlFor='password'
-        className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+        className='mb-2 block text-lg font-medium text-gray-600 dark:text-white'
       >
-        Your password
+        パスワード
       </label>
       <input
         type='password'
