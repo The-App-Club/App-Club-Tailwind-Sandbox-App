@@ -1,12 +1,14 @@
-import { queryClient } from '@/libs/queryClient'
-import '@/styles/globals.css'
+import type { AppPropsWithLayout } from 'next/app'
+
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-
-import { RecoilRoot } from 'recoil'
-import { Toaster } from 'react-hot-toast'
 import NextNProgress from 'nextjs-progressbar'
-import type { AppPropsWithLayout } from 'next/app'
+import { Toaster } from 'react-hot-toast'
+import { RecoilRoot } from 'recoil'
+
+import { queryClient } from '@/libs/queryClient'
+
+import '@/styles/globals.css'
 
 interface CowboyAppProps extends AppPropsWithLayout {}
 
